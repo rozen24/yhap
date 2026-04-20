@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Nutritious food and water illustration">
+  <defs>
+    <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ECFDF5"/>
+      <stop offset="1" stop-color="#D1FAE5"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bgG)"/>
+  <!-- Table/plate -->
+  <ellipse cx="400" cy="490" rx="330" ry="50" fill="#A7F3D0" opacity="0.5"/>
+  <ellipse cx="400" cy="470" rx="280" ry="40" fill="white"/>
+  <ellipse cx="400" cy="465" rx="260" ry="34" fill="#F0FDF4" stroke="#86EFAC" stroke-width="2"/>
+  <!-- Apple -->
+  <circle cx="280" cy="430" r="55" fill="#EF4444"/>
+  <circle cx="265" cy="415" r="15" fill="#F87171" opacity="0.6"/>
+  <path d="M280 375 Q285 365 295 365" stroke="#15803D" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="295" cy="362" rx="12" ry="6" fill="#22C55E" transform="rotate(30 295 362)"/>
+  <!-- Leafy greens -->
+  <g transform="translate(410, 415)">
+    <path d="M0 0 Q-30 -40 -50 -20 Q-70 0 -40 20 Q-10 30 0 15 Z" fill="#16A34A"/>
+    <path d="M0 0 Q10 -45 35 -30 Q55 -10 30 15 Q5 25 0 10 Z" fill="#22C55E"/>
+    <path d="M0 0 Q-5 -50 15 -55 Q40 -45 25 -15 Q5 10 0 0 Z" fill="#4ADE80"/>
+  </g>
+  <!-- Water glass -->
+  <g transform="translate(540, 330)">
+    <path d="M0 0 L80 0 L72 130 L8 130 Z" fill="#E0F2FE" stroke="#7DD3FC" stroke-width="2.5"/>
+    <path d="M4 30 L76 30 L71 125 L9 125 Z" fill="#38BDF8" opacity="0.75"/>
+    <ellipse cx="40" cy="30" rx="36" ry="6" fill="#7DD3FC" opacity="0.6"/>
+    <!-- Highlight -->
+    <path d="M14 40 L18 115" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  </g>
+  <!-- Orange slice -->
+  <circle cx="180" cy="440" r="38" fill="#FB923C"/>
+  <circle cx="180" cy="440" r="32" fill="#FDBA74"/>
+  <g stroke="#EA580C" stroke-width="2" opacity="0.7">
+    <line x1="180" y1="410" x2="180" y2="470"/>
+    <line x1="150" y1="440" x2="210" y2="440"/>
+    <line x1="160" y1="420" x2="200" y2="460"/>
+    <line x1="200" y1="420" x2="160" y2="460"/>
+  </g>
+  <!-- Carrot -->
+  <g transform="translate(470, 445) rotate(25)">
+    <path d="M0 0 L50 8 L40 60 L-5 55 Z" fill="#F97316"/>
+    <path d="M8 0 L12 -18 M20 -2 L22 -22 M32 0 L36 -16" stroke="#16A34A" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <!-- Heart badge top-right -->
+  <g transform="translate(640, 110)">
+    <circle r="45" fill="white" stroke="#86EFAC" stroke-width="3"/>
+    <path d="M0 12 C-20 -8, -30 -8, -20 -20 C-10 -28, 0 -18, 0 -10 C0 -18, 10 -28, 20 -20 C30 -8, 20 -8, 0 12 Z" fill="#EF4444"/>
+  </g>
+</svg>

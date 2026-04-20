@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Consult a doctor illustration">
+  <defs>
+    <linearGradient id="mbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FEE2E2"/>
+      <stop offset="1" stop-color="#FECACA"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#mbg)"/>
+  <!-- Clipboard background -->
+  <rect x="230" y="100" width="340" height="420" rx="20" fill="white" stroke="#FCA5A5" stroke-width="3"/>
+  <rect x="340" y="85" width="120" height="40" rx="8" fill="#F87171"/>
+  <rect x="355" y="98" width="90" height="15" rx="4" fill="white" opacity="0.7"/>
+  <!-- Medical cross -->
+  <g transform="translate(400, 240)">
+    <circle r="70" fill="#FEE2E2" stroke="#EF4444" stroke-width="4"/>
+    <rect x="-40" y="-12" width="80" height="24" rx="4" fill="#EF4444"/>
+    <rect x="-12" y="-40" width="24" height="80" rx="4" fill="#EF4444"/>
+  </g>
+  <!-- Lines suggesting prescription -->
+  <g stroke="#FCA5A5" stroke-width="3" stroke-linecap="round">
+    <line x1="270" y1="360" x2="530" y2="360"/>
+    <line x1="270" y1="390" x2="500" y2="390"/>
+    <line x1="270" y1="420" x2="515" y2="420"/>
+    <line x1="270" y1="450" x2="470" y2="450"/>
+  </g>
+  <!-- Stethoscope -->
+  <g fill="none" stroke="#374151" stroke-width="6" stroke-linecap="round">
+    <path d="M130 200 Q130 300 200 320 Q270 340 270 400"/>
+    <path d="M170 200 Q170 280 230 300 Q290 320 290 400"/>
+  </g>
+  <circle cx="130" cy="200" r="12" fill="#374151"/>
+  <circle cx="170" cy="200" r="12" fill="#374151"/>
+  <circle cx="280" cy="430" r="32" fill="#374151"/>
+  <circle cx="280" cy="430" r="22" fill="#6B7280"/>
+  <circle cx="280" cy="430" r="14" fill="#374151"/>
+  <!-- Pulse line -->
+  <g transform="translate(580, 180)">
+    <circle r="55" fill="white" stroke="#F87171" stroke-width="3"/>
+    <path d="M-35 0 L-20 0 L-10 -20 L0 20 L10 -15 L20 0 L35 0"
+          fill="none" stroke="#EF4444" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+</svg>
