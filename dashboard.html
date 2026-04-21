@@ -7,6 +7,7 @@
   <title>YHAP Dashboard – যুব স্বাস্থ্য দূত কর্মসূচি</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="shortcut icon" href="unicef.png" type="image/x-icon">
   <!-- Load fonts non-render-blocking via print media trick -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" /></noscript>
@@ -2260,7 +2261,7 @@
     .cm-highlighted-box {
       background: #fff;
       border-left: 4px solid #FFC20E;
-      padding: 24px;
+      padding: 10px;
       border-radius: var(--radius);
       margin-top: 50px;
       color: var(--text-secondary);
@@ -5186,23 +5187,23 @@ function buildChildMarriageSection() {
 /* ── CHILD MARRIAGE CONSEQUENCES (Module 5, Lesson 2) ── */
 function buildChildMarriageConsequencesSection() {
   const consequences = [
-    { titleBn: 'বিদ্যালয় থেকে ঝরে পড়া', titleEn: 'School Dropout' },
-    { titleBn: 'অপরিণত, অপরিপক্ক, অপুষ্ট ও স্বল্প ওজনের শিশুর জন্মদান', titleEn: 'Birth of Immature, Malnourished Children' },
-    { titleBn: 'কিশোরী মায়ের পুষ্টির অভাবজনিত সমস্যা', titleEn: 'Nutritional Problems in Adolescent Mothers' },
-    { titleBn: 'দীর্ঘস্থায়ী প্রজনন স্বাস্থ্য সমস্যা', titleEn: 'Long-term Reproductive Health Issues' },
-    { titleBn: 'প্রসব ও প্রসব পরবর্তী জটিলতায় ভোগা', titleEn: 'Delivery & Postnatal Complications' },
-    { titleBn: 'মা ও শিশুমৃত্যুর ঝুঁকি বাড়ে', titleEn: 'Increased Maternal & Child Mortality' },
-    { titleBn: 'মানসিক স্বাস্থ্য সমস্যা', titleEn: 'Mental Health Issues' },
-    { titleBn: 'দাম্পত্য কলহ', titleEn: 'Marital Conflict' },
-    { titleBn: 'সহিংসতার ঝুঁকি ও আত্মহত্যা', titleEn: 'Risk of Violence & Suicide' },
-    { titleBn: 'ঝুঁকিপূর্ণ ও অনিরাপদ যৌন আচরণ', titleEn: 'Risky & Unsafe Sexual Behavior' },
-    { titleBn: 'যৌনবাহিত সংক্রমণ সমূহ', titleEn: 'Sexually Transmitted Infections' },
-    { titleBn: 'বিবাহ বিচ্ছেদ', titleEn: 'Divorce' },
+    { icon: '🎓', titleBn: 'বিদ্যালয় থেকে ঝরে পড়া', titleEn: 'School Dropout' },
+    { icon: '👶', titleBn: 'অপরিণত, অপরিপক্ক, অপুষ্ট ও স্বল্প ওজনের শিশুর জন্মদান', titleEn: 'Birth of Immature, Malnourished Children' },
+    { icon: '🍎', titleBn: 'কিশোরী মায়ের পুষ্টির অভাবজনিত সমস্যা', titleEn: 'Nutritional Problems in Adolescent Mothers' },
+    { icon: '⚕️', titleBn: 'দীর্ঘস্থায়ী প্রজনন স্বাস্থ্য সমস্যা', titleEn: 'Long-term Reproductive Health Issues' },
+    { icon: '🏥', titleBn: 'প্রসব ও প্রসব পরবর্তী জটিলতায় ভোগা', titleEn: 'Delivery & Postnatal Complications' },
+    { icon: '⚠️', titleBn: 'মা ও শিশুমৃত্যুর ঝুঁকি বাড়ে', titleEn: 'Increased Maternal & Child Mortality' },
+    { icon: '🧠', titleBn: 'মানসিক স্বাস্থ্য সমস্যা', titleEn: 'Mental Health Issues' },
+    { icon: '💔', titleBn: 'দাম্পত্য কলহ', titleEn: 'Marital Conflict' },
+    { icon: '🚨', titleBn: 'সহিংসতার ঝুঁকি ও আত্মহত্যা', titleEn: 'Risk of Violence & Suicide' },
+    { icon: '⚡', titleBn: 'ঝুঁকিপূর্ণ ও অনিরাপদ যৌন আচরণ', titleEn: 'Risky & Unsafe Sexual Behavior' },
+    { icon: '🦠', titleBn: 'যৌনবাহিত সংক্রমণ সমূহ', titleEn: 'Sexually Transmitted Infections' },
+    { icon: '📋', titleBn: 'বিবাহ বিচ্ছেদ', titleEn: 'Divorce' },
   ];
 
   const cardHtml = consequences.map((item) => `
     <div class="role-card">
-      <span class="role-card__number" aria-hidden="true">•</span>
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
       <div class="role-card__content">
         <h4 class="role-card__title bn">${item.titleBn}</h4>
         <h4 class="role-card__title en">${item.titleEn}</h4>
