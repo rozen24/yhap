@@ -2787,7 +2787,7 @@
           onclick="handleModuleClick(5)">
           <span class="module-status" data-state="active" aria-label="In progress">●</span>
           <span class="module-info">
-            <span class="module-title bn">মডিউল-৬: কিশোর-কিশোরী পরিবার পরিকল্পনা</span>
+            <span class="module-title bn">মডিউল-৬: কৈশোরকালীন পরিবার পরিকল্পনা</span>
             <span class="module-title en">Module-6: Adolescent Family Planning</span>
             <span class="module-progress">
               <span class="module-progress__track"><span class="module-progress__fill" style="width:50%"></span></span>
@@ -2797,7 +2797,7 @@
           <svg class="module-chevron" aria-hidden="true"><use href="#icon-chevron"/></svg>
         </button>
         <div class="lesson-list" id="modPanel-5" role="list">
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(5,0)"><span class="lesson-dot" data-state="done" aria-hidden="true">✓</span><span class="lesson-text"><span class="lesson-label bn">কিশোর-কিশোরী পরিবার পরিকল্পনা</span><span class="lesson-label en">Adolescent family planning</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(5,0)"><span class="lesson-dot" data-state="done" aria-hidden="true">✓</span><span class="lesson-text"><span class="lesson-label bn">কৈশোরকালীন পরিবার পরিকল্পনা</span><span class="lesson-label en">Adolescent family planning</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(5,1)"><span class="lesson-dot" aria-hidden="true">2</span><span class="lesson-text"><span class="lesson-label bn">পরিবার পরিকল্পনা পদ্ধতির তুলনামূলক বিশ্লেষণ</span><span class="lesson-label en">Comparison of family planning methods</span></span></button>
         </div>
       </div>
@@ -3610,6 +3610,15 @@ function syncSidebarActive(modIdx, lesIdx) {
   }
 }
 
+/* ── BOTTOM LABEL ────────────────────────────────── */
+function syncBottomLabel() {
+  const el = document.getElementById('bottomLabel');
+  const isBn = currentLang === 'bn';
+  el.textContent = activeLesson === null
+    ? (isBn ? `মডিউল ${activeModule+1} — পরিচিতি` : `Module ${activeModule+1} — Overview`)
+    : (isBn ? `মডিউল ${activeModule+1} — পাঠ ${activeLesson+1}` : `Module ${activeModule+1} — Lesson ${activeLesson+1}`);
+}
+
 /* ── RENDER: MODULE OVERVIEW ─────────────────────── */
 function renderModulePage(modIdx) {
   const cacheKey = 'mod:' + modIdx;
@@ -3731,7 +3740,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isChildMarriageConsequencesLesson = (modIdx === 4 && lesIdx === 1);
   // Child Marriage Prevention — Module 5 Lesson 3
   const isChildMarriagePreventionLesson = (modIdx === 4 && lesIdx === 2);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson;
+  // Adolescent Family Planning — Module 6 Lesson 1
+  const isFamilyPlanningLesson = (modIdx === 5 && lesIdx === 0);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -3744,6 +3755,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isChildMarriageLesson ? buildChildMarriageSection()
     : isChildMarriageConsequencesLesson ? buildChildMarriageConsequencesSection()
     : isChildMarriagePreventionLesson ? buildChildMarriagePreventionSection()
+    : isFamilyPlanningLesson ? buildFamilyPlanningSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -5275,13 +5287,267 @@ function buildChildMarriagePreventionSection() {
   `;
 }
 
-/* ── BOTTOM LABEL ────────────────────────────────── */
-function syncBottomLabel() {
-  const el = document.getElementById('bottomLabel');
-  const isBn = currentLang === 'bn';
-  el.textContent = activeLesson === null
-    ? (isBn ? `মডিউল ${activeModule+1} — পরিচিতি` : `Module ${activeModule+1} — Overview`)
-    : (isBn ? `মডিউল ${activeModule+1} — পাঠ ${activeLesson+1}` : `Module ${activeModule+1} — Lesson ${activeLesson+1}`);
+/* ───────────────────────────────────────────────────────────────────────────────────
+   Adolescent Family Planning — Module 6 Lesson 1
+───────────────────────────────────────────────────────────────────────────────────── */
+function buildFamilyPlanningSection() {
+  // Permanent Methods
+  const permanentMethods = [
+    { 
+      img: 'images/fp/tube.png',
+      color: 'teal',
+      icon: '♀️',
+      titleBn: 'নারী স্থায়ী পদ্ধতি বা টিউবেকটমি',
+      titleEn: 'Female Sterilization / Tubectomy'
+    },
+    { 
+      img: 'images/fp/nsd.png',
+      color: 'rose',
+      icon: '♂️',
+      titleBn: 'পুরুষ স্থায়ী পদ্ধতি বা এনএসভি',
+      titleEn: 'Male Sterilization / NSV'
+    }
+  ];
+
+  // Short-term Methods
+  const shortTermMethods = [
+    { 
+      img: 'images/fp/bori.png',
+      color: 'sky',
+      icon: '💊',
+      titleBn: 'খাবার বড়ি',
+      titleEn: 'Oral Pills'
+    },
+    { 
+      img: 'images/fp/condom.png',
+      color: 'amber',
+      icon: '🛡️',
+      titleBn: 'কনডম',
+      titleEn: 'Condom'
+    },
+    { 
+      img: 'images/fp/injection.png',
+      color: 'indigo',
+      icon: '💉',
+      titleBn: 'ইনজেকশন',
+      titleEn: 'Injection'
+    }
+  ];
+
+  // Long-term Methods
+  const longTermMethods = [
+    { 
+      img: 'images/fp/implant.png',
+      color: 'green',
+      icon: '⚕️',
+      titleBn: 'ইমপ্ল্যান্ট',
+      titleEn: 'Implant'
+    },
+    { 
+      img: 'images/fp/injection2.png',
+      color: 'violet',
+      icon: '🔄',
+      titleBn: 'আইইউডি',
+      titleEn: 'IUD'
+    }
+  ];
+
+  // Build cards HTML for each category
+  const buildCardHtml = (methods) => {
+    return methods.map(m => `
+      <article class="hygiene-card hygiene-card--${m.color}">
+        <div class="hygiene-card__media">
+          <img class="hygiene-card__img" src="${m.img}"
+               alt="${m.titleEn}"
+               loading="lazy" decoding="async" width="800" height="600" />
+        </div>
+        <div class="hygiene-card__icon" aria-hidden="true">${m.icon}</div>
+        <h3 class="hygiene-card__title">
+          <span class="bn">${m.titleBn}</span>
+          <span class="en">${m.titleEn}</span>
+        </h3>
+      </article>
+    `).join('');
+  };
+
+  const permanentCardsHtml = buildCardHtml(permanentMethods);
+  const shortTermCardsHtml = buildCardHtml(shortTermMethods);
+  const longTermCardsHtml = buildCardHtml(longTermMethods);
+
+  return `
+  <div class="hygiene-section__header">
+                <div class="hygiene-section__eyebrow">
+                    <span class="hygiene-section__dot" aria-hidden="true"></span>
+                    <span class="bn">পরিবার পরিকল্পনা</span>
+                    <span class="en">Family Planning</span>
+                </div>
+                <h2 class="hygiene-section__title">
+                    <span class="bn">কৈশোরকালীন পরিবার পরিকল্পনা</span>
+                    <span class="en">Modern Family Planning Methods</span>
+                </h2>
+            </div>
+
+            <div
+                style="background: rgba(20,184,166,0.08); border-left: 4px solid #14B8A6; padding: 20px; border-radius: 8px; margin-bottom: 28px;">
+                <p style="font-size: 14px; line-height: 1.6; color: var(--text-primary); margin: 0;">
+                    <span class="bn">একটি দম্পতি তার আয়ের সাথে ও পারিপার্শ্বিক আর্থ-সামাজিক অবস্থার সাথে সঙ্গতি রেখে
+                        কখন ও কয়টি সন্তান গ্রহণ করবে, দু'টি সন্তানের মাঝে বিরতি কতদিনের হবে বা তার পরিবার কত ছোট বা বড়
+                        হবে তা ঠিক করা এবং সে লক্ষ্য অর্জনের জন্য যথাযথ ব্যবস্থা অবলম্বন করাই হলো পরিবার পরিকল্পনা।
+                        যেকোনো কিশোরীই শারীরিক ও মানসিকভাবে সন্তান ধারণের জন্য উপযুক্ত থাকে না। প্রজনন স্বাস্থ্য বিষয়ক
+                        অনেক প্রয়োজনীয় তথ্য জানা না থাকার কারনে, এ সময় গর্ভধারণ মা ও সন্তান উভয়ের জন্যই অনেক
+                        ঝুঁকিপূর্ণ হয়ে থাকে।</span>
+                    <span class="en">According to Bangladesh's family planning program, any capable couple can adopt
+                        modern family planning methods. In Bangladesh, family planning methods are provided considering
+                        marital status and number of children.</span>
+                </p>
+            </div>
+ <section class="role-section" aria-label="Essential facilities in educational institutions">
+    <div class="role-section__header role-section__header--faciliy">
+        <div class="role-section__icon" aria-hidden="true">🚻</div>
+        <div class="role-section__titles">
+            <h2 class="role-section__title bn">পরিবার পরিকল্পনা আধুনিক পদ্ধতিসমূহ
+            </h2>
+            <h2 class="role-section__title en">Essential Facilities in Educational Institutions</h2>
+            <p class="role-section__sub bn">বাংলাদেশের পরিবার পরিকল্পনা কার্যক্রম অনুযায়ী যেকোনো সক্ষম দম্পতি আধুনিক
+                পরিবার পরিকল্পনা পদ্ধতি গ্রহণ করতে পারেন। বাংলাদেশে পরিবার পরিকল্পনা কার্যক্রমে বৈবাহিক অবস্থা এবং
+                সন্তান সংখ্যা বিবেচনা করে পদ্ধতি দেয়া হয়।</p>
+            <p class="role-section__sub en">Five facilities every educational institution should provide</p>
+        </div>
+    </div>
+    <div class="role-section__body">
+        <section class="fp-section">
+            <!-- Permanent Methods -->
+            <div style="margin-bottom: 32px;">
+                <h3
+                    style="font-size: 18px; font-weight: 700; color: #14B8A6; margin: 0 0 20px 0; padding-bottom: 12px; border-bottom: 2px solid rgba(20,184,166,0.2);">
+                    <span class="bn">স্থায়ী</span>
+                    <span class="en">Permanent Methods</span>
+                </h3>
+                <div class="hygiene-grid">
+
+                    <article class="hygiene-card hygiene-card--teal">
+                        <div class="hygiene-card__media">
+                            <img class="hygiene-card__img" src="images/fp/tube.png"
+                                alt="Female Sterilization / Tubectomy" loading="lazy" decoding="async" width="800"
+                                height="600">
+                        </div>
+                        <div class="hygiene-card__icon" aria-hidden="true">♀️</div>
+                        <h3 class="hygiene-card__title">
+                            <span class="bn">নারী স্থায়ী পদ্ধতি বা টিউবেকটমি</span>
+                            <span class="en">Female Sterilization / Tubectomy</span>
+                        </h3>
+                    </article>
+
+                    <article class="hygiene-card hygiene-card--rose">
+                        <div class="hygiene-card__media">
+                            <img class="hygiene-card__img" src="images/fp/nsd.png" alt="Male Sterilization / NSV"
+                                loading="lazy" decoding="async" width="800" height="600">
+                        </div>
+                        <div class="hygiene-card__icon" aria-hidden="true">♂️</div>
+                        <h3 class="hygiene-card__title">
+                            <span class="bn">পুরুষ স্থায়ী পদ্ধতি বা এনএসভি</span>
+                            <span class="en">Male Sterilization / NSV</span>
+                        </h3>
+                    </article>
+
+                </div>
+            </div>
+
+            <!-- Temporary Methods -->
+            <div>
+                <h3
+                    style="font-size: 18px; font-weight: 700; color: #6366F1; margin: 0 0 20px 0; padding-bottom: 12px; border-bottom: 2px solid rgba(99,102,241,0.2);">
+                    <span class="bn">অস্থায়ী</span>
+                    <span class="en">Temporary Methods</span>
+                </h3>
+
+                <!-- Short-term Methods -->
+                <div style="margin-bottom: 32px;">
+                    <h4
+                        style="font-size: 16px; font-weight: 600; color: #3B82F6; margin: 0 0 16px 0; padding-left: 16px; border-left: 3px solid #3B82F6;">
+                        <span class="bn">১. স্বল্পমেয়াদি</span>
+                        <span class="en">1. Short-term Methods</span>
+                    </h4>
+                    <div class="hygiene-grid">
+
+                        <article class="hygiene-card hygiene-card--sky">
+                            <div class="hygiene-card__media">
+                                <img class="hygiene-card__img" src="images/fp/bori.png" alt="Oral Pills" loading="lazy"
+                                    decoding="async" width="800" height="600">
+                            </div>
+                            <div class="hygiene-card__icon" aria-hidden="true">💊</div>
+                            <h3 class="hygiene-card__title">
+                                <span class="bn">খাবার বড়ি</span>
+                                <span class="en">Oral Pills</span>
+                            </h3>
+                        </article>
+
+                        <article class="hygiene-card hygiene-card--amber">
+                            <div class="hygiene-card__media">
+                                <img class="hygiene-card__img" src="images/fp/condom.png" alt="Condom" loading="lazy"
+                                    decoding="async" width="800" height="600">
+                            </div>
+                            <div class="hygiene-card__icon" aria-hidden="true">🛡️</div>
+                            <h3 class="hygiene-card__title">
+                                <span class="bn">কনডম</span>
+                                <span class="en">Condom</span>
+                            </h3>
+                        </article>
+
+                        <article class="hygiene-card hygiene-card--indigo">
+                            <div class="hygiene-card__media">
+                                <img class="hygiene-card__img" src="images/fp/injection.png" alt="Injection"
+                                    loading="lazy" decoding="async" width="800" height="600">
+                            </div>
+                            <div class="hygiene-card__icon" aria-hidden="true">💉</div>
+                            <h3 class="hygiene-card__title">
+                                <span class="bn">ইনজেকশন</span>
+                                <span class="en">Injection</span>
+                            </h3>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- Long-term Methods -->
+                <div>
+                    <h4
+                        style="font-size: 16px; font-weight: 600; color: #8B5CF6; margin: 0 0 16px 0; padding-left: 16px; border-left: 3px solid #8B5CF6;">
+                        <span class="bn">২. দীর্ঘমেয়াদি</span>
+                        <span class="en">2. Long-term Methods</span>
+                    </h4>
+                    <div class="hygiene-grid">
+
+                        <article class="hygiene-card hygiene-card--green">
+                            <div class="hygiene-card__media">
+                                <img class="hygiene-card__img" src="images/fp/implant.png" alt="Implant" loading="lazy"
+                                    decoding="async" width="800" height="600">
+                            </div>
+                            <div class="hygiene-card__icon" aria-hidden="true">⚕️</div>
+                            <h3 class="hygiene-card__title">
+                                <span class="bn">ইমপ্ল্যান্ট</span>
+                                <span class="en">Implant</span>
+                            </h3>
+                        </article>
+
+                        <article class="hygiene-card hygiene-card--violet">
+                            <div class="hygiene-card__media">
+                                <img class="hygiene-card__img" src="images/fp/injection2.png" alt="IUD" loading="lazy"
+                                    decoding="async" width="800" height="600">
+                            </div>
+                            <div class="hygiene-card__icon" aria-hidden="true">🔄</div>
+                            <h3 class="hygiene-card__title">
+                                <span class="bn">আইইউডি</span>
+                                <span class="en">IUD</span>
+                            </h3>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+</section>
+  `;
 }
 
 /* ── SIDEBAR TOGGLE ──────────────────────────────── */
