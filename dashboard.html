@@ -1968,6 +1968,29 @@
       margin: 0;
     }
 
+    .role-card__number {
+      position: absolute;
+      top: 14px; left: 16px;
+      font-size: 24px;
+      color: var(--rc-accent);
+      font-weight: 700;
+    }
+
+    .role-card__content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .role-card__title {
+      font-family: 'Noto Serif Bengali', serif;
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--text-primary);
+      margin: 0;
+      font-weight: 600;
+    }
+
     /* Accent palette used across the 3 sections */
     .role-card--rose    { --rc-accent:#F43F5E; --rc-soft:rgba(244,63,94,0.10);   --rc-ring:rgba(244,63,94,0.22); }
     .role-card--pink    { --rc-accent:#EC4899; --rc-soft:rgba(236,72,153,0.10);  --rc-ring:rgba(236,72,153,0.22); }
@@ -3702,7 +3725,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isNocturnalEmissionLesson = (modIdx === 3 && lesIdx === 1);
   // Child Marriage — Module 5 Lesson 1
   const isChildMarriageLesson = (modIdx === 4 && lesIdx === 0);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson;
+  // Child Marriage Consequences — Module 5 Lesson 2
+  const isChildMarriageConsequencesLesson = (modIdx === 4 && lesIdx === 1);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -3713,6 +3738,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isMaleSystemLesson ? buildMaleReproSection()
     : isNocturnalEmissionLesson ? buildNocturnalEmissionSection()
     : isChildMarriageLesson ? buildChildMarriageSection()
+    : isChildMarriageConsequencesLesson ? buildChildMarriageConsequencesSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -5153,6 +5179,50 @@ function buildChildMarriageSection() {
       <p class="en">If a girl child is married before completing 18 years of age without her consent, she can file for the annulment of the marriage in court under the Muslim Dissolution of Marriage Act, 1939, provided that the girl has not consummated the marriage with her husband or if she files for annulment before reaching 19 years of age. To prevent child marriage, the implementation of the Child Marriage Restraint Act, 2017 and Child Marriage Restraint Rules, 2018 is ongoing. Punishment for child marriage: If an adult woman or man conducts a child marriage, it is an offense, and they can be punished with imprisonment up to 2 (two) years or a fine up to 1 (one) lakh taka or both, and if the fine is not paid, they can be imprisoned for up to 3 (three) months.</p>
     </div>
 
+  </section>
+  `;
+}
+
+/* ── CHILD MARRIAGE CONSEQUENCES (Module 5, Lesson 2) ── */
+function buildChildMarriageConsequencesSection() {
+  const consequences = [
+    { titleBn: 'বিদ্যালয় থেকে ঝরে পড়া', titleEn: 'School Dropout' },
+    { titleBn: 'অপরিণত, অপরিপক্ক, অপুষ্ট ও স্বল্প ওজনের শিশুর জন্মদান', titleEn: 'Birth of Immature, Malnourished Children' },
+    { titleBn: 'কিশোরী মায়ের পুষ্টির অভাবজনিত সমস্যা', titleEn: 'Nutritional Problems in Adolescent Mothers' },
+    { titleBn: 'দীর্ঘস্থায়ী প্রজনন স্বাস্থ্য সমস্যা', titleEn: 'Long-term Reproductive Health Issues' },
+    { titleBn: 'প্রসব ও প্রসব পরবর্তী জটিলতায় ভোগা', titleEn: 'Delivery & Postnatal Complications' },
+    { titleBn: 'মা ও শিশুমৃত্যুর ঝুঁকি বাড়ে', titleEn: 'Increased Maternal & Child Mortality' },
+    { titleBn: 'মানসিক স্বাস্থ্য সমস্যা', titleEn: 'Mental Health Issues' },
+    { titleBn: 'দাম্পত্য কলহ', titleEn: 'Marital Conflict' },
+    { titleBn: 'সহিংসতার ঝুঁকি ও আত্মহত্যা', titleEn: 'Risk of Violence & Suicide' },
+    { titleBn: 'ঝুঁকিপূর্ণ ও অনিরাপদ যৌন আচরণ', titleEn: 'Risky & Unsafe Sexual Behavior' },
+    { titleBn: 'যৌনবাহিত সংক্রমণ সমূহ', titleEn: 'Sexually Transmitted Infections' },
+    { titleBn: 'বিবাহ বিচ্ছেদ', titleEn: 'Divorce' },
+  ];
+
+  const cardHtml = consequences.map((item) => `
+    <div class="role-card">
+      <span class="role-card__number" aria-hidden="true">•</span>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.titleBn}</h4>
+        <h4 class="role-card__title en">${item.titleEn}</h4>
+      </div>
+    </div>`).join('');
+
+  return `
+  <section class="role-section" aria-label="Consequences of child marriage">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">⚠️</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">বাল্যবিবাহের পরিণতি</h2>
+        <h2 class="role-section__title en">Consequences of Child Marriage</h2>
+        <p class="role-section__sub bn">বাল্যবিবাহের ১২টি গুরুতর পরিণতি</p>
+        <p class="role-section__sub en">12 serious consequences of child marriage</p>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${cardHtml}</div>
+    </div>
   </section>
   `;
 }
