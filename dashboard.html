@@ -2808,6 +2808,583 @@
     }
 
     /* ============================================================
+       ADOLESCENT MOTHERHOOD HUB SECTION
+    ============================================================ */
+    .am-intro-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 22px 26px;
+      background: linear-gradient(135deg, #F43F5E 0%, #BE123C 55%, #7F1D1D 100%);
+      border-radius: var(--radius);
+      margin-bottom: 32px;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .am-intro-box::after {
+      content: '';
+      position: absolute;
+      top: -40%; right: -10%;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      pointer-events: none;
+    }
+
+    .am-intro-icon {
+      flex-shrink: 0;
+      font-size: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: var(--radius-sm);
+      position: relative;
+      z-index: 1;
+    }
+
+    .am-intro-titles {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      z-index: 1;
+      min-width: 0;
+    }
+
+    .am-intro-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .am-intro-sub {
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.9);
+      margin: 0;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    /* Hub Section */
+    .am-hub-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .am-section-header {
+      width: 100%;
+      text-align: center;
+    }
+
+    .am-section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 12px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .am-section-title span {
+      display: block;
+    }
+
+    .am-section-subtitle {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin: 0;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Hub Container */
+    .am-hub-container {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    /* Central circle */
+    .am-hub-center {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(231,76,60,0.12), rgba(244,63,94,0.08));
+      border: 2px solid rgba(231,76,60,0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 10;
+      box-shadow: 0 4px 16px rgba(231,76,60,0.15);
+    }
+
+    .am-hub-center__icon {
+      font-size: 44px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .am-hub-center__text {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 2px 0;
+      line-height: 1.2;
+    }
+
+    /* Hub grid - 10 points in circular arrangement */
+    .am-hub-grid {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .am-hub-card {
+      position: absolute;
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 10px;
+      line-height: 1.3;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s var(--ease);
+      background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.5) 100%);
+      border: 2px solid rgba(231,76,60,0.3);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 10px;
+    }
+
+    .am-hub-card:hover {
+      transform: scale(1.14);
+      box-shadow: 0 4px 16px rgba(231,76,60,0.2);
+    }
+
+    .am-hub-card {
+      --radius: 190px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle)));
+    }
+
+    .am-hub-card:hover {
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle))) scale(1.14);
+    }
+
+    .am-hub-card__icon {
+      font-size: 26px;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .am-hub-card__text {
+      margin: 0;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--text-primary);
+    }
+
+    /* Gradient backgrounds for each card */
+    .am-hub-card:nth-child(1) { border-color: rgba(230,126,34,0.4); background: linear-gradient(135deg, rgba(230,126,34,0.1) 0%, rgba(230,126,34,0.02) 100%); }
+    .am-hub-card:nth-child(2) { border-color: rgba(155,89,182,0.4); background: linear-gradient(135deg, rgba(155,89,182,0.1) 0%, rgba(155,89,182,0.02) 100%); }
+    .am-hub-card:nth-child(3) { border-color: rgba(231,76,60,0.4); background: linear-gradient(135deg, rgba(231,76,60,0.1) 0%, rgba(231,76,60,0.02) 100%); }
+    .am-hub-card:nth-child(4) { border-color: rgba(244,67,54,0.4); background: linear-gradient(135deg, rgba(244,67,54,0.1) 0%, rgba(244,67,54,0.02) 100%); }
+    .am-hub-card:nth-child(5) { border-color: rgba(233,30,99,0.4); background: linear-gradient(135deg, rgba(233,30,99,0.1) 0%, rgba(233,30,99,0.02) 100%); }
+    .am-hub-card:nth-child(6) { border-color: rgba(156,39,176,0.4); background: linear-gradient(135deg, rgba(156,39,176,0.1) 0%, rgba(156,39,176,0.02) 100%); }
+    .am-hub-card:nth-child(7) { border-color: rgba(103,58,183,0.4); background: linear-gradient(135deg, rgba(103,58,183,0.1) 0%, rgba(103,58,183,0.02) 100%); }
+    .am-hub-card:nth-child(8) { border-color: rgba(63,81,181,0.4); background: linear-gradient(135deg, rgba(63,81,181,0.1) 0%, rgba(63,81,181,0.02) 100%); }
+    .am-hub-card:nth-child(9) { border-color: rgba(33,150,243,0.4); background: linear-gradient(135deg, rgba(33,150,243,0.1) 0%, rgba(33,150,243,0.02) 100%); }
+    .am-hub-card:nth-child(10) { border-color: rgba(3,155,229,0.4); background: linear-gradient(135deg, rgba(3,155,229,0.1) 0%, rgba(3,155,229,0.02) 100%); }
+
+    [data-theme="dark"] .am-hub-card {
+      background: linear-gradient(135deg, rgba(231,76,60,0.12) 0%, rgba(244,67,54,0.06) 100%) !important;
+      border-color: rgba(231,76,60,0.3) !important;
+    }
+
+    [data-theme="dark"] .am-hub-card:hover {
+      background: linear-gradient(135deg, rgba(231,76,60,0.18) 0%, rgba(244,67,54,0.08) 100%) !important;
+    }
+
+    [data-theme="dark"] .am-hub-center {
+      background: linear-gradient(135deg, rgba(231,76,60,0.15) 0%, rgba(244,67,54,0.08) 100%);
+      border-color: rgba(231,76,60,0.4);
+    }
+
+    /* Info Box */
+    .am-info-box {
+      position: relative;
+      background: linear-gradient(135deg, #14B8A6 0%, #0F766E 55%, #134E4A 100%);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .am-info-box::before {
+      content: '';
+      position: absolute;
+      bottom: -40%; left: -10%;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      pointer-events: none;
+    }
+
+    .am-info-box p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.9);
+      position: relative;
+      z-index: 1;
+    }
+
+    .am-info-box strong {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       ADOLESCENT PREGNANCY PREVENTION — Module 7 Lesson 2 (app-*)
+    ════════════════════════════════════════════════════════════ */
+
+    .app-intro-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 22px 26px;
+      background: linear-gradient(135deg, #2ECC71 0%, #27AE60 55%, #1E8449 100%);
+      border-radius: var(--radius);
+      margin-bottom: 32px;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .app-intro-box::after {
+      content: '';
+      position: absolute;
+      top: -40%; right: -10%;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      pointer-events: none;
+    }
+
+    .app-intro-icon {
+      flex-shrink: 0;
+      font-size: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: var(--radius-sm);
+      position: relative;
+      z-index: 1;
+    }
+
+    .app-intro-titles {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      z-index: 1;
+      min-width: 0;
+    }
+
+    .app-intro-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .app-intro-sub {
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.9);
+      margin: 0;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    /* Hub Section */
+    .app-hub-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .app-section-header {
+      width: 100%;
+      text-align: center;
+    }
+
+    .app-section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 12px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .app-section-title span {
+      display: block;
+    }
+
+    .app-section-subtitle {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin: 0;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Hub Container */
+    .app-hub-container {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    /* Central circle */
+    .app-hub-center {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(46,204,113,0.12), rgba(46,204,113,0.08));
+      border: 2px solid rgba(46,204,113,0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 10;
+      box-shadow: 0 4px 16px rgba(46,204,113,0.15);
+    }
+
+    .app-hub-center__icon {
+      font-size: 44px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .app-hub-center__text {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 2px 0;
+      line-height: 1.2;
+    }
+
+    /* Hub grid - 7 points in circular arrangement */
+    .app-hub-grid {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .app-hub-card {
+      position: absolute;
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 10px;
+      line-height: 1.3;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s var(--ease);
+      background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.5) 100%);
+      border: 2px solid rgba(46,204,113,0.3);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 10px;
+    }
+
+    .app-hub-card:hover {
+      transform: scale(1.14);
+      box-shadow: 0 4px 16px rgba(46,204,113,0.2);
+    }
+
+    .app-hub-card {
+      --radius: 190px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle)));
+    }
+
+    .app-hub-card:hover {
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle))) scale(1.14);
+    }
+
+    .app-hub-card__icon {
+      font-size: 26px;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .app-hub-card__text {
+      margin: 0;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--text-primary);
+    }
+
+    /* Gradient backgrounds for 7 cards */
+    .app-hub-card:nth-child(1) { border-color: rgba(52,152,219,0.4); background: linear-gradient(135deg, rgba(52,152,219,0.1) 0%, rgba(52,152,219,0.02) 100%); }
+    .app-hub-card:nth-child(2) { border-color: rgba(155,89,182,0.4); background: linear-gradient(135deg, rgba(155,89,182,0.1) 0%, rgba(155,89,182,0.02) 100%); }
+    .app-hub-card:nth-child(3) { border-color: rgba(230,126,34,0.4); background: linear-gradient(135deg, rgba(230,126,34,0.1) 0%, rgba(230,126,34,0.02) 100%); }
+    .app-hub-card:nth-child(4) { border-color: rgba(46,204,113,0.4); background: linear-gradient(135deg, rgba(46,204,113,0.1) 0%, rgba(46,204,113,0.02) 100%); }
+    .app-hub-card:nth-child(5) { border-color: rgba(52,73,94,0.4); background: linear-gradient(135deg, rgba(52,73,94,0.1) 0%, rgba(52,73,94,0.02) 100%); }
+    .app-hub-card:nth-child(6) { border-color: rgba(20,184,166,0.4); background: linear-gradient(135deg, rgba(20,184,166,0.1) 0%, rgba(20,184,166,0.02) 100%); }
+    .app-hub-card:nth-child(7) { border-color: rgba(26,188,156,0.4); background: linear-gradient(135deg, rgba(26,188,156,0.1) 0%, rgba(26,188,156,0.02) 100%); }
+
+    [data-theme="dark"] .app-hub-card {
+      background: linear-gradient(135deg, rgba(46,204,113,0.12) 0%, rgba(46,204,113,0.06) 100%) !important;
+      border-color: rgba(46,204,113,0.3) !important;
+    }
+
+    [data-theme="dark"] .app-hub-card:hover {
+      background: linear-gradient(135deg, rgba(46,204,113,0.18) 0%, rgba(46,204,113,0.08) 100%) !important;
+    }
+
+    [data-theme="dark"] .app-hub-center {
+      background: linear-gradient(135deg, rgba(46,204,113,0.15) 0%, rgba(46,204,113,0.08) 100%);
+      border-color: rgba(46,204,113,0.4);
+    }
+
+    /* Info Box */
+    .app-info-box {
+      position: relative;
+      background: linear-gradient(135deg, #2ECC71 0%, #27AE60 55%, #1E8449 100%);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .app-info-box::before {
+      content: '';
+      position: absolute;
+      bottom: -40%; left: -10%;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      pointer-events: none;
+    }
+
+    .app-info-box p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.9);
+      position: relative;
+      z-index: 1;
+    }
+
+    .app-info-box strong {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       PREGNANCY DANGER SIGNS — Module 7 Lesson 3
+    ════════════════════════════════════════════════════════════ */
+
+    .danger-signs-section {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .danger-signs-intro {
+      text-align: center;
+    }
+
+    .danger-signs-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 12px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .danger-signs-title span {
+      display: block;
+    }
+
+    .danger-signs-subtitle {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin: 0;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ============================================================
        REDUCED MOTION — disable expensive animations when requested
     ============================================================ */
     @media (prefers-reduced-motion: reduce) {
@@ -3974,7 +4551,13 @@ function renderLessonPage(modIdx, lesIdx) {
   // Adolescent Family Planning — Module 6 Lesson 1 & 2
   const isFamilyPlanningLesson = (modIdx === 5 && lesIdx === 0);
   const isFamilyPlanningComparisonLesson = (modIdx === 5 && lesIdx === 1);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson;
+  // Adolescent Motherhood — Module 7 Lesson 1
+  const isAdolescentMotherhoodLesson = (modIdx === 6 && lesIdx === 0);
+  // Adolescent Pregnancy Prevention — Module 7 Lesson 2
+  const isAdolescentPregnancyPreventionLesson = (modIdx === 6 && lesIdx === 1);
+  // Pregnancy Danger Signs — Module 7 Lesson 3
+  const isPregnancyDangerSignsLesson = (modIdx === 6 && lesIdx === 2);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -3989,6 +4572,9 @@ function renderLessonPage(modIdx, lesIdx) {
     : isChildMarriagePreventionLesson ? buildChildMarriagePreventionSection()
     : isFamilyPlanningLesson ? buildFamilyPlanningSection()
     : isFamilyPlanningComparisonLesson ? buildFamilyPlanningComparisonSection()
+    : isAdolescentMotherhoodLesson ? buildAdolescentMotherhoodSection()
+    : isAdolescentPregnancyPreventionLesson ? buildAdolescentPregnancyPreventionSection()
+    : isPregnancyDangerSignsLesson ? buildPregnancyDangerSignsSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -5523,6 +6109,90 @@ function buildChildMarriagePreventionSection() {
 /* ───────────────────────────────────────────────────────────────────────────────────
    Adolescent Family Planning — Module 6 Lesson 1
 ───────────────────────────────────────────────────────────────────────────────────── */
+/* ── ADOLESCENT MOTHERHOOD (Module 7, Lesson 1) ── */
+function buildAdolescentMotherhoodSection() {
+  const maternalRisks = [
+    { icon: '🩸', titleBn: 'গর্ভজনিত উচ্চ রক্তচাপ', titleEn: 'Pregnancy-induced Hypertension' },
+    { icon: '💉', titleBn: 'গর্ভকালীন রক্তস্বল্পতা', titleEn: 'Pregnancy Anemia' },
+    { icon: '🚨', titleBn: 'প্রি-একলাম্পসিয়া', titleEn: 'Preeclampsia' },
+    { icon: '⚠️', titleBn: 'বাধাগ্রস্ত প্রসব', titleEn: 'Obstructed Labor' },
+    { icon: '🕐', titleBn: 'বিলম্বিত প্রসব', titleEn: 'Prolonged Labor' },
+    { icon: '💔', titleBn: 'মৃত সন্তান প্রসব', titleEn: 'Stillbirth' },
+    { icon: '⏱️', titleBn: 'সময়ের আগে সন্তান জন্মদান', titleEn: 'Premature Delivery' },
+    { icon: '👶', titleBn: 'কম ওজনের সন্তান জন্ম দেওয়া', titleEn: 'Low Birth Weight' },
+    { icon: '😔', titleBn: 'প্রসব-পরবর্তী বিষণ্নতা', titleEn: 'Postpartum Depression' },
+    { icon: '🍼', titleBn: 'অপর্যাপ্ত শিশু পরিচর্যা ও বুকের দুধ', titleEn: 'Inadequate Childcare & Breastfeeding' },
+  ];
+
+  const hubCards = maternalRisks.map((item, idx) => `
+    <div class="am-hub-card" style="--angle: ${idx * 36}deg;">
+      <div class="am-hub-card__icon" aria-hidden="true">${item.icon}</div>
+      <p class="am-hub-card__text bn">${item.titleBn}</p>
+      <p class="am-hub-card__text en">${item.titleEn}</p>
+    </div>
+  `).join('');
+
+  return `
+  <!-- ═════════════════════════════════════════════════════════ -->
+  <!-- ADOLESCENT MOTHERHOOD INTRO -->
+  <!-- ═════════════════════════════════════════════════════════ -->
+  <div class="am-intro-box">
+    <div class="am-intro-icon" aria-hidden="true">⚠️</div>
+    <div class="am-intro-titles">
+      <h2 class="am-intro-title bn">কৈশোরকালীন মাতৃত্ব</h2>
+      <h2 class="am-intro-title en">Adolescent Motherhood</h2>
+      <p class="am-intro-sub bn">কিশোরীদের গর্ভধারণে মা ও শিশু মৃত্যুর ঝুঁকি অনেক বেশি। শারীরিক গঠন ও সামাজিক অবস্থার কারণে তাদের গর্ভকালীন, প্রসবকালীন এবং প্রসবপরবর্তী সময়ে এই ঝুঁকির পরিমাণ অনেক বেড়ে যায়।</p>
+      <p class="am-intro-sub en">Teenage pregnancy poses significant risks to both mother and child mortality. Due to physical development and social conditions, these risks increase substantially during pregnancy, labor, and the postpartum period.</p>
+    </div>
+  </div>
+
+  <!-- ═════════════════════════════════════════════════════════ -->
+  <!-- MATERNAL RISKS HUB SECTION -->
+  <!-- ═════════════════════════════════════════════════════════ -->
+  <section class="am-hub-section" aria-label="Adolescent motherhood maternal risks">
+    <div class="am-section-header">
+      <h2 class="am-section-title">
+        <span class="bn">কিশোরীদের মাতৃত্বজনিত ঝুঁকি</span>
+        <span class="en">Maternal Risks in Adolescent Pregnancy</span>
+      </h2>
+      <p class="am-section-subtitle">
+        <span class="bn">কৈশোরে গর্ভধারণ অত্যন্ত ঝুঁকিপূর্ণ। কারণ এ সময় কিশোরীর নিজেরই শারীরিক বৃদ্ধি অসম্পূর্ণ থাকে এবং তার শারীরিক ও মানসিক বিকাশ তখনও চলমান থাকে। এ অবস্থায় গর্ভধারণ করলে কিশোরী মা ও শিশু উভয়ই ঝুঁকির মধ্যে পড়ে যায়।</span>
+        <span class="en">Teenage pregnancy is extremely risky. At this stage, the adolescent's own physical growth is incomplete and physical and mental development is still ongoing. In this condition, both the teenage mother and child face serious risks.</span>
+      </p>
+    </div>
+
+    <!-- Hub Container -->
+    <div class="am-hub-container">
+      <!-- Central circle -->
+      <div class="am-hub-center">
+        <div class="am-hub-center__icon">⚠️</div>
+        <p class="am-hub-center__text bn">কিশোরীদের</p>
+        <p class="am-hub-center__text bn">মাতৃত্ব ঝুঁকি</p>
+        <p class="am-hub-center__text en">Maternal</p>
+        <p class="am-hub-center__text en">Risks</p>
+      </div>
+
+      <!-- 10 surrounding cards -->
+      <div class="am-hub-grid">
+        ${hubCards}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════════════════════════════ -->
+  <!-- ADDITIONAL INFO BOX -->
+  <!-- ═════════════════════════════════════════════════════════ -->
+  <div class="am-info-box">
+    <p class="bn">
+      গর্ভাবস্থায় কিশোরীর সাথে সাথে তার মধ্যে বেড়ে ওঠা সন্তানেরও নানা প্রকার সেবা ও পুষ্টির দরকার হয় যা কিশোরী মা এর জন্য সবসময় পাওয়া সচরাচর সম্ভব নয়। কৈশোরে সন্তান ধারণ এবং জন্মদানের ক্ষেত্রে মা এবং সন্তান বিভিন্ন ঝুঁকির সম্মুখীন হতে পারে।
+    </p>
+    <p class="en">
+      During pregnancy, both the adolescent mother and the developing child require various services and nutrition, which may not always be readily available to the teenage mother. In adolescent pregnancy and childbirth, both the mother and child can face various risks.
+    </p>
+  </div>
+  `;
+}
+
 function buildFamilyPlanningComparisonSection() {
   return `
   <!-- ════════════════════════════════════════════════════════════ -->
@@ -5747,6 +6417,168 @@ function buildFamilyPlanningComparisonSection() {
           </tr>
         </tbody>
       </table>
+    </div>
+  </section>
+  `;
+}
+
+/* ─────────────────────────────────────────────────
+   Adolescent Pregnancy Prevention — Module 7 Lesson 2
+───────────────────────────────────────────────────── */
+function buildAdolescentPregnancyPreventionSection() {
+  const preventionActions = [
+    { icon: '📢', titleBn: 'বাল্যবিবাহ বন্ধে সচেতনতা বৃদ্ধি করা', titleEn: 'Raise awareness about child marriage' },
+    { icon: '⚖️', titleBn: 'দেশের প্রচলিত আইনের যথাযথ প্রয়োগ', titleEn: 'Proper implementation of existing laws' },
+    { icon: '🚨', titleBn: 'কৈশোরকালীন গর্ভধারণের কুফল সম্পর্কে সচেতনতা', titleEn: 'Awareness about harmful effects' },
+    { icon: '🎓', titleBn: 'পরিবার পরিকল্পনা সম্পর্কে জনগণের মধ্য সচেতনতা বাড়ানো', titleEn: 'Raise awareness about family planning' },
+    { icon: '💊', titleBn: 'পরিবার পরিকল্পনা পদ্ধতি ব্যবহারে উৎসাহ প্রদান', titleEn: 'Encourage family planning methods' },
+    { icon: '👨‍👩‍👧‍👦', titleBn: 'দেরিতে সন্তান গ্রহণে সচেতন করা', titleEn: 'Educate about delayed childbearing' },
+    { icon: '🏥', titleBn: 'পরিবার পরিকল্পনা পদ্ধতির সহজপ্রাপ্যতা নিশ্চিত করা', titleEn: 'Ensure access to family planning' },
+  ];
+
+  const hubCards = preventionActions.map((item, idx) => {
+    // 7 items, angles: 0, 51.43, 102.86, 154.29, 205.71, 257.14, 308.57
+    // Rounding to nearest degree for practical use
+    const angles = [0, 51, 103, 154, 206, 257, 309];
+    const angle = angles[idx];
+    return `
+    <div class="app-hub-card" style="--angle: ${angle}deg;">
+      <div class="app-hub-card__icon" aria-hidden="true">${item.icon}</div>
+      <p class="app-hub-card__text bn">${item.titleBn}</p>
+      <p class="app-hub-card__text en">${item.titleEn}</p>
+    </div>
+  `;
+  }).join('');
+
+  return `
+  <!-- ═════════════════════════════════════════════════════════ -->
+  <!-- INTRO BOX -->
+  <!-- ═════════════════════════════════════════════════════════ -->
+  <div class="app-intro-box">
+    <div class="app-intro-icon" aria-hidden="true">✅</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">কৈশোরকালীন গর্ভধারণ প্রতিরোধে করণীয়</h2>
+      <h2 class="app-intro-title en">Actions to Prevent Adolescent Pregnancy</h2>
+      <p class="app-intro-sub bn">নিরাপদ মাতৃত্বের জন্য কৈশোরকালীন গর্ভধারণ যেন না হয়, সে জন্য আমাদের বর্ণিত কার্যক্রম জোরদার করতে হবে।</p>
+      <p class="app-intro-sub en">To ensure safe motherhood and prevent adolescent pregnancy, we must strengthen the following actions and interventions.</p>
+    </div>
+  </div>
+
+  <!-- ═════════════════════════════════════════════════════════ -->
+  <!-- PREVENTION ACTIONS HUB SECTION -->
+  <!-- ═════════════════════════════════════════════════════════ -->
+  <section class="app-hub-section" aria-label="Actions to prevent adolescent pregnancy">
+    <!-- Hub Container -->
+    <div class="app-hub-container">
+      <!-- Central circle -->
+      <div class="app-hub-center">
+        <div class="app-hub-center__icon">🛡️</div>
+        <p class="app-hub-center__text bn">প্রতিরোধে</p>
+        <p class="app-hub-center__text bn">করণীয়</p>
+        <p class="app-hub-center__text en">Prevention</p>
+        <p class="app-hub-center__text en">Actions</p>
+      </div>
+
+      <!-- 7 surrounding cards -->
+      <div class="app-hub-grid">
+        ${hubCards}
+      </div>
+    </div>
+  </section>
+  `;
+}
+
+/* ─────────────────────────────────────────────────
+   Pregnancy Danger Signs — Module 7 Lesson 3
+───────────────────────────────────────────────────── */
+function buildPregnancyDangerSignsSection() {
+  const dangerSigns = [
+    {
+      num: '01',
+      img: 'images/gorvo/1.png',
+      icon: '🩸',
+      titleBn: 'রক্তস্রাব',
+      titleEn: 'Bleeding',
+      descBn: 'গর্ভাবস্থায় রক্তস্রাব, প্রসবের সময় বা প্রসবের পর খুব বেশি রক্তস্রাব, রক্তস্রাব পফুল না পড়া।',
+      descEn: 'Bleeding during pregnancy, excessive bleeding during or after labor, or clotting issues.',
+      color: 'rose'
+    },
+    {
+      num: '02',
+      img: 'images/gorvo/2.png',
+      icon: '👀',
+      titleBn: 'মাথাব্যথা ও ঝাপসা দেখা',
+      titleEn: 'Headache & Blurred Vision',
+      descBn: 'গর্ভাবস্থায়, প্রসবকালে ও প্রসবের পরে শরীরে পানি আসা, খুব বেশি মাথাব্যথা, চোখে ঝাপসা দেখা।',
+      descEn: 'Severe headaches, blurred vision, and body swelling during pregnancy, labor, or after delivery.',
+      color: 'violet'
+    },
+    {
+      num: '03',
+      img: 'images/gorvo/3.png',
+      icon: '🌡️',
+      titleBn: 'ভীষণ জ্বর',
+      titleEn: 'High Fever',
+      descBn: 'গর্ভাবস্থায় বা প্রসবের পর তিন দিনের বেশি বা দুর্গন্ধযুক্ত শ্রাব।',
+      descEn: 'High fever lasting more than three days after pregnancy or delivery with foul-smelling discharge.',
+      color: 'red'
+    },
+    {
+      num: '04',
+      img: 'images/gorvo/4.png',
+      icon: '⏱️',
+      titleBn: 'বিলম্বিত প্রসব',
+      titleEn: 'Prolonged Labor',
+      descBn: 'প্রসবব্যথা ১২ ঘণ্টার বেশি থাকা, প্রসবের সময় বাচ্চার মাথা ছাড়া অন্য কোনো অঙ্গ প্রথমে বের হওয়া।',
+      descEn: 'Labor pain lasting more than 12 hours or abnormal baby position during delivery.',
+      color: 'amber'
+    },
+    {
+      num: '05',
+      img: 'images/gorvo/5.png',
+      icon: '⚡',
+      titleBn: 'খিঁচুনি',
+      titleEn: 'Seizures',
+      descBn: 'গর্ভাবস্থায়, প্রসবের সময় বা এসবের পরে খিঁচুনি।',
+      descEn: 'Seizures during pregnancy, labor, or after delivery.',
+      color: 'indigo'
+    }
+  ];
+
+  const cardsHtml = dangerSigns.map((sign) => `
+    <article class="hygiene-card hygiene-card--${sign.color}">
+      <div class="hygiene-card__num">${sign.num}</div>
+      <div class="hygiene-card__media">
+        <img class="hygiene-card__img" src="${sign.img}"
+             alt="${sign.titleEn}"
+             loading="lazy" decoding="async" width="800" height="600" />
+      </div>
+      <div class="hygiene-card__icon" aria-hidden="true">${sign.icon}</div>
+      <h3 class="hygiene-card__title">
+        <span class="bn">${sign.titleBn}</span>
+        <span class="en">${sign.titleEn}</span>
+      </h3>
+      <p class="hygiene-card__desc">
+        <span class="bn">${sign.descBn}</span>
+        <span class="en">${sign.descEn}</span>
+      </p>
+    </article>
+  `).join('');
+
+  return `
+  <section class="danger-signs-section" aria-label="Danger signs during pregnancy and childbirth">
+    <div class="danger-signs-intro">
+      <h2 class="danger-signs-title">
+        <span class="bn">গর্ভকালীন বিপদ চিহ্ন</span>
+        <span class="en">Danger Signs During Pregnancy & Childbirth</span>
+      </h2>
+      <p class="danger-signs-subtitle">
+        <span class="bn">নিম্নলিখিত লক্ষণ দেখা দিলে অবিলম্বে স্বাস্থ্যকর্মী বা চিকিৎসকের কাছে যান:</span>
+        <span class="en">If you experience any of these signs, seek immediate medical help:</span>
+      </p>
+    </div>
+    <div class="hygiene-grid">
+      ${cardsHtml}
     </div>
   </section>
   `;
