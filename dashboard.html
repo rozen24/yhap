@@ -1877,6 +1877,7 @@
     .role-section__header--faciliy { background: linear-gradient(135deg, #14B8A6 0%, #0F766E 55%, #134E4A 100%); }
     .role-section__header--warn    { background: linear-gradient(135deg, #F43F5E 0%, #BE123C 55%, #7F1D1D 100%); }
     .role-section__header--manage  { background: linear-gradient(135deg, #10B981 0%, #047857 55%, #064E3B 100%); }
+    .role-section__header--success { background: linear-gradient(135deg, #10B981 0%, #059669 55%, #047857 100%); }
     /* New color variants for additional sections */
     .role-section__header--teal    { background: linear-gradient(135deg, #14B8A6 0%, #0F766E 55%, #134E4A 100%); }
     .role-section__header--rose    { background: linear-gradient(135deg, #C2185B 0%, #880E4F 55%, #4A148C 100%); }
@@ -3728,7 +3729,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isChildMarriageLesson = (modIdx === 4 && lesIdx === 0);
   // Child Marriage Consequences — Module 5 Lesson 2
   const isChildMarriageConsequencesLesson = (modIdx === 4 && lesIdx === 1);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson;
+  // Child Marriage Prevention — Module 5 Lesson 3
+  const isChildMarriagePreventionLesson = (modIdx === 4 && lesIdx === 2);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -3740,6 +3743,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isNocturnalEmissionLesson ? buildNocturnalEmissionSection()
     : isChildMarriageLesson ? buildChildMarriageSection()
     : isChildMarriageConsequencesLesson ? buildChildMarriageConsequencesSection()
+    : isChildMarriagePreventionLesson ? buildChildMarriagePreventionSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -5219,6 +5223,49 @@ function buildChildMarriageConsequencesSection() {
         <h2 class="role-section__title en">Consequences of Child Marriage</h2>
         <p class="role-section__sub bn">বাল্যবিবাহের ১২টি গুরুতর পরিণতি</p>
         <p class="role-section__sub en">12 serious consequences of child marriage</p>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${cardHtml}</div>
+    </div>
+  </section>
+  `;
+}
+
+/* ─────────────────────────────────────────────────
+   Child Marriage Prevention — Module 5 Lesson 3
+───────────────────────────────────────────────────── */
+function buildChildMarriagePreventionSection() {
+  const preventionActions = [
+    { icon: '📋', titleBn: 'ছেলে-মেয়ে সকলের জন্ম নিবন্ধন করা', titleEn: 'Register all boys and girls at birth' },
+    { icon: '✔️', titleBn: 'বিয়ে পড়ানোর সময় কাজী যেন অবশ্যই জন্মসনদ দেখে বিয়ে পড়ান', titleEn: 'Ensure Qazis check birth certificates during marriage' },
+    { icon: '⚖️', titleBn: 'বাল্যবিবাহের আইন সম্পর্কে সচেতনতা তৈরি করা', titleEn: 'Raise awareness about child marriage laws' },
+    { icon: '📢', titleBn: 'বাল্যবিবাহ ও এর ভয়াবহ পরিণতি সম্পর্কে জনসচেতনতা', titleEn: 'Create public awareness about consequences' },
+    { icon: '🛡️', titleBn: 'জন্মনিয়ন্ত্রণ ও দেরিতে সন্তান গ্রহণে কিশোর-কিশোরীদের সচেতন করা', titleEn: 'Educate on contraception and delayed childbearing' },
+    { icon: '💊', titleBn: 'কিশোর-কিশোরীদের জন্য জন্মনিয়ন্ত্রণ পদ্ধতির সহজপ্রাপ্যতা নিশ্চিত করা', titleEn: 'Ensure access to contraception for adolescents' },
+    { icon: '🤝', titleBn: 'কমিউনিটি পর্যায়ে বাল্যবিবাহ নিয়ে আলোচনা ও প্রতিরোধ ব্যবস্থা', titleEn: 'Organize community discussions and prevention measures' },
+    { icon: '✊', titleBn: 'বাল্যবিবাহ নিরোধ আইন ও বিধিমালার বাস্তব প্রয়োগ নিশ্চিত করা', titleEn: 'Implement child marriage prohibition laws correctly' },
+    { icon: '📞', titleBn: 'বাল্যবিবাহের খবর চাইল্ড হেল্পলাইন ১০৯৮-এ রিপোর্ট করা', titleEn: 'Report child marriage to helpline 1098' },
+  ];
+
+  const cardHtml = preventionActions.map((item) => `
+    <div class="role-card">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.titleBn}</h4>
+        <h4 class="role-card__title en">${item.titleEn}</h4>
+      </div>
+    </div>`).join('');
+
+  return `
+  <section class="role-section" aria-label="Prevention of child marriage">
+    <div class="role-section__header role-section__header--success">
+      <div class="role-section__icon" aria-hidden="true">✅</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">বাল্যবিবাহ প্রতিরোধে করণীয়</h2>
+        <h2 class="role-section__title en">Actions to Prevent Child Marriage</h2>
+        <p class="role-section__sub bn">বাল্যবিবাহ রোধের জন্য ৯টি গুরুত্বপূর্ণ পদক্ষেপ</p>
+        <p class="role-section__sub en">9 essential steps to prevent child marriage</p>
       </div>
     </div>
     <div class="role-section__body">
