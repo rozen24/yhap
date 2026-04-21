@@ -101,6 +101,7 @@
     /* ============================================================
        LAYOUT
     ============================================================ */
+    .d-none { display: none !important; }
     .l-dashboard {
       display: grid;
       grid-template-areas: "topbar topbar" "sidebar main";
@@ -2234,6 +2235,225 @@
     }
 
     /* ============================================================
+       FAMILY PLANNING COMPARISON SECTION
+    ============================================================ */
+    .section-divider {
+      margin: 32px 0 24px 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .section-divider__title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .section-divider__title span {
+      display: block;
+    }
+
+    .section-divider__title::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-blue), var(--color-cyan));
+      border-radius: 2px;
+      margin-top: 8px;
+    }
+
+    /* Table Wrapper */
+    .table-wrapper {
+      overflow-x: auto;
+      margin-bottom: 40px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    /* Comparison Table */
+    .comparison-table,
+    .details-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .comparison-table thead,
+    .details-table thead {
+      background: linear-gradient(135deg, rgba(28,171,226,0.08), rgba(105,206,236,0.06));
+      border-bottom: 2px solid var(--border);
+    }
+
+    .comparison-table th,
+    .details-table th {
+      padding: 16px 5px;
+      text-align: start;
+      font-weight: 700;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+
+    .comparison-table tbody tr,
+    .details-table tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background-color var(--dur) var(--ease);
+    }
+
+    .comparison-table tbody tr:hover,
+    .details-table tbody tr:hover {
+      background-color: var(--surface-2);
+    }
+
+    .table-header {
+      padding: 14px 12px;
+      font-size: 13px;
+    }
+
+    .method-header {
+      text-align: center;
+      padding: 12px 8px;
+    }
+
+    .table-cell {
+      padding: 14px 12px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .category-cell {
+      font-weight: 600;
+      color: var(--text-primary);
+      background: var(--surface-2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 200px;
+    }
+
+    .cell-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .check-cell {
+      text-align: center;
+      color: var(--color-green);
+      font-size: 18px;
+      font-weight: 700;
+      background: rgba(46,204,113,0.05);
+    }
+
+    .method-name-cell {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      color: var(--text-primary);
+      background: var(--surface-2);
+      min-width: 180px;
+      white-space: nowrap;
+    }
+
+    .duration-cell {
+      padding: 14px 12px;
+    }
+
+    /* Method Badge */
+    .method-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+    }
+
+    .method-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .method-badge--sky {
+      background: rgba(14,165,233,0.15);
+      color: #0284C7;
+      border: 1px solid rgba(14,165,233,0.3);
+    }
+
+    .method-badge--amber {
+      background: rgba(245,158,11,0.15);
+      color: #B45309;
+      border: 1px solid rgba(245,158,11,0.3);
+    }
+
+    .method-badge--green {
+      background: rgba(16,185,129,0.15);
+      color: #047857;
+      border: 1px solid rgba(16,185,129,0.3);
+    }
+
+    .method-badge--indigo {
+      background: rgba(99,102,241,0.15);
+      color: #4F46E5;
+      border: 1px solid rgba(99,102,241,0.3);
+    }
+
+    .method-badge--violet {
+      background: rgba(139,92,246,0.15);
+      color: #7C3AED;
+      border: 1px solid rgba(139,92,246,0.3);
+    }
+
+    .method-badge--rose {
+      background: rgba(244,63,94,0.15);
+      color: #BE123C;
+      border: 1px solid rgba(244,63,94,0.3);
+    }
+
+    .method-badge--teal {
+      background: rgba(20,184,166,0.15);
+      color: #0D9488;
+      border: 1px solid rgba(20,184,166,0.3);
+    }
+
+    /* Duration Badge */
+    .duration-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(99,102,241,0.12);
+      color: #4F46E5;
+      border: 1px solid rgba(99,102,241,0.25);
+      white-space: nowrap;
+    }
+
+    [data-theme="dark"] .table-wrapper {
+      border-color: var(--border);
+    }
+
+    [data-theme="dark"] .comparison-table thead,
+    [data-theme="dark"] .details-table thead {
+      background: linear-gradient(135deg, rgba(28,171,226,0.12), rgba(105,206,236,0.08));
+    }
+
+    [data-theme="dark"] .category-cell,
+    [data-theme="dark"] .method-name-cell {
+      background: var(--surface-2);
+    }
+
+    /* ============================================================
        CHILD MARRIAGE AWARENESS SECTION
     ============================================================ */
     /* ─── CHILD MARRIAGE SECTION (REDESIGNED) ─── */
@@ -2244,18 +2464,28 @@
 
     /* Intro paragraph */
     .cm-intro-paragraph {
-    max-width: 100%;
-    font-size: 15px;
-    line-height: 1.8;
-    color: var(--text-secondary);
-    margin-bottom: 40px;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 10px;
-   }
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
+    }
+
+    .cm-intro-paragraph:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-blue);
+    }
 
     .cm-intro-paragraph p {
       margin: 0;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text-secondary);
     }
 
     /* Highlighted content box */
@@ -2283,8 +2513,9 @@
       border-left-color: #FFD54F;
     }
     [data-theme="dark"] .cm-intro-paragraph {
-      background-color: #000;
-      color: #fff;
+      background: var(--surface);
+      border-color: var(--border);
+      color: var(--text-secondary);
     }
 
     /* Two-column layout: circles (left) + hub (right) */
@@ -3333,8 +3564,8 @@ const MODULES = [
     descBn:'এই মডিউলে বাল্যবিবাহ, তার পরিণতি এবং বাল্যবিবাহ রোধে করণীয় সম্পর্কে আলোচনা করা হয়েছে।',
     descEn:'This module covers child marriage, its consequences, and actions to prevent child marriage.',
     icon:'⚠️', totalLessons:3, doneLessons:2 },
-  { titleBn:'মডিউল-৬: কিশোর-কিশোরী পরিবার পরিকল্পনা', titleEn:'Module-6: Adolescent Family Planning',
-    descBn:'এই মডিউলে কিশোর-কিশোরী পরিবার পরিকল্পনা এবং পরিবার পরিকল্পনা পদ্ধতির তুলনামূলক বিশ্লেষণ নিয়ে আলোচনা করা হয়েছে।',
+  { titleBn:'মডিউল-৬: কৈশোরকালীন পরিবার পরিকল্পনা', titleEn:'Module-6: Adolescent Family Planning',
+    descBn:'এই মডিউলে কৈশোরকালীন পরিবার পরিকল্পনা এবং পরিবার পরিকল্পনা পদ্ধতির তুলনামূলক বিশ্লেষণ নিয়ে আলোচনা করা হয়েছে।',
     descEn:'This module covers adolescent family planning and a comparison of family planning methods.',
     icon:'👨‍👩‍👧', totalLessons:2, doneLessons:1 },
   { titleBn:'মডিউল-৭: কিশোরী মাতৃত্ব', titleEn:'Module-7: Adolescent Motherhood',
@@ -3417,7 +3648,7 @@ const LESSONS_BN = [
   ['মহিলাদের প্রজনন ব্যবস্থা','মাসিকের সময় কী করবেন','মাসিক ব্যবস্থাপনায় অভিভাবকদের ভূমিকা','মাসিকের অস্বাভাবিকতা'],
   ['পুরুষ প্রজনন ব্যবস্থা','ছেলেদের স্বপ্নে বীর্যপাতের ব্যাবস্থাপনা'],
   ['বাল্যবিবাহ','বাল্যবিবাহের পরিণতি','বাল্যবিবাহ রোধে করণীয়'],
-  ['কিশোর-কিশোরী পরিবার পরিকল্পনা','পরিবার পরিকল্পনা পদ্ধতির তুলনামূলক বিশ্লেষণ'],
+  ['কৈশোরকালীন পরিবার পরিকল্পনা','পরিবার পরিকল্পনা পদ্ধতির তুলনামূলক বিশ্লেষণ'],
   ['কিশোরী মাতৃত্ব','কিশোরী গর্ভধারণ রোধে করণীয়','গর্ভকালীন বিপদ চিহ্ন','কিশোরী গর্ভধারণ ব্যবস্থাপনা','প্রসব-পরবর্তী সেবা'],
   ['যৌনবাহিত ও প্রজনন স্বাস্থ্য সংক্রান্ত সংক্রমণ','যৌনবাহিত রোগের ঝুঁকি','প্রজনন স্বাস্থ্য বা যৌনবাহিত রোগের জটিলতা'],
   ['এইচআইভি এবং এইডস','উইন্ডো পিরিয়ড'],
@@ -3740,9 +3971,10 @@ function renderLessonPage(modIdx, lesIdx) {
   const isChildMarriageConsequencesLesson = (modIdx === 4 && lesIdx === 1);
   // Child Marriage Prevention — Module 5 Lesson 3
   const isChildMarriagePreventionLesson = (modIdx === 4 && lesIdx === 2);
-  // Adolescent Family Planning — Module 6 Lesson 1
+  // Adolescent Family Planning — Module 6 Lesson 1 & 2
   const isFamilyPlanningLesson = (modIdx === 5 && lesIdx === 0);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson;
+  const isFamilyPlanningComparisonLesson = (modIdx === 5 && lesIdx === 1);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -3756,6 +3988,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isChildMarriageConsequencesLesson ? buildChildMarriageConsequencesSection()
     : isChildMarriagePreventionLesson ? buildChildMarriagePreventionSection()
     : isFamilyPlanningLesson ? buildFamilyPlanningSection()
+    : isFamilyPlanningComparisonLesson ? buildFamilyPlanningComparisonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -5290,6 +5523,235 @@ function buildChildMarriagePreventionSection() {
 /* ───────────────────────────────────────────────────────────────────────────────────
    Adolescent Family Planning — Module 6 Lesson 1
 ───────────────────────────────────────────────────────────────────────────────────── */
+function buildFamilyPlanningComparisonSection() {
+  return `
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- TABLE 1: NUMBER OF CHILDREN vs METHOD SUITABILITY -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section class="fp-comparison-section" aria-label="Family planning method comparison">
+    <div class="section-divider">
+      <h2 class="section-divider__title">
+        <span class="bn">সন্তান সংখ্যা বনাম পদ্ধতি গ্রহণের সুযোগ</span>
+        <span class="en">Number of Children vs Method Eligibility</span>
+      </h2>
+    </div>
+
+    <!-- Comparison Table 1 -->
+    <div class="table-wrapper">
+      <table class="comparison-table" role="grid">
+        <thead>
+          <tr>
+            <th class="table-header" scope="col">
+              <span class="bn">সন্তান সংখ্যা</span>
+              <span class="en">Children</span>
+            </th>
+            <th class="table-header method-header" scope="col">
+              <span class="method-badge method-badge--sky">💊 <span class="bn">খাবার বড়ি</span><span class="en">Pills</span></span>
+            </th>
+            <th class="table-header method-header" scope="col">
+              <span class="method-badge method-badge--amber">🛡️ <span class="bn">কনডম</span><span class="en">Condom</span></span>
+            </th>
+            <th class="table-header method-header" scope="col">
+              <span class="method-badge method-badge--green">💉 <span class="bn">ইনজেকশন</span><span class="en">Injection</span></span>
+            </th>
+            <th class="table-header method-header" scope="col">
+              <span class="method-badge method-badge--indigo">⚕️ <span class="bn">ইমপ্ল্যান্ট</span><span class="en">Implant</span></span>
+            </th>
+            <th class="table-header method-header" scope="col">
+              <span class="method-badge method-badge--violet">🔄 <span class="bn">আইইউডি</span><span class="en">IUD</span></span>
+            </th>
+            <th class="table-header method-header" scope="col">
+              <span class="method-badge method-badge--rose">♂️ <span class="bn">ভেসেকটমি</span><span class="en">Vasectomy</span></span>
+            </th>
+            <th class="table-header method-header" scope="col">
+              <span class="method-badge method-badge--teal">♀️ <span class="bn">টিউবেকটমি</span><span class="en">Tubectomy</span></span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="table-cell category-cell">
+              <span class="cell-icon">💑</span>
+              <span class="bn">নবদম্পতি বা এখনো সন্তান নেয়ার পরিকল্পনা নেই</span>
+              <span class="en">Newlyweds / No plans for children</span>
+            </td>
+            <td class="table-cell check-cell">✓</td>
+            <td class="table-cell check-cell">✓</td>
+            <td class="table-cell"></td>
+            <td class="table-cell"></td>
+            <td class="table-cell"></td>
+            <td class="table-cell"></td>
+            <td class="table-cell"></td>
+          </tr>
+          <tr>
+            <td class="table-cell category-cell">
+              <span class="cell-icon">👶</span>
+              <span class="bn">একটি জীবিত সন্তান আছে এবং পরবর্তী সন্তান এখনি নয়</span>
+              <span class="en">One child / Want to delay next</span>
+            </td>
+            <td class="table-cell check-cell">✓</td>
+            <td class="table-cell check-cell">✓</td>
+            <td class="table-cell check-cell">✓</td>
+            <td class="table-cell check-cell">✓</td>
+            <td class="table-cell check-cell">✓</td>
+            <td class="table-cell"></td>
+            <td class="table-cell"></td>
+          </tr>
+          <tr>
+            <td class="table-cell category-cell">
+              <span class="cell-icon">👨‍👩‍👧‍👦</span>
+              <span class="bn">দুই বা ততোধিক জীবিত সন্তান আছে</span>
+              <span class="en">Two or more children</span>
+            </td>
+            <td class="table-cell check-cell">✓</td>
+            <td class="table-cell check-cell">✓</td>
+            <td class="table-cell check-cell">✓</td>
+            <td class="table-cell check-cell">✓</td>
+            <td class="table-cell check-cell">✓</td>
+            <td class="table-cell check-cell">✓</td>
+            <td class="table-cell check-cell">✓</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- TABLE 2: METHOD DETAILS (USAGE & DURATION) -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section class="fp-details-section" aria-label="Family planning method details">
+    <div class="section-divider">
+      <h2 class="section-divider__title">
+        <span class="bn">পরিবার পরিকল্পনা পদ্ধতিসমূহ : ব্যবহার, প্রয়োগ ও মেয়াদকাল</span>
+        <span class="en">Family Planning Methods: Usage, Application & Duration</span>
+      </h2>
+    </div>
+
+    <!-- Details Table -->
+    <div class="table-wrapper">
+      <table class="details-table" role="grid">
+        <thead>
+          <tr>
+            <th class="table-header" scope="col">
+              <span class="bn">পদ্ধতিসমূহ</span>
+              <span class="en">Methods</span>
+            </th>
+            <th class="table-header" scope="col">
+              <span class="bn">ব্যবহার ও প্রয়োগ</span>
+              <span class="en">Usage & Application</span>
+            </th>
+            <th class="table-header" scope="col">
+              <span class="bn">মেয়াদকাল</span>
+              <span class="en">Duration</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="table-cell method-name-cell">
+              <span class="method-badge method-badge--sky">💊</span>
+              <span class="bn">খাবার বড়ি</span>
+              <span class="en">Oral Pills</span>
+            </td>
+            <td class="table-cell">
+              <span class="bn">প্রতিদিন খেতে হয়</span>
+              <span class="en">Must take daily</span>
+            </td>
+            <td class="table-cell duration-cell">
+              <span class="duration-badge">দৈনিক</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="table-cell method-name-cell">
+              <span class="method-badge method-badge--amber">🛡️</span>
+              <span class="bn">কনডম</span>
+              <span class="en">Condom</span>
+            </td>
+            <td class="table-cell">
+              <span class="bn">প্রতিবার সহবাসের সময় ব্যবহার করতে হয়</span>
+              <span class="en">Use every time during intercourse</span>
+            </td>
+            <td class="table-cell duration-cell">
+              <span class="duration-badge">ব্যবহারের সময়</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="table-cell method-name-cell">
+              <span class="method-badge method-badge--green">💉</span>
+              <span class="bn">ইনজেকশন</span>
+              <span class="en">Injection</span>
+            </td>
+            <td class="table-cell">
+              <span class="bn">গভীর মাংসপেশীতে দিতে হয়</span>
+              <span class="en">Administered deep into muscle</span>
+            </td>
+            <td class="table-cell duration-cell">
+              <span class="duration-badge">তিন মাস</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="table-cell method-name-cell">
+              <span class="method-badge method-badge--indigo">⚕️</span>
+              <span class="bn">ইমপ্ল্যান্ট</span>
+              <span class="en">Implant</span>
+            </td>
+            <td class="table-cell">
+              <span class="bn">চামড়ার নিচে স্থাপন করা হয়</span>
+              <span class="en">Inserted under the skin</span>
+            </td>
+            <td class="table-cell duration-cell">
+              <span class="duration-badge">৩ বা ৫ বছর</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="table-cell method-name-cell">
+              <span class="method-badge method-badge--violet">🔄</span>
+              <span class="bn">আইইউডি</span>
+              <span class="en">IUD</span>
+            </td>
+            <td class="table-cell">
+              <span class="bn">জরায়ুতে প্রয়োগ করা হয়</span>
+              <span class="en">Placed in the uterus</span>
+            </td>
+            <td class="table-cell duration-cell">
+              <span class="duration-badge">১০ বছর</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="table-cell method-name-cell">
+              <span class="method-badge method-badge--rose">♂️</span>
+              <span class="bn">ভ্যাসেকটমি/এনএসভি</span>
+              <span class="en">Vasectomy / NSV</span>
+            </td>
+            <td class="table-cell">
+              <span class="bn">অন্ডথলির চামড়াতে ছোট অপারেশনের মাধ্যমে করা হয়</span>
+              <span class="en">Minor surgery on scrotal skin</span>
+            </td>
+            <td class="table-cell duration-cell">
+              <span class="duration-badge">স্থায়ী</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="table-cell method-name-cell">
+              <span class="method-badge method-badge--teal">♀️</span>
+              <span class="bn">টিউবেকটমি</span>
+              <span class="en">Tubectomy</span>
+            </td>
+            <td class="table-cell">
+              <span class="bn">তলপেটে ছোট অপারেশনের মাধ্যমে করা হয়</span>
+              <span class="en">Minor surgery on abdomen</span>
+            </td>
+            <td class="table-cell duration-cell">
+              <span class="duration-badge">স্থায়ী</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  `;
+}
+
 function buildFamilyPlanningSection() {
   // Permanent Methods
   const permanentMethods = [
@@ -5375,13 +5837,13 @@ function buildFamilyPlanningSection() {
   const longTermCardsHtml = buildCardHtml(longTermMethods);
 
   return `
-  <div class="hygiene-section__header">
+  <div class="hygiene-section__header d-none">
                 <div class="hygiene-section__eyebrow">
                     <span class="hygiene-section__dot" aria-hidden="true"></span>
                     <span class="bn">পরিবার পরিকল্পনা</span>
                     <span class="en">Family Planning</span>
                 </div>
-                <h2 class="hygiene-section__title">
+                <h2 class="hygiene-section__title d-none">
                     <span class="bn">কৈশোরকালীন পরিবার পরিকল্পনা</span>
                     <span class="en">Modern Family Planning Methods</span>
                 </h2>
