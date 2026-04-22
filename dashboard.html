@@ -4703,7 +4703,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isPregnancyManagementCareLesson = (modIdx === 6 && lesIdx === 3);
   // Module 8 Lesson 1 — Sexually transmitted and reproductive tract infections
   const isStiLesson = (modIdx === 7 && lesIdx === 0);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson;
+  // Module 8 Lesson 3 — Complications of reproductive tract and sexually transmitted infections
+  const isStiComplicationsLesson = (modIdx === 7 && lesIdx === 2);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4723,6 +4725,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isPregnancyDangerSignsLesson ? buildPregnancyDangerSignsSection()
     : isPregnancyManagementCareLesson ? buildPregnancyManagementCareSection()
     : isStiLesson ? buildStiLessonSection()
+    : isStiComplicationsLesson ? buildStiComplicationsSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -7136,6 +7139,75 @@ function buildStiLessonSection() {
       <p class="app-intro-sub en">In most cases, the symptoms of sexually transmitted diseases are not obvious. In particular, these signs often remain unnoticed in girls compared with boys. As a result, treatment is often delayed, which can lead to complications.</p>
     </div>
   </div>
+  `;
+}
+
+function buildStiComplicationsSection() {
+  const complications = [
+    { bn: 'এইচআইভি সংক্রমণের সম্ভাবনা বেড়ে যায়', en: 'The risk of HIV infection increases' },
+    { bn: 'হিউম্যান প্যাপিলোমা ভাইরাসে (এইচপিভি) আক্রান্ত নারীদের জরায়ুর মুখে ক্যান্সার হবার সম্ভাবনা থাকে', en: 'Women infected with human papillomavirus (HPV) may develop cervical cancer' },
+    { bn: 'সংক্রমিত নারী বা পুরুষের পরবর্তীতে স্থায়ী বন্ধ্যাত্ব হতে পারে', en: 'An infected woman or man may later develop permanent infertility' },
+    { bn: 'মস্তিষ্ক, যকৃত বা হৃৎপিণ্ডে জটিলতা দেখা দিতে পারে', en: 'Complications may occur in the brain, liver, or heart' },
+    { bn: 'সংক্রমিত পুরুষের মূত্রনালী সরু হয়ে যেতে পারে', en: 'The urethra of an infected man may become narrowed' },
+    { bn: 'আক্রান্ত মায়ের গর্ভপাত হতে পারে বা মৃত সন্তান প্রসব করতে পারে', en: 'An infected mother may have a miscarriage or give birth to a stillborn baby' },
+    { bn: 'আক্রান্ত মায়ের জরায়ুর পরিবর্তে ডিম্বনালীতে ভ্রূণ বড় হতে পারে', en: 'The fetus may grow in the fallopian tube instead of the uterus' },
+    { bn: 'আক্রান্ত মায়ের শিশু জন্মগত ত্রুটি নিয়ে বা চোখে ইনফেকশন নিয়ে জন্ম নিতে পারে, যা থেকে পরবর্তীতে অন্ধত্বও হতে পারে', en: 'The baby of an infected mother may be born with congenital defects or eye infection, which may later lead to blindness' },
+  ];
+
+  const symptoms = [
+    { bn: 'যৌনাঙ্গে চুলকানি হওয়া', en: 'Itching in the genital area' },
+    { bn: 'যৌনাঙ্গ থেকে দুর্গন্ধযুক্ত বা দুর্গন্ধবিহীন স্রাব যাওয়া', en: 'Foul-smelling or odorless discharge from the genital area' },
+    { bn: 'যৌনাঙ্গ থেকে পুঁজ বা পুঁজের মতো যাওয়া ও বারবার প্রস্রাব হওয়া', en: 'Pus-like discharge from the genital area and frequent urination' },
+    { bn: 'যৌনাঙ্গে ক্ষত হওয়া', en: 'Sores or ulcers in the genital area' },
+    { bn: 'যৌনমিলনে ব্যথা হওয়া', en: 'Pain during sexual intercourse' },
+    { bn: 'শরীরে চুলকানি বা ঘামাচির মতো দানা হওয়া', en: 'Itching or heat-rash-like bumps on the body' },
+    { bn: 'শরীরে লসিকা গ্রন্থি ফুলে যাওয়া ও ব্যাথা (কুঁচকি বা অন্যান্য স্থানে ফুলে হওয়া)', en: 'Swollen and painful lymph nodes in the body, especially in the groin or other areas' },
+  ];
+
+  const renderCards = (items) => items.map((item, index) => `
+    <article class="role-card role-card--${['rose','amber','indigo','green','violet','sky','teal','slate'][index % 8]}">
+      <div class="role-card__icon" aria-hidden="true">${index + 1}</div>
+      <p class="role-card__text bn">${item.bn}</p>
+      <p class="role-card__text en">${item.en}</p>
+    </article>
+  `).join('');
+
+  return `
+  <div class="app-intro-box">
+    <div class="app-intro-icon" aria-hidden="true">🧪</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">তরুন-তরুনীদের যৌনবাহিত সংক্রমণ ব্যবস্থাপনা</h2>
+      <h2 class="app-intro-title en">Management of sexually transmitted infections in adolescents.</h2>
+      <p class="app-intro-sub bn">যৌনবাহিত রোগের লক্ষণ প্রকাশ পেলে, Screening পরীক্ষার মাধ্যমে যৌন রোগ শনাক্ত করা হয়, বাংলাদেশ সরকারের জাতীয় এইচআইভি এইডস কর্মসূচির (এএসপি) গাইডলাইন অনুযায়ী চিকিৎসা করা হয়।</p>
+      <p class="app-intro-sub en">When symptoms of sexually transmitted diseases appear, screening tests are used to identify the infection, and treatment is provided according to the guidelines of Bangladesh Government's National HIV AIDS Program (ASP).</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="Complications of reproductive tract and sexually transmitted infections">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">⚠️</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">প্রজননতন্ত্রের বা যৌনরোগের জটিলতাসমূহ</h2>
+        <h2 class="role-section__title en">Complications of Reproductive Tract or Sexually Transmitted Infections</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(complications)}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="Common symptoms of reproductive tract and sexually transmitted infections">
+    <div class="role-section__header role-section__header--school">
+      <div class="role-section__icon" aria-hidden="true">🩺</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">যৌনরোগের বা প্রজননতন্ত্রের সংক্রমণের সাধারণ লক্ষণসমূহ</h2>
+        <h2 class="role-section__title en">Common Symptoms of Sexually Transmitted or Reproductive Tract Infections</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(symptoms)}</div>
+    </div>
+  </section>
   `;
 }
 
