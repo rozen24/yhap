@@ -4705,7 +4705,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isStiLesson = (modIdx === 7 && lesIdx === 0);
   // Module 8 Lesson 3 — Complications of reproductive tract and sexually transmitted infections
   const isStiComplicationsLesson = (modIdx === 7 && lesIdx === 2);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson;
+  // Module 9 Lesson 2 — Window period
+  const isWindowPeriodLesson = (modIdx === 8 && lesIdx === 1);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4726,6 +4728,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isPregnancyManagementCareLesson ? buildPregnancyManagementCareSection()
     : isStiLesson ? buildStiLessonSection()
     : isStiComplicationsLesson ? buildStiComplicationsSection()
+    : isWindowPeriodLesson ? buildWindowPeriodSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -7208,6 +7211,59 @@ function buildStiComplicationsSection() {
       <div class="role-grid">${renderCards(symptoms)}</div>
     </div>
   </section>
+  `;
+}
+
+function buildWindowPeriodSection() {
+  const preventionSteps = [
+    { icon: '🕌', bn: 'ধর্মীয় অনুশাসন মেনে চললে', en: 'Follow religious principles' },
+    { icon: '🚫❤️', bn: 'বিবাহবহির্ভূত যৌনমিলন থেকে বিরত থাকলে', en: 'Avoid premarital sex' },
+    { icon: '💍', bn: 'স্ত্রী বা সঙ্গীর প্রতি বিশ্বস্ত থাকলে', en: 'Be faithful to spouse or partner' },
+    { icon: '🛡️', bn: 'যৌনমিলনে সবসময় কনডম ব্যবহার করলে', en: 'Always use condoms during intercourse' },
+    { icon: '🩸', bn: 'কেবলমাত্র অনুমোদিত ব্লাড ব্যাংক থেকে এইচআইভি পরীক্ষিত রক্ত গ্রহণ করলে', en: 'Receive HIV-tested blood only from authorized blood banks' },
+    { icon: '🚫💉', bn: 'যে কোনো ধরণের ড্রাগ ব্যবহার থেকে বিরত থাকলে; যদি আপনি একজন শিরায় মাদক গ্রহণকারী হয়ে থাকেন, তবে যে কোনো ধরনের সূঁই (সিরিঞ্জ) জাতীয় বস্তু ভাগাভাগি করা থেকে বিরত থাকলে', en: 'Avoid all kinds of drug use; if you inject drugs, never share needles or syringes' },
+    { icon: '🧪', bn: 'যে কোনো ধরনের যৌনবাহিত সংক্রমণ (এসটিআই)/প্রজননতন্ত্রের সংক্রমণ (আরটিআই) পরীক্ষা করতে হবে এবং চিকিৎসা গ্রহণ করতে হবে।', en: 'Get tested and treated for any sexually transmitted infection (STI) or reproductive tract infection (RTI)' },
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--teal">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <p class="role-card__text bn">${item.bn}</p>
+      <p class="role-card__text en">${item.en}</p>
+    </article>
+  `).join('');
+
+  return `
+  <div class="app-intro-box">
+    <div class="app-intro-icon" aria-hidden="true">🧫</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">এইচআইভি তে আক্রান্ত হওয়ার পর রক্তে ভাইরাসের বিরুদ্ধে প্রতিরোধমূলক ব্যবস্থা (এন্টিবডি) তৈরি হতে যে সময় লাগে তাকে অন্তবর্তীকালীন সময় বা উইন্ডো পিরিয়ড বলে। এ জন্য সাধারণত ১২ সপ্তাহ পর্যন্ত লাগতে পারে।</p>
+      <p class="app-intro-sub en">The time it takes after HIV infection for the blood to develop protective antibodies against the virus is called the window period. It usually takes up to 12 weeks.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="How to prevent HIV among adolescents and young people">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🛡️</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">তরুন-তরুনীদের মধ্যে কীভাবে এইচআইভি প্রতিরোধ করা যায়</h2>
+        <h2 class="role-section__title en">How HIV can be prevented among adolescents and young people</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(preventionSteps)}</div>
+    </div>
+  </section>
+
+  <div class="app-intro-box">
+    <div class="app-intro-icon" aria-hidden="true">💉</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">চিকিৎসা</h2>
+      <h2 class="app-intro-title en">Treatment</h2>
+      <p class="app-intro-sub bn">বাংলাদেশ সরকার ২০৩০ সালের মধ্যে Tripple Elimination মাধ্যমে মা থেকে নজাতকের শরীরে এইচআইভি, হেপাটাইটিস বি এবং সিফিলিসের সংক্রমণ নির্মূল করার লক্ষ স্থির করেছে এবং তা বাস্তবায়নে কাজ করছে।</p>
+      <p class="app-intro-sub en">The Government of Bangladesh has set a goal to eliminate HIV, hepatitis B, and syphilis transmission from mother to newborn through Triple Elimination by 2030 and is working to implement it.</p>
+    </div>
+  </div>
   `;
 }
 
