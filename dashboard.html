@@ -1923,10 +1923,40 @@
     .role-section__body {
       padding: 20px;
       background: var(--surface);
-      border: 1px solid var(--border);
+    }
+
+    /* Care Section Heading - Styled like Module 3 Lesson 1 */
+    .care-section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0 0 1.2rem 0;
+      padding: 0.8rem 1rem;
+      background: linear-gradient(90deg, rgba(0, 174, 239, 0.08) 0%, transparent 100%);
+      border-left: 4px solid #00AEEF;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 174, 239, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+    }
+
+    .care-section-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      color: #00AEEF;
+    }
+
+    .care-section-heading {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #003d7a;
+      margin: 0;
+      line-height: 1.3;
+      letter-spacing: -0.2px;
+      font-family: 'Noto Serif Bengali', serif;
+    }
+      /* border: 1px solid var(--border);
       border-top: none;
       border-radius: 0 0 16px 16px;
-    }
+    } */
 
     .role-grid {
       display: grid;
@@ -2006,7 +2036,119 @@
     .role-card--red     { --rc-accent:#EF4444; --rc-soft:rgba(239,68,68,0.10);   --rc-ring:rgba(239,68,68,0.22); }
     .role-card--slate   { --rc-accent:#64748B; --rc-soft:rgba(100,116,139,0.10); --rc-ring:rgba(100,116,139,0.22); }
 
+    .role-card__title {
+      font-family: 'Noto Serif Bengali', serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-primary);
+      margin: 0 0 8px;
+      font-weight: 600;
+    }
+
+    .role-card__articles {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .mgmt-article {
+      margin: 0;
+      padding: 0;
+    }
+
+    .mgmt-article__text {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .care-section {
+      margin-bottom: 28px;
+    }
+
+    .care-section__title {
+      font-family: 'Noto Serif Bengali', serif;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--text-primary);
+      margin: 0 0 12px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .care-section__cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
     [data-theme="dark"] .role-section__body { background: var(--surface); }
+
+    [data-theme="dark"] .care-section-title {
+      background: linear-gradient(90deg, rgba(0, 174, 239, 0.12) 0%, transparent 100%);
+      box-shadow: 0 4px 12px rgba(0, 174, 239, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="dark"] .care-section-heading {
+      color: #64B5F6;
+    }
+
+    /* ──────────────────────────────────────────── */
+    /* SUBSECTION HEADERS (Nested inside main section) */
+    /* ──────────────────────────────────────────── */
+    .subsection {
+      margin-bottom: 24px;
+      padding: 16px;
+      background: var(--bg-hover);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .subsection__header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .subsection__icon {
+      width: 40px; height: 40px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+
+    .subsection__titles {
+      min-width: 0;
+    }
+
+    .subsection__title {
+      font-family: 'Noto Serif Bengali', serif;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.4;
+      margin: 0;
+      color: var(--text-primary);
+    }
+
+    .subsection__header--violet {
+      border-bottom-color: #7C3AED;
+    }
+
+    .subsection__header--success {
+      border-bottom-color: #10B981;
+    }
+
+    .subsection__header--warn {
+      border-bottom-color: #F43F5E;
+    }
 
     @media (max-width: 900px) {
       .role-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
@@ -3629,8 +3771,8 @@
         <div class="lesson-list" id="modPanel-6" role="list">
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(6,0)"><span class="lesson-dot" data-state="done" aria-hidden="true">✓</span><span class="lesson-text"><span class="lesson-label bn">কিশোরী মাতৃত্ব</span><span class="lesson-label en">Adolescent motherhood</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(6,1)"><span class="lesson-dot" aria-hidden="true">2</span><span class="lesson-text"><span class="lesson-label bn">কিশোরী গর্ভধারণ রোধে করণীয়</span><span class="lesson-label en">Actions to prevent adolescent pregnancy</span></span></button>
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(6,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">গর্ভকালীন বিপদ চিহ্ন</span><span class="lesson-label en">Danger signs during pregnancy</span></span></button>
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(6,3)"><span class="lesson-dot" aria-hidden="true">4</span><span class="lesson-text"><span class="lesson-label bn">কিশোরী গর্ভধারণ ব্যবস্থাপনা</span><span class="lesson-label en">Management of adolescent pregnancy</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(6,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">গর্ভকালীন বিপদচিহ্নসমূহ</span><span class="lesson-label en">Danger signs during pregnancy</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(6,3)"><span class="lesson-dot" aria-hidden="true">4</span><span class="lesson-text"><span class="lesson-label bn">কৈশোরকালীন গর্ভধারণ ব্যবস্থাপনা</span><span class="lesson-label en">Management of adolescent pregnancy</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(6,4)"><span class="lesson-dot" aria-hidden="true">5</span><span class="lesson-text"><span class="lesson-label bn">প্রসব-পরবর্তী সেবা</span><span class="lesson-label en">Postnatal care</span></span></button>
         </div>
       </div>
@@ -4226,7 +4368,7 @@ const LESSONS_BN = [
   ['পুরুষ প্রজনন ব্যবস্থা','ছেলেদের স্বপ্নে বীর্যপাতের ব্যাবস্থাপনা'],
   ['বাল্যবিবাহ','বাল্যবিবাহের পরিণতি','বাল্যবিবাহ রোধে করণীয়'],
   ['কৈশোরকালীন পরিবার পরিকল্পনা','পরিবার পরিকল্পনা পদ্ধতির তুলনামূলক বিশ্লেষণ'],
-  ['কিশোরী মাতৃত্ব','কিশোরী গর্ভধারণ রোধে করণীয়','গর্ভকালীন বিপদ চিহ্ন','কিশোরী গর্ভধারণ ব্যবস্থাপনা','প্রসব-পরবর্তী সেবা'],
+  ['কিশোরী মাতৃত্ব','কিশোরী গর্ভধারণ রোধে করণীয়','গর্ভকালীন বিপদচিহ্নসমূহ','কৈশোরকালীন গর্ভধারণ ব্যবস্থাপনা','প্রসব-পরবর্তী সেবা'],
   ['যৌনবাহিত ও প্রজনন স্বাস্থ্য সংক্রান্ত সংক্রমণ','যৌনবাহিত রোগের ঝুঁকি','প্রজনন স্বাস্থ্য বা যৌনবাহিত রোগের জটিলতা'],
   ['এইচআইভি এবং এইডস','উইন্ডো পিরিয়ড'],
   ['জরায়ুমুখ ক্যান্সার','এইচপিভি ভ্যাকসিন','মহিলাদের জন্য অন্যান্য ভ্যাকসিন'],
@@ -4557,7 +4699,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isAdolescentPregnancyPreventionLesson = (modIdx === 6 && lesIdx === 1);
   // Pregnancy Danger Signs — Module 7 Lesson 3
   const isPregnancyDangerSignsLesson = (modIdx === 6 && lesIdx === 2);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson;
+  // Pregnancy Management Care — Module 7 Lesson 4
+  const isPregnancyManagementCareLesson = (modIdx === 6 && lesIdx === 3);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4575,6 +4719,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isAdolescentMotherhoodLesson ? buildAdolescentMotherhoodSection()
     : isAdolescentPregnancyPreventionLesson ? buildAdolescentPregnancyPreventionSection()
     : isPregnancyDangerSignsLesson ? buildPregnancyDangerSignsSection()
+    : isPregnancyManagementCareLesson ? buildPregnancyManagementCareSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -6569,7 +6714,7 @@ function buildPregnancyDangerSignsSection() {
   <section class="danger-signs-section" aria-label="Danger signs during pregnancy and childbirth">
     <div class="danger-signs-intro">
       <h2 class="danger-signs-title">
-        <span class="bn">গর্ভকালীন বিপদ চিহ্ন</span>
+        <span class="bn">গর্ভকালীন বিপদচিহ্নসমূহ</span>
         <span class="en">Danger Signs During Pregnancy & Childbirth</span>
       </h2>
       <p class="danger-signs-subtitle">
@@ -6582,6 +6727,78 @@ function buildPregnancyDangerSignsSection() {
     </div>
   </section>
   `;
+}
+
+/* ── PREGNANCY MANAGEMENT CARE (Module 7,  Lesson 4) ── */
+function buildPregnancyManagementCareSection() {
+  const earlySupport = [
+    { icon: '🔎', accent: 'violet', bn: 'গর্ভধারণ নিশ্চিত হওয়ার সাথে সাথেই কিশোরীকে নিকটস্থ স্বাস্থ্যকেন্দ্রে নিবন্ধন করান।', en: 'Register the adolescent mother at the nearest health facility as soon as pregnancy is confirmed.' },
+    { icon: '🤝', accent: 'pink', bn: 'পরিবারের সদস্যদের সহানুভূতিশীল আচরণ, মানসিক সমর্থন ও নিরাপদ পরিবেশ নিশ্চিত করতে উদ্বুদ্ধ করুন।', en: 'Motivate family members to provide empathy, emotional support, and a safe home environment.' },
+    { icon: '🧭', accent: 'teal', bn: 'ঝুঁকির লক্ষণ দেখা দিলে দ্রুত কোথায় যোগাযোগ করতে হবে তা পরিবারকে আগেই জানিয়ে দিন।', en: 'Guide families early on where to seek immediate care if danger signs appear.' },
+  ];
+
+  const antenatal = [
+    { icon: '📋', accent: 'indigo', bn: 'প্রশিক্ষিত সেবা প্রদানকারীর দ্বারা কমপক্ষে ৪ বার চেকআপ নিশ্চিত করা (১-৪ মাসে ১ বার, ৬-৭ মাসে ১ বার, ৮ মাসে ১ বার, ৯ মাসে ১ বার)।', en: 'Ensure at least 4 antenatal checkups by a trained provider (once in months 1-4, once in 6-7, once in 8, and once in 9).' },
+    { icon: '🎓', accent: 'sky', bn: 'পুষ্টি, বিশ্রাম, কাজের ভারসাম্য এবং পরিচ্ছন্নতা বিষয়ে স্বাস্থ্যশিক্ষা প্রদান করা।', en: 'Provide health education on nutrition, rest, workload balance, and hygiene.' },
+    { icon: '💉', accent: 'green', bn: 'টিটেনাস-ডিপথেরিয়া (টিডি) টিকা সম্পূর্ণ করা (প্রয়োজন হলে)।', en: 'Complete TD (Tetanus-Diphtheria) vaccination schedule where needed.' },
+    { icon: '🚨', accent: 'red', bn: 'যেকোনো জটিলতা দেখা দিলে দ্রুত উপযুক্ত হাসপাতালে রেফার করা।', en: 'Refer immediately to an appropriate hospital if any complication appears.' },
+  ];
+
+  const deliveryPlan = [
+    { icon: '📍', accent: 'amber', bn: 'প্রসবের স্থান আগে থেকেই নির্বাচন করা।', en: 'Select the place of delivery in advance.' },
+    { icon: '🚗', accent: 'violet', bn: 'প্রসববেদনা শুরু হলে দ্রুত হাসপাতালে নেওয়ার জন্য আগেভাগে যানবাহন ঠিক রাখা।', en: 'Arrange transportation in advance for emergency transfer when labor starts.' },
+    { icon: '💰', accent: 'green', bn: 'প্রসবজনিত ব্যয়ের জন্য আগে থেকেই অর্থ সঞ্চয় করা।', en: 'Save funds in advance for delivery-related expenses.' },
+    { icon: '🩸', accent: 'rose', bn: 'প্রয়োজন হলে দ্রুত রক্ত পাওয়ার জন্য সম্ভাব্য রক্তদাতা নির্ধারণ করে রাখা।', en: 'Identify possible blood donors beforehand for emergency needs.' },
+  ];
+
+  const renderCards = (items) => items.map((it) => `
+    <article class="role-card role-card--${it.accent}">
+      <div class="role-card__icon" aria-hidden="true">${it.icon}</div>
+      <p class="role-card__text bn">${it.bn}</p>
+      <p class="role-card__text en">${it.en}</p>
+    </article>`).join('');
+
+  return `
+  <div class="am-info-box" style="margin-bottom: 32px;">
+    <p class="bn">
+      গর্ভবতী কিশোরী সবসময়ই ঝুঁকিপূর্ণ— গর্ভকালীন, প্রসবকালীন বা প্রসব পরবর্তী সময়েও। একারনে গর্ভ নিশ্চিত হবার সাথে সাথেই নুন্যতম ৪ টি গর্ভকালীন চেকাপ নিশ্চিত করার জন্য নিকটস্থ সাস্থ্যকেন্দ্রে সেবা নিতে হবে এবং কিশোরী মা এর প্রসব ব্যথা শুরু হলে তাকে জরুরি ভিত্তিতে হাসপাতালে নিয়ে ডেলিভারী করাতে হবে। যদি কিশোরী মায়ের ঝুঁকিসমূহ সময়মত শনাক্ত করা যায় ও ঠিক সময়ে জরুরি প্রসূতি সেবাকেন্দ্রে রেফার করা যায়, তাহলে তা কিশোরী মায়ের ও শিশুর জীবন বাঁচাতে গুরুত্বপূর্ণ ভূমিকা রাখবে। কিশোরী মায়ের প্রসব বেশি ঝুঁকিপূর্ণ বিধায় হাসপাতাল ছাড়া কোনোভাবেই প্রসব করানো উচিত নয়।
+    </p>
+    <p class="en">
+      Pregnant adolescents are always at risk - during pregnancy, during delivery or after delivery. As soon as the pregnancy is confirmed, the nearest health center should be consulted to ensure at least 4 prenatal checkups, and if the teenage mother starts labor, she should be taken to the hospital on an emergency basis for delivery. If the risks of teenage mothers can be identified in time and referred to the emergency maternity care center in time, it will play an important role in saving the lives of the teenage mother and the baby. Since childbirth for teenage mothers is more risky, delivery should not be done outside the hospital.
+    </p>
+  </div>
+  <section class="role-section" aria-label="Pregnancy management care overview">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">👶</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">গর্ভকালীন, প্রসবকালীন ও প্রসব-পরবর্তী সময়ে কিশোরী মায়ের যত্ন</h2>
+        <h2 class="role-section__title en">Care for Adolescent Mothers During Pregnancy, Labor, and Postpartum</h2>
+        <p class="role-section__sub bn">ঝুঁকি কমাতে পরিবার, স্বাস্থ্যকর্মী ও সেবা ব্যবস্থার সমন্বিত সহায়তা জরুরি</p>
+        <p class="role-section__sub en">Reducing risk requires coordinated support from family, providers, and the care system</p>
+      </div>
+    </div>
+    
+        <div class="" style="padding: 24px; background: #fff; border: 1px solid #fff; border-radius: 8px;">
+          <h2 class="organ-section__heading bn">১. প্রাথমিক অবস্থায় কিশোরীর গর্ভ শনাক্ত করে সে যাতে পরিবারে প্রয়োজনীয় যত্ন ও সহায়তা পায়, সেটা নিশ্চিত করার জন্য পরিবারের সকলকে উদ্বুদ্ধ করতে হবে।</h2>
+          <h2 class="organ-section__heading en">1. The entire family should be encouraged to identify the adolescent's pregnancy at an early stage and ensure that she receives the necessary care and support within the family.</h2>
+          <h2 class="organ-section__heading bn">২. গর্ভকালীন চেকাপ</h2>
+          <h2 class="organ-section__heading en">2. Antenatal Checkups</h2>
+          
+          <div class="role-section__body">
+            <div class="role-grid">${renderCards(antenatal)}</div>
+          </div>
+
+          <h2 class="organ-section__heading bn">৩. প্রসবের আগে পরিকল্পনা করলে মা ও শিশুর মৃত্যুঝুঁকি অনেকাংশে কমানো যায়।  যেমনঃ </h2>
+          <h2 class="organ-section__heading en">Delivery Planning and Emergency Preparedness</h2>
+          
+          <div class="role-section__body">
+            <div class="role-grid">${renderCards(deliveryPlan)}</div>
+          </div>
+        </div>
+        
+  </section>
+
+ `;
 }
 
 function buildFamilyPlanningSection() {
