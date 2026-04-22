@@ -4701,7 +4701,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isPregnancyDangerSignsLesson = (modIdx === 6 && lesIdx === 2);
   // Pregnancy Management Care — Module 7 Lesson 4
   const isPregnancyManagementCareLesson = (modIdx === 6 && lesIdx === 3);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson;
+  // Module 8 Lesson 1 — Sexually transmitted and reproductive tract infections
+  const isStiLesson = (modIdx === 7 && lesIdx === 0);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4720,6 +4722,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isAdolescentPregnancyPreventionLesson ? buildAdolescentPregnancyPreventionSection()
     : isPregnancyDangerSignsLesson ? buildPregnancyDangerSignsSection()
     : isPregnancyManagementCareLesson ? buildPregnancyManagementCareSection()
+    : isStiLesson ? buildStiLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -7058,6 +7061,81 @@ function buildFamilyPlanningSection() {
             </div>
         </section>
 </section>
+  `;
+}
+
+function buildStiLessonSection() {
+  const causes = [
+    { bn: 'ব্যক্তিগত অপরিচ্ছন্নতা', en: 'Personal unhygiene' },
+    { bn: 'প্রজননতন্ত্রের জীবাণুগুলোর অতিবৃদ্ধি', en: 'Overgrowth of germs in the reproductive tract' },
+    { bn: 'অনিরাপদ যৌনমিলন', en: 'Unsafe sexual intercourse' },
+    { bn: 'জীবাণুযুক্ত পরিবেশ', en: 'Germ-contaminated environment' },
+    { bn: 'সংক্রমিত রক্ত গ্রহণ', en: 'Receiving infected blood' },
+    { bn: 'সংক্রমিত মায়ের গর্ভধারণ', en: 'Pregnancy from an infected mother' },
+  ];
+
+  const symptoms = [
+    { bn: 'যৌনাঙ্গে চুলকানি হওয়া', en: 'Itching in the genital area' },
+    { bn: 'যৌনাঙ্গ থেকে দুর্গন্ধযুক্ত বা দুর্গন্ধবিহীন স্রাব যাওয়া', en: 'Foul-smelling or odorless discharge from the genital area' },
+    { bn: 'যৌনাঙ্গ থেকে পুঁজ বা পুঁজের মতো যাওয়া ও বারবার প্রস্রাব হওয়া', en: 'Pus-like discharge from the genital area and frequent urination' },
+    { bn: 'যৌনাঙ্গে ক্ষত হওয়া', en: 'Sores or ulcers in the genital area' },
+    { bn: 'যৌনমিলনে ব্যথা হওয়া', en: 'Pain during sexual intercourse' },
+    { bn: 'শরীরে চুলকানি বা ঘামাচির মতো দানা হওয়া', en: 'Itching or heat-rash-like bumps on the body' },
+    { bn: 'শরীরে লসিকা গ্রন্থি ফুলে যাওয়া ও ব্যাথা (কুঁচকি বা অন্যান্য স্থানে ফুলে হওয়া)', en: 'Swollen and painful lymph nodes in the body, especially in the groin or other areas' },
+  ];
+
+  const renderCards = (items) => items.map((item, index) => `
+    <article class="role-card role-card--${['teal','rose','amber','indigo','green','violet','sky'][index % 7]}">
+      <div class="role-card__icon" aria-hidden="true">${index + 1}</div>
+      <p class="role-card__text bn">${item.bn}</p>
+      <p class="role-card__text en">${item.en}</p>
+    </article>
+  `).join('');
+
+  return `
+  <div class="app-intro-box">
+    <div class="app-intro-icon" aria-hidden="true">🦠</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">যৌনবাহিত ও প্রজননতন্ত্রের সংক্রমণ</h2>
+      <h2 class="app-intro-title en">Sexually Transmitted and Reproductive Tract Infections</h2>
+      <p class="app-intro-sub bn">যৌন সম্পর্কের মাধ্যমে একজন থেকে অন্যজনের মধ্যে যেসব সংক্রমণ ছড়ায় সেগুলোই যৌনবাহিত সংক্রমণ। প্রজনন অঙ্গসমূহের সংক্রমণকে প্রজননতন্ত্রের সংক্রমণ বলা হয়। যৌন সম্পর্ক ছাড়াও সংক্রমিত রক্ত, সংক্রমিত সূঁচ বা যন্ত্রপাতি এবং আক্রান্ত মায়ের বুকের দুধের মাধ্যমেও এ ধরনের সংক্রমণ ছড়াতে পারে। সকল যৌনবাহিত সংক্রমণই প্রজননতন্ত্রের সংক্রমণের আওতায় পড়ে।</p>
+      <p class="app-intro-sub en">Infections that spread from one person to another through sexual contact are sexually transmitted infections. Infections of the reproductive organs are called reproductive tract infections. In addition to sexual contact, these infections can spread through infected blood, contaminated needles or instruments, and the breast milk of an infected mother. All sexually transmitted infections are included under reproductive tract infections.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="Causes of reproductive tract and sexually transmitted infections">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">⚠️</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">প্রজননতন্ত্রের সংক্রমণ ও যৌনবাহিত রোগের কারণ</h2>
+        <h2 class="role-section__title en">Causes of Reproductive Tract Infections and Sexually Transmitted Diseases</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(causes)}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="Common symptoms of reproductive tract and sexually transmitted infections">
+    <div class="role-section__header role-section__header--school">
+      <div class="role-section__icon" aria-hidden="true">🩺</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">যৌনরোগের বা প্রজননতন্ত্রের সংক্রমণের সাধারণ লক্ষণসমূহ</h2>
+        <h2 class="role-section__title en">Common Symptoms of Sexually Transmitted or Reproductive Tract Infections</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(symptoms)}</div>
+    </div>
+  </section>
+
+  <div class="app-intro-box">
+    <div class="app-intro-icon" aria-hidden="true">ℹ️</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">অধিকাংশ ক্ষেত্রেই যৌনরোগের লক্ষণ বোঝা যায় না। বিশেষ করে ছেলেদের তুলনায় মেয়েদের এই লক্ষণগুলো অপ্রকাশিত থাকে। তাই চিকিৎসা নিতে তারা অনেক দেরি করে ফেলে, যা থেকে জটিলতাও হতে পারে।</p>
+      <p class="app-intro-sub en">In most cases, the symptoms of sexually transmitted diseases are not obvious. In particular, these signs often remain unnoticed in girls compared with boys. As a result, treatment is often delayed, which can lead to complications.</p>
+    </div>
+  </div>
   `;
 }
 
