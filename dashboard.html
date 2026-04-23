@@ -1978,6 +1978,9 @@
                   box-shadow var(--dur) var(--ease),
                   border-color var(--dur) var(--ease);
     }
+    .role-card-title {
+      color: #b400ff;
+    }
     .role-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 3px 8px rgba(13,71,161,0.06), 0 14px 28px rgba(13,71,161,0.10);
@@ -4728,7 +4731,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isSexualReproductiveRightsLesson = (modIdx === 11 && lesIdx === 2);
   // Module 13 Lesson 1 — Gender-based discrimination (Sex vs Gender)
   const isGenderBasedDiscriminationLesson = (modIdx === 12 && lesIdx === 0);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson;
+  // Module 13 Lesson 2 — Gender discrimination
+  const isGenderDiscriminationLesson = (modIdx === 12 && lesIdx === 1);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4759,6 +4764,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isChildRightsLesson ? buildChildRightsSection()
     : isSexualReproductiveRightsLesson ? buildSexualReproductiveRightsSection()
     : isGenderBasedDiscriminationLesson ? buildGenderBasedDiscriminationSection()
+    : isGenderDiscriminationLesson ? buildGenderDiscriminationSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -7841,6 +7847,79 @@ function buildGenderBasedDiscriminationSection() {
           ${rows}
         </tbody>
       </table>
+    </div>
+  </section>
+  `;
+}
+
+function buildGenderDiscriminationSection() {
+  const cards = [
+    {
+      icon: '⚖️',
+      bnTitle: 'সমতা',
+      enTitle: 'Equality',
+      bn: 'সমতা বলতে সাধারণত সমঅবস্থাকে বোঝায়। সমতা হচ্ছে সমভাবে বণ্টন—অর্থাৎ প্রাপ্তি, দায়িত্ব পালন, সুযোগ-সুবিধা লাভ ইত্যাদি সকল ক্ষেত্রে সমান ভূমিকা ও অধিকার। যেমন: চাকরির বিজ্ঞপ্তিতে যোগ্যতা ও অভিজ্ঞতার মাপকাঠিতে আবেদনপত্র আহ্বান করা হলে নারী, পুরুষ ও তৃতীয় লিঙ্গ অথবা পিছিয়ে পড়া জনগোষ্ঠী সকলেই আবেদন করার সুযোগ পাবে।',
+      en: 'Equality means equal status and equal distribution of opportunities, responsibilities, and benefits. In a job notice based on qualifications and experience, women, men, third gender people, and other disadvantaged groups all get the chance to apply.'
+    },
+    {
+      icon: '🧭',
+      bnTitle: 'ন্যায্যতা',
+      enTitle: 'Equity',
+      bn: 'প্রয়োজন অনুযায়ী বণ্টন—অর্থাৎ প্রাপ্তি, দায়িত্ব পালন, সুযোগ-সুবিধা লাভ ইত্যাদি ক্ষেত্রে ব্যক্তি, অবস্থা, পরিস্থিতি বিশ্লেষণ সাপেক্ষে সাম্য প্রতিষ্ঠা করাই হচ্ছে ন্যায্যতা।',
+      en: 'Equity means distribution according to need. It creates fairness by analyzing the person, situation, and context before allocating rights, responsibilities, and opportunities.'
+    },
+    {
+      icon: '👥',
+      bnTitle: 'জেন্ডার সমতা',
+      enTitle: 'Gender equality',
+      bn: 'জেন্ডার সমতা হচ্ছে বাস্তবসম্মত সমতা যা ব্যক্তিগত পর্যায়ের সকল ক্ষেত্রে এবং জনসমক্ষে নারী–পুরুষের অংশগ্রহণ এবং ক্ষমতায়ন নির্দেশ করে। জেন্ডার সমতা নারী এবং পুরুষ এক তা মনে করে না; বরং নারী এবং পুরুষের দায়িত্ব, সুযোগ-সুবিধা এবং অধিকার সমান হবে তা নিশ্চিত করে।',
+      en: 'Gender equality is practical equality that ensures the participation and empowerment of women and men in private and public life. It does not assume women and men are the same; rather, it ensures equal responsibilities, opportunities, and rights.'
+    },
+    {
+      icon: '🔀',
+      bnTitle: 'সাম্য ও সমতার পার্থক্য',
+      enTitle: 'Difference between equity and equality',
+      bn: 'পরিবার, সমাজ ও রাষ্ট্রের বিভিন্ন কর্মকাণ্ডে নারীরা এখনো পিছিয়ে রয়েছে। তাই পুরুষের চেয়ে নারীকে বেশি সুযোগ-সুবিধা দিয়ে সাম্যের (Equity) মাধ্যমে জেন্ডার সমতা (Equality) আনতে হবে।',
+      en: 'Women are still lagging behind in many family, social, and state activities. So, gender equality must be achieved through equity by providing women with more opportunities and support than men where needed.'
+    },
+  ];
+
+  const palette = ['teal', 'rose', 'indigo', 'green'];
+  const cardMarkup = cards.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__body">
+        <h3 class="role-card-title bn" style="margin-bottom:8px;">${item.bnTitle}</h3>
+        <h3 class="role-card-title en" style="font-weight:700; margin-bottom:12px;">${item.enTitle}</h3>
+        <p class="role-card__text bn">${item.bn}</p>
+        <p class="role-card__text en">${item.en}</p>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div style="width:100%; max-width:100%; margin-bottom:24px;">
+    <img src="images/modu13/gender2.jpg" alt="Gender discrimination illustration" style="width:100%; max-width:820px; height:auto; display:block; margin:0 auto; border-radius:16px; box-shadow:0 10px 30px rgba(13,71,161,0.14);" loading="lazy" decoding="async" />
+  </div>
+
+  <div class="app-intro-box">
+    <div class="app-intro-icon" aria-hidden="true">🧩</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">নারী ও পুরুষের ভিন্নতা, আচরণ ও সামাজিক অবস্থাভেদে নারী ও পুরুষের মধ্যে কিছু বৈষম্য সৃষ্টি হয়। সামাজিক দৃষ্টিভঙ্গি, ধর্মের অপব্যাখ্যা, মেয়েদের ছোট করে দেখার মানসিকতা ইত্যাদি জেন্ডার বৈষম্য সৃষ্টিতে প্রধান ভূমিকা পালন করে। জেন্ডারের এই বৈষম্যকে পরিবার, সমাজ যখন মেনে নেয় ও আইন, নীতি বা মূল্যবোধের মাধ্যমে রাষ্ট্র যখন বৈধতা দেয় তখন তা প্রাতিষ্ঠানিক রূপ লাভ করে এবং সেটি বৈষম্য হিসেবে গণ্য হয়। এই বৈষম্য সামাজিকভাবে তৈরি যা পরিবার, সমাজ ও সংস্কৃতি থেকে গৃহীত, সমাজ ও স্থান ভেদে ভিন্ন, এবং অবশ্যই পরিবর্তনশীল।</p>
+      <p class="app-intro-sub en">Differences in behavior and social status between women and men create inequalities. Social attitudes, misinterpretation of religion, and the mindset of looking down on girls play a major role in producing gender discrimination. When family and society accept such discrimination and the state legitimizes it through laws, policies, or values, it becomes institutionalized and is then counted as discrimination. This discrimination is socially created, inherited from family, society, and culture, varies by society and place, and is definitely changeable.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="Gender discrimination concepts" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">📚</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">জেন্ডার বৈষম্য ও সমতা</h2>
+        <h2 class="role-section__title en">Gender Discrimination and Equality</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${cardMarkup}</div>
     </div>
   </section>
   `;
