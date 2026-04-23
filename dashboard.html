@@ -4011,7 +4011,7 @@
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,1)"><span class="lesson-dot" aria-hidden="true">2</span><span class="lesson-text"><span class="lesson-label bn">আবেগ</span><span class="lesson-label en">Emotion</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">আবেগ ব্যবস্থাপনার কৌশল</span><span class="lesson-label en">Emotion management techniques</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,3)"><span class="lesson-dot" aria-hidden="true">4</span><span class="lesson-text"><span class="lesson-label bn">উদ্বেগ</span><span class="lesson-label en">Anxiety</span></span></button>
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,4)"><span class="lesson-dot" aria-hidden="true">5</span><span class="lesson-text"><span class="lesson-label bn">মানসিক চাপ</span><span class="lesson-label en">Stress</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,4)"><span class="lesson-dot" aria-hidden="true">5</span><span class="lesson-text"><span class="lesson-label bn">মানসিক চাপ (Stress)</span><span class="lesson-label en">Stress</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,5)"><span class="lesson-dot" aria-hidden="true">6</span><span class="lesson-text"><span class="lesson-label bn">মানসিক চাপের কারণ</span><span class="lesson-label en">Causes of stress</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,6)"><span class="lesson-dot" aria-hidden="true">7</span><span class="lesson-text"><span class="lesson-label bn">রাগ</span><span class="lesson-label en">Anger</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,7)"><span class="lesson-dot" aria-hidden="true">8</span><span class="lesson-text"><span class="lesson-label bn">কেন এবং কখন আমরা সহজে রেগে যাই?</span><span class="lesson-label en">Why and when do we get angry very easily?</span></span></button>
@@ -4444,7 +4444,7 @@ const LESSONS_BN = [
   ['পলিসিস্টিক ওভারিআন সিনড্রোম (পিসিওএস) ','সমস্যা','সমাধান','ব্যবস্থাপনা'],
   ['শিশু অধিকার ও মানবাধিকার এবং যৌন ও প্রজনন স্বাস্থ্য অধিকার','শিশু নির্যাতন','যৌন ও প্রজনন স্বাস্থ্য অধিকার'],
   ['লিঙ্গ-ভিত্তিক বৈষম্য','লিঙ্গ বৈষম্য','সমাজে বিরাজমান জেন্ডার বৈষম্যয','জেন্ডারভিত্তিক সহিংসতা ও নির্যাতনের ধরণ','যৌন হয়রানি','আর্থিক ক্ষতি – আর্থিক দিক','লিঙ্গ বৈষম্য দূরীকরণে করণীয়','সহিংসতা বা নির্যাতন','তরুণদের বিরুদ্ধে সহিংসতার বিভিন্ন রূপ'],
-  ['তরুণদের মনো-সামাজিক পরিবর্তন','আবেগ','আবেগ ব্যবস্থাপনার কৌশল','উদ্বেগ','মানসিক চাপ','মানসিক চাপের কারণ','রাগ','কেন এবং কখন আমরা সহজে রেগে যাই?','পরীক্ষার ভয়','পরীক্ষার ভয় দূর করার উপায় বা সমাধান','ডিজিটাল আসক্তি প্রতিরোধ'],
+  ['তরুণদের মনো-সামাজিক পরিবর্তন','আবেগ','আবেগ ব্যবস্থাপনার কৌশল','উদ্বেগ','মানসিক চাপ (Stress)','মানসিক চাপের কারণ','রাগ','কেন এবং কখন আমরা সহজে রেগে যাই?','পরীক্ষার ভয়','পরীক্ষার ভয় দূর করার উপায় বা সমাধান','ডিজিটাল আসক্তি প্রতিরোধ'],
   ['মনো-সামাজিক সহায়তা','মনো-সামাজিক সহায়তার দক্ষতা','মনোযোগী শ্রবণ','মূল্যবোধ','আচরণ','নৈতিকতা'],
   ['মাদক আসক্তি','মাদক আসক্তির লক্ষণ','মাদক আসক্তির পরিণতি ও প্রতিরোধ'],
   ['আঘাত প্রতিরোধ ও প্রাথমিক চিকিৎসা সেবা','রক্তপাত নিয়ন্ত্রণ','পোড়া','পোড়ার প্রাথমিক চিকিৎসা','হাড় ভাঙা','সাপের কামড়','কুকুরের কামড়','বিষক্রিয়া','ডুবে যাওয়া','শ্বাসরোধ বা গলায় কিছু আটকে যাওয়া','শ্বাসরোধের প্রাথমিক চিকিৎসা (প্রাপ্তবয়স্ক ও ১ বছরের বেশি শিশুর জন্য)'],
@@ -4818,7 +4818,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isEmotionManagementStrategiesLesson = (modIdx === 13 && lesIdx === 2);
   // Module 14 Lesson 4 — Anxiety
   const isAnxietyLesson = (modIdx === 13 && lesIdx === 3);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson;
+  // Module 14 Lesson 5 — Stress
+  const isStressLesson = (modIdx === 13 && lesIdx === 4);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4861,6 +4863,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isEmotionLesson ? buildEmotionLessonSection()
     : isEmotionManagementStrategiesLesson ? buildEmotionManagementStrategiesSection()
     : isAnxietyLesson ? buildAnxietyLessonSection()
+    : isStressLesson ? buildStressLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -8972,6 +8975,94 @@ function buildAnxietyLessonSection() {
             <th class="table-header" scope="col"><span aria-hidden="true">🧠</span> <span class="bn">মানসিক লক্ষণ</span><span class="en">Mental symptoms</span></th>
             <th class="table-header" scope="col"><span aria-hidden="true">🩺</span> <span class="bn">শারীরিক লক্ষণ</span><span class="en">Physical symptoms</span></th>
             <th class="table-header" scope="col"><span aria-hidden="true">👣</span> <span class="bn">আচরণগত লক্ষণ</span><span class="en">Behavioral symptoms</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  `;
+}
+
+function buildStressLessonSection() {
+  const physicalChanges = [
+    { icon: '💓', bn: 'বুক ধড়ফড় করা', en: 'Palpitations' },
+    { icon: '🩸', bn: 'রক্তচাপ বেড়ে যাওয়া', en: 'Increased blood pressure' },
+    { icon: '😵‍💫', bn: 'ইনসমনিয়া (অনিদ্রা)', en: 'Insomnia' },
+    { icon: '🤕', bn: 'মাথাব্যথা', en: 'Headache' },
+    { icon: '💔', bn: 'বুকে ব্যথা', en: 'Chest pain' },
+    { icon: '😮‍💨', bn: 'শ্বাসকষ্ট', en: 'Shortness of breath' },
+    { icon: '🤢', bn: 'বমি বমি ভাব', en: 'Nausea' },
+    { icon: '🚽', bn: 'ডায়রিয়া', en: 'Diarrhea' },
+    { icon: '🤲', bn: 'পেট ব্যথা', en: 'Stomach pain' },
+    { icon: '💦', bn: 'ঘাম হওয়া', en: 'Sweating' },
+  ];
+
+  const emotionalChanges = [
+    { icon: '😠', bn: 'বিরক্ত বোধ', en: 'Feeling irritated' },
+    { icon: '🤬', bn: 'অত্যধিক রাগ', en: 'Excessive anger' },
+    { icon: '😔', bn: 'বিষণ্নতা', en: 'Depression' },
+    { icon: '⚡', bn: 'উত্তেজনা', en: 'Excitement / agitation' },
+    { icon: '😞', bn: 'হতাশা', en: 'Frustration' },
+    { icon: '😣', bn: 'কষ্ট', en: 'Distress' },
+    { icon: '😰', bn: 'আত্মবিশ্বাসের অভাব', en: 'Lack of confidence' },
+    { icon: '😟', bn: 'অপরাধবোধ', en: 'Guilt' },
+    { icon: '🌀', bn: 'অস্থিরতা', en: 'Restlessness' },
+    null,
+  ];
+
+  const behavioralChanges = [
+    { icon: '😴', bn: 'ঘুম না হওয়া', en: 'Sleeplessness' },
+    { icon: '💊', bn: 'মাদক দ্রব্য গ্রহণ করা/মদ্যপান করা', en: 'Using drugs / drinking alcohol' },
+    { icon: '📵', bn: 'অমনোযোগীতা', en: 'Inattention' },
+    { icon: '🧍', bn: 'অলসতা বা অনীহা', en: 'Laziness or lack of interest' },
+    { icon: '🚶', bn: 'অকারণে হাঁটাহাঁটি করা', en: 'Walking around aimlessly' },
+    { icon: '🗯️', bn: 'চিৎকার-চেঁচামেচি করা', en: 'Shouting / yelling' },
+    { icon: '😭', bn: 'কান্নাকাটি করা', en: 'Crying' },
+    { icon: '🧠', bn: 'ভুলে যাওয়া', en: 'Forgetting things' },
+    { icon: '🗣️', bn: 'দোষারোপ করা', en: 'Blaming others' },
+    { icon: '🍽️', bn: 'খাবারে অরুচি বা অত্যধিক পরিমাণে খাবার গ্রহণ করা', en: 'Loss of appetite or overeating' },
+  ];
+
+  const renderCell = (item) => {
+    if (!item) return `<span class="table-cell__empty">-</span>`;
+    return `<span class="table-cell__icon" aria-hidden="true">${item.icon}</span><span class="bn">${item.bn}</span><span class="en">${item.en}</span>`;
+  };
+
+  const rows = Array.from({ length: Math.max(physicalChanges.length, emotionalChanges.length, behavioralChanges.length) }, (_, index) => `
+    <tr>
+      <td class="table-cell">${renderCell(physicalChanges[index] ?? null)}</td>
+      <td class="table-cell">${renderCell(emotionalChanges[index] ?? null)}</td>
+      <td class="table-cell">${renderCell(behavioralChanges[index] ?? null)}</td>
+    </tr>
+  `).join('');
+
+  return `
+  <div class="app-intro-box bg_4">
+    <div class="app-intro-icon" aria-hidden="true">🧱</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">ব্যক্তির চাহিদা এবং ক্ষমতার মধ্যে দ্বন্দ্ব তৈরি হওয়ার ফলে ব্যক্তির নিজের মধ্যে যে পরিস্থিতির সৃষ্টি হয় তাকে মানসিক চাপ বলা হয়। অর্থাৎ আমরা যে কাজটি যেভাবে করতে চাই তা যখন পরিবেশ ও পরিস্থিতির কারণে করতে পারি না তখন আমরা মানসিকভাবে চাপ অনুভব করে থাকি।</p>
+      <p class="app-intro-sub en">Stress is the condition created within a person when there is a conflict between personal demands and abilities. In other words, when we cannot do a task the way we want because of the environment or situation, we feel mental stress.</p>
+    </div>
+  </div>
+
+  <section class="fp-comparison-section" aria-label="মানসিক চাপের ফলে সৃষ্ট পরিবর্তনসমূহ" style="margin-top:24px;">
+    <div class="section-divider">
+      <h2 class="section-divider__title">
+        <span class="bn">মানসিক চাপের ফলে সৃষ্ট পরিবর্তনসমূহ</span>
+        <span class="en">Changes Caused by Stress</span>
+      </h2>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="comparison-table" role="grid">
+        <thead>
+          <tr>
+            <th class="table-header" scope="col"><span aria-hidden="true">🩺</span> <span class="bn">শারীরিক পরিবর্তনসমূহ</span><span class="en">Physical changes</span></th>
+            <th class="table-header" scope="col"><span aria-hidden="true">💭</span> <span class="bn">আবেগীয় পরিবর্তনসমূহ</span><span class="en">Emotional changes</span></th>
+            <th class="table-header" scope="col"><span aria-hidden="true">👣</span> <span class="bn">আচরণগত পরিবর্তনসমূহ</span><span class="en">Behavioral changes</span></th>
           </tr>
         </thead>
         <tbody>
