@@ -4810,7 +4810,11 @@ function renderLessonPage(modIdx, lesIdx) {
   const isViolenceOrAbuseLesson = (modIdx === 12 && lesIdx === 7);
   // Module 13 Lesson 9 — Various forms of violence against young people
   const isYouthViolenceFormsLesson = (modIdx === 12 && lesIdx === 8);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson;
+  // Module 14 Lesson 1 — Psychosocial changes in youth
+  const isPsychosocialChangesLesson = (modIdx === 13 && lesIdx === 0);
+  // Module 14 Lesson 2 — Emotion
+  const isEmotionLesson = (modIdx === 13 && lesIdx === 1);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4849,6 +4853,8 @@ function renderLessonPage(modIdx, lesIdx) {
     : isGenderDiscriminationActionsLesson ? buildGenderDiscriminationActionsSection()
     : isViolenceOrAbuseLesson ? buildViolenceOrAbuseSection()
     : isYouthViolenceFormsLesson ? buildYouthViolenceFormsSection()
+    : isPsychosocialChangesLesson ? buildPsychosocialChangesSection()
+    : isEmotionLesson ? buildEmotionLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -8623,6 +8629,155 @@ function buildYouthViolenceFormsSection() {
       <div class="role-grid">${renderCards(remedyCards, palette)}</div>
     </div>
   </section>
+  `;
+}
+
+function buildPsychosocialChangesSection() {
+  const socialChanges = [
+    { icon: '🧭', titleBn: 'ব্যক্তিগত পরিচয় অনুসন্ধান করা', titleEn: 'Searching for personal identity' },
+    { icon: '🕊️', titleBn: 'অধিক স্বাধীনচেতা মনোভাব', titleEn: 'A more independent mindset' },
+    { icon: '🎯', titleBn: 'অধিক দায়িত্ব অন্বেষণ করা', titleEn: 'Seeking greater responsibility' },
+    { icon: '⚠️', titleBn: 'ঝুঁকি-গ্রহণমূলক আচরণ', titleEn: 'Risk-taking behavior' },
+    { icon: '🤝', titleBn: 'সম্পর্কজনিত বিষয়', titleEn: 'Relationship-related issues' },
+  ];
+
+  const emotionalChanges = [
+    { icon: '📉', titleBn: 'নিম্ন আত্মসম্মানবোধ', titleEn: 'Low self-esteem' },
+    { icon: '🌧️', titleBn: 'আবেগীয় সমস্যা (অত্যধিক রাগ, নিরাপত্তাহীনতা, উদ্বেগ, চাপ, হতাশা, বিষণ্নতা)', titleEn: 'Emotional problems (excessive anger, insecurity, anxiety, stress, frustration, depression)' },
+    { icon: '🚪', titleBn: 'প্রত্যাহারমূলক মনোভাব', titleEn: 'Withdrawn attitude' },
+    { icon: '🔥', titleBn: 'বিদ্রোহী আচরণ', titleEn: 'Rebellious behavior' },
+  ];
+
+  const psychosocialComplexities = [
+    { icon: '👥', titleBn: 'সহপাঠীর প্রভাব', titleEn: 'Peer influence' },
+    { icon: '📚', titleBn: 'পড়াশোনায় ব্যাঘাত', titleEn: 'Disruption in studies' },
+    { icon: '📵', titleBn: 'যোগাযোগের অভাব', titleEn: 'Lack of communication' },
+    { icon: '🏫', titleBn: 'প্রাতিষ্ঠানিক সফলতা অর্জনে জটিলতা', titleEn: 'Difficulty in achieving institutional success' },
+    { icon: '💊', titleBn: 'মাদক গ্রহণ ও অন্যান্য আসক্তি', titleEn: 'Substance use and other addictions' },
+    { icon: '🧠', titleBn: 'সিদ্ধান্ত গ্রহণে জটিলতা', titleEn: 'Difficulty in decision-making' },
+    { icon: '💥', titleBn: 'সংর্ঘষ এবং সহিংসতামূলক আচরণ', titleEn: 'Conflict and violent behavior' },
+    { icon: '🚩', titleBn: 'চরম্পন্থি আচরণ', titleEn: 'Extremist behavior' },
+    { icon: '😓', titleBn: 'আবগে', titleEn: 'Emotion' },
+    { icon: '😟', titleBn: 'উদ্বগে', titleEn: 'Anxiety' },
+    { icon: '🫀', titleBn: 'মানসকি চাপ', titleEn: 'Mental stress' },
+    { icon: '😡', titleBn: 'রাগ', titleEn: 'Anger' },
+    { icon: '📝', titleBn: 'পরীক্ষা ভীতি', titleEn: 'Exam fear' },
+    { icon: '📱', titleBn: 'ডিজিটাল আসক্তি', titleEn: 'Digital addiction' },
+  ];
+
+  const renderCards = (items, palette) => items.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.titleBn}</h4>
+        <h4 class="role-card__title en">${item.titleEn}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  const palette = ['rose', 'indigo', 'teal', 'green'];
+
+  return `
+  <div class="app-intro-box bg_4">
+    <div class="app-intro-icon" aria-hidden="true">🧠</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">প্রত্যেক তরুন-তরুনীর মনোসামাজিক বিকাশ ভিন্ন; এক্ষেত্রে গুরুত্বপূর্ণ উপাদান হিসেবে জিনগত বৈশিষ্ট্য, মস্তিষ্কের বিকাশ, অভিজ্ঞতা ছাড়াও চারপাশের পরিবেশ (পরিবার, বন্ধু, সমাজ, কৃষ্টি) ইত্যাদিও বিশেষভাবে প্রভাব বিস্তার করে। মনোসামাজিক পরিবর্তনের মাধ্যমে তরুন তরুনীদের মাঝে আত্ম-নির্ভরশীলতা এবং পরিণত বয়সের বৈশিষ্ট্যগুলো ধীরে ধীরে প্রকাশ পায়।</p>
+      <p class="app-intro-sub en">Each young person develops psychosocially in a different way. Important factors include genetic characteristics, brain development, life experiences, and the surrounding environment (family, friends, society, and culture). Through psychosocial changes, self-reliance and mature-age characteristics gradually emerge among adolescents and youth.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="সামাজিক পরিবর্তনসমূহ" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🌐</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">সামাজিক পরিবর্তনসমূহ</h2>
+        <h2 class="role-section__title en">Social Changes</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(socialChanges, palette)}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="আবেগ জনিত/আবেগীয় পরিবর্তনসমূহ" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">💭</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">আবেগ জনিত/আবেগীয় পরিবর্তনসমূহ</h2>
+        <h2 class="role-section__title en">Emotional Changes</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(emotionalChanges, palette)}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="তারুণ্যে মনোসামাজিক জটিলতাসমূহ" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🧩</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">তারুণ্যে মনোসামাজিক জটিলতাসমূহ</h2>
+        <h2 class="role-section__title en">Psychosocial Complexities in Youth</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(psychosocialComplexities, palette)}</div>
+    </div>
+  </section>
+  `;
+}
+
+function buildEmotionLessonSection() {
+  const basicEmotions = [
+    { icon: '😊', titleBn: 'সুখ', titleEn: 'Happiness' },
+    { icon: '😢', titleBn: 'দুঃখ', titleEn: 'Sadness' },
+    { icon: '😡', titleBn: 'রাগ', titleEn: 'Anger' },
+    { icon: '😨', titleBn: 'ভয়', titleEn: 'Fear' },
+  ];
+
+  const renderCards = (items, palette) => items.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.titleBn}</h4>
+        <h4 class="role-card__title en">${item.titleEn}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div class="app-intro-box bg_4">
+    <div class="app-intro-icon" aria-hidden="true">💭</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">আবেগ হলো এক ধরনের মানসিক অবস্থা যা চিন্তন, অনুভূতি, আচরণগত প্রতিক্রিয়া এবং আনন্দ/বেদনার মাত্রার সাথে সম্পর্কিত। আবেগের ফলে আমাদের নানা রকম শারীরিক, আচরণগত এবং চিন্তার পরিবর্তন হয়।</p>
+      <p class="app-intro-sub bn">আবেগ হলো অভ্যন্তরীণ এবং বাহ্যিক ঘটনার প্রতি আমাদের শারীরবৃত্তীয় ও আচরণগত প্রতিক্রিয়া (Sternberg, R. 1998)। ব্যক্তি থেকে ব্যক্তিতে আবেগের বহিঃপ্রকাশ ভিন্ন হয়ে থাকে।</p>
+      <p class="app-intro-sub en">Emotion is a mental state related to cognition, feelings, behavioral responses, and the degree of pleasure or pain. Emotions cause various physical, behavioral, and cognitive changes in us.</p>
+      <p class="app-intro-sub en">Emotion is our physiological and behavioral response to internal and external events (Sternberg, R. 1998). Emotional expression varies from person to person.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="মৌলিক আবেগ সমূহ হচ্ছে" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🎭</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">মৌলিক আবেগ সমূহ হচ্ছে :</h2>
+        <h2 class="role-section__title en">Basic emotions are:</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(basicEmotions, ['rose', 'indigo', 'teal', 'green'])}</div>
+    </div>
+  </section>
+
+  <div class="app-intro-box bg_4" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">🛠️</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">কেন আবেগ ব্যবস্থাপনা করা গুরুত্বপূর্ণ</h2>
+      <h2 class="app-intro-title en">Why Emotion Management Is Important</h2>
+      <p class="app-intro-sub bn">দৈনন্দিন জীবনে আমাদের অনেক নেতিবাচক ঘটনার মধ্যেদিয়ে যেতে হয়। ফলে আমরা নানা ধরনের আবেগীয় সংকটের সম্মুখীন হই। আবেগ ব্যবস্থাপনা ব্যক্তিকে আত্ম নিয়ন্ত্রনে সহায়তা করবে, নেতিবাচক পরিস্থিতি মোকাবেলা করতে এবং এ ধরনের পরিস্থিতিতে কিভাবে প্রতিক্রিয়া করতে হবে তাতে সহায়তা করবে। ব্যক্তি তার গুনাবলীগুলো উপলব্ধি করতে পারবে এবং ফলপ্রসূভাবে কাজ করতে পারবে। এটি আত্ম-বিশ্বাস, আত্মনিয়ন্ত্রণ ক্ষমতা এবং আত্মসন্মানবোধ বৃব্ধিতে সহায়তা করবে।</p>
+      <p class="app-intro-sub en">In daily life, we go through many negative situations, and as a result we face different kinds of emotional crises. Emotion management helps a person with self-control, coping with negative situations, and understanding how to respond in such moments. It helps individuals recognize their strengths and work more productively. It also supports growth in self-confidence, self-regulation, and self-esteem.</p>
+    </div>
+  </div>
   `;
 }
 
