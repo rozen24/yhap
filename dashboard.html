@@ -4009,7 +4009,7 @@
         <div class="lesson-list" id="modPanel-13" role="list">
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,0)"><span class="lesson-dot" aria-hidden="true">1</span><span class="lesson-text"><span class="lesson-label bn">তরুণদের মনো-সামাজিক পরিবর্তন</span><span class="lesson-label en">Psychosocial changes in youth</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,1)"><span class="lesson-dot" aria-hidden="true">2</span><span class="lesson-text"><span class="lesson-label bn">আবেগ</span><span class="lesson-label en">Emotion</span></span></button>
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">আবেগ নিয়ন্ত্রণ কৌশল</span><span class="lesson-label en">Emotion management techniques</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">আবেগ ব্যবস্থাপনার কৌশল</span><span class="lesson-label en">Emotion management techniques</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,3)"><span class="lesson-dot" aria-hidden="true">4</span><span class="lesson-text"><span class="lesson-label bn">উদ্বেগ</span><span class="lesson-label en">Anxiety</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,4)"><span class="lesson-dot" aria-hidden="true">5</span><span class="lesson-text"><span class="lesson-label bn">মানসিক চাপ</span><span class="lesson-label en">Stress</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,5)"><span class="lesson-dot" aria-hidden="true">6</span><span class="lesson-text"><span class="lesson-label bn">মানসিক চাপের কারণ</span><span class="lesson-label en">Causes of stress</span></span></button>
@@ -4444,7 +4444,7 @@ const LESSONS_BN = [
   ['পলিসিস্টিক ওভারিআন সিনড্রোম (পিসিওএস) ','সমস্যা','সমাধান','ব্যবস্থাপনা'],
   ['শিশু অধিকার ও মানবাধিকার এবং যৌন ও প্রজনন স্বাস্থ্য অধিকার','শিশু নির্যাতন','যৌন ও প্রজনন স্বাস্থ্য অধিকার'],
   ['লিঙ্গ-ভিত্তিক বৈষম্য','লিঙ্গ বৈষম্য','সমাজে বিরাজমান জেন্ডার বৈষম্যয','জেন্ডারভিত্তিক সহিংসতা ও নির্যাতনের ধরণ','যৌন হয়রানি','আর্থিক ক্ষতি – আর্থিক দিক','লিঙ্গ বৈষম্য দূরীকরণে করণীয়','সহিংসতা বা নির্যাতন','তরুণদের বিরুদ্ধে সহিংসতার বিভিন্ন রূপ'],
-  ['তরুণদের মনো-সামাজিক পরিবর্তন','আবেগ','আবেগ নিয়ন্ত্রণ কৌশল','উদ্বেগ','মানসিক চাপ','মানসিক চাপের কারণ','রাগ','কেন এবং কখন আমরা সহজে রেগে যাই?','পরীক্ষার ভয়','পরীক্ষার ভয় দূর করার উপায় বা সমাধান','ডিজিটাল আসক্তি প্রতিরোধ'],
+  ['তরুণদের মনো-সামাজিক পরিবর্তন','আবেগ','আবেগ ব্যবস্থাপনার কৌশল','উদ্বেগ','মানসিক চাপ','মানসিক চাপের কারণ','রাগ','কেন এবং কখন আমরা সহজে রেগে যাই?','পরীক্ষার ভয়','পরীক্ষার ভয় দূর করার উপায় বা সমাধান','ডিজিটাল আসক্তি প্রতিরোধ'],
   ['মনো-সামাজিক সহায়তা','মনো-সামাজিক সহায়তার দক্ষতা','মনোযোগী শ্রবণ','মূল্যবোধ','আচরণ','নৈতিকতা'],
   ['মাদক আসক্তি','মাদক আসক্তির লক্ষণ','মাদক আসক্তির পরিণতি ও প্রতিরোধ'],
   ['আঘাত প্রতিরোধ ও প্রাথমিক চিকিৎসা সেবা','রক্তপাত নিয়ন্ত্রণ','পোড়া','পোড়ার প্রাথমিক চিকিৎসা','হাড় ভাঙা','সাপের কামড়','কুকুরের কামড়','বিষক্রিয়া','ডুবে যাওয়া','শ্বাসরোধ বা গলায় কিছু আটকে যাওয়া','শ্বাসরোধের প্রাথমিক চিকিৎসা (প্রাপ্তবয়স্ক ও ১ বছরের বেশি শিশুর জন্য)'],
@@ -4814,7 +4814,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isPsychosocialChangesLesson = (modIdx === 13 && lesIdx === 0);
   // Module 14 Lesson 2 — Emotion
   const isEmotionLesson = (modIdx === 13 && lesIdx === 1);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson;
+  // Module 14 Lesson 3 — Emotion management strategies
+  const isEmotionManagementStrategiesLesson = (modIdx === 13 && lesIdx === 2);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4855,6 +4857,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isYouthViolenceFormsLesson ? buildYouthViolenceFormsSection()
     : isPsychosocialChangesLesson ? buildPsychosocialChangesSection()
     : isEmotionLesson ? buildEmotionLessonSection()
+    : isEmotionManagementStrategiesLesson ? buildEmotionManagementStrategiesSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -8778,6 +8781,75 @@ function buildEmotionLessonSection() {
       <p class="app-intro-sub en">In daily life, we go through many negative situations, and as a result we face different kinds of emotional crises. Emotion management helps a person with self-control, coping with negative situations, and understanding how to respond in such moments. It helps individuals recognize their strengths and work more productively. It also supports growth in self-confidence, self-regulation, and self-esteem.</p>
     </div>
   </div>
+  `;
+}
+
+function buildEmotionManagementStrategiesSection() {
+  const strategyCards = [
+    { icon: '🧠', titleBn: 'নিজের অনুভূতি, প্রতিক্রিয়া এবং মানসিক অবস্থার প্রতি খেয়াল করা এবং বোঝা', titleEn: 'Notice and understand your feelings, reactions, and mental state' },
+    { icon: '🙋', titleBn: 'নিজের অনুভূতি ও আচরণের দায়িত্ব নেওয়া', titleEn: 'Take responsibility for your feelings and behavior' },
+    { icon: '🌟', titleBn: 'নিজের ভালো দিকগুলিতে ফোকাস করা এবং এর জন্য নিজেকে প্রশংসা করা', titleEn: 'Focus on your strengths and appreciate yourself for them' },
+    { icon: '🌿', titleBn: 'প্রাকৃতিক পরিবেশে সময় অতিবাহিত করা', titleEn: 'Spend time in nature' },
+    { icon: '🕊️', titleBn: 'মুক্ত মনা হওয়া ও চারপাশে যা ঘটছে তা গ্রহণ করা', titleEn: 'Stay open-minded and accept what is happening around you' },
+    { icon: '🗣️', titleBn: 'বিশ্বস্ত কারো সাথে মনের কথা শেয়ার করা', titleEn: 'Share your thoughts with someone trustworthy' },
+    { icon: '🎵', titleBn: 'পছন্দনীয় ইতিবাচক কাজ করা (পছন্দের বই পড়া, গান শোনা)', titleEn: 'Engage in positive preferred activities (reading favorite books, listening to music)' },
+    { icon: '📔', titleBn: 'ডায়েরী লেখা (ঘটে যাওয়া ঘটনা, নিজের চিন্তা ও অনুভূতি লেখা)', titleEn: 'Write a diary (record events, your thoughts, and feelings)' },
+    { icon: '☀️', titleBn: 'জীবনের ইতিবাচক ঘটনার প্রতি ফোকাস করা', titleEn: 'Focus on positive events in life' },
+    { icon: '🏃', titleBn: 'ব্যায়াম করা', titleEn: 'Do exercise' },
+    { icon: '🫁', titleBn: 'নাক দিয়ে গভীর নিঃশ্বাস নিয়ে মুখ দিয়ে প্রশ্বাস ছাড়া', titleEn: 'Inhale deeply through the nose and exhale through the mouth' },
+  ];
+
+  const intelligenceCards = [
+    { icon: '🔍', titleBn: 'নিজের আবেগগুলো চিহ্নিত করতে পারা এবং তাদের কারণগুলো বুঝতে পারা।', titleEn: 'Being able to identify your own emotions and understand their causes.' },
+    { icon: '🛡️', titleBn: 'আবেগগুলো যেন কোনো নেতিবাচক প্রভাব না ফেলে, সে জন্য নিজেকে নিয়ন্ত্রণ করতে পারা।', titleEn: 'Being able to control yourself so emotions do not create negative effects.' },
+    { icon: '🤝', titleBn: 'অন্যদের আবেগগুলো বুঝতে পারা এবং তাদের সাথে সংবেদনশীলভাবে আচরণ করা।', titleEn: 'Being able to understand others emotions and respond to them sensitively.' },
+    { icon: '🌉', titleBn: 'আবেগীয় বুদ্ধিমত্তার মাধ্যমে অন্যদের সাথে ভালো সম্পর্ক গড়ে তুলতে পারা।', titleEn: 'Being able to build good relationships with others through emotional intelligence.' },
+  ];
+
+  const renderCards = (items, palette) => items.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.titleBn}</h4>
+        <h4 class="role-card__title en">${item.titleEn}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  const palette = ['rose', 'indigo', 'teal', 'green'];
+
+  return `
+  <div style="width:100%; max-width:100%; margin-bottom:24px;">
+    <img src="images/modu14/abeg.jpg" alt="Emotion management" style="width:100%; max-width:820px; height:auto; display:block; margin:0 auto; border-radius:16px; box-shadow:0 10px 30px rgba(13,71,161,0.14);" loading="lazy" decoding="async" />
+  </div>
+
+  <section class="role-section" aria-label="আবেগ ব্যবস্থাপনার কৌশল" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🧭</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">আবেগ ব্যবস্থাপনার কৌশল</h2>
+        <h2 class="role-section__title en">Emotion Management Strategies</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(strategyCards, palette)}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="আবেগীয় বুদ্ধিমত্তা" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">💡</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">আবেগীয় বুদ্ধিমত্তা</h2>
+        <p class="role-section__sub bn">আবেগীয় বুদ্ধিমত্তা (emotional intelligence) হল নিজের আবেগ এবং অন্যদের আবেগ অনুধাবন, নিয়ন্ত্রণ ও ব্যবহার করার ক্ষমতা। আবেগীয় বুদ্ধিমত্তার গুরুত্বপূর্ণ দিকগুলো হল:</p>
+        <h2 class="role-section__title en">Emotional Intelligence</h2>
+        <p class="role-section__sub en">Emotional intelligence is the ability to understand, regulate, and use your own emotions and the emotions of others. The key aspects of emotional intelligence are:</p>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(intelligenceCards, palette)}</div>
+    </div>
+  </section>
   `;
 }
 
