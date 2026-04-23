@@ -4750,7 +4750,11 @@ function renderLessonPage(modIdx, lesIdx) {
   const isGenderDiscriminationLesson = (modIdx === 12 && lesIdx === 1);
   // Module 13 Lesson 3 — Prevailing gender discrimination in society
   const isPrevailingGenderDiscriminationLesson = (modIdx === 12 && lesIdx === 2);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson;
+  // Module 13 Lesson 4 — Types of gender-based violence and abuse
+  const isGenderViolenceLesson = (modIdx === 12 && lesIdx === 3);
+  // Module 13 Lesson 5 — Sexual harassment
+  const isSexualHarassmentLesson = (modIdx === 12 && lesIdx === 4);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4783,6 +4787,8 @@ function renderLessonPage(modIdx, lesIdx) {
     : isGenderBasedDiscriminationLesson ? buildGenderBasedDiscriminationSection()
     : isGenderDiscriminationLesson ? buildGenderDiscriminationSection()
     : isPrevailingGenderDiscriminationLesson ? buildPrevailingGenderDiscriminationSection()
+    : isGenderViolenceLesson ? buildGenderViolenceSection()
+    : isSexualHarassmentLesson ? buildSexualHarassmentSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -7945,37 +7951,38 @@ function buildGenderDiscriminationSection() {
 
 function buildPrevailingGenderDiscriminationSection() {
   const hubItems = [
-    { icon: '📢', bn: 'বাল্যবিবাহ বন্ধে সচেতনতা বৃদ্ধি করা' },
-    { icon: '⚖️', bn: 'দেশের প্রচলিত আইনের যথাযথ প্রয়োগ (১৮-এর আগে মেয়েদের বিয়ে নয় ২০-এর আগে সন্তান নয়)' },
-    { icon: '⚠️', bn: 'কৈশোরকালীন গর্ভধারণের কুফল ও এর ভয়াবহ পরিণতি সম্পর্কে সচেতনতা তৈরি করা' },
-    { icon: '👨‍👩‍👧‍👦', bn: 'পরিবার পরিকল্পনা সম্পর্কে জনগণের মধ্য সচেতনতা বাড়ানো' },
-    { icon: '💊', bn: 'পরিবার পরিকল্পনা পদ্ধতি ব্যবহারে উৎসাহ প্রদান' },
-    { icon: '⏳', bn: 'কৈশোরে বিয়ে হলেও দেরিতে সন্তান গ্রহণে স্বামী, স্ত্রী ও অভিভাবকদের সচেতন করা' },
-    { icon: '📍', bn: 'কৈশোরে পরিবার পরিকল্পনা পদ্ধতির সহজপ্রাপ্যতা নিশ্চিত করা' },
+    { icon: '📢', bn: 'বাল্যবিবাহ বন্ধে সচেতনতা বৃদ্ধি করা', en: 'Raise awareness to stop child marriage' },
+    { icon: '⚖️', bn: 'দেশের প্রচলিত আইনের যথাযথ প্রয়োগ (১৮-এর আগে মেয়েদের বিয়ে নয় ২০-এর আগে সন্তান নয়)', en: 'Properly enforce existing laws (no marriage before 18 for girls and no childbearing before 20)' },
+    { icon: '⚠️', bn: 'কৈশোরকালীন গর্ভধারণের কুফল ও এর ভয়াবহ পরিণতি সম্পর্কে সচেতনতা তৈরি করা', en: 'Create awareness about the harmful effects and severe consequences of adolescent pregnancy' },
+    { icon: '👨‍👩‍👧‍👦', bn: 'পরিবার পরিকল্পনা সম্পর্কে জনগণের মধ্য সচেতনতা বাড়ানো', en: 'Increase public awareness about family planning' },
+    { icon: '💊', bn: 'পরিবার পরিকল্পনা পদ্ধতি ব্যবহারে উৎসাহ প্রদান', en: 'Encourage the use of family planning methods' },
+    { icon: '⏳', bn: 'কৈশোরে বিয়ে হলেও দেরিতে সন্তান গ্রহণে স্বামী, স্ত্রী ও অভিভাবকদের সচেতন করা', en: 'Even if marriage happens in adolescence, make husbands, wives, and guardians aware of delaying childbirth' },
+    { icon: '📍', bn: 'কৈশোরে পরিবার পরিকল্পনা পদ্ধতির সহজপ্রাপ্যতা নিশ্চিত করা', en: 'Ensure easy access to family planning methods during adolescence' },
   ];
 
   const hubCards = hubItems.map((item, index) => `
     <div class="cm-hub-card cm-hub-card_projono" style="--angle:${index * (360 / hubItems.length)}deg;">
       <span class="cm-hub-card__icon" aria-hidden="true">${item.icon}</span>
       <p class="cm-hub-card__text bn">${item.bn}</p>
+      <p class="cm-hub-card__text en">${item.en}</p>
     </div>
   `).join('');
 
   const discriminationItems = [
-    { icon: '🎓', bn: 'সমাজে সকল ক্ষেত্রে, যেমন — শিক্ষা, স্বাস্থ্যসেবা পাওয়ার ক্ষেত্রে মেয়েদের তুলনায় ছেলেদের অগ্রাধিকার' },
-    { icon: '👦', bn: 'পরিবারে কন্যা সন্তান থেকে পুত্র সন্তানের অধিক মূল্যায়ন' },
-    { icon: '🍽️', bn: 'পরিবারে মেয়েদের তুলনায় ছেলেদের বেশি ও পুষ্টিকর খাবার খেতে দেয়া' },
-    { icon: '📚', bn: 'কন্যা সন্তানকে লেখাপড়া শেখাতে বাবা-মায়ের অনীহা, পুত্রের পড়াশোনার জন্য ব্যয় করা' },
-    { icon: '💍', bn: 'কন্যা সন্তানকে পরিবারের বোঝা মনে করে অল্প বয়সে বিয়ে দিয়ে দেওয়া' },
-    { icon: '💰', bn: 'যৌতুক দাবি করা এবং যৌতুকের কারণে মেয়েদের উপর শারীরিক ও মানসিক নির্যাতন করা' },
-    { icon: '🩺', bn: 'অসুস্থ হলে মেয়েদের স্বাস্থ্যসেবা গ্রহণের ব্যাপারে পরিবারের উদাসীনতা' },
-    { icon: '🤱', bn: 'সন্তান গ্রহণ ও নিজের শরীর সম্পর্কে সিদ্ধান্ত নিতে না পারার প্রথা' },
-    { icon: '👶', bn: 'কৈশোরে সন্তানধারণ করা' },
-    { icon: '🚫', bn: 'নারীর উপর শারীরিক ও মানসিক নির্যাতন খুব স্বাভাবিকভাবে গ্রহণ করা' },
-    { icon: '💵', bn: 'পুরুষের তুলনায় নারীকে কম পারিশ্রমিক দেওয়া' },
-    { icon: '⚖️', bn: 'নারী ও পুরুষের মাঝে সম্পদের অসম বিতরণ' },
-    { icon: '👜', bn: 'নিজ উপার্জনের উপর নারীর অধিকার না থাকা' },
-    { icon: '🛠️', bn: 'কর্মক্ষেত্রে নারীর দক্ষতা প্রমাণের সুযোগ না দেয়া' },
+    { icon: '🎓', bn: 'সমাজে সকল ক্ষেত্রে, যেমন — শিক্ষা, স্বাস্থ্যসেবা পাওয়ার ক্ষেত্রে মেয়েদের তুলনায় ছেলেদের অগ্রাধিকার', en: 'Boys are preferred over girls in all spheres of society, such as education and healthcare.' },
+    { icon: '👦', bn: 'পরিবারে কন্যা সন্তান থেকে পুত্র সন্তানের অধিক মূল্যায়ন', en: 'In the family, sons are valued more than daughters.' },
+    { icon: '🍽️', bn: 'পরিবারে মেয়েদের তুলনায় ছেলেদের বেশি ও পুষ্টিকর খাবার খেতে দেয়া', en: 'Boys are given more and more nutritious food than girls in the family.' },
+    { icon: '📚', bn: 'কন্যা সন্তানকে লেখাপড়া শেখাতে বাবা-মায়ের অনীহা, পুত্রের পড়াশোনার জন্য ব্যয় করা', en: 'Parents are reluctant to educate daughters, but spend on sons' },
+    { icon: '💍', bn: 'কন্যা সন্তানকে পরিবারের বোঝা মনে করে অল্প বয়সে বিয়ে দিয়ে দেওয়া', en: 'Daughters are seen as a burden and married off at an early age.' },
+    { icon: '💰', bn: 'যৌতুক দাবি করা এবং যৌতুকের কারণে মেয়েদের উপর শারীরিক ও মানসিক নির্যাতন করা', en: 'Dowry is demanded, and girls are physically and mentally abused because of it.' },
+    { icon: '🩺', bn: 'অসুস্থ হলে মেয়েদের স্বাস্থ্যসেবা গ্রহণের ব্যাপারে পরিবারের উদাসীনতা', en: 'Families remain indifferent when girls need healthcare.' },
+    { icon: '🤱', bn: 'সন্তান গ্রহণ ও নিজের শরীর সম্পর্কে সিদ্ধান্ত নিতে না পারার প্রথা', en: 'Women are not allowed to decide about childbirth or their own bodies.' },
+    { icon: '👶', bn: 'কৈশোরে সন্তানধারণ করা', en: 'Childbearing during adolescence.' },
+    { icon: '🚫', bn: 'নারীর উপর শারীরিক ও মানসিক নির্যাতন খুব স্বাভাবিকভাবে গ্রহণ করা', en: 'Physical and mental violence against women is accepted as normal.' },
+    { icon: '💵', bn: 'পুরুষের তুলনায় নারীকে কম পারিশ্রমিক দেওয়া', en: 'Women are paid less than men.' },
+    { icon: '⚖️', bn: 'নারী ও পুরুষের মাঝে সম্পদের অসম বিতরণ', en: 'Wealth is distributed unequally between women and men.' },
+    { icon: '👜', bn: 'নিজ উপার্জনের উপর নারীর অধিকার না থাকা', en: 'Women do not have control over their own earnings.' },
+    { icon: '🛠️', bn: 'কর্মক্ষেত্রে নারীর দক্ষতা প্রমাণের সুযোগ না দেয়া', en: 'Women are not given opportunities to prove their skills in the workplace.' },
   ];
 
   const palette = ['teal', 'rose', 'indigo', 'green'];
@@ -7983,6 +7990,7 @@ function buildPrevailingGenderDiscriminationSection() {
     <article class="role-card role-card--${palette[index % palette.length]}">
       <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
       <p class="role-card__text bn">${item.bn}</p>
+      <p class="role-card__text en">${item.en}</p>
     </article>
   `).join('');
 
@@ -7992,6 +8000,7 @@ function buildPrevailingGenderDiscriminationSection() {
       <div class="role-section__icon" aria-hidden="true">📌</div>
       <div class="role-section__titles">
         <h2 class="role-section__title bn">সমাজে বিরাজমান জেন্ডার বৈষম্য</h2>
+        <h2 class="role-section__title en">Prevailing Gender Discrimination in Society</h2>
       </div>
     </div>
     <div class="role-section__body">
@@ -8013,12 +8022,163 @@ function buildPrevailingGenderDiscriminationSection() {
           <div class="cm-hub-center cm-hub-center_projono">
             <div class="cm-hub-center__icon" aria-hidden="true">⚧️</div>
             <p class="cm-hub-center__text bn">প্রজনন স্বাস্থ্যে জেন্ডার বৈষম্যের প্রভাব</p>
+            <p class="cm-hub-center__text en">Impact of Gender Discrimination on Reproductive Health</p>
           </div>
           <div class="cm-hub-grid">
             ${hubCards}
           </div>
         </div>
       </section>
+    </div>
+  </section>
+  `;
+}
+
+function buildGenderViolenceSection() {
+  const renderCards = (items, palette) => items.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.titleBn}</h4>
+        <h4 class="role-card__title en">${item.titleEn}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  const physical = [
+    { icon: '👊', titleBn: 'মারধর, আঘাত ও যেকোনো শারীরিক নির্যাতন', titleEn: 'Beating, injury, and any physical abuse' },
+    { icon: '🧪', titleBn: 'এসিড আক্রমণ', titleEn: 'Acid attack' },
+    { icon: '🚚', titleBn: 'পাচার', titleEn: 'Trafficking' },
+    { icon: '🕵️', titleBn: 'অপহরণ', titleEn: 'Abduction' },
+    { icon: '⚰️', titleBn: 'হত্যা', titleEn: 'Murder' },
+    { icon: '🚨', titleBn: 'আত্মহত্যায় প্ররোচনা বা বাধ্য করা', titleEn: 'Inciting or forcing suicide' },
+    { icon: '🤛', titleBn: 'ধাক্কা দেওয়া', titleEn: 'Pushing' },
+    { icon: '✊', titleBn: 'গলা চিপে ধরা', titleEn: 'Choking' },
+    { icon: '💇', titleBn: 'চুলের মুঠি ধরে টানা', titleEn: 'Pulling by the hair' },
+    { icon: '✋', titleBn: 'চড়, থাপ্পড় ইত্যাদি', titleEn: 'Slapping, hitting, and similar acts' },
+  ];
+
+  const mental = [
+    { icon: '🚫', titleBn: 'কোথাও যেতে বাধা দেয়া', titleEn: 'Preventing someone from going anywhere' },
+    { icon: '🤬', titleBn: 'গালমন্দ করা', titleEn: 'Swearing at or insulting someone' },
+    { icon: '😞', titleBn: 'অপমান করা', titleEn: 'Humiliating someone' },
+    { icon: '🗯️', titleBn: 'হেয় করে কথা বলা', titleEn: 'Speaking in a belittling way' },
+    { icon: '🙄', titleBn: 'বিরক্ত করা', titleEn: 'Harassing or annoying someone' },
+    { icon: '🤨', titleBn: 'সন্দেহ করা', titleEn: 'Suspicion or distrust' },
+    { icon: '⛓️', titleBn: 'বিভিন্ন ধরনের বাধ্যবাধকতা আরোপ করা', titleEn: 'Imposing various restrictions or obligations' },
+    { icon: '🧠', titleBn: 'মানসিক অশান্তি বা অস্থিরতা করা ইত্যাদি', titleEn: 'Causing mental distress or instability' },
+  ];
+
+  const sexual = [
+    { icon: '🛑', titleBn: 'ধর্ষণ', titleEn: 'Rape' },
+    { icon: '⚠️', titleBn: 'ধর্ষণের চেষ্টা', titleEn: 'Attempted rape' },
+    { icon: '👥', titleBn: 'দলবদ্ধ ধর্ষণ', titleEn: 'Gang rape' },
+    { icon: '💍', titleBn: 'প্রতারণামূলক বিয়ে বা যৌন সম্পর্ক স্থাপন', titleEn: 'Fraudulent marriage or sexual relations' },
+    { icon: '🚫', titleBn: 'জোরপূর্বক যৌন ব্যবসায় বাধ্য করা ইত্যাদি', titleEn: 'Forcing someone into sex work, etc.' },
+  ];
+
+  const palette = ['teal', 'rose', 'indigo', 'green'];
+
+  return `
+  <div class="app-intro-box">
+    <div class="app-intro-icon" aria-hidden="true">⚠️</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">সাধারণত আমাদের চারপাশে যে সব সহিংসতা ও নির্যাতন ঘটে সেগুলোকে পারিবারিক সহিংসতা (প্রতিরোধ ও সুরক্ষা) আইন ২০১০ অনুযায়ী চার ভাগে ভাগ করা হয়েছে।</p>
+      <p class="app-intro-sub en">In general, the violence and abuse around us are divided into four categories according to the Domestic Violence (Prevention and Protection) Act, 2010.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="শারীরিক নির্যাতন" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">👊</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">১. শারীরিক নির্যাতন</h2>
+        <h2 class="role-section__title en">1. Physical abuse</h2>
+        <p class="role-section__sub bn">এমন কোনো কাজ বা আচরণ করা, যার দ্বারা সংক্ষুব্ধ ব্যক্তির জীবন, স্বাস্থ্য, নিরাপত্তা বা শরীরের কোনো অঙ্গ ক্ষতিগ্রস্ত হয় অথবা ক্ষতিগ্রস্ত হবার সম্ভাবনা থাকে এবং সংক্ষুব্ধ ব্যক্তিকে অপরাধমূলক কাজ করতে বাধ্য করা বা প্ররোচনা প্রদান করা বা বলপ্রয়োগ যেমন :</p>
+        <p class="role-section__sub en">Any act or behavior that harms, or may harm, the life, health, safety, or any part of the body of the affected person, or forces or induces the person to commit a criminal act or uses force, such as:</p>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(physical, palette)}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="মানসিক নির্যাতন" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🧠</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">মানসিক নির্যাতন</h2>
+        <p class="role-section__sub bn">নিম্নবর্ণিত বিষয়সমূহ অর্ন্তভুক্ত হবে - <br> ক. মৌখিক নির্যাতন, অপমান, অবজ্ঞা, ভীতি প্রদর্শন বা এমন কোনো উক্তি করা, যা দ্বারা সংক্ষুব্ধ ব্যক্তির মানসিকভাবে ক্ষতি হয় <br> খ. হয়রানি <br> গ. ব্যক্তি স্বাধীনতায় হস্তক্ষেপ অর্থাৎ স্বাভাবিক চলাচল, যোগাযোগ বা ব্যক্তিগত ইচ্ছা বা মতামত প্রকাশের উপর হস্তক্ষেপ; যেমন :</p>
+        <p class="role-section__sub en">The following matters are included - <br> a. Verbal abuse, insults, contempt, intimidation, or any statement that causes mental harm to the affected person <br> b. Harassment <br> c. Interference with personal freedom, meaning interference with normal movement, communication, or the expression of personal wishes or opinions; such as:</p>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(mental, palette)}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="যৌন নির্যাতন" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🛡️</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">যৌন নির্যাতন</h2>
+        <p class="role-section__sub bn">নিপীড়ন যা দ্বারা সংক্ষদ্ধ ব্যক্তির সম্ভ্রম, সন্মান ও সুনামের ক্ষতি হয়। যৌন আকাঙ্ক্ষা ও চাহিদা পূরণে বিশেষ ধরণের নির্যাতন যা শরীর ও মনের উপর সংঘটিত একটি জঘন্যতম অপরাধ। যেমন -</p>
+        <p class="role-section__sub en">Abuse that harms the dignity, respect, and reputation of the affected person. It is a special form of abuse to satisfy sexual desire and needs, and is one of the most heinous crimes committed against the body and mind. Such as -</p>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(sexual, palette)}</div>
+    </div>
+  </section>
+  `;
+}
+
+function buildSexualHarassmentSection() {
+  const cards = [
+    { icon: '🫱', bn: 'অনাকাঙ্ক্ষিত যৌন আবেদনমূলক আচরণ (সরাসরি কিংবা ইঙ্গিতে) যেমন : শারীরিক স্পর্শ বা এমন প্রচেষ্টা', en: 'Unwanted sexually suggestive behavior, direct or implied, such as physical contact or attempts to touch.' },
+    { icon: '🏢', bn: 'প্রশাসনিক, কর্তৃপক্ষীয় ও পেশাগত ক্ষমতা অপব্যবহার করে কারো সাথে যৌন সম্পর্ক স্থাপনের চেষ্টা করা', en: 'Trying to establish sexual relations by abusing administrative, authoritative, or professional power.' },
+    { icon: '🗣️', bn: 'যৌন হয়রানি বা নিপীড়নমূলক উক্তি', en: 'Sexual harassment or abusive remarks.' },
+    { icon: '🎯', bn: 'যৌন সুযোগ লাভের জন্য অনাকাঙ্ক্ষিত দাবি বা আবেদন', en: 'Unwanted demands or requests for sexual favors.' },
+    { icon: '🖼️', bn: 'অনাকাঙ্ক্ষিত পর্নোগ্রাফি দেখানো', en: 'Showing unwanted pornography.' },
+    { icon: '💬', bn: 'যৌন আবেদনমূলক অনাকাঙ্ক্ষিত মন্তব্য বা ভঙ্গি', en: 'Unwanted sexually suggestive comments or gestures.' },
+    { icon: '🧷', bn: 'অশালীন ভঙ্গি, যৌন নির্যাতনমূলক ভাষা বা মন্তব্যের মাধ্যমে উত্যক্ত করা, কাউকে অনুসরণ করা, যৌন ইঙ্গিতমূলক ভাষা ব্যবহার করে ঠাট্টা বা উপহাস করা', en: 'Harassing through obscene gestures or abusive sexual language, stalking someone, or teasing/mocking with sexual innuendo.' },
+    { icon: '📩', bn: 'চিঠি, টেলিফোন, মোবাইল, এসএমএস, ছবি, নোটিশ, কার্টুন, বেঞ্চ, চেয়ার-টেবিল, নোটিশ বোর্ড, অফিস, ফ্যাক্টরি, শ্রেণিকক্ষ, বাথরুমের দেয়ালে যৌন ইঙ্গিতমূলক অপমানজনক কিছু লেখা', en: 'Writing offensive sexual remarks on letters, telephones, mobiles, SMS, pictures, notices, cartoons, benches, chairs, tables, notice boards, offices, factories, classrooms, or bathroom walls.' },
+    { icon: '📹', bn: 'ব্লাকমেইলিং অথবা চরিত্র লঙ্ঘণের উদ্দেশ্য স্থির চিত্র এবং ভিডিও ধারণ করা', en: 'Taking still photos or videos for blackmailing or to damage reputation.' },
+    { icon: '⚽', bn: 'যৌন নিপীড়ন বা হয়রানির উদ্দেশ্য খেলাধুলা, সাংস্কৃতিক, প্রাতিষ্ঠানিক এবং শিক্ষাগত কার্যক্রমে অংশগ্রহণ থেকে বিরত থাকতে বাধ্য করা', en: 'Forcing someone to stay away from sports, cultural, institutional, or educational activities for sexual abuse or harassment.' },
+    { icon: '💌', bn: 'প্রেম নিবেদন করে প্রত্যাখ্যাত হয়ে হুমকি দেয়া বা চাপ প্রয়োগ করা', en: 'Threatening or pressuring someone after being rejected in a love proposal.' },
+    { icon: '🎭', bn: 'ভয় দেখিয়ে বা মিথ্যা আশ্বাস দিয়ে বা প্রতারণা/ছলনার মাধ্যমে যৌন সম্পর্ক স্থাপনে চেষ্টা করা', en: 'Trying to establish sexual relations by intimidation, false promises, or deception.' },
+  ];
+
+  const palette = ['teal', 'rose', 'indigo', 'green'];
+  const cardHtml = cards.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div class="app-intro-box">
+    <div class="app-intro-icon" aria-hidden="true">⚖️</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">মহামান্য সুপ্রীম কোর্টের হাইকোর্ট বিভাগ যৌন নির্যাতন বিষয়ে বিগত ১৪ মে, ২০০৯ তারিখে রীট পিটিশন নং ৫৯১৬/২০০৮- এর প্রেক্ষিতে এক যুগান্তকারী নির্দেশনা প্রদান করেছে। যার মাধ্যমে যৌন নির্যাতন ও হয়রানির সংজ্ঞার ব্যাপক পরিবর্তন এসেছে।</p>
+      <p class="app-intro-sub en">On 14 May 2009, in connection with Writ Petition No. 5916/2008, the High Court Division of the Hon'ble Supreme Court issued a landmark directive on sexual abuse. This brought major changes to the definition of sexual abuse and harassment.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="যৌন হয়রানি বলতে বোঝায়" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🛑</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">যৌন হয়রানি বলতে বোঝায় -</h2>
+        <h2 class="role-section__title en">Sexual harassment means -</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${cardHtml}</div>
     </div>
   </section>
   `;
