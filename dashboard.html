@@ -3333,6 +3333,30 @@
       opacity: 0.9;
     }
 
+    .youth-impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .youth-impact-grid .app-intro-box {
+      margin: 0;
+      height: 100%;
+      align-items: flex-start;
+    }
+
+    .youth-impact-grid .app-intro-titles {
+      gap: 6px;
+    }
+
+    .youth-impact-grid .app-intro-title {
+      font-size: 15px;
+    }
+
+    .youth-impact-grid .app-intro-sub {
+      font-size: 12.5px;
+    }
+
     /* Hub Section */
     .app-hub-section {
       display: flex;
@@ -4784,7 +4808,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isGenderDiscriminationActionsLesson = (modIdx === 12 && lesIdx === 6);
   // Module 13 Lesson 8 — Violence or abuse
   const isViolenceOrAbuseLesson = (modIdx === 12 && lesIdx === 7);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson;
+  // Module 13 Lesson 9 — Various forms of violence against young people
+  const isYouthViolenceFormsLesson = (modIdx === 12 && lesIdx === 8);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4822,6 +4848,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isFinancialLossLesson ? buildFinancialLossSection()
     : isGenderDiscriminationActionsLesson ? buildGenderDiscriminationActionsSection()
     : isViolenceOrAbuseLesson ? buildViolenceOrAbuseSection()
+    : isYouthViolenceFormsLesson ? buildYouthViolenceFormsSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -8345,6 +8372,7 @@ function buildViolenceOrAbuseSection() {
       <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
       <div class="role-card__content">
         <h4 class="role-card__title bn">${item.titleBn}</h4>
+        <h4 class="role-card__title en">${item.titleEn}</h4>
       </div>
     </article>
   `).join('');
@@ -8352,36 +8380,65 @@ function buildViolenceOrAbuseSection() {
   const palette = ['teal', 'rose', 'indigo', 'green'];
 
   const personal = [
-    { icon: '🧬', titleBn: 'একজন ব্যক্তি নির্যাতনের শিকার হবে, না নির্যাতনকারী হবে তার পেছনে অনেক ক্ষেত্রে বংশগত বা শারীরিক উপাদান কাজ করে।  যেমন : বংশগত, শারীরিক অক্ষমতা, নৈতিকতার অবক্ষয়, মাদকাসক্তি, ব্যক্তিত্বের বৈকল্য, মানসিক অস্থিরতা এবং ব্যক্তিগত বৈশিষ্ট্য (বয়স, শিক্ষা, আয়) ইত্যাদি।' },
+    {
+      icon: '🧬',
+      titleBn: 'একজন ব্যক্তি নির্যাতনের শিকার হবে, না নির্যাতনকারী হবে তার পেছনে অনেক ক্ষেত্রে বংশগত বা শারীরিক উপাদান কাজ করে।  যেমন : বংশগত, শারীরিক অক্ষমতা, নৈতিকতার অবক্ষয়, মাদকাসক্তি, ব্যক্তিত্বের বৈকল্য, মানসিক অস্থিরতা এবং ব্যক্তিগত বৈশিষ্ট্য (বয়স, শিক্ষা, আয়) ইত্যাদি।',
+      titleEn: 'Whether a person becomes a victim or a perpetrator can often be influenced by hereditary or physical factors. For example: genetic background, physical disability, moral decline, substance abuse, personality disorders, mental instability, and personal characteristics (age, education, income), etc.'
+    },
   ];
 
   const mutual = [
-    { icon: '🤝', titleBn: 'পারিবারিক বা বন্ধুবান্ধবের মধ্যকার দ্বন্দ্ব, বৈবাহিক সম্পর্কের অবনতি, বিবাহবহির্ভূত সম্পর্ক, পারস্পরিক শ্রদ্ধাবোধের অভাব ইত্যাদি কারণেও নির্যাতনের ঘটনা ঘটে।' },
+    {
+      icon: '🤝',
+      titleBn: 'পারিবারিক বা বন্ধুবান্ধবের মধ্যকার দ্বন্দ্ব, বৈবাহিক সম্পর্কের অবনতি, বিবাহবহির্ভূত সম্পর্ক, পারস্পরিক শ্রদ্ধাবোধের অভাব ইত্যাদি কারণেও নির্যাতনের ঘটনা ঘটে।',
+      titleEn: 'Abuse may also occur due to conflict within family or friends, deterioration of marital relationships, extramarital relationships, and a lack of mutual respect.'
+    },
   ];
 
   const environmental = [
-    { icon: '🌍', titleBn: 'শিক্ষা প্রতিষ্ঠানে, অফিসে এবং রাস্তাঘাটে সমবয়সীদের চাপ, রাজনৈতিক প্রভাব, সুস্থ বিনোদনের অভাব এবং মুক্ত আকাশ অপসংস্কৃতির কারণেও নির্যাতন সংঘটিত হয়।  এছাড়াও সামজিক নিরাপত্তা বেষ্টনীর অভাবের কারণেও নির্যাতনের ঘটনা ঘটে থাকে।' },
+    {
+      icon: '🌍',
+      titleBn: 'শিক্ষা প্রতিষ্ঠানে, অফিসে এবং রাস্তাঘাটে সমবয়সীদের চাপ, রাজনৈতিক প্রভাব, সুস্থ বিনোদনের অভাব এবং মুক্ত আকাশ অপসংস্কৃতির কারণেও নির্যাতন সংঘটিত হয়।  এছাড়াও সামজিক নিরাপত্তা বেষ্টনীর অভাবের কারণেও নির্যাতনের ঘটনা ঘটে থাকে।',
+      titleEn: 'Abuse also occurs due to peer pressure in educational institutions, workplaces and public spaces, political influence, lack of healthy recreation, and harmful open cultural exposure. In addition, incidents also occur due to weak social safety-net protection.'
+    },
   ];
 
   const ministryCards = [
-    { icon: '🏥', titleBn: 'শারীরিক, মানসিক ও যৌন এবং দগ্ধ নির্যাতনের শিকার নারী, শিশু ও কিশোরীদের জন্য বিনামূল্যে একই স্থানে চিকিৎসা, মনোসামাজিক কাউন্সেলিং, পুলিশী এবং আইনী, পুনর্বাসন ও পুনএকত্মীকরণ সেবা প্রদানে বিভাগীয় ও জেলা পর্যায়ে চৌদ্দটি মেডিকেল কলেজে ওয়ান-স্টপ ক্রাইসিস সেন্টার রয়েছে' },
-    { icon: '🏢', titleBn: 'সাতচল্লিশ টি জেলা পর্যায়ে ও বিশটি উপজেলা পর্যায়ে ওয়ান-স্টপ ক্রাইসিস সেল।' },
-    { icon: '📞', titleBn: 'ন্যাশনাল হেল্পলাইন সেন্টার (টোলফ্রি  ১০৯) ও জয় অ্যাপস সর্বদা।' },
-    { icon: '🧠', titleBn: 'নির্যাতনের শিকার নারী, শিশু ও কিশোর কিশোরী সহ যেকোন মানসিক সংকটে মানসিক স্বাস্থ্য সেবায় বিনামূল্যে মনোসামাজিক কাউন্সেলিং সেবা।' },
+    {
+      icon: '🏥',
+      titleBn: 'শারীরিক, মানসিক ও যৌন এবং দগ্ধ নির্যাতনের শিকার নারী, শিশু ও কিশোরীদের জন্য বিনামূল্যে একই স্থানে চিকিৎসা, মনোসামাজিক কাউন্সেলিং, পুলিশী এবং আইনী, পুনর্বাসন ও পুনএকত্মীকরণ সেবা প্রদানে বিভাগীয় ও জেলা পর্যায়ে চৌদ্দটি মেডিকেল কলেজে ওয়ান-স্টপ ক্রাইসিস সেন্টার রয়েছে',
+      titleEn: 'Fourteen One-Stop Crisis Centers are operating at divisional and district-level medical colleges to provide free, integrated services for women, children, and adolescents affected by physical, mental, sexual, and burn-related violence, including treatment, psychosocial counseling, police and legal support, rehabilitation, and reintegration.'
+    },
+    {
+      icon: '🏢',
+      titleBn: 'সাতচল্লিশ টি জেলা পর্যায়ে ও বিশটি উপজেলা পর্যায়ে ওয়ান-স্টপ ক্রাইসিস সেল।',
+      titleEn: 'One-Stop Crisis Cells are available in 47 districts and 20 upazilas.'
+    },
+    {
+      icon: '📞',
+      titleBn: 'ন্যাশনাল হেল্পলাইন সেন্টার (টোলফ্রি  <span style="color:#DC2626; font-weight:700;">১০৯</span>) ও জয় অ্যাপস সর্বদা।',
+      titleEn: 'National Helpline Center (toll-free <span style="color:#DC2626; font-weight:700;">109</span>) and Joy App services are available at all times.'
+    },
+    {
+      icon: '🧠',
+      titleBn: 'নির্যাতনের শিকার নারী, শিশু ও কিশোর কিশোরী সহ যেকোন মানসিক সংকটে মানসিক স্বাস্থ্য সেবায় বিনামূল্যে মনোসামাজিক কাউন্সেলিং সেবা।',
+      titleEn: 'Free psychosocial counseling and mental-health support are provided for women, children, and adolescents affected by abuse, as well as anyone facing mental distress.'
+    },
   ];
 
   const socialWelfareCards = [
-    { icon: '🛡️', titleBn: 'সামাজিক নিরাপত্তা বেষ্টনি কার্যক্রম।' },
-    { icon: '📱', titleBn: 'চাইল্ড হেল্পলাইন ১০৯৮ (টোল ফ্রি)।' },
-    { icon: '👥', titleBn: 'মনোসামাজিক কাউন্সেলর ও সোশ্যাল ওর্য়াকার কর্তক দেশব্যাপী সেবা প্রদান।' },
+    { icon: '🛡️', titleBn: 'সামাজিক নিরাপত্তা বেষ্টনি কার্যক্রম।', titleEn: 'Social safety-net programs.' },
+    { icon: '📱', titleBn: 'চাইল্ড হেল্পলাইন <span style="color:#DC2626; font-weight:700;">১০৯৮</span> (টোল ফ্রি)।', titleEn: 'Child Helpline <span style="color:#DC2626; font-weight:700;">1098</span> (toll-free).' },
+    { icon: '👥', titleBn: 'মনোসামাজিক কাউন্সেলর ও সোশ্যাল ওর্য়াকার কর্তক দেশব্যাপী সেবা প্রদান।', titleEn: 'Nationwide services provided by psychosocial counselors and social workers.' },
   ];
 
-  const renderGroup = (icon, title, items) => `
+  const renderGroup = (icon, titleBn, titleEn, items) => `
     <div class="violence-cause-group">
       <div class="role-section__header role-section__header--warn" style="margin-bottom:16px;">
         <div class="role-section__icon" aria-hidden="true">${icon}</div>
         <div class="role-section__titles">
-          <h3 class="role-section__title bn">${title}</h3>
+          <h3 class="role-section__title bn">${titleBn}</h3>
+          <h3 class="role-section__title en">${titleEn}</h3>
         </div>
       </div>
       <div class="role-grid">${renderCards(items, palette)}</div>
@@ -8393,7 +8450,9 @@ function buildViolenceOrAbuseSection() {
     <div class="app-intro-icon" aria-hidden="true">⚠️</div>
     <div class="app-intro-titles">
       <h2 class="app-intro-title bn">সহিংসতা বা নির্যাতন</h2>
+      <h2 class="app-intro-title en">Violence or Abuse</h2>
       <p class="app-intro-sub bn">সহিংসতা বা নির্যাতন হলো কারো বিরুদ্ধে ইচ্ছাকৃতভাবে দেহের শক্তি বা বল প্রয়োগ করা, যা হুমকি বা সত্যিকারের হতে পারে। এই সহিংসতা যেমন ব্যক্তিকেন্দ্রিক হতে পারে ঠিক তেমনিভাবে কোনো দল বা জনসমাজের বিরুদ্ধেও হতে পারে, যার পরিণাম হিসেবে এর শিকার ব্যক্তির মারাত্মক জখম হতে পারে, মারা যেতে পারে, মানসিক ক্ষতি হতে পারে, দেহের বিকাশ অস্বাভাবিক হতে পারে অথবা এর শিকার ব্যক্তি বা গোষ্ঠী কোনোকিছু থেকে বঞ্চিতও হতে পারে। বিশ্বে এই সহিংসতার ফলে প্রতি ১০ মিনিটে একজন কিশোরীর মৃত্যু হয়।</p>
+      <p class="app-intro-sub en">Violence or abuse is the intentional use of physical force against someone, either as a threat or in action. It can occur at an individual level or against a group/community. As a result, victims may suffer severe injury, death, psychological harm, developmental problems, or deprivation. Globally, one adolescent girl dies every 10 minutes due to violence.</p>
     </div>
   </div>
 
@@ -8402,13 +8461,14 @@ function buildViolenceOrAbuseSection() {
       <div class="role-section__icon" aria-hidden="true">⚠️</div>
       <div class="role-section__titles">
         <h2 class="role-section__title bn">সহিংসতার কারণ</h2>
+        <h2 class="role-section__title en">Causes of Violence</h2>
       </div>
     </div>
     <div class="role-section__body">
       <div class="violence-cause-grid">
-        ${renderGroup('🧍', '১. ব্যক্তিগত কারণ', personal)}
-        ${renderGroup('🤝', '২. পারস্পরিক কারণ', mutual)}
-        ${renderGroup('🌍', '৩. পারিপার্শ্বিক কারণ', environmental)}
+        ${renderGroup('🧍', '১. ব্যক্তিগত কারণ', '1. Personal Factors', personal)}
+        ${renderGroup('🤝', '২. পারস্পরিক কারণ', '2. Interpersonal Factors', mutual)}
+        ${renderGroup('🌍', '৩. পারিপার্শ্বিক কারণ', '3. Environmental Factors', environmental)}
       </div>
     </div>
   </section>
@@ -8418,6 +8478,7 @@ function buildViolenceOrAbuseSection() {
       <div class="role-section__icon" aria-hidden="true">🏥</div>
       <div class="role-section__titles">
         <h2 class="role-section__title bn">মহিলা ও শিশু বিষয়ক মন্ত্রণালয়ের নারী নির্যাতন প্রতিরোধ ও প্রতিকার কর্মসূচি</h2>
+        <h2 class="role-section__title en">Ministry of Women and Children Affairs: Prevention and Response Programs for Violence Against Women</h2>
       </div>
     </div>
     <div class="role-section__body">
@@ -8430,10 +8491,136 @@ function buildViolenceOrAbuseSection() {
       <div class="role-section__icon" aria-hidden="true">🧩</div>
       <div class="role-section__titles">
         <h2 class="role-section__title bn">সমাজকল্যাণ মন্ত্রণালয় কর্তক গৃহীত কর্মসূচি</h2>
+        <h2 class="role-section__title en">Programs Undertaken by the Ministry of Social Welfare</h2>
       </div>
     </div>
     <div class="role-section__body">
       <div class="role-grid">${renderCards(socialWelfareCards, palette)}</div>
+    </div>
+  </section>
+  `;
+}
+
+function buildYouthViolenceFormsSection() {
+  const formCards = [
+    { icon: '👊', titleBn: 'দৈহিক সহিংসতা', titleEn: 'Physical violence' },
+    { icon: '💔', titleBn: 'যৌন সহিংসতা', titleEn: 'Sexual violence' },
+    { icon: '🧠', titleBn: 'মানসিক সহিংসতা', titleEn: 'Psychological violence' },
+    { icon: '💸', titleBn: 'অর্থনৈতিক সহিংসতা', titleEn: 'Economic violence' },
+    { icon: '💻', titleBn: 'সাইবার ক্রাইম', titleEn: 'Cybercrime' },
+    { icon: '🚫', titleBn: 'বুলিং', titleEn: 'Bullying' },
+    { icon: '💍', titleBn: 'বাল্যবিবাহ', titleEn: 'Child marriage' },
+    { icon: '🕳️', titleBn: 'পাচার', titleEn: 'Trafficking' },
+    { icon: '👀', titleBn: 'যৌন হয়রানি/ইভটিজিং', titleEn: 'Sexual harassment / eve teasing' },
+    { icon: '🧪', titleBn: 'এসিড নিক্ষেপ', titleEn: 'Acid throwing' },
+    { icon: '📚', titleBn: 'পর্নোগ্রাফি ও অশ্লীল প্রকাশনা', titleEn: 'Pornography and obscene publications' },
+    { icon: '🚷', titleBn: 'পতিতাবৃত্তি', titleEn: 'Prostitution' },
+    { icon: '🧒', titleBn: 'শিশুশ্রম', titleEn: 'Child labor' },
+  ];
+
+  const remedyCards = [
+    { icon: '🤝', titleBn: 'পারিবারিক ও বন্ধুবান্ধবের মধ্যকার বন্ধন জোরদার করা।', titleEn: 'Strengthen bonds within family and among friends.' },
+    { icon: '🏡', titleBn: 'সন্তান ও বাবা-মা/অভিভাবকের মধ্যে নিরাপদ, বন্ধুত্বপূর্ণ সম্পর্ক সৃষ্টি।', titleEn: 'Create a safe, friendly relationship between children and parents/guardians.' },
+    { icon: '🚭', titleBn: 'মাদকের অপব্যবহার ও সহজলভ্যতা হ্রাস।', titleEn: 'Reduce drug abuse and easy access to drugs.' },
+    { icon: '⚖️', titleBn: 'জেন্ডার বৈষম্য দূরীকরণের লক্ষ্যে বিবিধ সচেতনতামূলক কর্মসূচি গ্রহণ করা।', titleEn: 'Take diverse awareness programs to eliminate gender discrimination.' },
+    { icon: '📣', titleBn: 'নারী ও শিশুর প্রতি সহিংসতা দমন আইন সম্পর্কে জনগণ ও জনপ্রশাসনকে সোচ্চার করা।', titleEn: 'Raise public and administrative awareness about laws to suppress violence against women and children.' },
+    { icon: '💼', titleBn: 'সমাজে বেকারত্ব হ্রাস, দারিদ্র বিমোচন করার লক্ষ্যে ক্ষুদ্রশিল্প প্রশিক্ষণ এবং সহজ শর্তে ঋণ প্রদান।', titleEn: 'Provide small-industry training and easy loans to reduce unemployment and poverty in society.' },
+    { icon: '🧩', titleBn: 'মানসিক ও বৈবাহিক সমস্যা, বৈকল্যতা প্রতিরোধের জন্য মনো-সামাজিক কাউন্সেলিং সেবা সহজলভ্য করা।', titleEn: 'Make psychosocial counseling services readily available to prevent mental and marital problems and disorders.' },
+    { icon: '🎓', titleBn: 'শিশু ও কিশোর-কিশোরীদের জীবনমুখী প্রশিক্ষণ, যেমন : কীভাবে নিজেকে সুরক্ষিত রাখা যাবে, রাগ নিয়ন্ত্রণ, সামাজিক দক্ষতা বিকাশ প্রশিক্ষণ, কীভাবে বাবা-মা ও বন্ধুদের সাথে দ্বন্দ্ব কাটানো যাবে, কম্পিউটার ও কারিগরি প্রশিক্ষণ ইত্যাদি।', titleEn: 'Provide life-skills training for children and adolescents such as self-protection, anger control, social skill development, conflict resolution with parents and friends, computer training, and technical skills training.' },
+  ];
+
+  const impactBoxes = [
+    {
+      icon: '🩺',
+      title: 'শারীরিক প্রভাব :',
+      titleEn: 'Physical effects:',
+      text: 'মাথা ব্যথা, ক্ষুধামন্দা, বমি-বমি ভাব, অনিদ্রা ইত্যাদি'
+      ,textEn: 'Headache, loss of appetite, nausea, insomnia, etc.'
+    },
+    {
+      icon: '🧠',
+      title: 'মানসিক প্রভাব :',
+      titleEn: 'Psychological effects:',
+      text: 'দুশ্চিন্তা, মনমরা, বিষণ্নতা, বিরক্তিবোধ, রাগান্বিত, খিটখিটে মেজাজ, ভয় পাওয়া এবং অসহায়বোধ করা, নিরাপত্তার অভাব, ভবিষ্যৎ সম্পর্কে অনিশ্চয়তাবোধ, অপমানিত বোধ, অপরাধবোধ, পুরুষের প্রতি ঘৃণা জন্মানো ও আত্মহত্যা ইত্যাদি'
+      ,textEn: 'Anxiety, sadness, depression, irritation, anger, a short temper, fear and helplessness, lack of security, uncertainty about the future, humiliation, guilt, hatred toward men, and suicide, etc.'
+    },
+    {
+      icon: '⚡',
+      title: 'আচরণগত প্রভাব :',
+      titleEn: 'Behavioral effects:',
+      text: 'কান্নাকাটি করা, মনোযোগ দিতে না পারা, ভিড়ের জায়গা ও পাবলিক পরিবহণ হতে নিজেকে বিরত রাখা ইত্যাদি'
+      ,textEn: 'Crying, inability to concentrate, avoiding crowded places and public transport, etc.'
+    },
+    {
+      icon: '👥',
+      title: 'সামাজিক প্রভাব :',
+      titleEn: 'Social effects:',
+      text: 'সমাজে হেয় প্রতিপন্ন হওয়া, বাবা-মা ও গুরুজনদের তিরস্কার, সামাজিক কর্মকাণ্ড হতে নিজেকে গুটিয়ে নেয়া, অল্প বয়সে বিয়ে দিয়ে দেয়া ইত্যাদি।'
+      ,textEn: 'Being humiliated in society, scolding by parents and elders, withdrawing from social activities, being married off at an early age, etc.'
+    },
+  ];
+
+  const renderCards = (items, palette) => items.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.titleBn}</h4>
+        <h4 class="role-card__title en">${item.titleEn}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  const palette = ['rose', 'indigo', 'teal', 'green'];
+
+  return `
+  <section class="role-section" aria-label="তরুণদের প্রতি সহিংসতার বিভিন্ন রূপ" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🚫</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">তরুনদের প্রতি সহিংসতার বিভিন্ন রূপ</h2>
+        <h2 class="role-section__title en">Various forms of violence against young people</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(formCards, ['rose', 'indigo', 'teal', 'green'])}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="সহিংসতার প্রভাব" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">📌</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">সহিংসতার প্রভাব</h2>
+        <h2 class="role-section__title en">Effects of Violence</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="youth-impact-grid">
+        ${impactBoxes.map(item => `
+          <div class="app-intro-box bg_2">
+            <div class="app-intro-icon" aria-hidden="true">${item.icon}</div>
+            <div class="app-intro-titles">
+              <h2 class="app-intro-title bn">${item.title}</h2>
+              <h2 class="app-intro-title en">${item.titleEn}</h2>
+              <p class="app-intro-sub bn">${item.text}</p>
+              <p class="app-intro-sub en">${item.textEn}</p>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="সহিংসতা প্রতিকার ও প্রতিরোধের পন্থাসমূহ" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🛡️</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">সহিংসতা প্রতিকার ও প্রতিরোধের পন্থাসমূহ</h2>
+        <h2 class="role-section__title en">Ways to Prevent and Address Violence</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(remedyCards, palette)}</div>
     </div>
   </section>
   `;
