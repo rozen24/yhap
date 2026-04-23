@@ -64,6 +64,18 @@
       --shadow-sm:      0 2px 12px rgba(0,0,0,0.4);
       --shadow-md:      0 6px 24px rgba(0,0,0,0.5);
     }
+   .bg_1 {
+    background: linear-gradient(to right, #C2E59C, #64B3F4) !important;
+   }
+   .bg_2 {
+    background: linear-gradient(to right, #016102, #01048B) !important;
+   }
+   .bg_3 {
+    background: linear-gradient(to right, #ADFF2F, #4169E1) !important;
+   }
+   .bg_4 {
+    background: linear-gradient(to right, #20B2AA, #4682B4) !important;
+   }
 
     /* ============================================================
        RESET & BASE
@@ -1964,6 +1976,17 @@
       gap: 14px;
     }
 
+    .violence-cause-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      align-items: start;
+    }
+
+    .violence-cause-group {
+      min-width: 0;
+    }
+
     .role-card {
       --rc-accent: #6366F1;
       --rc-soft:   rgba(99,102,241,0.08);
@@ -2158,6 +2181,7 @@
     }
     @media (max-width: 600px) {
       .role-grid { grid-template-columns: 1fr; gap: 12px; }
+      .violence-cause-grid { grid-template-columns: 1fr; }
       .role-section__header { padding: 18px 20px; gap: 12px; }
       .role-section__icon { width: 44px; height: 44px; font-size: 20px; }
       .role-section__body { padding: 16px; }
@@ -4754,7 +4778,13 @@ function renderLessonPage(modIdx, lesIdx) {
   const isGenderViolenceLesson = (modIdx === 12 && lesIdx === 3);
   // Module 13 Lesson 5 — Sexual harassment
   const isSexualHarassmentLesson = (modIdx === 12 && lesIdx === 4);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson;
+  // Module 13 Lesson 6 — Financial loss / economic aspect
+  const isFinancialLossLesson = (modIdx === 12 && lesIdx === 5);
+  // Module 13 Lesson 7 — Actions to eliminate gender discrimination
+  const isGenderDiscriminationActionsLesson = (modIdx === 12 && lesIdx === 6);
+  // Module 13 Lesson 8 — Violence or abuse
+  const isViolenceOrAbuseLesson = (modIdx === 12 && lesIdx === 7);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4789,6 +4819,9 @@ function renderLessonPage(modIdx, lesIdx) {
     : isPrevailingGenderDiscriminationLesson ? buildPrevailingGenderDiscriminationSection()
     : isGenderViolenceLesson ? buildGenderViolenceSection()
     : isSexualHarassmentLesson ? buildSexualHarassmentSection()
+    : isFinancialLossLesson ? buildFinancialLossSection()
+    : isGenderDiscriminationActionsLesson ? buildGenderDiscriminationActionsSection()
+    : isViolenceOrAbuseLesson ? buildViolenceOrAbuseSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -5621,7 +5654,6 @@ function buildParentsRoleSection() {
         <h2 class="role-section__title bn">মাসিক ব্যবস্থাপনায় অভিভাবকদের ভূমিকা</h2>
         <h2 class="role-section__title en">Role of Parents in Menstrual Management</h2>
         <p class="role-section__sub bn">মেয়েদের আত্মবিশ্বাসী ও সুস্থ রাখতে ৫টি করণীয়</p>
-        <p class="role-section__sub en">Five things parents can do to keep their daughters confident and healthy</p>
       </div>
     </div>
     <div class="role-section__body">
@@ -7827,7 +7859,7 @@ function buildGenderBasedDiscriminationSection() {
   `).join('');
 
   return `
-  <div class="app-intro-box">
+  <div class="app-intro-box bg_4">
     <div class="app-intro-icon" aria-hidden="true">⚧️</div>
     <div class="app-intro-titles">
       <h2 class="app-intro-title bn">সেক্স</h2>
@@ -7837,7 +7869,7 @@ function buildGenderBasedDiscriminationSection() {
     </div>
   </div>
 
-  <div class="app-intro-box" style="margin-top:24px;">
+  <div class="app-intro-box bg_2" style="margin-top:24px;">
     <div class="app-intro-icon" aria-hidden="true">🧩</div>
     <div class="app-intro-titles">
       <h2 class="app-intro-title bn">জেন্ডার</h2>
@@ -8080,7 +8112,7 @@ function buildGenderViolenceSection() {
   const palette = ['teal', 'rose', 'indigo', 'green'];
 
   return `
-  <div class="app-intro-box">
+  <div class="app-intro-box bg_4">
     <div class="app-intro-icon" aria-hidden="true">⚠️</div>
     <div class="app-intro-titles">
       <p class="app-intro-sub bn">সাধারণত আমাদের চারপাশে যে সব সহিংসতা ও নির্যাতন ঘটে সেগুলোকে পারিবারিক সহিংসতা (প্রতিরোধ ও সুরক্ষা) আইন ২০১০ অনুযায়ী চার ভাগে ভাগ করা হয়েছে।</p>
@@ -8161,7 +8193,7 @@ function buildSexualHarassmentSection() {
   `).join('');
 
   return `
-  <div class="app-intro-box">
+  <div class="app-intro-box bg_4">
     <div class="app-intro-icon" aria-hidden="true">⚖️</div>
     <div class="app-intro-titles">
       <p class="app-intro-sub bn">মহামান্য সুপ্রীম কোর্টের হাইকোর্ট বিভাগ যৌন নির্যাতন বিষয়ে বিগত ১৪ মে, ২০০৯ তারিখে রীট পিটিশন নং ৫৯১৬/২০০৮- এর প্রেক্ষিতে এক যুগান্তকারী নির্দেশনা প্রদান করেছে। যার মাধ্যমে যৌন নির্যাতন ও হয়রানির সংজ্ঞার ব্যাপক পরিবর্তন এসেছে।</p>
@@ -8179,6 +8211,229 @@ function buildSexualHarassmentSection() {
     </div>
     <div class="role-section__body">
       <div class="role-grid">${cardHtml}</div>
+    </div>
+  </section>
+  `;
+}
+
+function buildFinancialLossSection() {
+  const items = [
+    {
+      icon: '⚖️',
+      titleBn: 'আইন বা প্রথা অনুসারে বা কোনো আদালত বা উপযুক্ত কর্তৃপক্ষ কর্তৃক প্রদত্ত আদেশ অনুযায়ী সংক্ষুব্ধ ব্যক্তি যে সব আর্থিক সুযোগ-সুবিধা, সম্পদ বা সম্পত্তি লাভের অধিকারী তা থেকে তাকে বঞ্চিত করা অথবা তার বৈধ অধিকার আদায়ে বাধা প্রদান',
+      titleEn: 'Depriving an affected person of financial benefits, assets, or property they are entitled to by law, custom, or court/authority order, or obstructing their lawful claims.'
+    },
+    {
+      icon: '🧺',
+      titleBn: 'সংক্ষুব্ধ ব্যক্তিকে নিত্য ব্যবহার্য জিনিসপত্র প্রদান না করা',
+      titleEn: 'Not providing the affected person with daily essential items.'
+    },
+    {
+      icon: '💍',
+      titleBn: 'বিবাহের সময় প্রাপ্ত উপহার বা স্ত্রীধন বা অন্য কোনো দান বা উপহার হিসেবে প্রাপ্ত কোনো সম্পদ থেকে সংক্ষুব্ধ ব্যক্তিকে বঞ্চিত করা বা তার বৈধ অধিকার আদায়ে বাধা প্রদান',
+      titleEn: 'Depriving the affected person of marriage gifts, stridhan, or any gifted assets, or obstructing their legal rights over those assets.'
+    },
+    {
+      icon: '🏠',
+      titleBn: 'সংক্ষুব্ধ ব্যক্তির মালিকানাধীন যেকোনো স্থাবর বা অস্থাবর সম্পত্তি তার অনুমতি ব্যতিরেকে হস্তান্তর করা বা এর উপর তার বৈধ অধিকার আদায়ে বাধা প্রদান',
+      titleEn: 'Transferring any movable or immovable property owned by the affected person without consent, or obstructing their lawful rights over it.'
+    },
+    {
+      icon: '🚫',
+      titleBn: 'পারিবারিক সম্পর্কের কারণে যেকোনো সম্পদ বা সুযোগ-সুবিধা দিতে সংক্ষুব্ধ ব্যক্তির ব্যবহার বা ভোগ দখলের অধিকার রয়েছে তা থেকে তাকে বঞ্চিত করা বা এর উপর তার বৈধ অধিকার প্রয়োগে বাধা প্রদান যেমন -',
+      titleEn: 'Depriving the affected person of resources or facilities they have a right to use because of family relations, or blocking the lawful exercise of that right, such as -'
+    },
+    {
+      icon: '💰',
+      titleBn: 'যৌতুক দাবি করা',
+      titleEn: 'Demanding dowry.'
+    },
+    {
+      icon: '💎',
+      titleBn: 'গয়না, সম্পত্তি নিয়ে নেয়া',
+      titleEn: 'Taking away jewelry or property.'
+    },
+    {
+      icon: '💵',
+      titleBn: 'বেতন নিয়ে নেয়া',
+      titleEn: 'Taking away salary or earnings.'
+    },
+    {
+      icon: '👩‍👧',
+      titleBn: 'স্বামী কর্তৃক স্ত্রীকে ভরণপোষণ না দেয়া',
+      titleEn: 'A husband not providing maintenance to his wife.'
+    },
+    {
+      icon: '🛠️',
+      titleBn: 'অর্থনৈতিক বা উপার্জনমূলক কাজে অংশগ্রহণের সুযোগ না দেয়া বা বাধা দেয়া',
+      titleEn: 'Not allowing or obstructing participation in economic or income-generating activities.'
+    },
+  ];
+
+  const palette = ['teal', 'rose', 'indigo', 'green'];
+  const cardHtml = items.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.titleBn}</h4>
+        <h4 class="role-card__title en">${item.titleEn}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <section class="role-section" aria-label="আর্থিক ক্ষতি – আর্থিক দিক" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">💼</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">যৌন হয়রানি বলতে বোঝায়-</h2>
+        <h2 class="role-section__title en">Economic Abuse Means -</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${cardHtml}</div>
+    </div>
+  </section>
+  `;
+}
+
+function buildGenderDiscriminationActionsSection() {
+  const actions = [
+    { icon: '📢', titleBn: 'জেন্ডার বৈষম্য রোধে সমাজের সকল স্তরে সচেতনতার সৃষ্টি করা;', titleEn: 'Build awareness at all levels of society to prevent gender discrimination.' },
+    { icon: '🧑‍🤝‍🧑', titleBn: 'সম মর্যাদা, স্বাধীনতা নিয়ে নারী-পুরুষ বেড়ে উঠবে, যার পরিচয় হবে শুধু মানুষ হিসেবে।', titleEn: 'Women and men should grow up with equal dignity and freedom, with identity as human beings first.' },
+    { icon: '⚙️', titleBn: 'নারী পুরুষ হিসেবে ভিন্ন ভিন্ন ভূমিকা পালন না করে মানুষ হিসেবে একই রকম ভূমিকা পালন করবে;', titleEn: 'Instead of fixed gender roles, women and men should be able to perform similar roles as people.' },
+    { icon: '🎓', titleBn: 'নারী শিক্ষা, নারীর কর্মসংস্থানের সুযোগ, নারীর স্বাস্থ্যসেবা প্রাপ্তি, নারী নির্যাতন প্রতিরোধসহ নারীর জন্য সকল মানবাধিকার নিশ্চিত করা;', titleEn: 'Ensure all human rights for women, including education, employment opportunities, healthcare access, and protection from violence.' },
+    { icon: '🏗️', titleBn: 'পুরুষের পাশাপাশি নারীদেরও চাকরি ও ব্যবসাসহ বিভিন্ন উন্নয়নমূলক কাজের সাথে সম্পৃক্ত হতে হবে, তাই দেশের সার্বিক উন্নয়নে পুরুষের পাশাপাশি দক্ষ নারীশক্তি গড়ে তোলা;', titleEn: 'Women, alongside men, must be engaged in jobs, business, and development work; therefore, build skilled female human resources for national development.' },
+    { icon: '⚖️', titleBn: 'দক্ষতা অনুসারে সকল কর্মকাণ্ডে নারী-পুরুষের সমান অংশগ্রহণ নিশ্চিত করা;', titleEn: 'Ensure equal participation of women and men in all activities based on skills.' },
+    { icon: '🗳️', titleBn: 'পরিবার ও সমাজে সিদ্ধান্ত গ্রহণের ক্ষেত্রে নারীদের মতামতকে গুরুত্ব দেয়া;', titleEn: 'Give importance to women’s opinions in decision-making in family and society.' },
+    { icon: '🏛️', titleBn: 'নারীর অধিকার রক্ষায় সকল প্রকার আইনি সহায়তা প্রদান নিশ্চিত করা;', titleEn: 'Ensure all forms of legal support to protect women’s rights.' },
+    { icon: '🚀', titleBn: 'নারী ও পুরুষের সমতা বজায় রাখার মাধ্যমে নারীর ক্ষমতায়ন নিশ্চিত করা', titleEn: 'Ensure women’s empowerment by maintaining equality between women and men.' },
+    { icon: '🛡️', titleBn: 'নারীকে সুরক্ষা প্রদানের জন্য দেশের প্রচলিত আইনের প্রয়োগ করা;', titleEn: 'Enforce existing national laws to provide protection for women.' },
+    { icon: '🔍', titleBn: 'যে সব প্রথা বা রীতিনীতি জেন্ডার বৈষম্য টিকিয়ে রাখছে তা চিহ্নিত করে সম্মিলিতভাবে তা প্রতিরোধ করা', titleEn: 'Identify traditions and customs that sustain gender discrimination and collectively resist them.' },
+  ];
+
+  const palette = ['teal', 'rose', 'indigo', 'green'];
+  const cardHtml = actions.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.titleBn}</h4>
+        <h4 class="role-card__title en">${item.titleEn}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <section class="role-section" aria-label="জেন্ডার বৈষম্য দূর করার জন্য করণীয়" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">✅</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">জেন্ডার বৈষম্য দূর করার জন্য করণীয়</h2>
+        <h2 class="role-section__title en">Actions to Eliminate Gender Discrimination</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${cardHtml}</div>
+    </div>
+  </section>
+  `;
+}
+
+function buildViolenceOrAbuseSection() {
+  const renderCards = (items, palette) => items.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.titleBn}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  const palette = ['teal', 'rose', 'indigo', 'green'];
+
+  const personal = [
+    { icon: '🧬', titleBn: 'একজন ব্যক্তি নির্যাতনের শিকার হবে, না নির্যাতনকারী হবে তার পেছনে অনেক ক্ষেত্রে বংশগত বা শারীরিক উপাদান কাজ করে।  যেমন : বংশগত, শারীরিক অক্ষমতা, নৈতিকতার অবক্ষয়, মাদকাসক্তি, ব্যক্তিত্বের বৈকল্য, মানসিক অস্থিরতা এবং ব্যক্তিগত বৈশিষ্ট্য (বয়স, শিক্ষা, আয়) ইত্যাদি।' },
+  ];
+
+  const mutual = [
+    { icon: '🤝', titleBn: 'পারিবারিক বা বন্ধুবান্ধবের মধ্যকার দ্বন্দ্ব, বৈবাহিক সম্পর্কের অবনতি, বিবাহবহির্ভূত সম্পর্ক, পারস্পরিক শ্রদ্ধাবোধের অভাব ইত্যাদি কারণেও নির্যাতনের ঘটনা ঘটে।' },
+  ];
+
+  const environmental = [
+    { icon: '🌍', titleBn: 'শিক্ষা প্রতিষ্ঠানে, অফিসে এবং রাস্তাঘাটে সমবয়সীদের চাপ, রাজনৈতিক প্রভাব, সুস্থ বিনোদনের অভাব এবং মুক্ত আকাশ অপসংস্কৃতির কারণেও নির্যাতন সংঘটিত হয়।  এছাড়াও সামজিক নিরাপত্তা বেষ্টনীর অভাবের কারণেও নির্যাতনের ঘটনা ঘটে থাকে।' },
+  ];
+
+  const ministryCards = [
+    { icon: '🏥', titleBn: 'শারীরিক, মানসিক ও যৌন এবং দগ্ধ নির্যাতনের শিকার নারী, শিশু ও কিশোরীদের জন্য বিনামূল্যে একই স্থানে চিকিৎসা, মনোসামাজিক কাউন্সেলিং, পুলিশী এবং আইনী, পুনর্বাসন ও পুনএকত্মীকরণ সেবা প্রদানে বিভাগীয় ও জেলা পর্যায়ে চৌদ্দটি মেডিকেল কলেজে ওয়ান-স্টপ ক্রাইসিস সেন্টার রয়েছে' },
+    { icon: '🏢', titleBn: 'সাতচল্লিশ টি জেলা পর্যায়ে ও বিশটি উপজেলা পর্যায়ে ওয়ান-স্টপ ক্রাইসিস সেল।' },
+    { icon: '📞', titleBn: 'ন্যাশনাল হেল্পলাইন সেন্টার (টোলফ্রি  ১০৯) ও জয় অ্যাপস সর্বদা।' },
+    { icon: '🧠', titleBn: 'নির্যাতনের শিকার নারী, শিশু ও কিশোর কিশোরী সহ যেকোন মানসিক সংকটে মানসিক স্বাস্থ্য সেবায় বিনামূল্যে মনোসামাজিক কাউন্সেলিং সেবা।' },
+  ];
+
+  const socialWelfareCards = [
+    { icon: '🛡️', titleBn: 'সামাজিক নিরাপত্তা বেষ্টনি কার্যক্রম।' },
+    { icon: '📱', titleBn: 'চাইল্ড হেল্পলাইন ১০৯৮ (টোল ফ্রি)।' },
+    { icon: '👥', titleBn: 'মনোসামাজিক কাউন্সেলর ও সোশ্যাল ওর্য়াকার কর্তক দেশব্যাপী সেবা প্রদান।' },
+  ];
+
+  const renderGroup = (icon, title, items) => `
+    <div class="violence-cause-group">
+      <div class="role-section__header role-section__header--warn" style="margin-bottom:16px;">
+        <div class="role-section__icon" aria-hidden="true">${icon}</div>
+        <div class="role-section__titles">
+          <h3 class="role-section__title bn">${title}</h3>
+        </div>
+      </div>
+      <div class="role-grid">${renderCards(items, palette)}</div>
+    </div>
+  `;
+
+  return `
+  <div class="app-intro-box bg_4">
+    <div class="app-intro-icon" aria-hidden="true">⚠️</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">সহিংসতা বা নির্যাতন</h2>
+      <p class="app-intro-sub bn">সহিংসতা বা নির্যাতন হলো কারো বিরুদ্ধে ইচ্ছাকৃতভাবে দেহের শক্তি বা বল প্রয়োগ করা, যা হুমকি বা সত্যিকারের হতে পারে। এই সহিংসতা যেমন ব্যক্তিকেন্দ্রিক হতে পারে ঠিক তেমনিভাবে কোনো দল বা জনসমাজের বিরুদ্ধেও হতে পারে, যার পরিণাম হিসেবে এর শিকার ব্যক্তির মারাত্মক জখম হতে পারে, মারা যেতে পারে, মানসিক ক্ষতি হতে পারে, দেহের বিকাশ অস্বাভাবিক হতে পারে অথবা এর শিকার ব্যক্তি বা গোষ্ঠী কোনোকিছু থেকে বঞ্চিতও হতে পারে। বিশ্বে এই সহিংসতার ফলে প্রতি ১০ মিনিটে একজন কিশোরীর মৃত্যু হয়।</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="সহিংসতার কারণ" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">⚠️</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">সহিংসতার কারণ</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="violence-cause-grid">
+        ${renderGroup('🧍', '১. ব্যক্তিগত কারণ', personal)}
+        ${renderGroup('🤝', '২. পারস্পরিক কারণ', mutual)}
+        ${renderGroup('🌍', '৩. পারিপার্শ্বিক কারণ', environmental)}
+      </div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="মহিলা ও শিশু বিষয়ক মন্ত্রণালয়ের নারী নির্যাতন প্রতিরোধ ও প্রতিকার কর্মসূচি" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🏥</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">মহিলা ও শিশু বিষয়ক মন্ত্রণালয়ের নারী নির্যাতন প্রতিরোধ ও প্রতিকার কর্মসূচি</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(ministryCards, palette)}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="সমাজকল্যাণ মন্ত্রণালয় কর্তক গৃহীত কর্মসূচি" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🧩</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">সমাজকল্যাণ মন্ত্রণালয় কর্তক গৃহীত কর্মসূচি</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(socialWelfareCards, palette)}</div>
     </div>
   </section>
   `;
