@@ -2457,6 +2457,7 @@
     .table-header {
       padding: 14px 12px;
       font-size: 13px;
+      border-right: 1px solid #eaeaea;
     }
 
     .method-header {
@@ -2468,6 +2469,8 @@
       padding: 14px 12px;
       color: var(--text-secondary);
       line-height: 1.6;
+      border-right: 1px solid #eaeaea;
+
     }
 
     .category-cell {
@@ -3840,8 +3843,8 @@
         </button>
         <div class="lesson-list" id="modPanel-9" role="list">
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(9,0)"><span class="lesson-dot" aria-hidden="true">1</span><span class="lesson-text"><span class="lesson-label bn">জরায়ুমুখ ক্যান্সার</span><span class="lesson-label en">Cervical cancer</span></span></button>
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(9,1)"><span class="lesson-dot" aria-hidden="true">2</span><span class="lesson-text"><span class="lesson-label bn">এইচপিভি ভ্যাকসিন</span><span class="lesson-label en">HPV vaccine</span></span></button>
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(9,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">মহিলাদের জন্য অন্যান্য ভ্যাকসিন</span><span class="lesson-label en">Other vaccines for women</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(9,1)"><span class="lesson-dot" aria-hidden="true">2</span><span class="lesson-text"><span class="lesson-label bn">এইচপিভি টিকা</span><span class="lesson-label en">HPV vaccine</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(9,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">মহিলাদের অন্যান্য টিকা </span><span class="lesson-label en">Other vaccines for women</span></span></button>
         </div>
       </div>
 
@@ -4300,7 +4303,7 @@ const MODULES = [
     descEn:'This module covers HIV and AIDS, and the window period.',
     icon:'🔴', totalLessons:2, doneLessons:1 },
   { titleBn:'মডিউল-১০: এইচপিভি টিকা ও জরায়ুমুখ ক্যান্সার প্রতিরোধ', titleEn:'Module-10: HPV Vaccination and Cervical Cancer Prevention',
-    descBn:'এই মডিউলে জরায়ুমুখ ক্যান্সার, এইচপিভি ভ্যাকসিন এবং মহিলাদের জন্য অন্যান্য ভ্যাকসিন সম্পর্কে আলোচনা করা হয়েছে।',
+    descBn:'এই মডিউলে জরায়ুমুখ ক্যান্সার, এইচপিভি টিকা এবং মহিলাদের অন্যান্য টিকা  সম্পর্কে আলোচনা করা হয়েছে।',
     descEn:'This module covers cervical cancer, the HPV vaccine, and other vaccines for women.',
     icon:'💉', totalLessons:3, doneLessons:0 },
   { titleBn:'মডিউল-১১: পলিসিস্টিক ওভারি সিনড্রোম (PCOS)', titleEn:'Module-11: Polycystic Ovary Syndrome (PCOS)',
@@ -4371,7 +4374,7 @@ const LESSONS_BN = [
   ['কিশোরী মাতৃত্ব','কিশোরী গর্ভধারণ রোধে করণীয়','গর্ভকালীন বিপদচিহ্নসমূহ','কৈশোরকালীন গর্ভধারণ ব্যবস্থাপনা','প্রসব-পরবর্তী সেবা'],
   ['যৌনবাহিত ও প্রজনন স্বাস্থ্য সংক্রান্ত সংক্রমণ','যৌনবাহিত রোগের ঝুঁকি','প্রজনন স্বাস্থ্য বা যৌনবাহিত রোগের জটিলতা'],
   ['এইচআইভি এবং এইডস','উইন্ডো পিরিয়ড'],
-  ['জরায়ুমুখ ক্যান্সার','এইচপিভি ভ্যাকসিন','মহিলাদের জন্য অন্যান্য ভ্যাকসিন'],
+  ['জরায়ুমুখ ক্যান্সার','এইচপিভি টিকা','মহিলাদের অন্যান্য টিকা '],
   ['পলিসিস্টিক ওভারি সিনড্রোম (PCOS)','সমস্যা','সমাধান','ব্যবস্থাপনা'],
   ['শিশু অধিকার ও মানবাধিকার এবং যৌন ও প্রজনন স্বাস্থ্য অধিকার','শিশু নির্যাতন','যৌন ও প্রজনন স্বাস্থ্য অধিকার'],
   ['লিঙ্গ-ভিত্তিক বৈষম্য','লিঙ্গ বৈষম্য','সমাজে বিদ্যমান লিঙ্গ বৈষম্য','লিঙ্গ-ভিত্তিক সহিংসতা ও নির্যাতনের ধরন','যৌন হয়রানি','আর্থিক ক্ষতি – আর্থিক দিক','লিঙ্গ বৈষম্য দূরীকরণে করণীয়','সহিংসতা বা নির্যাতন','তরুণদের বিরুদ্ধে সহিংসতার বিভিন্ন রূপ'],
@@ -4707,7 +4710,13 @@ function renderLessonPage(modIdx, lesIdx) {
   const isStiComplicationsLesson = (modIdx === 7 && lesIdx === 2);
   // Module 9 Lesson 2 — Window period
   const isWindowPeriodLesson = (modIdx === 8 && lesIdx === 1);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson;
+  // Module 10 Lesson 1 — Cervical cancer
+  const isCervicalCancerLesson = (modIdx === 9 && lesIdx === 0);
+  // Module 10 Lesson 2 — HPV vaccine
+  const isHpvVaccineLesson = (modIdx === 9 && lesIdx === 1);
+  // Module 10 Lesson 3 — Other vaccines for women (TD schedule)
+  const isTdVaccineLesson = (modIdx === 9 && lesIdx === 2);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4729,6 +4738,9 @@ function renderLessonPage(modIdx, lesIdx) {
     : isStiLesson ? buildStiLessonSection()
     : isStiComplicationsLesson ? buildStiComplicationsSection()
     : isWindowPeriodLesson ? buildWindowPeriodSection()
+    : isCervicalCancerLesson ? buildCervicalCancerSection()
+    : isHpvVaccineLesson ? buildHpvVaccineSection()
+    : isTdVaccineLesson ? buildTdVaccineSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -7262,6 +7274,231 @@ function buildWindowPeriodSection() {
       <h2 class="app-intro-title en">Treatment</h2>
       <p class="app-intro-sub bn">বাংলাদেশ সরকার ২০৩০ সালের মধ্যে Tripple Elimination মাধ্যমে মা থেকে নজাতকের শরীরে এইচআইভি, হেপাটাইটিস বি এবং সিফিলিসের সংক্রমণ নির্মূল করার লক্ষ স্থির করেছে এবং তা বাস্তবায়নে কাজ করছে।</p>
       <p class="app-intro-sub en">The Government of Bangladesh has set a goal to eliminate HIV, hepatitis B, and syphilis transmission from mother to newborn through Triple Elimination by 2030 and is working to implement it.</p>
+    </div>
+  </div>
+  `;
+}
+
+function buildCervicalCancerSection() {
+  return `
+  <div style="width: 100%; max-width: 100%;">
+    <div style="margin-bottom: 32px;">
+      <img src="images/modu10/joni.jpg" alt="Cervical cancer awareness" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 6px 24px rgba(13,71,161,0.12); display: block; margin: 0 auto;" loading="lazy" decoding="async" />
+    </div>
+
+    <div class="app-intro-box">
+        <div class="app-intro-icon" aria-hidden="true">🛡️</div>
+        <div class="app-intro-titles">
+          <p class="app-intro-sub bn">জরায়ুমুখ ক্যান্সার প্রতিরোধযোগ্য একটি রোগ। দ্রুত রোগ নির্ণয় ও প্রয়োজনীয় চিকিৎসার মাধ্যমে এই রোগ থেকে সম্পূর্ণ সেরে ওঠা সম্ভব। তথাপি এটি সকল ধরণের ক্যান্সার এবং নারীদের ক্যান্সারজনিত মৃত্যুর অন্যতম প্রধান কারণ। সাধারণত নারীরা যেসব ক্যান্সারে আক্রান্ত হয়ে থাকেন, বৈশ্বিকভাবে তাদের মধ্যে জরায়ুমুখ ক্যান্সার চতুর্থ সর্বোচ্চ। বাংলাদেশি নারীদের ক্ষেত্রে এটি দ্বিতীয় সর্বোচ্চ।</p>
+          <p class="app-intro-sub en">Cervical cancer is a preventable disease. With early diagnosis and appropriate treatment, it is possible to recover completely from this disease. However, it is one of the leading causes of all types of cancer and cancer-related deaths in women. Globally, cervical cancer is the fourth highest among cancers that affect women. In Bangladeshi women, it is the second highest.</p>
+        </div>
+      </div>
+
+      <div class="app-intro-box" style="margin-top: 24px;">
+        <div class="app-intro-icon" aria-hidden="true">📊</div>
+        <div class="app-intro-titles">
+          <p class="app-intro-sub bn">২০২০ সালের তথ্য-উপাত্ত অনুযায়ী প্রতিবছর বিশ্বের ছয় লক্ষাধিক নারী জরায়ুমুখ ক্যান্সারে আক্রান্ত হন, যার মধ্যে প্রায় তিন লক্ষ বিয়াল্লিশ হাজার জন মৃত্যুবরণ করে থাকেন। এর প্রায় ৯০% মৃত্যুই বাংলাদেশের মতো উন্নয়নশীল বা স্বল্পোন্নত দেশে ঘটে থাকে।</p>
+          <p class="app-intro-sub en">According to 2020 data, more than 600,000 women worldwide are affected by cervical cancer each year, with approximately 342,000 deaths. About 90% of these deaths occur in developing or underdeveloped countries like Bangladesh.</p>
+        </div>
+      </div>
+
+      <div class="app-intro-box" style="margin-top: 24px;">
+        <div class="app-intro-icon" aria-hidden="true">🔬</div>
+        <div class="app-intro-titles">
+          <p class="app-intro-sub bn">হিউম্যান প্যাপিলোমা ভাইরাস (এইচপিভি), যা একটি যৌনবাহিত ভাইরাস, এটি জরায়ুমুখ ক্যান্সার সৃষ্টি করে থাকে। বিশ্ব স্বাস্থ্য সংস্থার সুপারিশ অনুযায়ী নিয়মিত পরীক্ষা (স্ক্রিনিং) ও এইচপিভি টিকাদানের মাধ্যমে জরায়ুমুখ ক্যান্সার প্রতিরোধ এবং এই ক্যান্সারজনিত মৃত্যু হ্রাস করা সম্ভব। ধারণা করা হচ্ছে, জরায়ুমুখ ক্যান্সার প্রতিরোধ ও নিয়ন্ত্রণ কার্যক্রম সফলভাবে বাস্তবায়িত না হলে ২০৩০ সালে বিশ্বব্যাপী প্রায় সাত লক্ষ নারী জরায়ুমুখ ক্যান্সারে আক্রান্ত হবেন, যার প্রায় চার লক্ষ মৃত্যুবরণ করবেন এবং এর সিংহভাগই ঘটবে উন্নয়নশীল দেশে।</p>
+          <p class="app-intro-sub en">Human papillomavirus (HPV), a sexually transmitted virus, causes cervical cancer. According to WHO recommendations, cervical cancer can be prevented and cancer-related deaths reduced through regular screening and HPV vaccination. It is estimated that if cervical cancer prevention and control efforts are not successfully implemented, by 2030 approximately 700,000 women worldwide will be affected by cervical cancer, with about 400,000 deaths, mainly in developing countries.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  `;
+}
+
+function buildHpvVaccineSection() {
+  const benefits = [
+    { icon: '🛡️', bn: 'এইচপিভি টিকা জরায়ুমুখ ক্যান্সার প্রতিরোধ করে।', en: 'HPV vaccine prevents cervical cancer.' },
+    { icon: '1️⃣', bn: 'জরায়ুমুখ ক্যান্সার প্রতিরোধে এইচপিভি টিকার একটি ডোজই যথেষ্ট।', en: 'A single dose of HPV vaccine is sufficient to prevent cervical cancer.' },
+    { icon: '✅', bn: 'এইচপিভি টিকা বিশ্বব্যাপী পরীক্ষিত, নিরাপদ ও কার্যকর।', en: 'HPV vaccine is globally tested, safe, and effective.' },
+    { icon: '🇧🇩', bn: 'গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের উদ্যোগে এই টিকা বিনামূল্যে প্রদান করা হয়।', en: 'This vaccine is provided free of cost under the initiative of the Government of Bangladesh.' },
+  ];
+
+  const place = [
+    { icon: '📍', bn: 'ইপিআই স্থায়ী ও অস্থায়ী টিকা কেন্দ্র থেকে এই টিকা গ্রহণ করা যাবে।', en: 'This vaccine can be received from EPI permanent and temporary vaccination centers.' },
+  ];
+
+  const eligibility = [
+    { icon: '👧', bn: 'ইপিআই স্থায়ী ও অস্থায়ী টিকা কেন্দ্র থেকে এই টিকা গ্রহণ করা যাবে।', en: 'This vaccine can be received from EPI permanent and temporary vaccination centers.' },
+  ];
+
+  const doseCount = [
+    { icon: '💉', bn: 'এক ডোজ', en: 'Single dose' },
+  ];
+
+  const renderCards = (items, palette) => items.map((item, i) => `
+    <article class="role-card role-card--${palette[i % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <p class="role-card__text bn">${item.bn}</p>
+      <p class="role-card__text en">${item.en}</p>
+    </article>
+  `).join('');
+
+  return `
+  <section style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:24px;">
+    <img src="images/modu10/dose1.jpg" alt="HPV vaccine dose 1" style="flex:1 1 280px; width:100%; min-width:0; max-width:100%; border-radius:12px; box-shadow:0 6px 24px rgba(13,71,161,0.12);" loading="lazy" decoding="async" />
+    <img src="images/modu10/dose2_new.jpg" alt="HPV vaccine dose 2" style="flex:1 1 280px; width:100%; min-width:0; max-width:100%; border-radius:12px; box-shadow:0 6px 24px rgba(13,71,161,0.12);" loading="lazy" decoding="async" />
+  </section>
+
+  <div class="app-intro-box">
+    <div class="app-intro-icon" aria-hidden="true">💉</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">এইচপিভি টিকা</h2>
+      <h2 class="app-intro-title en">HPV Vaccine</h2>
+      <p class="app-intro-sub bn">বিশ্ব স্বাস্থ্য সংস্থার সুপারিশ অনুযায়ী নিয়মিত পরীক্ষা (স্ক্রিনিং) ও এক ডোজ এইচপিভি টিকাদানের মাধ্যমে জরায়ুমুখ ক্যান্সার প্রতিরোধ এবং এই ক্যান্সারজনিত মৃত্যু হ্রাস করা সম্ভব।</p>
+      <p class="app-intro-sub en">According to WHO recommendations, regular screening and a single dose of HPV vaccination can prevent cervical cancer and reduce cancer-related deaths.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="Benefits of HPV vaccination" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">✨</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">টিকা গ্রহণের সুবিধা</h2>
+        <h2 class="role-section__title en">Benefits of Vaccination</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(benefits, ['teal','rose','indigo','green'])}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="Vaccination locations">
+    <div class="role-section__header role-section__header--school">
+      <div class="role-section__icon" aria-hidden="true">🏥</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">টিকা গ্রহণের স্থান</h2>
+        <h2 class="role-section__title en">Where to Get Vaccinated</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(place, ['sky'])}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="Who can receive HPV vaccines">
+    <div class="role-section__header role-section__header--parents">
+      <div class="role-section__icon" aria-hidden="true">👥</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">টিকাগুলো কারা গ্রহণ করতে পারবেন</h2>
+        <h2 class="role-section__title en">Who Can Receive the Vaccines</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(eligibility, ['amber'])}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="Number of vaccine doses">
+    <div class="role-section__header role-section__header--faciliy">
+      <div class="role-section__icon" aria-hidden="true">🔢</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">টিকার ডোজ সংখ্যা</h2>
+        <h2 class="role-section__title en">Number of Doses</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(doseCount, ['violet'])}</div>
+    </div>
+  </section>
+  `;
+}
+
+function buildTdVaccineSection() {
+  return `
+  <div class="app-intro-box">
+    <div class="app-intro-icon" aria-hidden="true">💉</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">সারাজীবনে একজন নারীকে নূন্যতম ৫ ডোজ টিডি টিকা নিতে হয়। সম্প্রসারিত টিকাদান কর্মসূচী অনুযায়ী ১৫ বছর বয়স থেকে টিকা দেয়া শুরু করতে হয় এবং সে অনুযায়ী মোট ৫ ডোজ টিডি টিকা নিতে হয়। পুরো ডোজ শেষ করতে মোট ২ বছর ৭ মাস সময় লাগে।</p>
+      <p class="app-intro-sub en">A woman needs at least 5 doses of TD vaccine in her lifetime. Under the Expanded Programme on Immunization, vaccination starts at age 15 and a total of 5 TD doses are required. Completing all doses takes 2 years and 7 months.</p>
+    </div>
+  </div>
+
+  <section style="margin-top:24px;" aria-label="TD vaccination schedule for women aged 15 to 49 years">
+    <div class="section-divider">
+      <h2 class="section-divider__title">
+        <span class="bn">১৫-৪৯ বছর বয়সের মহিলাদের টিডি টিকাদান সময়সূচি</span>
+        <span class="en">TD Vaccination Schedule for Women Aged 15-49 Years</span>
+      </h2>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="comparison-table" role="grid">
+        <thead>
+          <tr>
+            <th class="table-header" scope="col"><span class="bn">রোগের নাম</span><span class="en">Disease Name</span></th>
+            <th class="table-header" scope="col"><span class="bn">টিকার নাম</span><span class="en">Vaccine Name</span></th>
+            <th class="table-header" scope="col"><span class="bn">টিকার ডোজ</span><span class="en">Vaccine Dose</span></th>
+            <th class="table-header" scope="col"><span class="bn">ডোজের সংখ্যা</span><span class="en">Dose Sequence</span></th>
+            <th class="table-header" scope="col"><span class="bn">টিকা শুরু করার সঠিক সময়</span><span class="en">Correct Time to Start</span></th>
+            <th class="table-header" scope="col"><span class="bn">টিকাদানের স্থান</span><span class="en">Vaccination Site</span></th>
+            <th class="table-header" scope="col"><span class="bn">টিকার প্রয়োগ পথ</span><span class="en">Route of Administration</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="table-cell" rowspan="5"><span class="bn">ধনুষ্টংকার<br/>ও<br/>ডিপথেরিয়া</span><span class="en">Tetanus and Diphtheria</span></td>
+            <td class="table-cell" rowspan="5"><span class="bn">টিডি<br/>(টিটেনাস ও ডিপথেরিয়া)</span><span class="en">TD (Tetanus & Diphtheria)</span></td>
+            <td class="table-cell" rowspan="5"><span class="bn">০.৫ মিলিলিটার</span><span class="en">0.5 ml</span></td>
+            <td class="table-cell"><span class="bn">টিডি-১</span><span class="en">TD-1</span></td>
+            <td class="table-cell"><span class="bn">১৫ বছর বয়স হলেই যথা শীঘ্র</span><span class="en">As soon as age 15 is reached</span></td>
+            <td class="table-cell" rowspan="5"><span class="bn">বাহুর উপরের অংশে</span><span class="en">Upper arm</span></td>
+            <td class="table-cell" rowspan="5"><span class="bn">মাংশপেশী</span><span class="en">Intramuscular</span></td>
+          </tr>
+          <tr>
+            <td class="table-cell"><span class="bn">টিডি-২</span><span class="en">TD-2</span></td>
+            <td class="table-cell"><span class="bn">টিডি-১ পাওয়ার কমপক্ষে ২৮ দিন পর</span><span class="en">At least 28 days after TD-1</span></td>
+          </tr>
+          <tr>
+            <td class="table-cell"><span class="bn">টিডি-৩</span><span class="en">TD-3</span></td>
+            <td class="table-cell"><span class="bn">টিডি-২ পাওয়ার কমপক্ষে ৬ মাস পর</span><span class="en">At least 6 months after TD-2</span></td>
+          </tr>
+          <tr>
+            <td class="table-cell"><span class="bn">টিডি-৪</span><span class="en">TD-4</span></td>
+            <td class="table-cell"><span class="bn">টিডি-৩ পাওয়ার কমপক্ষে ১ বছর পর</span><span class="en">At least 1 year after TD-3</span></td>
+          </tr>
+          <tr>
+            <td class="table-cell"><span class="bn">টিডি-৫</span><span class="en">TD-5</span></td>
+            <td class="table-cell"><span class="bn">টিডি-৪ পাওয়ার কমপক্ষে ১ বছর পর</span><span class="en">At least 1 year after TD-4</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="app-intro-box" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">🤰</div>
+    <div class="app-intro-titles">
+      <h2 class="role-section__title bn">গর্ভবতীর টিডি টিকা</h2>
+      <h2 class="role-section__title en">TD Vaccine for Pregnant Women</h2>
+      <p class="app-intro-sub bn">যে সকল গর্ভবতী মা আগে কখনো টিডি টিকা নেয়নি তাকে উপরের ছক অনুযায়ী ১ম ডোজ টিডি টিকা নিতে হবে গর্ভধারণের ৪র্থ মাসে। ২য় ডোজ নিতে হবে তার ৪ সপ্তাহ পর। ৩য় ডোজ নিতে হবে ২য় ডোজের ৬ মাস পর অথবা পরবর্তী গর্ভধারণের সময়। ৪র্থ ডোজ নিতে হবে ৩য় ডোজের ১ বছর পর অথবা পরবর্তী গর্ভধারণের সময়। ৫ম ডোজটি ৪র্থ ডোজের ১ বছর পর অথবা পরবর্তী গর্ভধারণের সময় নিতে হবে। এভাবে ৫ ডোজ টিকা সঠিক সময়ে নেয়া হলে মা ও শিশু সারাজীবন ধনুষ্টংকার ও ডিপথেরিয়া থেকে রক্ষা পাবে।</p>
+      <p class="app-intro-sub bn">যদি কিশোরী ৫ ডোজ টিডি পেয়ে থাকে তাহলে গর্ভকালীন সময়ে টিডি টিকা নেয়ার প্রয়োজন নাই।</p>
+      <p class="app-intro-sub en">If a pregnant mother has never taken TD before, she should receive TD-1 in the 4th month of pregnancy as per the schedule. TD-2 should be taken 4 weeks later. TD-3 should be taken 6 months after TD-2 or during the next pregnancy. TD-4 should be taken 1 year after TD-3 or during the next pregnancy. TD-5 should be taken 1 year after TD-4 or during the next pregnancy. If all 5 doses are taken on time, mother and child are protected from tetanus and diphtheria for life.</p>
+      <p class="app-intro-sub en">If an adolescent has already received all 5 doses of TD, no additional TD dose is needed during pregnancy.</p>
+    </div>
+  </div>
+
+  <div class="app-intro-box" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">🕒</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">প্রসবের সময়ের সাথে টিকাদান কর্মসূচির কোনো পরিবর্তন হবে না</h2>
+      <h2 class="app-intro-title en">There will be no change in the vaccination schedule based on delivery timing</h2>
+    </div>
+  </div>
+
+  <div class="app-intro-box" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">⚠️</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">মনে রাখতে হবে: ধনুষ্টংকার ও ডিপথেরিয়া মারাত্মক রোগ। এ রোগগুলো থেকে রক্ষা পেতে সব নারীকে ৫ ডোজ টিডি টিকা সঠিক সময়ে নিতে হবে।</h2>
+      <h2 class="app-intro-title en">Remember: Tetanus and diphtheria are severe diseases. To stay protected, all women should receive all 5 TD doses on time.</h2>
     </div>
   </div>
   `;
