@@ -4816,7 +4816,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isEmotionLesson = (modIdx === 13 && lesIdx === 1);
   // Module 14 Lesson 3 — Emotion management strategies
   const isEmotionManagementStrategiesLesson = (modIdx === 13 && lesIdx === 2);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson;
+  // Module 14 Lesson 4 — Anxiety
+  const isAnxietyLesson = (modIdx === 13 && lesIdx === 3);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4858,6 +4860,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isPsychosocialChangesLesson ? buildPsychosocialChangesSection()
     : isEmotionLesson ? buildEmotionLessonSection()
     : isEmotionManagementStrategiesLesson ? buildEmotionManagementStrategiesSection()
+    : isAnxietyLesson ? buildAnxietyLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -8848,6 +8851,133 @@ function buildEmotionManagementStrategiesSection() {
     </div>
     <div class="role-section__body">
       <div class="role-grid">${renderCards(intelligenceCards, palette)}</div>
+    </div>
+  </section>
+  `;
+}
+
+function buildAnxietyLessonSection() {
+  const causes = [
+    { icon: '⚖️', titleBn: 'চাহিদা ও যোগানের মধ্যে পার্থক্য থাকা', titleEn: 'Having a gap between demands and available support' },
+    { icon: '🎯', titleBn: 'অবাস্তব প্রত্যাশা', titleEn: 'Unrealistic expectations' },
+    { icon: '🧭', titleBn: 'আত্মনিয়ন্ত্রণের অভাব', titleEn: 'Lack of self-control' },
+    { icon: '🚪', titleBn: 'প্রত্যাখ্যাত ও বিচ্ছিন্ন হওয়ার ভয়', titleEn: 'Fear of rejection and isolation' },
+    { icon: '🔁', titleBn: 'তুলনা করা', titleEn: 'Comparing yourself with others' },
+    { icon: '🏫', titleBn: 'কর্মক্ষেত্র ও স্কুলের কাজের চাপ', titleEn: 'Workload pressure at school and workplace' },
+    { icon: '👪', titleBn: 'ব্যক্তিগত ও পারিবারিক সম্পর্কের অবনতি', titleEn: 'Deterioration in personal and family relationships' },
+  ];
+
+  const renderCards = (items, palette) => items.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.titleBn}</h4>
+        <h4 class="role-card__title en">${item.titleEn}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  const mentalSymptoms = [
+    { bn: 'অত্যধিক রাগ', en: 'Excessive anger' },
+    { bn: 'বিরক্ত বোধ', en: 'Feeling irritated' },
+    { bn: 'মনোযোগের অসুবিধা', en: 'Difficulty concentrating' },
+    { bn: 'অস্থিরতা', en: 'Restlessness' },
+    { bn: 'যেকোনো পরিস্থিতি খুব বিপজ্জনক মনে করা', en: 'Thinking every situation is very dangerous' },
+    { bn: 'খারাপ কিছু ঘটবে বলে আশঙ্কা', en: 'Fear that something bad will happen' },
+    { bn: 'নেতিবাচক চিন্তা', en: 'Negative thoughts' },
+    null,
+    null,
+    null,
+  ];
+
+  const mentalIcons = ['🧠', '💢', '🎯', '🌀', '⚠️', '🔔', '💭', null, null, null];
+
+  const physicalSymptoms = [
+    { bn: 'হৃদস্পন্দন বেড়ে যাওয়া', en: 'Increased heartbeat' },
+    { bn: 'রক্তচাপ বেড়ে যাওয়া', en: 'Increased blood pressure' },
+    { bn: 'বমি বমি ভাব', en: 'Nausea' },
+    { bn: 'ঘাম হওয়া', en: 'Sweating' },
+    { bn: 'মুখ শুকিয়ে যাওয়া', en: 'Dry mouth' },
+    { bn: 'ডায়রিয়া', en: 'Diarrhea' },
+    { bn: 'পেট ব্যথা, মাথা ব্যথা', en: 'Stomach pain and headache' },
+    { bn: 'শ্বাসকষ্ট', en: 'Shortness of breath' },
+    { bn: 'ঘুম না হওয়া বা ঘুমের পরিমাণ বেড়ে যাওয়া', en: 'Insomnia or excessive sleeping' },
+    null,
+  ];
+
+  const physicalIcons = ['💓', '🩸', '🤢', '💦', '👄', '🚽', '🤕', '😮‍💨', '😴', null];
+
+  const behavioralSymptoms = [
+    { bn: 'ঘুম না হওয়া বা ঘুমের পরিমাণ বেড়ে যাওয়া', en: 'Insomnia or sleeping too much' },
+    { bn: 'পরিস্থিতি এড়িয়ে চলা', en: 'Avoiding situations' },
+    { bn: 'খাবারে অরুচি বা অত্যধিক পরিমাণে খাবার গ্রহণ করা', en: 'Loss of appetite or overeating' },
+    { bn: 'অলসতা বা অনীহা', en: 'Laziness or lack of interest' },
+    { bn: 'মাদক দ্রব্য গ্রহণ করা/মদ্যপান করা', en: 'Using drugs / drinking alcohol' },
+    { bn: 'প্রত্যাহারমূলক আচরণ', en: 'Withdrawn behavior' },
+    null,
+    null,
+    null,
+    null,
+  ];
+
+  const behavioralIcons = ['🛌', '🚶', '🍽️', '💤', '🍺', '🚪', null, null, null, null];
+
+  const renderCell = (item, icon) => {
+    if (!item) return '-';
+    return `<span class="table-cell__icon" aria-hidden="true">${icon}</span><span class="bn">${item.bn}</span><span class="en">${item.en}</span>`;
+  };
+
+  const rows = Array.from({ length: Math.max(mentalSymptoms.length, physicalSymptoms.length, behavioralSymptoms.length) }, (_, index) => `
+    <tr>
+      <td class="table-cell">${renderCell(mentalSymptoms[index] ?? null, mentalIcons[index] ?? '🧠')}</td>
+      <td class="table-cell">${renderCell(physicalSymptoms[index] ?? null, physicalIcons[index] ?? '🫀')}</td>
+      <td class="table-cell">${renderCell(behavioralSymptoms[index] ?? null, behavioralIcons[index] ?? '👣')}</td>
+    </tr>
+  `).join('');
+
+  return `
+  <div class="app-intro-box bg_4">
+    <div class="app-intro-icon" aria-hidden="true">😟</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">“উদ্বেগ হলো এক ধরনের আবেগ যাকে তীব্র অনুভূতি, দুঃশ্চিন্তা এবং রক্তচাপ বৃদ্ধি করার মতো শারীরিক পরিবর্তনগুলো দ্বারা চিহ্নিত করা হয়।” স্বাভাবিক মাত্রায় উদ্বেগের অনুভূতি থাকা ভালো, যেটা ব্যক্তিকে কোন বিপজ্জনক পরিস্থিতি মোকাবেলা করতে প্রস্তুত ও সহায়তা করে। তবে উদ্বেগ বেশি মাত্রায় থাকলে ব্যক্তির জন্য ক্ষতিকর হয় ফলে ব্যক্তির স্বাভাবিক জীবন যাত্রার মান ব্যহত হয় এবং ব্যক্তির মানসিক অবস্থা হুমকির সম্মুখীন হয়।</p>
+      <p class="app-intro-sub en">“Anxiety is an emotion marked by intense feelings, worry, and physical changes such as increased blood pressure.” Feeling some anxiety at a normal level is helpful because it prepares a person to face dangerous situations. But when anxiety becomes too intense, it becomes harmful, disrupts normal life, and threatens mental well-being.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="উদ্বেগের কারণ" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">⚠️</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">উদ্বেগের কারণ</h2>
+        <h2 class="role-section__title en">Causes of Anxiety</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(causes, ['rose', 'indigo', 'teal', 'green'])}</div>
+    </div>
+  </section>
+
+  <section class="fp-comparison-section" aria-label="উদ্বেগের লক্ষণ ও উপসর্গ" style="margin-top:24px;">
+    <div class="section-divider">
+      <h2 class="section-divider__title">
+        <span class="bn">উদ্বেগের লক্ষণ ও উপসর্গ</span>
+        <span class="en">Signs and Symptoms of Anxiety</span>
+      </h2>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="comparison-table" role="grid">
+        <thead>
+          <tr>
+            <th class="table-header" scope="col"><span aria-hidden="true">🧠</span> <span class="bn">মানসিক লক্ষণ</span><span class="en">Mental symptoms</span></th>
+            <th class="table-header" scope="col"><span aria-hidden="true">🩺</span> <span class="bn">শারীরিক লক্ষণ</span><span class="en">Physical symptoms</span></th>
+            <th class="table-header" scope="col"><span aria-hidden="true">👣</span> <span class="bn">আচরণগত লক্ষণ</span><span class="en">Behavioral symptoms</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows}
+        </tbody>
+      </table>
     </div>
   </section>
   `;
