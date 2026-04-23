@@ -1876,7 +1876,7 @@
     .role-section__header--parents { background: linear-gradient(135deg, #EC4899 0%, #BE185D 55%, #831843 100%); }
     .role-section__header--school  { background: linear-gradient(135deg, #6366F1 0%, #4338CA 55%, #312E81 100%); }
     .role-section__header--faciliy { background: linear-gradient(135deg, #14B8A6 0%, #0F766E 55%, #134E4A 100%); }
-    .role-section__header--warn    { background: linear-gradient(135deg, #F43F5E 0%, #BE123C 55%, #7F1D1D 100%); }
+    .role-section__header--warn    { background: linear-gradient(135deg, #3f7ff4 0%, #125fbe 55%, #1d7f37 100%) }
     .role-section__header--manage  { background: linear-gradient(135deg, #10B981 0%, #047857 55%, #064E3B 100%); }
     .role-section__header--success { background: linear-gradient(135deg, #10B981 0%, #059669 55%, #047857 100%); }
     /* New color variants for additional sections */
@@ -3855,7 +3855,7 @@
           onclick="handleModuleClick(10)">
           <span class="module-status" aria-hidden="true">11</span>
           <span class="module-info">
-            <span class="module-title bn">মডিউল-১১: পলিসিস্টিক ওভারি সিনড্রোম (PCOS)</span>
+            <span class="module-title bn">মডিউল-১১: পলিসিস্টিক ওভারিআন সিনড্রোম (পিসিওএস) </span>
             <span class="module-title en">Module-11: Polycystic Ovary Syndrome (PCOS)</span>
             <span class="module-progress">
               <span class="module-progress__track"><span class="module-progress__fill" style="width:0%"></span></span>
@@ -3865,7 +3865,7 @@
           <svg class="module-chevron" aria-hidden="true"><use href="#icon-chevron"/></svg>
         </button>
         <div class="lesson-list" id="modPanel-10" role="list">
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(10,0)"><span class="lesson-dot" aria-hidden="true">1</span><span class="lesson-text"><span class="lesson-label bn">পলিসিস্টিক ওভারি সিনড্রোম (PCOS)</span><span class="lesson-label en">Polycystic Ovary Syndrome (PCOS)</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(10,0)"><span class="lesson-dot" aria-hidden="true">1</span><span class="lesson-text"><span class="lesson-label bn">পলিসিস্টিক ওভারিআন সিনড্রোম (পিসিওএস) </span><span class="lesson-label en">Polycystic Ovary Syndrome (PCOS)</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(10,1)"><span class="lesson-dot" aria-hidden="true">2</span><span class="lesson-text"><span class="lesson-label bn">সমস্যা</span><span class="lesson-label en">Problems</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(10,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">সমাধান</span><span class="lesson-label en">Solutions</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(10,3)"><span class="lesson-dot" aria-hidden="true">4</span><span class="lesson-text"><span class="lesson-label bn">ব্যবস্থাপনা</span><span class="lesson-label en">Management</span></span></button>
@@ -4306,8 +4306,8 @@ const MODULES = [
     descBn:'এই মডিউলে জরায়ুমুখ ক্যান্সার, এইচপিভি টিকা এবং মহিলাদের অন্যান্য টিকা  সম্পর্কে আলোচনা করা হয়েছে।',
     descEn:'This module covers cervical cancer, the HPV vaccine, and other vaccines for women.',
     icon:'💉', totalLessons:3, doneLessons:0 },
-  { titleBn:'মডিউল-১১: পলিসিস্টিক ওভারি সিনড্রোম (PCOS)', titleEn:'Module-11: Polycystic Ovary Syndrome (PCOS)',
-    descBn:'এই মডিউলে পলিসিস্টিক ওভারি সিনড্রোম (PCOS), তার সমস্যা, সমাধান এবং ব্যবস্থাপনা সম্পর্কে আলোচনা করা হয়েছে।',
+  { titleBn:'মডিউল-১১: পলিসিস্টিক ওভারিআন সিনড্রোম (পিসিওএস) ', titleEn:'Module-11: Polycystic Ovary Syndrome (PCOS)',
+    descBn:'এই মডিউলে পলিসিস্টিক ওভারিআন সিনড্রোম (পিসিওএস) , তার সমস্যা, সমাধান এবং ব্যবস্থাপনা সম্পর্কে আলোচনা করা হয়েছে।',
     descEn:'This module covers Polycystic Ovary Syndrome (PCOS), its problems, solutions, and management.',
     icon:'🏥', totalLessons:4, doneLessons:0 },
   { titleBn:'মডিউল-১২: শিশু অধিকার ও মানবাধিকার এবং যৌন ও প্রজনন স্বাস্থ্য অধিকার', titleEn:'Module-12: Child Rights and Human Rights and Sexual and Reproductive Health Rights',
@@ -4375,7 +4375,7 @@ const LESSONS_BN = [
   ['যৌনবাহিত ও প্রজনন স্বাস্থ্য সংক্রান্ত সংক্রমণ','যৌনবাহিত রোগের ঝুঁকি','প্রজনন স্বাস্থ্য বা যৌনবাহিত রোগের জটিলতা'],
   ['এইচআইভি এবং এইডস','উইন্ডো পিরিয়ড'],
   ['জরায়ুমুখ ক্যান্সার','এইচপিভি টিকা','মহিলাদের অন্যান্য টিকা '],
-  ['পলিসিস্টিক ওভারি সিনড্রোম (PCOS)','সমস্যা','সমাধান','ব্যবস্থাপনা'],
+  ['পলিসিস্টিক ওভারিআন সিনড্রোম (পিসিওএস) ','সমস্যা','সমাধান','ব্যবস্থাপনা'],
   ['শিশু অধিকার ও মানবাধিকার এবং যৌন ও প্রজনন স্বাস্থ্য অধিকার','শিশু নির্যাতন','যৌন ও প্রজনন স্বাস্থ্য অধিকার'],
   ['লিঙ্গ-ভিত্তিক বৈষম্য','লিঙ্গ বৈষম্য','সমাজে বিদ্যমান লিঙ্গ বৈষম্য','লিঙ্গ-ভিত্তিক সহিংসতা ও নির্যাতনের ধরন','যৌন হয়রানি','আর্থিক ক্ষতি – আর্থিক দিক','লিঙ্গ বৈষম্য দূরীকরণে করণীয়','সহিংসতা বা নির্যাতন','তরুণদের বিরুদ্ধে সহিংসতার বিভিন্ন রূপ'],
   ['তরুণদের মনো-সামাজিক পরিবর্তন','আবেগ','আবেগ নিয়ন্ত্রণ কৌশল','উদ্বেগ','মানসিক চাপ','মানসিক চাপের কারণ','রাগ','কেন এবং কখন আমরা সহজে রেগে যাই?','পরীক্ষার ভয়','পরীক্ষার ভয় দূর করার উপায় বা সমাধান','ডিজিটাল আসক্তি প্রতিরোধ'],
@@ -4716,7 +4716,19 @@ function renderLessonPage(modIdx, lesIdx) {
   const isHpvVaccineLesson = (modIdx === 9 && lesIdx === 1);
   // Module 10 Lesson 3 — Other vaccines for women (TD schedule)
   const isTdVaccineLesson = (modIdx === 9 && lesIdx === 2);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson;
+  // Module 11 Lesson 1 — PCOS
+  const isPcosLesson = (modIdx === 10 && lesIdx === 0);
+  // Module 11 Lesson 2 — PCOS problems
+  const isPcosProblemsLesson = (modIdx === 10 && lesIdx === 1);
+  // Module 11 Lesson 3 — PCOS solutions
+  const isPcosSolutionsLesson = (modIdx === 10 && lesIdx === 2);
+  // Module 12 Lesson 1 — Child rights and human rights
+  const isChildRightsLesson = (modIdx === 11 && lesIdx === 0);
+  // Module 12 Lesson 3 — Sexual and reproductive health rights
+  const isSexualReproductiveRightsLesson = (modIdx === 11 && lesIdx === 2);
+  // Module 13 Lesson 1 — Gender-based discrimination (Sex vs Gender)
+  const isGenderBasedDiscriminationLesson = (modIdx === 12 && lesIdx === 0);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4741,6 +4753,12 @@ function renderLessonPage(modIdx, lesIdx) {
     : isCervicalCancerLesson ? buildCervicalCancerSection()
     : isHpvVaccineLesson ? buildHpvVaccineSection()
     : isTdVaccineLesson ? buildTdVaccineSection()
+    : isPcosLesson ? buildPcosSection()
+    : isPcosProblemsLesson ? buildPcosProblemsSection()
+    : isPcosSolutionsLesson ? buildPcosSolutionsSection()
+    : isChildRightsLesson ? buildChildRightsSection()
+    : isSexualReproductiveRightsLesson ? buildSexualReproductiveRightsSection()
+    : isGenderBasedDiscriminationLesson ? buildGenderBasedDiscriminationSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -7501,6 +7519,330 @@ function buildTdVaccineSection() {
       <h2 class="app-intro-title en">Remember: Tetanus and diphtheria are severe diseases. To stay protected, all women should receive all 5 TD doses on time.</h2>
     </div>
   </div>
+  `;
+}
+
+function buildPcosSection() {
+  return `
+  <div style="width:100%;max-width:100%;display:grid;gap:18px;">
+    <div class="app-intro-box" style="background-color:#eaf6ff;">
+      <div class="app-intro-icon" aria-hidden="true">🌍</div>
+      <div class="app-intro-titles">
+        <p class="app-intro-sub bn">সারা বিশ্বেই নারীদের একটি বড় স্বাস্থ্য সমস্যা পলিসিস্টিক ওভারিয়ান সিনড্রোম বা পিসিওএস। এই রোগে ডিম্বাশয়ে অনেকগুলো সিস্ট হয় বলেই এর এমন নামকরণ। গবেষণা বলছে, প্রতি ১০ জন নারীর মধ্যে ১ জনের এ সমস্যা আছে। যেকোনো বয়সী নারীই এতে আক্রান্ত হতে পারেন। তবে প্রজননক্ষম বা ১৫ থেকে ৪৫ বছর বয়সী নারীরা বেশি আক্রান্ত হন।</p>
+        <p class="app-intro-sub en">Polycystic Ovarian Syndrome (PCOS) is a major health problem for women worldwide. It is named this way because multiple cysts can develop in the ovaries. Research indicates that 1 in 10 women has this condition. Women of any age can be affected, but those of reproductive age (15 to 45 years) are affected most.</p>
+      </div>
+    </div>
+
+    <div class="app-intro-box" style="background:linear-gradient(135deg, #2e49cc 0%, #2770ae 55%, #1E8449 100%);">
+      <div class="app-intro-icon" aria-hidden="true">🧬</div>
+      <div class="app-intro-titles">
+        <p class="app-intro-sub bn">এটি বংশগত এবং হরমোনাল সমস্যা। নারীর শরীরে পুরুষ হরমোন (অ্যান্ড্রোজেন) স্বাভাবিকের তুলনায় বেড়ে গেলে এ সমস্যা দেখা দেয়। এই হরমোন বৃদ্ধির কারণে নারীর ওভুলেশন বা প্রতি মাসে ডিম্বাণু পরিপক্ব হওয়ার পরও ফলিকল ফেটে যায় না এবং ডিম্বাণু বের হতে পারে না। একসময় মেয়েদের ওভুলেশন বন্ধ হয়ে যায় এবং অনিয়মিত মাসিক হয় বা মাসিক একেবারেই হয় না।</p>
+        <p class="app-intro-sub en">This is a hereditary and hormonal condition. It appears when male hormone (androgen) levels rise above normal in women. Due to this hormone imbalance, even after an egg matures each month, the follicle may not rupture and the egg may not be released. Over time, ovulation may stop and menstruation becomes irregular or may stop completely.</p>
+      </div>
+    </div>
+
+    <div class="app-intro-box" style="background:linear-gradient(135deg, #039f08 0%, #61ae27 55%, #1E8449 100%);">
+      <div class="app-intro-icon" aria-hidden="true">⚕️</div>
+      <div class="app-intro-titles">
+        <p class="app-intro-sub bn">এটি বংশগত এবং হরমোনাল সমস্যা। নারীর শরীরে পুরুষ হরমোন (অ্যান্ড্রোজেন) স্বাভাবিকের তুলনায় বেড়ে গেলে এ সমস্যা দেখা দেয়। এই হরমোন বৃদ্ধির কারণে নারীর ওভুলেশন বা প্রতি মাসে ডিম্বাণু পরিপক্ব হওয়ার পরও ফলিকল ফেটে যায় না এবং ডিম্বাণু বের হতে পারে না। একসময় মেয়েদের ওভুলেশন বন্ধ হয়ে যায় এবং অনিয়মিত মাসিক হয় বা মাসিক একেবারেই হয় না।</p>
+        <p class="app-intro-sub en">This is a hereditary and hormonal condition. It appears when male hormone (androgen) levels rise above normal in women. Due to this hormone imbalance, even after an egg matures each month, the follicle may not rupture and the egg may not be released. Over time, ovulation may stop and menstruation becomes irregular or may stop completely.</p>
+      </div>
+    </div>
+  </div>
+  `;
+}
+
+function buildPcosProblemsSection() {
+  const problems = [
+    { icon: '🗓️', bn: 'অনিয়মিতভাবে মাসিক হওয়া/মাসিক বন্ধ থাকা', en: 'Irregular menstruation or absence of periods' },
+    { icon: '🧠', bn: 'মানসিক সমস্যা', en: 'Mental health problems' },
+    { icon: '🧔', bn: 'শরীরের বিভিন্ন জায়গায় অবাঞ্ছিত লোম গজানো', en: 'Unwanted hair growth in different body areas' },
+    { icon: '💇', bn: 'চুল পড়ে যাওয়া', en: 'Hair fall' },
+    { icon: '😣', bn: 'মুখে ব্রণ বের হওয়া', en: 'Acne on the face' },
+    { icon: '🤰', bn: 'গর্ভধারণে বিভিন্ন সমস্যা হওয়া এমনকি বন্ধ্যাত্বও হতে পারে', en: 'Various pregnancy-related problems, even infertility' },
+    { icon: '⚖️', bn: 'ওজন বেড়ে যাওয়া', en: 'Weight gain' },
+    { icon: '🌙', bn: 'ঘুমের ব্যাঘাত হওয়া', en: 'Sleep disturbance' },
+    { icon: '🩸', bn: 'টাইপ-২ ডায়বেটিস রোগের ঝুঁকি', en: 'Risk of type-2 diabetes' },
+    { icon: '❤️', bn: 'হৃদ রোগের ঝুঁকি', en: 'Risk of heart disease' },
+    { icon: '⚠️', bn: 'জরায়ু ক্যান্সারের ঝুঁকি বাড়ায়', en: 'Increases the risk of uterine cancer' },
+  ];
+
+  const palette = ['rose', 'teal', 'indigo', 'green', 'amber', 'violet', 'sky', 'slate'];
+  const cards = problems.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <p class="role-card__text bn">${item.bn}</p>
+      <p class="role-card__text en">${item.en}</p>
+    </article>
+  `).join('');
+
+  return `
+  <section class="role-section" aria-label="PCOS related problems">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">⚕️</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">পিসিওএস-এর সমস্যা সমূহ</h2>
+        <h2 class="role-section__title en">Problems Related to PCOS</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${cards}</div>
+    </div>
+  </section>
+
+  <div class="app-intro-box" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">💡</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">সবারই সব সমস্যা একসাথে হবে তা নয়, আবার বয়সের সাথে সমস্যাগুলো পরিবর্তনও হতে পারে।</h2>
+      <h2 class="app-intro-title en">Not everyone will experience all problems together, and these problems may change with age.</h2>
+    </div>
+  </div>
+  `;
+}
+
+function buildPcosSolutionsSection() {
+  const lifestyle = [
+    { icon: '🏃', bn: 'শারীরিকভাবে কর্মক্ষম, সচল থাকার জন্য ব্যায়াম করতে হবে। সেটা হতে পারে হাঁটা, সাইকেল চালনা, পছন্দের খেলা-ধুলা করা ইত্যাদি।', en: 'To stay physically active and capable, regular exercise is necessary. This may include walking, cycling, or playing favorite sports.' },
+    { icon: '🚭', bn: 'যে সমস্ত অভ্যাস স্বাস্থ্যসম্মত নয় তা বর্জন করতে হবে। যেমন- ধূমপান করা, মদ্যপান করা।', en: 'Unhealthy habits should be avoided, such as smoking and alcohol consumption.' },
+    { icon: '🥗', bn: 'খাবারের বিষয়ে খুব সতর্কতা অবলম্বন করতে হবে। সুষম খাবার খেতে হবে, শর্করা জাতীয় খাবার কম খেতে হবে যাতে ওজন নিয়ন্ত্রণে থাকে।', en: 'Diet must be managed carefully. Eat balanced meals and reduce carbohydrate-heavy foods to control weight.' },
+    { icon: '⚖️', bn: 'ওজন নিয়ন্ত্রণে রাখতে হলে টোটাল ক্যালরি কমাতে হবে অথবা পুষ্টিবিদের সাহায্য নিতে হবে। ভাজা খাবারের চাইতে সিদ্ধ করা খাবার ভালো। শাকসবজি বেশি করে খেতে হবে।', en: 'To control weight, total calorie intake should be reduced or a nutritionist should be consulted. Boiled food is better than fried food. Eat more vegetables.' },
+    { icon: '🍳', bn: 'পরিমাণ মতো আমিষ জাতীয় খাবার খেতে হবে; যাতে কম চর্বি যুক্ত মাংস, মাছ, ডিম, কম চর্বি যুক্ত দুগ্ধজাত খাবার, বাদাম এবং বেশি করে ফাইবার সমৃদ্ধ খাবার খেতে হবে।', en: 'Protein intake should be adequate, including lean meat, fish, eggs, low-fat dairy, nuts, and more fiber-rich foods.' },
+    { icon: '🥣', bn: 'দইয়ে যেহেতু প্রোবায়োটিক থাকে তাই দই ওজন কমাতে সাহায্য করে এবং অন্ত্রজীবাণু সুস্থ রাখে।', en: 'Yogurt contains probiotics, which can help with weight control and maintain healthy gut bacteria.' },
+    { icon: '🥤', bn: 'চিনিযুক্ত খাবার, শরবত, কোমল পানীয়, চকোলেট, ফাস্ট ফুডে ওজন বাড়ে তাই এগুলোকে বর্জন করতে হবে।', en: 'Sugary foods, syrups, soft drinks, chocolates, and fast food increase weight and should be avoided.' },
+    { icon: '🍎', bn: 'ফল, শাক-সবজি শরীরের প্রদাহ হওয়া থেকে রক্ষা করে। তাই এগুলো পিসিওএস-এর রোগীদের জন্য অনেক ভালো।', en: 'Fruits and vegetables help protect the body from inflammation, so they are very beneficial for PCOS patients.' },
+    { icon: '🧘', bn: 'ব্যায়াম মানসিক প্রশান্তি দেয়, শক্তি বাড়ায়, রক্তে চিনির মাত্রা কমায়। নিয়মিত ব্যায়ামের জন্য গ্রুপ অথবা', en: 'Exercise provides mental calmness, increases energy, and lowers blood sugar levels. For regular exercise, join a group or' },
+  ];
+
+  const palette = ['teal', 'rose', 'indigo', 'green', 'amber', 'violet', 'sky', 'slate'];
+  const cards = lifestyle.map((item, idx) => `
+    <article class="role-card role-card--${palette[idx % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <p class="role-card__text bn">${item.bn}</p>
+      <p class="role-card__text en">${item.en}</p>
+    </article>
+  `).join('');
+
+  return `
+  <div class="app-intro-box">
+    <div class="app-intro-icon" aria-hidden="true">💊</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">সমাধানের উপায়</h2>
+      <h2 class="app-intro-title en">Ways to Manage</h2>
+      <p class="app-intro-sub bn">পিসিওএস হলে মনে রাখতে হবে যে, এটি কখনও নির্মূল হবে না। কিন্তু, চিকিৎসা নিয়ে সুস্থ থাকা সম্ভব।</p>
+      <p class="app-intro-sub en">If you have PCOS, remember that it may not be fully eliminated, but it is possible to stay healthy with proper treatment.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="Lifestyle strategies for PCOS" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🧭</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">জীবনযাপনের কলাকৌশল</h2>
+        <h2 class="role-section__title en">Lifestyle Strategies</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${cards}</div>
+    </div>
+  </section>
+
+  <div class="app-intro-box" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">💊</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">সমাধানের উপায়</h2>
+      <h2 class="app-intro-title en">Ways to Manage</h2>
+      <p class="app-intro-sub bn">পিসিওএস হলে মনে রাখতে হবে যে, এটি কখনও নির্মূল হবে না। কিন্তু, চিকিৎসা নিয়ে সুস্থ থাকা সম্ভব।</p>
+      <p class="app-intro-sub en">If you have PCOS, remember that it may not be fully eliminated, but it is possible to stay healthy with proper treatment.</p>
+    </div>
+  </div>
+  `;
+}
+
+function buildChildRightsSection() {
+  const principles = [
+    { icon: '🚫', bn: 'কোনো শিশুই বৈষম্যের শিকার হবেনা (ধারা ২)। যেকোনো পরিস্থিতিতেই সব শিশুই তাদের সম্ভাবনা বিকাশের সমান সুযোগ পাবে। যেমন - লিঙ্গ, বর্ণ, জাতীয়তা, ধর্ম, প্রতিবন্ধিতা, যৌনতার ধরণ বা অন্য কোনো মর্যাদার ভিত্তিতে বৈষেম্যর শিকার না হয়ে সব শিশুই শিক্ষায় অংশগ্রহণের সুযোগ পাবে।', en: 'No child shall suffer discrimination (Article 2). Every child should have equal opportunities to develop their potential in any situation.' },
+    { icon: '⚖️', bn: 'শিশুদের ওপর প্রভাব ফেলবে এমন কোনো সিদ্ধাান্তের ক্ষেত্রে তাদের স্বার্থগুলো সবসময় অগ্রাধিকার পাবে (ধারা ৩)। যেমন- বাজেট প্রণয়নের সময় খেয়াল রাখতে হবে কোনো খাতে অর্থ বরাদ্দ বা কর্তনের ক্ষেত্রে যেন শিশুদের সর্বোচ্চ স্বার্থটাই গুরুত্ব পায়।', en: 'In any decision affecting children, their best interests should always be a primary consideration (Article 3).' },
+    { icon: '❤️', bn: 'বেঁচে থাকার ও সুস্থভাবে বিকাশের অধিকার সব শিশুরই রয়েছে (ধারা ৬)। মৌলিক সেবাগুলোয় শিশুদের ও প্রবেশাধিকার ও তাদের পূর্ণ সম্ভাবনা বিকাশের সমান অধিকার নিশ্চিত করতে হবে। যেমন - প্রতিবন্ধী শিশুর অবশ্যই শিক্ষা ও স্বাস্থ্য সেবা গ্রহণের অধিকার থাকবে।', en: 'Every child has the right to life, survival, and healthy development (Article 6).' },
+    { icon: '🗣️', bn: 'শিশুদের ওপর প্রভাব রাখবে এমন বিষয়ে তাদের মতামতগুলো বিবেচনায় নেয়ার বাধ্যবাধকতা রয়েছে (ধারা ১২)। শিশুদের অধিকারভুক্ত সব বিষয়ে তাদের মতামত শুনতে হবে ও সেগুলোয় শ্রদ্ধা রাখতে হবে। যেমন - শিশু বিষয়ক কোনো নীতি বা পরিকল্পনা গ্রহণে শিশুদের উপলব্ধিগুলো গ্রাহ্য করতে হবে।', en: 'Children’s views must be taken into account in matters affecting them (Article 12).' },
+  ];
+
+  const palette = ['teal', 'rose', 'indigo', 'green'];
+  const cards = principles.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <p class="role-card__text bn">${item.bn}</p>
+      <p class="role-card__text en">${item.en}</p>
+    </article>
+  `).join('');
+
+  return `
+  <div class="app-intro-box">
+    <div class="app-intro-icon" aria-hidden="true">🌐</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">বিশ্বের সব মানুষ কিছু অধিকার ও স্বাধীনতার দাবিদার। তার জন্মস্থান/মতবাদ/বিশ্বাস/জীবনযাপন - সবকিছুর উর্ধ্বে এ অধিকার তার প্রাপ্য যা থেকে কখনো তাকে বঞ্চিত করা যাবেনা। আর ১৯৪৮ সালে প্রণীত হয় মানবাধিকারের বৈশ্বিক ঘোষণা, যার ভিত্তি সমতা, মর্যাদা, স্বাধীনতা, শান্তি ও ন্যায়।</p>
+      <p class="app-intro-sub en">All people in the world are entitled to certain rights and freedoms. Regardless of birthplace, belief, or lifestyle, these rights must never be denied. The Universal Declaration of Human Rights was adopted in 1948 on the foundations of equality, dignity, freedom, peace, and justice.</p>
+    </div>
+  </div>
+
+  <div class="app-intro-box" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">👶</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">শিশু অধিকার হচ্ছে শিশুদের মানবাধিকার। এ অধিকারগুলো আন্তর্জাতিক শিশু অধিকার সনদের (সিআরসি) মাধ্যমে সুরক্ষিত। সিআরসি অনুযায়ী, প্রেত্যক শিশুই বেড়ে উঠবে শান্তি ও মর্যাদাপূর্ণ, সহিষ্ণু ও মুক্ত স্বাধীন পরিবেশে; সমতা ও সৌহার্দের মধ্য দিয়ে।</p>
+      <p class="app-intro-sub en">Children’s rights are human rights for children. These rights are protected by the Convention on the Rights of the Child (CRC). According to the CRC, every child should grow in a peaceful, dignified, tolerant, and free environment with equality and harmony.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="CRC main principles" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">📘</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">আন্তর্জাতিক শিশু অধিকার সনদে ৫৪টি ধারা রয়েছে। মূলত চারটি স্তম্ভের আলোকে অনুচ্ছেদগুলো ভাগ করা হয়েছে।</h2>
+        <h2 class="role-section__title en">The International Convention on the Rights of the Child contains 54 articles. The articles are mainly grouped around four pillars.</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${cards}</div>
+    </div>
+  </section>
+  `;
+}
+
+function buildSexualReproductiveRightsSection() {
+  const rightsCards = [
+    {
+      icon: '⚖️',
+      bn: 'যৌন ও প্রজনন স্বাস্থ্য অধিকার মৌলিক মানবাধিকারের অংশ।',
+      en: 'Sexual and reproductive health rights are part of basic human rights.'
+    },
+    {
+      icon: '🤝',
+      bn: 'লিঙ্গ সমতা ও টেকসই উন্নয়নের প্রশ্নে এ অধিকার নিশ্চিত করা খুবই গুরুত্বপূর্ণ। পাশাপাশি নিজের শরীর ও যৌনসম্পর্কের ক্ষেত্রে কিশোরী এবং নারীদের নিয়ন্ত্রণ তাদের ক্ষমতায়ন ও অধিকারের পূর্বশর্ত।',
+      en: 'Ensuring these rights is vital for gender equality and sustainable development, and control over one’s own body and sexuality is a prerequisite for empowerment.'
+    },
+    {
+      icon: '🌍',
+      bn: 'সামাজিক, অর্থনৈতিক, রাজনৈতিক ও সাংস্কৃতিক অঙ্গনে তাদের পূর্ণ অংশগ্রহণের ক্ষেত্রেও এ অধিকার জরুরি।',
+      en: 'These rights are also essential for full participation in social, economic, political, and cultural life.'
+    },
+    {
+      icon: '🛡️',
+      bn: 'যৌন ও প্রজনন স্বাস্থ্য অধিকার কিশোরী ও নারীদের সব ধরনের বৈষম্য, সহিংসতা, নির্যাতন থেকে মুক্ত থাকার অধিকারের অন্যতম গুরুত্বপূর্ণ অংশ। মর্যাদা, সমতা ও বৈচিত্র্যের প্রতি সম্মান প্রদর্শনের নীতিগুলো সুরক্ষিত করে এ অধিকার।',
+      en: 'Sexual and reproductive health rights are an important part of the right to be free from discrimination, violence, and abuse, while protecting dignity, equality, and respect for diversity.'
+    },
+  ];
+
+  const palette = ['teal', 'rose', 'indigo', 'green'];
+  const cards = rightsCards.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <p class="role-card__text bn">${item.bn}</p>
+      <p class="role-card__text en">${item.en}</p>
+    </article>
+  `).join('');
+
+  return `
+  <div class="app-intro-box">
+    <div class="app-intro-icon" aria-hidden="true">🌱</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">বিশ্বের মোট জনসংখ্যার প্রায় ৬ ভাগের ১ ভাগ কিশোর-কিশোরী (১০-১৯ বছর)। আর ২৫ বছর বয়সের নিচের জনগোষ্ঠী মোট জনসংখ্যার প্রায় এক-তৃতীয়াংশ। বয়ঃসন্ধিকালে কিশোর-কিশোরীদের শারীরিক ও মানসিক পরিবর্তন ঘটে এবং যৌনতার লক্ষণগুলো প্রকাশ পেতে থাকে। এ বয়সিদের প্রজনন ও যৌন স্বাস্থ্যবিষয়ক ঝুঁকিও থাকে বেশি। উপযুক্ত তথ্য ও শিক্ষার অভাবে তাদের যৌনবাহিত রোগে আক্রান্তের সম্ভাবনা অনেক বেশি থাকে। অনাকাঙ্ক্ষিত গর্ভধারণ এবং এর ফলে অনিরাপদ ও ঝুঁকিপূর্ণ গর্ভপাতজনিত স্বাস্থ্য সমস্যাও বেশি দেখা যায়। সুতরাং যৌন ও প্রজনন স্বাস্থ্যের অধিকার এক্ষেত্রে খুবই গুরুত্বপূর্ণ।</p>
+      <p class="app-intro-sub en">About one-sixth of the world’s population are adolescents (10–19 years old), and people under 25 make up nearly one-third of the total population. During puberty, adolescents experience physical and mental changes and the signs of sexuality begin to appear. They also face higher risks related to reproductive and sexual health. Due to lack of proper information and education, they are much more likely to be affected by sexually transmitted diseases. Unwanted pregnancy and unsafe, risky abortion-related health problems are also common. Therefore, sexual and reproductive health rights are very important in this context.</p>
+    </div>
+  </div>
+
+  <div class="app-intro-box" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">🩺</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">প্রজনন স্বাস্থ্য হচ্ছে জীবনের প্রতিটি ধাপে প্রজননতন্ত্র সম্পর্কীয় একটি পরিপূর্ণ দৈহিক, মানসিক এবং সামাজিক কল্যাণের সামগ্রিক অবস্থা। বিশ্ব স্বাস্থ্য সংস্থা (WHO) এর মতে, একজন মানুষের প্রজননে সক্ষমতার পাশাপাশি সন্তোষজনক ও নিরাপদ যৌন জীবন-যাপন এবং স্বাধীনভাবে সিদ্ধান্ত গ্রহণ করাই প্রজনন স্বাস্থ্য।</p>
+      <p class="app-intro-sub en">Reproductive health is a state of complete physical, mental, and social well-being in all matters relating to the reproductive system throughout life. According to the World Health Organization (WHO), reproductive health means the ability to enjoy a satisfying and safe sex life and the freedom to make decisions independently, in addition to being able to reproduce.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="Sexual and reproductive health rights" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🧭</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">যৌন ও প্রজনন স্বাস্থ্য অধিকার</h2>
+        <h2 class="role-section__title en">Sexual and Reproductive Health Rights</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${cards}</div>
+    </div>
+  </section>
+  `;
+}
+
+function buildGenderBasedDiscriminationSection() {
+  const differences = [
+    { icon: '🔄', gender: 'পরিবর্তনশীল', sex: 'অপরিবর্তনীয়' },
+    { icon: '🌍', gender: 'সমাজ ও সংস্কৃতি ভেদে ভিন্ন ভিন্ন', sex: 'পৃথিবীর সব জায়গায় একই রকম' },
+    { icon: '❓', gender: 'অনির্ধারিত', sex: 'নির্ধারিত' },
+    { icon: '🏛️', gender: 'সমাজ কর্তৃক আরোপিত', sex: 'আবহমান কাল ধরে একই' },
+    { icon: '🧠', gender: 'মানুষ কর্তৃক সৃষ্ট', sex: 'প্রকৃতি প্রদত্ত' },
+    { icon: '🎭', gender: 'রীতিনীতি অর্জিত/অর্পিত হয়', sex: 'জন্মগত' },
+    { icon: '👥', gender: 'সমাজসৃষ্ট ভূমিকা, দায়িত্ব, আচরণ', sex: 'শারীরিক' },
+  ];
+
+  const rows = differences.map((item) => `
+    <tr>
+      <td class="table-cell">
+        <span class="cell-icon" aria-hidden="true">${item.icon}</span>
+        <span class="bn">${item.gender}</span>
+      </td>
+      <td class="table-cell">
+        <span class="cell-icon" aria-hidden="true">${item.icon}</span>
+        <span class="bn">${item.sex}</span>
+      </td>
+    </tr>
+  `).join('');
+
+  return `
+  <div class="app-intro-box">
+    <div class="app-intro-icon" aria-hidden="true">⚧️</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">সেক্স</h2>
+      <h2 class="app-intro-title en">Sex</h2>
+      <p class="app-intro-sub bn">সেক্স বা লিঙ্গ হচ্ছে প্রাকৃতিক বা জৈবিক কারণে সৃষ্ট নারী-পুরুষের বৈশিষ্ট্যসূচক ভিন্নতা বা শারীরিক বৈশিষ্ট্যের ভিত্তিতে নারী-পুরুষের স্বাতন্ত্র্য, কিংবা নারী-পুরুষের শারীরিক বৈশিষ্ট্য, যা পরিবর্তনযোগ্য নয়।</p>
+      <p class="app-intro-sub en">Sex refers to the biological and physical characteristics that distinguish females and males. These traits are natural and generally not changeable.</p>
+    </div>
+  </div>
+
+  <div class="app-intro-box" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">🧩</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">জেন্ডার</h2>
+      <h2 class="app-intro-title en">Gender</h2>
+      <p class="app-intro-sub bn">জেন্ডার হচ্ছে সমাজ কর্তৃক নির্ধারিত নারী ও পুরুষের সামাজিক পরিচয়, তাদের মধ্যকার বৈশিষ্ট্য এবং নারী ও পুরুষের ভূমিকা, যা পরিবর্তনীয় এবং সমাজ, সংস্কৃতি ইত্যাদি ভেদে ভিন্ন ভিন্ন। অর্থাৎ, জেন্ডার সামাজিকভাবে নির্মিত একটি বিষয়, যা পরিবর্তনশীল।</p>
+      <p class="app-intro-sub en">Gender is the socially constructed identity, characteristics, and roles of women and men. It is changeable and varies across societies and cultures.</p>
+    </div>
+  </div>
+
+  <section class="fp-comparison-section" aria-label="Difference between gender and sex" style="margin-top:24px;">
+    <div class="section-divider">
+      <h2 class="section-divider__title">
+        <span class="bn">জেন্ডার ও সেক্সের মধ্যে পার্থক্য</span>
+        <span class="en">Difference Between Gender and Sex</span>
+      </h2>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="comparison-table" role="grid">
+        <thead>
+          <tr>
+            <th class="table-header" scope="col">
+              <span class="method-badge method-badge--indigo">🧩 <span class="bn">জেন্ডার</span><span class="en">Gender</span></span>
+            </th>
+            <th class="table-header" scope="col">
+              <span class="method-badge method-badge--teal">⚧️ <span class="bn">সেক্স</span><span class="en">Sex</span></span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows}
+        </tbody>
+      </table>
+    </div>
+  </section>
   `;
 }
 
