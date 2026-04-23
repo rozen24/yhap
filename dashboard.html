@@ -2842,6 +2842,10 @@
       z-index: 10;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
+    .cm-hub-center_projono {
+      width: 150px;
+      height: 150px;
+    }
 
     .cm-hub-center__icon {
       font-size: 40px;
@@ -2849,8 +2853,8 @@
     }
 
     .cm-hub-center__text {
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 15px;
+      font-weight: bold;
       color: var(--text-primary);
       margin: 2px 0;
     }
@@ -2882,7 +2886,10 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       padding: 10px;
     }
-
+    .cm-hub-card_projono {
+      width: 155px;
+      height: 155px;
+    }
     .cm-hub-card:hover {
       transform: scale(1.12);
       box-shadow: 0 4px 14px rgba(0,0,0,0.14);
@@ -2900,8 +2907,16 @@
     .cm-hub-card:nth-child(9) { --angle: 288deg; }
     .cm-hub-card:nth-child(10) { --angle: 324deg; }
 
+    
     .cm-hub-card {
       --radius: 175px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle)));
+    }
+
+    .cm-hub-card_projono {
+      --radius: 185px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle)));
@@ -3917,7 +3932,7 @@
         <div class="lesson-list" id="modPanel-12" role="list">
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(12,0)"><span class="lesson-dot" aria-hidden="true">1</span><span class="lesson-text"><span class="lesson-label bn">লিঙ্গ-ভিত্তিক বৈষম্য</span><span class="lesson-label en">Gender-based discrimination</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(12,1)"><span class="lesson-dot" aria-hidden="true">2</span><span class="lesson-text"><span class="lesson-label bn">লিঙ্গ বৈষম্য</span><span class="lesson-label en">Gender discrimination</span></span></button>
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(12,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">সমাজে বিদ্যমান লিঙ্গ বৈষম্য</span><span class="lesson-label en">Prevailing gender discrimination in society</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(12,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">সমাজে বিরাজমান জেন্ডার বৈষম্যয</span><span class="lesson-label en">Prevailing gender discrimination in society</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(12,3)"><span class="lesson-dot" aria-hidden="true">4</span><span class="lesson-text"><span class="lesson-label bn">লিঙ্গ-ভিত্তিক সহিংসতা ও নির্যাতনের ধরন</span><span class="lesson-label en">Types of gender-based violence and abuse</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(12,4)"><span class="lesson-dot" aria-hidden="true">5</span><span class="lesson-text"><span class="lesson-label bn">যৌন হয়রানি</span><span class="lesson-label en">Sexual harassment</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(12,5)"><span class="lesson-dot" aria-hidden="true">6</span><span class="lesson-text"><span class="lesson-label bn">আর্থিক ক্ষতি – আর্থিক দিক</span><span class="lesson-label en">Financial loss – financial aspect</span></span></button>
@@ -4380,7 +4395,7 @@ const LESSONS_BN = [
   ['জরায়ুমুখ ক্যান্সার','এইচপিভি টিকা','মহিলাদের অন্যান্য টিকা '],
   ['পলিসিস্টিক ওভারিআন সিনড্রোম (পিসিওএস) ','সমস্যা','সমাধান','ব্যবস্থাপনা'],
   ['শিশু অধিকার ও মানবাধিকার এবং যৌন ও প্রজনন স্বাস্থ্য অধিকার','শিশু নির্যাতন','যৌন ও প্রজনন স্বাস্থ্য অধিকার'],
-  ['লিঙ্গ-ভিত্তিক বৈষম্য','লিঙ্গ বৈষম্য','সমাজে বিদ্যমান লিঙ্গ বৈষম্য','লিঙ্গ-ভিত্তিক সহিংসতা ও নির্যাতনের ধরন','যৌন হয়রানি','আর্থিক ক্ষতি – আর্থিক দিক','লিঙ্গ বৈষম্য দূরীকরণে করণীয়','সহিংসতা বা নির্যাতন','তরুণদের বিরুদ্ধে সহিংসতার বিভিন্ন রূপ'],
+  ['লিঙ্গ-ভিত্তিক বৈষম্য','লিঙ্গ বৈষম্য','সমাজে বিরাজমান জেন্ডার বৈষম্যয','লিঙ্গ-ভিত্তিক সহিংসতা ও নির্যাতনের ধরন','যৌন হয়রানি','আর্থিক ক্ষতি – আর্থিক দিক','লিঙ্গ বৈষম্য দূরীকরণে করণীয়','সহিংসতা বা নির্যাতন','তরুণদের বিরুদ্ধে সহিংসতার বিভিন্ন রূপ'],
   ['তরুণদের মনো-সামাজিক পরিবর্তন','আবেগ','আবেগ নিয়ন্ত্রণ কৌশল','উদ্বেগ','মানসিক চাপ','মানসিক চাপের কারণ','রাগ','কেন এবং কখন আমরা সহজে রেগে যাই?','পরীক্ষার ভয়','পরীক্ষার ভয় দূর করার উপায় বা সমাধান','ডিজিটাল আসক্তি প্রতিরোধ'],
   ['মনো-সামাজিক সহায়তা','মনো-সামাজিক সহায়তার দক্ষতা','মনোযোগী শ্রবণ','মূল্যবোধ','আচরণ','নৈতিকতা'],
   ['মাদক আসক্তি','মাদক আসক্তির লক্ষণ','মাদক আসক্তির পরিণতি ও প্রতিরোধ'],
@@ -4733,7 +4748,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isGenderBasedDiscriminationLesson = (modIdx === 12 && lesIdx === 0);
   // Module 13 Lesson 2 — Gender discrimination
   const isGenderDiscriminationLesson = (modIdx === 12 && lesIdx === 1);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson;
+  // Module 13 Lesson 3 — Prevailing gender discrimination in society
+  const isPrevailingGenderDiscriminationLesson = (modIdx === 12 && lesIdx === 2);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4765,6 +4782,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isSexualReproductiveRightsLesson ? buildSexualReproductiveRightsSection()
     : isGenderBasedDiscriminationLesson ? buildGenderBasedDiscriminationSection()
     : isGenderDiscriminationLesson ? buildGenderDiscriminationSection()
+    : isPrevailingGenderDiscriminationLesson ? buildPrevailingGenderDiscriminationSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -7920,6 +7938,87 @@ function buildGenderDiscriminationSection() {
     </div>
     <div class="role-section__body">
       <div class="role-grid">${cardMarkup}</div>
+    </div>
+  </section>
+  `;
+}
+
+function buildPrevailingGenderDiscriminationSection() {
+  const hubItems = [
+    { icon: '📢', bn: 'বাল্যবিবাহ বন্ধে সচেতনতা বৃদ্ধি করা' },
+    { icon: '⚖️', bn: 'দেশের প্রচলিত আইনের যথাযথ প্রয়োগ (১৮-এর আগে মেয়েদের বিয়ে নয় ২০-এর আগে সন্তান নয়)' },
+    { icon: '⚠️', bn: 'কৈশোরকালীন গর্ভধারণের কুফল ও এর ভয়াবহ পরিণতি সম্পর্কে সচেতনতা তৈরি করা' },
+    { icon: '👨‍👩‍👧‍👦', bn: 'পরিবার পরিকল্পনা সম্পর্কে জনগণের মধ্য সচেতনতা বাড়ানো' },
+    { icon: '💊', bn: 'পরিবার পরিকল্পনা পদ্ধতি ব্যবহারে উৎসাহ প্রদান' },
+    { icon: '⏳', bn: 'কৈশোরে বিয়ে হলেও দেরিতে সন্তান গ্রহণে স্বামী, স্ত্রী ও অভিভাবকদের সচেতন করা' },
+    { icon: '📍', bn: 'কৈশোরে পরিবার পরিকল্পনা পদ্ধতির সহজপ্রাপ্যতা নিশ্চিত করা' },
+  ];
+
+  const hubCards = hubItems.map((item, index) => `
+    <div class="cm-hub-card cm-hub-card_projono" style="--angle:${index * (360 / hubItems.length)}deg;">
+      <span class="cm-hub-card__icon" aria-hidden="true">${item.icon}</span>
+      <p class="cm-hub-card__text bn">${item.bn}</p>
+    </div>
+  `).join('');
+
+  const discriminationItems = [
+    { icon: '🎓', bn: 'সমাজে সকল ক্ষেত্রে, যেমন — শিক্ষা, স্বাস্থ্যসেবা পাওয়ার ক্ষেত্রে মেয়েদের তুলনায় ছেলেদের অগ্রাধিকার' },
+    { icon: '👦', bn: 'পরিবারে কন্যা সন্তান থেকে পুত্র সন্তানের অধিক মূল্যায়ন' },
+    { icon: '🍽️', bn: 'পরিবারে মেয়েদের তুলনায় ছেলেদের বেশি ও পুষ্টিকর খাবার খেতে দেয়া' },
+    { icon: '📚', bn: 'কন্যা সন্তানকে লেখাপড়া শেখাতে বাবা-মায়ের অনীহা, পুত্রের পড়াশোনার জন্য ব্যয় করা' },
+    { icon: '💍', bn: 'কন্যা সন্তানকে পরিবারের বোঝা মনে করে অল্প বয়সে বিয়ে দিয়ে দেওয়া' },
+    { icon: '💰', bn: 'যৌতুক দাবি করা এবং যৌতুকের কারণে মেয়েদের উপর শারীরিক ও মানসিক নির্যাতন করা' },
+    { icon: '🩺', bn: 'অসুস্থ হলে মেয়েদের স্বাস্থ্যসেবা গ্রহণের ব্যাপারে পরিবারের উদাসীনতা' },
+    { icon: '🤱', bn: 'সন্তান গ্রহণ ও নিজের শরীর সম্পর্কে সিদ্ধান্ত নিতে না পারার প্রথা' },
+    { icon: '👶', bn: 'কৈশোরে সন্তানধারণ করা' },
+    { icon: '🚫', bn: 'নারীর উপর শারীরিক ও মানসিক নির্যাতন খুব স্বাভাবিকভাবে গ্রহণ করা' },
+    { icon: '💵', bn: 'পুরুষের তুলনায় নারীকে কম পারিশ্রমিক দেওয়া' },
+    { icon: '⚖️', bn: 'নারী ও পুরুষের মাঝে সম্পদের অসম বিতরণ' },
+    { icon: '👜', bn: 'নিজ উপার্জনের উপর নারীর অধিকার না থাকা' },
+    { icon: '🛠️', bn: 'কর্মক্ষেত্রে নারীর দক্ষতা প্রমাণের সুযোগ না দেয়া' },
+  ];
+
+  const palette = ['teal', 'rose', 'indigo', 'green'];
+  const discriminationCards = discriminationItems.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <p class="role-card__text bn">${item.bn}</p>
+    </article>
+  `).join('');
+
+  return `
+  <section class="role-section" aria-label="সমাজে বিরাজমান জেন্ডার বৈষম্য" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">📌</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">সমাজে বিরাজমান জেন্ডার বৈষম্য</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${discriminationCards}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="সমাজে বিরাজমান জেন্ডার বৈষম্য" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">⚧️</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">প্রজনন স্বাস্থ্যে জেন্ডার বৈষম্যের প্রভাব</h2>
+        <h2 class="role-section__title en">Impact of Gender Discrimination on Reproductive Health</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <section class="cm-hub-section" aria-label="Gender discrimination impact on reproductive health">
+        <div class="cm-hub-container">
+          <div class="cm-hub-center cm-hub-center_projono">
+            <div class="cm-hub-center__icon" aria-hidden="true">⚧️</div>
+            <p class="cm-hub-center__text bn">প্রজনন স্বাস্থ্যে জেন্ডার বৈষম্যের প্রভাব</p>
+          </div>
+          <div class="cm-hub-grid">
+            ${hubCards}
+          </div>
+        </div>
+      </section>
     </div>
   </section>
   `;
