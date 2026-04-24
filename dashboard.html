@@ -4016,7 +4016,7 @@
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,6)"><span class="lesson-dot" aria-hidden="true">7</span><span class="lesson-text"><span class="lesson-label bn">রাগ</span><span class="lesson-label en">Anger</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,7)"><span class="lesson-dot" aria-hidden="true">8</span><span class="lesson-text"><span class="lesson-label bn">আমরা কি কারণে এবং কখন খুব সহজেই রেগে যাই</span><span class="lesson-label en">Why and when do we get angry very easily?</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,8)"><span class="lesson-dot" aria-hidden="true">9</span><span class="lesson-text"><span class="lesson-label bn">পরীক্ষা-ভীতি</span><span class="lesson-label en">Exam fear</span></span></button>
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,9)"><span class="lesson-dot" aria-hidden="true">10</span><span class="lesson-text"><span class="lesson-label bn">পরীক্ষার ভয় দূর করার উপায় বা সমাধান</span><span class="lesson-label en">Ways or solutions to remove exam fear</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,9)"><span class="lesson-dot" aria-hidden="true">10</span><span class="lesson-text"><span class="lesson-label bn">পরীক্ষা-ভীতি দূর করার উপায় বা সমাধান</span><span class="lesson-label en">Ways or solutions to remove exam fear</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,10)"><span class="lesson-dot" aria-hidden="true">11</span><span class="lesson-text"><span class="lesson-label bn">ডিজিটাল আসক্তি প্রতিরোধ</span><span class="lesson-label en">Prevention of digital addiction</span></span></button>
         </div>
       </div>
@@ -4444,7 +4444,7 @@ const LESSONS_BN = [
   ['পলিসিস্টিক ওভারিআন সিনড্রোম (পিসিওএস) ','সমস্যা','সমাধান','ব্যবস্থাপনা'],
   ['শিশু অধিকার ও মানবাধিকার এবং যৌন ও প্রজনন স্বাস্থ্য অধিকার','শিশু নির্যাতন','যৌন ও প্রজনন স্বাস্থ্য অধিকার'],
   ['লিঙ্গ-ভিত্তিক বৈষম্য','লিঙ্গ বৈষম্য','সমাজে বিরাজমান জেন্ডার বৈষম্যয','জেন্ডারভিত্তিক সহিংসতা ও নির্যাতনের ধরণ','যৌন হয়রানি','আর্থিক ক্ষতি – আর্থিক দিক','লিঙ্গ বৈষম্য দূরীকরণে করণীয়','সহিংসতা বা নির্যাতন','তরুণদের বিরুদ্ধে সহিংসতার বিভিন্ন রূপ'],
-  ['তরুণদের মনো-সামাজিক পরিবর্তন','আবেগ','আবেগ ব্যবস্থাপনার কৌশল','উদ্বেগ','মানসিক চাপ (Stress)','মানসিক চাপের কারণ','রাগ','আমরা কি কারণে এবং কখন খুব সহজেই রেগে যাই','পরীক্ষা-ভীতি','পরীক্ষার ভয় দূর করার উপায় বা সমাধান','ডিজিটাল আসক্তি প্রতিরোধ'],
+  ['তরুণদের মনো-সামাজিক পরিবর্তন','আবেগ','আবেগ ব্যবস্থাপনার কৌশল','উদ্বেগ','মানসিক চাপ (Stress)','মানসিক চাপের কারণ','রাগ','আমরা কি কারণে এবং কখন খুব সহজেই রেগে যাই','পরীক্ষা-ভীতি','পরীক্ষা-ভীতি দূর করার উপায় বা সমাধান','ডিজিটাল আসক্তি প্রতিরোধ'],
   ['মনো-সামাজিক সহায়তা','মনো-সামাজিক সহায়তার দক্ষতা','মনোযোগী শ্রবণ','মূল্যবোধ','আচরণ','নৈতিকতা'],
   ['মাদক আসক্তি','মাদক আসক্তির লক্ষণ','মাদক আসক্তির পরিণতি ও প্রতিরোধ'],
   ['আঘাত প্রতিরোধ ও প্রাথমিক চিকিৎসা সেবা','রক্তপাত নিয়ন্ত্রণ','পোড়া','পোড়ার প্রাথমিক চিকিৎসা','হাড় ভাঙা','সাপের কামড়','কুকুরের কামড়','বিষক্রিয়া','ডুবে যাওয়া','শ্বাসরোধ বা গলায় কিছু আটকে যাওয়া','শ্বাসরোধের প্রাথমিক চিকিৎসা (প্রাপ্তবয়স্ক ও ১ বছরের বেশি শিশুর জন্য)'],
@@ -4828,7 +4828,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isAngerTriggersLesson = (modIdx === 13 && lesIdx === 7);
   // Module 14 Lesson 9 — Exam fear
   const isExamFearLesson = (modIdx === 13 && lesIdx === 8);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson;
+  // Module 14 Lesson 10 — Ways to reduce exam fear
+  const isExamFearSolutionsLesson = (modIdx === 13 && lesIdx === 9);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4876,6 +4878,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isAngerLesson ? buildAngerLessonSection()
     : isAngerTriggersLesson ? buildAngerTriggersLessonSection()
     : isExamFearLesson ? buildExamFearLessonSection()
+    : isExamFearSolutionsLesson ? buildExamFearSolutionsLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -9479,6 +9482,70 @@ function buildExamFearLessonSection() {
       <div class="role-grid">${symptomCards}</div>
     </div>
   </section>
+  `;
+}
+
+function buildExamFearSolutionsLessonSection() {
+  return `
+  <div class="app-intro-box bg_4">
+    <div class="app-intro-icon" aria-hidden="true">📅</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">পরীক্ষা সংক্রান্ত সঠিক তথ্য সংগ্রহ করা (Accurate information)</h2>
+      <h2 class="app-intro-title en">Accurate Information About Exams</h2>
+      <p class="app-intro-sub bn">পরীক্ষার নির্দিষ্ট তারিখ, সময়সূচি, রুটিন, সিলেবাস ঠিকমত যোগার করে সে অনুসারে প্রস্তুতি নেয়া।</p>
+      <p class="app-intro-sub en">Collect the exact exam date, schedule, routine, and syllabus, then prepare accordingly.</p>
+    </div>
+  </div>
+
+  <div class="app-intro-box bg_4" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">📘</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">পর্যাপ্ত এবং কার্যকরী অনুশীলনসহ পড়াশুনা করা (Effective studying)</h2>
+      <h2 class="app-intro-title en">Effective Studying with Regular Practice</h2>
+      <p class="app-intro-sub bn">প্রতিদিন নিয়মিত পড়া, যেখানে পরীক্ষার সময়সূচী, প্রতিটি পরীক্ষার আগে কতদিন ছুটি, কোন বিষয়টি কঠিন ও তুলনামূলক বেশিদিন পড়তে হবে, কোনটি সহজ ও তুলনামূলক অল্পদিন পড়তে হবে সব কিছু উল্লেখ করে পড়ালেখার একটি দৃশ্যমান তালিকা তৈরি করা, বুঝে পড়া মুখস্থ করা, উদাহরণের সাথে পড়ার সংযোগ করে পড়া।</p>
+      <p class="app-intro-sub en">Study daily with a visible plan including exam dates, leave days before each exam, difficult subjects needing more time, and easier subjects needing less time; focus on understanding, memorizing meaningfully, and linking lessons to examples.</p>
+    </div>
+  </div>
+
+  <div class="app-intro-box bg_4" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">🧪</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">পরীক্ষা উপযোগী পড়াশুনা করা (Exam-taking preparation)</h2>
+      <h2 class="app-intro-title en">Exam-Taking Preparation</h2>
+      <p class="app-intro-sub bn">ভাল ভাবে পরীক্ষায় অংশগ্রহণ করার জন্য পরীক্ষার সিলেবাস ও পরীক্ষার পূর্বের ক্লাস গুলোর উপর জোর দিতে হবে, পূর্ববর্তী বছরের প্রশ্নপত্রগুলো ব্যাখ্যা করে প্রশ্নের ধরণ বুঝতে হবে, প্রশ্নগুলোর সমাধান করতে হবে।</p>
+      <p class="app-intro-sub en">To perform well in exams, focus on the syllabus and pre-exam classes, analyze previous years' question papers to understand patterns, and solve those questions.</p>
+    </div>
+  </div>
+
+  <div class="app-intro-box bg_4" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">👥</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">বন্ধুদের সাথে দলবদ্ধভাবে পড়ালেখা করা (Group study with friends)</h2>
+      <h2 class="app-intro-title en">Group Study with Friends</h2>
+      <p class="app-intro-sub bn">একে অপরকে প্রশ্ন করা, উত্তর দেয়া, সবার সাথে আলোচনা করে গুরুত্বপূর্ণ প্রশ্ন নির্ধারন করা, একে অপরকে পড়া বুঝিয়ে দেয়ার মাধ্যমে পড়ালেখা করা।</p>
+      <p class="app-intro-sub en">Study by asking each other questions, answering together, identifying important questions through discussion, and teaching one another.</p>
+    </div>
+  </div>
+
+  <div class="app-intro-box bg_4" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">🌿</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">স্বাস্থ্যকর জীবনযাপন করা (Healthy lifestyle)</h2>
+      <h2 class="app-intro-title en">Healthy Lifestyle</h2>
+      <p class="app-intro-sub bn">পরিমিত ঘুম-৭/৮ ঘণ্টা, পুষ্টিকর খাবার খাওয়া, বেশি বেশি পানি পান করা, ব্যায়াম, খেলাধুলা ও বিনোদন-‘টিভি দেখা/গল্প করার সাথে জীবনযাপন করা।</p>
+      <p class="app-intro-sub en">Maintain healthy habits: 7-8 hours of sleep, nutritious food, enough water, exercise, games, and recreation such as watching TV or talking with others.</p>
+    </div>
+  </div>
+
+  <div class="app-intro-box bg_4" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">🧠</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">মনোভাব উন্নতিকরণ (Attitude upgrading)</h2>
+      <h2 class="app-intro-title en">Attitude Upgrading</h2>
+      <p class="app-intro-sub bn">প্রথমেই নির্ধারন করতে হবে দুঃশ্চিন্তার কারণ কি, এটা কি প্রয়োজনীয় প্রস্তুতির অভাবে, না ফলাফল খারাপ হলে অন্যরা কি বলবে এ কারণে। যদি অন্যরা কি বলবে এটা দুঃশ্চিন্তার প্রধান কারণ হয় তাহলে ভাবতে হবে জীবনে পরীক্ষা থাকবেই। পড়াশুনার সাথে পরীক্ষা ওতপ্রোতভাবে জড়িত। একটি পরীক্ষা কখনই পুরো জীবনের সফলতা বা ব্যর্থতা বর্ণনা করে না। পরীক্ষা বিষয় টিকে জীবনের একটি অংশ হিসেবে নিয়ে সাধারনভাবে গ্রহণ করার মানসিকতা অর্জনের চেষ্টা করতে হবে।</p>
+      <p class="app-intro-sub en">First identify the source of worry: lack of preparation or fear of others' opinions about poor results. If social judgment is the main concern, remember exams are a normal part of life and learning. A single exam never defines total life success or failure; try to accept exams as one part of life.</p>
+    </div>
+  </div>
   `;
 }
 
