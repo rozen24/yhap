@@ -1401,6 +1401,9 @@
     .repro-card__header--teal {
       background: linear-gradient(135deg, #00695C 0%, #00897B 60%, #26A69A 100%);
     }
+    .repro-card__header--amber {
+      background: linear-gradient(135deg, #8D4E00 0%, #B26A00 60%, #D98C00 100%);
+    }
     .repro-card__header--violet {
       background: linear-gradient(135deg, #4527A0 0%, #5E35B1 60%, #7E57C2 100%);
     }
@@ -1409,8 +1412,11 @@
     }
     .repro-card__header::after {
       content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 85% 30%, rgba(255,255,255,0.12) 0%, transparent 60%);
+      position: absolute;
+      top: -38%; right: -12%;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
       pointer-events: none;
     }
     .repro-card__icon {
@@ -4855,7 +4861,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isFirstAidLesson = (modIdx === 16 && lesIdx === 0);
   // Module 17 Lesson 2 — Bleeding first aid
   const isFirstAidBleedingLesson = (modIdx === 16 && lesIdx === 1);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson;
+  // Module 17 Lesson 3 — Burns
+  const isBurnsLesson = (modIdx === 16 && lesIdx === 2);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4916,6 +4924,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isDrugAddictionConsequencesLesson ? buildDrugAddictionConsequencesLessonSection()
     : isFirstAidLesson ? buildFirstAidLessonSection()
     : isFirstAidBleedingLesson ? buildFirstAidBleedingLessonSection()
+    : isBurnsLesson ? buildBurnsLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -7540,6 +7549,113 @@ function buildFamilyPlanningSection() {
             <div class="role-grid">${renderCards(bleedingCards)}</div>
           </div>
         </section>
+        `;
+      }
+
+      /* ── BURNS (Module 17, Lesson 3) ── */
+      function buildBurnsLessonSection() {
+        return `
+        <div class="app-intro-box">
+          <div class="app-intro-icon" aria-hidden="true">🔥</div>
+          <div class="app-intro-titles" style="justify-content: center;">
+            <p class="app-intro-sub bn">বাংলাদেশে পুড়ে যাওয়া হল ইনজুরির অন্যতম কারণ। পুড়ে যাওয়া স্থানের দ্রুত চিকিৎসা করা প্রয়োজন।</p>
+            <p class="app-intro-sub en">Burn injuries are one of the major causes of injury in Bangladesh. Burned areas require rapid treatment.</p>
+          </div>
+        </div>
+
+        <div class="phases-anatomy-row">
+        <div class="repro-card">
+          <div class="repro-card__header repro-card__header--amber">
+            <div class="repro-card__icon" aria-hidden="true">🔥</div>
+            <div>
+              <div class="repro-card__title">
+                <span class="bn">পোড়া ক্ষতের কারণ</span>
+                <span class="en">Causes of Burn Injuries</span>
+              </div>
+              <div class="repro-card__subtitle">
+                <span class="bn">পোড়া ক্ষত বিভিন্ন কারণে হতে পারে, যেমন:</span>
+                <span class="en">Burn injuries can occur for several reasons, such as:</span>
+              </div>
+            </div>
+          </div>
+          <div class="repro-card__body">
+            <div class="phase-timeline">
+              <div class="phase-item">
+                <div class="phase-num phase-num--rose">🌡️</div>
+                <div class="phase-content">
+                  <div class="phase-content__title"><span class="bn">তাপ</span><span class="en">Heat</span></div>
+                  <div class="phase-content__desc bn">আগুন, গরম পানি, বাষ্প বা গরম বস্তুর সংস্পর্শ</div>
+                  <div class="phase-content__desc en">Exposure to fire, hot water, steam, or hot objects</div>
+                </div>
+              </div>
+              <div class="phase-item">
+                <div class="phase-num phase-num--amber">🧪</div>
+                <div class="phase-content">
+                  <div class="phase-content__title"><span class="bn">রাসায়নিক</span><span class="en">Chemical</span></div>
+                  <div class="phase-content__desc bn">এসিড, ক্ষার বা অন্যান্য রাসায়নিকের সংস্পর্শ</div>
+                  <div class="phase-content__desc en">Exposure to acids, alkalis, or other chemicals</div>
+                </div>
+              </div>
+              <div class="phase-item">
+                <div class="phase-num phase-num--teal">⚡</div>
+                <div class="phase-content">
+                  <div class="phase-content__title"><span class="bn">বিদ্যুৎ</span><span class="en">Electricity</span></div>
+                  <div class="phase-content__desc bn">বৈদ্যুতিক শক বা বিদ্যুৎ প্রবাহ</div>
+                  <div class="phase-content__desc en">Electric shock or electrical current</div>
+                </div>
+              </div>
+              <div class="phase-item">
+                <div class="phase-num phase-num--violet">☢️</div>
+                <div class="phase-content">
+                  <div class="phase-content__title"><span class="bn">বিকিরণ</span><span class="en">Radiation</span></div>
+                  <div class="phase-content__desc bn">সূর্যের অতিবেগুনি রশ্মি বা রেডিওথেরাপির কারণে</div>
+                  <div class="phase-content__desc en">Due to ultraviolet rays from the sun or radiotherapy</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="repro-card">
+          <div class="repro-card__header repro-card__header--rose">
+            <div class="repro-card__icon" aria-hidden="true">🩹</div>
+            <div>
+              <div class="repro-card__title">
+                <span class="bn">পোড়া ক্ষতের প্রকারভেদ</span>
+                <span class="en">Types of Burn Injuries</span>
+              </div>
+            </div>
+          </div>
+          <div class="repro-card__body">
+            <div class="phase-timeline">
+              <div class="phase-item">
+                <div class="phase-num phase-num--amber">1°</div>
+                <div class="phase-content">
+                  <div class="phase-content__title"><span class="bn">প্রথম ডিগ্রি বার্ন</span><span class="en">First-degree burn</span></div>
+                  <div class="phase-content__desc bn">ত্বকের উপরিভাগ ক্ষতিগ্রস্ত হয়। লক্ষণগুলোর মধ্যে রয়েছে লালভাব, ফোলা এবং হালকা ব্যথা।</div>
+                  <div class="phase-content__desc en">The outer layer of skin is damaged. Symptoms include redness, swelling, and mild pain.</div>
+                </div>
+              </div>
+              <div class="phase-item">
+                <div class="phase-num phase-num--rose">2°</div>
+                <div class="phase-content">
+                  <div class="phase-content__title"><span class="bn">দ্বিতীয় ডিগ্রি বার্ন</span><span class="en">Second-degree burn</span></div>
+                  <div class="phase-content__desc bn">ত্বকের উপরের স্তর এবং নিচের ডার্মিস স্তর ক্ষতিগ্রস্ত হয়। ফোসকা, তীব্র ব্যথা এবং লালভাব দেখা দেয়।</div>
+                  <div class="phase-content__desc en">Both the outer layer and the underlying dermis are damaged. Blisters, severe pain, and redness appear.</div>
+                </div>
+              </div>
+              <div class="phase-item">
+                <div class="phase-num phase-num--violet">3°</div>
+                <div class="phase-content">
+                  <div class="phase-content__title"><span class="bn">তৃতীয় ডিগ্রি বার্ন</span><span class="en">Third-degree burn</span></div>
+                  <div class="phase-content__desc bn">ত্বকের সব স্তর ক্ষতিগ্রস্ত হয় এবং টিস্যু মারা যেতে পারে। ক্ষতস্থান কালো, সাদা বা বাদামী রঙের হতে পারে এবং ব্যথা অনুভূত নাও হতে পারে।</div>
+                  <div class="phase-content__desc en">All layers of skin are damaged and tissue may die. The wound may appear black, white, or brown, and pain may not be felt.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
         `;
       }
 
