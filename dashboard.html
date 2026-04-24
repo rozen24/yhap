@@ -4841,7 +4841,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isActiveListeningLesson = (modIdx === 14 && lesIdx === 2);
   // Module 15 Lesson 4 — Values
   const isValuesLesson = (modIdx === 14 && lesIdx === 3);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson;
+  // Module 15 Lesson 5 — Behavior and neutrality
+  const isBehaviorLesson = (modIdx === 14 && lesIdx === 4);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4895,6 +4897,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isEmpathyLesson ? buildEmpathyLessonSection()
     : isActiveListeningLesson ? buildActiveListeningLessonSection()
     : isValuesLesson ? buildValuesLessonSection()
+    : isBehaviorLesson ? buildBehaviorLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -9932,6 +9935,78 @@ function buildValuesLessonSection() {
       <p class="app-intro-sub en">Values may differ by country, society, nation, religion, and race. Some values may also come from one’s own personal beliefs. It is important to accept and respect these differences.</p>
     </div>
   </div>
+  `;
+}
+
+function buildBehaviorLessonSection() {
+  const neutralItems = [
+    {
+      icon: '🧠',
+      titleBn: 'নিজের চিন্তা ও অনুভূতি সম্পর্কে সচেতন থাকা',
+      titleEn: 'Be aware of your own thoughts and feelings'
+    },
+    {
+      icon: '🔎',
+      titleBn: 'নিজের মূল্যবোধ ও বিশ্বাস খুঁজে বের করা',
+      titleEn: 'Identify your own values and beliefs'
+    },
+    {
+      icon: '🤝',
+      titleBn: 'অন্যের ব্যক্তি স্বাধীনতায় বিশ্বাস করা এবং অন্যের মূল্যবোধের প্রতি সহনশীল থাকা',
+      titleEn: 'Respect others’ personal freedom and be tolerant of their values'
+    },
+    {
+      icon: '👂',
+      titleBn: 'মনোযোগী শ্রোতা হওয়া',
+      titleEn: 'Be an attentive listener'
+    },
+    {
+      icon: '💬',
+      titleBn: 'নিজের সাথে ইতিবাচক কথা বলা',
+      titleEn: 'Speak positively to yourself'
+    },
+    {
+      icon: '💞',
+      titleBn: 'অন্যের প্রতি সহমর্মিতা প্রকাশ করা',
+      titleEn: 'Show empathy toward others'
+    },
+  ];
+
+  const neutralMarkup = neutralItems.map((item, index) => `
+    <article class="role-card role-card--${['teal', 'indigo', 'rose', 'green', 'teal', 'indigo'][index % 6]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.titleBn}</h4>
+        <h4 class="role-card__title en">${item.titleEn}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div class="app-intro-box bg_4">
+    <div class="app-intro-icon" aria-hidden="true">🧭</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">৪. আচরণ</h2>
+      <h2 class="app-intro-title en">4. Behavior</h2>
+      <p class="app-intro-sub bn">মানুষের আচরণ মূল্যবোধ দ্বারা পরিচালিত হয় এবং প্রতিটি আচরণ স্বীয় বিশ্বাসের প্রতিফলন, যেমন: মূল্যবোধ যদি হয় সকলকে সম্মান করা, তাহলে আচরণ হবে অন্যের সাথে ভদ্রতার সহিত কথা বলা।  মূল্যবোধ দ্বারা আচরণ প্রভাবিত হয়।</p>
+      <p class="app-intro-sub en">Human behavior is guided by values, and every action reflects personal beliefs. For example, if a value is to respect everyone, then the behavior will be speaking politely to others. Values influence behavior.</p>
+      <p class="app-intro-sub bn">প্রতিটি মানুষই আলাদা, প্রেত্যকের চিন্তা, বিশ্বাস, মূল্যবোধ এবং বিচার-বিবেচনা করার ক্ষমতা আলাদা।  সেই বিষয়টির প্রতি সন্মান রেখে নিরপেক্ষ আচরণ করা একজন মনোসামাজিক সহায়তাকারীর অন্যতম গুনাবলীর মধ্যে একটি।</p>
+      <p class="app-intro-sub en">Every person is different, and each person's thoughts, beliefs, values, and judgment are different. Respecting that difference and behaving neutrally is one of the key qualities of a psychosocial support provider.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="নিরপেক্ষ হবার উপায়" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">⚖️</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">নিরপেক্ষ হবার উপায়</h2>
+        <h2 class="role-section__title en">Ways to Be Neutral</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${neutralMarkup}</div>
+    </div>
+  </section>
   `;
 }
 
