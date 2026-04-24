@@ -4849,7 +4849,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isDrugAddictionLesson = (modIdx === 15 && lesIdx === 0);
   // Module 16 Lesson 2 — Signs of drug addiction
   const isDrugAddictionSignsLesson = (modIdx === 15 && lesIdx === 1);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson;
+  // Module 16 Lesson 3 — Consequences and prevention of drug addiction
+  const isDrugAddictionConsequencesLesson = (modIdx === 15 && lesIdx === 2);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4907,6 +4909,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isEthicsLesson ? buildEthicsLessonSection()
     : isDrugAddictionLesson ? buildDrugAddictionLessonSection()
     : isDrugAddictionSignsLesson ? buildDrugAddictionSignsLessonSection()
+    : isDrugAddictionConsequencesLesson ? buildDrugAddictionConsequencesLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -7369,6 +7372,77 @@ function buildFamilyPlanningSection() {
             <div class="role-grid">${renderCards(behavioralSigns)}</div>
           </div>
         </section>
+        `;
+      }
+
+      /* ── DRUG ADDICTION CONSEQUENCES & PREVENTION (Module 16, Lesson 3) ── */
+      function buildDrugAddictionConsequencesLessonSection() {
+        const consequences = [
+          { icon: '🧍', bn: 'ব্যক্তিগত, পারিবারিক ও সামাজিক কর্মকাণ্ড ব্যাহত হয়', en: 'Personal, family, and social functioning becomes disrupted' },
+          { icon: '🧫', bn: 'বিভিন্ন ধরনের শারীরিক রোগ যেমন– লিভার, কিডনি, ব্রেইন ইত্যাদি অঙ্গের রোগ হতে পারে, এমনকি মৃত্যু হতে পারে এমন রোগেও আক্রান্ত হয় যেমন– এইডস, হেপাটাইটিস ইত্যাদি', en: 'Can lead to major diseases of liver, kidney, brain, and life-threatening conditions like AIDS and hepatitis' },
+          { icon: '⚖️', bn: 'ধীরে ধীরে স্বাস্থ্যহানি হতে থাকে (ওজন অতিরিক্ত কম বা বেশি হতে পারে)', en: 'Gradual health decline (weight may become too low or too high)' },
+          { icon: '💔', bn: 'যৌন সমস্যা যেমন যৌন অক্ষমতা, পুরুষত্বহীনতা হয়', en: 'Sexual problems such as sexual dysfunction and impotence' },
+          { icon: '🤰', bn: 'গর্ভকালীন সময়ে মাদকাসক্তি হলে গর্ভস্থ বাচ্চার ক্ষতি হয়', en: 'Drug addiction during pregnancy harms the unborn child' },
+          { icon: '🧬', bn: 'ফুসফুস, খাদ্যনালী, পাকস্থলি, লিভার ইত্যাদির ক্যান্সারে আক্রান্ত হতে পারে', en: 'May increase risk of cancers in lungs, esophagus, stomach, liver, etc.' },
+          { icon: '🚨', bn: 'অপরাধমূলক কর্মকাণ্ডে জড়িয়ে পড়া', en: 'Involvement in criminal activities' },
+          { icon: '📉', bn: 'লেখাপড়া ও পেশাগত কাজে পিছিয়ে পড়া', en: 'Falling behind in study and professional work' },
+          { icon: '🔕', bn: 'সমাজ থেকে বিচ্ছিন্ন হয়ে পড়া', en: 'Becoming socially isolated' },
+          { icon: '💸', bn: 'আর্থিকভাবে ক্ষতিগ্রস্ত হওয়া', en: 'Financial loss and instability' },
+          { icon: '😞', bn: 'মানসিক চাপে ভোগা ও আত্মহত্যার প্রবণতা দেখা দেয়', en: 'Mental distress and increased suicidal tendency' },
+        ];
+
+        const prevention = [
+          { icon: '🚫', bn: 'সহজলভ্যতা কমানো', en: 'Reduce easy availability' },
+          { icon: '🏡', bn: 'সুশৃঙ্খল পারিবারিক বন্ধনে সহায়তা করা', en: 'Support strong and disciplined family bonding' },
+          { icon: '📣', bn: 'স্থানীয় পর্যায়ে তরুণদের মধ্যে মাদকের ক্ষতিকর দিক সম্পর্কে সচেতনতা বৃদ্ধি', en: 'Increase community-level youth awareness on harmful effects of drugs' },
+          { icon: '🛐', bn: 'ধর্মীয় ও নৈতিক অনুশাসন মেনে চলতে উদ্বুদ্ধ করা', en: 'Encourage adherence to religious and moral discipline' },
+          { icon: '⚽', bn: 'খেলাধুলা ও সুস্থ বিনোদনমূলক কর্মকাণ্ডে সম্পৃক্ততা বৃদ্ধি করা', en: 'Promote participation in sports and healthy recreation' },
+          { icon: '🏥', bn: 'দ্রুত মাদকাসক্তি শনাক্তকরণ ও চিকিৎসার জন্য প্রেরণ করা', en: 'Ensure early identification and referral for treatment' },
+        ];
+
+        const renderCards = (items) => items.map((item, index) => `
+          <article class="role-card role-card--${['teal','rose','amber','indigo','green','violet','sky','slate'][index % 8]}">
+            <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+            <div class="role-card__content">
+              <h4 class="role-card__title bn">${item.bn}</h4>
+              <h4 class="role-card__title en">${item.en}</h4>
+            </div>
+          </article>`).join('');
+
+        return `
+        <section class="role-section" aria-label="Consequences of drug addiction">
+          <div class="role-section__header role-section__header--warn">
+            <div class="role-section__icon" aria-hidden="true">⚠️</div>
+            <div class="role-section__titles">
+              <h2 class="role-section__title bn">মাদকাসক্তির পরিণতি</h2>
+              <h2 class="role-section__title en">Consequences of Drug Addiction</h2>
+            </div>
+          </div>
+          <div class="role-section__body">
+            <div class="role-grid">${renderCards(consequences)}</div>
+          </div>
+        </section>
+
+        <section class="role-section" aria-label="Prevention of drug addiction">
+          <div class="role-section__header role-section__header--success">
+            <div class="role-section__icon" aria-hidden="true">🛡️</div>
+            <div class="role-section__titles">
+              <h2 class="role-section__title bn">মাদকাসক্তি প্রতিরোধ</h2>
+              <h2 class="role-section__title en">Drug Addiction Prevention</h2>
+            </div>
+          </div>
+          <div class="role-section__body">
+            <div class="role-grid">${renderCards(prevention)}</div>
+          </div>
+        </section>
+        <div class="" style="padding: 0; overflow: hidden;">
+          <img
+            src="images/modu16/madok2.jpg"
+            alt="Drug addiction consequences awareness"
+            loading="lazy"
+            decoding="async"
+            style="width: 100%; height: auto; display: block; object-fit: cover;" />
+        </div>
         `;
       }
 
