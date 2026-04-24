@@ -7452,11 +7452,11 @@ function buildFamilyPlanningSection() {
       /* ── FIRST AID INTRODUCTION (Module 17, Lesson 1) ── */
       function buildFirstAidLessonSection() {
         const goalCards = [
-          { icon: '🫀', bn: 'জীবন বাঁচানো' },
-          { icon: '🛡️', bn: 'আহত বা আক্রান্ত ব্যক্তির শারীরিক অবস্থার অবনতি রোধ করা' },
-          { icon: '♿', bn: 'আক্রান্ত ব্যক্তির অবনতির অবস্থা এবং ফলস্বরূপ প্রতিবন্ধিতার সম্ভাবনা কমানো' },
-          { icon: '🌱', bn: 'আরোগ্য লাভে সাহায্য করা' },
-          { icon: '🚑', bn: 'নিকটস্থ চিকিৎসাসেবা কেন্দ্রে আক্রান্ত ব্যক্তিকে নিরাপদে পরিবহন করা' },
+          { icon: '❤️‍🩹', bn: 'জীবন বাঁচানো', en: 'Save life' },
+          { icon: '🛡️', bn: 'আহত বা আক্রান্ত ব্যক্তির শারীরিক অবস্থার অবনতি রোধ করা', en: 'Prevent worsening of the physical condition of the injured or affected person' },
+          { icon: '♿', bn: 'আক্রান্ত ব্যক্তির অবনতির অবস্থা এবং ফলস্বরূপ প্রতিবন্ধিতার সম্ভাবনা কমানো', en: 'Reduce deterioration and the resulting risk of disability' },
+          { icon: '🌱', bn: 'আরোগ্য লাভে সাহায্য করা', en: 'Support recovery' },
+          { icon: '🚑', bn: 'নিকটস্থ চিকিৎসাসেবা কেন্দ্রে আক্রান্ত ব্যক্তিকে নিরাপদে পরিবহন করা', en: 'Safely transport the affected person to the nearest healthcare center' },
         ];
 
         const renderCards = (items) => items.map((item, index) => `
@@ -7464,6 +7464,7 @@ function buildFamilyPlanningSection() {
             <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
             <div class="role-card__content">
               <h4 class="role-card__title bn">${item.bn}</h4>
+              <h4 class="role-card__title en">${item.en}</h4>
             </div>
           </article>`).join('');
 
@@ -7472,6 +7473,7 @@ function buildFamilyPlanningSection() {
           <div class="app-intro-icon" aria-hidden="true">🩹</div>
           <div class="app-intro-titles" style="justify-content: center;">
             <p class="app-intro-sub bn">বিভিন্ন পরিস্থিতিতে ইনজুরির কারণে আহত ব্যক্তি বা হঠাৎ করে অসুস্থ হয়ে পড়া ব্যক্তিকে প্রাথমিকভাবে যে সহায়তা দেওয়া হয়, তাকে প্রাথমিক চিকিৎসা বলে। সাধারণত প্রাথমিক চিকিৎসা দেওয়া হয় ঘটনাস্থলে চিকিৎসক বা প্যারামেডিকস আসার পূর্বে, অথবা অ্যাম্বুলেন্স আসার পূর্বে, অথবা আক্রান্ত ব্যক্তিকে চিকিৎসাকেন্দ্র বা হাসপাতালে নিয়ে যাওয়া পর্যন্ত।</p>
+            <p class="app-intro-sub en">First aid is the immediate support provided to an injured person or someone who suddenly becomes ill in different situations. It is usually given at the incident site before a doctor or paramedics arrive, before an ambulance arrives, or until the affected person is taken to a clinic or hospital.</p>
           </div>
         </div>
 
@@ -7480,23 +7482,16 @@ function buildFamilyPlanningSection() {
             <div class="role-section__icon" aria-hidden="true">🎯</div>
             <div class="role-section__titles">
               <h2 class="role-section__title bn">প্রাথমিক চিকিৎসার লক্ষ্য হলোঃ</h2>
+              <h2 class="role-section__title en">The goals of first aid are:</h2>
             </div>
           </div>
           <div class="role-section__body">
             <div class="role-grid">${renderCards(goalCards)}</div>
+            <div style="margin-top: 32px;">
+            <img src="images/modu17/basict.jpg" alt="Cervical cancer awareness" style="border-radius: 12px; box-shadow: 0 6px 24px rgba(13,71,161,0.12); display: block; margin: 0 auto;" loading="lazy" decoding="async" />
+          </div>
           </div>
         </section>
-
-        <div class="app-intro-box" style="padding: 0; overflow: hidden;">
-          <img
-            src="images/modu17/basict.jpg"
-            alt="First aid basic tools"
-            loading="lazy"
-            decoding="async"
-            width="1200"
-            height="900"
-            style="width: 100%; height: auto; display: block; object-fit: cover;" />
-        </div>
         `;
       }
 
