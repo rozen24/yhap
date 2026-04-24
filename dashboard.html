@@ -2185,6 +2185,7 @@
       .role-section__header { padding: 18px 20px; gap: 12px; }
       .role-section__icon { width: 44px; height: 44px; font-size: 20px; }
       .role-section__body { padding: 16px; }
+      .app-intro-title {font-size: 18px;}
     }
     @media (prefers-reduced-motion: reduce) {
       .role-card:hover { transform: none; }
@@ -3310,14 +3311,14 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 0px;
       position: relative;
       z-index: 1;
       min-width: 0;
     }
 
     .app-intro-title {
-      font-size: 16px;
+      font-size: 26px;
       font-weight: 700;
       color: #fff;
       margin: 0;
@@ -4836,7 +4837,11 @@ function renderLessonPage(modIdx, lesIdx) {
   const isPsychosocialEducationLesson = (modIdx === 14 && lesIdx === 0);
   // Module 15 Lesson 2 — Empathy and supportive outcomes
   const isEmpathyLesson = (modIdx === 14 && lesIdx === 1);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson;
+  // Module 15 Lesson 3 — Active listening
+  const isActiveListeningLesson = (modIdx === 14 && lesIdx === 2);
+  // Module 15 Lesson 4 — Values
+  const isValuesLesson = (modIdx === 14 && lesIdx === 3);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4888,6 +4893,8 @@ function renderLessonPage(modIdx, lesIdx) {
     : isDigitalAddictionLesson ? buildDigitalAddictionLessonSection()
     : isPsychosocialEducationLesson ? buildPsychosocialEducationLessonSection()
     : isEmpathyLesson ? buildEmpathyLessonSection()
+    : isActiveListeningLesson ? buildActiveListeningLessonSection()
+    : isValuesLesson ? buildValuesLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -9757,6 +9764,174 @@ function buildEmpathyLessonSection() {
       <div class="role-grid">${outcomeMarkup}</div>
     </div>
   </section>
+  `;
+}
+
+function buildActiveListeningLessonSection() {
+  const bodyCards = [
+    {
+      icon: '❓',
+      titleBn: 'প্রশ্ন করার মাধ্যমে',
+      titleEn: 'By asking questions',
+      textBn: 'অংশগ্রহণকারীর কথা শুনে তার কাছে বিভিন্ন ধরনের প্রশ্ন করার মাধ্যমে তার ঘটনাটা বিস্তারিতভাবে জানা সম্ভব। যেমনঃ কবে ঘটেছিল, কোথায় ঘটেছিল, কে করেছে ইত্যাদি। অংশগ্রহণকারীর কথার ফাঁকে ফাঁকে প্রশ্ন করার মাধ্যমে ঘটনাটা বিস্তারিতভাবে জানা সম্ভব।',
+      textEn: 'By listening and asking different kinds of questions, it becomes possible to understand the event in detail. For example: when it happened, where it happened, who did it, and so on.'
+    },
+    {
+      icon: '👁️',
+      titleBn: 'দৃষ্টি সংযোগ',
+      titleEn: 'Eye contact',
+      textBn: 'সঠিকভাবে চোখে চোখ রেখে কথা বলা খুবই জরুরী। ফলে সহায়তাকারী অন্যের কথা খুবই আগ্রহ নিয়ে শুনছেন তা প্রকাশ পায়।  প্রত্যেক ৩/৪ সেকেন্ডে পরপর সরাসরি দৃষ্টি সংযোগ করা মনোযোগী শ্রোতা হবার জন্য খুবই গুরুত্বপূর্ণ।',
+      textEn: 'Speaking while maintaining proper eye contact is very important. It shows that the helper is listening with interest. Making direct eye contact every 3-4 seconds is important for being an attentive listener.'
+    },
+    {
+      icon: '🗨️',
+      titleBn: 'মৌখিকভাবে বলা',
+      titleEn: 'Verbal response',
+      textBn: 'আমি তোমার সাথে আছি, তোমার অবস্থাটা আমি বুঝতে পারছি ইত্যাদি।',
+      textEn: 'For example: I am with you, I understand your situation, and so on.'
+    },
+    {
+      icon: '🪑',
+      titleBn: 'স্বাভাবিকভাবে বসা',
+      titleEn: 'Sitting naturally',
+      textBn: 'মুখোমুখি একটি নির্দিষ্ট দূরত্বে জড়তাহীন ভাবে বসা, একটি ফলপ্রসূ মনোসামাজিক সহায়তা নিশ্চিত করে।',
+      textEn: 'Sitting face-to-face at a proper distance, without stiffness, ensures effective psychosocial support.'
+    },
+    {
+      icon: '🚫',
+      titleBn: 'অবহেলা প্রদর্শনমূলক আচরণ করা যাবে না',
+      titleEn: 'Do not display neglectful behavior',
+      textBn: 'আমাদের শারীরিক ভাষা বা Body Language / Body Movement — মুখভঙ্গী, হাত-পা দিয়ে এমন আচরণ করা যাবে না যার মাধ্যমে অংশগ্রহণকারীর প্রতি অবহেলা প্রদর্শন বোঝায়।',
+      textEn: 'Our body language or body movement, such as facial expressions and gestures, should not show neglect toward the participant.'
+    },
+    {
+      icon: '🧍',
+      titleBn: 'সঠিক দৈহিক ভঙ্গি (Posture)',
+      titleEn: 'Proper posture',
+      textBn: 'এটি ইতিবাচক আমেজ নিয়ে আসে যার মাধ্যমে অংশগ্রহণকারী সংকেত পায় যে সহায়তাকারী তার কথা খুব মনোযোগ দিয়ে শুনছে।',
+      textEn: 'It creates a positive atmosphere and signals to the participant that the helper is listening carefully.'
+    },
+    {
+      icon: '🙂',
+      titleBn: 'মুখের প্রকাশভঙ্গী (Facial Expression)',
+      titleEn: 'Facial expression',
+      textBn: 'এর মাধ্যমে সংকেত পাওয়া যায় যে অংশগ্রহণকারীর কথা শোনার জন্য প্রস্তুত ও যথেষ্ট আগ্রহী আছে।',
+      textEn: 'It signals readiness and sufficient interest in listening to the participant.'
+    },
+  ];
+
+  const contentCards = [
+    {
+      icon: '👀',
+      titleBn: 'খেয়াল করা – কীভাবে অংশগ্রহণকারী কথা বলছেন',
+      titleEn: 'Observe how the participant is speaking'
+    },
+    {
+      icon: '🔊',
+      titleBn: 'কোন কোন শব্দগুলোকে সে জোর দিয়ে বলছে, কোন কথার মাধ্যমে সে তার আবেগকে প্রকাশ করছে',
+      titleEn: 'Notice which words are emphasized and how emotions are being expressed'
+    },
+    {
+      icon: '📝',
+      titleBn: 'তার অভিজ্ঞতাকে বর্ণনা করতে গিয়ে সে কি কি শব্দ ব্যবহার করছে',
+      titleEn: 'Notice the words used while describing the experience'
+    },
+    {
+      icon: '🪑',
+      titleBn: 'তার বসার ভঙ্গি খেয়াল করা',
+      titleEn: 'Observe the sitting posture'
+    },
+    {
+      icon: '🙂',
+      titleBn: 'মুখের ভঙ্গি খেয়াল করা',
+      titleEn: 'Observe the facial expression'
+    },
+  ];
+
+  const bodyMarkup = bodyCards.map((item, index) => `
+    <article class="role-card role-card--${['teal', 'indigo', 'rose', 'green', 'teal', 'indigo', 'rose'][index % 7]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__body">
+        <h3 class="role-section__title bn">${item.titleBn}</h3>
+        <h3 class="role-section__title en">${item.titleEn}</h3>
+        <p class="role-card__text bn">${item.textBn}</p>
+        <p class="role-card__text en">${item.textEn}</p>
+      </div>
+    </article>
+  `).join('');
+
+  const contentMarkup = contentCards.map((item, index) => `
+    <article class="role-card role-card--${['green', 'teal', 'rose', 'indigo', 'teal'][index % 5]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.titleBn}</h4>
+        <h4 class="role-card__title en">${item.titleEn}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div class="app-intro-box bg_4">
+    <div class="app-intro-icon" aria-hidden="true">👂</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">২. মনোযোগী শ্রবণ</h2>
+      <h2 class="app-intro-title en">2. Active Listening</h2>
+      <p class="app-intro-sub bn">এটি এমন একটি দক্ষতা যার মাধ্যমে শ্রোতা বক্তার কথা মনোযোগ দিয়ে শোনার সাথে সাথে সেই কথার অন্তর্নিহিত অর্থও বুঝতে পারেন।</p>
+      <p class="app-intro-sub en">It is a skill through which the listener can attentively hear the speaker and also understand the underlying meaning of the words.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="মনোযোগী শ্রোতা হওয়ার ধাপসমূহ" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🧭</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">মনোযোগী শ্রোতা হওয়ার ধাপসমূহ</h2>
+        <h2 class="role-section__title en">Steps to Become an Attentive Listener</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${bodyMarkup}</div>
+      <section class="role-section" aria-label="মনোযোগী শ্রবণ" style="margin-top:24px;">
+        <div class="role-section__header role-section__header--warn">
+          <div class="role-section__icon" aria-hidden="true">🔍</div>
+          <div class="role-section__titles">
+            <h2 class="role-section__title bn">মনোযোগী শ্রবণ</h2>
+            <h2 class="role-section__title en">Active Listening</h2>
+          </div>
+        </div>
+        <div class="role-section__body">
+          <div class="role-grid">${contentMarkup}</div>
+        </div>
+      </section>
+    </div>
+    
+  </section>
+  `;
+}
+
+function buildValuesLessonSection() {
+  return `
+  <div class="app-intro-box bg_4">
+    <div class="app-intro-icon" aria-hidden="true">🌱</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">৩. মূল্যবোধ</h2>
+      <h2 class="app-intro-title en">3. Values</h2>
+      <p class="app-intro-sub bn">মূল্যবোধ হলো আমাদের বিশ্বাস, আদর্শ ও নীতি, যার প্রভাব আমাদের আচরণের উপর পড়ে এবং জীবন পরিচালনায় সহায়তা করে।  মূল্যবোধের আলোকে মানুষ তার জীবন পরিচালনা করতে উদ্বুদ্ধ হয়।</p>
+      <p class="app-intro-sub en">Values are our beliefs, ideals, and principles. They influence our behavior and help us manage life. People are motivated to live their lives guided by values.</p>
+    </div>
+  </div>
+
+  <div class="app-intro-box bg_4" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">🏠</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">মূল্যবোধের উৎস</h2>
+      <h2 class="app-intro-title en">Sources of Values</h2>
+      <p class="app-intro-sub bn">পরিবার, বিদ্যালয়, সমাজ, ধর্ম, গোত্র/গোষ্ঠি, শিক্ষা ও সংস্কৃতি ইত্যাদির প্রভাবে আমাদের মূল্যবোধ তৈরী হয়।  যেমন পরিবারে একটি শিশুকে শেখানো হয় সবসময় সত্য কথা বলতে, বড়দের সন্মান করতে ইত্যাদি।  আবার সমাজ থেকেও বিভিন্ন মল্যবোধ শেখা যায়, যেমন - বিয়ে, ধর্মীয় মূল্যবোধ, চুরি না করে সন্মানজনক কাজ করা, বয়স বা সম্পর্কে বড় কারও সামনে ধুমপান না করা ইত্যাদি।</p>
+      <p class="app-intro-sub en">Our values are shaped by family, school, society, religion, ethnic or social groups, education, and culture. For example, a child may be taught at home to always tell the truth and respect elders. Society also teaches different values such as marriage, religious values, doing honorable work instead of stealing, and not smoking in front of someone older in age or relationship.</p>
+      <p class="app-intro-sub bn">দেশ, সমাজ , জাতি, ধর্ম ও বর্ণভেদে মূল্যবোধ ভিন্ন হতে পারে।  নিজের স্বতন্ত্র ব্যক্তিগত বিশ্বাস থেকে কিছু মূল্যবোধ তৈরি হতে পারে।  এই বিভিন্নতাকে গ্রহণ এবং সম্মান করা বাঞ্ছনীয়।</p>
+      <p class="app-intro-sub en">Values may differ by country, society, nation, religion, and race. Some values may also come from one’s own personal beliefs. It is important to accept and respect these differences.</p>
+    </div>
+  </div>
   `;
 }
 
