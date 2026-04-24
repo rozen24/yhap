@@ -4830,7 +4830,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isExamFearLesson = (modIdx === 13 && lesIdx === 8);
   // Module 14 Lesson 10 — Ways to reduce exam fear
   const isExamFearSolutionsLesson = (modIdx === 13 && lesIdx === 9);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson;
+  // Module 14 Lesson 11 — Digital addiction prevention
+  const isDigitalAddictionLesson = (modIdx === 13 && lesIdx === 10);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4879,6 +4881,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isAngerTriggersLesson ? buildAngerTriggersLessonSection()
     : isExamFearLesson ? buildExamFearLessonSection()
     : isExamFearSolutionsLesson ? buildExamFearSolutionsLessonSection()
+    : isDigitalAddictionLesson ? buildDigitalAddictionLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -9546,6 +9549,99 @@ function buildExamFearSolutionsLessonSection() {
       <p class="app-intro-sub en">First identify the source of worry: lack of preparation or fear of others' opinions about poor results. If social judgment is the main concern, remember exams are a normal part of life and learning. A single exam never defines total life success or failure; try to accept exams as one part of life.</p>
     </div>
   </div>
+  `;
+}
+
+function buildDigitalAddictionLessonSection() {
+  const impactCards = [
+    {
+      icon: '🧠',
+      titleBn: 'মানসিক স্বাস্থ্য',
+      titleEn: 'Mental health',
+      textBn: 'অতিরিক্ত প্রযুক্তি ব্যবহারের ফলে বিষণ্নতা, উদ্বেগ এবং নিদ্রাহীনতা তৈরি হতে পারে।',
+      textEn: 'Excessive technology use can lead to depression, anxiety, and insomnia.'
+    },
+    {
+      icon: '🩺',
+      titleBn: 'শারীরিক স্বাস্থ্য',
+      titleEn: 'Physical health',
+      textBn: 'দীর্ঘ সময় ডিভাইস ব্যবহার করলে চোখের ক্লান্তি, মাথাব্যথা এবং ঘাড় ও পিঠে ব্যথা দেখা দিতে পারে।',
+      textEn: 'Long device use may cause eye strain, headache, and neck/back pain.'
+    },
+    {
+      icon: '👥',
+      titleBn: 'সামাজিক বিচ্ছিন্নতা',
+      titleEn: 'Social isolation',
+      textBn: 'অতিরিক্ত সামাজিক মিডিয়া ব্যবহারের ফলে বাস্তব সামাজিক মিথস্ক্রিয়ার অভাব তৈরি হতে পারে, যা পরবর্তীতে সামাজিক দক্ষতার অভাব সৃষ্টি করতে পারে।',
+      textEn: 'Overuse of social media can reduce real-life interaction and later weaken social skills.'
+    },
+  ];
+
+  const guidelines = [
+    { icon: '⏱️', bn: 'দিনে ২ ঘণ্টার বেশি অপ্রয়োজনীয় স্ক্রিন টাইম পরিহার করা।', en: 'Avoid unnecessary screen time beyond 2 hours per day.' },
+    { icon: '📴', bn: 'শারীরিক এবং মানসিক চাপ কমানোর জন্য ডিজিটাল ডিটক্সের অভ্যাস গড়ে তোলা।', en: 'Build a digital detox habit to reduce physical and mental stress.' },
+    { icon: '🌙', bn: 'ঘুমের আগে অন্তত ১ ঘণ্টা ডিভাইস ব্যবহার না করা।', en: 'Do not use devices for at least 1 hour before sleep.' },
+    { icon: '🏠', bn: 'পরিবারের সঙ্গে খোলামেলা আলোচনা করে প্রযুক্তি ব্যবহারের নিয়মাবলি তৈরি করা।', en: 'Create device-use rules through open family discussions.' },
+  ];
+
+  const impactMarkup = impactCards.map((item, index) => `
+    <article class="role-card role-card--${['teal', 'indigo', 'rose'][index % 3]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__body">
+        <h3 class="role-card-title bn" style="margin-bottom:8px;">${item.titleBn}</h3>
+        <h3 class="role-card-title en" style="font-weight:700; margin-bottom:12px;">${item.titleEn}</h3>
+        <p class="role-card__text bn">${item.textBn}</p>
+        <p class="role-card__text en">${item.textEn}</p>
+      </div>
+    </article>
+  `).join('');
+
+  const guidelineMarkup = guidelines.map((item, index) => `
+    <article class="role-card role-card--${['green', 'rose', 'indigo', 'teal'][index % 4]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div class="app-intro-box bg_4">
+    <div class="app-intro-icon" aria-hidden="true">📱</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">তরুন তরুনী আধুনিক প্রযুক্তির সঙ্গে বেড়ে ওঠছে, যেখানে স্মার্টফোন, ট্যাবলেট, এবং সামাজিক মিডিয়া প্লাটফর্মগুলো তাদের দৈনন্দিন জীবনের অবিচ্ছেদ্য অংশ হয়ে উঠেছে। যদিও এই প্রযুক্তিগুলো বিভিন্ন সুযোগ এবং সুবিধা প্রদান করে, সেগুলি অনিয়ন্ত্রিত ব্যবহারের কারণে মানসিক এবং শারীরিক স্বাস্থ্যগত সমস্যা সৃষ্টি করতে পারে। বিশেষ করে, ডিভাইস আসক্তি বা অতিরিক্ত প্রযুক্তি ব্যবহারের প্রভাব কিশোরদের মানসিক চাপ, নিদ্রাহীনতা, এবং সামাজিক বিচ্ছিন্নতার মতো সমস্যাগুলোর জন্ম দিতে পারে।</p>
+      <p class="app-intro-sub en">Young people are growing up with modern technology where smartphones, tablets, and social media are part of daily life. While these tools offer many opportunities, uncontrolled use can create mental and physical health problems. Device addiction and excessive technology use may contribute to stress, insomnia, and social isolation among adolescents.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="ডিজিটাল স্বাস্থ্য ও ডিভাইস আসক্তির প্রভাব" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">💻</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">ডিজিটাল স্বাস্থ্য ও ডিভাইস আসক্তির প্রভাব</h2>
+        <h2 class="role-section__title en">Digital Health and Effects of Device Addiction</h2>
+        <p class="role-section__sub bn">ডিভাইস আসক্তি এক ধরনের আচরণগত আসক্তি যা ব্যবহারকারীকে প্রযুক্তি ব্যবহারে নিয়ন্ত্রণহীন করে তোলে। এর প্রভাব কিশোর-কিশোরীদের মধ্যেবিশেষভাবে গভীর হতে পারে:</p>
+        <p class="role-section__sub en">Device addiction is a type of behavioral addiction that leaves users unable to control their technology use. Its effects can be particularly deep among adolescents:</p>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${impactMarkup}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="প্রযুক্তি ব্যবহারের জন্য গাইডলাইন" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🧭</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">প্রযুক্তি ব্যবহারের জন্য গাইডলাইন</h2>
+        <h2 class="role-section__title en">Guidelines for Technology Use</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${guidelineMarkup}</div>
+    </div>
+  </section>
   `;
 }
 
