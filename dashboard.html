@@ -4015,7 +4015,7 @@
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,5)"><span class="lesson-dot" aria-hidden="true">6</span><span class="lesson-text"><span class="lesson-label bn">মানসিক চাপের কারণ</span><span class="lesson-label en">Causes of stress</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,6)"><span class="lesson-dot" aria-hidden="true">7</span><span class="lesson-text"><span class="lesson-label bn">রাগ</span><span class="lesson-label en">Anger</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,7)"><span class="lesson-dot" aria-hidden="true">8</span><span class="lesson-text"><span class="lesson-label bn">আমরা কি কারণে এবং কখন খুব সহজেই রেগে যাই</span><span class="lesson-label en">Why and when do we get angry very easily?</span></span></button>
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,8)"><span class="lesson-dot" aria-hidden="true">9</span><span class="lesson-text"><span class="lesson-label bn">পরীক্ষার ভয়</span><span class="lesson-label en">Exam fear</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,8)"><span class="lesson-dot" aria-hidden="true">9</span><span class="lesson-text"><span class="lesson-label bn">পরীক্ষা-ভীতি</span><span class="lesson-label en">Exam fear</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,9)"><span class="lesson-dot" aria-hidden="true">10</span><span class="lesson-text"><span class="lesson-label bn">পরীক্ষার ভয় দূর করার উপায় বা সমাধান</span><span class="lesson-label en">Ways or solutions to remove exam fear</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(13,10)"><span class="lesson-dot" aria-hidden="true">11</span><span class="lesson-text"><span class="lesson-label bn">ডিজিটাল আসক্তি প্রতিরোধ</span><span class="lesson-label en">Prevention of digital addiction</span></span></button>
         </div>
@@ -4444,7 +4444,7 @@ const LESSONS_BN = [
   ['পলিসিস্টিক ওভারিআন সিনড্রোম (পিসিওএস) ','সমস্যা','সমাধান','ব্যবস্থাপনা'],
   ['শিশু অধিকার ও মানবাধিকার এবং যৌন ও প্রজনন স্বাস্থ্য অধিকার','শিশু নির্যাতন','যৌন ও প্রজনন স্বাস্থ্য অধিকার'],
   ['লিঙ্গ-ভিত্তিক বৈষম্য','লিঙ্গ বৈষম্য','সমাজে বিরাজমান জেন্ডার বৈষম্যয','জেন্ডারভিত্তিক সহিংসতা ও নির্যাতনের ধরণ','যৌন হয়রানি','আর্থিক ক্ষতি – আর্থিক দিক','লিঙ্গ বৈষম্য দূরীকরণে করণীয়','সহিংসতা বা নির্যাতন','তরুণদের বিরুদ্ধে সহিংসতার বিভিন্ন রূপ'],
-  ['তরুণদের মনো-সামাজিক পরিবর্তন','আবেগ','আবেগ ব্যবস্থাপনার কৌশল','উদ্বেগ','মানসিক চাপ (Stress)','মানসিক চাপের কারণ','রাগ','আমরা কি কারণে এবং কখন খুব সহজেই রেগে যাই','পরীক্ষার ভয়','পরীক্ষার ভয় দূর করার উপায় বা সমাধান','ডিজিটাল আসক্তি প্রতিরোধ'],
+  ['তরুণদের মনো-সামাজিক পরিবর্তন','আবেগ','আবেগ ব্যবস্থাপনার কৌশল','উদ্বেগ','মানসিক চাপ (Stress)','মানসিক চাপের কারণ','রাগ','আমরা কি কারণে এবং কখন খুব সহজেই রেগে যাই','পরীক্ষা-ভীতি','পরীক্ষার ভয় দূর করার উপায় বা সমাধান','ডিজিটাল আসক্তি প্রতিরোধ'],
   ['মনো-সামাজিক সহায়তা','মনো-সামাজিক সহায়তার দক্ষতা','মনোযোগী শ্রবণ','মূল্যবোধ','আচরণ','নৈতিকতা'],
   ['মাদক আসক্তি','মাদক আসক্তির লক্ষণ','মাদক আসক্তির পরিণতি ও প্রতিরোধ'],
   ['আঘাত প্রতিরোধ ও প্রাথমিক চিকিৎসা সেবা','রক্তপাত নিয়ন্ত্রণ','পোড়া','পোড়ার প্রাথমিক চিকিৎসা','হাড় ভাঙা','সাপের কামড়','কুকুরের কামড়','বিষক্রিয়া','ডুবে যাওয়া','শ্বাসরোধ বা গলায় কিছু আটকে যাওয়া','শ্বাসরোধের প্রাথমিক চিকিৎসা (প্রাপ্তবয়স্ক ও ১ বছরের বেশি শিশুর জন্য)'],
@@ -4826,7 +4826,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isAngerLesson = (modIdx === 13 && lesIdx === 6);
   // Module 14 Lesson 8 — Why and when we get angry easily
   const isAngerTriggersLesson = (modIdx === 13 && lesIdx === 7);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson;
+  // Module 14 Lesson 9 — Exam fear
+  const isExamFearLesson = (modIdx === 13 && lesIdx === 8);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4873,6 +4875,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isStressCausesLesson ? buildStressCausesLessonSection()
     : isAngerLesson ? buildAngerLessonSection()
     : isAngerTriggersLesson ? buildAngerTriggersLessonSection()
+    : isExamFearLesson ? buildExamFearLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -9423,6 +9426,59 @@ function buildAngerTriggersLessonSection() {
       <p class="app-intro-sub en">Some anger-related problems cannot be managed alone. In such cases, seeking a professional psychotherapist for anger control can lead to better outcomes.</p>
     </div>
   </div>
+  `;
+}
+
+function buildExamFearLessonSection() {
+  const symptoms = [
+    { icon: '🤢', bn: 'বমি বমি ভাব হওয়া, কোনো কোনো ক্ষেত্রে বমি হয়ে যাওয়া', en: 'Nausea, and in some cases vomiting' },
+    { icon: '🍽️', bn: 'খাওয়া দাওয়া করতে না পারা', en: 'Inability to eat properly' },
+    { icon: '💓', bn: 'বুক ধড়ফড় করা', en: 'Heart palpitations' },
+    { icon: '🤕', bn: 'মাথাব্যথা করা, মাথা ভারভার লাগা, মাথা ঘুরানো', en: 'Headache, heaviness, and dizziness' },
+    { icon: '👁️', bn: 'চোখে ঝাপসা দেখা', en: 'Blurred vision' },
+    { icon: '😵', bn: 'ঘুম না আসা', en: 'Difficulty sleeping' },
+    { icon: '🧩', bn: 'বাস্তবের সাথে সামঞ্জস্যহীনতা', en: 'Disconnection from reality' },
+    { icon: '🧊', bn: 'হঠাৎ করে হাত-পা প্রচণ্ড ঠান্ডা হয়ে আসা', en: 'Sudden coldness in hands and feet' },
+    { icon: '🚽', bn: 'ঘনঘন পাতলা পায়খানা হওয়া', en: 'Frequent loose stools' },
+    { icon: '😵‍💫', bn: 'মূর্ছা যাওয়া', en: 'Fainting' },
+    { icon: '🎯', bn: 'মনোযোগ দিতে না পারা', en: 'Inability to concentrate' },
+    { icon: '📉', bn: 'অল্পতেই একাগ্রতা হারিয়ে ফেলা', en: 'Losing focus very easily' },
+    { icon: '🧠', bn: 'স্মৃতিশক্তি সাময়িক ব্যাহত হওয়া', en: 'Temporary memory disruption' },
+  ];
+
+  const symptomCards = symptoms.map((item, index) => `
+    <article class="role-card role-card--${['rose', 'indigo', 'teal', 'green'][index % 4]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div class="app-intro-box bg_4">
+    <div class="app-intro-icon" aria-hidden="true">📝</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">পরীক্ষা সম্বন্ধে একটা সাধারণ ভয় বা চিন্তা সবার মনে বিরাজ করে যা পরীক্ষার জন্য প্রয়োজন, তবে অতিরিক্ত পরিমাণ ভয় ছাত্র-ছাত্রীর জন্য পরীক্ষার প্রস্তুতি গ্রহণে এবং কাঙ্খিত ফলাফল অর্জনের পথে সমস্যা তৈরি করতে পারে। এই ভয় পরীক্ষার্থীর জন্য এমন ভীতিকর পরিবেশের সৃষ্টি করে যে পরীক্ষার কথা শুনলেই সে নানা রকম শারীরিক, মানসিক অসুস্থতায় ভুগতে থাকে যেমনঃ বুক ধড়ফড় করা, প্রচুর ঘাম হওয়া, হাত-পা ঠান্ডা হয়ে আসা, বমি বমি লাগা ইত্যাদি।</p>
+      <p class="app-intro-sub bn">পরীক্ষাকে কেন্দ্র করে কিশোর-কিশোরীদের মনে নানা ধরনের ভয়-ভীতি লক্ষ করা যায়। এসময় অনেকের মধ্যেবমি বমি ভাব, মাথা ব্যাথা, শরীর ব্যাথা, হাত-পা ঠান্ডা হয়ে যাওয়া ইত্যাদি লক্ষণ দেখা যায়। আগে থেকে সঠিকভাবে প্রস্তুতি নেয়া, সুষ্ঠ সময় ব্যবস্থাপনা, ও ভীতি দূরীকরণের কৌশল অবলম্বনের মাধ্যমে পরীক্ষা ভীতিকে মোকাবিলা করা সম্ভব।</p>
+      <p class="app-intro-sub en">A general level of fear or concern about exams is common and can be useful, but excessive fear can interfere with preparation and desired results. This fear may create a frightening environment for examinees and lead to physical and mental symptoms such as palpitations, sweating, cold hands-feet, and nausea.</p>
+      <p class="app-intro-sub en">Among adolescents, exam-centered fear can appear in many forms, including nausea, headache, body pain, and cold extremities. With proper early preparation, effective time management, and fear-reduction techniques, exam fear can be managed.</p>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="পরীক্ষা-ভীতির শারীরিক ও মানসিক উপসর্গসমূহ" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">⚕️</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">পরীক্ষা-ভীতির শারীরিক ও মানসিক উপসর্গসমূহ</h2>
+        <h2 class="role-section__title en">Physical and Mental Symptoms of Exam Fear</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${symptomCards}</div>
+    </div>
+  </section>
   `;
 }
 
