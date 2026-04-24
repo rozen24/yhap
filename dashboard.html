@@ -4820,7 +4820,11 @@ function renderLessonPage(modIdx, lesIdx) {
   const isAnxietyLesson = (modIdx === 13 && lesIdx === 3);
   // Module 14 Lesson 5 — Stress
   const isStressLesson = (modIdx === 13 && lesIdx === 4);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson;
+  // Module 14 Lesson 6 — Causes of stress
+  const isStressCausesLesson = (modIdx === 13 && lesIdx === 5);
+  // Module 14 Lesson 7 — Anger
+  const isAngerLesson = (modIdx === 13 && lesIdx === 6);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4864,6 +4868,8 @@ function renderLessonPage(modIdx, lesIdx) {
     : isEmotionManagementStrategiesLesson ? buildEmotionManagementStrategiesSection()
     : isAnxietyLesson ? buildAnxietyLessonSection()
     : isStressLesson ? buildStressLessonSection()
+    : isStressCausesLesson ? buildStressCausesLessonSection()
+    : isAngerLesson ? buildAngerLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -9069,6 +9075,249 @@ function buildStressLessonSection() {
           ${rows}
         </tbody>
       </table>
+    </div>
+  </section>
+  `;
+}
+
+function buildStressCausesLessonSection() {
+  const causes = [
+    {
+      icon: '⚔️',
+      titleBn: 'কলহ :',
+      titleEn: 'Conflict:',
+      textBn: 'পারিবারিক, সামাজিক, রাজনৈতিক, ধর্মীয়, জাতিগত, প্রথাগত ইত্যাদি ক্ষেত্রে সৃষ্ট কলহ আমাদের মধ্যে মানসিক চাপ সৃষ্টি করে।',
+      textEn: 'Conflicts in family, social, political, religious, ethnic, and traditional settings can create mental stress among us.'
+    },
+    {
+      icon: '🎓',
+      titleBn: 'শিক্ষা :',
+      titleEn: 'Education:',
+      textBn: 'শিক্ষাক্ষেত্রে অতিরিক্ত প্রতিযোগীতামূলক মনোভাব, যোগ্যতা আনুযায়ী কাঙ্খিত ফলাফল অর্জন করতে না পারা, শিক্ষাবান্ধব পরিবেশের অভাব, আর্থিক অস্বচ্ছলতা, সঠিক দিকনির্দেশনার অভাব ইত্যাদি বিষয়গুলো শিক্ষার্থীদের মধ্যে মানসিক চাপ সৃষ্টি করে। অনেক সময় অভিভাবকরা সন্তানদেরকে তাদের সহপাঠীদের সাথে তুলনা করে ফেলেন, যা শিক্ষার্থীদের মধ্যে মানসিক চাপ সৃষ্টি করে।',
+      textEn: 'In education, excessive competition, not achieving expected results according to ability, lack of a learner-friendly environment, financial hardship, and poor guidance create stress in students. Parents also sometimes compare children with peers, which increases stress.'
+    },
+    {
+      icon: '🏢',
+      titleBn: 'কর্মক্ষেত্র :',
+      titleEn: 'Workplace:',
+      textBn: 'কর্মক্ষেত্রে কাজের চাপ থাকা স্বাভাবিক। কিন্তু অতিরিক্ত কাজের চাপ কর্মীদের মধ্যে মানসিক চাপ সৃষ্টি করে যা তাদের কাজের গুণগত মান, উৎপাদনশীলতা, কাজের প্রতি আগ্রহ, আত্মবিশ্বাস ইত্যাদি কমিয়ে দেয়। বিভিন্ন কারণে কর্মক্ষেত্রে মানসিক চাপ সৃষ্টি হতে পারে।',
+      textEn: 'Work pressure at work is normal. But excessive workload creates stress, which lowers quality of work, productivity, interest in work, and confidence. Stress can arise in the workplace for many reasons.'
+    },
+    {
+      icon: '📉',
+      titleBn: 'বেকারত্ব :',
+      titleEn: 'Unemployment:',
+      textBn: 'যখন কোন ব্যক্তি তার প্রত্যাশা অনুযায়ী কাজের সুযোগ না পায় কিংবা কোন ব্যক্তি যখন যোগ্যতার অভাবে কাজে অন্তর্ভুক্ত হতে না পারে তখন মানসিক চাপ অনুভব করে।',
+      textEn: 'A person feels mental stress when they do not get work opportunities as expected or cannot be included in work due to lack of qualifications.'
+    },
+    {
+      icon: '🌍',
+      titleBn: 'পারিপার্শ্বিক :',
+      titleEn: 'Environment:',
+      textBn: 'পারিপার্শ্বিক পরিবেশ অনেক ক্ষেত্রে মানসিক চাপ সৃষ্টি করে থাকে। যেমন-শব্দদূষণ, বায়ুদূষণ, পানিদূষণ, যানজট, তীব্র আলো, কক্ষে অপর্যাপ্ত বায়ুচলাচল, অপরিচ্ছন্ন পরিবেশ ইত্যাদি।',
+      textEn: 'The surrounding environment often creates mental stress, such as noise pollution, air pollution, water pollution, traffic congestion, harsh light, poor ventilation in rooms, and unclean surroundings.'
+    },
+  ];
+
+  const managementWays = [
+    { icon: '🚶', bn: 'বাইরে হাঁটতে যাওয়া', en: 'Go for a walk outside' },
+    { icon: '🤝', bn: 'বিশ্বস্ত বন্ধু এবং পরিবারের সদস্যদের সাথে সুন্দর সময় অতিবাহিত করা', en: 'Spend quality time with trusted friends and family members' },
+    { icon: '🗣️', bn: 'বিশ্বস্ত কারো সাথে মনের কথা শেয়ার করা', en: 'Share your feelings with someone trustworthy' },
+    { icon: '📚', bn: 'পছন্দের বই পড়া, গান শোনা', en: 'Read favorite books and listen to music' },
+    { icon: '📔', bn: 'ডায়েরি লেখা', en: 'Write a diary' },
+    { icon: '🏃', bn: 'ব্যায়াম করা', en: 'Exercise regularly' },
+    { icon: '👀', bn: 'আয়নায় নিজেকে দেখা', en: 'Look at yourself in the mirror' },
+    { icon: '🚿', bn: 'হাত-মুখ ধোয়া বা গোসল করা', en: 'Wash hands-face or take a bath' },
+    { icon: '🙏', bn: 'প্রার্থনা করা', en: 'Pray' },
+    { icon: '😴', bn: 'পর্যাপ্ত পরিমাণে ঘুমানো', en: 'Get enough sleep' },
+    { icon: '🌿', bn: 'প্রাকৃতিক পরিবেশে সময় অতিবাহিত করা', en: 'Spend time in a natural environment' },
+    { icon: '😮‍💨', bn: 'নাক দিয়ে গভীর নিঃশ্বাস নিয়ে মুখ দিয়ে প্রশ্বাস ছাড়া', en: 'Inhale deeply through the nose and exhale through the mouth' },
+  ];
+
+  const causeCards = causes.map((item, index) => `
+    <article class="role-card role-card--${['rose', 'indigo', 'teal', 'green'][index % 4]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__body">
+        <h3 class="role-card-title bn" style="margin-bottom:8px;">${item.titleBn}</h3>
+        <h3 class="role-card-title en" style="font-weight:700; margin-bottom:12px;">${item.titleEn}</h3>
+        <p class="role-card__text bn">${item.textBn}</p>
+        <p class="role-card__text en">${item.textEn}</p>
+      </div>
+    </article>
+  `).join('');
+
+  const managementCards = managementWays.map((item, index) => `
+    <article class="role-card role-card--${['teal', 'green', 'rose', 'indigo'][index % 4]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <section class="role-section" aria-label="মানসিক চাপের কারণসমূহ" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">⚠️</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">মানসিক চাপের কারণসমূহ</h2>
+        <h2 class="role-section__title en">Causes of Stress</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${causeCards}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="মানসিক চাপ ব্যবস্থাপনার উপায়" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🧭</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">মানসিক চাপ ব্যবস্থাপনার জন্য প্রয়োজনীয় কিছু উপায় নিম্নে উল্লেখ করা হল-</h2>
+        <h2 class="role-section__title en">Some useful ways for stress management are listed below:</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${managementCards}</div>
+    </div>
+  </section>
+  <div style="width:100%; max-width:100%; margin-top:24px;">
+    <img src="images/modu14/stress.jpg" alt="Stress causes and management" style="width:100%; max-width:820px; height:auto; display:block; margin:0 auto; border-radius:16px; box-shadow:0 10px 30px rgba(13,71,161,0.14);" loading="lazy" decoding="async" />
+  </div>
+  `;
+}
+
+function buildAngerLessonSection() {
+  const physicalSignals = [
+    { icon: '💓', bn: 'হৃৎস্পন্দন বেড়ে যাওয়া', en: 'Increased heartbeat' },
+    { icon: '😖', bn: 'বুকে চাপবোধ হওয়া', en: 'Feeling pressure in the chest' },
+    { icon: '🤕', bn: 'মাথা ব্যথা হওয়া', en: 'Headache' },
+    { icon: '👁️', bn: 'বেশি বেশি চোখের পলক পড়া', en: 'Frequent blinking' },
+    { icon: '💪', bn: 'মাংসপেশীতে টান টান বোধ করা', en: 'Feeling muscle tension' },
+    { icon: '💦', bn: 'ঘাম হওয়া', en: 'Sweating' },
+    { icon: '😮‍💨', bn: 'শ্বাসকষ্ট হওয়া', en: 'Shortness of breath' },
+    { icon: '🌪️', bn: 'শরীর কাঁপা ইত্যাদি', en: 'Body trembling, etc.' },
+  ];
+
+  const emotionalSignals = [
+    { icon: '😤', bn: 'বিরক্তিবোধ', en: 'Irritability' },
+    { icon: '😞', bn: 'হতাশা', en: 'Frustration' },
+    { icon: '😔', bn: 'বিষণ্নতা', en: 'Depression' },
+    { icon: '😠', bn: 'হিংসা', en: 'Hostility' },
+    { icon: '😰', bn: 'নিরাপত্তাহীনতা', en: 'Insecurity' },
+    { icon: '🚫', bn: 'অগ্রহণযোগ্যতা', en: 'Feeling unacceptable' },
+    { icon: '😩', bn: 'মানসিক অবসাদ', en: 'Mental exhaustion' },
+    { icon: '😨', bn: 'ভয় পাওয়া', en: 'Fearfulness' },
+    { icon: '🙅', bn: 'অসম্মানবোধ', en: 'Feeling disrespected' },
+    { icon: '😟', bn: 'অপরাধবোধ', en: 'Guilt' },
+    { icon: '😳', bn: 'লজ্জাবোধ', en: 'Shame' },
+    { icon: '🔮', bn: 'ভবিষ্যতের জন্য দুশ্চিন্তা করা ইত্যাদি', en: 'Worrying about the future, etc.' },
+  ];
+
+  const thoughtSignals = [
+    { icon: '💭', bn: 'নিজের সাথে নেতিবাচক কথা বলা', en: 'Negative self-talk' },
+    { icon: '⚡', bn: 'আক্রমণাত্মক মনোভাব', en: 'Aggressive mindset' },
+    { icon: '🔁', bn: 'প্রতিশোধপরায়ণতা ইত্যাদি', en: 'Vindictive thoughts, etc.' },
+  ];
+
+  const behavioralSignals = [
+    { icon: '🗯️', bn: 'খুব দ্রুত কথা বলা', en: 'Speaking very quickly' },
+    { icon: '📢', bn: 'উচ্চ স্বরে কথা বলা', en: 'Speaking in a loud voice' },
+    { icon: '🔊', bn: 'চিৎকার করা', en: 'Shouting' },
+    { icon: '🚪', bn: 'জোরে দরজায় আঘাত করা', en: 'Slamming doors' },
+    { icon: '🧨', bn: 'ভাঙচুর করা', en: 'Breaking things' },
+    { icon: '🥊', bn: 'মারামারি করা', en: 'Fighting' },
+    { icon: '↩️', bn: 'পরিস্থিতি এড়িয়ে যাওয়া', en: 'Avoiding the situation' },
+    { icon: '🤐', bn: 'নীরব বা চুপ থাকা', en: 'Staying silent/quiet' },
+  ];
+
+  const renderSignalCards = (items, palette) => items.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div class="app-intro-box bg_4">
+    <div class="app-intro-icon" aria-hidden="true">😡</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">রাগ হচ্ছে এক ধরনের মৌলিক অনুভূতি যার উৎপত্তি ঘটে কষ্ট, হতাশা,বিরক্তি, আশাহত হওয়া ইত্যাদি থেকে। রাগ প্রকাশের মাত্রা বিভিন্ন ধরনের হতে পারে। সামান্য বিরক্তি প্রকাশমূলক শব্দ থেকে শুরু করে বিভিন্ন ধ্বংসাত্মক কার্যাবলী সম্পাদনের মাধ্যমে রাগের বহিঃপ্রকাশ ঘটতে পারে। রাগ আমাদের স্বাভাবিক আবেগ। সঠিকভাবে ব্যবস্থাপনা করলে এই আবেগ ক্ষতিকর নয়।</p>
+      <p class="app-intro-sub en">Anger is a basic emotion that can arise from pain, frustration, irritation, and disappointment. Its expression may range from mild verbal irritation to destructive actions. Anger is a normal emotion, and when managed properly it is not harmful.</p>
+    </div>
+  </div>
+
+  <div class="app-intro-box bg_4" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">🚨</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">রাগ পূর্ব সংকেত</h2>
+      <h2 class="app-intro-title en">Early Signs of Anger</h2>
+      <p class="app-intro-sub bn">রাগের পূর্ব সংকেত হল রাগ পূর্ববর্তী এমন কিছুসতর্কতা মূলক ইঙ্গিত যা আমাদের বুঝতে সাহায্য করে একজন মানুষ কখন রেগে যাচ্ছে। রাগের সংকেতসমূহ হতে পারে শারীরিক, আবেগীয়, চিন্তামূলক কিংবা আচরণমূলক। রাগ পূর্ব সংকেত সম্পর্কে আগে থেকেই সচেতন থাকলে রাগকে ব্যবস্থাপনা করা সম্ভব হয় ফলে বিভিন্ন ধরনের ক্ষতির হাত থেকে রক্ষা পাওয়া যায়।</p>
+      <p class="app-intro-sub en">Early anger signs are warning indicators that help us understand when someone is getting angry. These signs may be physical, emotional, cognitive, or behavioral. Awareness of these early signals makes anger management possible and helps prevent different harms.</p>
+    </div>
+  </div>
+
+  <div class="app-intro-box bg_4" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">📋</div>
+    <div class="app-intro-titles">
+      <h2 class="app-intro-title bn">রাগ পূর্ব সংকেত সমূহ হলঃ</h2>
+      <h2 class="app-intro-title en">The early signs of anger are:</h2>
+    </div>
+  </div>
+
+  <section class="role-section" aria-label="শারীরিক সংকেত" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🩺</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">শারীরিক সংকেত</h2>
+        <h2 class="role-section__title en">Physical Signals</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderSignalCards(physicalSignals, ['teal', 'indigo', 'rose', 'green'])}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="আবেগীয় সংকেত" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">💭</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">আবেগীয় সংকেত</h2>
+        <h2 class="role-section__title en">Emotional Signals</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderSignalCards(emotionalSignals, ['rose', 'indigo', 'teal', 'green'])}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="চিন্তামূলক সংকেত" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🧠</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">চিন্তামূলক সংকেত</h2>
+        <h2 class="role-section__title en">Cognitive Signals</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderSignalCards(thoughtSignals, ['indigo', 'rose', 'teal', 'green'])}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="আচরণমূলক সংকেত" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">👣</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">আচরণমূলক সংকেত</h2>
+        <h2 class="role-section__title en">Behavioral Signals</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderSignalCards(behavioralSignals, ['green', 'teal', 'rose', 'indigo'])}</div>
     </div>
   </section>
   `;
