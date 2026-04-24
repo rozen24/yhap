@@ -4824,7 +4824,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isStressCausesLesson = (modIdx === 13 && lesIdx === 5);
   // Module 14 Lesson 7 — Anger
   const isAngerLesson = (modIdx === 13 && lesIdx === 6);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson;
+  // Module 14 Lesson 8 — Why and when we get angry easily
+  const isAngerTriggersLesson = (modIdx === 13 && lesIdx === 7);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4870,6 +4872,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isStressLesson ? buildStressLessonSection()
     : isStressCausesLesson ? buildStressCausesLessonSection()
     : isAngerLesson ? buildAngerLessonSection()
+    : isAngerTriggersLesson ? buildAngerTriggersLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -9320,6 +9323,106 @@ function buildAngerLessonSection() {
       <div class="role-grid">${renderSignalCards(behavioralSignals, ['green', 'teal', 'rose', 'indigo'])}</div>
     </div>
   </section>
+  `;
+}
+
+function buildAngerTriggersLessonSection() {
+  const angerTriggers = [
+    { icon: '🧍', bn: 'Passive behavior pattern বা নিষ্ক্রিয় আচরণের ফলে', en: 'Due to passive behavior patterns' },
+    { icon: '🤝', bn: 'সামাজিক সমর্থনের অভাব', en: 'Lack of social support' },
+    { icon: '🌪️', bn: 'আবেগীয় বিশৃঙ্খলা- বিষণ্নতা, উদ্বেগ ইত্যাদি', en: 'Emotional dysregulation such as depression and anxiety' },
+    { icon: '💥', bn: 'মানসিক আঘাতজনিত ঘটনা', en: 'Psychological trauma-related events' },
+    { icon: '🧠', bn: 'মানসিক চাপ', en: 'Mental stress' },
+    { icon: '🗡️', bn: 'আঘাত/অপমান করে কথা বললে', en: 'When spoken to in a hurtful/insulting way' },
+    { icon: '⚠️', bn: 'হুমকির সম্মুখীন হলে', en: 'When facing threats' },
+    { icon: '🧱', bn: 'নিজের লক্ষে পৌঁছতে বাধাগ্রস্ত হয়ে হতাশ হওয়ার ফলে', en: 'Frustration from being blocked from goals' },
+    { icon: '🙍', bn: 'অসন্মানিত হওয়ার ফলে', en: 'Feeling disrespected' },
+    { icon: '🚫', bn: 'অধিকার খর্ব হলে ইত্যাদি', en: 'When rights are denied, etc.' },
+  ];
+
+  const losses = [
+    { icon: '🩺', bn: 'শারীরিক ক্ষতি', en: 'Physical harm' },
+    { icon: '💭', bn: 'মানসিক ক্ষতি', en: 'Mental harm' },
+    { icon: '💼', bn: 'Career বা পেশাগত ক্ষতি', en: 'Career/professional harm' },
+    { icon: '📚', bn: 'পড়ালেখার ক্ষতি', en: 'Academic harm' },
+    { icon: '💔', bn: 'সম্পর্কের ক্ষতি', en: 'Relationship harm' },
+    { icon: '😔', bn: 'বিষণ্নতায় ভোগা', en: 'Suffering from depression' },
+    { icon: '🔮', bn: 'ভবিষ্যৎ নিয়ে দুশ্চিন্তা করা', en: 'Worrying about the future' },
+    { icon: '😴', bn: 'ঘুমের সমস্যা', en: 'Sleep problems' },
+    { icon: '🍷', bn: 'নেশায় জড়িয়ে পড়া', en: 'Getting involved in addiction' },
+    { icon: '🔁', bn: 'একই কাজ বারবার করার প্রবনতা', en: 'Tendency to repeat the same actions' },
+    { icon: '🩸', bn: 'রক্তচাপ বেড়ে যাওয়া', en: 'Increased blood pressure' },
+    { icon: '🩹', bn: 'Self-harm বা নিজের ক্ষতি করা ইত্যাদি', en: 'Self-harm, etc.' },
+  ];
+
+  const managementStrategies = [
+    { icon: '⏳', bn: 'প্রতিক্রিয়া প্রকাশের আগে কিছুটা সময় নেয়া', en: 'Take some time before reacting' },
+    { icon: '🔟', bn: '১-১০ পর্যন্ত ধীরে ধীরে গুণতে থাকা', en: 'Count slowly from 1 to 10' },
+    { icon: '🗣️', bn: 'সততার সাথে যুক্তিসঙ্গত কথা বলা', en: 'Speak honestly and rationally' },
+    { icon: '🛌', bn: 'পর্যাপ্ত ঘুম', en: 'Get adequate sleep' },
+    { icon: '📔', bn: 'ডায়েরি লেখা', en: 'Write a diary' },
+    { icon: '🏃', bn: 'নিয়মিত শরীর চর্চা বা ব্যায়াম করা', en: 'Exercise regularly' },
+    { icon: '🚶', bn: 'পরিস্থিতি থেকে নিজেকে সরিয়ে নেয়া', en: 'Remove yourself from the situation' },
+    { icon: '🌬️', bn: 'নিয়মিত নিঃশ্বাসের ব্যায়াম করা', en: 'Practice breathing exercises regularly' },
+  ];
+
+  const renderCards = (items, palette) => items.map((item, index) => `
+    <article class="role-card role-card--${palette[index % palette.length]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <section class="role-section" aria-label="আমরা কি কারণে এবং কখন খুব সহজেই রেগে যাই" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🔥</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">আমরা কি কারণে এবং কখন খুব সহজেই রেগে যাই</h2>
+        <h2 class="role-section__title en">Why and when do we get angry very easily?</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(angerTriggers, ['rose', 'indigo', 'teal', 'green'])}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="রাগের ফলে আমাদের কি কি ক্ষতি হয়" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">📉</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">রাগের ফলে আমাদের কি কি ক্ষতি হয়</h2>
+        <h2 class="role-section__title en">What harms can anger cause us?</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(losses, ['teal', 'green', 'rose', 'indigo'])}</div>
+    </div>
+  </section>
+
+  <section class="role-section" aria-label="রাগ ব্যবস্থাপনার কৌশল" style="margin-top:24px;">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">🧭</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">রাগ ব্যবস্থাপনার কৌশল</h2>
+        <h2 class="role-section__title en">Anger Management Strategies</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <div class="role-grid">${renderCards(managementStrategies, ['indigo', 'rose', 'teal', 'green'])}</div>
+    </div>
+  </section>
+
+  <div class="app-intro-box bg_4" style="margin-top:24px;">
+    <div class="app-intro-icon" aria-hidden="true">🧑‍⚕️</div>
+    <div class="app-intro-titles">
+      <p class="app-intro-sub bn">কিছুকিছু রাগ সম্পর্কিত সমস্যাগুলি নিজে নিজে ব্যবস্থাপনা সম্ভব হয়না। তাই এমন সমস্যাগুলির ক্ষেত্রে রাগ নিয়ন্ত্রণের জন্য পেশাদার মনোচিকিৎসকের শরণাপণ্ন হলে ভাল ফল পাওয়া যাবে।</p>
+      <p class="app-intro-sub en">Some anger-related problems cannot be managed alone. In such cases, seeking a professional psychotherapist for anger control can lead to better outcomes.</p>
+    </div>
+  </div>
   `;
 }
 
