@@ -4865,7 +4865,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isBurnsLesson = (modIdx === 16 && lesIdx === 2);
   // Module 17 Lesson 4 — First aid for burns
   const isBurnsFirstAidLesson = (modIdx === 16 && lesIdx === 3);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson;
+  // Module 17 Lesson 5 — Bone fracture
+  const isBoneFractureLesson = (modIdx === 16 && lesIdx === 4);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4928,6 +4930,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isFirstAidBleedingLesson ? buildFirstAidBleedingLessonSection()
     : isBurnsLesson ? buildBurnsLessonSection()
     : isBurnsFirstAidLesson ? buildBurnsFirstAidLessonSection()
+    : isBoneFractureLesson ? buildBoneFractureLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -7737,6 +7740,132 @@ function buildFamilyPlanningSection() {
             </div>
           </div>
         </section>
+        `;
+      }
+
+      /* ── BONE FRACTURE (Module 17, Lesson 5) ── */
+      function buildBoneFractureLessonSection() {
+        const openFractureSteps = [
+          {
+            icon: '🩸',
+            tone: 'rose',
+            bn: 'যদি রক্তপাত হয়, সবার প্রথমে রক্তক্ষরণ বন্ধ করার ব্যবস্থা করতে হবে।',
+            en: 'If there is bleeding, the first priority is to control the bleeding.'
+          },
+          {
+            icon: '🦴',
+            tone: 'teal',
+            bn: 'আক্রান্ত অঙ্গটি যতটা সম্ভব স্থির রাখার চেষ্টা করতে হবে।',
+            en: 'Keep the injured limb as still as possible.'
+          },
+          {
+            icon: '🚑',
+            tone: 'amber',
+            bn: 'আক্রান্ত ব্যক্তিকে চিকিৎসার জন্য দ্রুত হাসপাতালে নিয়ে যেতে হবে।',
+            en: 'Take the affected person to a hospital quickly for treatment.'
+          }
+        ];
+
+        const closedFractureSteps = [
+          {
+            icon: '🚫',
+            tone: 'violet',
+            bn: 'আক্রান্ত অঙ্গটি জোরপূর্বক সোজা করার চেষ্টা করা যাবেনা।',
+            en: 'Do not try to force the injured limb straight.'
+          },
+          {
+            icon: '🛌',
+            tone: 'indigo',
+            bn: 'অঙ্গটি সুবিধাজনক অবস্থানে রাখতে হবে এবং যথাসম্ভব কম নড়াচড়া করতে হবে।',
+            en: 'Keep the limb in a comfortable position and minimize movement as much as possible.'
+          },
+          {
+            icon: '🏥',
+            tone: 'green',
+            bn: 'আক্রান্ত ব্যক্তিকে চিকিৎসার জন্য হাসপাতালে নিয়ে যেতে হবে।',
+            en: 'Take the affected person to a hospital for treatment.'
+          }
+        ];
+
+        const renderPhaseItems = (items) => items.map((item) => `
+          <div class="phase-item">
+            <div class="phase-num phase-num--${item.tone}">${item.icon}</div>
+            <div class="phase-content">
+              <div class="phase-content__title"><span class="bn">${item.bn}</span><span class="en">${item.en}</span></div>
+            </div>
+          </div>
+        `).join('');
+
+        return `
+        <div class="app-intro-box">
+          <div class="app-intro-icon" aria-hidden="true">🦴</div>
+          <div class="app-intro-titles" style="justify-content: center;">
+            <p class="app-intro-sub bn">হাড় ভাঙ্গা (ফ্রাকচার) হল এমন একটি অবস্থা যেখানে শরীরের এক বা একাধিক হাড় ভেঙ্গে যায় বা ফাটল ধের বা কোন আঘাতের কারণে বেঁকে যায়।  সাধারণত, শক্তিশালী আঘাত বা ইনজুরির জেন্য কোন ব্যক্তির হাড় ভেঙ্গে যেতে পারে, তবে কখনো কখনো বৃদ্ধ বয়স বা অসুস্থতাজনিত কারণে ও কোন ব্যক্তি হাড় ভাঙ্গার শিকার হতে পারে।</p>
+            <p class="app-intro-sub en">Bone fracture is a condition in which one or more bones break, crack, or bend due to impact or injury. Usually, strong trauma or injury causes fractures, but in some cases older age or illness can also make a person more prone to fractures.</p>
+          </div>
+        </div>
+
+        <div class="app-intro-box">
+          <div class="app-intro-icon" aria-hidden="true">🔎</div>
+          <div class="app-intro-titles" style="justify-content: center;">
+            <p class="app-intro-sub bn">হাড় ভাঙ্গা মূলত দুই ধরনের হতে পারে—উন্মুক্ত হাড় ভাঙ্গা ও আবদ্ধ হাড় ভাঙ্গা।  উন্মুক্ত হাড় ভাঙ্গা হচ্ছে যখন রোগীর ভাঙ্গা হাড় চামড়ার ভেতর থেকে বেরিয়ে আসে এবং বাইরে থেকে দেখা যায়।  আর আবদ্ধ হাড় ভাঙ্গা হলো ভাঙ্গা হাড়টি শরীরের ভেতরে অবস্থান করে এবং বাইরে থেকে দেখা যায় না।</p>
+            <p class="app-intro-sub en">Fractures are mainly of two types: open fracture and closed fracture. In an open fracture, the broken bone comes out through the skin and is visible from outside. In a closed fracture, the broken bone remains inside the body and is not visible externally.</p>
+          </div>
+        </div>
+
+        
+        <div style="padding: 14px; border: 3px solid #fff; background-color: #f0f4ff; border-radius: 12px; box-shadow: 0 6px 24px rgba(13,71,161,0.12);">
+          <div class="app-intro-box">
+            <div class="app-intro-icon" aria-hidden="true">🩹</div>
+            <div class="app-intro-titles" style="justify-content: center;">
+              <h2 class="app-intro-title bn">হাড় ভাঙ্গার প্রাথমিক চিকিৎসা</h2>
+              <h2 class="app-intro-title en">First Aid for Bone Fracture</h2>
+           </div>
+          </div>
+          <div class="phases-anatomy-row">
+              <div class="repro-card">
+                <div class="repro-card__header repro-card__header--rose">
+                  <div class="repro-card__icon" aria-hidden="true">🩸</div>
+                  <div>
+                    <div class="repro-card__title">
+                      <span class="bn">উন্মুক্ত হাড় ভাঙ্গার ক্ষেত্রে</span>
+                      <span class="en">In Case of Open Fracture</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="repro-card__body">
+                  <div class="phase-timeline">
+                    ${renderPhaseItems(openFractureSteps)}
+                  </div>
+                  <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+                    <img src="images/modu17/har.jpg" alt="উন্মুক্ত হাড় ভাঙ্গার প্রাথমিক চিকিৎসা" style="flex:1 1 220px; width:100%; min-width:0; max-width:100%; border-radius:12px; box-shadow:0 6px 24px rgba(13,71,161,0.12);" loading="lazy" decoding="async" />
+                    <img src="images/modu17/har2.jpg" alt="উন্মুক্ত হাড় ভাঙ্গার প্রাথমিক চিকিৎসা" style="flex:1 1 220px; width:100%; min-width:0; max-width:100%; border-radius:12px; box-shadow:0 6px 24px rgba(13,71,161,0.12);" loading="lazy" decoding="async" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="repro-card">
+                <div class="repro-card__header repro-card__header--teal">
+                  <div class="repro-card__icon" aria-hidden="true">🦴</div>
+                  <div>
+                    <div class="repro-card__title">
+                      <span class="bn">আবদ্ধ হাড় ভাঙ্গার ক্ষেত্রে</span>
+                      <span class="en">In Case of Closed Fracture</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="repro-card__body">
+                  <div class="phase-timeline">
+                    ${renderPhaseItems(closedFractureSteps)}
+                  </div>
+                  <div style="margin-top:16px;">
+                    <img src="images/modu17/har3.jpg" alt="আবদ্ধ হাড় ভাঙ্গার প্রাথমিক চিকিৎসা" style="width:100%; max-width:100%; height:auto; display:block; margin:0 auto; border-radius:12px; box-shadow:0 6px 24px rgba(13,71,161,0.12);" loading="lazy" decoding="async" />
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>  
+        
         `;
       }
 
