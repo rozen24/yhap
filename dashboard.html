@@ -4863,7 +4863,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isFirstAidBleedingLesson = (modIdx === 16 && lesIdx === 1);
   // Module 17 Lesson 3 — Burns
   const isBurnsLesson = (modIdx === 16 && lesIdx === 2);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson;
+  // Module 17 Lesson 4 — First aid for burns
+  const isBurnsFirstAidLesson = (modIdx === 16 && lesIdx === 3);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4925,6 +4927,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isFirstAidLesson ? buildFirstAidLessonSection()
     : isFirstAidBleedingLesson ? buildFirstAidBleedingLessonSection()
     : isBurnsLesson ? buildBurnsLessonSection()
+    : isBurnsFirstAidLesson ? buildBurnsFirstAidLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -7656,6 +7659,84 @@ function buildFamilyPlanningSection() {
           </div>
         </div>
         </div>
+        `;
+      }
+
+      /* ── FIRST AID FOR BURNS (Module 17, Lesson 4) ── */
+      function buildBurnsFirstAidLessonSection() {
+        const burnFirstAidSteps = [
+          {
+            bn: 'ত্বক কতটা পুড়েছে, তার ধরন নির্ধারণ করে চিকিৎসা করা হয়।  আক্রান্ত ব্যক্তিকে দ্রুত পোড়ার উৎস (যেমন- আগুন বা ধোঁয়া) থেকে সরিয়ে নিতে হবে যেন পুড়ে যাওয়ার প্রক্রিয়াটি ধীর হয় বা একেবারে বন্ধ হয়।',
+            en: 'Treatment is based on the type and depth of skin burn. Move the affected person quickly away from the burn source (such as fire or smoke) to slow down or completely stop further burning.'
+          },
+          {
+            bn: 'পোড়া জায়গা ফুলে যাওয়ার সম্ভাবনা থাকায় ঘড়ি বা জুয়েলারি খুলে ফেলতে হবে',
+            en: 'Because the burned area may swell, remove watches and jewelry.'
+          },
+          {
+            bn: 'চামড়ার সাথে কাপড় লেগে থাকলে তা উঠানোর প্রয়োজন নেই',
+            en: 'If clothing is stuck to the skin, do not remove it.'
+          },
+          {
+            bn: 'পোড়া জায়গায় কমপক্ষে ১০-১৫ মিনিট ধরে স্বাভাবিক তাপমাত্রার ঠান্ডা পানি ঢালতে হবে (খুব ঠান্ডা বা উষ্ণ পানি নয়)।',
+            en: 'Pour cool running water of normal temperature over the burn for at least 10-15 minutes (not very cold or warm water).'
+          },
+          {
+            bn: 'পোড়া স্থানের কোনো ফোসকা গলিয়ে দেওয়া যাবেনা',
+            en: 'Do not break or drain any blister on the burned area.'
+          },
+          {
+            bn: 'পোড়া স্থানে ক্রিম, লোশন, ডিম, লবণ-পানি, হলুদ বা টুথপেস্ট লাগানো যাবেনা',
+            en: 'Do not apply cream, lotion, egg, salt water, turmeric, or toothpaste to the burn.'
+          },
+          {
+            bn: 'পোড়া স্থানটিকে শুকনো জীবাণুমুক্ত পরিষ্কার কাপড় বা গজ দিয়ে ঢেকে দিতে হবে (ড্রেসিং)। যদি নিকটস্থ ফার্মেসীতে পাওয়া যায়, প্রাথমিকভাবে ড্রেসিং করতে পোড়া স্থানে আয়োডোফর্ম গজ (যা লিকুইড প্যারাফিন যুক্ত এবং চামড়ায় লেগে থাকে না) ব্যবহার করতে হবে, তার উপরে শুকনো গজ দিয়ে বেঁধে দিতে হবে।',
+            en: 'Cover the burn with a dry, sterile, clean cloth or gauze (dressing). If available at a nearby pharmacy, use iodoform gauze (with liquid paraffin, non-adherent to skin) for initial dressing, then secure with dry gauze on top.'
+          },
+          {
+            bn: 'আক্রান্ত ব্যক্তি যেন পর্যাপ্ত তরল পান করে তা নিশ্চিত করতে হবে।',
+            en: 'Ensure the affected person drinks enough fluids.'
+          },
+          {
+            bn: 'যদি ব্যক্তির পোড়া গুরুতর হয়, তবে প্রাথমিক চিকিৎসা দিয়ে দ্রুত স্বাস্থ্যকেন্দ্রে প্রেরণ করতে হবে',
+            en: 'If the burn is severe, provide first aid and refer the person quickly to a health facility.'
+          },
+          {
+            bn: 'শরীরে আগুন লাগলে জ্বলন্ত ব্যক্তিটিকে মাটিতে শুয়ে গড়াগড়ি দিতে বলতে হবে',
+            en: 'If a person catches fire, ask them to lie on the ground and roll.'
+          }
+        ];
+
+        const burnFirstAidIcons = ['🔥','⌚','👕','🚿','⛔','🧴','🩹','💧','🏥','🌀'];
+
+        const cardsHtml = burnFirstAidSteps.map((item, index) => `
+          <article class="role-card role-card--${['teal','rose','amber','indigo','green','violet','sky','pink','red','slate'][index % 10]}">
+            <div class="role-card__icon" aria-hidden="true">${burnFirstAidIcons[index]}</div>
+            <div class="role-card__content">
+              <h4 class="role-card__title bn">${item.bn}</h4>
+              <h4 class="role-card__title en">${item.en}</h4>
+            </div>
+          </article>
+        `).join('');
+
+        return `
+        <section class="role-section" aria-label="পোড়ার প্রাথমিক চিকিৎসা">
+          <div class="role-section__header role-section__header--warn">
+            <div class="role-section__icon" aria-hidden="true">🩹</div>
+            <div class="role-section__titles">
+              <h2 class="role-section__title bn">পোড়ার প্রাথমিক চিকিৎসা</h2>
+              <h2 class="role-section__title en">First Aid for Burns</h2>
+            </div>
+          </div>
+          <div class="role-section__body">
+            <div class="role-grid">${cardsHtml}</div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+              <img src="images/modu17/pora2.jpg" alt="পোড়ার প্রাথমিক চিকিৎসা" style="flex:1 1 280px; width:100%; min-width:0; max-width:100%; border-radius:12px; box-shadow:0 6px 24px rgba(13,71,161,0.12);" loading="lazy" decoding="async" />
+              <img src="images/modu17/pora1.jpg" alt="পোড়ার প্রাথমিক চিকিৎসা" style="flex:1 1 280px; width:100%; min-width:0; max-width:100%; border-radius:12px; box-shadow:0 6px 24px rgba(13,71,161,0.12);" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </section>
         `;
       }
 
