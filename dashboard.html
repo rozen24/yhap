@@ -4869,7 +4869,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isBoneFractureLesson = (modIdx === 16 && lesIdx === 4);
   // Module 17 Lesson 6 — Snake bite
   const isSnakeBiteLesson = (modIdx === 16 && lesIdx === 5);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson;
+  // Module 17 Lesson 7 — Dog bite
+  const isDogBiteLesson = (modIdx === 16 && lesIdx === 6);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4934,6 +4936,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isBurnsFirstAidLesson ? buildBurnsFirstAidLessonSection()
     : isBoneFractureLesson ? buildBoneFractureLessonSection()
     : isSnakeBiteLesson ? buildSnakeBiteLessonSection()
+    : isDogBiteLesson ? buildDogBiteLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -7954,6 +7957,79 @@ function buildFamilyPlanningSection() {
             <div class="role-grid">${cardsHtml}</div>
           </div>
         </section>
+        `;
+      }
+
+      /* ── DOG BITE (Module 17, Lesson 7) ── */
+      function buildDogBiteLessonSection() {
+        const infectionSigns = [
+          { icon: '🤕', tone: 'rose', bn: 'ক্ষত স্থানে ব্যথা', en: 'Pain at the wound site' },
+          { icon: '🔴', tone: 'red', bn: 'ক্ষত স্থান লাল হয়ে যাওয়া', en: 'Redness around the wound' },
+          { icon: '⬆️', tone: 'amber', bn: 'ক্ষত স্থান ফুলে যাওয়া', en: 'Swelling at the wound site' },
+          { icon: '🧪', tone: 'violet', bn: 'ক্ষত স্থান থেকে পুঁজ বের হওয়া', en: 'Pus discharge from the wound' },
+          { icon: '🌡️', tone: 'teal', bn: 'জ্বর হওয়া', en: 'Fever' },
+          { icon: '🟣', tone: 'indigo', bn: 'শরীরের গ্ল্যান্ড বা গ্রন্থি ফুলে যাওয়া', en: 'Swelling of body glands or lymph nodes' }
+        ];
+
+        const firstAidSteps = [
+          { icon: '🛡️', tone: 'teal', bn: 'প্রাথমিক চিকিৎসা প্রদানের পূর্বে ঘটনাস্থলের নিরাপত্তা এবং প্রাণীটি যাতে আর কামড় দিতে না পারে তা নিশ্চিত করতে হবে।', en: 'Before giving first aid, ensure scene safety and make sure the animal cannot bite again.' },
+          { icon: '⌚', tone: 'rose', bn: 'কামড়ানো অংশে যদি কোন আংটি বা বাঁধন থাকে তা খুলে দিতে হবে, কারণ সে অংশটি  ফুলে যেতে পারে।', en: 'Remove any ring or tight binding from the bitten area, as swelling may occur.' },
+          { icon: '🧼', tone: 'amber', bn: 'ক্ষতস্থানটি পরিস্কার পানি ও ক্ষার জাতীয় সাবান ব্যবহার করে কমপক্ষে ১৫ মিনিটের মত ধুয়ে ফেলতে হবে।  প্রবাহমান পানির উৎস যেমন ট্যাঁপের পানি ব্যবহার করতে হবে তবে যদি প্রবাহমান পানির ব্যবস্থা না থাকে, তাহলে কিছুক্ষণ পর পর পানি বদলিয়ে কামড়ের জায়গাটি ভাল ভাবে ধুয়ে নিতে হবে। ক্ষত স্থান হাত দিয়ে ধরা যাবেনা।', en: 'Wash the wound with clean water and an alkaline soap for at least 15 minutes. Use running water such as tap water; if unavailable, change the water repeatedly and wash the bite site thoroughly. Do not touch the wound directly by hand.' },
+          { icon: '🩹', tone: 'green', bn: 'ক্ষত স্থান শুকনো জীবাণুমুক্ত পরিষ্কার কাপড় বা গজ দিয়ে ঢেকে রাখতে হবে।  যদি ক্ষতস্থান থেকে প্রচুর রক্তপাত হয়, তবে “রক্তক্ষরণ নিয়ন্ত্রণ” অংশে বর্ণিত পদ্ধতি অনুযায়ী প্রাথমিক চিকিৎসা দিতে হবে', en: 'Cover the wound with a dry, sterile, clean cloth or gauze. If there is heavy bleeding, provide first aid according to the methods described in the bleeding control section.' },
+          { icon: '🏥', tone: 'sky', bn: 'পরবর্তী চিকিৎসার জন্যে আক্রান্ত ব্যক্তিকে দ্রুত নিকটস্থ হাসপাতালে নিতে হবে।', en: 'Take the affected person quickly to the nearest hospital for further treatment.' }
+        ];
+
+        const renderCards = (items) => items.map((item) => `
+          <article class="role-card role-card--${item.tone}">
+            <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+            <div class="role-card__content">
+              <h4 class="role-card__title bn">${item.bn}</h4>
+              <h4 class="role-card__title en">${item.en}</h4>
+            </div>
+          </article>
+        `).join('');
+
+        return `
+        <div class="app-intro-box">
+              <div class="app-intro-icon" aria-hidden="true">🐕</div>
+              <div class="app-intro-titles" style="justify-content: center;">
+                <p class="app-intro-sub bn">কুকুরের কামড়ের ক্ষত থেকে অতিরিক্ত রক্তপাত বা সংক্রামক রোগ যেমন জলাতংক বা র‍্যাবিস হতে পারে। জলাতংক রোগে জীবণনাশের সম্ভাবনা শতভাগ। বাংলাদেশে জলাতঙ্ক একটি জনস্বাস্থ্যবিষয়ক সমস্যা এবং লক্ষ রাখতে হবে প্রাথমিক চিকিৎসা প্রদানকারী যেন নিজেকে এ রোগ সংক্রমণের ঝুঁকিতে না রাখে।</p>
+                <p class="app-intro-sub en">A dog-bite wound can cause excessive bleeding or infectious diseases such as hydrophobia (rabies). Rabies is almost always fatal once symptoms appear. In Bangladesh, rabies is a public health concern, and first-aid providers must ensure they do not expose themselves to infection risk while giving care.</p>
+              </div>
+            </div>
+        <div class="repro-layout" style="grid-template-columns: minmax(0, 1.65fr) minmax(280px, 0.95fr); align-items: start;">
+          <div>
+            <section class="role-section" aria-label="কুকুরের কামড় থেকে সংক্রমণের লক্ষণ">
+              <div class="role-section__header role-section__header--warn">
+                <div class="role-section__icon" aria-hidden="true">⚠️</div>
+                <div class="role-section__titles">
+                  <h2 class="role-section__title bn">কুকুরের কামড় থেকে সংক্রমণের এক বা একাধিক লক্ষণ দেখা দিতে পারেঃ</h2>
+                  <h2 class="role-section__title en">One or More Signs of Infection May Appear After a Dog Bite:</h2>
+                </div>
+              </div>
+              <div class="role-section__body">
+                <div class="role-grid">${renderCards(infectionSigns)}</div>
+              </div>
+            </section>
+
+            <section class="role-section" aria-label="কুকুরের কামড় প্রাথমিক চিকিৎসা">
+              <div class="role-section__header role-section__header--teal">
+                <div class="role-section__icon" aria-hidden="true">🩺</div>
+                <div class="role-section__titles">
+                  <h2 class="role-section__title bn">প্রাথমিক চিকিৎসা</h2>
+                  <h2 class="role-section__title en">First Aid</h2>
+                </div>
+              </div>
+              <div class="role-section__body">
+                <div class="role-grid">${renderCards(firstAidSteps)}</div>
+              </div>
+            </section>
+          </div>
+
+          <aside style="position: relative; height:100vh;">
+            <img src="images/modu17/dog-byte.jpg" alt="কুকুরের কামড় প্রাথমিক চিকিৎসা" style="width:100%; max-width:100%; height:100vh; display:block; border-radius:14px; box-shadow:0 10px 30px rgba(13,71,161,0.14); border:1px solid var(--border);" loading="lazy" decoding="async" />
+          </aside>
+        </div>
         `;
       }
 
