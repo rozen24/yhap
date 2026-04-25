@@ -1485,6 +1485,7 @@
     .repro-highlight--teal   { background: rgba(0,105,92,0.06);   border-color: #00897B; }
     .repro-highlight--violet { background: rgba(69,39,160,0.06);  border-color: #5E35B1; }
     .repro-highlight--amber  { background: rgba(245,127,23,0.06); border-color: #FB8C00; }
+    .repro-highlight--amber2  { background: rgba(101, 23, 245, 0.06); border-color: #1900fb; }
     [data-theme="dark"] .repro-highlight--rose   { background: rgba(194,24,91,0.08); }
     [data-theme="dark"] .repro-highlight--teal   { background: rgba(0,137,123,0.08); }
     [data-theme="dark"] .repro-highlight--violet { background: rgba(94,53,177,0.08); }
@@ -1552,6 +1553,10 @@
     .phase-num--amber  { background: #FB8C00; }
     .phase-num--teal   { background: #00897B; }
     .phase-num--violet { background: #5E35B1; }
+    .phase-num--red { background: #ff0080; }
+    .phase-num--sky { background: #2838b4; }
+    .phase-num--indigo { background: #28abb4; }
+    .phase-num--green { background: #28b450; }
     .phase-content__title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 3px; }
     .phase-content__desc  { font-size: 12px; line-height: 1.6; color: var(--text-secondary); }
 
@@ -1993,23 +1998,6 @@
       min-width: 0;
     }
 
-    .role-card {
-      --rc-accent: #6366F1;
-      --rc-soft:   rgba(99,102,241,0.08);
-      --rc-ring:   rgba(99,102,241,0.22);
-      position: relative;
-      padding: 16px 18px 16px 56px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      box-shadow: 0 1px 2px rgba(13,71,161,0.04);
-      transition: transform var(--dur) var(--ease),
-                  box-shadow var(--dur) var(--ease),
-                  border-color var(--dur) var(--ease);
-    }
-    .role-card-title {
-      color: #b400ff;
-    }
     .role-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 3px 8px rgba(13,71,161,0.06), 0 14px 28px rgba(13,71,161,0.10);
@@ -2032,15 +2020,6 @@
       color: var(--text-primary);
       margin: 0;
     }
-
-    .role-card__number {
-      position: absolute;
-      top: 14px; left: 16px;
-      font-size: 24px;
-      color: var(--rc-accent);
-      font-weight: 700;
-    }
-
     .role-card__content {
       display: flex;
       flex-direction: column;
@@ -4310,8 +4289,7 @@
       <div class="bottom-nav__btns">
         <button class="nav-btn" type="button" onclick="navigate(-1)">
           <span aria-hidden="true">←</span>
-          <span class="bn">পূর্ববর্তী পাঠ</span><span class="en">Prev Lesson</span>
-        </button>
+          <span class="bn">পূর্ববর্তী পাঠ</span><span class="en">Prev Lesson</span>        </button>
         <button class="nav-btn nav-btn--primary" type="button" onclick="navigate(1)">
           <span class="bn">পরবর্তী পাঠ</span><span class="en">Next Lesson</span>
           <span aria-hidden="true">→</span>
@@ -4871,7 +4849,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isSnakeBiteLesson = (modIdx === 16 && lesIdx === 5);
   // Module 17 Lesson 7 — Dog bite
   const isDogBiteLesson = (modIdx === 16 && lesIdx === 6);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson;
+  // Module 17 Lesson 8 — Poisoning
+  const isPoisoningLesson = (modIdx === 16 && lesIdx === 7);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4937,6 +4917,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isBoneFractureLesson ? buildBoneFractureLessonSection()
     : isSnakeBiteLesson ? buildSnakeBiteLessonSection()
     : isDogBiteLesson ? buildDogBiteLessonSection()
+    : isPoisoningLesson ? buildPoisoningLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -5481,8 +5462,8 @@ function buildFemaleReproSection() {
       <div class="repro-highlight repro-highlight--amber" style="margin-top:16px;">
         <span class="repro-highlight__icon">⚠️</span>
         <div>
-          <p class="bn" style="font-size:12.5px; line-height:1.65; margin:0;"><strong>কখন চিকিৎসকের পরামর্শ নেবেন:</strong> অতিরিক্ত রক্তস্রাব, তীব্র ব্যথা, ৭ দিনের বেশি মাসিক, বা ২১ দিনের কম / ৩৫ দিনের বেশি চক্র হলে চিকিৎসকের পরামর্শ নিন।</p>
-          <p class="en" style="font-size:12.5px; line-height:1.65; margin:8px 0 0;"><strong>When to seek help:</strong> Consult a healthcare provider for very heavy bleeding, severe cramps, periods lasting over 7 days, or cycles shorter than 21 or longer than 35 days.</p>
+          <p class="bn" style="font-size:12.5px; line-height:1.65; margin:0;"><strong>যদি মনে হয় কোন ব্যক্তি বিষক্রিয়ায় আক্রান্ত, তবে বিষাক্ত দ্রব্যটি চিহ্নিত করার চেষ্টা করতে হবে এবং তৎক্ষণাৎ চিকিৎসকের কাছে বা হাসপাতালে নিতে হবে। এই সময়ের মাঝে প্রাথমিক চিকিৎসা পদ্ধতি গুলো ব্যবহার করা যেতে পারে।</p>
+          <p class="en" style="font-size:12.5px; line-height:1.65; margin:8px 0 0;">If poisoning is suspected, try to identify the toxic substance and take the person to a doctor or hospital immediately. During this time, first-aid measures can be provided.</p>
         </div>
       </div>
     </div>
@@ -8029,6 +8010,97 @@ function buildFamilyPlanningSection() {
           <aside style="position: relative; height:100vh;">
             <img src="images/modu17/dog-byte.jpg" alt="কুকুরের কামড় প্রাথমিক চিকিৎসা" style="width:100%; max-width:100%; height:100vh; display:block; border-radius:14px; box-shadow:0 10px 30px rgba(13,71,161,0.14); border:1px solid var(--border);" loading="lazy" decoding="async" />
           </aside>
+        </div>
+        `;
+      }
+
+      /* ── POISONING (Module 17, Lesson 8) ── */
+      function buildPoisoningLessonSection() {
+        const poisoningSigns = [
+          { icon: '😵', tone: 'violet', bn: 'সাড়া না থাকা / অজ্ঞান হয়ে যাওয়া', en: 'No response / loss of consciousness' },
+          { icon: '🤢', tone: 'amber', bn: 'বমি বমি ভাব', en: 'Nausea' },
+          { icon: '🤮', tone: 'rose', bn: 'বমি করা', en: 'Vomiting' },
+          { icon: '🔥', tone: 'red', bn: 'ঠোঁট, জিহ্বা পুড়ে যাওয়া (এসিড, ক্ষার বা দাহ্য বস্তু দ্বারা হলে)', en: 'Burns on lips or tongue (if caused by acid, alkali, or corrosive substances)' },
+          { icon: '🤕', tone: 'teal', bn: 'মাথাব্যথা', en: 'Headache' },
+          { icon: '🌫️', tone: 'amber', bn: 'ঝাপসা দৃষ্টি', en: 'Blurred vision' },
+          { icon: '⚡', tone: 'violet', bn: 'খিঁচুনি', en: 'Convulsions / seizures' },
+          { icon: '🎨', tone: 'teal', bn: 'চামড়ার অস্বাভাবিক রঙ', en: 'Abnormal skin color' }
+        ];
+
+        const poisoningFirstAid = [
+          { icon: '🧍', tone: 'teal', bn: 'আক্রান্ত ব্যক্তিটিকে যথাসম্ভব স্থির রাখার চেষ্টা করতে হবে।', en: 'Keep the affected person as calm and still as possible.' },
+          { icon: '🌬️', tone: 'sky', bn: 'নিশ্বাস-প্রশ্বাসের মাধ্যমে বিষক্রিয়া হয়ে থাকলে, অবিলম্বে ব্যক্তিকে সতেজ বাতাসে নিয়ে আসতে হবে।', en: 'If poisoning occurred through inhalation, immediately move the person to fresh air.' },
+          { icon: '💧', tone: 'amber', bn: 'আক্রান্ত ব্যক্তিকে প্রচুর পরিমাণে পানি খাওয়ানোর চেষ্টা করতে হবে।', en: 'Try to give the affected person plenty of water.' },
+          { icon: '🔎', tone: 'indigo', bn: 'ঘটনাস্থল এবং আক্রান্ত ব্যক্তিকে পরীক্ষা করতে হবে। ব্যক্তিটি কী বিষ গ্রহণ করেছিল তা খুঁজে বের করার চেষ্টা করতে হবে এবং খুঁজে পেলে তা আক্রান্ত ব্যক্তির সাথে হাসপাতালে নিয়ে যেতে হবে।', en: 'Examine the scene and the affected person. Try to identify what poison was taken and, if found, take it to the hospital with the patient.' },
+          { icon: '🚿', tone: 'green', bn: 'যদি আক্রান্ত ব্যক্তির শরীরের চামড়ায় কোনো বিষাক্ত পদার্থ পাওয়া যায়, তাহলে আক্রান্ত স্থানটি পরিষ্কার পানি দিয়ে ধুয়ে ফেলতে হবে।', en: 'If any toxic substance is on the skin, wash the affected area thoroughly with clean water.' }
+        ];
+
+        const renderPhaseItems = (items) => items.map((item) => `
+          <div class="phase-item">
+            <div class="phase-num phase-num--${item.tone}">${item.icon}</div>
+            <div class="phase-content">
+              <div class="phase-content__title"><span class="bn">${item.bn}</span><span class="en">${item.en}</span></div>
+            </div>
+          </div>
+        `).join('');
+
+        return `
+        <div class="app-intro-box">
+          <div class="app-intro-icon" aria-hidden="true">☣️</div>
+          <div class="app-intro-titles" style="justify-content: center;">
+            <p class="app-intro-sub bn">বাংলাদেশে কীটনাশকজনিত বিষক্রিয়া (অর্গানোফসফরাস/ওপিসি) একটি সাধারণ ঘটনা।  বিভিন্ন ভাবে বিষাক্ত দ্রব্য ব্যক্তির শরীরে প্রবেশ করতে পারে যা ইচ্ছাকৃত বা অনিচ্ছাকৃত দুইভাবেই হতে পারে।</p>
+            <p class="app-intro-sub en">In Bangladesh, pesticide poisoning (organophosphorus/OPC) is common. Toxic substances may enter the body in different ways, either intentionally or unintentionally.</p>
+          </div>
+        </div>
+
+        <div class="phases-anatomy-row" style="margin-top: 20px;">
+          <div class="repro-card">
+            <div class="repro-card__header repro-card__header--violet">
+              <div class="repro-card__icon" aria-hidden="true">⚠️</div>
+              <div>
+                <div class="repro-card__title">
+                  <span class="bn">বিষক্রিয়ার লক্ষণ-চিহ্নঃ</span>
+                  <span class="en">Signs and Symptoms of Poisoning</span>
+                </div>
+              </div>
+            </div>
+            <div class="repro-card__body">
+              <div class="phase-timeline">
+                ${renderPhaseItems(poisoningSigns)}
+              </div>
+              <div class="repro-highlight repro-highlight--amber" style="margin-top:16px;">
+                <span class="repro-highlight__icon">⚠️</span>
+                <div>
+                  <p class="bn" style="font-size:12.5px; line-height:1.65; margin:0;"><strong>কখন চিকিৎসকের পরামর্শ নেবেন:</strong> অতিরিক্ত রক্তস্রাব, তীব্র ব্যথা, ৭ দিনের বেশি মাসিক, বা ২১ দিনের কম / ৩৫ দিনের বেশি চক্র হলে চিকিৎসকের পরামর্শ নিন।</p>
+                  <p class="en" style="font-size:12.5px; line-height:1.65; margin:8px 0 0;"><strong>When to seek help:</strong> Consult a healthcare provider for very heavy bleeding, severe cramps, periods lasting over 7 days, or cycles shorter than 21 or longer than 35 days.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="repro-card">
+            <div class="repro-card__header repro-card__header--teal">
+              <div class="repro-card__icon" aria-hidden="true">🩹</div>
+              <div>
+                <div class="repro-card__title">
+                  <span class="bn">বিষক্রিয়ার প্রাথমিক চিকিৎসা</span>
+                  <span class="en">First Aid for Poisoning</span>
+                </div>
+              </div>
+            </div>
+            <div class="repro-card__body">
+              <div class="phase-timeline">
+                ${renderPhaseItems(poisoningFirstAid)}
+              </div>
+              <div class="repro-highlight repro-highlight--amber2" style="margin-top:16px;">
+                <span class="repro-highlight__icon">⚠️</span>
+                <div>
+                  <p class="bn" style="font-size:12.5px; line-height:1.65; margin:0;"><strong>অ্যাসিড, ক্ষার বা কোন দাহ্য বস্তু খেয়ে থাকলে আক্রান্ত ব্যক্তি কে বমি করানো যাবেনা, কারণ বমি করাতে গেলে তা শ্বাসনালীতে গিয়ে রোগীর মৃত্যুর কারন হতে পারে।</p>
+                  <p class="en" style="font-size:12.5px; line-height:1.65; margin:8px 0 0;">If an affected person has ingested acid, alkali, or any flammable substance, they should not be made to vomit, as this can cause the victim to vomit and die if it enters the airway.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         `;
       }
