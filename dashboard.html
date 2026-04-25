@@ -4867,7 +4867,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isBurnsFirstAidLesson = (modIdx === 16 && lesIdx === 3);
   // Module 17 Lesson 5 — Bone fracture
   const isBoneFractureLesson = (modIdx === 16 && lesIdx === 4);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson;
+  // Module 17 Lesson 6 — Snake bite
+  const isSnakeBiteLesson = (modIdx === 16 && lesIdx === 5);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4931,6 +4933,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isBurnsLesson ? buildBurnsLessonSection()
     : isBurnsFirstAidLesson ? buildBurnsFirstAidLessonSection()
     : isBoneFractureLesson ? buildBoneFractureLessonSection()
+    : isSnakeBiteLesson ? buildSnakeBiteLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -7866,6 +7869,91 @@ function buildFamilyPlanningSection() {
             </div>
         </div>  
         
+        `;
+      }
+
+      /* ── SNAKE BITE (Module 17, Lesson 6) ── */
+      function buildSnakeBiteLessonSection() {
+        const snakeBiteCards = [
+          {
+            icon: '🐍',
+            tone: 'teal',
+            bn: 'বাংলাদেশে বেশির ভাগ সাপের কামড়, বিষহীন সাপ দ্বারা হয়ে থাকে।  যদি কোন বাক্তিকে বিষধর সাপে কামড়েছে বলে মনে হয়, তাহলে প্রধান কাজ হল বিষ দ্রুত শরীরে ছড়িয়ে পড়া প্রতিরোধ করা। সে কারণে আক্রান্ত বাক্তি যেন নড়াচড়া না করে তার ব্যবস্থা নেয়া।',
+            en: 'In Bangladesh, most snake bites are caused by non-venomous snakes. If a venomous snake bite is suspected, the main goal is to prevent rapid spread of venom in the body. Therefore, keep the affected person as still as possible.'
+          },
+          {
+            icon: '🧘',
+            tone: 'rose',
+            bn: 'যদি আক্রান্ত বাক্তির শ্বাস-প্রশ্বাস স্বাভাবিক থাকে, তাহলে বাক্তিকে স্থির এবং শান্ত থাকতে বলতে হবে। কামড়ের জায়গা ফুলে যেতে পারে তাই কোন আংটি, ঘড়ি, অলংকার বা বাঁধন থাকলে তা খুলে ফেলতে হবে।',
+            en: 'If breathing is normal, tell the person to remain still and calm. The bite area may swell, so remove any rings, watch, jewelry, or tight bindings.'
+          },
+          {
+            icon: '💧',
+            tone: 'amber',
+            bn: 'ক্ষত স্থানটি পরীক্ষা করে দেখতে হবে যে, সাপে কামড়ের স্থানটি ছিদ্র হয়ে গেছে কিনা। কামড়ের স্থানটি পরিষ্কার পানি দিয়ে ভাল করে ধুয়ে ফেলতে হবে।',
+            en: 'Examine the wound to check for puncture marks from the snake bite. Wash the bite area thoroughly with clean water.'
+          },
+          {
+            icon: '🦵',
+            tone: 'indigo',
+            bn: 'আক্রান্ত অঙ্গটিকে নড়াচড়া কম করতে দিতে হবে, এবং লাঠি বা কাঠ বা বাঁশের ফালি দিয়ে বেঁধে দিতে হবে যেন অঙ্গটি যথা সম্ভব স্থির থাকে।',
+            en: 'Limit movement of the affected limb, and immobilize it with a stick, wooden piece, or bamboo splint so it stays as stable as possible.'
+          },
+          {
+            icon: '⚠️',
+            tone: 'violet',
+            bn: 'আক্রান্ত ব্যক্তির দিকে খেয়াল রাখতে হবে যেন নিম্নলিখিত কোন বিপদ লক্ষণ আছে কিনা, যেমন-ক্ষতস্থান থেকে রক্তপাত হওয়া, মাথা ঘোরানো, বমি করা, কামড়ের অংশ ফুলে যাওয়া, চোখের পাতা বন্ধ হয়ে আসা বা চোখে ঝাপসা দেখা, শ্বাসকষ্ট হওয়া, প্রস্রাবের পরিমাণ কমে যাওয়া / গাঢ় বর্ণের প্রস্রাব হওয়া।',
+            en: 'Monitor for danger signs such as bleeding from the wound, dizziness, vomiting, swelling at the bite site, drooping eyelids or blurred vision, breathing difficulty, reduced urine output, or dark-colored urine.'
+          },
+          {
+            icon: '❤️',
+            tone: 'red',
+            bn: 'যদি ব্যক্তির স্বাভাবিক শ্বাস-প্রশ্বাস না থাকে, তাহলে প্রশিক্ষণ প্রাপ্ত ব্যক্তি দ্বারা সিপিআর শুরু করতে হবে। কামড়ের স্থানে কোন গিঁট বাধা যাবে না / ক্ষত স্থানটি কাটা যাবে না।',
+            en: 'If the person is not breathing normally, CPR should be started by a trained responder. Do not tie a knot or tourniquet on the bite site, and do not cut the wound.'
+          },
+          {
+            icon: '🚫',
+            tone: 'green',
+            bn: 'সুঁই দিয়ে ক্ষতস্থানটি খোচানো যাবেনা বা ক্রিম বা লোশন জাতীয় কিছু লাগানো যাবে না।',
+            en: 'Do not puncture the wound with a needle, and do not apply cream or lotion.'
+          },
+          {
+            icon: '🧙',
+            tone: 'slate',
+            bn: 'স্থানীয় কবিরাজ বা ওঝার কাছে চিকিৎসা নেওয়া অথবা কোনো ভেষজ ওষুধ প্রয়োগ করা যাবে না।',
+            en: 'Do not seek treatment from local healers or apply any herbal remedies.'
+          },
+          {
+            icon: '🏥',
+            tone: 'sky',
+            bn: 'আক্রান্ত ব্যক্তিকে দ্রুত হাসপাতালে নিতে হবে।',
+            en: 'Take the affected person to a hospital immediately.'
+          }
+        ];
+
+        const cardsHtml = snakeBiteCards.map((item) => `
+          <article class="role-card role-card--${item.tone}">
+            <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+            <div class="role-card__content">
+              <h4 class="role-card__title bn">${item.bn}</h4>
+              <h4 class="role-card__title en">${item.en}</h4>
+            </div>
+          </article>
+        `).join('');
+
+        return `
+        <section class="role-section" aria-label="সাপের কামড়">
+          <div class="role-section__header role-section__header--warn">
+            <div class="role-section__icon" aria-hidden="true">🐍</div>
+            <div class="role-section__titles">
+              <h2 class="role-section__title bn">সাপের কামড়</h2>
+              <h2 class="role-section__title en">Snake Bite</h2>
+            </div>
+          </div>
+          <div class="role-section__body">
+            <div class="role-grid">${cardsHtml}</div>
+          </div>
+        </section>
         `;
       }
 
