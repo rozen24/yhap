@@ -4870,7 +4870,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isChokingLesson = (modIdx === 16 && lesIdx === 9);
   // Module 17 Lesson 11 — First aid for choking (adult and child above 1 year)
   const isAdultChokingLesson = (modIdx === 16 && lesIdx === 10);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson;
+  // Module 18 Lesson 1 — Importance of nutritious food
+  const isNutritionLesson = (modIdx === 17 && lesIdx === 0);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4940,6 +4942,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isDrowningLesson ? buildDrowningLessonSection()
     : isChokingLesson ? buildChokingLessonSection()
     : isAdultChokingLesson ? buildAdultChokingLessonSection()
+    : isNutritionLesson ? buildNutritionLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -8347,6 +8350,121 @@ function buildFamilyPlanningSection() {
             </div>
           </aside>
         </div>
+        `;
+      }
+
+      /* ── NUTRITION IMPORTANCE (Module 18, Lesson 1) ── */
+      function buildNutritionLessonSection() {
+        return `
+        <section class="organ-section" aria-label="পুষ্টিকর খাবারের গুরুত্ব">
+          <div class="organ-grid">
+            <article class="organ-card organ-card--ovaries">
+              <div class="organ-card__header">
+                <span class="organ-card__icon" aria-hidden="true">🥗</span>
+                <h3 class="organ-card__title">
+                  <span class="bn">পুষ্টিকর খাবারের গুরুত্ব</span>
+                  <span class="en">Importance of Nutritious Food</span>
+                </h3>
+              </div>
+              <div class="organ-card__body">
+                <p class="organ-card__text bn">তারুণ্যে ছেলে-মেয়ে উভয়েরই দ্রুত ওজন ও উচ্চতার বৃদ্ধি এবং বুদ্ধির বিকাশ ঘটে। তাই তরুন-তরুনীদের সঠিক বৃদ্ধির জন্য এসময় পরিমান মত পুষ্টিকর ও সুষম খাবার গ্রহণ করা প্রয়োজন। সঠিক পুষ্টি নিয়ে বেড়ে উঠলে তরুন-তরুনীদের মেধা ও বুদ্ধির বিকাশ হয় এবং ফলশ্রুতিতে লেখাপড়ায় মনোযোগ, ভালো ফলাফল এবং কাজ করার সক্ষমতাও বৃদ্ধি পায়।</p>
+                <p class="organ-card__text en">In adolescence, both boys and girls experience rapid increases in weight and height, along with intellectual development. Therefore, adolescents need adequate nutritious and balanced food for proper growth. When they grow up with proper nutrition, their intelligence develops, and as a result, concentration in studies, better academic performance, and work capacity also improve.</p>
+              </div>
+            </article>
+
+            <article class="organ-card organ-card--uterus">
+              <div class="organ-card__header">
+                <span class="organ-card__icon" aria-hidden="true">🍛</span>
+                <h3 class="organ-card__title">
+                  <span class="bn">খাদ্য</span>
+                  <span class="en">Food</span>
+                </h3>
+              </div>
+              <div class="organ-card__body">
+                <p class="organ-card__text bn">মানবদেহকে সুস্থ-সবল রাখার জন্য খাদ্য অপরিহার্য। খাদ্য বলতে সেই সকল জৈব উপাদানকে বুঝায় যেগুলো মানবদেহ গঠনে ভূমিকা রাখে, ক্ষয়পূরণ করে, শক্তি বৃদ্ধিসহ শরীরের রোগ প্রতিরোধ ক্ষমতা তৈরি করে।</p>
+                <p class="organ-card__text en">Food is essential to keep the human body healthy and strong. Food refers to organic substances that contribute to body formation, repair wear and tear, increase energy, and build the body’s disease resistance.</p>
+              </div>
+            </article>
+
+            <article class="organ-card organ-card--fallopian">
+              <div class="organ-card__header">
+                <span class="organ-card__icon" aria-hidden="true">🧬</span>
+                <h3 class="organ-card__title">
+                  <span class="bn">পুষ্টি</span>
+                  <span class="en">Nutrition</span>
+                </h3>
+              </div>
+              <div class="organ-card__body">
+                <p class="organ-card__text bn">পুষ্টি হলো একটি প্রক্রিয়া। এ প্রক্রিয়াতে খাদ্যবস্তু খাওয়ার পরে পরিপাক হয় এবং জটিল খাদ্য উপাদানগুলো ভেঙ্গে সরল উপাদানে পরিণত হয়। মানবদেহ এসব সরল উপাদান শোষণ করে নেয়। এসব খাদ্য উপাদান মানবদেহের শক্তি ও যথাযথ বৃদ্ধি সাধন করে, মেধা ও বুদ্ধির বিকাশ ঘটায়, রোগ প্রতিরোধ করে এবং সুস্থতা নিশ্চিত করে।</p>
+                <p class="organ-card__text en">Nutrition is a process. In this process, food is digested after intake, and complex food components are broken down into simple components. The human body absorbs these simple components. These nutrients provide energy and proper growth, develop intelligence, prevent disease, and ensure overall well-being.</p>
+              </div>
+            </article>
+
+            <article class="organ-card organ-card--vagina">
+              <div class="organ-card__header">
+                <span class="organ-card__icon" aria-hidden="true">📈</span>
+                <h3 class="organ-card__title">
+                  <span class="bn">তারুণ্যে সুষম পুষ্টির প্রয়োজন</span>
+                  <span class="en">Need for Balanced Nutrition in Adolescence</span>
+                </h3>
+              </div>
+              <div class="organ-card__body">
+                <p class="organ-card__text bn">তারুণ্যে ছেলে-মেয়ে উভয়েরই স্বাভাবিক শারীরিক ও মানসিক পরিবর্তন হয়। দ্রুত ওজন ও উচ্চতার বৃদ্ধি এবং বুদ্ধির বিকাশ ঘটে। তাই তরুন-তরুনীদের সঠিক বৃদ্ধির জন্য এসময় পরিমান মত পুষ্টিকর ও সুষম খাবার গ্রহণ করা প্রয়োজন। সঠিক পুষ্টি নিয়ে বেড়ে উঠলে তরুন-তরুনীদের মেধা ও বুদ্ধির বিকাশ হয়। লেখাপড়ায় মনোযোগ, ভালো ফলাফল এবং কাজ করার সক্ষমতা বৃদ্ধি পায়।</p>
+                <p class="organ-card__text en">During adolescence, both boys and girls go through normal physical and mental changes. There is rapid growth in weight and height and development of intelligence. Therefore, adolescents need adequate nutritious and balanced food for proper growth at this time. Proper nutrition supports intellectual development and improves concentration in studies, better results, and work capability.</p>
+              </div>
+            </article>
+
+            <article class="organ-card organ-card--breasts">
+              <div class="organ-card__header">
+                <span class="organ-card__icon" aria-hidden="true">🍎</span>
+                <h3 class="organ-card__title">
+                  <span class="bn">পুষ্টিকর খাদ্য</span>
+                  <span class="en">Nutritious Food</span>
+                </h3>
+              </div>
+              <div class="organ-card__body">
+                <p class="organ-card__text bn">যেসব খাদ্য খেলে শরীরে তাপ ও শক্তি উৎপাদিত হয়, দেহের গঠন ও বৃদ্ধি হয়, শরীর সবল, কর্মক্ষম থাকে, তাকে পুষ্টিকর খাদ্য বলে। খাদ্য ও পুষ্টি একে অপরের সাথে জড়িত। প্রতিটি খাদ্য অবশ্যই পুষ্টিকর ও নিরাপদ হতে হবে। নিয়মিত পুষ্টিকর খাদ্য গ্রহণ করলে শরীর ও মন ভালো থাকে, মনে প্রফুল্লতা আসে এবং পড়াশোনা ও কাজে মনোযোগ বাড়ে। মনে রাখতে হবে পুষ্টিকর খাদ্য গ্রহণ না করলে রোগ প্রতিরোধ ক্ষমতা কমে যায় এবং বিভিন্ন রোগে আক্রান্ত হওয়ার ঝুঁকি বেড়ে যায়।</p>
+                <p class="organ-card__text en">Foods that produce heat and energy in the body, support body formation and growth, and keep the body strong and active are called nutritious foods. Food and nutrition are closely related. Every food should be nutritious and safe. Regular intake of nutritious food keeps body and mind well, improves mood, and increases concentration in study and work. It is important to remember that without nutritious food, immunity decreases and the risk of various diseases increases.</p>
+              </div>
+            </article>
+
+            <article class="organ-card organ-card--ovaries">
+              <div class="organ-card__header">
+                <span class="organ-card__icon" aria-hidden="true">⚖️</span>
+                <h3 class="organ-card__title">
+                  <span class="bn">ওজন ও উচ্চতা বৃদ্ধির একটি আদর্শ মান</span>
+                  <span class="en">A Standard Measure of Weight and Height Growth</span>
+                </h3>
+              </div>
+              <div class="organ-card__body">
+                <p class="organ-card__text bn">বিশ্ব স্বাস্থ্য সংস্থার রেফারেন্স অনুযায়ী বয়সের সাথে সাথে দেহের ওজন ও উচ্চতা বৃদ্ধির একটি আদর্শ মান রয়েছে। যদি কোন শিশু বা তরুন-তরুনীদের উচ্চতার (মিটার এককে) তুলনায় ওজন কম অথবা বয়সের তুলনায় ওজন কম অথবা বয়সের তুলনায় উচ্চতা কম থাকে তাহলে তাকে অপুষ্টি হিসেবে চিহ্নিত করা হয়।</p>
+                <p class="organ-card__text en">According to World Health Organization references, there is a standard growth pattern of weight and height with age. If a child or adolescent has low weight relative to height (in meters), low weight for age, or low height for age, they are identified as malnourished.</p>
+              </div>
+            </article>
+
+            <article class="organ-card organ-card--uterus">
+              <div class="organ-card__header">
+                <span class="organ-card__icon" aria-hidden="true">📏</span>
+                <h3 class="organ-card__title">
+                  <span class="bn">ওজন ও উচ্চতা বৃদ্ধির একটি আদর্শ মান</span>
+                  <span class="en">A Standard Measure of Weight and Height Growth</span>
+                </h3>
+              </div>
+              <div class="organ-card__body">
+                <p class="organ-card__text bn">কোন ব্যক্তির ওজন এবং উচ্চতার হারের বর্গের অনুপাতই হলো বি.এম.আই। এটি পুষ্টিগত অবস্থা নির্ণয়ের একটি উল্লেখযোগ্য পদ্ধতি। বি.এম.আই নির্ণয় করতে ব্যক্তির ওজন কিলোগ্রাম এককে ও উচ্চতা মিটার এককে জানা প্রয়োজন। ওজন কে উচ্চতার বর্গ দিয়ে ভাগ করলেই বি.এম.আই. পাওয়া যাবে।</p>
+                <p class="organ-card__text en">The ratio of a person’s weight to the square of height is BMI. It is an important method for determining nutritional status. To calculate BMI, weight in kilograms and height in meters are required. Dividing weight by the square of height gives the BMI value.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="repro-highlight repro-highlight--teal" style="margin-top:16px;">
+            <span class="repro-highlight__icon">🧮</span>
+            <div>
+              <p class="bn" style="font-size:16px; line-height:1.6; margin:0;"><strong>বি.এম.আই. = ওজন (কিলোগ্রাম) / উচ্চতা (মিটার)²</strong></p>
+              <p class="en" style="font-size:16px; line-height:1.6; margin:8px 0 0;"><strong>BMI = Weight (kg) / Height (m)$^2$</strong></p>
+            </div>
+          </div>
+        </section>
         `;
       }
 
