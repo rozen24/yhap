@@ -4864,7 +4864,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isDogBiteLesson = (modIdx === 16 && lesIdx === 6);
   // Module 17 Lesson 8 — Poisoning
   const isPoisoningLesson = (modIdx === 16 && lesIdx === 7);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson;
+  // Module 17 Lesson 9 — Drowning
+  const isDrowningLesson = (modIdx === 16 && lesIdx === 8);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4931,6 +4933,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isSnakeBiteLesson ? buildSnakeBiteLessonSection()
     : isDogBiteLesson ? buildDogBiteLessonSection()
     : isPoisoningLesson ? buildPoisoningLessonSection()
+    : isDrowningLesson ? buildDrowningLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -7991,7 +7994,7 @@ function buildFamilyPlanningSection() {
                 <p class="app-intro-sub en">A dog-bite wound can cause excessive bleeding or infectious diseases such as hydrophobia (rabies). Rabies is almost always fatal once symptoms appear. In Bangladesh, rabies is a public health concern, and first-aid providers must ensure they do not expose themselves to infection risk while giving care.</p>
               </div>
             </div>
-        <div class="repro-layout" style="grid-template-columns: minmax(0, 1.65fr) minmax(280px, 0.95fr); align-items: start;">
+        <div class="repro-layout">
           <div>
             <section class="role-section" aria-label="কুকুরের কামড় থেকে সংক্রমণের লক্ষণ">
               <div class="role-section__header role-section__header--warn">
@@ -8002,7 +8005,7 @@ function buildFamilyPlanningSection() {
                 </div>
               </div>
               <div class="role-section__body">
-                <div class="role-grid">${renderCards(infectionSigns)}</div>
+                <div class="role-grid" style="">${renderCards(infectionSigns)}</div>
               </div>
             </section>
 
@@ -8114,6 +8117,67 @@ function buildFamilyPlanningSection() {
               </div>
             </div>
           </div>
+        </div>
+        `;
+      }
+
+      /* ── DROWNING (Module 17, Lesson 9) ── */
+      function buildDrowningLessonSection() {
+        const rescueSteps = [
+          { icon: '🏊', tone: 'teal', bn: 'পানিতে নেমে সাঁতরে ডুবন্ত ব্যক্তির কাছে যেতে হবে।', en: 'Enter the water and swim to the drowning person.' },
+          { icon: '🔄', tone: 'rose', bn: 'ডুবন্ত ব্যক্তিকে পানিতে চিত করতে হবে।', en: 'Turn the drowning person face up in the water.' },
+          { icon: '🤝', tone: 'amber', bn: 'ডুবন্ত ব্যক্তির থুতনি ধরে পানি থেকে তীরে আনতে হবে।', en: 'Hold the drowning person by the chin and bring them from the water to the shore.' },
+          { icon: '👥', tone: 'indigo', bn: 'কারো সাহায্য নিয়ে ডুবন্ত ব্যক্তিকে পানি থেকে তুলে আনতে হবে।', en: 'With someone’s help, lift the drowning person out of the water.' },
+          { icon: '🛏️', tone: 'green', bn: 'আক্রান্ত ব্যক্তিকে শক্ত ও সমতল স্থানে মুখ উপরের দিকে করে শুইয়ে দিতে হবে।', en: 'Lay the affected person face up on a firm and flat surface.' },
+          { icon: '🌬️', tone: 'violet', bn: 'শ্বাসপথ এবং শ্বাসপ্রশ্বাস যাচাই করতে হবে।', en: 'Check the airway and breathing.' },
+          { icon: '❤️‍🩹', tone: 'sky', bn: 'প্রথমে ২ বার মুখে শ্বাস দিতে হবে এবং ৩০ বার বুকে চাপ দিতে হবে।  যদি আক্রান্ত ব্যক্তি সাড়া না দেয় বা স্বাভাবিক শ্বাস-প্রশ্বাস না থাকে, বেসিক লাইফ সাপোর্টের পর্যায়ক্রমিক ধাপসমূহ অনুসরণ করে প্রশিক্ষনপ্রাপ্ত ব্যক্তি দ্বারা সিপিআর চালিয়ে যেতে হবে।', en: 'Give 2 rescue breaths first and then 30 chest compressions. If the affected person does not respond or is not breathing normally, continue CPR by a trained person following the step-by-step basic life support protocol.' }
+        ];
+
+        const renderCards = (items) => items.map((item) => `
+          <article class="role-card role-card--${item.tone}">
+            <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+            <div class="role-card__content">
+              <h4 class="role-card__title bn">${item.bn}</h4>
+              <h4 class="role-card__title en">${item.en}</h4>
+            </div>
+          </article>
+        `).join('');
+
+        return `
+        <div class="app-intro-box">
+          <div class="app-intro-icon" aria-hidden="true">🌊</div>
+          <div class="app-intro-titles" style="justify-content: center;">
+            <p class="app-intro-sub bn">বাংলাদেশে শিশু মৃত্যুর অন্যতম প্রধান কারণ হল পানিতে ডুবা।  কোন শিশু/ব্যক্তিকে পুকুর, জলাশয় বা নদীতে ডুবে যেতে দেখলে প্রথমে সাহায্যের জন্য চিৎকার করতে হবে।  ডুবন্ত ব্যক্তির দিকে একটি লাঠি/বাঁশ বাড়িয়ে দিয়ে অথবা দড়ি/প্যাঁচানো চাদর ইত্যাদির যে কোন এক প্রান্ত শক্ত করে ধরে অপর প্রান্ত ডুবন্ত ব্যক্তির দিকে ছুঁড়ে দিতে হবে।  ডুবন্ত ব্যক্তিকে তা ধরে রেখে সাঁতার কেটে নিরাপদে নিকটবর্তী তীরে আসতে বলতে হবে।</p>
+            <p class="app-intro-sub en">Drowning is one of the main causes of child death in Bangladesh. If you see a child or person drowning in a pond, waterbody, or river, first shout for help. Extend a stick or bamboo toward the drowning person, or hold one end of a rope, wrapped sheet, or similar item firmly and throw the other end toward the person. Tell the drowning person to hold on and swim safely to the nearest shore.</p>
+          </div>
+        </div>
+
+        <div class="app-intro-box" style="margin-top: 16px; border-left: 6px solid #0ea5e9; box-shadow: 0 10px 24px rgba(2, 132, 199, 0.16);">
+          <div class="app-intro-titles" style="justify-content: center;">
+            <p class="app-intro-sub bn">যদি পুকুর বা জলাশয় অগভীর থাকে তবে পানিতে নেমে ডুবন্ত ব্যক্তির কাছে যাওয়া যেতে পারে।  সবসময় ডুবন্ত ব্যক্তির কাছ থেকে কমপক্ষে ২ মিটার দূরে থাকতে হবে  যেন ডুবন্ত ব্যক্তি কখনোই যে  বাঁচাতে যায় তাকেই জাপটে ধরতে না পারে।</p>
+            <p class="app-intro-sub en">If the pond or waterbody is shallow, you may enter the water and go near the drowning person. Always stay at least 2 meters away so the drowning person cannot grab the rescuer.</p>
+          </div>
+        </div>
+
+        <div class="repro-layout" style="margin-top: 20px;">
+          <div>
+            <section class="role-section" aria-label="ডুবন্ত অজ্ঞান ব্যক্তিকে উদ্ধার এবং প্রাথমিক চিকিৎসা">
+              <div class="role-section__header role-section__header--teal">
+                <div class="role-section__icon" aria-hidden="true">🆘</div>
+                <div class="role-section__titles">
+                  <h2 class="role-section__title bn">ডুবন্ত অজ্ঞান ব্যক্তিকে উদ্ধার এবং প্রাথমিক চিকিৎসা</h2>
+                  <h2 class="role-section__title en">Rescue and First Aid for an Unconscious Drowning Person</h2>
+                </div>
+              </div>
+              <div class="role-section__body">
+                <div class="role-grid">${renderCards(rescueSteps)}</div>
+              </div>
+            </section>
+          </div>
+
+          <aside style="position: relative; height:100vh;">
+            <img src="images/modu17/pani-duba.jpg" alt="ডুবন্ত অজ্ঞান ব্যক্তিকে উদ্ধার এবং প্রাথমিক চিকিৎসা" style="width:100%; max-width:100%; height:100vh; display:block; border-radius:14px; box-shadow:0 10px 30px rgba(13,71,161,0.14); border:1px solid var(--border);" loading="lazy" decoding="async" />
+          </aside>
         </div>
         `;
       }
