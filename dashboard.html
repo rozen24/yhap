@@ -2499,6 +2499,17 @@
 
     }
 
+    /* Module 18 Lesson 4: add icons for all headers and cells */
+    .nutrition-elements-table .table-header::before {
+      content: '📌 ';
+    }
+
+    .nutrition-elements-table .table-cell::before {
+      content: '🔹 ';
+      color: var(--text-primary);
+      font-size: 12px;
+    }
+
     .category-cell {
       font-weight: 600;
       color: var(--text-primary);
@@ -4120,7 +4131,7 @@
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(17,0)"><span class="lesson-dot" aria-hidden="true">1</span><span class="lesson-text"><span class="lesson-label bn">পুষ্টিকর খাবারের গুরুত্ব</span><span class="lesson-label en">Importance of nutritious food</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(17,1)"><span class="lesson-dot" aria-hidden="true">2</span><span class="lesson-text"><span class="lesson-label bn">বি.এম.আই (বডি মাস ইনডেক্স)</span><span class="lesson-label en">BMI (Body Mass Index)</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(17,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">পূর্ণ বয়স্ক তরুণ-তরুণীদের বিএমআই রেঞ্জ</span><span class="lesson-label en">BMI range for young adults</span></span></button>
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(17,3)"><span class="lesson-dot" aria-hidden="true">4</span><span class="lesson-text"><span class="lesson-label bn">পুষ্টি উপাদান, উৎস ও তাদের নির্দিষ্ট কার্যাবলী</span><span class="lesson-label en">Nutrients, sources, and their specific functions</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(17,3)"><span class="lesson-dot" aria-hidden="true">4</span><span class="lesson-text"><span class="lesson-label bn">পুষ্টি উপাদানসমূহ, উৎস এবং তাদের নির্দিষ্ট কাজসমূহ</span><span class="lesson-label en">Nutrients, sources, and their specific functions</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(17,4)"><span class="lesson-dot" aria-hidden="true">5</span><span class="lesson-text"><span class="lesson-label bn">তরুণদের জন্য নিরাপদ ও পুষ্টিকর খাবারের গুরুত্ব এবং একটি নমুনা দৈনন্দিন খাদ্য পরিকল্পনা</span><span class="lesson-label en">Importance of safe and nutritious food in youth and a sample daily diet plan</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(17,5)"><span class="lesson-dot" aria-hidden="true">6</span><span class="lesson-text"><span class="lesson-label bn">তরুণদের মধ্যে খাদ্যের বৈচিত্র্য</span><span class="lesson-label en">Dietary diversity in youth</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(17,6)"><span class="lesson-dot" aria-hidden="true">7</span><span class="lesson-text"><span class="lesson-label bn">মাসিকের সময় পুষ্টিকর খাবার</span><span class="lesson-label en">Nutritious food during menstruation</span></span></button>
@@ -4446,7 +4457,7 @@ const LESSONS_BN = [
   ['মনোসামাজিক সহায়তা','মনোসামাজিক সহায়তার দক্ষতাসমূহ','মনোযোগী শ্রবণ','মূল্যবোধ','আচরণ','নৈতিকতা'],
   ['মাদকাসক্তি','মাদকাসক্তির লক্ষণ','মাদকাসক্তির পরিণতি ও প্রতিরোধ'],
   ['ইনজুরি প্রতিরোধ ও প্রাথমিক চিকিৎসা সেবা','রক্তক্ষরণ নিয়ন্ত্রণ','পোড়া','পোড়ার প্রাথমিক চিকিৎসা','হাড় ভাঙা','সাপের কামড়','কুকুরের কামড়','বিষক্রিয়া','ডুবে যাওয়া','শ্বাস আটকে যাওয়া বা গলায় কিছু আটকে যাওয়া','শ্বাস আটকে যাওয়ার প্রাথমিক চিকিৎসা (প্রাপ্তবয়স্ক এবং ১ বছরের উপরের বয়সী শিশুর ক্ষেত্রে)'],
-  ['পুষ্টিকর খাবারের গুরুত্ব','বি.এম.আই (বডি মাস ইনডেক্স)','পূর্ণ বয়স্ক তরুণ-তরুণীদের বিএমআই রেঞ্জ','পুষ্টি উপাদান, উৎস ও তাদের নির্দিষ্ট কার্যাবলী','তরুণদের জন্য নিরাপদ ও পুষ্টিকর খাবারের গুরুত্ব এবং একটি নমুনা দৈনন্দিন খাদ্য পরিকল্পনা','তরুণদের মধ্যে খাদ্যের বৈচিত্র্য','মাসিকের সময় পুষ্টিকর খাবার','কিশোর-কিশোরীদের মধ্যে প্রধান পুষ্টি সমস্যা','পুষ্টি ও অপুষ্টির চক্র','অপুষ্টি রোধে করণীয়','অতিরিক্ত ওজন ও স্থূলতার ক্ষতিকর প্রভাব','অতিরিক্ত ওজন ও স্থূলতার ঝুঁকি'],
+  ['পুষ্টিকর খাবারের গুরুত্ব','বি.এম.আই (বডি মাস ইনডেক্স)','পূর্ণ বয়স্ক তরুণ-তরুণীদের বিএমআই রেঞ্জ','পুষ্টি উপাদানসমূহ, উৎস এবং তাদের নির্দিষ্ট কাজসমূহ','তরুণদের জন্য নিরাপদ ও পুষ্টিকর খাবারের গুরুত্ব এবং একটি নমুনা দৈনন্দিন খাদ্য পরিকল্পনা','তরুণদের মধ্যে খাদ্যের বৈচিত্র্য','মাসিকের সময় পুষ্টিকর খাবার','কিশোর-কিশোরীদের মধ্যে প্রধান পুষ্টি সমস্যা','পুষ্টি ও অপুষ্টির চক্র','অপুষ্টি রোধে করণীয়','অতিরিক্ত ওজন ও স্থূলতার ক্ষতিকর প্রভাব','অতিরিক্ত ওজন ও স্থূলতার ঝুঁকি'],
   ['অসংক্রামক রোগ প্রতিরোধ ও ভুল খাদ্যাভ্যাস রোধে করণীয়','শারীরিক ব্যায়াম/শ্রম সম্পর্কিত করণীয়','তামাক সেবন ও মদ্যপান রোধে করণীয়','হাঁপানি','ডায়াবেটিস ও হাইপোগ্লাইসেমিয়া','থ্যালাসেমিয়া','হৃদরোগ ও উচ্চ রক্তচাপ','তরুণদের মধ্যে মৃগীরোগ','নেফ্রোটিক সিনড্রোম'],
   ['তরুণ: সুযোগ ও ঝুঁকি','ঝুঁকিপূর্ণ তরুণদের ঝুঁকি কমাতে করণীয়','ঝুঁকিপূর্ণ তরুণদের ঝুঁকি কমাতে করণীয় (পুনরাবৃত্তি)'],
   ['আবহাওয়া ও জলবায়ু','বায়ু দূষণ','বায়ু দূষণের উৎস','খাদ্য ও পানি দূষণের প্রধান কারণ','খাদ্য ও পানি দূষণ থেকে স্বাস্থ্য ঝুঁকি','পানি, স্যানিটেশন ও স্বাস্থ্যবিধি উন্নয়নে প্রয়োজনীয় পদক্ষেপ','সীসা ও অন্যান্য বিপজ্জনক রাসায়নিক','কীটনাশক এবং শিশু ও কিশোর-কিশোরীদের স্বাস্থ্য ঝুঁকি','সতর্কতামূলক ব্যবস্থা','শব্দ দূষণ'],
@@ -4876,7 +4887,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isNutritionBmiTableLesson = (modIdx === 17 && lesIdx === 1);
   // Module 18 Lesson 3 — BMI visual categories
   const isNutritionBmiVisualLesson = (modIdx === 17 && lesIdx === 2);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson;
+  // Module 18 Lesson 4 — Nutrient elements table
+  const isNutritionElementsLesson = (modIdx === 17 && lesIdx === 3);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4949,6 +4962,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isNutritionLesson ? buildNutritionLessonSection()
     : isNutritionBmiTableLesson ? buildNutritionBmiTableLessonSection()
     : isNutritionBmiVisualLesson ? buildNutritionBmiVisualLessonSection()
+    : isNutritionElementsLesson ? buildNutritionElementsLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -8486,7 +8500,7 @@ function buildFamilyPlanningSection() {
           </div>
 
           <div class="table-wrapper">
-            <table class="comparison-table" role="grid">
+            <table class="comparison-table nutrition-elements-table" role="grid">
               <thead>
                 <tr>
                   <th class="table-header" scope="col">
@@ -8638,6 +8652,174 @@ function buildFamilyPlanningSection() {
               <span class="bn">৩০.০</span>
               <span class="en">30.0</span>
             </div>
+          </div>
+        </section>
+        `;
+      }
+
+      /* ── NUTRIENT ELEMENTS TABLE (Module 18, Lesson 4) ── */
+      function buildNutritionElementsLessonSection() {
+        return `
+        <section class="fp-comparison-section" aria-label="পুষ্টি উপাদান, খাদ্য উৎস ও শরীরের কাজ" style="margin-top:24px;">
+          <div class="section-divider">
+            <h2 class="section-divider__title">
+              <span class="bn">📋 পুষ্টি উপাদান, খাদ্য উৎস ও শরীরের প্রধান কাজসমূহ</span>
+              <span class="en">📋 Nutrient Elements, Food Sources, and Main Body Functions</span>
+            </h2>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="comparison-table" role="grid">
+              <thead>
+                <tr>
+                  <th class="table-header" scope="col">
+                    <span class="bn">&nbsp;</span>
+                    <span class="en">&nbsp;</span>
+                  </th>
+                  <th class="table-header" scope="col">
+                    <span class="bn">পুষ্টি উপাদান</span>
+                    <span class="en">Nutrient Element</span>
+                  </th>
+                  <th class="table-header" scope="col">
+                    <span class="bn">খাদ্য উৎস</span>
+                    <span class="en">Food Source</span>
+                  </th>
+                  <th class="table-header" scope="col">
+                    <span class="bn">শরীরের প্রধান কাজসমূহ</span>
+                    <span class="en">Main Functions in the Body</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-cell"><span class="bn">১</span><span class="en">1</span></td>
+                  <td class="table-cell">
+                    <span class="bn">শ্বেতসার বা শর্করা (কার্বোহাইড্রেট)</span>
+                    <span class="en">Starch or Sugar (Carbohydrate)</span>
+                  </td>
+                  <td class="table-cell">
+                    <span class="bn">ভাত, রুটি, পাউরুটি, বিস্কুট, মুড়ি, চিড়া, চিনি, গুড়, মধু, আলু, মিষ্টি আলু</span>
+                    <span class="en">Rice, roti, bread, biscuits, puffed rice, flattened rice, sugar, molasses, honey, potato, sweet potato</span>
+                  </td>
+                  <td class="table-cell">
+                    <span class="bn">শরীরের শক্তি জোগায়, কাজ করার ক্ষমতা দেয়</span>
+                    <span class="en">Provides energy to the body and supports working capacity</span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="table-cell"><span class="bn">২</span><span class="en">2</span></td>
+                  <td class="table-cell">
+                    <span class="bn">তেল ও চর্বি</span>
+                    <span class="en">Oil and Fat</span>
+                  </td>
+                  <td class="table-cell">
+                    <span class="bn">তেল, ঘি, মাখন, মাছ-মাংসের চর্বি, বাদাম, নারিকেল</span>
+                    <span class="en">Oil, ghee, butter, fat from fish and meat, nuts, coconut</span>
+                  </td>
+                  <td class="table-cell">
+                    <span class="bn">&nbsp;</span>
+                    <span class="en">&nbsp;</span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="table-cell"><span class="bn">৩</span><span class="en">3</span></td>
+                  <td class="table-cell">
+                    <span class="bn">আমিষ (প্রোটিন)</span>
+                    <span class="en">Protein</span>
+                  </td>
+                  <td class="table-cell">
+                    <p class="bn" style="margin:0;">প্রাণীজ: মাছ, মাংস, কলিজা, দুধ, ডিম, শুঁটকি মাছ;</p>
+                    <p class="bn" style="margin:6px 0 0;">উদ্ভিদজ: বাদাম, বিভিন্ন ধরনের বীজ, বিভিন্ন ধরনের ডাল, তিল/তিসি</p>
+                    <p class="en" style="margin:8px 0 0;">Animal sources: fish, meat, liver, milk, egg, dried fish;</p>
+                    <p class="en" style="margin:6px 0 0;">Plant sources: nuts, different seeds, different pulses, sesame/flaxseed</p>
+                  </td>
+                  <td class="table-cell">
+                    <span class="bn">শরীরের বৃদ্ধি সাধন ও ক্ষয়পূরণ করে</span>
+                    <span class="en">Supports body growth and repairs tissue loss</span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="table-cell"><span class="bn">৪</span><span class="en">4</span></td>
+                  <td class="table-cell">
+                    <span class="bn">ভিটামিন</span>
+                    <span class="en">Vitamin</span>
+                  </td>
+                  <td class="table-cell">
+                    <p class="bn" style="margin:0;">প্রাণীজ: দুধ, মাছ, মাংস, কলিজা</p>
+                    <p class="bn" style="margin:6px 0 0;">উদ্ভিদ: বাদাম, বিভিন্ন ধরনের বীজ, শাক, সবজি ও ফলমূল</p>
+                    <p class="bn" style="margin:8px 0 0;">ভিটামিন ‘এ’: বিভিন্ন ধরনের রঙিন শাক-সবজি, লালশাক, গাজর, মিষ্টি কুমড়া</p>
+                    <p class="bn" style="margin:6px 0 0;">ভিটামিন ‘ডি’: ডিমের কুসুম, মাছের তেল, কলিজা, মাখন, পনির ইত্যাদি</p>
+                    <p class="bn" style="margin:6px 0 0;">ভিটামিন ‘সি’: আমলকি, কমলা, ধনেপাতা, আমড়া, তাজা ও টক জাতীয় শাক-সবজি ও ফল ইত্যাদি</p>
+                    <p class="bn" style="margin:6px 0 0;">ক্যালসিয়াম: দুধ ও দুগ্ধজাত খাদ্য, গাঢ় সবুজ শাকসবজি, শুটকি মাছ, ছোট মাছ, গুড়, ছোলা ইত্যাদি</p>
+                    <p class="bn" style="margin:6px 0 0;">আয়রন: মাছ, মাংস, কলিজা, ডিম, কচু/পুঁই/লালশাক, তেতুঁল ইত্যাদি</p>
+                    <p class="bn" style="margin:6px 0 0;">আয়োডিন: সামুদ্রিক মাছ, আয়োডিনযুক্ত লবণ</p>
+
+                    <p class="en" style="margin:10px 0 0;">Animal sources: milk, fish, meat, liver</p>
+                    <p class="en" style="margin:6px 0 0;">Plant sources: nuts, different seeds, leafy greens, vegetables and fruits</p>
+                    <p class="en" style="margin:8px 0 0;">Vitamin A: colorful leafy vegetables, red spinach, carrot, sweet pumpkin</p>
+                    <p class="en" style="margin:6px 0 0;">Vitamin D: egg yolk, fish oil, liver, butter, cheese, etc.</p>
+                    <p class="en" style="margin:6px 0 0;">Vitamin C: amla, orange, coriander leaves, hog plum, fresh and sour vegetables and fruits, etc.</p>
+                    <p class="en" style="margin:6px 0 0;">Calcium: milk and dairy foods, dark green vegetables, dried fish, small fish, molasses, chickpeas, etc.</p>
+                    <p class="en" style="margin:6px 0 0;">Iron: fish, meat, liver, eggs, taro/pui/red spinach, tamarind, etc.</p>
+                    <p class="en" style="margin:6px 0 0;">Iodine: marine fish, iodized salt</p>
+                  </td>
+                  <td class="table-cell">
+                    <p class="bn" style="margin:0;">পরিপাক ও পুষ্টিসাধনের প্রক্রিয়াকে সহায়তা করে।</p>
+                    <p class="bn" style="margin:6px 0 0;">রোগ প্রতিরোধ ক্ষমতা তৈরি করে।</p>
+                    <p class="bn" style="margin:6px 0 0;">শরীরকে রোগজীবাণু থেকে রক্ষা করে।</p>
+                    <p class="bn" style="margin:6px 0 0;">রাতকানা রোগ প্রতিরোধ করে ও চামড়া মসৃণ করে।</p>
+                    <p class="bn" style="margin:6px 0 0;">হাড় ও দাঁতের গঠন মজবুত করে, রিকেট প্রতিরোধ করে।</p>
+                    <p class="bn" style="margin:6px 0 0;">ক্ষত দূর করে, দাঁতের মাড়ি থেকে রক্ত পড়া বন্ধ করে, ঘাপাঁচড়া প্রতিরোধ করে।</p>
+                    <p class="bn" style="margin:6px 0 0;">রক্তস্বল্পতা, ক্ষুধামন্দা ও দুর্বলতা দূর করে।</p>
+                    <p class="bn" style="margin:6px 0 0;">শিশুর মানসিক বিকাশ নিশ্চিত ও গলগণ্ড রোধ করে।</p>
+
+                    <p class="en" style="margin:10px 0 0;">Helps digestion and the process of nutrition.</p>
+                    <p class="en" style="margin:6px 0 0;">Builds disease resistance.</p>
+                    <p class="en" style="margin:6px 0 0;">Protects the body from germs.</p>
+                    <p class="en" style="margin:6px 0 0;">Prevents night blindness and keeps skin smooth.</p>
+                    <p class="en" style="margin:6px 0 0;">Strengthens bones and teeth and prevents rickets.</p>
+                    <p class="en" style="margin:6px 0 0;">Helps wound healing, stops bleeding from gums, and prevents skin eruptions.</p>
+                    <p class="en" style="margin:6px 0 0;">Reduces anemia, poor appetite, and weakness.</p>
+                    <p class="en" style="margin:6px 0 0;">Ensures mental development in children and prevents goiter.</p>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="table-cell"><span class="bn">৫</span><span class="en">5</span></td>
+                  <td class="table-cell">
+                    <span class="bn">খনিজ লবণ</span>
+                    <span class="en">Mineral Salts</span>
+                  </td>
+                  <td class="table-cell">
+                    <span class="bn">&nbsp;</span>
+                    <span class="en">&nbsp;</span>
+                  </td>
+                  <td class="table-cell">
+                    <span class="bn">&nbsp;</span>
+                    <span class="en">&nbsp;</span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="table-cell"><span class="bn">৬</span><span class="en">6</span></td>
+                  <td class="table-cell">
+                    <span class="bn">পানি</span>
+                    <span class="en">Water</span>
+                  </td>
+                  <td class="table-cell">
+                    <span class="bn">খাওয়ার পানি, বিভিন্ন তরল ও পানীয় জাতীয় খাবার এবং বিভিন্ন খাবারের জলীয় অংশ</span>
+                    <span class="en">Drinking water, different liquids and beverages, and the water content of various foods</span>
+                  </td>
+                  <td class="table-cell">
+                    <span class="bn">উপরের ৫টি উপাদানের কার্যক্রম পানি ব্যতীত অসম্ভব</span>
+                    <span class="en">The functions of the above 5 elements are impossible without water</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
         `;
