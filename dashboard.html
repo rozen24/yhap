@@ -1997,7 +1997,20 @@
     .violence-cause-group {
       min-width: 0;
     }
-
+    .role-card {
+    --rc-accent: #6366F1;
+    --rc-soft: rgba(99,102,241,0.08);
+    --rc-ring: rgba(99,102,241,0.22);
+    position: relative;
+    padding: 16px 18px 16px 56px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(13,71,161,0.04);
+    transition: transform var(--dur) var(--ease),
+                  box-shadow var(--dur) var(--ease),
+                  border-color var(--dur) var(--ease);
+    }
     .role-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 3px 8px rgba(13,71,161,0.06), 0 14px 28px rgba(13,71,161,0.10);
