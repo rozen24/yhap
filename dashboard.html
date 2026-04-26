@@ -4866,7 +4866,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isPoisoningLesson = (modIdx === 16 && lesIdx === 7);
   // Module 17 Lesson 9 — Drowning
   const isDrowningLesson = (modIdx === 16 && lesIdx === 8);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson;
+  // Module 17 Lesson 10 — Choking
+  const isChokingLesson = (modIdx === 16 && lesIdx === 9);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4934,6 +4936,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isDogBiteLesson ? buildDogBiteLessonSection()
     : isPoisoningLesson ? buildPoisoningLessonSection()
     : isDrowningLesson ? buildDrowningLessonSection()
+    : isChokingLesson ? buildChokingLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -8177,6 +8180,99 @@ function buildFamilyPlanningSection() {
 
           <aside style="position: relative; height:100vh;">
             <img src="images/modu17/pani-duba.jpg" alt="ডুবন্ত অজ্ঞান ব্যক্তিকে উদ্ধার এবং প্রাথমিক চিকিৎসা" style="width:100%; max-width:100%; height:100vh; display:block; border-radius:14px; box-shadow:0 10px 30px rgba(13,71,161,0.14); border:1px solid var(--border);" loading="lazy" decoding="async" />
+          </aside>
+        </div>
+        `;
+      }
+
+      /* ── CHOKING (Module 17, Lesson 10) ── */
+      function buildChokingLessonSection() {
+        const chokingDescriptions = [
+          { icon: '❌', tone: 'teal', bn: 'শ্বাসনালীতে কিছু আটকে আংশিক বা পরিপূর্ণ প্রতিবন্ধকতা তৈরি হওয়ার ফলে বাতাসের অভাবের কারণে ব্যক্তির শ্বাস নেওয়া কষ্টসাধ্য হয়ে যায় বা শ্বাস আটকে যায়। সাধারণত খাবার খাওয়ার সময় বা মুখে কিছু দেওয়ার সময় এটি ঘটে থাকে, যা একটি জীবন-সংশয়কারী জরুরি অবস্থা।', en: 'Choking occurs when something blocks the airway, partially or completely, restricting airflow and making it difficult for a person to breathe. This typically happens while eating food or putting something in the mouth, and is a life-threatening emergency situation.' },
+          { icon: '👶', tone: 'rose', bn: 'শিশুদের ক্ষেত্রে অনেক সময় খাদ্যবস্তু ছাড়াও অন্যান্য বস্তু (যেমন— কয়েন, মার্বেল, বীজ, বোতাম বা ছোট খেলনা) গলায় আটকে গিয়ে এমন শ্বাসরোধকারী পরিস্থিতির সৃষ্টি হতে পারে।', en: 'In children, objects other than food (such as coins, marbles, seeds, buttons, or small toys) may get lodged in the throat, creating a breathing obstruction.' },
+          { icon: '🍽️', tone: 'amber', bn: 'প্রাপ্তবয়স্কদের বেশির ভাগ ক্ষেত্রেই খাওয়ার সময় খাদ্যবস্তু শ্বাসনালীতে আটকে এরূপ পরিস্থিতি উদ্ভূত হয়ে থাকে।', en: 'In adults, choking usually occurs when food gets lodged in the airway during eating.' }
+        ];
+
+        const firstAidSteps = [
+          { icon: '🆘', tone: 'teal', bn: 'চিৎকার করে সাহায্য চান অথবা জরুরি সেবার নাম্বারে (৯৯৯) কল করতে হবে।', en: 'Call for help or contact emergency services (999).' },
+          { icon: '👨‍⚕️', tone: 'rose', bn: 'চিত্রের মতো করে বসে শিশুটিকে প্রাথমিক চিকিৎসা প্রদানকারী তার কোলে নেবেন।', en: 'Hold the child in your lap as shown in the figure, with the child facing away from you.' },
+          { icon: '🤲', tone: 'amber', bn: 'শিশুকে এমনভাবে এক হাতের ওপর সাবধানে শুইয়ে দিতে হবে যেন মাথা এবং ঘাড় ধরে রাখা যায়, কিন্তু শিশুর মুখ ঢেকে যাবে না এবং মুখ নিচের দিকে থাকবে।', en: 'Carefully place the child on one hand with the head and neck supported, ensuring the face is not covered and the mouth faces downward.' },
+            { icon: '👋', tone: 'indigo', bn: 'এই অবস্থানে রেখে শিশুটির পিঠ বা কাঁধের মাঝ বরাবর ৫ বার সজোরে চাপড় দিতে হবে।', en: 'Firmly strike the child on the back between the shoulder blades 5 times.' },
+          { icon: '🔄', tone: 'green', bn: 'শিশুটিকে প্রাথমিক চিকিৎসা প্রদানকারী তার এক হাতের ওপর দ্রুত চিত করে শুইয়ে দেবেন।', en: 'Quickly flip the child face-up on your hand.' },
+          { icon: '✓', tone: 'violet', bn: 'শিশুর গলায় আটকে থাকা বস্তুটি বের হয়েছে কিনা এবং শ্বাস-প্রশ্বাস স্বাভাবিক কিনা তা লক্ষ্য করতে হবে। যদি না হয়, তাহলে উপরে বর্ণিত প্রক্রিয়াটির পুনরাবৃত্তি করতে হবে।', en: 'Check if the object has been expelled and if breathing is normal. If not, repeat the process above.' }
+        ];
+
+        const unconsciousSteps = [
+          { icon: '🛏️', tone: 'sky', bn: 'শিশুটিকে একটি শক্ত ও নিরাপদ সমতল স্থানে শুইয়ে দিতে হবে।', en: 'Place the child on a firm and safe flat surface.' },
+          { icon: '❤️', tone: 'pink', bn: 'সিপিআর শুরু করতে হবে।', en: 'Begin CPR.' }
+        ];
+
+        const renderCards = (items) => items.map((item) => `
+          <article class="role-card role-card--${item.tone}">
+            <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+            <div class="role-card__content">
+              <h4 class="role-card__title bn">${item.bn}</h4>
+              <h4 class="role-card__title en">${item.en}</h4>
+            </div>
+          </article>
+        `).join('');
+
+        return `
+        <div class="app-intro-box">
+          <div class="app-intro-icon" aria-hidden="true">⚠️</div>
+          <div class="app-intro-titles" style="justify-content: center;">
+            <p class="app-intro-sub bn">শ্বাস আটকে যাওয়া একটি জীবন-সংশয়কারী জরুরি অবস্থা যা খাওয়ার সময় বা কোন বস্তু গলায় প্রবেশ করলে হতে পারে। প্রাথমিক এবং দ্রুত চিকিৎসা প্রদান করা অত্যন্ত গুরুত্বপূর্ণ।</p>
+            <p class="app-intro-sub en">Choking is a life-threatening emergency that can occur when food or objects enter the throat. Immediate and rapid first aid is critically important.</p>
+          </div>
+        </div>
+
+        <div class="repro-layout" style="margin-top: 20px;">
+          <div>
+            <section class="role-section" aria-label="শ্বাস আটকে যাওয়া সম্পর্কিত তথ্য">
+              <div class="role-section__header role-section__header--teal">
+                <div class="role-section__icon" aria-hidden="true">ℹ️</div>
+                <div class="role-section__titles">
+                  <h2 class="role-section__title bn">শ্বাস আটকে যাওয়া বা গলায় কিছু আটকে যাওয়া (Choking)</h2>
+                  <h2 class="role-section__title en">Choking: Definition and Overview</h2>
+                </div>
+              </div>
+              <div class="role-section__body">
+                <div class="role-grid">${renderCards(chokingDescriptions)}</div>
+              </div>
+            </section>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
+              <img src="images/modu17/breath.jpg" alt="পোড়ার প্রাথমিক চিকিৎসা" style="flex:1 1 280px; width:100%; min-width:0; max-width:100%; border-radius:12px; box-shadow:0 6px 24px rgba(13,71,161,0.12);" loading="lazy" decoding="async">
+              <img src="images/modu17/breath2.jpg" alt="পোড়ার প্রাথমিক চিকিৎসা" style="flex:1 1 280px; width:100%; min-width:0; max-width:100%; border-radius:12px; box-shadow:0 6px 24px rgba(13,71,161,0.12);" loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <aside>
+            <section class="role-section" aria-label="প্রাথমিক চিকিৎসা পদ্ধতি">
+              <div class="role-section__header role-section__header--rose">
+                <div class="role-section__icon" aria-hidden="true">🆘</div>
+                <div class="role-section__titles">
+                  <h2 class="role-section__title bn">শ্বাস আটকে যাওয়ার প্রাথমিক চিকিৎসা (১ বছরের নিচের বয়সী শিশুর ক্ষেত্রে)</h2>
+                  <h2 class="role-section__title en">First Aid for Choking in Infants (Under 1 Year)</h2>
+                </div>
+              </div>
+              <div class="role-section__body">
+                <div class="role-grid">${renderCards(firstAidSteps)}</div>
+              </div>
+            </section>
+
+            <section class="role-section" style="margin-top: 20px;" aria-label="অজ্ঞান শিশুর জন্য ব্যবস্থা">
+              <div class="role-section__header role-section__header--amber" style="margin-top: 20px; color: #000; background: #fef3c7; padding: 8px 12px; border-radius: 8px;">
+                <div class="role-section__icon" aria-hidden="true">⚠️</div>
+                <div class="role-section__titles">
+                  <h2 class="role-section__title bn">যদি শিশুটি অজ্ঞান হয়ে পড়ে</h2>
+                  <h2 class="role-section__title en">If the Child Becomes Unconscious</h2>
+                </div>
+              </div>
+              <div class="role-section__body">
+                <div class="role-grid">${renderCards(unconsciousSteps)}</div>
+              </div>
+            </section>
           </aside>
         </div>
         `;
