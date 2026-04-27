@@ -4884,7 +4884,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isNutritionMealPlanLesson = (modIdx === 17 && lesIdx === 4);
   // Module 18 Lesson 6 — Food diversity in adolescence
   const isNutritionDiversityLesson = (modIdx === 17 && lesIdx === 5);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson;
+  // Module 18 Lesson 7 — Foods during menstruation
+  const isNutritionMenstrualFoodsLesson = (modIdx === 17 && lesIdx === 6);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4960,6 +4962,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isNutritionElementsLesson ? buildNutritionElementsLessonSection()
     : isNutritionMealPlanLesson ? buildNutritionMealPlanLessonSection()
     : isNutritionDiversityLesson ? buildNutritionDiversityLessonSection()
+    : isNutritionMenstrualFoodsLesson ? buildNutritionMenstrualFoodsLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -8948,6 +8951,104 @@ function buildFamilyPlanningSection() {
           </div>
           <div class="role-section__body">
             <div class="role-grid">${cardsHtml}</div>
+          </div>
+        </section>
+        `;
+      }
+
+      /* ── FOODS DURING MENSTRUATION (Module 18, Lesson 7) ── */
+      function buildNutritionMenstrualFoodsLessonSection() {
+        return `
+        <div class="app-intro-box">
+          <div class="app-intro-icon" aria-hidden="true">🩸</div>
+          <div class="app-intro-titles">
+            <p class="app-intro-sub bn">মাসিকের সময় দেহ থেকে রক্তক্ষরণ হয়, ফলে পুষ্টিহীনতা ও রক্তস্বল্পতা দেখা দিতে পারে। এই ঘাটতি পূরণের জন্য স্বাভাবিক খাবারের পাশাপাশি আয়রন, ক্যালসিয়াম, ম্যাগনেসিয়াম, আঁশযুক্ত ও ভিটামিনসমৃদ্ধ খাবার খাওয়া দরকার। এসব খাবার মাসিক চলাকালীন সময় দেহকে সুস্থ ও সবল রাখতে সাহায্য করে।</p>
+            <p class="app-intro-sub en">During menstruation, blood is lost from the body, which may cause undernutrition and anemia. To compensate for this deficiency, along with regular meals, iron, calcium, magnesium, fiber-rich, and vitamin-rich foods are needed. These foods help keep the body healthy and strong during menstruation.</p>
+          </div>
+        </div>
+
+        <section class="fp-comparison-section" aria-label="মাসিকের সময় উপযোগী খাদ্য" style="margin-top:24px;">
+          <div class="table-wrapper">
+            <table class="comparison-table" role="grid">
+              <thead>
+                <tr>
+                  <th class="table-header" scope="col">
+                    <span class="bn">📌 খাদ্যের ধরণ ও ভূমিকা</span>
+                    <span class="en">📌 Food Type and Role</span>
+                  </th>
+                  <th class="table-header" scope="col">
+                    <span class="bn">📖 খাবারের উদাহরণ ও বিস্তারিত</span>
+                    <span class="en">📖 Examples and Details of Foods</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="table-cell">
+                    <p class="bn" style="margin:0;"><strong>🩸 আয়রনযুক্ত খাবার:</strong></p>
+                    <p class="bn" style="margin:6px 0 0;">মাসিকের সময় আয়রনের ঘাটতি দূর করে</p>
+                    <p class="en" style="margin:8px 0 0;"><strong>🩸 Iron-rich Foods</strong></p>
+                    <p class="en" style="margin:6px 0 0;">Helps reduce iron deficiency during menstruation</p>
+                  </td>
+                  <td class="table-cell">
+                    <p class="bn" style="margin:0;">মাছ, মাংস, কলিজা, ডিম, ঘন সবুজ পাতাজাতীয় শাকসবজি, দানাজাতীয় শস্য, মটরশুঁটি, শিম, বরবটি, বাদাম, সয়াবিন, গুড় ও শুকনা ফলে যথেষ্ট পরিমাণে আয়রন থাকে।</p>
+                    <p class="en" style="margin:10px 0 0;">Fish, meat, liver, eggs, dark green leafy vegetables, cereal grains, peas, beans, yardlong beans, nuts, soybean, molasses, and dry fruits contain substantial amounts of iron.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-cell">
+                    <p class="bn" style="margin:0;"><strong>🦴 ক্যালসিয়ামযুক্ত খাবার:</strong></p>
+                    <p class="bn" style="margin:6px 0 0;">রক্ত জমাট বাঁধায় সাহায্য করে</p>
+                    <p class="en" style="margin:8px 0 0;"><strong>🦴 Calcium-rich Foods</strong></p>
+                    <p class="en" style="margin:6px 0 0;">Helps in blood clotting</p>
+                  </td>
+                  <td class="table-cell">
+                    <p class="bn" style="margin:0;">দুধ ক্যালসিয়ামের উৎকৃষ্ট উৎস। দুগ্ধজাতীয় খাদ্য যেমন দই, ছানা, পনির, মাওয়া, কাঁটাসহ ছোট মাছে প্রচুর ক্যালসিয়াম আছে। সবুজ শাকসবজি যেমন কলমিশাক, ডাঁটাশাক, পুঁইশাক, সজনে পাতা, লালশাক ইত্যাদিতে প্রচুর পরিমাণে ক্যালসিয়াম থাকে। সবজির মধ্যে ঢ্যাঁড়স, ধুন্দুল, বাঁধাকপি, ফুলকপি, সিম ইত্যাদি, ছোলা, মাসকলাই, মুগ ও সয়াবিনে ক্যালসিয়াম থাকে।</p>
+                    <p class="en" style="margin:10px 0 0;">Milk is an excellent source of calcium. Dairy foods such as yogurt, curd cheese, paneer, khoa, and small fish with bones are rich in calcium. Green vegetables such as water spinach, stem amaranth, Malabar spinach, drumstick leaves, and red spinach contain high amounts of calcium. Vegetables like okra, sponge gourd, cabbage, cauliflower, and hyacinth beans, as well as chickpea, black gram, mung bean, and soybean also contain calcium.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-cell">
+                    <p class="bn" style="margin:0;"><strong>⚡ ম্যাগনেসিয়ামসমৃদ্ধ খাবার:</strong></p>
+                    <p class="bn" style="margin:6px 0 0;">মাথাব্যথা ও পায়ের মাংসপেশীর যন্ত্রণা কমাতে সাহায্য করে</p>
+                    <p class="en" style="margin:8px 0 0;"><strong>⚡ Magnesium-rich Foods</strong></p>
+                    <p class="en" style="margin:6px 0 0;">Helps reduce headaches and leg muscle pain</p>
+                  </td>
+                  <td class="table-cell">
+                    <p class="bn" style="margin:0;">প্রায় সব ধরনের মাছেই উচ্চমাত্রায় ম্যাগনেসিয়াম আছে। গমের রুটি, সাদা ভাত, সবুজ পাতাযুক্ত শাকসবজি, পালংশাক, শিম, শিমের বিচি, বরবটি, মটরশুঁটি, কলা, কুমড়া, লেটুস পাতা ম্যাগনেসিয়ামের অন্যতম প্রধান উৎস।</p>
+                    <p class="bn" style="margin:6px 0 0;">কাজুবাদাম, চীনাবাদাম-এগুলো ম্যাগনেসিয়ামের উৎকৃষ্ট উৎস।</p>
+                    <p class="en" style="margin:10px 0 0;">Almost all kinds of fish contain high levels of magnesium. Wheat bread, white rice, green leafy vegetables, spinach, beans, bean seeds, yardlong beans, peas, banana, pumpkin, and lettuce are among the major sources of magnesium.</p>
+                    <p class="en" style="margin:6px 0 0;">Cashew nuts and peanuts are excellent sources of magnesium.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-cell">
+                    <p class="bn" style="margin:0;"><strong>🌾 আঁশযুক্ত খাবার:</strong></p>
+                    <p class="bn" style="margin:6px 0 0;">হজম বা পরিপাকে সহায়ক</p>
+                    <p class="en" style="margin:8px 0 0;"><strong>🌾 Fiber-rich Foods</strong></p>
+                    <p class="en" style="margin:6px 0 0;">Helps digestion</p>
+                  </td>
+                  <td class="table-cell">
+                    <p class="bn" style="margin:0;">ডাঁটাশাক, মটরশুঁটি, শিম, বরবটি, মিষ্টি আলু, গমের রুটি, ঢেঁকিছাটা চাল, ওটস, বাদাম, আপেল, কালো আঙুর, খেজুর ইত্যাদি।</p>
+                    <p class="en" style="margin:10px 0 0;">Stem amaranth, peas, beans, yardlong beans, sweet potato, wheat bread, hand-pounded rice, oats, nuts, apple, black grapes, dates, etc.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-cell">
+                    <p class="bn" style="margin:0;"><strong>🌞 ভিটামিনসমৃদ্ধ খাবার:</strong></p>
+                    <p class="bn" style="margin:6px 0 0;">অনিয়মিত মাসিক ও মাসিকের সময়ে মাথাব্যথা কমাতে সাহায্য করে</p>
+                    <p class="en" style="margin:8px 0 0;"><strong>🌞 Vitamin-rich Foods</strong></p>
+                    <p class="en" style="margin:6px 0 0;">Helps reduce irregular menstruation and headaches during menstruation</p>
+                  </td>
+                  <td class="table-cell">
+                    <p class="bn" style="margin:0;"><strong>ভিটামিন বি-১ সমৃদ্ধ খাবার:</strong> দুধ, ডিম, সামুদ্রিক মাছ, কড লিভার, কলিজা, মুরগি, ছোলা, পালংশাক, মটরশুঁটি, পাকা কলা ইত্যাদি।</p>
+                    <p class="bn" style="margin:6px 0 0;"><strong>ভিটামিন ডি সমৃদ্ধ খাবার:</strong> ভেটকি বা কোরাল মাছ, তেলাপিয়া, মাগুর ও শুঁটকি মাছে ভিটামিন ডি আছে। ভিটামিন ডি-এর অপর একটি চমৎকার উৎস হচ্ছে দুধ। গরু ও খাসির মাংসের কলিজায় ভিটামিন ডি আছে। ডিমে অতিরিক্ত পরিমাণে ভিটামিন ডি আছে। যাদের উচ্চ রক্তচাপ আছে, তাদের ডিমের কুসুম খাওয়ার ক্ষেত্রে সতর্ক থাকতে হবে। শস্যদানায় ও মাশরুমে ভিটামিন ডি আছে। রোদ ভিটামিন ডি-এর অন্যতম উৎস। সকাল ১০টা থেকে বিকেল ৩টা পর্যন্ত রোদ সবচেয়ে ভালো। পাঁচ মিনিট থেকে আধাঘণ্টা পর্যন্ত সপ্তাহে দুবার রোদে বসলে অনেক উপকার পাওয়া যায়।</p>
+                    <p class="en" style="margin:10px 0 0;">Vitamin B1-rich foods: milk, eggs, marine fish, cod liver, liver, chicken, chickpea, spinach, peas, ripe banana, etc.</p>
+                    <p class="en" style="margin:6px 0 0;">Vitamin D-rich foods: vitamin D is found in bhetki or coral fish, tilapia, catfish, and dried fish. Another excellent source of vitamin D is milk. Beef and mutton liver contain vitamin D. Eggs contain a high amount of vitamin D. People with high blood pressure should be cautious about egg yolk intake. Grains and mushrooms also contain vitamin D. Sunlight is one of the main sources of vitamin D. Sunlight from 10 AM to 3 PM is best. Sitting in the sun for 5 minutes to half an hour, twice a week, can be very beneficial.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
         `;
