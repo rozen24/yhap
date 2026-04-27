@@ -4888,6 +4888,8 @@ function renderLessonPage(modIdx, lesIdx) {
   const isNutritionMenstrualFoodsLesson = (modIdx === 17 && lesIdx === 6);
   // Module 18 Lesson 8 — Anemia and micronutrient deficiency
   const isNutritionAnemiaLesson = (modIdx === 17 && lesIdx === 7);
+  // Module 18 Lesson 9 — Nutrition and malnutrition cycle
+  const isNutritionCycleLesson = (modIdx === 17 && lesIdx === 8);
   const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionAnemiaLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
@@ -4965,6 +4967,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isNutritionMealPlanLesson ? buildNutritionMealPlanLessonSection()
     : isNutritionDiversityLesson ? buildNutritionDiversityLessonSection()
     : isNutritionMenstrualFoodsLesson ? buildNutritionMenstrualFoodsLessonSection()
+    : isNutritionCycleLesson ? buildNutritionCycleLessonSection()
     : isNutritionAnemiaLesson ? buildNutritionAnemiaLessonSection()
     : null;
   
@@ -9057,7 +9060,51 @@ function buildFamilyPlanningSection() {
         `;
       }
 
-      /* ── ANEMIA AND MICRONUTRIENT DEFICIENCY (Module 18, Lesson 8) ── */
+      /* ── NUTRITION AND MALNUTRITION CYCLE (Module 18, Lesson 9) ── */
+      function buildNutritionCycleLessonSection() {
+        return `
+        <div class="app-intro-box">
+          <div class="app-intro-icon" aria-hidden="true">🌱</div>
+          <div class="app-intro-titles" style="justify-content: center;">
+            <p class="app-intro-sub bn">অপুষ্টি চক্র বংশ পরম্পরায় চলতে থাকে। পুষ্টিজনিত সমস্যায় ভোগা মেয়েদের পর্যাপ্ত দৈহিক বৃদ্ধি না হওয়ায় তারা বেঁটে বা খাটো হয় এবং কম ওজনের শিশুর জন্ম দিয়ে থাকে। আর এই কম ওজনের শিশুরা যদি মেয়ে হয় তাহলে তারাও বড় হলে খাটো হয় এবং বিয়ে হলে আবার কম ওজনের শিশুর জন্ম দেয়, যা আরো ভয়াবহ। এভাবেই এই চক্র চলতে থাকে যতক্ষণ পর্যন্ত না এই চক্র ভেঙে যায়। এজন্য জীবনের সকল স্তরেই, বিশেষ করে শৈশব ও তারুণ্যে পুষ্টিকর খাবার গ্রহণের মাধ্যমে কিশোরী ও নারীদের পুষ্টি নিশ্চিত করতে হবে।</p>
+            <p class="app-intro-sub en">The malnutrition cycle continues from generation to generation. Girls who suffer from nutrition-related problems do not grow properly, become short in stature, and give birth to low-birth-weight babies. If those low-birth-weight babies are girls, they too may grow up short and later give birth to low-birth-weight babies again, making the cycle even more serious. This continues until the cycle is broken. For that reason, nutrition must be ensured for adolescent girls and women at all stages of life, especially during childhood and adolescence, by eating nutritious food.</p>
+          </div>
+        </div>
+
+        <div class="phases-anatomy-row" style="margin-top: 20px; align-items: stretch;">
+          <div class="repro-card">
+            <div class="repro-card__header repro-card__header--teal">
+              <div class="repro-card__icon" aria-hidden="true">🔄</div>
+              <div>
+                <div class="repro-card__title">
+                  <span class="bn">পুষ্টি চক্র</span>
+                  <span class="en">Nutrition Cycle</span>
+                </div>
+              </div>
+            </div>
+            <div class="repro-card__body">
+              <img src="images/modu18/pusti1.jpg" alt="পুষ্টি চক্র" style="width:100%; height:auto; display:block; border-radius:12px; box-shadow:0 6px 24px rgba(13,71,161,0.12);" loading="lazy" decoding="async" />
+            </div>
+          </div>
+
+          <div class="repro-card">
+            <div class="repro-card__header repro-card__header--violet">
+              <div class="repro-card__icon" aria-hidden="true">↺</div>
+              <div>
+                <div class="repro-card__title">
+                  <span class="bn">অপুষ্টি চক্র</span>
+                  <span class="en">Malnutrition Cycle</span>
+                </div>
+              </div>
+            </div>
+            <div class="repro-card__body">
+              <img src="images/modu18/pusti2.jpg" alt="অপুষ্টি চক্র" style="width:100%; height:100%; display:block; border-radius:12px; box-shadow:0 6px 24px rgba(13,71,161,0.12);" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
+        `;
+      }
+
       function buildNutritionAnemiaLessonSection() {
         return `
         <div class="app-intro-box">
