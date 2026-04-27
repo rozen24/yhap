@@ -2075,6 +2075,34 @@
       gap: 6px;
     }
 
+    .asma-image-grid {
+      display: grid;
+      /* grid-template-columns: repeat(2, minmax(0, 1fr)); */
+      gap: 14px;
+    }
+
+    .asma-image-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      box-shadow: var(--shadow-sm);
+      aspect-ratio: 4 / 3;
+    }
+
+    .asma-image-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      /* object-fit: cover; */
+    }
+
+    @media (max-width: 640px) {
+      .asma-image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .mgmt-article {
       margin: 0;
       padding: 0;
@@ -4154,7 +4182,7 @@
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(18,0)"><span class="lesson-dot" aria-hidden="true">1</span><span class="lesson-text"><span class="lesson-label bn">অসংক্রামক রোগ ও  ত্রুটিপূর্ণ খাদ্যাভ্যাস প্রতিরোধে করণীয়</span><span class="lesson-label en">Actions to prevent non-communicable diseases and faulty eating habits</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(18,1)"><span class="lesson-dot" aria-hidden="true">2</span><span class="lesson-text"><span class="lesson-label bn">কায়িক পরিশ্রমের করণীয়</span><span class="lesson-label en">Actions regarding physical exercise/labor</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(18,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn"> তামাকজাত দ্রব্য ব্যবহার ও মদ্যপান প্রতিরোধে করণীয় :</span><span class="lesson-label en">Actions to prevent tobacco use and alcoholism</span></span></button>
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(18,3)"><span class="lesson-dot" aria-hidden="true">4</span><span class="lesson-text"><span class="lesson-label bn">হাঁপানি</span><span class="lesson-label en">Asthma</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(18,3)"><span class="lesson-dot" aria-hidden="true">4</span><span class="lesson-text"><span class="lesson-label bn">অ্যাজমা বা হাঁপানি রোগঃ</span><span class="lesson-label en">Asthma</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(18,4)"><span class="lesson-dot" aria-hidden="true">5</span><span class="lesson-text"><span class="lesson-label bn">ডায়াবেটিস ও হাইপোগ্লাইসেমিয়া</span><span class="lesson-label en">Diabetes and Hypoglycemia</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(18,5)"><span class="lesson-dot" aria-hidden="true">6</span><span class="lesson-text"><span class="lesson-label bn">থ্যালাসেমিয়া</span><span class="lesson-label en">Thalassemia</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(18,6)"><span class="lesson-dot" aria-hidden="true">7</span><span class="lesson-text"><span class="lesson-label bn">হৃদরোগ ও উচ্চ রক্তচাপ</span><span class="lesson-label en">Heart disease and high blood pressure</span></span></button>
@@ -4405,7 +4433,7 @@ const MODULES = [
     descEn:'This module covers nutritious food, BMI, nutrients, dietary diversity, and nutritional problems in adolescents.',
     icon:'🥗', totalLessons:12, doneLessons:0 },
   { titleBn:'মডিউল-১৯: তরুণদের মধ্যে অসংক্রামক রোগ ও তাদের প্রতিরোধ', titleEn:'Module-19: Non-Communicable Diseases and Their Prevention in Young People',
-    descBn:'এই মডিউলে অসংক্রামক রোগ প্রতিরোধ, হাঁপানি, ডায়াবেটিস, হৃদরোগ এবং অন্যান্য রোগ সম্পর্কে আলোচনা করা হয়েছে।',
+    descBn:'এই মডিউলে অসংক্রামক রোগ প্রতিরোধ, অ্যাজমা বা হাঁপানি রোগঃ, ডায়াবেটিস, হৃদরোগ এবং অন্যান্য রোগ সম্পর্কে আলোচনা করা হয়েছে।',
     descEn:'This module covers prevention of non-communicable diseases, asthma, diabetes, heart disease, and other conditions.',
     icon:'❤️', totalLessons:9, doneLessons:0 },
   { titleBn:'মডিউল-২০: ঝুঁকিপূর্ণ তরুণদের বিশেষ সেবা', titleEn:'Module-20: Special Care for At-Risk Young People',
@@ -4449,7 +4477,7 @@ const LESSONS_BN = [
   ['মাদকাসক্তি','মাদকাসক্তির লক্ষণ','মাদকাসক্তির পরিণতি ও প্রতিরোধ'],
   ['ইনজুরি প্রতিরোধ ও প্রাথমিক চিকিৎসা সেবা','রক্তক্ষরণ নিয়ন্ত্রণ','পোড়া','পোড়ার প্রাথমিক চিকিৎসা','হাড় ভাঙা','সাপের কামড়','কুকুরের কামড়','বিষক্রিয়া','ডুবে যাওয়া','শ্বাস আটকে যাওয়া বা গলায় কিছু আটকে যাওয়া','শ্বাস আটকে যাওয়ার প্রাথমিক চিকিৎসা (প্রাপ্তবয়স্ক এবং ১ বছরের উপরের বয়সী শিশুর ক্ষেত্রে)'],
   ['পুষ্টিকর খাবারের গুরুত্ব','বি.এম.আই (বডি মাস ইনডেক্স)','পূর্ণ বয়স্ক তরুণ-তরুণীদের বিএমআই রেঞ্জ','পুষ্টি উপাদানসমূহ, উৎস এবং তাদের নির্দিষ্ট কাজসমূহ','তারুণ্যে নিরাপদ ও পুষ্টিসমৃদ্ধ খাবারের গুরুত্ব এবং প্রতিদিনের খাদ্য তালিকার নমুনা','তারুণ্যে খাদ্য বৈচিত্র্য','মাসিককালীন সময়ে পুষ্টিকর খাদ্য','তরুন-তরুনীদের পুষ্টিজনিত প্রধান সমস্যাসমূহ','পুষ্টি এবং অপুষ্টি চক্র','অপুষ্টি প্রতিরোধে করণীয়','অধিক ওজন ও স্থুলতার ক্ষতিকর প্রভাব','অতিরিক্ত ওজন ও স্থূলতার ঝুঁকি'],
-  ['অসংক্রামক রোগ ও  ত্রুটিপূর্ণ খাদ্যাভ্যাস প্রতিরোধে করণীয়','কায়িক পরিশ্রমের করণীয়',' তামাকজাত দ্রব্য ব্যবহার ও মদ্যপান প্রতিরোধে করণীয় :','হাঁপানি','ডায়াবেটিস ও হাইপোগ্লাইসেমিয়া','থ্যালাসেমিয়া','হৃদরোগ ও উচ্চ রক্তচাপ','তরুণদের মধ্যে মৃগীরোগ','নেফ্রোটিক সিনড্রোম'],
+  ['অসংক্রামক রোগ ও  ত্রুটিপূর্ণ খাদ্যাভ্যাস প্রতিরোধে করণীয়','কায়িক পরিশ্রমের করণীয়',' তামাকজাত দ্রব্য ব্যবহার ও মদ্যপান প্রতিরোধে করণীয় :','অ্যাজমা বা হাঁপানি রোগঃ','ডায়াবেটিস ও হাইপোগ্লাইসেমিয়া','থ্যালাসেমিয়া','হৃদরোগ ও উচ্চ রক্তচাপ','তরুণদের মধ্যে মৃগীরোগ','নেফ্রোটিক সিনড্রোম'],
   ['তরুণ: সুযোগ ও ঝুঁকি','ঝুঁকিপূর্ণ তরুণদের ঝুঁকি কমাতে করণীয়','ঝুঁকিপূর্ণ তরুণদের ঝুঁকি কমাতে করণীয় (পুনরাবৃত্তি)'],
   ['আবহাওয়া ও জলবায়ু','বায়ু দূষণ','বায়ু দূষণের উৎস','খাদ্য ও পানি দূষণের প্রধান কারণ','খাদ্য ও পানি দূষণ থেকে স্বাস্থ্য ঝুঁকি','পানি, স্যানিটেশন ও স্বাস্থ্যবিধি উন্নয়নে প্রয়োজনীয় পদক্ষেপ','সীসা ও অন্যান্য বিপজ্জনক রাসায়নিক','কীটনাশক এবং শিশু ও কিশোর-কিশোরীদের স্বাস্থ্য ঝুঁকি','সতর্কতামূলক ব্যবস্থা','শব্দ দূষণ'],
   ['উদীয়মান ও পুনরুদীয়মান রোগ','ডেঙ্গু','ডেঙ্গু: প্রতিরোধ ও চিকিৎসা','নিপাহ ভাইরাস সংক্রমণ','COVID-19','COVID-19 প্রতিরোধে করণীয়','ইনফ্লুয়েঞ্জা','এভিয়ান ইনফ্লুয়েঞ্জা','মাঙ্কিপক্স'],
@@ -4902,7 +4930,11 @@ function renderLessonPage(modIdx, lesIdx) {
   const isNcdLifestyleActionsLesson = (modIdx === 18 && lesIdx === 1);
   // Module 19 Lesson 3 — Actions to prevent tobacco use and alcoholism
   const isNcdTobaccoAlcoholLesson = (modIdx === 18 && lesIdx === 2);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson;
+  // Module 19 Lesson 4 — Asthma
+  const isNcdAsthmaLesson = (modIdx === 18 && lesIdx === 3);
+  // Module 19 Lesson 5 — Diabetes and hypoglycemia
+  const isNcdDiabetesLesson = (modIdx === 18 && lesIdx === 4);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4987,6 +5019,8 @@ function renderLessonPage(modIdx, lesIdx) {
     : isNcdPreventionIntroLesson ? buildNcdPreventionIntroLessonSection()
     : isNcdLifestyleActionsLesson ? buildNcdLifestyleActionsLessonSection()
     : isNcdTobaccoAlcoholLesson ? buildNcdTobaccoAlcoholLessonSection()
+    : isNcdAsthmaLesson ? buildNcdAsthmaLessonSection()
+    : isNcdDiabetesLesson ? buildNcdDiabetesLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -9735,6 +9769,60 @@ function buildFamilyPlanningSection() {
             </section>
           </div>
         </div>
+        `;
+      }
+
+      /* ── ASTHMA (Module 19, Lesson 4) ── */
+      function buildNcdAsthmaLessonSection() {
+        return `
+        <section class="role-section" aria-label="Asthma section" style="margin-top:0;">
+          <div class="role-section__header role-section__header--teal">
+            <div class="role-section__icon" aria-hidden="true">🌬️</div>
+            <div class="role-section__titles">
+              <h2 class="role-section__title bn">অ্যাজমা বা হাঁপানি রোগঃ</h2>
+              <h2 class="role-section__title en">Asthma</h2>
+            </div>
+          </div>
+          <div class="role-section__body">
+            <div class="asma-image-grid">
+              <div class="asma-image-card">
+                <img src="images/asma/asma.jpg" alt="অ্যাজমা বা হাঁপানি রোগের চিত্র ১" loading="lazy" decoding="async" />
+              </div>
+              <div class="asma-image-card">
+                <img src="images/asma/asma2.jpg" alt="অ্যাজমা বা হাঁপানি রোগের চিত্র ২" loading="lazy" decoding="async" />
+              </div>
+              <div class="asma-image-card">
+                <img src="images/asma/asma3.jpg" alt="অ্যাজমা বা হাঁপানি রোগের চিত্র ৩" loading="lazy" decoding="async" />
+              </div>
+              <div class="asma-image-card">
+                <img src="images/asma/asma4.jpg" alt="অ্যাজমা বা হাঁপানি রোগের চিত্র ৪" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </section>
+        `;
+      }
+
+      /* ── DIABETES AND HYPOGLYCEMIA (Module 19, Lesson 5) ── */
+      function buildNcdDiabetesLessonSection() {
+        return `
+        <section class="role-section" aria-label="Diabetes and hypoglycemia image section" style="margin-top:0;">
+          <div class="role-section__header role-section__header--teal">
+            <div class="role-section__icon" aria-hidden="true">🩺</div>
+            <div class="role-section__titles">
+              <h2 class="role-section__title bn">ডায়াবেটিস ও হাইপোগ্লাইসেমিয়া</h2>
+              <h2 class="role-section__title en">Diabetes and Hypoglycemia</h2>
+            </div>
+          </div>
+          <div class="role-section__body">
+            <div class="asma-image-grid">
+              <div class="asma-image-card"><img src="images/diet/diet.jpg" alt="ডায়াবেটিস ও হাইপোগ্লাইসেমিয়া চিত্র ১" loading="lazy" decoding="async" /></div>
+              <div class="asma-image-card"><img src="images/diet/diet2.jpg" alt="ডায়াবেটিস ও হাইপোগ্লাইসেমিয়া চিত্র ২" loading="lazy" decoding="async" /></div>
+              <div class="asma-image-card"><img src="images/diet/diet3.jpg" alt="ডায়াবেটিস ও হাইপোগ্লাইসেমিয়া চিত্র ৩" loading="lazy" decoding="async" /></div>
+              <div class="asma-image-card"><img src="images/diet/diet4.jpg" alt="ডায়াবেটিস ও হাইপোগ্লাইসেমিয়া চিত্র ৪" loading="lazy" decoding="async" /></div>
+            </div>
+          </div>
+        </section>
         `;
       }
 
