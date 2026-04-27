@@ -4900,7 +4900,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isNcdPreventionIntroLesson = (modIdx === 18 && lesIdx === 0);
   // Module 19 Lesson 2 — Actions regarding physical exercise/labor
   const isNcdLifestyleActionsLesson = (modIdx === 18 && lesIdx === 1);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson;
+  // Module 19 Lesson 3 — Actions to prevent tobacco use and alcoholism
+  const isNcdTobaccoAlcoholLesson = (modIdx === 18 && lesIdx === 2);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4984,6 +4986,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isNutritionAnemiaLesson ? buildNutritionAnemiaLessonSection()
     : isNcdPreventionIntroLesson ? buildNcdPreventionIntroLessonSection()
     : isNcdLifestyleActionsLesson ? buildNcdLifestyleActionsLessonSection()
+    : isNcdTobaccoAlcoholLesson ? buildNcdTobaccoAlcoholLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -9533,6 +9536,203 @@ function buildFamilyPlanningSection() {
           </div>
           <div class="repro-card__body">
             <img src="images/modu19/rog2.jpg" alt="অস্বাস্থ্যকর খাবার বর্জন এবং স্বাস্থ্যসম্মত খাবার গ্রহণ" style="width:100%; height:auto; display:block; border-radius:12px; box-shadow:0 6px 24px rgba(13,71,161,0.12);" loading="lazy" decoding="async" />
+          </div>
+        </div>
+        `;
+      }
+
+      /* ── NCD TOBACCO AND ALCOHOL PREVENTION (Module 19, Lesson 3) ── */
+      function buildNcdTobaccoAlcoholLessonSection() {
+        const familyPersonal = [
+          {
+            icon: '👨‍👩‍👧',
+            accent: 'teal',
+            bn: 'তরুণ-তরুণীরা অনুকরণপ্রিয়, অতএব বাবা-মা বা পরিবারের বড় সদস্যদের তাদের সামনে তামাক ও মদ্যপান পরিহার করা উচিত।',
+            en: 'Young people tend to imitate others, so parents and elder family members should avoid tobacco and alcohol use in front of them.'
+          },
+          {
+            icon: '💬',
+            accent: 'amber',
+            bn: 'তামাক ও মদের ক্ষতিকর প্রভাব নিয়ে তরুণ-তরুণীদের সাথে খোলামেলা আলোচনা করতে হবে',
+            en: 'There should be open discussions with young people about the harmful effects of tobacco and alcohol.'
+          },
+          {
+            icon: '🏠',
+            accent: 'green',
+            bn: 'বাড়িতে ধূমপান ও মদ্যপানমুক্ত পরিবেশ তৈরি করতে হবে।',
+            en: 'A smoke-free and alcohol-free environment should be created at home.'
+          },
+          {
+            icon: '👥',
+            accent: 'violet',
+            bn: 'তরুণ-তরুণীরা কার সাথে বন্ধুত্ত করছে এবং কার সাথে মেলামেশা করছে তা লক্ষ রাখতে হবে',
+            en: 'It is important to monitor who adolescents are making friends with and spending time with.'
+          }
+        ];
+
+        const educationRole = [
+          {
+            icon: '🏫',
+            accent: 'teal',
+            bn: 'শিক্ষাপ্রতিষ্ঠানের ভেতরে ও বাইরে তরুন-তরুনীদের খারাপ সঙ্গ এড়িয়ে চলতে শিক্ষার্থীদের উৎসাহিত করা।',
+            en: 'Students should be encouraged to avoid bad company both inside and outside educational institutions.'
+          },
+          {
+            icon: '📣',
+            accent: 'amber',
+            bn: 'স্কুল-কলেজে তামাক ও মাদকের বিরুদ্ধে নিয়মিত সেমিনার, পোস্টার প্রদর্শনী বা বিতর্ক প্রতিযোগিতা আয়োজন।',
+            en: 'Schools and colleges should regularly arrange seminars, poster exhibitions, or debate competitions against tobacco and drugs.'
+          },
+          {
+            icon: '🧠',
+            accent: 'rose',
+            bn: 'শিক্ষার্থীদের মানসিক চাপ মোকাবিলায় কাউন্সেলিং সুবিধা দেওয়া।',
+            en: 'Counseling support should be provided to help students manage mental stress.'
+          },
+          {
+            icon: '👩‍🏫',
+            accent: 'indigo',
+            bn: 'শিক্ষকরা ঝুঁকিপূর্ণ শিক্ষার্থীদের প্রতি বিশেষ নজর দিবেন।',
+            en: 'Teachers should pay special attention to at-risk students.'
+          }
+        ];
+
+        const socialGov = [
+          {
+            icon: '⚖️',
+            accent: 'teal',
+            bn: 'ধূমপান ও মদ্যপান জনসম্মুখে নিষিদ্ধকরণ সংক্রান্ত আইনের সঠিক বাস্তবায়ন করা।',
+            en: 'Laws prohibiting smoking and alcohol use in public places should be properly enforced.'
+          },
+          {
+            icon: '📺',
+            accent: 'amber',
+            bn: 'তামাক ও মদের বিজ্ঞাপন নিষিদ্ধ করা এবং তামাক ও মদের ক্ষতিকর প্রভাব সম্পর্কে মূলধারার মিডিয়া ও সোশ্যাল মিডিয়াতে তথ্য প্রচার।',
+            en: 'Ban tobacco and alcohol advertising and disseminate information about their harmful effects through mainstream and social media.'
+          },
+          {
+            icon: '🕌',
+            accent: 'violet',
+            bn: 'কমিউনিটি লিডার ও ইনফ্লুয়েন্সার যেমন ইমাম, শিক্ষক, চিকিৎসক ইত্যাদিদের মাধ্যমে বার্তা ছড়িয়ে দেওয়া।',
+            en: 'Spread messages through community leaders and influencers such as imams, teachers, and doctors.'
+          },
+          {
+            icon: '🩺',
+            accent: 'rose',
+            bn: 'তামাক ও মদ্যপান থেকে মুক্তির জন্য সরকারি-বেসরকারি কাউন্সেলিং সেন্টার বাড়ানো।',
+            en: 'Increase public and private counseling centers to support quitting tobacco and alcohol use.'
+          }
+        ];
+
+        const personalAlt = [
+          {
+            icon: '✋',
+            accent: 'teal',
+            bn: 'বন্ধু-বান্ধবদের চাপে মদ বা তামাক গ্রহণ থেকে বিরত থাকতে তামাক ও মদ্যপানকে “না” বলতে পারা।',
+            en: 'Be able to say “no” to tobacco and alcohol to resist peer pressure from friends.'
+          },
+          {
+            icon: '🍵',
+            accent: 'green',
+            bn: 'স্বাস্থ্যকর বিকল্প যেমন ফলমূল, হারবাল-টি বা ব্যায়ামকে অভ্যাসে পরিণত করা।',
+            en: 'Make healthy alternatives such as fruits, herbal tea, or exercise part of daily habits.'
+          }
+        ];
+
+        const moralReligious = [
+          {
+            icon: '🕌',
+            accent: 'violet',
+            bn: 'ইসলামসহ সকল ধর্মে মাদক ও তামাক নিষিদ্ধ-এই বার্তা প্রচার করতে হবে এবং ধর্মীয় উপাসনালয়গুলোতে তামাক ও মদ্যপান প্রতিরোধের আলোচনা অন্তর্ভুক্ত করা।',
+            en: 'Promote the message that drugs and tobacco are prohibited in Islam and other religions, and include discussions on tobacco and alcohol prevention in places of worship.'
+          },
+          {
+            icon: '🤝',
+            accent: 'amber',
+            bn: 'তামাক ও মাদক সমাজের জন্য ক্ষতিকর-এ বিষয়ে সর্বস্তরে নৈতিক দৃষ্টিভঙ্গি গড়ে তুলতে হবে।',
+            en: 'Build an ethical perspective at all levels that tobacco and drugs are harmful to society.'
+          }
+        ];
+
+        const renderCards = (items) => items.map((item) => `
+          <article class="role-card role-card--${item.accent}">
+            <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+            <div class="role-card__content">
+              <h4 class="role-card__title bn">${item.bn}</h4>
+              <h4 class="role-card__title en">${item.en}</h4>
+            </div>
+          </article>
+        `).join('');
+
+        return `
+        <div class="app-intro-box" style="margin-bottom: 20px;">
+          <div class="app-intro-icon" aria-hidden="true">🚭</div>
+          <div class="app-intro-titles" style="justify-content: center;">
+            <p class="app-intro-sub bn">তামাকজাত দ্রব্য (ধূমপান, জর্দা, গুল ইত্যাদি) এবং মদ্যপান প্রতিরোধে একটি সমন্বিত ও কার্যকর কৌশল প্রয়োজন।</p>
+            <p class="app-intro-sub en">An integrated and effective strategy is needed to prevent tobacco use (smoking, zarda, gul, etc.) and alcohol use.</p>
+          </div>
+        </div>
+
+        <div class="phases-anatomy-row" style="margin-top: 20px; align-items: start;">
+          <div style="display:grid; gap:20px;">
+            <section class="role-section" aria-label="Family and personal level actions" style="margin-top:0;">
+              <div class="role-section__header role-section__header--teal">
+                <div class="role-section__icon" aria-hidden="true">👨‍👩‍👧</div>
+                <div class="role-section__titles">
+                  <h2 class="role-section__title bn">১. পারিবারিক ও ব্যক্তিগত পর্যায়ে করণীয়</h2>
+                  <h2 class="role-section__title en">1. Actions at Family and Personal Levels</h2>
+                </div>
+              </div>
+              <div class="role-section__body"><div class="role-grid">${renderCards(familyPersonal)}</div></div>
+            </section>
+
+            
+            
+            <section class="role-section" aria-label="Social and government initiatives" style="margin-top:0;">
+              <div class="role-section__header role-section__header--warn">
+                <div class="role-section__icon" aria-hidden="true">🏛️</div>
+                <div class="role-section__titles">
+                  <h2 class="role-section__title bn">৩. সামাজিক ও সরকারি উদ্যোগ</h2>
+                  <h2 class="role-section__title en">3. Social and Government Initiatives</h2>
+                </div>
+              </div>
+              <div class="role-section__body"><div class="role-grid">${renderCards(socialGov)}</div></div>
+            </section>
+          </div>
+
+          <div style="display:grid; gap:20px;">
+            
+            <section class="role-section" aria-label="Role of educational institutions" style="margin-top:0;">
+              <div class="role-section__header role-section__header--school">
+                <div class="role-section__icon" aria-hidden="true">🏫</div>
+                <div class="role-section__titles">
+                  <h2 class="role-section__title bn">২. শিক্ষাপ্রতিষ্ঠানের ভূমিকা</h2>
+                  <h2 class="role-section__title en">2. Role of Educational Institutions</h2>
+                </div>
+              </div>
+              <div class="role-section__body"><div class="role-grid">${renderCards(educationRole)}</div></div>
+            </section>
+            <section class="role-section" aria-label="Personal awareness and alternatives" style="margin-top:0;">
+              <div class="role-section__header role-section__header--manage">
+                <div class="role-section__icon" aria-hidden="true">✋</div>
+                <div class="role-section__titles">
+                  <h2 class="role-section__title bn">৪. ব্যক্তিগত সচেতনতা ও বিকল্প পথ</h2>
+                  <h2 class="role-section__title en">4. Personal Awareness and Alternative Paths</h2>
+                </div>
+              </div>
+              <div class="role-section__body"><div class="role-grid">${renderCards(personalAlt)}</div></div>
+            </section>
+
+            <section class="role-section" aria-label="Promotion of religious and moral education" style="margin-top:0;">
+              <div class="role-section__header role-section__header--violet">
+                <div class="role-section__icon" aria-hidden="true">🕌</div>
+                <div class="role-section__titles">
+                  <h2 class="role-section__title bn">৫. ধর্মীয় ও নৈতিক শিক্ষার প্রসার</h2>
+                  <h2 class="role-section__title en">5. Promotion of Religious and Moral Education</h2>
+                </div>
+              </div>
+              <div class="role-section__body"><div class="role-grid">${renderCards(moralReligious)}</div></div>
+            </section>
           </div>
         </div>
         `;
