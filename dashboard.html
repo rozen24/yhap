@@ -4936,7 +4936,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isNcdDiabetesLesson = (modIdx === 18 && lesIdx === 4);
   // Module 19 Lesson 6 — Thalassemia
   const isNcdThalassemiaLesson = (modIdx === 18 && lesIdx === 5);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson;
+  // Module 19 Lesson 7 — Heart disease and high blood pressure
+  const isNcdHypertensionLesson = (modIdx === 18 && lesIdx === 6);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5024,6 +5026,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isNcdAsthmaLesson ? buildNcdAsthmaLessonSection()
     : isNcdDiabetesLesson ? buildNcdDiabetesLessonSection()
     : isNcdThalassemiaLesson ? buildNcdThalassemiaLessonSection()
+    : isNcdHypertensionLesson ? buildNcdHypertensionLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -9849,6 +9852,86 @@ function buildFamilyPlanningSection() {
             </div>
           </div>
         </section>
+        `;
+      }
+
+      /* ── HYPERTENSION (Module 19, Lesson 7) ── */
+      function buildNcdHypertensionLessonSection() {
+        const hypertensionIntro = [
+          {
+            icon: '💓',
+            accent: 'teal',
+            bn: 'তরুন-তরুনীদের উচ্চ রক্তচাপ একটি ক্রমবর্ধমান স্বাস্থ্য সমস্যা, যা পরবর্তী জীবনে হৃদরোগ, স্ট্রোক ও অন্যান্য জটিলতার ঝুঁকি বাড়ায়। বর্তমানে অস্বাস্থ্যকর জীবনযাপন, স্থূলতা ও মানসিক চাপের কারণে এই সমস্যা বাড়ছে।',
+            en: 'High blood pressure among adolescents is a growing health problem that increases the risk of heart disease, stroke, and other complications later in life. This problem is increasing due to unhealthy lifestyles, obesity, and mental stress.'
+          }
+        ];
+
+        const earlySigns = [
+          { icon: '📈', accent: 'rose', bn: 'রক্তচাপ ১৪০/৯০ বা এর বেশি', en: 'Blood pressure 140/90 or higher' },
+          { icon: '😟', accent: 'amber', bn: 'মানসিকভাবে অস্থির লাগা', en: 'Feeling mentally restless' },
+          { icon: '🤕', accent: 'violet', bn: 'মাথাব্যথা বা মাথা ঘোরা', en: 'Headache or dizziness' }
+        ];
+
+        const prevention = [
+          { icon: '🧂', accent: 'teal', bn: 'অতিরিক্ত লবণ পরিহার করতে হবে', en: 'Excess salt must be avoided' },
+          { icon: '🚭', accent: 'rose', bn: 'তামাকজাত দ্রব্য পরিহার করতে হবে', en: 'Tobacco products must be avoided' },
+          { icon: '🍖', accent: 'amber', bn: 'মাংস ও চর্বিযুক্ত খাবার কম খাওয়া উচিত', en: 'Meat and fatty foods should be eaten less' },
+          { icon: '🚶', accent: 'green', bn: 'নিয়মিত হাঁটাহাঁটির অভ্যাস করতে হবে', en: 'A regular walking habit should be developed' }
+        ];
+
+        const renderCards = (items) => items.map((item) => `
+          <article class="role-card role-card--${item.accent}">
+            <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+            <div class="role-card__content">
+              <h4 class="role-card__title bn">${item.bn}</h4>
+              <h4 class="role-card__title en">${item.en}</h4>
+            </div>
+          </article>
+        `).join('');
+
+        return `
+        <div class="phases-anatomy-row" style="margin-top: 20px; align-items: start;">
+          <div style="display:grid; gap:20px;">
+            <section class="role-section" aria-label="High blood pressure" style="margin-top:0;">
+              <div class="role-section__header role-section__header--warn">
+                <div class="role-section__icon" aria-hidden="true">⚠️</div>
+                <div class="role-section__titles">
+                  <h2 class="role-section__title bn">উচ্চ রক্তচাপ</h2>
+                  <h2 class="role-section__title en">High Blood Pressure</h2>
+                </div>
+              </div>
+              <div class="role-section__body"><div class="role-grid">${renderCards(hypertensionIntro)}</div></div>
+            </section>
+
+            <section class="role-section" aria-label="Early signs of high blood pressure" style="margin-top:0;">
+              <div class="role-section__header role-section__header--teal">
+                <div class="role-section__icon" aria-hidden="true">⚠️</div>
+                <div class="role-section__titles">
+                  <h2 class="role-section__title bn">উচ্চ রক্তচাপের প্রাথমিক লক্ষণসমূহ</h2>
+                  <h2 class="role-section__title en">Early Signs of High Blood Pressure</h2>
+                </div>
+              </div>
+              <div class="role-section__body"><div class="role-grid">${renderCards(earlySigns)}</div></div>
+            </section>
+
+            <section class="role-section" aria-label="Ways to prevent high blood pressure" style="margin-top:0;">
+              <div class="role-section__header role-section__header--success">
+                <div class="role-section__icon" aria-hidden="true">✅</div>
+                <div class="role-section__titles">
+                  <h2 class="role-section__title bn">উচ্চ রক্তচাপ প্রতিরোধের উপায়</h2>
+                  <h2 class="role-section__title en">Ways to Prevent High Blood Pressure</h2>
+                </div>
+              </div>
+              <div class="role-section__body"><div class="role-grid">${renderCards(prevention)}</div></div>
+            </section>
+          </div>
+
+          <div class="repro-card" style="margin:0;">
+            <div class="repro-card__body" style="padding:14px;">
+              <img src="images/heart.jpg" alt="উচ্চ রক্তচাপ ও হৃদরোগ সম্পর্কিত চিত্র" style="width:100%; height:auto; display:block; border-radius:12px; box-shadow:0 6px 24px rgba(13,71,161,0.12);" loading="lazy" decoding="async" />
+            </div>
+          </div>
+        </div>
         `;
       }
 
