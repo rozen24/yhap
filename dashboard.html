@@ -4880,7 +4880,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isNutritionBmiVisualLesson = (modIdx === 17 && lesIdx === 2);
   // Module 18 Lesson 4 — Nutrient elements table
   const isNutritionElementsLesson = (modIdx === 17 && lesIdx === 3);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson;
+  // Module 18 Lesson 5 — Adolescent daily food plan table
+  const isNutritionMealPlanLesson = (modIdx === 17 && lesIdx === 4);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -4954,6 +4956,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isNutritionBmiTableLesson ? buildNutritionBmiTableLessonSection()
     : isNutritionBmiVisualLesson ? buildNutritionBmiVisualLessonSection()
     : isNutritionElementsLesson ? buildNutritionElementsLessonSection()
+    : isNutritionMealPlanLesson ? buildNutritionMealPlanLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -8812,6 +8815,82 @@ function buildFamilyPlanningSection() {
             </table>
           </div>
         </section>
+        `;
+      }
+
+      /* ── ADOLESCENT DAILY FOOD PLAN (Module 18, Lesson 5) ── */
+      function buildNutritionMealPlanLessonSection() {
+        return `
+        <div class="" style="">
+          <section class="fp-comparison-section" aria-label="কৈশোরে দৈনিক খাবারের তালিকা" style="margin-top:0;">
+            <div class="section-divider">
+              <h2 class="section-divider__title">
+                <span class="bn">🍽️ কৈশোরে দৈনিক খাবারের তালিকা</span>
+                <span class="en">🍽️ Daily Meal Plan for Adolescents</span>
+              </h2>
+            </div>
+
+            <div class="table-wrapper">
+              <table class="comparison-table" role="grid">
+                <thead>
+                  <tr>
+                    <th class="table-header" scope="col">
+                      <span class="bn">⏰ সময়</span>
+                      <span class="en">⏰ Time</span>
+                    </th>
+                    <th class="table-header" scope="col">
+                      <span class="bn">🔥 তাপ ও শক্তি উৎপাদনকারী খাদ্য<br>(শর্করা: ভাত, রুটি, চিড়া, মুড়ি, আলু)</span>
+                      <span class="en">🔥 Heat and Energy Producing Foods<br>(Carbohydrates: rice, roti, flattened rice, puffed rice, potato)</span>
+                    </th>
+                    <th class="table-header" scope="col">
+                      <span class="bn">🧬 শরীরের ক্ষয়পূরণ ও বৃদ্ধিকারক খাদ্য<br>(আমিষ: ডিম, মাছ, মাংস, দুধ, ডাল)</span>
+                      <span class="en">🧬 Body Repair and Growth Foods<br>(Protein: egg, fish, meat, milk, lentils)</span>
+                    </th>
+                    <th class="table-header" scope="col">
+                      <span class="bn">🛡️ রোগ প্রতিরোধকারী খাদ্য<br>(ভিটামিন ও খনিজ: সবজি ও দেশি মৌসুমী ফল)</span>
+                      <span class="en">🛡️ Disease Preventing Foods<br>(Vitamins and minerals: vegetables and local seasonal fruits)</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="table-cell"><span class="bn">🌅 সকালের খাবার</span><span class="en">🌅 Breakfast</span></td>
+                    <td class="table-cell"><span class="bn">মাঝারি সাইজের ২/৩টি রুটি অথবা ২টি পরোটা অথবা ১ বাটি ভাত</span><span class="en">2-3 medium-sized rotis or 2 parathas or 1 bowl of rice</span></td>
+                    <td class="table-cell"><span class="bn">১টি ডিম অথবা ১ বাটি ডাল</span><span class="en">1 egg or 1 bowl of lentils</span></td>
+                    <td class="table-cell"><span class="bn">১ বাটি সবজি (২/৩ রকম সবজি মিশিয়ে) অথবা সবজি ভাজি (পটল ভাজি, পেঁপে ভাজি ইত্যাদি)</span><span class="en">1 bowl of vegetables (mix of 2-3 kinds) or fried vegetables (pointed gourd fry, papaya fry, etc.)</span></td>
+                  </tr>
+                  <tr>
+                    <td class="table-cell"><span class="bn">☀️ মধ্য-সকালের নাস্তা</span><span class="en">☀️ Mid-Morning Snack</span></td>
+                    <td class="table-cell"><span class="bn">বাড়িতে তৈরি নাস্তা জাতীয় খাবার (চিড়া/মুড়ি + গুড়) ও পাকা কলা</span><span class="en">Homemade snack items (flattened rice/puffed rice + molasses) and ripe banana</span></td>
+                    <td class="table-cell"><span class="bn">-</span><span class="en">-</span></td>
+                    <td class="table-cell"><span class="bn">যেকোনো দেশি মৌসুমী ফল (আম, কাঁঠাল, পেঁপে, আনারস ইত্যাদি)।ঋতুভেদে যেসব ফল সহজেই আমরা পাই।</span><span class="en">Any local seasonal fruit (mango, jackfruit, papaya, pineapple, etc.) that is easily available by season.</span></td>
+                  </tr>
+                  <tr>
+                    <td class="table-cell"><span class="bn">🍛 দুপুরের খাবার</span><span class="en">🍛 Lunch</span></td>
+                    <td class="table-cell"><span class="bn">২/৩ বাটি ভাত</span><span class="en">2-3 bowls of rice</span></td>
+                    <td class="table-cell"><span class="bn">১ বাটি মাঝারি ঘন ডাল ও ১ টুকরা (মাঝারি সাইজের) মাছ/মাংস/কলিজা</span><span class="en">1 bowl of medium-thick lentils and 1 piece (medium size) of fish/meat/liver</span></td>
+                    <td class="table-cell"><span class="bn">১ বাটি শাক (লাল শাক, কচুশাক, পুঁই শাক) অথবা সবজি</span><span class="en">1 bowl of leafy greens (red spinach, taro leaves, Malabar spinach) or vegetables</span></td>
+                  </tr>
+                  <tr>
+                    <td class="table-cell"><span class="bn">☕ বিকালের নাস্তা</span><span class="en">☕ Afternoon Snack</span></td>
+                    <td class="table-cell"><span class="bn">-</span><span class="en">-</span></td>
+                    <td class="table-cell"><span class="bn">১ গ্লাস দুধ অথবা দুধ দিয়ে তৈরি ঘন যেকোনো খাবার (ফিরনি/সেমাই/পায়েস/ পিঠা/দই ইত্যাদি)</span><span class="en">1 glass of milk or any thick milk-based food (firni/semai/payas/pitha/yogurt, etc.)</span></td>
+                    <td class="table-cell"><span class="bn">যেকোনো দেশি মৌসুমী ফল। ঋতুভেদে যেসব ফল সহজেই আমরা পাই</span><span class="en">Any local seasonal fruit that is easily available by season.</span></td>
+                  </tr>
+                  <tr>
+                    <td class="table-cell"><span class="bn">🌙 রাতের খাবার</span><span class="en">🌙 Dinner</span></td>
+                    <td class="table-cell"><span class="bn">২/৩ বাটি ভাত</span><span class="en">2-3 bowls of rice</span></td>
+                    <td class="table-cell"><span class="bn">১ বাটি ঘন ডাল (যদি সম্ভব হয় ১ টুকরা মাছ/মাংস)</span><span class="en">1 bowl of thick lentils (if possible, 1 piece of fish/meat)</span></td>
+                    <td class="table-cell"><span class="bn">১ বাটি শাক অথবা সবজি</span><span class="en">1 bowl of leafy greens or vegetables</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+        <aside>
+            <img src="images/modu18/food.jpg" alt="কৈশোরে পুষ্টিকর খাদ্য তালিকা" style="width:100%; max-width:100%; border-radius:12px; box-shadow:0 8px 20px rgba(13,71,161,0.12); border:1px solid var(--border);" loading="lazy" decoding="async" />
+          </aside>
         `;
       }
 
