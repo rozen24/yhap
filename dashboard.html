@@ -4934,7 +4934,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isNcdAsthmaLesson = (modIdx === 18 && lesIdx === 3);
   // Module 19 Lesson 5 — Diabetes and hypoglycemia
   const isNcdDiabetesLesson = (modIdx === 18 && lesIdx === 4);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson;
+  // Module 19 Lesson 6 — Thalassemia
+  const isNcdThalassemiaLesson = (modIdx === 18 && lesIdx === 5);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5021,6 +5023,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isNcdTobaccoAlcoholLesson ? buildNcdTobaccoAlcoholLessonSection()
     : isNcdAsthmaLesson ? buildNcdAsthmaLessonSection()
     : isNcdDiabetesLesson ? buildNcdDiabetesLessonSection()
+    : isNcdThalassemiaLesson ? buildNcdThalassemiaLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -9820,6 +9823,29 @@ function buildFamilyPlanningSection() {
               <div class="asma-image-card"><img src="images/diet/diet2.jpg" alt="ডায়াবেটিস ও হাইপোগ্লাইসেমিয়া চিত্র ২" loading="lazy" decoding="async" /></div>
               <div class="asma-image-card"><img src="images/diet/diet3.jpg" alt="ডায়াবেটিস ও হাইপোগ্লাইসেমিয়া চিত্র ৩" loading="lazy" decoding="async" /></div>
               <div class="asma-image-card"><img src="images/diet/diet4.jpg" alt="ডায়াবেটিস ও হাইপোগ্লাইসেমিয়া চিত্র ৪" loading="lazy" decoding="async" /></div>
+            </div>
+          </div>
+        </section>
+        `;
+      }
+
+      /* ── THALASSEMIA (Module 19, Lesson 6) ── */
+      function buildNcdThalassemiaLessonSection() {
+        return `
+        <section class="role-section" aria-label="Thalassemia image section" style="margin-top:0;">
+          <div class="role-section__header role-section__header--teal">
+            <div class="role-section__icon" aria-hidden="true">🩸</div>
+            <div class="role-section__titles">
+              <h2 class="role-section__title bn">থ্যালাসেমিয়া</h2>
+              <h2 class="role-section__title en">Thalassemia</h2>
+            </div>
+          </div>
+          <div class="role-section__body">
+            <div class="asma-image-grid">
+              <div class="asma-image-card"><img src="images/thela/thelasemiaq1.jpg" alt="থ্যালাসেমিয়া চিত্র ১" loading="lazy" decoding="async" /></div>
+              <div class="asma-image-card"><img src="images/thela/thelasemiaq2.jpg" alt="থ্যালাসেমিয়া চিত্র ২" loading="lazy" decoding="async" /></div>
+              <div class="asma-image-card"><img src="images/thela/thelasemiaq3.jpg" alt="থ্যালাসেমিয়া চিত্র ৩" loading="lazy" decoding="async" /></div>
+              <div class="asma-image-card"><img src="images/thela/thelasemiaq4.jpg" alt="থ্যালাসেমিয়া চিত্র ৪" loading="lazy" decoding="async" /></div>
             </div>
           </div>
         </section>
