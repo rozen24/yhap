@@ -4938,7 +4938,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isNcdThalassemiaLesson = (modIdx === 18 && lesIdx === 5);
   // Module 19 Lesson 7 — Heart disease and high blood pressure
   const isNcdHypertensionLesson = (modIdx === 18 && lesIdx === 6);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson;
+  // Module 19 Lesson 8 — Epilepsy
+  const isNcdEpilepsyLesson = (modIdx === 18 && lesIdx === 7);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5027,6 +5029,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isNcdDiabetesLesson ? buildNcdDiabetesLessonSection()
     : isNcdThalassemiaLesson ? buildNcdThalassemiaLessonSection()
     : isNcdHypertensionLesson ? buildNcdHypertensionLessonSection()
+    : isNcdEpilepsyLesson ? buildNcdEpilepsyLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -9932,6 +9935,38 @@ function buildFamilyPlanningSection() {
             </div>
           </div>
         </div>
+        `;
+      }
+
+      /* ── EPILEPSY IN ADOLESCENTS (Module 19, Lesson 8) ── */
+
+      function buildNcdEpilepsyLessonSection() {
+        return `
+        <section class="role-section" aria-label="Epilepsy in young people">
+          <div class="role-section__header role-section__header--warn">
+            <div class="role-section__icon" aria-hidden="true">🧠</div>
+            <div class="role-section__titles">
+              <h2 class="role-section__title bn">তরুন-তরুনীদের মৃগীরোগ</h2>
+              <h2 class="role-section__title en">Epilepsy in Young People</h2>
+            </div>
+          </div>
+          <div class="role-section__body">
+            <div class="asma-image-grid">
+              <article class="asma-image-card">
+                <img src="images/mrigi/mrigi1.jpg" alt="মৃগীরোগ সম্পর্কিত তথ্য ১" style="width:100%; height:100%; display:block; object-fit: contain; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy" decoding="async" />
+              </article>
+              <article class="asma-image-card">
+                <img src="images/mrigi/mrigi2.jpg" alt="মৃগীরোগ সম্পর্কিত তথ্য ২" style="width:100%; height:100%; display:block; object-fit: contain; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy" decoding="async" />
+              </article>
+              <article class="asma-image-card">
+                <img src="images/mrigi/mrigi3.jpg" alt="মৃগীরোগ সম্পর্কিত তথ্য ৩" style="width:100%; height:100%; display:block; object-fit: contain; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy" decoding="async" />
+              </article>
+              <article class="asma-image-card">
+                <img src="images/mrigi/mrigi4.jpg" alt="মৃগীরোগ সম্পর্কিত তথ্য ৪" style="width:100%; height:100%; display:block; object-fit: contain; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);" loading="lazy" decoding="async" />
+              </article>
+            </div>
+          </div>
+        </section>
         `;
       }
 
