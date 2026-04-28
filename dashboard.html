@@ -2515,6 +2515,20 @@
       border-right: 1px solid #eaeaea;
     }
 
+    .aqi-table {
+      table-layout: fixed;
+    }
+
+    .aqi-table th,
+    .aqi-table td {
+      width: 33.333%;
+    }
+
+    .aqi-table .table-header {
+      text-align: center;
+      white-space: normal;
+    }
+
     .method-header {
       text-align: center;
       padding: 12px 8px;
@@ -4951,6 +4965,8 @@ function renderLessonPage(modIdx, lesIdx) {
   const isYouthRiskReductionLesson = (modIdx === 19 && lesIdx === 2);
   // Module 21 Lesson 1 — Weather and Climate
   const isClimateWeatherLesson = (modIdx === 20 && lesIdx === 0);
+  // Module 21 Lesson 2 — Air pollution
+  const isClimateAirPollutionLesson = (modIdx === 20 && lesIdx === 1);
   const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
@@ -5046,6 +5062,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isYouthVulnerableGroupsLesson ? buildYouthVulnerableGroupsLessonSection()
     : isYouthRiskReductionLesson ? buildYouthRiskReductionLessonSection()
     : isClimateWeatherLesson ? buildClimateWeatherLessonSection()
+    : isClimateAirPollutionLesson ? buildClimateAirPollutionLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -8920,7 +8937,7 @@ function buildFamilyPlanningSection() {
             </div>
 
             <div class="table-wrapper">
-              <table class="comparison-table" role="grid">
+              <table class="comparison-table aqi-table" role="grid">
                 <thead>
                   <tr>
                     <th class="table-header" scope="col">
@@ -10284,6 +10301,127 @@ function buildFamilyPlanningSection() {
                   <img src="images/modu21/jolbau_b.png" alt="জলবায়ু ও স্বাস্থ্য সম্পর্কিত চিত্র" style="width:100%; height:auto; display:block; border-radius:10px; box-shadow:0 6px 24px rgba(0,0,0,0.12);" loading="lazy" decoding="async" />
                 </div>
               </div>
+            </div>
+          </section>
+        </div>
+        `;
+      }
+
+      /* ── CLIMATE: AIR POLLUTION (Module 21, Lesson 2) ── */
+
+      function buildClimateAirPollutionLessonSection() {
+        const airPollutionTypes = [
+          {
+            icon: '🌫️',
+            accent: 'rose',
+            titleBn: '১. পরিবেষ্টিত বা বাহ্যিক বায়ু দূষণ',
+            titleEn: '1. Ambient / Outdoor Air Pollution',
+            descBn: 'বাইরের বাতাসের দূষণকে বোঝায়। এর মধ্যে সাধারণত কার্বন মনোক্সাইড (CO), নাইট্রোজেন অক্সাইড (NOx), সীসা, আর্সেনিক, পারদ, সালফার ডাই অক্সাইড (SO2), পলিসাইক্লিক অ্যারোমেটিক হাইড্রোকার্বন (PAHs) এবং কণা পদার্থ (PM) অন্তর্ভুক্ত থাকে।',
+            descEn: 'This refers to pollution of the outdoor air. It commonly includes carbon monoxide (CO), nitrogen oxides (NOx), lead, arsenic, mercury, sulfur dioxide (SO2), polycyclic aromatic hydrocarbons (PAHs), and particulate matter (PM).'
+          },
+          {
+            icon: '🏠',
+            accent: 'teal',
+            titleBn: '২. গৃহস্থালির (অভ্যন্তরীণ) বায়ু দূষণ',
+            titleEn: '2. Household (Indoor) Air Pollution',
+            descBn: 'রান্না, তাপ এবং আলো জ্বালানোর জন্য জ্বালানি (কাঠ, জৈববস্তু, কয়লা, কেরোসিন ইত্যাদি) অপ্রয়োজনীয় দহনের ফলে সৃষ্ট ঘরের ভেতরে এবং আশেপাশের দূষণকে বোঝায়।',
+            descEn: 'This refers to pollution inside and around the home caused by the unnecessary burning of fuels used for cooking, heating, and lighting, such as wood, biomass, coal, kerosene, and similar materials.'
+          }
+        ];
+
+        const aqiRows = [
+          { rangeBn: '০–৫০', categoryBn: 'ভালো', swatch: '#2e7d32', rangeEn: '0–50', categoryEn: 'Good' },
+          { rangeBn: '৫১–১০০', categoryBn: 'মোটামুটি', swatch: '#f9a825', rangeEn: '51–100', categoryEn: 'Moderate' },
+          { rangeBn: '১০১–১৫০', categoryBn: 'সতর্কতামূলক', swatch: '#ef6c00', rangeEn: '101–150', categoryEn: 'Unhealthy for Sensitive Groups' },
+          { rangeBn: '১৫১–২০০', categoryBn: 'অস্বাস্থ্যকর', swatch: '#d32f2f', rangeEn: '151–200', categoryEn: 'Unhealthy' },
+          { rangeBn: '২০১–৩০০', categoryBn: 'খুব অস্বাস্থ্যকর', swatch: '#8e24aa', rangeEn: '201–300', categoryEn: 'Very Unhealthy' },
+          { rangeBn: '৩০১–৫০০', categoryBn: 'অত্যন্ত অস্বাস্থ্যকর', swatch: '#7b1fa2', rangeEn: '301–500', categoryEn: 'Hazardous' },
+        ];
+
+        const renderPollutionTypes = (items) => items.map((item) => `
+          <div class="phase-item">
+            <div class="phase-num phase-num--${item.accent}" aria-hidden="true">${item.icon}</div>
+            <div class="phase-content">
+              <div class="phase-content__title"><span class="bn">${item.titleBn}</span><span class="en">${item.titleEn}</span></div>
+              <div class="phase-content__desc bn">${item.descBn}</div>
+              <div class="phase-content__desc en">${item.descEn}</div>
+            </div>
+          </div>
+        `).join('');
+
+        const renderAqiRows = (rows) => rows.map((row) => `
+          <tr>
+            <td class="table-cell category-cell">
+              <span class="bn">${row.rangeBn}</span>
+              <span class="en">${row.rangeEn}</span>
+            </td>
+            <td class="table-cell">
+              <span class="bn">${row.categoryBn}</span>
+              <span class="en">${row.categoryEn}</span>
+            </td>
+            <td class="table-cell" style="padding:0; background:${row.swatch};">
+              <span aria-hidden="true" title="${row.categoryEn}" style="display:block; min-height:100%; min-width:100%; width:100%; height:100%; background:${row.swatch};"></span>
+            </td>
+          </tr>
+        `).join('');
+
+        return `
+        <div class="app-intro-box">
+          <div class="app-intro-icon" aria-hidden="true">🌫️</div>
+          <div class="app-intro-titles">
+            <p class="app-intro-sub bn">বায়ু দূষণকে এক বা একাধিক দূষিত পদার্থের উপস্থিতি হিসাবে সংজ্ঞায়িত করা যেতে পারে, যেমন ধূলিকণা, ধোঁয়া, গ্যাস, কুয়াশা, গন্ধ, ধোঁয়া বা বাষ্প, যেগুলো মানুষ, প্রাণী বা উদ্ভিদ জীবনের জন্য ক্ষতিকারক।</p>
+            <p class="app-intro-sub en">Air pollution can be defined as the presence of one or more pollutants, such as dust, smoke, gas, fog, odor, fumes, or vapor, that are harmful to human, animal, or plant life.</p>
+          </div>
+        </div>
+
+        <div class="" style="">
+          <div class="repro-card" style="margin:0;">
+            <div class="repro-card__header repro-card__header--teal">
+              <div class="repro-card__icon" aria-hidden="true">🌬️</div>
+              <div>
+                <div class="repro-card__title">
+                  <span class="bn">বায়ু দূষণ প্রাথমিক ভাবে দুই ধরনের:</span>
+                  <span class="en">Air pollution is mainly of two types:</span>
+                </div>
+              </div>
+            </div>
+            <div class="repro-card__body">
+              <div class="phase-timeline">
+                ${renderPollutionTypes(airPollutionTypes)}
+              </div>
+            </div>
+          </div>
+
+          <section class="fp-comparison-section" aria-label="Air Quality Index comparison" style="margin-top:0;">
+            <div class="section-divider">
+              <h2 class="section-divider__title">
+                <span class="bn">📊 বায়ু কতটা দূষিত তা বায়ুর মান সূচক (AQI) দ্বারা পরিমাপ করা যায়। বাংলাদেশে, পাঁচটি দূষণকারী পদার্থের (কণা পদার্থ PM10 এবং PM2.5, NO2, CO, SO2 এবং O3) বিদ্যমান ঘনত্বের উপর ভিত্তি করে AQI গণনা করা হয়।</span>
+                <span class="en">📊 How polluted the air is can be measured by the Air Quality Index (AQI). In Bangladesh, AQI is calculated based on the existing concentration of five pollutants: particulate matter (PM10 and PM2.5), NO2, CO, SO2, and O3.</span>
+              </h2>
+            </div>
+
+            <div class="table-wrapper">
+              <table class="comparison-table" role="grid" style="table-layout:fixed; width:100%;">
+                <thead>
+                  <tr>
+                    <th class="table-header" scope="col" style="width:33.333%;">
+                      <span class="bn">📊 বায়ুর মান সূচক (AQI)</span>
+                      <span class="en">📊 Air Quality Index (AQI)</span>
+                    </th>
+                    <th class="table-header" scope="col" style="width:33.333%;">
+                      <span class="bn">🏷️ ক্যাটাগরি</span>
+                      <span class="en">🏷️ Category</span>
+                    </th>
+                    <th class="table-header" scope="col" style="width:33.333%;">
+                      <span class="bn">🎨 রং</span>
+                      <span class="en">🎨 Color</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${renderAqiRows(aqiRows)}
+                </tbody>
+              </table>
             </div>
           </section>
         </div>
