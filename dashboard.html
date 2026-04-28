@@ -1404,6 +1404,9 @@
     .repro-card__header--amber {
       background: linear-gradient(135deg, #8D4E00 0%, #B26A00 60%, #D98C00 100%);
     }
+    .repro-card__header--warn {
+      background: linear-gradient(135deg, #B45309 0%, #D97706 60%, #F59E0B 100%);
+    }
     .repro-card__header--violet {
       background: linear-gradient(135deg, #4527A0 0%, #5E35B1 60%, #7E57C2 100%);
     }
@@ -1435,6 +1438,7 @@
       font-weight: 500; margin-top: 2px;
     }
     .repro-card__body { padding: 16px 18px; }
+    .repro-card__body:not(:has(> *)) { padding: 0px !important; }
     .repro-card__body p {
       font-size: 13px; line-height: 1.7; color: var(--text-secondary);
     }
@@ -3320,7 +3324,6 @@
       padding: 22px 26px;
       background: linear-gradient(135deg, #025a6e 0%, #27AE60 55%, #1E8449 100%);
       border-radius: var(--radius);
-      margin-bottom: 32px;
       color: #fff;
       overflow: hidden;
     }
@@ -3341,8 +3344,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 56px;
-      height: 56px;
+      width: 50px;
+      height: 50px;
       background: rgba(255,255,255,0.18);
       border: 1px solid rgba(255,255,255,0.28);
       border-radius: var(--radius-sm);
@@ -3361,7 +3364,7 @@
     }
 
     .app-intro-title {
-      font-size: 26px;
+      font-size: 20px;
       font-weight: 700;
       color: #fff;
       margin: 0;
@@ -4967,7 +4970,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isClimateWeatherLesson = (modIdx === 20 && lesIdx === 0);
   // Module 21 Lesson 2 — Air pollution
   const isClimateAirPollutionLesson = (modIdx === 20 && lesIdx === 1);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson;
+  // Module 21 Lesson 3 — Air pollution sources and health effects
+  const isClimateAirPollutionSourcesLesson = (modIdx === 20 && lesIdx === 2);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5063,6 +5068,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isYouthRiskReductionLesson ? buildYouthRiskReductionLessonSection()
     : isClimateWeatherLesson ? buildClimateWeatherLessonSection()
     : isClimateAirPollutionLesson ? buildClimateAirPollutionLessonSection()
+    : isClimateAirPollutionSourcesLesson ? buildClimateAirPollutionSourcesLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -8927,7 +8933,7 @@ function buildFamilyPlanningSection() {
       /* ── ADOLESCENT DAILY FOOD PLAN (Module 18, Lesson 5) ── */
       function buildNutritionMealPlanLessonSection() {
         return `
-        <div class="" style="">
+        <div class="repro-layout" style="margin-top:20px; align-items:start;">
           <section class="fp-comparison-section" aria-label="কৈশোরে দৈনিক খাবারের তালিকা" style="margin-top:0;">
             <div class="section-divider">
               <h2 class="section-divider__title">
@@ -10374,7 +10380,7 @@ function buildFamilyPlanningSection() {
           </div>
         </div>
 
-        <div class="" style="">
+        <div class="repro-layout" style="margin-top:20px; align-items:start;">
           <div class="repro-card" style="margin:0;">
             <div class="repro-card__header repro-card__header--teal">
               <div class="repro-card__icon" aria-hidden="true">🌬️</div>
@@ -10424,6 +10430,166 @@ function buildFamilyPlanningSection() {
               </table>
             </div>
           </section>
+        </div>
+        `;
+      }
+
+      /* ── CLIMATE: AIR POLLUTION SOURCES & HEALTH EFFECTS (Module 21, Lesson 3) ── */
+
+      function buildClimateAirPollutionSourcesLessonSection() {
+        const whoPollutants = [
+          { icon: '🌫️', accent: 'rose', bn: 'সূক্ষ্ম কণা (PM 2.5)', en: 'Fine particles (PM 2.5)' },
+          { icon: '💨', accent: 'amber', bn: 'মোটা কণা (PM10)', en: 'Coarse particles (PM10)' },
+          { icon: '☀️', accent: 'violet', bn: 'পৃথিবী পৃষ্ঠের ওজোন গ্যাস (O3)', en: 'Ground-level ozone gas (O3)' },
+          { icon: '🏭', accent: 'teal', bn: 'নাইট্রোজেন ডাই অক্সাইড (NO2)', en: 'Nitrogen dioxide (NO2)' },
+          { icon: '🌋', accent: 'rose', bn: 'সালফার ডাই অক্সাইড (SO2)', en: 'Sulfur dioxide (SO2)' },
+          { icon: '🚗', accent: 'amber', bn: 'কার্বন মনোক্সাইড (CO)', en: 'Carbon monoxide (CO)' }
+        ];
+
+        const prevention = [
+          { icon: '🚯', accent: 'rose', bn: 'খোলা স্থানে বর্জ্য পোড়ানো বন্ধ করা', en: 'Stop burning waste in open places' },
+          { icon: '🌳', accent: 'green', bn: 'স্থানীয় ভাবে বেশী বেশী বৃক্ষরোপণ করা', en: 'Plant more trees locally' },
+          { icon: '🚍', accent: 'teal', bn: 'গণপরিবহনের ব্যবহার বাড়ানো , হাঁটা বা সাইকেল চালানোতে উৎসাহ দেওয়া', en: 'Increase the use of public transport and encourage walking or cycling' },
+          { icon: '🏭', accent: 'violet', bn: 'কালো ধোঁওয়া উৎপন্ন কারী যানবাহন, ইট ভাটা বন্ধ করা', en: 'Stop vehicles and brick kilns that produce black smoke' },
+          { icon: '💧', accent: 'amber', bn: 'ধুলো কমাতে রাস্তা ঘাটে পানি ছিটানো', en: 'Sprinkle water on roads to reduce dust' }
+        ];
+
+        const healthEffects = [
+          {
+            titleBn: '১. প্রতিকূল জন্মের ফলাফল',
+            titleEn: '1. Adverse Birth Outcomes',
+            items: [
+              { bn: 'অকাল জন্ম:', en: 'Preterm birth' },
+              { bn: 'গর্ভস্থ ভ্রূণের বৃদ্ধি প্রতিবন্ধকতা (IUGR)', en: 'Intrauterine growth restriction (IUGR)' },
+              { bn: 'কম জন্ম ওজন', en: 'Low birth weight' },
+              { bn: 'স্থির জন্ম বা স্টিলবার্থ', en: 'Stillbirth' }
+            ]
+          },
+          {
+            titleBn: '২. শৈশবে শ্বাসযন্ত্রের প্রভাব',
+            titleEn: '2. Respiratory Effects in Childhood',
+            items: [
+              { bn: 'উচ্চ শ্বাস নালীর সংক্রমণ', en: 'Upper respiratory tract infections' },
+              { bn: 'ওটাইটিস মিডিয়া', en: 'Otitis media' }
+            ]
+          },
+          {
+            titleBn: '৩. নিউমোনিয়া',
+            titleEn: '3. Pneumonia',
+            items: []
+          },
+          {
+            titleBn: '৪. হাঁপানি',
+            titleEn: '4. Asthma',
+            items: []
+          },
+          {
+            titleBn: '৫. অন্যান্য স্বাস্থ্যগত ফলাফল',
+            titleEn: '5. Other Health Outcomes',
+            items: [
+              { bn: 'স্নায়ু বিকাশগত প্রতিবন্ধকতা (আইকিউ হ্রাস এবং অটিজম)', en: 'Neurodevelopmental impairment (reduced IQ and autism)' },
+              { bn: 'শৈশবকালীন ম্যালিগন্যান্সি', en: 'Childhood malignancy' },
+              { bn: 'শিশু ও শিশু মৃত্যুহার', en: 'Infant and child mortality' },
+              { bn: 'স্টান্টিং/ খর্বাকৃতি', en: 'Stunting / short stature' }
+            ]
+          }
+        ];
+
+        const renderCards = (items) => items.map((item) => `
+          <article class="role-card role-card--${item.accent}">
+            <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+            <div class="role-card__content">
+              <h4 class="role-card__title bn">${item.bn}</h4>
+              <h4 class="role-card__title en">${item.en}</h4>
+            </div>
+          </article>
+        `).join('');
+
+        const decorateHealthItems = (items) => items.map((item, index) => {
+          const accents = ['teal', 'rose', 'amber', 'violet'];
+          // default icon set (cycled)
+          const defaultIcons = ['🫁', '🧒', '👶', '📉'];
+          let icon = defaultIcons[index % defaultIcons.length];
+
+          // override icons for specific health items
+          if (item.en && item.en.includes('Upper respiratory tract infections')) icon = '🤧';
+          if (item.en && item.en.includes('Preterm birth')) icon = '🍼';
+          if (item.en && (item.en.includes('Neurodevelopmental') || item.en.includes('Neurodevelopmental impairment'))) icon = '🧠';
+
+          return {
+            ...item,
+            accent: accents[index % accents.length],
+            icon
+          };
+        });
+
+        const renderHealthSections = (sections) => sections.map((section) => `
+          <section class="repro-card" aria-label="${section.titleEn}" style="margin-top:0;">
+            <div class="repro-card__header role-section__header--info">
+              <div class="repro-card__icon" aria-hidden="true">🩺</div>
+              <div class="repro-card__titles">
+                <h2 class="repro-card__title bn">${section.titleBn}</h2>
+                <h2 class="repro-card__title en">${section.titleEn}</h2>
+              </div>
+            </div>
+            <div class="repro-card__body">
+              ${section.items.length ? `<div class="role-grid">${renderCards(decorateHealthItems(section.items))}</div>` : ''}
+            </div>
+          </section>
+        `).join('');
+
+        return `
+        <div class="repro-layout" style="margin-top:20px; align-items:start;">
+          <div style="display:grid; gap:20px;">
+            <section class="repro-card" style="margin:0;">
+              <div class="repro-card__header repro-card__header--warn">
+                <div class="repro-card__icon" aria-hidden="true">🌫️</div>
+                <div>
+                  <div class="repro-card__title">
+                    <span class="bn">WHO জনস্বাস্থ্যের জন্য গুরুত্বপূর্ণ অন্তত ছয়টি বায়ু দূষণকারী পদার্থ চিহ্নিত করেছে:</span>
+                    <span class="en">WHO has identified at least six air pollutants of major public health concern:</span>
+                  </div>
+                </div>
+              </div>
+              <div class="repro-card__body">
+                <div class="phase-timeline">
+                  ${renderCards(whoPollutants)}
+                </div>
+                <div class="repro-highlight repro-highlight--amber" style="margin-top:16px;">
+                  <span class="repro-highlight__icon">⚠️</span>
+                  <div>
+                    <p class="bn" style="font-size:16px; line-height:1.6; margin:0;">বাংলাদেশে, রান্নার জন্য আবাসিকভাবে কঠিন জ্বালানির ব্যবহার PM2.5 দূষণের প্রধান উৎস। যেখানে জনসংখ্যার ৭৪.২% এখনও কাঠ, খড় এবং গোবরের মতো জ্বালানির উপর নির্ভর করে।</p>
+                    <p class="en" style="font-size:16px; line-height:1.6; margin:8px 0 0;">In Bangladesh, the residential use of solid fuels for cooking is the main source of PM2.5 pollution. About 74.2% of the population still relies on fuels such as wood, straw, and dung.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="repro-card" aria-label="Air pollution prevention and management" style="margin-top:0;">
+              <div class="repro-card__header role-section__header--success">
+                <div class=repro-card__icon" aria-hidden="true">🛡️</div>
+                <div class="repro-card__titles">
+                  <h2 class="repro-card__title bn">বায়ু দূষণ প্রতিরোধ ও ব্যবস্থাপনা:</h2>
+                  <h2 class="repro-card__title en">Air Pollution Prevention and Management</h2>
+                </div>
+              </div>
+              <div class="repro-card__body">
+                <div class="role-grid">${renderCards(prevention)}</div>
+              </div>
+            </section>
+          </div>
+
+          <div style="display:grid; gap:10px; align-content:start;">
+            <div class="app-intro-box" style="margin-top:0;">
+              <div class="app-intro-icon" aria-hidden="true">🩺</div>
+              <div class="app-intro-titles">
+                <h2 class="app-intro-title bn">বায়ু দূষণের সাথে সম্পর্কিত স্বাস্থগত প্রভাব</h2>
+                <h2 class="app-intro-title en">Health Effects Associated with Air Pollution</h2>
+              </div>
+            </div>
+
+            ${renderHealthSections(healthEffects)}
+          </div>
         </div>
         `;
       }
