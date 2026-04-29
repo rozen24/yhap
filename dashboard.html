@@ -5000,6 +5000,69 @@ function buildModule23Lesson2Section() {
   `;
 }
 
+function buildModule23Lesson3Section() {
+  const developmentWays = [
+    { icon: '🌱', accent: 'rose', bn: 'নিজের মানবিক সত্তাকে জাগিয়ে তোলা', en: 'Awaken your humane self' },
+    { icon: '👨‍👩‍👧', accent: 'amber', bn: 'মা বাবা তরুন-তরুনীদের সাথে বন্ধুত্বপূর্ণ ও অ-অভিভাবকসুলভ আচরণ করা', en: 'Parents should behave in a friendly, non-authoritarian way with adolescents' },
+    { icon: '🗣️', accent: 'teal', bn: 'নিজে সত্য বলার অভ্যাস গড়ে তোলা', en: 'Build the habit of telling the truth' },
+    { icon: '🚫', accent: 'violet', bn: 'মিথ্যাকে নিজে ঘৃণা করা ও ঘৃণা করতে শেখানো', en: 'Reject lies personally and teach others to reject lies' },
+    { icon: '📘', accent: 'sky', bn: 'যৌনতা বিষয়ে সঠিক তথ্য দেওয়া', en: 'Provide correct information about sexuality' },
+    { icon: '⚖️', accent: 'green', bn: 'ভালো ও মন্দ পরিণতি বুঝতে সহায়তা করা', en: 'Help understand good and bad consequences' },
+    { icon: '✅', accent: 'info', bn: 'সঠিক সিদ্ধান্ত নিতে উৎসাহ দেওয়া', en: 'Encourage correct decision-making' }
+  ];
+
+  const contributionWays = [
+    { icon: '🏡', accent: 'rose', bn: 'পারিবারিক, সামাজিক ও ধর্মীয় মূল্যবোধ শিক্ষা তরুণ-তরুণীদের সংকট ও ঝুঁকিপূর্ণ আচরণ থেকে দূরে রাখতে সহায়তা করে', en: 'Family, social, and religious value education helps young people stay away from crises and risky behaviors' },
+    { icon: '🏫', accent: 'amber', bn: 'বিদ্যালয় ও শিক্ষকেরা পাঠদানের সময় নৈতিকতার বিষয়গুলো তুলে ধরলে শিক্ষার্থীরা সেগুলো অনুশীলনের সুযোগ পায়', en: 'When schools and teachers highlight ethics during lessons, students get opportunities to practice them' },
+    { icon: '🧠', accent: 'teal', bn: 'জীবন দক্ষতা শিক্ষা নৈতিক চিন্তা ও দায়িত্বশীল আচরণ গড়ে তুলতে সাহায্য করে', en: 'Life-skills education helps build ethical thinking and responsible behavior' },
+    { icon: '🌟', accent: 'violet', bn: 'নৈতিকতা ও মূল্যবোধে সচেতন মানুষ তৈরি হলে অপরাধপ্রবণতা ও নেতিবাচক আচরণ কমে গিয়ে সুস্থ ও সুন্দর জীবন গড়ে তুলতে ভুমিকা পালন করে', en: 'When people become aware of ethics and values, crime tendency and negative behavior decrease, helping build a healthy and beautiful life' }
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <section class="role-section" aria-label="Ways to develop values" style="margin-top:0;">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">📈</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">মূল্যবোধ উন্নয়নের উপায়:</h2>
+          <h2 class="role-section__title en">Ways to Develop Values:</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(developmentWays)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="How value education contributes to healthy and beautiful life" style="margin-top:0;">
+      <div class="role-section__header role-section__header--rose">
+        <div class="role-section__icon" aria-hidden="true">🌿</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">কীভাবে মূল্যবোধ শিক্ষা সুস্থ ও সুন্দর জীবনে অবদান রাখে</h2>
+          <h2 class="role-section__title en">How Value Education Contributes to a Healthy and Beautiful Life</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid" style="grid-template-columns: 1fr !important;">
+          ${renderCards(contributionWays)}
+        </div>
+      </div>
+    </section>
+  </div>
+  `;
+}
+
 function handleModuleClick(idx) {
   const trigger = document.getElementById('modTrigger-' + idx);
   const isOpen  = trigger.getAttribute('aria-expanded') === 'true';
@@ -5435,7 +5498,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule23Lesson1 = (modIdx === 22 && lesIdx === 0);
   // Module 23 Lesson 2 — Values
   const isModule23Lesson2 = (modIdx === 22 && lesIdx === 1);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2;
+  // Module 23 Lesson 3 — Ways to develop values
+  const isModule23Lesson3 = (modIdx === 22 && lesIdx === 2);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5549,6 +5614,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isModule22Lesson9 ? buildModule22Lesson9Section()
     : isModule23Lesson1 ? buildModule23Lesson1Section()
     : isModule23Lesson2 ? buildModule23Lesson2Section()
+    : isModule23Lesson3 ? buildModule23Lesson3Section()
     : isModule22Lesson7 ? buildModule22Lesson7Section()
     : null;
   
