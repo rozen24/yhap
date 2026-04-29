@@ -4993,7 +4993,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isDengueLesson = (modIdx === 21 && lesIdx === 1);
   // Module 22 Lesson 3 — Dengue prevention and treatment
   const isDenguePreventionLesson = (modIdx === 21 && lesIdx === 2);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson;
+  // Module 22 Lesson 4 — Nipah virus infection
+  const isNipahLesson = (modIdx === 21 && lesIdx === 3);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5100,6 +5102,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isEmergingLesson ? buildEmergingReEmergingLessonSection()
     : isDengueLesson ? buildDengueLessonSection()
     : isDenguePreventionLesson ? buildDenguePreventionLessonSection()
+    : isNipahLesson ? buildNipahLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -14637,6 +14640,96 @@ function buildDenguePreventionLessonSection() {
         <h2 class="app-intro-title en">Dengue fever is a common disease. But if neglected, it can become severe. Its prevalence is higher in urban areas. Therefore, city dwellers need to be more alert and aware. In particular, those who have had dengue should be extra cautious. A second dengue infection can be severe.</h2>
       </div>
     </div>
+  </div>
+  `;
+}
+
+function buildNipahLessonSection() {
+  const symptoms = [
+    { icon: '🤒', accent: 'rose', bn: 'তীব্র জ্বরসহ মাথাব্যথা', en: 'Severe fever with headache' },
+    { icon: '⚡', accent: 'amber', bn: 'খিঁচুনি', en: 'Convulsions' },
+    { icon: '🗣️', accent: 'teal', bn: 'প্রলাপ বকা', en: 'Delirium' },
+    { icon: '😵', accent: 'violet', bn: 'অজ্ঞান হওয়া', en: 'Loss of consciousness' },
+    { icon: '😮‍💨', accent: 'sky', bn: 'কোনো কোনো ক্ষেত্রে শ্বাসকষ্ট হওয়া', en: 'In some cases, breathing difficulty' },
+    { icon: '💧', accent: 'green', bn: 'মুখ দিয়ে লালা ঝরা', en: 'Drooling from the mouth' }
+  ];
+
+  const prevention = [
+    { icon: '🧃', accent: 'rose', bn: 'খেজুরের কাঁচা রস খাওয়া যাবেনা', en: 'Do not drink raw date palm sap' },
+    { icon: '🍎', accent: 'amber', bn: 'কোনো ধরনের আংশিক খাওয়া ফল খাওয়া যাবেনা', en: 'Do not eat any partially eaten fruit' },
+    { icon: '🚿', accent: 'teal', bn: 'ফলমূল পরিষ্কার পানি দিয়ে ভালোভাবে ধুয়ে খেতে হবে', en: 'Wash fruits thoroughly with clean water before eating' },
+    { icon: '🏥', accent: 'violet', bn: 'নিপাহ রোগের লক্ষণ দেখা দিলে রোগীকে অতিদ্রুত কাছাকাছি সরকারি হাসপাতালে নিতে হবে', en: 'If Nipah symptoms appear, take the patient quickly to the nearest government hospital' },
+    { icon: '🧼', accent: 'sky', bn: 'আক্রান্ত রোগীর সংস্পর্শে আসার পর সাবান ও পানি দিয়ে দুই হাত ভালোভাবে ধুয়ে ফেলতে হবে', en: 'After contact with an infected patient, wash both hands thoroughly with soap and water' }
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">🦇</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">নিপাহ একটি ভাইরাসজনিত মারাত্মক প্রাণঘাতী রোগ। নিপাহ ভাইরাসে আক্রান্ত হলে মস্তিষ্কের প্রদাহ ঘটে। কাঁচা খেজুরের রসে বাদুড়ের বিষ্ঠা ও লালা মিশ্রিত হয় এবং ওই বিষ্ঠা ও লালাতে নিপাহ ভাইরাসের জীবাণু থাকে। ফলে খেজুরের কাঁচা রস পান করলে মানুষ নিপাহ ভাইরাসে আক্রান্ত হতে পারে। অনেকেই মনে করেন, রস গরম করে খেলে বিপদ কাটবে। কিন্তু তা মোটেও গ্রহণযোগ্য নয়। গাছের নিচে পড়ে থাকা আধা খাওয়া কিংবা ফাটা ফল খাওয়া যাবে না। বর্তমান সময়ে বড়দের পাশাপাশি তরুণ-তরুণীরা নিপাহ ভাইরাসে বেশি আক্রান্ত হচ্ছে। এই রোগে মৃত্যু ৭০ শতাংশের বেশি। তাই প্রতিরোধই হচ্ছে এই রোগ থেকে বাঁচার উপায়।</h2>
+        <h2 class="app-intro-title en">Nipah is a severe and deadly viral disease. Infection with Nipah virus causes inflammation of the brain. Raw date palm sap can become contaminated with bat droppings and saliva, which may contain Nipah virus. As a result, drinking raw date palm sap can infect people with Nipah virus. Many people think warming the sap makes it safe, but that is not acceptable. Partially eaten or cracked fruits left under trees should not be eaten. Today, along with adults, young people are also increasingly being infected with Nipah virus. The death rate from this disease is more than 70 percent, so prevention is the way to stay safe.</h2>
+      </div>
+    </div>
+
+    <section class="role-section" aria-label="Nipah virus symptoms" style="margin-top:0;">
+      <div class="role-section__header role-section__header--rose">
+        <div class="role-section__icon" aria-hidden="true">🤒</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">নিপাহ ভাইরাস সংক্রমনের প্রধান লক্ষণগুলো হচ্ছে</h2>
+          <h2 class="role-section__title en">Main symptoms of Nipah virus infection</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(symptoms)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Nipah prevention" style="margin-top:0;">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">🛡️</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">নিপাহ ভাইরাস সংক্রমন প্রতিরোধে করণীয়</h2>
+          <h2 class="role-section__title en">Actions to prevent Nipah virus infection</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(prevention)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Nipah virus infection" style="margin-top:0;">
+      <div class="role-section__header role-section__header--info">
+        <div class="role-section__icon" aria-hidden="true">🦇</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">নিপাহ ভাইরাস সংক্রমন</h2>
+          <h2 class="role-section__title en">Nipah virus infection</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid" style="grid-template-columns:1fr;">
+          <article class="role-card role-card--rose" style="padding:0;">
+            <div class="role-card__content" style="padding:0;">
+              <img src="badur.png" alt="Nipah virus transmission illustration" style="width:100%; height:auto; display:block; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.12);" loading="lazy" decoding="async" />
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
   </div>
   `;
 }
