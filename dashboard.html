@@ -4765,6 +4765,103 @@ Outbreaks primarily occur in Central and West Africa, though cases have been det
   `;
 }
 
+function buildModule23Lesson1Section() {
+  const helpers = [
+    { icon: '👪', accent: 'rose', bn: 'মা–বাবা', en: 'Parents' },
+    { icon: '🧑‍🤝‍🧑', accent: 'amber', bn: 'আত্মীয়-স্বজন', en: 'Relatives' },
+    { icon: '👩‍🏫', accent: 'teal', bn: 'শিক্ষক', en: 'Teachers' },
+    { icon: '🧑‍⚕️', accent: 'violet', bn: 'প্রশিক্ষক ও সার্ভিস প্রোভাইডার', en: 'Trainers and service providers' }
+  ];
+
+  const keySkills = [
+    { icon: '🗣️', titleBn: 'কার্যকর যোগাযোগের দক্ষতা', titleEn: 'Effective communication skills' },
+    { icon: '🧠', titleBn: 'আত্ম সচেতনতা', titleEn: 'Self-awareness' },
+    { icon: '🤝', titleBn: 'সমমর্মিতা', titleEn: 'Empathy' },
+    { icon: '💡', titleBn: 'সৃজনশীল চিন্তাভাবনা', titleEn: 'Creative thinking' },
+    { icon: '👥', titleBn: 'আন্ত:ব্যক্তিক সম্পর্ক দক্ষতা', titleEn: 'Interpersonal relationship skills' },
+    { icon: '🔎', titleBn: 'সমালোচনা মুলক চিন্তাভাবনা', titleEn: 'Critical thinking' },
+    { icon: '✅', titleBn: 'সিদ্ধান্ত গ্রহণ দক্ষতা', titleEn: 'Decision-making skills' },
+    { icon: '🧩', titleBn: 'সমস্যা সমাধান দক্ষতা', titleEn: 'Problem-solving skills' },
+    { icon: '🧘', titleBn: 'চাপ মোকাবেলার দক্ষতা', titleEn: 'Stress management skills' },
+    { icon: '❤️', titleBn: 'আবেগ মোকাবেলার দক্ষতা', titleEn: 'Emotion management skills' },
+    { icon: '🚫', titleBn: 'প্রয়োজনে না বলতে পারা', titleEn: 'Ability to say no when needed' },
+    { icon: '⚖️', titleBn: 'সমঝোতার মানসিকতা', titleEn: 'Compromise mindset' }
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  const hubCards = keySkills.map((item, idx) => `
+    <div class="am-hub-card" style="--angle: ${idx * 36}deg;">
+      <div class="am-hub-card__icon" aria-hidden="true">${item.icon}</div>
+      <p class="am-hub-card__text bn">${item.titleBn}</p>
+      <p class="am-hub-card__text en">${item.titleEn}</p>
+    </div>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">⭐</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">জীবন দক্ষতা হলো দৈনন্দিন জীবনের সমস্যা ও চাহিদা বুঝে সেগুলোর সঠিক ব্যবস্থাপনার সক্ষমতা। এটি তরুন-তরুনীদের জীবনের নানা চ্যালেঞ্জ মোকাবিলায় সহায়তা করে।</h2>
+        <h2 class="app-intro-title en">Life skills are the ability to understand daily life needs and problems and manage them appropriately. They help young people face different life challenges.</h2>
+      </div>
+    </div>
+
+    <div class="app-intro-box" style="border-left:4px solid #0EA5E9;">
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">জীবন দক্ষতা শেখা কি কঠিন ?</h2>
+        <h2 class="app-intro-title en">Is learning life skills difficult?</h2>
+        <p class="app-intro-sub bn">জীবন দক্ষতার কোনো বিষয়ই কঠিন নয়। যদি তা সঠিকভাবে ও নিয়মিত অনুশীলন করা যায়।</p>
+        <p class="app-intro-sub en">No life skill is difficult if it is learned correctly and practiced regularly.</p>
+      </div>
+    </div>
+
+    <section class="role-section" aria-label="Who can help with life skills" style="margin-top:0;">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">🧑‍🏫</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">কারা জীবন দক্ষতা শেখাতে সাহায্য করতে পারেন ?</h2>
+          <h2 class="role-section__title en">Who can help teach life skills?</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(helpers)}
+        </div>
+      </div>
+    </section>
+
+    <section class="am-hub-section" aria-label="Important life skills">
+      <div class="am-section-header">
+        <h2 class="am-section-title">
+          <span class="bn">গুরুত্বপূর্ণ জীবন দক্ষতা</span>
+          <span class="en">Important Life Skills</span>
+        </h2>
+      </div>
+      <div class="am-hub-container">
+        <div class="am-hub-center">
+          <div class="am-hub-center__icon">⭐</div>
+          <p class="am-hub-center__text bn">জীবন দক্ষতা</p>
+          <p class="am-hub-center__text en">Life Skills</p>
+        </div>
+        <div class="am-hub-grid">
+          ${hubCards}
+        </div>
+      </div>
+    </section>
+  </div>
+  `;
+}
+
 function handleModuleClick(idx) {
   const trigger = document.getElementById('modTrigger-' + idx);
   const isOpen  = trigger.getAttribute('aria-expanded') === 'true';
@@ -5196,7 +5293,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule22Lesson8 = (modIdx === 21 && lesIdx === 7);
   // Module 22 Lesson 9 — Mpox
   const isModule22Lesson9 = (modIdx === 21 && lesIdx === 8);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9;
+  // Module 23 Lesson 1 — Life skills
+  const isModule23Lesson1 = (modIdx === 22 && lesIdx === 0);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5308,6 +5407,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isModule22Lesson6 ? buildModule22Lesson6Section()
     : isModule22Lesson8 ? buildModule22Lesson8Section()
     : isModule22Lesson9 ? buildModule22Lesson9Section()
+    : isModule23Lesson1 ? buildModule23Lesson1Section()
     : isModule22Lesson7 ? buildModule22Lesson7Section()
     : null;
   
