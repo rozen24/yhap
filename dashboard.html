@@ -4577,6 +4577,110 @@ function openModule(idx) {
   }
 }
 
+function buildModule22Lesson8Section() {
+  const riskFactors = [
+    { icon: '🐓', accent: 'rose', bn: 'পোল্ট্রি খামারে কর্মরত থাকলে', en: 'Working in poultry farms' },
+    { icon: '🚶', accent: 'amber', bn: 'আক্রান্ত এলাকায় গমন করলে', en: 'Traveling to affected areas' },
+    { icon: '🐦', accent: 'teal', bn: 'সংক্রামিত পাখির সংস্পর্শে আসলে', en: 'Coming into contact with infected birds' },
+    { icon: '🍗', accent: 'violet', bn: 'কম রান্না করা মুরগি বা ডিম খেলে', en: 'Eating undercooked chicken or eggs' }
+  ];
+
+  const symptoms = [
+    { icon: '🤧', accent: 'rose', bn: 'কাশি', en: 'Cough' },
+    { icon: '🚽', accent: 'amber', bn: 'ডায়রিয়া', en: 'Diarrhea' },
+    { icon: '😫', accent: 'teal', bn: 'শ্বাসকষ্ট', en: 'Shortness of breath' },
+    { icon: '🌡️', accent: 'violet', bn: 'জ্বর', en: 'Fever' },
+    { icon: '🤕', accent: 'sky', bn: 'মাথা/পেশী ব্যাথা', en: 'Headache/Muscle pain' },
+    { icon: '😞', accent: 'green', bn: 'অসুস্থতাবোধ', en: 'Malaise' },
+    { icon: '👃', accent: 'info', bn: 'সর্দি', en: 'Runny nose' }
+  ];
+
+  const prevention = [
+    { icon: '🚫', accent: 'rose', bn: 'বন্য পাখি বা গৃহপালিত পাখি খাওয়া এড়িয়ে চলুন।', en: 'Avoid eating wild or domesticated birds.' },
+    { icon: '💉', accent: 'teal', bn: 'প্রতিরোধমূলক ব্যবস্থার জন্য আপনার ডাক্তারের সাথে পরামর্শ করার পরে ইনফ্লুয়েঞ্জা অ্যান্টিভাইরাল ওষুধ বা ভ্যাকসিন নিতে হবে।', en: 'Consult your doctor before taking antiviral medication or vaccine for prevention.' },
+    { icon: '🍖', accent: 'amber', bn: 'পোল্ট্রি বা দুগ্ধজাত দ্রব্য ভালভাবে রান্না করার পর খেতে হবে।', en: 'Thoroughly cook poultry and dairy products before consumption.' }
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">🦟</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">এভিয়ান ইনফ্লুয়েঞ্জা বা বার্ড ফ্লু ভাইরাসজনিত মুরগির একটি মারাত্বক সংক্রামক ও ছোঁয়াচে রোগ। মুরগি, টার্কি, কোয়েল, হাঁস, রাজহাঁস এবং আরও নানা জাতীয় পাখি এ রোগে আক্রান্ত হয়ে থাকে। ধারণা করা হয় বন্য জলচর পাখিরা এ ভাইরাসের বাহক হিসেবে কাজ করে, তবে সাধারণত এরা এ রোগে আক্রান্ত হয়না। এটি একটি জুনোটিক ডিজিজ, যা মানুষকেও আক্রান্ত করতে পারে।</h2>
+        <h2 class="app-intro-title en">Avian Influenza or Bird Flu is a viral infectious and contagious disease in chickens. Chickens, turkeys, quails, ducks, swans, and various other bird species are affected by this disease. It is believed that wild waterfowl act as carriers of this virus, but they are not usually affected by the disease. It is a zoonotic disease that can also infect humans.</h2>
+      </div>
+    </div>
+
+    <div class="app-intro-box" style="border-left: 4px solid #F59E0B;">
+      <div class="app-intro-titles">
+        <h3 class="app-intro-title bn" style="font-size:15px; margin:0;">বাংলাদেশে বর্তমানে যে ভাইরাসটি সচারাচর সনাক্ত করা হচ্ছে সেটি H5N1 প্রকৃতির। এভিয়ান ইনফ্লুয়েঞ্জার এই ভাইরাসটি অত্যন্ত সক্রিয় ও ভয়ঙ্কর। এটি মানুষকেও সংক্রমিত করে।</h3>
+        <h3 class="app-intro-title en" style="font-size:15px; margin:0;">The virus currently commonly detected in Bangladesh is of H5N1 nature. This avian influenza virus is highly active and dangerous. It can also infect humans.</h3>
+      </div>
+    </div>
+
+    <section class="role-section" aria-label="Risk factors" style="margin-top:0;">
+      <div class="role-section__header role-section__header--rose">
+        <div class="role-section__icon" aria-hidden="true">⚠️</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">ঝুঁকির কারণ</h2>
+          <h2 class="role-section__title en">Risk Factors</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid" style="">
+          ${renderCards(riskFactors)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Symptoms" style="margin-top:0;">
+      <div class="role-section__header role-section__header--amber">
+        <div class="role-section__icon" aria-hidden="true">🤒</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">লক্ষণ</h2>
+          <h2 class="role-section__title en">Symptoms</h2>
+           <div class="role-intro-text">
+          <p class="bn">একজন ব্যক্তির H5N1 সংক্রমণ আছে বলে সন্দেহ করা হয় যদি তিনি নিম্নলিখিত উপসর্গগুলির সম্মুখীন হন:</p>
+          <p class="en">A person is suspected of having H5N1 infection if they experience the following symptoms:</p>
+        </div>
+        </div>
+      </div>
+      <div class="role-section__body">
+       
+        <div class="role-grid">
+          ${renderCards(symptoms)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Prevention" style="margin-top:0;">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">🛡️</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">প্রতিরোধ</h2>
+          <h2 class="role-section__title en">Prevention</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(prevention)}
+        </div>
+      </div>
+    </section>
+  </div>
+  `;
+}
+
 function handleModuleClick(idx) {
   const trigger = document.getElementById('modTrigger-' + idx);
   const isOpen  = trigger.getAttribute('aria-expanded') === 'true';
@@ -5004,7 +5108,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule22Lesson6 = (modIdx === 21 && lesIdx === 5);
   // Module 22 Lesson 7 — Influenza
   const isModule22Lesson7 = (modIdx === 21 && lesIdx === 6);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7;
+  // Module 22 Lesson 8 — Avian Influenza
+  const isModule22Lesson8 = (modIdx === 21 && lesIdx === 7);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5114,6 +5220,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isNipahLesson ? buildNipahLessonSection()
     : isCovidLesson ? buildCovidLessonSection()
     : isModule22Lesson6 ? buildModule22Lesson6Section()
+    : isModule22Lesson8 ? buildModule22Lesson8Section()
     : isModule22Lesson7 ? buildModule22Lesson7Section()
     : null;
   
