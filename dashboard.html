@@ -255,6 +255,9 @@
     /* ============================================================
        SIDEBAR
     ============================================================ */
+    .role-section__header--amber   { background: linear-gradient(135deg, #F59E0B 0%, #D97706 55%, #92400E 100%); }
+    .role-section__header--sky     { background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 55%, #075985 100%); }
+    .role-section__header--green   { background: linear-gradient(135deg, #22C55E 0%, #16A34A 55%, #15803D 100%); }
     .sidebar {
       grid-area: sidebar;
       background: var(--sidebar-bg);
@@ -4999,7 +5002,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isCovidLesson = (modIdx === 21 && lesIdx === 4);
   // Module 22 Lesson 6 — COVID-19 Prevention Guidelines
   const isModule22Lesson6 = (modIdx === 21 && lesIdx === 5);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6;
+  // Module 22 Lesson 7 — Influenza
+  const isModule22Lesson7 = (modIdx === 21 && lesIdx === 6);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5109,6 +5114,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isNipahLesson ? buildNipahLessonSection()
     : isCovidLesson ? buildCovidLessonSection()
     : isModule22Lesson6 ? buildModule22Lesson6Section()
+    : isModule22Lesson7 ? buildModule22Lesson7Section()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -14906,6 +14912,117 @@ function buildModule22Lesson6Section() {
       <div class="role-section__body">
         <div class="role-grid">
           ${renderCards(suspected)}
+        </div>
+      </div>
+    </section>
+  </div>
+  `;
+}
+
+function buildModule22Lesson7Section() {
+  const spread = [
+    { icon: '🤧', accent: 'rose', bn: 'সাধারণত ইতিমধ্যেই সংক্রমিত হয়েছে, এমন ব্যক্তির হাঁচি-কাশি, কথা বলা কিংবা তার ব্যবহৃত কিছু ব্যবহারের মাধ্যমে ইনফ্লুয়েঞ্জা ছড়ায়। এ ছাড়া ইনফ্লুয়েঞ্জা ভাইরাস আছে, এমন কিছু স্পর্শ করার মাধ্যমেও ইনফ্লুয়েঞ্জা ছড়াতে পারে। এ ভাইরাস প্রতিনিয়ত নিজেকে পরিবর্তন করে থাকে, যাকে বলা হয় মিউটেশন।', en: 'Influenza typically spreads through sneezing, coughing, or speaking from an already infected person, or through contact with items they have used. It can also spread by touching something contaminated with the influenza virus. This virus constantly changes itself through mutation.' }
+  ];
+
+  const generalSymptoms = [
+    { icon: '🌡️', accent: 'amber', bn: 'প্রাথমিকভাবে ইনফ্লুয়েঞ্জার সংক্রমণ হলে সাধারণ ঠান্ডা লাগার মতোই লক্ষণ দেখা দেয়। যেমন জ্বর, গলাব্যথা, নাক দিয়ে পানি পড়া, সর্দি, কাশি ইত্যাদি। সাধারণ ঠান্ডা লাগার সঙ্গে ইনফ্লুয়েঞ্জা সংক্রমণের পার্থক্য হচ্ছে, এটি দ্রুত বেড়ে যায়। পরিবারের একজন আক্রান্ত হলে অন্যদেরও আক্রান্ত হওয়ার আশঙ্কা থাকে।', en: 'Initial influenza infection shows symptoms similar to common cold: fever, sore throat, runny nose, cold, cough, etc. The difference between common cold and influenza is that it develops rapidly. If one family member is infected, others are at risk of infection.' }
+  ];
+
+  const specificSymptoms = [
+    { icon: '🌡️', accent: 'rose', bn: 'হঠাৎ ১০০ ডিগ্রি সেলসিয়াস বা তার বেশি জ্বর', en: 'Sudden fever of 100°C or higher' },
+    { icon: '😞', accent: 'amber', bn: 'গলাব্যথা', en: 'Sore throat' },
+    { icon: '🤧', accent: 'teal', bn: 'সর্দি-কাশি', en: 'Runny nose and cough' },
+    { icon: '🤕', accent: 'violet', bn: 'মাথাব্যথা', en: 'Headache' },
+    { icon: '🚽', accent: 'sky', bn: 'ডায়রিয়া', en: 'Diarrhea' },
+    { icon: '😫', accent: 'green', bn: 'শরীর দুর্বল হয়ে যাওয়া', en: 'Body weakness' },
+    { icon: '👃', accent: 'rose', bn: 'নাক বন্ধ হয়ে যাওয়া', en: 'Nasal congestion' },
+    { icon: '🤢', accent: 'amber', bn: 'বমি-ভাব হওয়া কিংবা বমি হওয়া', en: 'Nausea or vomiting' }
+  ];
+
+  const treatment = [
+    { icon: '😴', accent: 'teal', bn: 'ইনফ্লুয়েঞ্জার সংক্রমণ হলে প্রথমেই আক্রান্ত ব্যক্তির পর্যাপ্ত বিশ্রাম নিশ্চিত করতে হবে।', en: 'Ensure adequate rest for the infected person.' },
+    { icon: '💧', accent: 'sky', bn: 'শরীরে যেন পানির ঘাটতি দেখা না দেয়, সে জন্য প্রচুর পরিমাণে পানি ও ফলের রস পান করতে হবে।', en: 'Drink plenty of water and fruit juice to prevent dehydration.' },
+    { icon: '🌡️', accent: 'rose', bn: 'ঠান্ডা আবহাওয়া থেকে দূরে থাকতে হবে এবং নিজেকে উষ্ণ আবহাওয়ার ভেতর রাখতে হবে।', en: 'Stay away from cold weather and keep yourself in a warm environment.' },
+    { icon: '🚫', accent: 'amber', bn: 'ইনফ্লুয়েঞ্জায় আক্রান্ত ব্যক্তির ব্যবহৃত জিনিস যেন আর কেউ ব্যবহার না করে সেটি খেয়াল রাখতে হবে।', en: 'Ensure that items used by the infected person are not used by others.' },
+    { icon: '💉', accent: 'green', bn: 'ফ্লুর টিকা দেওয়া হলে আক্রান্ত হওয়ার ঝুঁকি অনেকাংশে কমে যায়। টিকাটি প্রতিবছর একবার করে নিতে হয়।', en: 'Flu vaccine significantly reduces the risk of infection. The vaccine should be taken once every year.' }
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">🦠</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">এই উপসর্গ গুলি রোগ সংক্রমণের ৪-১০ দিনের মধ্যে দেখা দেয়। সাধারণত ২-৭ দিন পর্যন্ত উপসর্গ স্থায়ী হতে পারে। দ্বিতীয় বার আক্রান্ত হলে রোগের ভয়াভয়তা বৃদ্ধি পায়। সেই কারনে পূর্বে আক্রান্ত ব্যক্তিদের অতিরিক্ত সতর্কতা মেনে চলতে বলা হয়।</h2>
+        <h2 class="app-intro-title en">These symptoms appear within 4–10 days of infection. Generally symptoms last 2–7 days. A second infection increases disease severity. Therefore, previously infected individuals should take extra precautions.</h2>
+      </div>
+    </div>
+
+    <section class="role-section" aria-label="How it spreads" style="margin-top:0;">
+      <div class="role-section__header role-section__header--rose">
+        <div class="role-section__icon" aria-hidden="true">👥</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">কীভাবে ছড়ায়</h2>
+          <h2 class="role-section__title en">How it spreads</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid" style="grid-template-columns: 1fr !important;">
+          ${renderCards(spread)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="General symptoms" style="margin-top:0;">
+      <div class="role-section__header role-section__header--amber">
+        <div class="role-section__icon" aria-hidden="true">📋</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">লক্ষণ</h2>
+          <h2 class="role-section__title en">Symptoms</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid" style="grid-template-columns: 1fr !important;">
+          ${renderCards(generalSymptoms)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Influenza infection symptoms" style="margin-top:0;">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">🤒</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">ইনফ্লুয়েঞ্জার সংক্রমণের লক্ষণগুলো হলো</h2>
+          <h2 class="role-section__title en">Influenza infection symptoms</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(specificSymptoms)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Treatment and prevention" style="margin-top:0;">
+      <div class="role-section__header role-section__header--info">
+        <div class="role-section__icon" aria-hidden="true">🩺</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">চিকিৎসা ও প্রতিকার</h2>
+          <h2 class="role-section__title en">Treatment & Prevention</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(treatment)}
         </div>
       </div>
     </section>
