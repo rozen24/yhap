@@ -4282,7 +4282,7 @@
         <div class="lesson-list" id="modPanel-21" role="list">
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(21,0)"><span class="lesson-dot" aria-hidden="true">1</span><span class="lesson-text"><span class="lesson-label bn">উদীয়মান ও পুনরুদীয়মান রোগ</span><span class="lesson-label en">Emerging and re-emerging diseases</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(21,1)"><span class="lesson-dot" aria-hidden="true">2</span><span class="lesson-text"><span class="lesson-label bn">ডেঙ্গু</span><span class="lesson-label en">Dengue</span></span></button>
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(21,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">ডেঙ্গু: প্রতিরোধ ও চিকিৎসা</span><span class="lesson-label en">Dengue: Prevention and treatment</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(21,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">ডেংগুর চিকিৎসা</span><span class="lesson-label en">Dengue: Prevention and treatment</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(21,3)"><span class="lesson-dot" aria-hidden="true">4</span><span class="lesson-text"><span class="lesson-label bn">নিপাহ ভাইরাস সংক্রমণ</span><span class="lesson-label en">Nipah virus infection</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(21,4)"><span class="lesson-dot" aria-hidden="true">5</span><span class="lesson-text"><span class="lesson-label bn">COVID-19</span><span class="lesson-label en">COVID-19</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(21,5)"><span class="lesson-dot" aria-hidden="true">6</span><span class="lesson-text"><span class="lesson-label bn">COVID-19 প্রতিরোধে করণীয়</span><span class="lesson-label en">Actions to prevent COVID-19</span></span></button>
@@ -4499,7 +4499,7 @@ const LESSONS_BN = [
   ['অসংক্রামক রোগ ও  ত্রুটিপূর্ণ খাদ্যাভ্যাস প্রতিরোধে করণীয়','কায়িক পরিশ্রমের করণীয়',' তামাকজাত দ্রব্য ব্যবহার ও মদ্যপান প্রতিরোধে করণীয় :','অ্যাজমা বা হাঁপানি রোগঃ','ডায়াবেটিস ও হাইপোগ্লাইসেমিয়া','থ্যালাসেমিয়া','হৃদরোগ ও উচ্চ রক্তচাপ','তরুন-তরুনীদের মৃগীরোগ','নেফ্রোটিক সিনড্রোম রোগ'],
   ['তারুণ্য: সম্ভাবনা ও ঝুঁকি','ঝুঁকিপূর্ণ তরুন-তরুনীদের ঝুঁকি নিরসনে করণীয়','ঝুঁকিপূর্ণ তরুন-তরুনীদের ঝুঁকি নিরসনে করণীয়'],
   ['আবহাওয়া ও জলবায়ু','বায়ু দূষণ','বায়ু দূষণের উৎস','খাবারপানির দূষণের প্রধান কারণ সমূহ','পানি, স্যানিটেশন এবং স্বাস্থ্যবিধি উন্নত করার জন্য প্রয়োজনীয় পদক্ষেপ','পানি, স্যানিটেশন ও স্বাস্থ্যবিধি উন্নয়নে প্রয়োজনীয় পদক্ষেপ','সীসা এবং অন্যান্য বিপজ্জনক রাসায়নিক','কীটনাশক এবং শিশু ও কিশোর-কিশোরীদের স্বাস্থ্য ঝুঁকি','সতর্কতা','শব্দ দূষণ'],
-  ['উদীয়মান ও পুনরুদীয়মান রোগ','ডেঙ্গু','ডেঙ্গু: প্রতিরোধ ও চিকিৎসা','নিপাহ ভাইরাস সংক্রমণ','COVID-19','COVID-19 প্রতিরোধে করণীয়','ইনফ্লুয়েঞ্জা','এভিয়ান ইনফ্লুয়েঞ্জা','মাঙ্কিপক্স'],
+  ['উদীয়মান ও পুনরুদীয়মান রোগ','ডেঙ্গু','ডেংগুর চিকিৎসা','নিপাহ ভাইরাস সংক্রমণ','COVID-19','COVID-19 প্রতিরোধে করণীয়','ইনফ্লুয়েঞ্জা','এভিয়ান ইনফ্লুয়েঞ্জা','মাঙ্কিপক্স'],
   ['জীবন দক্ষতা','মূল্যবোধ কী?','মূল্যবোধ বিকাশের উপায়'],
   ['যোগাযোগ','যোগাযোগ প্রক্রিয়া','যোগাযোগের পদ্ধতি','আন্তঃব্যক্তিক সম্পর্ক স্থাপনের অন্তর্নিহিত শর্ত ও কৌশল','পরামর্শদান ও পরামর্শদানের ধাপসমূহ'],
 ];
@@ -4991,7 +4991,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isEmergingLesson = (modIdx === 21 && lesIdx === 0);
   // Module 22 Lesson 2 — Dengue
   const isDengueLesson = (modIdx === 21 && lesIdx === 1);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson;
+  // Module 22 Lesson 3 — Dengue prevention and treatment
+  const isDenguePreventionLesson = (modIdx === 21 && lesIdx === 2);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5097,6 +5099,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isNoisePollutionLesson ? buildNoisePollutionLessonSection()
     : isEmergingLesson ? buildEmergingReEmergingLessonSection()
     : isDengueLesson ? buildDengueLessonSection()
+    : isDenguePreventionLesson ? buildDenguePreventionLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -14577,6 +14580,61 @@ function buildDengueLessonSection() {
       <div class="app-intro-titles">
         <h2 class="app-intro-title bn">এই উপসর্গ গুলি রোগ সংক্রমণের ৪-১০ দিনের মধ্যে দেখা দেয়। সাধারণত ২-৭ দিন পর্যন্ত উপসর্গ স্থায়ী হতে পারে। দ্বিতীয় বার ডেংগু তে আক্রান্ত হলে রোগের ভয়াভয়তা বৃদ্ধি পায়। সেই কারনে পূর্বে ডেংগু তে আক্রান্ত ব্যক্তিদের অতিরিক্ত সতর্কতা মেনে চলতে বলা হয়।</h2>
         <h2 class="app-intro-title en">These symptoms appear within 4-10 days after infection. Symptoms usually last for 2-7 days. If a person is infected with dengue a second time, the severity of the disease increases. Therefore, people who have had dengue before are advised to take extra precautions.</h2>
+      </div>
+    </div>
+  </div>
+  `;
+}
+
+function buildDenguePreventionLessonSection() {
+  const preventionItems = [
+    { icon: '💧', accent: 'rose', bn: 'বাড়ির চারপাশে পানি জমতে দেওয়া যাবেনা।  জমা পানিতে মশারা বংশবিস্তার করে।  গাছের টব, ফুলদানি, পরে থাকা গাড়ির টায়ারের জমে থাকা পানি ফেলে দিতে হবে।', en: 'Do not allow water to accumulate around the house. Mosquitoes breed in stagnant water. Water collected in flower pots, vases, and discarded vehicle tires must be emptied.' },
+    { icon: '👕', accent: 'amber', bn: 'শরীর ঢাকা জামা কাপড় যেমন লম্বা-হাতা শার্ট, লম্বা প্যান্ট, মোজা এবং জুতা পরতে হবে।', en: 'Wear clothing that covers the body, such as long-sleeved shirts, long pants, socks, and shoes.' },
+    { icon: '🌅', accent: 'teal', bn: 'ডেংগু  ভাইরাস বহনকারী মশা ভোর থেকে সন্ধ্যা পর্যন্ত সবচেয়ে বেশি সক্রিয় থাকে।  এই সময় অতিরিক্ত সতর্ক থাকতে হবে।', en: 'Mosquitoes carrying the dengue virus are most active from dawn to dusk. Extra caution is needed during this time.' },
+    { icon: '🛏️', accent: 'violet', bn: 'রাতে শোবার সময় মশারী ব্যবহার করতে হবে।', en: 'Use a mosquito net while sleeping at night.' },
+    { icon: '🌀', accent: 'sky', bn: 'মশা নিরোধক কেমিক্যাল / মশার কয়েল ব্যবহার করতে হবে।', en: 'Use mosquito repellent chemicals / mosquito coils.' }
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">💉</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">ডেংগুর চিকিৎসার বিশেষ কোন ওষুধ বা প্রতিষেধক এখনো পর্যন্ত আবিষ্কৃত হয়নি।  চিকিৎসকরা প্যারাসিটামল জাতীয় ওষুধ দিয়ে ব্যথা এবং জ্বরের মাত্রা নিয়ন্ত্রণ করেন।  রোগের মাত্রা অতিরিক্ত ভাবে বৃদ্ধি পেলে রোগী কে হাসপাতালে ভর্তি রাখা একান্ত জরুরী।</h2>
+        <h2 class="app-intro-title en">No specific medicine or vaccine for dengue has been discovered yet. Doctors control pain and fever with paracetamol-type medicines. If the severity of the disease increases excessively, hospitalization is absolutely necessary.</h2>
+      </div>
+    </div>
+
+    <section class="role-section" aria-label="Dengue prevention actions" style="margin-top:0;">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">🛡️</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">ডেংগু প্রতিরোধে করণীয় -</h2>
+          <h2 class="role-section__title en">Actions to prevent dengue</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(preventionItems)}
+        </div>
+      </div>
+    </section>
+
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">⚠️</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">ডেংগু জ্বর একটি সাধারণ রোগ। কিন্তু অবহেলা করলে এই রোগ মারাত্মক হতে পারে।  শহরাঞ্চলে এর প্রকোপ বেশি। তাই নগরবাসীকে আরেকটু সজাগ ও সচেতন হতে হবে। বিশেষ করে যাদের ডেংগু হয়েছে তাদের অতিরিক্ত সতর্ক থাকতে হবে। দ্বিতীয় ডেংগু সংক্রমণ মারাত্মক হতে পারে।</h2>
+        <h2 class="app-intro-title en">Dengue fever is a common disease. But if neglected, it can become severe. Its prevalence is higher in urban areas. Therefore, city dwellers need to be more alert and aware. In particular, those who have had dengue should be extra cautious. A second dengue infection can be severe.</h2>
       </div>
     </div>
   </div>
