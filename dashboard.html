@@ -4997,7 +4997,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isNipahLesson = (modIdx === 21 && lesIdx === 3);
   // Module 22 Lesson 5 — COVID-19
   const isCovidLesson = (modIdx === 21 && lesIdx === 4);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson;
+  // Module 22 Lesson 6 — COVID-19 Prevention Guidelines
+  const isModule22Lesson6 = (modIdx === 21 && lesIdx === 5);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5106,6 +5108,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isDenguePreventionLesson ? buildDenguePreventionLessonSection()
     : isNipahLesson ? buildNipahLessonSection()
     : isCovidLesson ? buildCovidLessonSection()
+    : isModule22Lesson6 ? buildModule22Lesson6Section()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -14817,6 +14820,92 @@ function buildCovidLessonSection() {
       <div class="role-section__body">
         <div class="role-grid">
           ${renderCards(treatment)}
+        </div>
+      </div>
+    </section>
+  </div>
+  `;
+}
+
+function buildModule22Lesson6Section() {
+  const awareness = [
+    { icon: '🧼', accent: 'rose', bn: 'ঘন ঘন সাবান ও পানি দিয়ে হাত ধুতে হবে (অন্তত ২০ সেকেন্ড যাবৎ)', en: 'Wash hands frequently with soap and water for at least 20 seconds' },
+    { icon: '👁️', accent: 'amber', bn: 'অপরিষ্কার হাতে চোখ, নাক ও মুখ স্পর্শ করা যাবেনা', en: 'Avoid touching eyes, nose and mouth with unwashed hands' },
+    { icon: '😷', accent: 'teal', bn: 'মাস্ক পরিধান করতে হবে', en: 'Wear a mask' },
+    { icon: '🚫', accent: 'violet', bn: 'ইতোমধ্যে আক্রান্ত এমন ব্যক্তিদের সংস্পর্শ এড়িয়ে চলতে হবে', en: 'Avoid contact with persons already infected' },
+    { icon: '🏙️', accent: 'sky', bn: 'জনসমাগম হয় এমন জায়গা এড়িয়ে চলতে হবে', en: 'Avoid crowded places' },
+    { icon: '🤧', accent: 'green', bn: 'কাশি শিষ্টাচার মেনে চলতে হবে (হাঁচি-কাশির সময় বাহু/টিস্যু/কাপড় দিয়ে নাক-মুখ ঢাকা)', en: 'Follow cough etiquette (cover nose and mouth with arm/tissue/cloth when sneezing/coughing)' },
+    { icon: '🦠', accent: 'rose', bn: 'অসুস্থ পশু/পাখির সংস্পর্শ পরিহার করতে হবে', en: 'Avoid contact with sick animals/birds' },
+    { icon: '🍖', accent: 'amber', bn: 'মাছ-মাংস ভালোভাবে রান্না করে খেতে হবে', en: 'Cook fish and meat thoroughly before eating' },
+    { icon: '🥬', accent: 'teal', bn: 'শাক-সব্জি ও ফল-মূল ভালোভাবে ধুয়ে খেতে হবে', en: 'Wash vegetables and fruits thoroughly before eating' }
+  ];
+
+  const illness = [
+    { icon: '🏠', accent: 'rose', bn: 'অসুস্থ হলে ঘরে থাকতে হবে, বাইরে যাওয়া অত্যাবশ্যক হলে নাক-মুখ ঢাকার জন্য মাস্ক ব্যবহার করতে হবে', en: 'Stay home if ill; if you must go out, wear a mask to cover nose and mouth' },
+    { icon: '✈️', accent: 'amber', bn: 'জরুরী প্রয়োজন ব্যতীত অযাথা ভ্রমণ করা থেকে বিরত থাকতে হবে', en: 'Avoid unnecessary travel except for essential needs' },
+    { icon: '⚠️', accent: 'teal', bn: 'অত্যাবশ্যকীয় ভ্রমণে সাবধানতা অবলম্বন করতে হবে', en: 'Take precautions during essential travel' }
+  ];
+
+  const suspected = [
+    { icon: '🏠', accent: 'rose', bn: 'অসুস্থ রোগীকে ঘরে থাকতে বলতে হবে', en: 'Advise the sick person to stay at home' },
+    { icon: '🏥', accent: 'amber', bn: 'মারাত্মক অসুস্থ রোগীকে নিকটস্থ সদর হাসপাতালে যেতে বলতে হবে', en: 'Advise severely ill patients to go to the nearest hospital' },
+    { icon: '😷', accent: 'teal', bn: 'রোগীকে নাক-মুখ ঢাকার জন্য মাস্ক ব্যবহার করতে বলতে হবে', en: 'Ask the patient to wear a mask to cover nose and mouth' },
+    { icon: '💧', accent: 'sky', bn: 'রোগীকে প্রচুর পানি পান করতে হবে; এন্টি-অক্সিডেন্ট, ভিটামিন-সি, ভিটামিন-ডি ও আমিষ জাতীয় খাবার বেশী খেতে বলুন', en: 'Encourage plenty of fluids and foods rich in antioxidants, vitamin C, vitamin D, and protein' }
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <section class="role-section" aria-label="Personal awareness" style="margin-top:0;">
+      <div class="role-section__header role-section__header--rose">
+        <div class="role-section__icon" aria-hidden="true">👤</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">ব্যক্তিগত সচেতনতা</h2>
+          <h2 class="role-section__title en">Personal Awareness</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(awareness)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="When ill or traveling" style="margin-top:0;">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">🚩</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">অসুস্থ হলে বা ভ্রমণের সময়</h2>
+          <h2 class="role-section__title en">When ill or traveling</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(illness)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Suspected patient care" style="margin-top:0;">
+      <div class="role-section__header role-section__header--info">
+        <div class="role-section__icon" aria-hidden="true">🩺</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">সন্দেহভাজন রোগীর ক্ষেত্রে করণীয়</h2>
+          <h2 class="role-section__title en">What to do in case of suspected patient</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(suspected)}
         </div>
       </div>
     </section>
