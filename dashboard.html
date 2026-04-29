@@ -4681,6 +4681,90 @@ function buildModule22Lesson8Section() {
   `;
 }
 
+function buildModule22Lesson9Section() {
+  const general = [
+    { icon: '🌡️', accent: 'rose', bn: 'জ্বর (৩৮ ডিগ্রি সেন্টিগ্রেডের বেশী তাপমাত্রা)', en: 'Fever (temperature above 38°C)' },
+    { icon: '🤕', accent: 'amber', bn: 'প্রচন্ড মাথা ব্যথা', en: 'Severe headache' },
+    { icon: '🧾', accent: 'teal', bn: 'শরীরের বিভিন্ন জায়গায় লসিকাগ্রন্থি ফুলে যাওয়া ও ব্যথা (Lymphadenopathy)', en: 'Swollen and painful lymph nodes (Lymphadenopathy)' },
+    { icon: '💪', accent: 'violet', bn: 'মাংসপেশীতে ব্যথা', en: 'Muscle pain' },
+    { icon: '😞', accent: 'sky', bn: 'অবসাদগ্রস্ততা', en: 'Fatigue' },
+    { icon: '🧫', accent: 'green', bn: 'ফুসকুড়ি- যা মুখ থেকে শুরু হয়ে পর্যায়ক্রমে হাতের তালু, পায়ের তালু সহ শরীরের বিভিন্ন জায়গায় ছড়িয়ে পড়ে (সাধারণত জ্বরের ৩ দিনের মধ্যে)', en: 'Rash that starts on the face and spreads to palms and soles and other body parts (usually within 3 days of fever)' }
+  ];
+
+  const actions = [
+    { icon: '🚪', accent: 'rose', bn: 'সাবার আগে নিজেকে অন্যদের কাছ হতে আলাদা (Isolation) করতে হবে।', en: 'Isolate yourself from others until advised otherwise.' },
+    { icon: '☎️', accent: 'amber', bn: 'সাথে সাথে চিকিৎসক/ নিকটস্থ স্থানীয় স্বাস্থ্য কেন্দ্র/ হাসপাতালে যোগাযোগ করতে হবে।', en: 'Contact a doctor or your nearest health centre/hospital immediately.' },
+    { icon: '🏥', accent: 'teal', bn: 'বিশেষ করে যারা আগে থেকেই দীর্ঘমেয়াদী অসুস্থতায় ভুগছেন (যেমনঃ অনিয়ন্ত্রিত ডায়াবেটিস, উচ্চ রক্তচাপ, ক্যান্সার) তাদের অতিদ্রুত চিকিৎসকের পরামর্শ  নিতে হবে।', en: 'People with long-term illnesses (e.g., uncontrolled diabetes, high blood pressure, cancer) should seek urgent medical advice.' }
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">🦠</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">এমপক্স একটি ভাইরাস জনিত প্রাণিবাহিত (Zoonotic) রোগ।
+
+১৯৫৮ সালে ডেনমার্ক-এ বানরের দেহে সর্বপ্রথম এ রোগ সনাক্ত হয় বলে একে মাঙ্কিপক্স বলা হয়।  ২০২২ সালের নভেম্বরে বিশ্ব স্বাস্থ্য সংস্থা (WHO) রোগের নামকরণের জন্য আধুনিক নির্দেশিকা অনুসরণ করে রোগটির নাম পরিবর্তন করে এমপক্স (Mpox) রাখা হয়।
+
+এ রোগটির প্রাদুর্ভাব প্রধানত মধ্য ও পশ্চিম আফ্রিকায় দেখা যায়।  ইতিপূর্বে এ ছাড়া অন্যান্য দেশেও এ রোগের প্রাদুর্ভাব দেখা গেছে।  তবে সে ক্ষেত্রে উক্ত দেশ সমূহে ভ্রমণের ইতিহাস অথবা উক্ত দেশ সমূহ হতে আমদানিকৃত প্রাণীর সংস্পর্শে আসার প্রমাণ আছে।</h2>
+        <h2 class="app-intro-title en">Mpox is a zoonotic viral disease.
+
+First identified in monkeys in Denmark in 1958 and historically called monkeypox, WHO renamed the disease Mpox in November 2022 following modern naming guidance.
+
+Outbreaks primarily occur in Central and West Africa, though cases have been detected in other countries where travel history or contact with imported animals is documented.</h2>
+      </div>
+    </div>
+
+    <section class="role-section" aria-label="General symptoms" style="margin-top:0;">
+      <div class="role-section__header role-section__header--rose">
+        <div class="role-section__icon" aria-hidden="true">📋</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">সাধারণ উপসর্গগুলো হলঃ</h2>
+          <h2 class="role-section__title en">Common symptoms include:</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(general)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="What to do" style="margin-top:0;">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">🩺</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">উপসর্গ দেখা দিলে করণীয়ঃ</h2>
+          <h2 class="role-section__title en">If symptoms appear, do the following:</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid" style="grid-template-columns: 1fr !important;">
+          ${renderCards(actions)}
+        </div>
+      </div>
+    </section>
+
+    <div class="app-intro-box" style="border-left:4px solid #64748b;">
+      <div class="app-intro-titles">
+        <h3 class="app-intro-title bn" style="font-size:15px; margin:0;">সাধারণত উপসর্গ ২-৪ সপ্তাহ পর্যন্ত স্থায়ী হয়।</h3>
+        <h3 class="app-intro-title en" style="font-size:15px; margin:0;">Symptoms usually last 2–4 weeks.</h3>
+      </div>
+    </div>
+  </div>
+  `;
+}
+
 function handleModuleClick(idx) {
   const trigger = document.getElementById('modTrigger-' + idx);
   const isOpen  = trigger.getAttribute('aria-expanded') === 'true';
@@ -5110,7 +5194,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule22Lesson7 = (modIdx === 21 && lesIdx === 6);
   // Module 22 Lesson 8 — Avian Influenza
   const isModule22Lesson8 = (modIdx === 21 && lesIdx === 7);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8;
+  // Module 22 Lesson 9 — Mpox
+  const isModule22Lesson9 = (modIdx === 21 && lesIdx === 8);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5221,6 +5307,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isCovidLesson ? buildCovidLessonSection()
     : isModule22Lesson6 ? buildModule22Lesson6Section()
     : isModule22Lesson8 ? buildModule22Lesson8Section()
+    : isModule22Lesson9 ? buildModule22Lesson9Section()
     : isModule22Lesson7 ? buildModule22Lesson7Section()
     : null;
   
