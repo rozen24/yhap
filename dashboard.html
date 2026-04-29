@@ -4989,7 +4989,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isNoisePollutionLesson = (modIdx === 20 && lesIdx === 9);
   // Module 22 Lesson 1 — Emerging & Re-emerging diseases
   const isEmergingLesson = (modIdx === 21 && lesIdx === 0);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson;
+  // Module 22 Lesson 2 — Dengue
+  const isDengueLesson = (modIdx === 21 && lesIdx === 1);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5094,6 +5096,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isPesticidesPrecautionsLesson ? buildPesticidesPrecautionsLessonSection()
     : isNoisePollutionLesson ? buildNoisePollutionLessonSection()
     : isEmergingLesson ? buildEmergingReEmergingLessonSection()
+    : isDengueLesson ? buildDengueLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -14407,7 +14410,7 @@ function buildEmergingReEmergingLessonSection() {
           <article class="role-card role-card--teal">
             <div class="role-card__icon" aria-hidden="true">🧫</div>
             <div class="role-card__content">
-              <h4 class="role-card__title bn">জিকা ভাইরাস</h4>
+              <h4 class="role-card__title bn">জিকা ভাইরাস ইত্যাদি।</h4>
               <h4 class="role-card__title en">Zika virus</h4>
             </div>
           </article>
@@ -14444,7 +14447,7 @@ function buildEmergingReEmergingLessonSection() {
           <article class="role-card role-card--teal">
             <div class="role-card__icon" aria-hidden="true">💧</div>
             <div class="role-card__content">
-              <h4 class="role-card__title bn">কলেরা</h4>
+              <h4 class="role-card__title bn">কলেরা ইত্যাদি।</h4>
               <h4 class="role-card__title en">Cholera</h4>
             </div>
           </article>
@@ -14488,6 +14491,94 @@ function buildEmergingReEmergingLessonSection() {
       </div>
     </section>
 
+  </div>
+  `;
+}
+
+function buildDengueLessonSection() {
+  const symptomItems = [
+    { icon: '🌡️', accent: 'rose', bn: 'তীব্র জ্বর (৪০০ সে:/ ১০৬০ ফা:)', en: 'High fever (40°C / 106°F)' },
+    { icon: '🤕', accent: 'amber', bn: 'তীব্র মাথা ব্যথা', en: 'Severe headache' },
+    { icon: '👁️', accent: 'teal', bn: 'চোখের পিছনে ব্যথার অনুভূতি', en: 'Pain behind the eyes' },
+    { icon: '💪', accent: 'violet', bn: 'মাংসপেশি এবং অস্থি-সন্ধিতে ব্যথা', en: 'Muscle and joint pain' },
+    { icon: '🤢', accent: 'sky', bn: 'বমিভাব', en: 'Nausea' },
+    { icon: '🌀', accent: 'indigo', bn: 'মাথাঘোরা', en: 'Dizziness' },
+    { icon: '🩹', accent: 'green', bn: 'ত্বকের বিভিন্ন স্থানে র‍্যাশ/ ফুসকুড়ি', en: 'Rash / skin eruptions on different parts of the body' }
+  ];
+
+  const severeItems = [
+    { icon: '🩺', accent: 'rose', bn: 'প্রচন্ড পেট ব্যথা', en: 'Severe abdominal pain' },
+    { icon: '🤮', accent: 'amber', bn: 'ক্রমাগত বমি হওয়া', en: 'Persistent vomiting' },
+    { icon: '🩸', accent: 'teal', bn: 'মাড়ি বা নাক থেকে রক্তপাত', en: 'Bleeding from the gums or nose' },
+    { icon: '🧫', accent: 'violet', bn: 'প্রস্রাবে এবং মলের সাথে রক্তপাত', en: 'Blood in urine and stool' },
+    { icon: '🚽', accent: 'sky', bn: 'অনিয়ন্ত্রিত পায়খানা', en: 'Uncontrolled diarrhea' },
+    { icon: '.🩸', accent: 'indigo', bn: 'ত্বকের নিচে রক্তক্ষরণ', en: 'Bleeding under the skin' },
+    { icon: '🌬️', accent: 'green', bn: 'দ্রুত শ্বাস প্রশ্বাস', en: 'Rapid breathing' },
+    { icon: '😓', accent: 'rose', bn: 'ক্লান্তি', en: 'Fatigue' },
+    { icon: '😣', accent: 'amber', bn: 'অস্থিরতা', en: 'Restlessness' }
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">🦟</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">ডেংগু ভাইরাসে আক্রান্ত এডিস মশার কামড়ের মাধ্যমে মানুষের মধ্যে এই রোগ সংক্রমিত হয়। বিশ্বের ক্রান্তীয় এবং উপক্রান্তীয় অঞ্চলগুলোর জন্য এটি একটি উল্লেখযোগ্য জনস্বাস্থ্য সমস্যা।  ডেংগুর জন্য কোন নির্দিষ্ট চিকিৎসা নেই, তবে দ্রুত সনাক্তকরণ এবং সঠিক চিকিৎসা প্রদানের মাধ্যমে এর মৃত্যুহার এক শতাংশের নিচে রাখা সম্ভব।  মশা নিয়ন্ত্রণ ডেংগু প্রতিরোধের প্রধান হাতিয়ার যার মধ্যে রয়েছে মশার প্রজনন স্থান ধ্বংস এবং কীটনাশক ব্যবহার করা।</h2>
+        <h2 class="app-intro-title en">Dengue is transmitted to humans through the bite of Aedes mosquitoes infected with dengue virus. It is a major public health problem in tropical and subtropical regions of the world. There is no specific treatment for dengue, but its death rate can be kept below one percent through early detection and proper treatment. Mosquito control is the main tool for dengue prevention, including destroying mosquito breeding sites and using insecticides.</h2>
+      </div>
+    </div>
+
+    <section class="role-section" aria-label="Dengue fever symptoms" style="margin-top:0;">
+      <div class="role-section__header role-section__header--rose">
+        <div class="role-section__icon" aria-hidden="true">🌡️</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">ডেংগু জ্বরের লক্ষণ</h2>
+          <h2 class="role-section__title en">Symptoms of Dengue Fever</h2>
+          <p class="role-section__sub bn">বেশীর ভাগ ক্ষেত্রে প্রথমবার ডেংগু-তে আক্রান্ত রোগীর বিশেষ কোন উপসর্গ বা লক্ষণ দেখা যায় না।  ডেংগুর সাধারণ উপসর্গ গুলি হলো -</p>
+          <p class="role-section__sub en">In most cases, a patient infected with dengue for the first time does not show any special symptoms or signs. Common symptoms of dengue are -</p>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(symptomItems)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Severe dengue symptoms" style="margin-top:0;">
+      <div class="role-section__header role-section__header--warn">
+        <div class="role-section__icon" aria-hidden="true">⚠️</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">ডেংগুর গুরুতর উপসর্গ</h2>
+          <h2 class="role-section__title en">Severe Dengue Symptoms</h2>
+          <p class="role-section__sub bn">যে সব রোগ আগে নিয়ন্ত্রণে ছিল বা প্রায় বিলুপ্ত হয়ে গিয়েছিল, কিন্তু পুনরায় বৃদ্ধি পেয়ে স্বাস্থ্যঝুঁকি সৃষ্টি করছে, সেগুলোকে রি-ইমারজিং বা পুনরুদ্ভুত রোগ বলা হয়। উদাহরণ:</p>
+          <p class="role-section__sub en">Diseases that were previously under control or nearly eradicated but are resurging and posing health risks. Examples:</p>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(severeItems)}
+        </div>
+      </div>
+    </section>
+
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">🕒</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">এই উপসর্গ গুলি রোগ সংক্রমণের ৪-১০ দিনের মধ্যে দেখা দেয়। সাধারণত ২-৭ দিন পর্যন্ত উপসর্গ স্থায়ী হতে পারে। দ্বিতীয় বার ডেংগু তে আক্রান্ত হলে রোগের ভয়াভয়তা বৃদ্ধি পায়। সেই কারনে পূর্বে ডেংগু তে আক্রান্ত ব্যক্তিদের অতিরিক্ত সতর্কতা মেনে চলতে বলা হয়।</h2>
+        <h2 class="app-intro-title en">These symptoms appear within 4-10 days after infection. Symptoms usually last for 2-7 days. If a person is infected with dengue a second time, the severity of the disease increases. Therefore, people who have had dengue before are advised to take extra precautions.</h2>
+      </div>
+    </div>
   </div>
   `;
 }
