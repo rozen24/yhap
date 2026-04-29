@@ -4284,7 +4284,7 @@
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(21,1)"><span class="lesson-dot" aria-hidden="true">2</span><span class="lesson-text"><span class="lesson-label bn">ডেঙ্গু</span><span class="lesson-label en">Dengue</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(21,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">ডেংগুর চিকিৎসা</span><span class="lesson-label en">Dengue: Prevention and treatment</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(21,3)"><span class="lesson-dot" aria-hidden="true">4</span><span class="lesson-text"><span class="lesson-label bn">নিপাহ ভাইরাস সংক্রমণ</span><span class="lesson-label en">Nipah virus infection</span></span></button>
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(21,4)"><span class="lesson-dot" aria-hidden="true">5</span><span class="lesson-text"><span class="lesson-label bn">COVID-19</span><span class="lesson-label en">COVID-19</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(21,4)"><span class="lesson-dot" aria-hidden="true">5</span><span class="lesson-text"><span class="lesson-label bn">কোভিড-১৯</span><span class="lesson-label en">COVID-19</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(21,5)"><span class="lesson-dot" aria-hidden="true">6</span><span class="lesson-text"><span class="lesson-label bn">COVID-19 প্রতিরোধে করণীয়</span><span class="lesson-label en">Actions to prevent COVID-19</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(21,6)"><span class="lesson-dot" aria-hidden="true">7</span><span class="lesson-text"><span class="lesson-label bn">ইনফ্লুয়েঞ্জা</span><span class="lesson-label en">Influenza</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(21,7)"><span class="lesson-dot" aria-hidden="true">8</span><span class="lesson-text"><span class="lesson-label bn">এভিয়ান ইনফ্লুয়েঞ্জা</span><span class="lesson-label en">Avian influenza</span></span></button>
@@ -4499,7 +4499,7 @@ const LESSONS_BN = [
   ['অসংক্রামক রোগ ও  ত্রুটিপূর্ণ খাদ্যাভ্যাস প্রতিরোধে করণীয়','কায়িক পরিশ্রমের করণীয়',' তামাকজাত দ্রব্য ব্যবহার ও মদ্যপান প্রতিরোধে করণীয় :','অ্যাজমা বা হাঁপানি রোগঃ','ডায়াবেটিস ও হাইপোগ্লাইসেমিয়া','থ্যালাসেমিয়া','হৃদরোগ ও উচ্চ রক্তচাপ','তরুন-তরুনীদের মৃগীরোগ','নেফ্রোটিক সিনড্রোম রোগ'],
   ['তারুণ্য: সম্ভাবনা ও ঝুঁকি','ঝুঁকিপূর্ণ তরুন-তরুনীদের ঝুঁকি নিরসনে করণীয়','ঝুঁকিপূর্ণ তরুন-তরুনীদের ঝুঁকি নিরসনে করণীয়'],
   ['আবহাওয়া ও জলবায়ু','বায়ু দূষণ','বায়ু দূষণের উৎস','খাবারপানির দূষণের প্রধান কারণ সমূহ','পানি, স্যানিটেশন এবং স্বাস্থ্যবিধি উন্নত করার জন্য প্রয়োজনীয় পদক্ষেপ','পানি, স্যানিটেশন ও স্বাস্থ্যবিধি উন্নয়নে প্রয়োজনীয় পদক্ষেপ','সীসা এবং অন্যান্য বিপজ্জনক রাসায়নিক','কীটনাশক এবং শিশু ও কিশোর-কিশোরীদের স্বাস্থ্য ঝুঁকি','সতর্কতা','শব্দ দূষণ'],
-  ['উদীয়মান ও পুনরুদীয়মান রোগ','ডেঙ্গু','ডেংগুর চিকিৎসা','নিপাহ ভাইরাস সংক্রমণ','COVID-19','COVID-19 প্রতিরোধে করণীয়','ইনফ্লুয়েঞ্জা','এভিয়ান ইনফ্লুয়েঞ্জা','মাঙ্কিপক্স'],
+  ['উদীয়মান ও পুনরুদীয়মান রোগ','ডেঙ্গু','ডেংগুর চিকিৎসা','নিপাহ ভাইরাস সংক্রমণ','কোভিড-১৯','COVID-19 প্রতিরোধে করণীয়','ইনফ্লুয়েঞ্জা','এভিয়ান ইনফ্লুয়েঞ্জা','মাঙ্কিপক্স'],
   ['জীবন দক্ষতা','মূল্যবোধ কী?','মূল্যবোধ বিকাশের উপায়'],
   ['যোগাযোগ','যোগাযোগ প্রক্রিয়া','যোগাযোগের পদ্ধতি','আন্তঃব্যক্তিক সম্পর্ক স্থাপনের অন্তর্নিহিত শর্ত ও কৌশল','পরামর্শদান ও পরামর্শদানের ধাপসমূহ'],
 ];
@@ -4995,7 +4995,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isDenguePreventionLesson = (modIdx === 21 && lesIdx === 2);
   // Module 22 Lesson 4 — Nipah virus infection
   const isNipahLesson = (modIdx === 21 && lesIdx === 3);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson;
+  // Module 22 Lesson 5 — COVID-19
+  const isCovidLesson = (modIdx === 21 && lesIdx === 4);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5103,6 +5105,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isDengueLesson ? buildDengueLessonSection()
     : isDenguePreventionLesson ? buildDenguePreventionLessonSection()
     : isNipahLesson ? buildNipahLessonSection()
+    : isCovidLesson ? buildCovidLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -14727,6 +14730,93 @@ function buildNipahLessonSection() {
               <img src="badur.png" alt="Nipah virus transmission illustration" style="width:100%; height:auto; display:block; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.12);" loading="lazy" decoding="async" />
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+  </div>
+  `;
+}
+function buildCovidLessonSection() {
+  // Create arrays for cards
+  const spread = [
+    { icon: '🦠', accent: 'rose', bn: 'এই ভাইরাস প্রাণী থেকে মানুষের দেহে ঢুকে এখন মানুষ থেকে মানুষে সংক্রমণ হচ্ছে', en: 'The virus crossed from animals to humans and now spreads from person to person' },
+    { icon: '💨', accent: 'amber', bn: 'করোনা ভাইরাস মানুষের ফুসফুেস সংক্রমণ ঘটায় এবং শ্বাসতন্ত্রের মাধ্যমে (হাঁচি/কাশি/কফ/থুথু) অথবা আক্রান্তব্যক্তির সংস্পর্শে আসলে একজন থেকে আরেকজনে ছড়ায়', en: 'Coronavirus infects the lungs and spreads via the respiratory tract (sneezing/coughing/sputum/spit) or by contact with an infected person' }
+  ];
+
+  const symptoms = [
+    { icon: '⏳', accent: 'teal', bn: 'ভাইরাস শরীরে ঢোকার পর সংক্রমণের লক্ষণ দেখা দিতে প্রায় ২-১৪ দিন লাগে', en: 'Symptoms typically appear 2–14 days after exposure' },
+    { icon: '🌡️', accent: 'rose', bn: 'বেশির ভাগ ক্ষেত্রে প্রথম লক্ষণ জ্বর', en: 'Fever is the most common initial symptom' },
+    { icon: '🤧', accent: 'amber', bn: 'এছাড়া শুকনো কাশি / গলা ব্যথা হতে পারে', en: 'May also cause dry cough or sore throat' },
+    { icon: '😮‍💨', accent: 'violet', bn: 'শ্বাসকষ্ট / নিউমোনিয়া দেখা দিতে পারে', en: 'Shortness of breath or pneumonia may occur' },
+    { icon: '⚠️', accent: 'sky', bn: 'অন্যান্য অসুস্থতা থাকলে অরগ্যান ফেইলিওর বা দেহের বিভিন্ন প্রত্যঙ্গ বিকল হতে পারে', en: 'If other illnesses exist, organ failure or dysfunction may occur' }
+  ];
+
+  const treatment = [
+    { icon: '💉', accent: 'green', bn: 'টিকা / ভ্যাকসিন', en: 'Vaccine' },
+    { icon: '🩺', accent: 'info', bn: 'চিকিৎসা- লক্ষণভিত্তিক', en: 'Treatment is symptomatic (supportive care)' }
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">🧬</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">করোনাভাইরাস রোগ (কোভিড-১৯) হল সার্স-কোভ-২ ভাইরাস দ্বারা সৃষ্ট একটি সংক্রামক রোগ।  বিশ্ব স্বাস্থ্য সংস্থা ১১ই ফেব্রুয়ারী ২০২০ তারিখে এই রোগ টিকে কে ‘কোভিড-১৯’ হিসেবে আনুষ্টানিক নামকরণ করে।  এখানে ‘কো’ কথাটি এসেছে ‘করোনা’ থেকে, ‘ভি’- ভাইরাস থেকে, ‘ডি’- ‘ডিজিজ’ (রোগ) আর ‘১৯’- ২০১৯ থেকে এসেছে।</h2>
+        <h2 class="app-intro-title en">Coronavirus disease (COVID-19) is an infectious disease caused by the SARS‑CoV‑2 virus. On 11 February 2020, the World Health Organization officially named the disease 'COVID-19'. 'Co' comes from 'corona', 'vi' from 'virus', 'd' from 'disease', and '19' refers to 2019.</h2>
+      </div>
+    </div>
+
+    <section class="role-section" aria-label="How it spreads" style="margin-top:0;">
+      <div class="role-section__header role-section__header--rose">
+        <div class="role-section__icon" aria-hidden="true">👥</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">যেভাবে ছড়ায়</h2>
+          <h2 class="role-section__title en">How it spreads</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(spread)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Symptoms" style="margin-top:0;">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">🤒</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">লক্ষণসমূহ</h2>
+          <h2 class="role-section__title en">Symptoms</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(symptoms)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Treatment" style="margin-top:0;">
+      <div class="role-section__header role-section__header--info">
+        <div class="role-section__icon" aria-hidden="true">🩺</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">প্রতিকার</h2>
+          <h2 class="role-section__title en">Treatment</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(treatment)}
         </div>
       </div>
     </section>
