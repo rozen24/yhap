@@ -4862,6 +4862,144 @@ function buildModule23Lesson1Section() {
   `;
 }
 
+function buildModule23Lesson2Section() {
+  const meaningCards = [
+    { icon: '⚖️', accent: 'rose', bn: 'মূল্যবোধ হলো — ভালো ও খারাপ বিচার করার বোধ।', en: 'Values are the sense of judging right and wrong.' },
+    { icon: '➕', accent: 'amber', bn: 'মূল্যবোধ = মূল্যায়ন + বোধ।', en: 'Value = evaluation + understanding.' },
+    { icon: '✅', accent: 'teal', bn: 'অর্থাৎ বুদ্ধি ও বিবেচনা দিয়ে সঠিক ও ন্যায়সংগত কাজ বেছে নেওয়া।', en: 'That means choosing what is right and fair through wisdom and judgment.' }
+  ];
+
+  const learningWays = [
+    { icon: '🏠', accent: 'violet', bn: 'পারিবারিক শিক্ষা', en: 'Family education' },
+    { icon: '🕌', accent: 'sky', bn: 'ধর্মীয় শিক্ষা', en: 'Religious education' },
+    { icon: '🏘️', accent: 'green', bn: 'সামাজিক চর্চার মাধ্যমে', en: 'Through social practice' }
+  ];
+
+  const declineReasons = [
+    { icon: '👨‍👩‍👧', accent: 'rose', bn: 'পারিবারিক অনুশাসনের অভাব', en: 'Lack of family discipline' },
+    { icon: '📚', accent: 'amber', bn: 'ধর্মীয় শিক্ষার ঘাটতি', en: 'Insufficient religious education' },
+    { icon: '🏙️', accent: 'teal', bn: 'সামাজিক ও সাংস্কৃতিক অবক্ষয়', en: 'Social and cultural degradation' },
+    { icon: '⚠️', accent: 'violet', bn: 'আধুনিক হতে গিয়ে বেপরোয়া আচরণ', en: 'Reckless behavior in the name of modernity' },
+    { icon: '🚭', accent: 'sky', bn: 'মাদক সেবন', en: 'Substance abuse' },
+    { icon: '📱', accent: 'green', bn: 'মোবাইল ফোনের অনিয়ন্ত্রিত ব্যবহার', en: 'Uncontrolled mobile phone use' },
+    { icon: '🌐', accent: 'rose', bn: 'ইন্টারনেটের অপব্যবহার', en: 'Misuse of the internet' },
+    { icon: '📢', accent: 'amber', bn: 'নেতিবাচক বিপণন ব্যবস্থা', en: 'Negative marketing practices' }
+  ];
+
+  const ethicalValues = [
+    { icon: '🧭', titleBn: 'সততা', titleEn: 'Honesty' },
+    { icon: '⏱️', titleBn: 'শৃঙ্খলা', titleEn: 'Discipline' },
+    { icon: '🧾', titleBn: 'দায়িত্ববোধ', titleEn: 'Responsibility' },
+    { icon: '🤝', titleBn: 'সহযোগিতার মানসিকতা', titleEn: 'Cooperative mindset' },
+    { icon: '🙏', titleBn: 'সম্মানবোধ', titleEn: 'Respectfulness' },
+    { icon: '🧘', titleBn: 'আত্মসংযম', titleEn: 'Self-control' },
+    { icon: '⚖️', titleBn: 'ন্যায় পরায়ণতা', titleEn: 'Sense of justice' },
+    { icon: '💞', titleBn: 'সহানুভূতিশীলতা', titleEn: 'Compassion' },
+    { icon: '🇧🇩', titleBn: 'দেশপ্রেম', titleEn: 'Patriotism' },
+    { icon: '💪', titleBn: 'পরিশ্রমী মনোভাব', titleEn: 'Hardworking attitude' },
+    { icon: '🛡️', titleBn: 'নৈতিক সাহস', titleEn: 'Moral courage' },
+    { icon: '📘', titleBn: 'নৈতিকতা', titleEn: 'Morality' }
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  const hubCards = ethicalValues.map((item, idx) => `
+    <div class="am-hub-card" style="--angle: ${idx * 36}deg;">
+      <div class="am-hub-card__icon" aria-hidden="true">${item.icon}</div>
+      <p class="am-hub-card__text bn">${item.titleBn}</p>
+      <p class="am-hub-card__text en">${item.titleEn}</p>
+    </div>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <section class="role-section" aria-label="What are values" style="margin-top:0;">
+      <div class="role-section__header role-section__header--rose">
+        <div class="role-section__icon" aria-hidden="true">📖</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">মূল্যবোধ কী ?</h2>
+          <h2 class="role-section__title en">What are values?</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(meaningCards)}
+        </div>
+      </div>
+    </section>
+
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">🧠</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">মূল্যবোধের ব্যাখ্যা</h2>
+        <h2 class="app-intro-title en">Explanation of values</h2>
+        <p class="app-intro-sub bn">নিজের বুদ্ধি ও বিবেচনা ব্যবহার করে কোনো কাজের ভালো-মন্দ বিচার করে ভালো ও ন্যায়সংগত দিকগুলো চর্চা করাই হলো মূল্যবোধ।</p>
+        <p class="app-intro-sub en">Values mean using one’s wisdom and judgment to evaluate good and bad, and practicing what is good and fair.</p>
+      </div>
+    </div>
+
+    <section class="role-section" aria-label="How values are learned" style="margin-top:0;">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">🎓</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">মূল্যবোধ শেখা যায় কীভাবে</h2>
+          <h2 class="role-section__title en">How values are learned</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(learningWays)}
+        </div>
+      </div>
+    </section>
+
+    <section class="am-hub-section" aria-label="Important ethical values">
+      <div class="am-section-header">
+        <h2 class="am-section-title">
+          <span class="bn">গুরুত্বপূর্ণ নৈতিক মূল্যবোধ</span>
+          <span class="en">Important Ethical Values</span>
+        </h2>
+      </div>
+      <div class="am-hub-container">
+        <div class="am-hub-center">
+          <div class="am-hub-center__icon">🕊️</div>
+          <p class="am-hub-center__text bn">নৈতিক</p>
+          <p class="am-hub-center__text bn">মূল্যবোধ</p>
+          <p class="am-hub-center__text en">Ethical</p>
+          <p class="am-hub-center__text en">Values</p>
+        </div>
+        <div class="am-hub-grid">
+          ${hubCards}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Reasons for value decline" style="margin-top:0;">
+      <div class="role-section__header role-section__header--amber">
+        <div class="role-section__icon" aria-hidden="true">📉</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">মূল্যবোধ অবক্ষয়ের কারণ</h2>
+          <h2 class="role-section__title en">Reasons behind value decline</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(declineReasons)}
+        </div>
+      </div>
+    </section>
+  </div>
+  `;
+}
+
 function handleModuleClick(idx) {
   const trigger = document.getElementById('modTrigger-' + idx);
   const isOpen  = trigger.getAttribute('aria-expanded') === 'true';
@@ -5295,7 +5433,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule22Lesson9 = (modIdx === 21 && lesIdx === 8);
   // Module 23 Lesson 1 — Life skills
   const isModule23Lesson1 = (modIdx === 22 && lesIdx === 0);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1;
+  // Module 23 Lesson 2 — Values
+  const isModule23Lesson2 = (modIdx === 22 && lesIdx === 1);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5408,6 +5548,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isModule22Lesson8 ? buildModule22Lesson8Section()
     : isModule22Lesson9 ? buildModule22Lesson9Section()
     : isModule23Lesson1 ? buildModule23Lesson1Section()
+    : isModule23Lesson2 ? buildModule23Lesson2Section()
     : isModule22Lesson7 ? buildModule22Lesson7Section()
     : null;
   
