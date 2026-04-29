@@ -4987,7 +4987,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isPesticidesPrecautionsLesson = (modIdx === 20 && lesIdx === 8);
   // Module 21 Lesson 10 — Noise pollution
   const isNoisePollutionLesson = (modIdx === 20 && lesIdx === 9);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson;
+  // Module 22 Lesson 1 — Emerging & Re-emerging diseases
+  const isEmergingLesson = (modIdx === 21 && lesIdx === 0);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5091,6 +5093,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isPesticidesLesson ? buildPesticidesLessonSection()
     : isPesticidesPrecautionsLesson ? buildPesticidesPrecautionsLessonSection()
     : isNoisePollutionLesson ? buildNoisePollutionLessonSection()
+    : isEmergingLesson ? buildEmergingReEmergingLessonSection()
     : null;
   
   // If we have subheading, prepend it; otherwise use placeholder
@@ -14359,6 +14362,132 @@ function buildNoisePollutionLessonSection() {
         </div>
       </div>
     </section>
+  </div>
+  `;
+}
+
+function buildEmergingReEmergingLessonSection() {
+  return `
+  <div style="display:grid; gap:20px;">
+
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">🧭</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">বাংলাদেশ বিগত বছরগুলোতে সংক্রামক রোগ, অসংক্রামক রোগ সহ অনেক ইমারজিং এবং রি-ইমারজিং রোগের মুখোমুখি হয়েছে।</h2>
+        <h2 class="app-intro-title en">Bangladesh has faced many emerging and re-emerging diseases in recent years, including infectious and non-communicable diseases.</h2>
+      </div>
+    </div>
+
+    <section class="role-section" style="margin-top: 0px; !important;" aria-label="Emerging diseases">
+      <div class="role-section__header role-section__header--rose">
+        <div class="role-section__icon" aria-hidden="true">🦠</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">ইমারজিং বা উদীয়মান রোগ</h2>
+          <h2 class="role-section__title en">Emerging diseases</h2>
+          <p class="role-section__sub bn">যে সব রোগ সম্প্রতি প্রথমবারের মতো মানুষের মধ্যে শনাক্ত হয়েছে, অথবা আগে ছিল না—সেসব রোগকে ইমারজিং বা উদীয়মান রোগ বলা হয়। উদাহরণ:</p>
+          <p class="role-section__sub en">Diseases that have been identified in humans for the first time recently, or were previously absent—these are called emerging diseases. Examples:</p>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          <article class="role-card role-card--rose">
+            <div class="role-card__icon" aria-hidden="true">🦠</div>
+            <div class="role-card__content">
+              <h4 class="role-card__title bn">কোভিড-১৯</h4>
+              <h4 class="role-card__title en">COVID-19</h4>
+            </div>
+          </article>
+          <article class="role-card role-card--amber">
+            <div class="role-card__icon" aria-hidden="true">🧬</div>
+            <div class="role-card__content">
+              <h4 class="role-card__title bn">নিপাহ ভাইরাস</h4>
+              <h4 class="role-card__title en">Nipah virus</h4>
+            </div>
+          </article>
+          <article class="role-card role-card--teal">
+            <div class="role-card__icon" aria-hidden="true">🧫</div>
+            <div class="role-card__content">
+              <h4 class="role-card__title bn">জিকা ভাইরাস</h4>
+              <h4 class="role-card__title en">Zika virus</h4>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section"  aria-label="Re-emerging diseases">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">🔁</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">রি-ইমারজিং বা পুনরুদ্ভুত রোগ</h2>
+          <h2 class="role-section__title en">Re-emerging diseases</h2>
+          <p class="role-section__sub bn">যে সব রোগ আগে নিয়ন্ত্রণে ছিল বা প্রায় বিলুপ্ত হয়ে গিয়েছিল, কিন্তু পুনরায় বৃদ্ধি পেয়ে স্বাস্থ্যঝুঁকি সৃষ্টি করছে, সেগুলোকে রি-ইমারজিং বা পুনরুদ্ভুত রোগ বলা হয়। উদাহরণ:</p>
+          <p class="role-section__sub en">Diseases that were previously under control or nearly eradicated but are resurging and posing health risks. Examples:</p>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          <article class="role-card role-card--rose">
+            <div class="role-card__icon" aria-hidden="true">🦟</div>
+            <div class="role-card__content">
+              <h4 class="role-card__title bn">ডেঙ্গু</h4>
+              <h4 class="role-card__title en">Dengue</h4>
+            </div>
+          </article>
+          <article class="role-card role-card--amber">
+            <div class="role-card__icon" aria-hidden="true">🦠</div>
+            <div class="role-card__content">
+              <h4 class="role-card__title bn">যক্ষ্মা (TB)</h4>
+              <h4 class="role-card__title en">Tuberculosis (TB)</h4>
+            </div>
+          </article>
+          <article class="role-card role-card--teal">
+            <div class="role-card__icon" aria-hidden="true">💧</div>
+            <div class="role-card__content">
+              <h4 class="role-card__title bn">কলেরা</h4>
+              <h4 class="role-card__title en">Cholera</h4>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Deliberately emerging diseases">
+      <div class="role-section__header role-section__header--warn" style="border-radius: 16px;">
+        <div class="role-section__icon" aria-hidden="true">⚠️</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">ডেলিবারেটলি ইমারজিং বা ইচ্ছাকৃতভাবে উদ্ভূত রোগ</h2>
+          <h2 class="role-section__title en">Deliberately emerging diseases</h2>
+          <p class="role-section__sub bn">এটি হলো এমন সংক্রামক ব্যাধি যা কোনো রোগজীবাণু (ব্যাকটেরিয়া, ভাইরাস বা টক্সিন) ইচ্ছাকৃতভাবে, উদ্দেশ্যপ্রণোদিতভাবে বা কোনো অশুভ উদ্দেশ্যে জনসাধারণের মধ্যে ছড়িয়ে দেওয়া হয়।</p>
+          <p class="role-section__sub en">This refers to infectious agents (bacteria, viruses or toxins) that are deliberately released into the population with malicious intent (e.g., bioterrorism).</p>
+        </div>
+      </div>
+      <div class="role-section__body"  style="padding: 0px;">
+       
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Factors accelerating spread">
+      <div class="role-section__header role-section__header--info">
+        <div class="role-section__icon" aria-hidden="true">🌍</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">সংক্রমণকে ত্বরান্বিত করনে প্রভাবক সমূহ</h2>
+          <h2 class="role-section__title en">Factors that accelerate spread</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid" style="grid-template-columns:1fr; margin:0 auto;">
+          <article class="role-card role-card--rose" style="padding: 0px;">
+            <div class="role-card__content">
+              <div>
+                <img src="emerging.png" alt="Emerging diseases illustration" style="width:100%; height:100%; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.12);" loading="lazy" decoding="async"/>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
   </div>
   `;
 }
