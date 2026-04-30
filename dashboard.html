@@ -2047,6 +2047,270 @@
       gap: 4px;
     }
 
+    .comm-diagram {
+      display: grid;
+      gap: 14px;
+    }
+
+    .comm-process-shell {
+      background: linear-gradient(180deg, #F5FCF9 0%, #FFFFFF 100%);
+      border-radius: 18px;
+      padding: 18px 16px 16px;
+      border: 1px solid rgba(28,171,226,0.08);
+      position: relative;
+    }
+
+    .comm-diagram__row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+    }
+
+    .comm-diagram__arrow {
+      align-self: center;
+      color: #20A6C9;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+      padding: 0;
+      min-width: 12px;
+      text-align: center;
+      opacity: 0.9;
+    }
+
+    .comm-flow-card {
+      min-width: 0;
+      flex: 1 1 0;
+      max-width: 144px;
+      height: 40px;
+      border-radius: 12px;
+      border: 1px solid rgba(32,166,201,0.16);
+      background: rgba(255,255,255,0.98);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 12px 0 10px;
+      box-shadow: 0 2px 8px rgba(13,71,161,0.05);
+    }
+
+    .comm-flow-card--feedback {
+      margin-inline: auto;
+      flex: 0 1 250px;
+    }
+
+    .comm-flow-card__icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+      border: 1px solid rgba(28,171,226,0.15);
+      background: #F4F8FB;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .comm-flow-card__icon--sky { background: #DDF4FB; border-color: rgba(28,171,226,0.22); }
+    .comm-flow-card__icon--teal { background: #E4F7F5; border-color: rgba(20,184,166,0.22); }
+    .comm-flow-card__icon--amber { background: #FFF1D9; border-color: rgba(245,158,11,0.22); }
+    .comm-flow-card__icon--violet { background: #EFE7FF; border-color: rgba(139,92,246,0.22); }
+    .comm-flow-card__icon--rose { background: #FDE7ED; border-color: rgba(244,63,94,0.22); }
+
+    .comm-flow-card__label {
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+
+    .comm-flow-card__label--sub {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .comm-diagram__row--feedback {
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .comm-diagram__row--feedback .comm-diagram__arrow {
+      font-size: 18px;
+      min-width: 18px;
+      color: #25A5C8;
+      display: none;
+    }
+
+    .comm-diagram__note {
+      margin: 0 auto;
+      max-width: 540px;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .comm-process-shell .connection-overlay {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: visible;
+    }
+    .comm-process-shell .connection-overlay path {
+      fill: none;
+      stroke: #20A6C9;
+      stroke-width: 1;
+      marker-end: url(#conn-arrow);
+      opacity: 0.95;
+    }
+
+    .comm-tree-shell .tree-overlay {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: visible;
+    }
+    .comm-tree-shell .tree-overlay path {
+      fill: none;
+      stroke: #20A6C9;
+      stroke-width: 1.5;
+      stroke-dasharray: 4 3;
+      marker-end: url(#tree-arrow);
+      opacity: 0.85;
+    }
+
+    .comm-tree {
+      display: grid;
+      gap: 14px;
+    }
+
+    .comm-tree__root {
+      display: flex;
+      justify-content: center;
+    }
+
+    .comm-tree__connector {
+      display: flex;
+      justify-content: center;
+      color: #20A6C9;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 700;
+      margin-top: -2px;
+      margin-bottom: -2px;
+    }
+
+    .comm-tree__branch-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      align-items: start;
+    }
+
+    .comm-tree__branch,
+    .comm-tree__leaf-group {
+      display: grid;
+      gap: 10px;
+    }
+
+    .comm-tree__leaf-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .comm-tree__leaf-grid .role-card,
+    .comm-tree__leaf-group .role-card {
+      min-height: 88px;
+    }
+
+    .comm-tree .role-card__title {
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .comm-tree .role-card__text {
+      font-size: 11.5px;
+      line-height: 1.45;
+    }
+
+    .comm-types-layout {
+      display: grid;
+      gap: 16px;
+    }
+
+    .comm-types-layout__top,
+    .comm-types-layout__mid,
+    .comm-types-layout__bottom {
+      display: grid;
+      gap: 12px;
+    }
+
+    .comm-types-layout__top {
+      grid-template-columns: minmax(0, 420px);
+      justify-content: center;
+    }
+
+    .comm-types-layout__mid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    .comm-types-layout__bottom {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    .comm-types-layout .role-card {
+      height: 100%;
+    }
+
+    .comm-types-layout .role-card__title {
+      font-size: 13px;
+    }
+
+    .comm-types-layout .role-card__text {
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .comm-types-layout__bridge {
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #20A6C9;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 900px) {
+      .comm-types-layout__mid,
+      .comm-types-layout__bottom {
+        grid-template-columns: 1fr;
+      }
+      .comm-diagram__row {
+        flex-wrap: wrap;
+      }
+      .comm-flow-card {
+        max-width: none;
+        flex: 1 1 100%;
+      }
+      .comm-tree__branch-row,
+      .comm-tree__leaf-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .role-card__title {
       font-family: 'Noto Serif Bengali', serif;
       font-size: 13.5px;
@@ -4993,6 +5257,121 @@ function buildModule24Lesson1Section() {
   `;
 }
 
+function buildModule24Lesson2Section() {
+  const processItems = [
+    { icon: '📤', accent: 'sky', bn: 'প্রেরক', en: 'Sender' },
+    { icon: '💬', accent: 'teal', bn: 'বার্তা', en: 'Message' },
+    { icon: '📡', accent: 'amber', bn: 'মাধ্যম', en: 'Medium' },
+    { icon: '📨', accent: 'violet', bn: 'প্রাপক', en: 'Receiver' },
+    { icon: '🔄', accent: 'rose', bn: 'প্রতিবার্তা', en: 'Feedback' }
+  ];
+
+  const typeItems = {
+    root: { icon: '💬', accent: 'sky', bn: 'যোগাযোগ', en: 'Communication' },
+    interpersonal: { icon: '👥', accent: 'teal', bn: 'অন্তর্ব্যক্তিক যোগাযোগ', en: 'Interpersonal communication' },
+    mass: { icon: '📣', accent: 'rose', bn: 'গণযোগাযোগ', en: 'Mass communication' },
+    twoPerson: { icon: '👤', accent: 'amber', bn: 'দুই ব্যক্তির মধ্যে যোগাযোগ', en: 'Communication between two persons' },
+    group: { icon: '👥', accent: 'violet', bn: 'দলীয় যোগাযোগ', en: 'Group communication' },
+    media: { icon: '📻', accent: 'indigo', bn: 'রেডিও, টেলিভিশন, খবরের কাগজ, চলচ্চিত্র, পোস্টার, অন্যান্য প্রিন্ট ও ইলেকট্রনিক মিডিয়া', en: 'Radio, television, newspapers, films, posters and other print and electronic media' }
+  };
+
+  const renderCard = (item, extraClass = '') => `
+    <article class="role-card role-card--${item.accent} comm-diagram__card ${extraClass}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `;
+
+  const renderFlowCard = (item) => `
+    <div class="comm-flow-card">
+      <div class="comm-flow-card__icon comm-flow-card__icon--${item.accent}" aria-hidden="true">${item.icon}</div>
+      <div>
+        <div class="comm-flow-card__label bn">${item.bn}</div>
+        <div class="comm-flow-card__label en">${item.en}</div>
+      </div>
+    </div>
+  `;
+
+  const renderFeedbackCard = (item) => `
+    <div class="comm-flow-card comm-flow-card--feedback">
+      <div class="comm-flow-card__icon comm-flow-card__icon--${item.accent}" aria-hidden="true">${item.icon}</div>
+      <div>
+        <div class="comm-flow-card__label bn">${item.bn}</div>
+        <div class="comm-flow-card__label en">${item.en}</div>
+      </div>
+    </div>
+  `;
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <section class="role-section" aria-label="A simple model of the communication process" style="margin-top:0;">
+      <div class="role-section__header role-section__header--sky">
+        <div class="role-section__icon" aria-hidden="true">💬</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">যোগাযোগ প্রক্রিয়ার একটি সহজ মডেল</h2>
+          <h2 class="role-section__title en">A simple model of the communication process</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="comm-diagram comm-process-shell">
+          <div class="comm-diagram__row" aria-label="Communication process flow">
+            ${renderFlowCard(processItems[0])}
+            <div class="comm-diagram__arrow" aria-hidden="true">→</div>
+            ${renderFlowCard(processItems[1])}
+            <div class="comm-diagram__arrow" aria-hidden="true">→</div>
+            ${renderFlowCard(processItems[2])}
+            <div class="comm-diagram__arrow" aria-hidden="true">→</div>
+            ${renderFlowCard(processItems[3])}
+          </div>
+          <div class="comm-diagram__row comm-diagram__row--feedback">
+            <div class="comm-diagram__arrow" aria-hidden="true">↺</div>
+            ${renderFeedbackCard(processItems[4])}
+          </div>
+          <!-- connection-overlay SVG will be created dynamically by updateCommConnections() -->
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Types of communication" style="margin-top:0;">
+      <div class="role-section__header role-section__header--info">
+        <div class="role-section__icon" aria-hidden="true">🗂️</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">যোগাযোগের প্রকারভেদ</h2>
+          <h2 class="role-section__title en">Types of communication</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="comm-tree comm-tree-shell" style="position:relative;">
+          <div class="comm-tree__root" data-tree-node="root">
+            ${renderCard(typeItems.root, 'comm-diagram__card--wide comm-diagram__card--center')}
+          </div>
+          <div class="comm-tree__connector" aria-hidden="true">│</div>
+          <div class="comm-tree__branch-row">
+            <div class="comm-tree__branch">
+              <div data-tree-node="interpersonal">${renderCard(typeItems.interpersonal)}</div>
+              <div class="comm-tree__leaf-grid">
+                ${renderCard(typeItems.twoPerson)}
+                ${renderCard(typeItems.group)}
+              </div>
+            </div>
+            <div class="comm-tree__branch comm-tree__branch--mass">
+              <div data-tree-node="mass">${renderCard(typeItems.mass)}</div>
+              <div class="comm-tree__leaf-group">
+                ${renderCard(typeItems.media, 'comm-diagram__card--wide')}
+              </div>
+            </div>
+          </div>
+          <!-- tree-connector SVG overlay created by updateTreeConnectors() -->
+        </div>
+      </div>
+    </section>
+  </div>
+  `;
+}
+
 function buildModule23Lesson1Section() {
   const helpers = [
     { icon: '👪', accent: 'rose', bn: 'মা–বাবা', en: 'Parents' },
@@ -5476,6 +5855,85 @@ function renderModulePage(modIdx) {
   document.getElementById('contentArea').innerHTML = html;
 }
 
+// Draw/update curved connectors between feedback and sender/receiver
+let _commUpdateScheduled = false;
+function updateCommConnections() {
+  const shell = document.querySelector('.comm-process-shell');
+  if (!shell) return;
+  if (_commUpdateScheduled) return;
+  _commUpdateScheduled = true;
+  requestAnimationFrame(() => {
+    _commUpdateScheduled = false;
+    let svg = shell.querySelector('svg.connection-overlay');
+    const xmlns = 'http://www.w3.org/2000/svg';
+    if (!svg) {
+      svg = document.createElementNS(xmlns, 'svg');
+      svg.setAttribute('class', 'connection-overlay');
+      svg.setAttribute('preserveAspectRatio', 'none');
+      svg.setAttribute('aria-hidden', 'true');
+      // create defs + marker
+      const defs = document.createElementNS(xmlns, 'defs');
+      const marker = document.createElementNS(xmlns, 'marker');
+      marker.setAttribute('id', 'conn-arrow');
+      marker.setAttribute('markerWidth', '8');
+      marker.setAttribute('markerHeight', '8');
+      marker.setAttribute('refX', '6');
+      marker.setAttribute('refY', '4');
+      marker.setAttribute('orient', 'auto');
+      marker.setAttribute('markerUnits', 'strokeWidth');
+      const mkPath = document.createElementNS(xmlns, 'path');
+      mkPath.setAttribute('d', 'M0,0 L8,4 L0,8 L2,4 z');
+      mkPath.setAttribute('fill', '#20A6C9');
+      marker.appendChild(mkPath);
+      defs.appendChild(marker);
+      svg.appendChild(defs);
+      shell.appendChild(svg);
+    }
+    const rows = shell.querySelectorAll('.comm-diagram__row');
+    if (!svg || rows.length < 2) return;
+    const flowRow = rows[0];
+    const feedbackRow = rows[1];
+    const flowCards = flowRow.querySelectorAll('.comm-flow-card');
+    const feedbackCard = feedbackRow.querySelector('.comm-flow-card--feedback') || feedbackRow.querySelector('.comm-flow-card');
+    if (!flowCards.length || !feedbackCard) return;
+    const sender = flowCards[0];
+    const receiver = flowCards[flowCards.length - 1];
+    const shellRect = shell.getBoundingClientRect();
+    const sRect = sender.getBoundingClientRect();
+    const rRect = receiver.getBoundingClientRect();
+    const fRect = feedbackCard.getBoundingClientRect();
+    const sx = sRect.left + sRect.width * 0.72 - shellRect.left;
+    const sy = sRect.bottom - shellRect.top - 4;
+    const rx = rRect.left + rRect.width * 0.28 - shellRect.left;
+    const ry = rRect.bottom - shellRect.top - 4;
+    const fx = fRect.left + fRect.width / 2 - shellRect.left;
+    const fy = fRect.top - shellRect.top + 4;
+    // Resize svg to shell size
+    const w = Math.max(100, Math.ceil(shellRect.width));
+    const h = Math.max(100, Math.ceil(shellRect.height));
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    // Remove any existing connector paths (keep defs/marker intact)
+    Array.from(svg.querySelectorAll('path')).forEach(p => { if (!p.closest('defs')) p.remove(); });
+    // Create two fresh connector paths
+    const p1 = document.createElementNS(xmlns, 'path');
+    const p2 = document.createElementNS(xmlns, 'path');
+    const c1y = fy - 18;
+    p1.setAttribute('d', `M ${fx} ${fy} C ${fx - 10} ${c1y} ${sx + 18} ${sy + 8} ${sx} ${sy}`);
+    p2.setAttribute('d', `M ${fx} ${fy} C ${fx + 10} ${c1y} ${rx - 18} ${ry + 8} ${rx} ${ry}`);
+    p1.setAttribute('stroke-linecap', 'round');
+    p2.setAttribute('stroke-linecap', 'round');
+    p1.setAttribute('marker-end', 'url(#conn-arrow)');
+    p2.setAttribute('marker-end', 'url(#conn-arrow)');
+    svg.appendChild(p1);
+    svg.appendChild(p2);
+  });
+}
+
+// Recompute on resize and content scroll
+window.addEventListener('resize', updateCommConnections);
+const contentArea = document.getElementById('contentArea');
+if (contentArea) contentArea.addEventListener('scroll', updateCommConnections);
+
 /* ── RENDER: LESSON PAGE ─────────────────────────── */
 function renderLessonPage(modIdx, lesIdx) {
   const cacheKey = 'les:' + modIdx + ':' + lesIdx;
@@ -5730,7 +6188,8 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule23Lesson3 = (modIdx === 22 && lesIdx === 2);
   // Module 24 Lesson 1 — Communication
   const isModule24Lesson1 = (modIdx === 23 && lesIdx === 0);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1;
+  const isModule24Lesson2 = (modIdx === 23 && lesIdx === 1);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5846,6 +6305,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isModule23Lesson2 ? buildModule23Lesson2Section()
     : isModule23Lesson3 ? buildModule23Lesson3Section()
     : isModule24Lesson1 ? buildModule24Lesson1Section()
+    : isModule24Lesson2 ? buildModule24Lesson2Section()
     : isModule22Lesson7 ? buildModule22Lesson7Section()
     : null;
   
@@ -5879,6 +6339,7 @@ function renderLessonPage(modIdx, lesIdx) {
   </article>`;
   if (isRichLesson) _renderCache.set(cacheKey, html); // only cache rich content
   document.getElementById('contentArea').innerHTML = html;
+  if (isModule24Lesson2) updateCommConnections();
 }
 
 function buildGlobeSection() {
