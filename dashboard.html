@@ -3646,6 +3646,154 @@
       margin-right: auto;
     }
 
+    /* ════════════════════════════════════════════════════════════
+       MODULE 24 LESSON 1 — COMMUNICATION ELEMENTS
+    ════════════════════════════════════════════════════════════ */
+    
+    .comm-elements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+    }
+
+    .comm-element-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px 16px;
+      background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      transition: all var(--dur) var(--ease);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      min-height: 180px;
+    }
+
+    .comm-element-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-blue), var(--color-cyan));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--dur) var(--ease);
+    }
+
+    .comm-element-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-blue);
+      box-shadow: var(--shadow-md);
+    }
+
+    .comm-element-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .comm-element-card:nth-child(1) {
+      --element-color: #F43F5E;
+    }
+    .comm-element-card:nth-child(2) {
+      --element-color: #EC4899;
+    }
+    .comm-element-card:nth-child(3) {
+      --element-color: #F59E0B;
+    }
+    .comm-element-card:nth-child(4) {
+      --element-color: #10B981;
+    }
+    .comm-element-card:nth-child(5) {
+      --element-color: #0EA5E9;
+    }
+
+    .comm-element-card__icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      background: rgba(var(--element-color), 0.08);
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .comm-element-card__title {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    [data-lang="en"] .comm-element-card__title.bn,
+    [data-lang="bn"] .comm-element-card__title.en {
+      display: none;
+    }
+
+    [data-theme="dark"] .comm-element-card {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+      border-color: var(--border);
+    }
+
+    @media (max-width: 1100px) {
+      .comm-elements-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 14px;
+      }
+      .comm-element-card {
+        padding: 18px 12px;
+        min-height: 160px;
+      }
+      .comm-element-card__icon {
+        width: 48px;
+        height: 48px;
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .comm-elements-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 12px;
+      }
+      .comm-element-card {
+        padding: 16px 10px;
+        min-height: 140px;
+      }
+      .comm-element-card__icon {
+        width: 40px;
+        height: 40px;
+        font-size: 28px;
+        margin-bottom: 8px;
+      }
+      .comm-element-card__title {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .comm-elements-grid {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+      }
+      .comm-element-card {
+        padding: 14px 8px;
+        min-height: 130px;
+      }
+      .comm-element-card__icon {
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+      }
+    }
+
     /* ============================================================
        REDUCED MOTION — disable expensive animations when requested
     ============================================================ */
@@ -4765,6 +4913,86 @@ Outbreaks primarily occur in Central and West Africa, though cases have been det
   `;
 }
 
+function buildModule24Lesson1Section() {
+  const communicationElements = [
+    { icon: '📤', titleBn: 'প্রেরক', titleEn: 'Sender' },
+    { icon: '📨', titleBn: 'প্রাপক', titleEn: 'Receiver' },
+    { icon: '💬', titleBn: 'বার্তা', titleEn: 'Message' },
+    { icon: '📡', titleBn: 'মাধ্যম', titleEn: 'Medium' },
+    { icon: '🔄', titleBn: 'প্রতিবার্তা', titleEn: 'Feedback' }
+  ];
+
+  const communicationPurposes = [
+    { icon: '❤️', accent: 'rose', bn: 'ভাব প্রকাশ করা', en: 'Expressing emotions' },
+    { icon: '📚', accent: 'amber', bn: 'তথ্য আদান-প্রদান করা', en: 'Exchange of information' },
+    { icon: '👂', accent: 'teal', bn: 'অন্যের মতামত ও ধারণা বোঝা', en: 'Understanding others\' opinions and ideas' },
+    { icon: '💭', accent: 'violet', bn: 'নিজের মতামত অন্যের কাছে তুলে ধরা', en: 'Presenting own views to others' },
+    { icon: '🎯', accent: 'sky', bn: 'মানুষকে সচেতন করে আচরণের পরিবর্তন আনা', en: 'Raising awareness and changing behavior' }
+  ];
+
+  const renderElementCard = (items) => items.map((item, idx) => `
+    <div class="comm-element-card" style="--element-idx: ${idx};">
+      <div class="comm-element-card__icon" aria-hidden="true">${item.icon}</div>
+      <h4 class="comm-element-card__title bn">${item.titleBn}</h4>
+      <h4 class="comm-element-card__title en">${item.titleEn}</h4>
+    </div>
+  `).join('');
+
+  const renderPurposeCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <div class="app-intro-box" style="background: linear-gradient(135deg, #1CABE2 0%, #0D47A1 55%, #00689D 100%);">
+      <div class="app-intro-icon" aria-hidden="true">💬</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">যোগাযোগ</h2>
+        <h2 class="app-intro-title en">Communication</h2>
+        <p class="app-intro-sub bn">যোগাযোগ হচ্ছে একটি প্রক্রিয়া যার মাধ্যমে মানুষ কথা, আকার-ইঙ্গিত, লেখা, ছবি বা প্রতীকের সাহায্যে অর্থবহ উপায়ে এবং কার্যকরভাবে তথ্য, জ্ঞান, অভিজ্ঞতা, ধারণা ও মত বিনিময় করে থাকে।</p>
+        <p class="app-intro-sub en">Communication is a process through which people exchange information, knowledge, experience, ideas and opinions meaningfully and effectively using words, gestures, writing, pictures or symbols.</p>
+      </div>
+    </div>
+
+    <section class="role-section" aria-label="Elements of communication" style="margin-top:0;">
+      <div class="role-section__header role-section__header--sky">
+        <div class="role-section__icon" aria-hidden="true">📝</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">যোগাযোগের উপাদান</h2>
+          <h2 class="role-section__title en">Elements of Communication</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="comm-elements-grid">
+          ${renderElementCard(communicationElements)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Purpose of communication" style="margin-top:0;">
+      <div class="role-section__header role-section__header--info">
+        <div class="role-section__icon" aria-hidden="true">🎯</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">যোগাযোগের উদ্দেশ্য</h2>
+          <h2 class="role-section__title en">Purpose of Communication</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderPurposeCards(communicationPurposes)}
+        </div>
+      </div>
+    </section>
+  </div>
+  `;
+}
+
 function buildModule23Lesson1Section() {
   const helpers = [
     { icon: '👪', accent: 'rose', bn: 'মা–বাবা', en: 'Parents' },
@@ -5500,7 +5728,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule23Lesson2 = (modIdx === 22 && lesIdx === 1);
   // Module 23 Lesson 3 — Ways to develop values
   const isModule23Lesson3 = (modIdx === 22 && lesIdx === 2);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3;
+  // Module 24 Lesson 1 — Communication
+  const isModule24Lesson1 = (modIdx === 23 && lesIdx === 0);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -5615,6 +5845,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isModule23Lesson1 ? buildModule23Lesson1Section()
     : isModule23Lesson2 ? buildModule23Lesson2Section()
     : isModule23Lesson3 ? buildModule23Lesson3Section()
+    : isModule24Lesson1 ? buildModule24Lesson1Section()
     : isModule22Lesson7 ? buildModule22Lesson7Section()
     : null;
   
