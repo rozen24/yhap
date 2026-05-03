@@ -5271,7 +5271,7 @@
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(23,1)"><span class="lesson-dot" aria-hidden="true">2</span><span class="lesson-text"><span class="lesson-label bn">যোগাযোগ প্রক্রিয়া</span><span class="lesson-label en">Communication process</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(23,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">যোগাযোগের পদ্ধতি</span><span class="lesson-label en">Methods of communication</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(23,3)"><span class="lesson-dot" aria-hidden="true">4</span><span class="lesson-text"><span class="lesson-label bn">আন্তঃব্যক্তিক সম্পর্ক স্থাপনের অন্তর্নিহিত শর্ত ও কৌশল</span><span class="lesson-label en">Underlying conditions and techniques for establishing interpersonal relationships</span></span></button>
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(23,4)"><span class="lesson-dot" aria-hidden="true">5</span><span class="lesson-text"><span class="lesson-label bn">পরামর্শদান ও পরামর্শদানের ধাপসমূহ</span><span class="lesson-label en">Counseling and the steps of counseling</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(23,4)"><span class="lesson-dot" aria-hidden="true">5</span><span class="lesson-text"><span class="lesson-label bn">কাউন্সেলিং  ও কাউন্সেলিংয়ের ধাপসমূহ</span><span class="lesson-label en">Counseling and the steps of counseling</span></span></button>
         </div>
       </div>
 
@@ -5436,7 +5436,7 @@ const LESSONS_BN = [
   ['আবহাওয়া ও জলবায়ু','বায়ু দূষণ','বায়ু দূষণের উৎস','খাবারপানির দূষণের প্রধান কারণ সমূহ','পানি, স্যানিটেশন এবং স্বাস্থ্যবিধি উন্নত করার জন্য প্রয়োজনীয় পদক্ষেপ','পানি, স্যানিটেশন ও স্বাস্থ্যবিধি উন্নয়নে প্রয়োজনীয় পদক্ষেপ','সীসা এবং অন্যান্য বিপজ্জনক রাসায়নিক','কীটনাশক এবং শিশু ও কিশোর-কিশোরীদের স্বাস্থ্য ঝুঁকি','সতর্কতা','শব্দ দূষণ'],
   ['উদীয়মান ও পুনরুদীয়মান রোগ','ডেঙ্গু','ডেংগুর চিকিৎসা','নিপাহ ভাইরাস সংক্রমণ','কোভিড-১৯','COVID-19 প্রতিরোধে করণীয়','ইনফ্লুয়েঞ্জা','এভিয়ান ইনফ্লুয়েঞ্জা','মাঙ্কিপক্স'],
   ['জীবন দক্ষতা','মূল্যবোধ কী?','মূল্যবোধ বিকাশের উপায়'],
-  ['যোগাযোগ','যোগাযোগ প্রক্রিয়া','যোগাযোগের পদ্ধতি','আন্তঃব্যক্তিক সম্পর্ক স্থাপনের অন্তর্নিহিত শর্ত ও কৌশল','পরামর্শদান ও পরামর্শদানের ধাপসমূহ'],
+  ['যোগাযোগ','যোগাযোগ প্রক্রিয়া','যোগাযোগের পদ্ধতি','আন্তঃব্যক্তিক সম্পর্ক স্থাপনের অন্তর্নিহিত শর্ত ও কৌশল','কাউন্সেলিং  ও কাউন্সেলিংয়ের ধাপসমূহ'],
 ];
 
 const LESSONS_EN = [
@@ -6220,6 +6220,72 @@ function buildModule24Lesson4Section() {
         </div>
       </div>
     </section>
+  </div>
+  `;
+}
+
+function buildModule24Lesson5Section() {
+  const phases = [
+    { num: 'G', accent: 'rose', titleBn: 'Greet (সম্ভাষণ)', titleEn: 'Greet', descBn: 'সম্মুখ বাক্তিকে বিনীত ও উষ্ণ সম্ভাষণ জানানো', descEn: 'Greet the client with respect and warmth' },
+    { num: 'A', accent: 'amber', titleBn: 'Ask (প্রশ্ন করা)', titleEn: 'Ask', descBn: 'সম্মুখ বাক্তিকে তার নিজের অনুভূতি, সমস্যা ও পরিবার সম্পর্কে প্রশ্ন করা', descEn: 'Ask the client about their feelings, problems, and family' },
+    { num: 'T', accent: 'teal', titleBn: 'Tell (বলা)', titleEn: 'Tell', descBn: 'এই অবস্থায় কী কী সমাধান আছে তা বিস্তারিত বলা', descEn: 'Tell the client what solutions are available' },
+    { num: 'H', accent: 'green', titleBn: 'Help (সাহায্য)', titleEn: 'Help', descBn: 'সম্মুখ বাক্তিকে সর্বতোভাবে সাহায্য করা। তিনি যেন স্বাচ্ছন্দ্যবোধ করেন এবং সঠিক সিদ্ধান্ত নিতে পারেন', descEn: 'Help the client in every way. Ensure they feel comfortable and can make the right decision' },
+    { num: 'E', accent: 'violet', titleBn: 'Explain (বিস্তারিত ব্যাখ্যা)', titleEn: 'Explain', descBn: 'সম্মুখ বাক্তিকে কোন বিষয়ের সার্বিক ফলাফল সম্পর্কে বিস্তারিত ব্যাখ্যা করা', descEn: 'Explain the outcomes and implications of options' },
+    { num: 'R', accent: 'sky', titleBn: 'Return visit, referral and/or follow-up (পরবর্তী পদক্ষেপ)', titleEn: 'Return/Referral/Follow-up', descBn: 'পরবর্তীতে কবে কোথায় যেতে হবে তা সম্মুখ বাক্তিকে এবং তার আত্মীয়-স্বজনদের বুঝিয়ে বলা', descEn: 'Explain when and where to follow up, and communicate with family' }
+  ];
+
+  const phaseTimeline = phases.map((item, idx) => `
+    <div class="phase-item">
+      <div class="phase-num phase-num--${item.accent}">${item.num}</div>
+      <div class="phase-content">
+        <div class="phase-content__title"><span class="bn">${item.titleBn}</span><span class="en">${item.titleEn}</span></div>
+        <div class="phase-content__desc bn">${item.descBn}</div>
+        <div class="phase-content__desc en">${item.descEn}</div>
+      </div>
+    </div>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">💬</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">কাউন্সেলিং</h2>
+        <h2 class="app-intro-title en">Counseling</h2>
+        <p class="app-intro-sub bn">গ্রহীতা ও সেবাদানকারীর মধ্যে দ্বিমুখী আলোচনার মাধ্যমে বিস্তারিত তথ্য প্রদানের পর সেবাদানকারী গ্রহীতাকে তার নিজের স্বাস্থ্যসম্পর্কিত কোনো সিদ্ধান্ত গ্রহণে সহায়তা করার প্রক্রিয়াই হল কাউন্সেলিং।</p>
+        <p class="app-intro-sub en">Counseling is the process where a service provider, through two-way discussion with the client and providing detailed information, helps the client make their own health-related decisions.</p>
+      </div>
+    </div>
+
+    <div class="app-intro-box" style="border-left:4px solid #0EA5E9;">
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">কাউন্সেলিংয়ের সুবিধা</h2>
+        <h2 class="app-intro-title en">Benefits of Counseling</h2>
+        <p class="app-intro-sub bn">এর ফলে সেবাগ্রহীতারা তাদের ব্যক্তিগত অনুভূতি ও সমস্যা নিয়ে খোলাখুলি আলোচনা করার সুযোগ পায় ও নিজেই সিদ্ধান্ত গ্রহণ করে সমস্যা সমাধান করতে পারে।</p>
+        <p class="app-intro-sub en">This allows clients to openly discuss their personal feelings and problems and solve problems by making their own decisions.</p>
+      </div>
+    </div>
+
+    <div class="repro-card">
+      <div class="repro-card__header repro-card__header--teal">
+        <div class="repro-card__icon" aria-hidden="true">🎯</div>
+        <div>
+          <div class="repro-card__title">
+            <span class="bn">কাউন্সেলিংয়ের ধাপসমূহ (GATHER)</span>
+            <span class="en">Steps of Counseling (GATHER)</span>
+          </div>
+          <div class="repro-card__subtitle">
+            <span class="bn">সহজে মনে রাখার জন্য GATHER শব্দটির সাহায্য নেয়া যায়</span>
+            <span class="en">Use GATHER to remember the steps easily</span>
+          </div>
+        </div>
+      </div>
+      <div class="repro-card__body">
+        <div class="phase-timeline">
+          ${phaseTimeline}
+        </div>
+      </div>
+    </div>
   </div>
   `;
 }
@@ -7167,7 +7233,8 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule24Lesson2 = (modIdx === 23 && lesIdx === 1);
   const isModule24Lesson3 = (modIdx === 23 && lesIdx === 2);
   const isModule24Lesson4 = (modIdx === 23 && lesIdx === 3);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4;
+  const isModule24Lesson5 = (modIdx === 23 && lesIdx === 4);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -7286,6 +7353,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isModule24Lesson2 ? buildModule24Lesson2Section()
     : isModule24Lesson3 ? buildModule24Lesson3Section()
     : isModule24Lesson4 ? buildModule24Lesson4Section()
+    : isModule24Lesson5 ? buildModule24Lesson5Section()
     : isModule22Lesson7 ? buildModule22Lesson7Section()
     : null;
   
