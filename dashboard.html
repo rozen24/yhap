@@ -5980,6 +5980,121 @@ function buildModule24Lesson2Section() {
   `;
 }
 
+function buildModule24Lesson3Section() {
+  const groupMethods = [
+    { icon: '👥', accent: 'teal', bn: 'দলীয় আলোচনা', en: 'Group discussion' },
+    { icon: '🪑', accent: 'amber', bn: 'দলীয় সভা', en: 'Group meeting' },
+    { icon: '🎤', accent: 'rose', bn: 'বক্তৃতা', en: 'Speech' }
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <section class="fp-comparison-section" aria-label="Interpersonal communication methods" style="margin-top:0;">
+      <div class="section-divider">
+        <h2 class="section-divider__title">
+          <span class="bn">🧭 আন্তঃ ব্যক্তিক যোগাযোগের পদ্ধতিসমূহ</span>
+          <span class="en">🧭 Methods of Interpersonal Communication</span>
+        </h2>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="comparison-table" role="grid">
+          <thead>
+            <tr>
+              <th class="table-header" scope="col">
+                <span class="bn">🗣️ বাচনিক যোগাযোগ</span>
+                <span class="en">🗣️ Verbal Communication</span>
+              </th>
+              <th class="table-header" scope="col">
+                <span class="bn">🤲 অবাচনিক যোগাযোগ</span>
+                <span class="en">🤲 Non-verbal Communication</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="table-cell">
+                <span class="bn">🧑‍🤝‍🧑 মুখোমুখি কথা বলা</span>
+                <span class="en">🧑‍🤝‍🧑 Face-to-face conversation</span>
+              </td>
+              <td class="table-cell">
+                <span class="bn">🙌 শারীরিক অঙ্গভঙ্গি বা অভিব্যক্তির মাধ্যমে</span>
+                <span class="en">🙌 Through body gestures and expressions</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="table-cell">
+                <span class="bn">☎️ টেলিফোনে কথা বলা</span>
+                <span class="en">☎️ Talking over telephone</span>
+              </td>
+              <td class="table-cell">
+                <span class="bn">🔣 ইঙ্গিত বা প্রতীকের মাধ্যমে</span>
+                <span class="en">🔣 Through signs or symbols</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="table-cell">
+                <span class="bn">🎤 বক্তৃতা</span>
+                <span class="en">🎤 Speech</span>
+              </td>
+              <td class="table-cell">
+                <span class="bn">&nbsp;</span>
+                <span class="en">&nbsp;</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="table-cell">
+                <span class="bn">📻 রেডিও শোনা</span>
+                <span class="en">📻 Listening to radio</span>
+              </td>
+              <td class="table-cell">
+                <span class="bn">&nbsp;</span>
+                <span class="en">&nbsp;</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Group communication methods" style="margin-top:0;">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">🧑‍🤝‍🧑</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">দলীয় যোগাযোগেরপদ্ধতি সমূহ</h2>
+          <h2 class="role-section__title en">Methods of Group Communication</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(groupMethods)}
+        </div>
+      </div>
+    </section>
+
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">📣</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">গণযোগাযোগ</h2>
+        <h2 class="app-intro-title en">Mass Communication</h2>
+        <p class="app-intro-sub bn">বৃহৎ জনগোষ্ঠীর কাছে বার্তা পৌঁছানো এবং তথ্য প্রচারের জন্য বিভিন্ন ধরনের গণমাধ্যম ব্যব্হার করা হয়। এক্ষেত্রে প্রেরক এবং প্রাপকের মধ্যে সংযোগ ঘটেনা।</p>
+        <p class="app-intro-sub en">Different mass media are used to deliver messages and disseminate information to large populations. In this case, direct connection between sender and receiver does not occur.</p>
+      </div>
+    </div>
+  </div>
+  `;
+}
+
 function buildModule23Lesson1Section() {
   const helpers = [
     { icon: '👪', accent: 'rose', bn: 'মা–বাবা', en: 'Parents' },
@@ -6921,7 +7036,8 @@ function renderLessonPage(modIdx, lesIdx) {
   // Module 24 Lesson 1 — Communication
   const isModule24Lesson1 = (modIdx === 23 && lesIdx === 0);
   const isModule24Lesson2 = (modIdx === 23 && lesIdx === 1);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2;
+  const isModule24Lesson3 = (modIdx === 23 && lesIdx === 2);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -7038,6 +7154,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isModule23Lesson3 ? buildModule23Lesson3Section()
     : isModule24Lesson1 ? buildModule24Lesson1Section()
     : isModule24Lesson2 ? buildModule24Lesson2Section()
+    : isModule24Lesson3 ? buildModule24Lesson3Section()
     : isModule22Lesson7 ? buildModule22Lesson7Section()
     : null;
   
