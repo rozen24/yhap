@@ -6095,6 +6095,135 @@ function buildModule24Lesson3Section() {
   `;
 }
 
+function buildModule24Lesson4Section() {
+  const relationshipConditions = [
+    { icon: '🤝', accent: 'rose', bn: 'বন্ধুত্বপূর্ণ আচরন', en: 'Friendly behavior' },
+    { icon: '✅', accent: 'amber', bn: 'গ্রহণযোগ্যতা', en: 'Acceptance' },
+    { icon: '🙏', accent: 'teal', bn: 'সম্মান', en: 'Respect' },
+    { icon: '🔍', accent: 'violet', bn: 'স্বচ্ছতা', en: 'Transparency' },
+    { icon: '💞', accent: 'sky', bn: 'সহমর্মিতা', en: 'Empathy' },
+    { icon: '🗣️', accent: 'green', bn: 'সাবলীল কথপোকথন', en: 'Fluent conversation' },
+    { icon: '🌤️', accent: 'info', bn: 'উষ্ণতা', en: 'Warmth' },
+    { icon: '🤗', accent: 'rose', bn: 'সহানুভূতিশীল', en: 'Compassionate' },
+    { icon: '🔒', accent: 'amber', bn: 'গোপনীয়তা', en: 'Confidentiality' },
+    { icon: '🚫', accent: 'teal', bn: 'জেরা না করা', en: 'No interrogation' }
+  ];
+
+  const solerLetters = [
+    { icon: 'S', accent: 'rose', bn: ' =  সম্মুখ বাক্তির সাথে মুখোমুখি বা সোজাসুজি বসা', en: '=  Sit squarely facing the other person' },
+    { icon: 'O', accent: 'amber', bn: ' =  খোলাখুলি কথা বলা', en: '=  Open posture and open communication' },
+    { icon: 'L', accent: 'teal', bn: ' =  সামনের দিকে ঝুঁকে বসা', en: '=  Lean forward slightly' },
+    { icon: 'E', accent: 'violet', bn: ' =  আরামদায়ক ভঙ্গিতে বা স্বাচ্ছন্দ্যে বসা', en: '=  Relaxed and comfortable posture' },
+    { icon: 'R', accent: 'sky', bn: ' =   ঘটনার ভিতর উপস্থিত থাকা।', en: '=  Be present in the moment' }
+  ];
+
+  const practicalTips = [
+    { icon: '⛔', accent: 'rose', bn: 'বক্তার কথা বলার সময় মধ্যপথে বাধা দেয়া পরিহার করা', en: 'Avoid interrupting the speaker in the middle' },
+    { icon: '🤫', accent: 'amber', bn: 'অন্যের কথা বলার সময় চুপ থাকা', en: 'Remain silent while others are speaking' },
+    { icon: '🎯', accent: 'teal', bn: 'বিষয়বস্তু যেন বিক্ষিপ্ত না হয় সে বিষয়ে নজর দেয়া', en: 'Ensure the discussion stays focused' },
+    { icon: '👍', accent: 'violet', bn: 'ইতিবাচক দেহভঙ্গিমা দেখানো', en: 'Show positive body language' }
+  ];
+
+  const keyStrategies = [
+    { icon: '📝', accent: 'rose', bn: 'ব্যাখ্যা/সারাংশ: পরিস্কার ভাবে বুঝতে পারা নিশ্চিত করা (যেমন, "তাহলে তুমি বলছো...")।', en: 'Explanation/Summary: Ensure clear understanding (e.g., "So you are saying...")' },
+    { icon: '❓', accent: 'amber', bn: 'খোলাখুলি প্রশ্ন জিজ্ঞাসা করা: সংক্ষিপ্ত, স্পষ্ট, সরাসরি।', en: 'Ask open questions: short, clear, and direct' },
+    { icon: '👂', accent: 'teal', bn: 'স্বর ও ভঙ্গি শোনা: মানসিক অবস্থা পরিমাপ করা।', en: 'Listen to tone and style: assess emotional state' },
+    { icon: '🧠', accent: 'violet', bn: 'প্রতিফলনশীল দক্ষতা ব্যবহার করা: অনুভূতি স্বীকার করা, আত্ম-প্রতিফলনকে উৎসাহিত করা।', en: 'Use reflective skills: acknowledge feelings and encourage self-reflection' }
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  const renderTableRow = (left, right) => `
+    <tr>
+      <td class="table-cell">
+        <span class="bn">${left.bn}</span>
+        <span class="en">${left.en}</span>
+      </td>
+      <td class="table-cell">
+        <span class="bn">${right.bn}</span>
+        <span class="en">${right.en}</span>
+      </td>
+    </tr>
+  `;
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <section class="role-section" aria-label="Underlying conditions for establishing interpersonal relationships" style="margin-top:0;">
+      <div class="role-section__header role-section__header--rose">
+        <div class="role-section__icon" aria-hidden="true">🧩</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">আন্তঃব্যক্তিক সম্পর্ক স্থাপনে অন্তর্নিহিত শর্তাবলী</h2>
+          <h2 class="role-section__title en">Underlying Conditions for Building Interpersonal Relationships</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCards(relationshipConditions)}
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" aria-label="Interpersonal relationship techniques" style="margin-top:0;">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">🛠️</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">আন্তঃব্যক্তিক সম্পর্ক স্থাপনের কৌশল</h2>
+          <h2 class="role-section__title en">Techniques for Building Interpersonal Relationships</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div style="">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div style="background:#F472B6; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px;">🛠️</div>
+            <div>
+              <h3 class="bn" style="margin:0;">SOLER মডেল</h3>
+              <h3 class="en" style="margin:0;">SOLER Model</h3>
+            </div>
+          </div>
+        </div>
+        <div class="role-grid" style="margin-top:12px;">
+          ${renderCards(solerLetters)}
+        </div>
+
+        <div style="margin-top:16px;">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div style="background:#FCD34D; color:#333; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px;">💡</div>
+            <div>
+              <h3 class="bn" style="margin:0;">ব্যবহারিক টিপস</h3>
+              <h3 class="en" style="margin:0;">Practical Tips</h3>
+            </div>
+          </div>
+          <div class="role-grid" style="margin-top:12px;">
+            ${renderCards(practicalTips)}
+          </div>
+        </div>
+
+        <div style="margin-top:16px;">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div style="background:#06B6D4; color:white; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px;">🎯</div>
+            <div>
+              <h3 class="bn" style="margin:0;">মূল কৌশল</h3>
+              <h3 class="en" style="margin:0;">Core Techniques</h3>
+            </div>
+          </div>
+          <div class="role-grid" style="margin-top:12px;">
+            ${renderCards(keyStrategies)}
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  `;
+}
+
 function buildModule23Lesson1Section() {
   const helpers = [
     { icon: '👪', accent: 'rose', bn: 'মা–বাবা', en: 'Parents' },
@@ -7037,7 +7166,8 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule24Lesson1 = (modIdx === 23 && lesIdx === 0);
   const isModule24Lesson2 = (modIdx === 23 && lesIdx === 1);
   const isModule24Lesson3 = (modIdx === 23 && lesIdx === 2);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3;
+  const isModule24Lesson4 = (modIdx === 23 && lesIdx === 3);
+  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
@@ -7155,6 +7285,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isModule24Lesson1 ? buildModule24Lesson1Section()
     : isModule24Lesson2 ? buildModule24Lesson2Section()
     : isModule24Lesson3 ? buildModule24Lesson3Section()
+    : isModule24Lesson4 ? buildModule24Lesson4Section()
     : isModule22Lesson7 ? buildModule22Lesson7Section()
     : null;
   
