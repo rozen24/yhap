@@ -542,6 +542,11 @@
     [data-lang="en"] .bn, [data-lang="bn"] .en { display: none !important; }
     [data-lang="en"] .en, [data-lang="bn"] .bn { display: revert !important; }
 
+    /* Show/hide whole language-specific sections (use on containers like .lang-bn / .lang-en) */
+    [data-lang="en"] .lang-bn { display: none !important; }
+    [data-lang="bn"] .lang-en { display: none !important; }
+    [data-lang="en"] .lang-en, [data-lang="bn"] .lang-bn { display: revert !important; }
+
     /* Bengali font for semantic elements */
     [data-lang="bn"] p.bn,
     [data-lang="bn"] h2.bn,
@@ -4592,6 +4597,7 @@
   </style>
 </head>
 <body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!-- Reusable SVG symbol definitions -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
   <symbol id="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -7003,6 +7009,8 @@ function renderLessonPage(modIdx, lesIdx) {
 
   // Globe section for Module 1 Lesson 1 (Global Context of Youth)
   const isGlobeLesson = (modIdx === 0 && lesIdx === 0);
+  // Youth Population Statistics & Pyramid — Module 1 Lesson 2
+  const isModule1Lesson2 = (modIdx === 0 && lesIdx === 1);
   // Adolescent changes cards for Module 2 Lesson 1
   const isChangesLesson = (modIdx === 1 && lesIdx === 0);
   // Adolescent stages timeline for Module 2 Lesson 2
@@ -7236,8 +7244,9 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule24Lesson3 = (modIdx === 23 && lesIdx === 2);
   const isModule24Lesson4 = (modIdx === 23 && lesIdx === 3);
   const isModule24Lesson5 = (modIdx === 23 && lesIdx === 4);
-  const isRichLesson = isGlobeLesson || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
+  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
   const richContent = isGlobeLesson ? buildGlobeSection()
+    : isModule1Lesson2 ? buildModule1Lesson2Section()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
     : isReproLesson   ? buildFemaleReproSection()
@@ -8184,6 +8193,64 @@ function buildMaleReproSection() {
     </div>
   </section>`;
 }
+
+/* ── MODULE 1 LESSON 2: Youth Population Statistics & Pyramid ── */
+function buildModule1Lesson2Section() {
+  return `
+  <div style="display:grid; gap:24px;">
+    <!-- SECTION 1: Bangladesh Youth Population Distribution -->
+    <section class="role-section" style="margin-top:0;" aria-label="Bangladesh youth population statistics">
+      <div class="role-section__header role-section__header--sky">
+        <div class="role-section__icon" aria-hidden="true">📍</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">বাংলাদেশে তরূণ জনগোষ্ঠী</h2>
+          <h2 class="role-section__title en">Youth Population in Bangladesh</h2>
+          <p class="role-section__sub bn">৪৯.৫ মিলিয়ন — মোট জনসংখ্যার প্রায় ৩०%</p>
+          <p class="role-section__sub en">49.5 Million — approximately 30% of total population</p>
+        </div>
+      </div>
+      <div class="role-section__body" style="padding:20px; background:rgba(255,255,255,0.5); border-radius:8px;">
+        <img src="dis-map.jpg" alt="Bangladesh youth population distribution map" style="width:100%; height:auto; max-height:600px; object-fit:fill; border-radius:6px; display:block;" />
+      </div>
+    </section>
+
+    <!-- SECTION 2A: Population Pyramid - BENGALI VERSION -->
+    <section class="role-section lang-bn" style="margin-top:0;" aria-label="Population pyramid by age group - Bengali">
+      <div class="role-section__header role-section__header--green">
+        <div class="role-section__icon" aria-hidden="true">📊</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">জনসংখ্যা পিরামিড (বাংলা)</h2>
+          <p class="role-section__sub bn">বয়স গোষ্ঠী অনুযায়ী জনবিন্যাস</p>
+        </div>
+      </div>
+      <div class="role-section__body" style="padding:24px; background:rgba(255,255,255,0.5); border-radius:8px;">
+       
+        <div id="chartWrapper" style="width:100%; max-height:900px; position: relative;">
+          <canvas id="populationPyramid" aria-label="POPULATION &amp; HOUSING CENSUS 2022" role="img" style="display: block; box-sizing: border-box; height: 700px; width: 100%;" width="741" height="284" data-chart='{"labelsBN":["০-৪","৫-৯","১০-১৪","১৫-১৯","২০-২৪","২৫-২৯","৩০-৩৪","৩৫-৩৯","৪০-৪৪","৪৫-৪৯","৫০-৫৪","৫৫-৫৯","৬০-৬৪","৬৫-৬৯","৭০-৭৪","৭৫-৭৯","৮০-৮৪","৮৫-৮৯","৯০-৯৪","৯৫-৯৯","১০০+"],"labelsEN":["0-4","5-9","10-14","15-19","20-24","25-29","30-34","35-39","40-44","45-49","50-54","55-59","60-64","65-69","70-74","75-79","80-84","85-89","90-94","95-99","100+"]}'></canvas>
+          <h4 class="small text-muted mt-1 mb-0 text-end"><lang en="Ref: Our Future: A Lancet Commission on Adolescent Health and Wellbeing; Patton et al. 2016." bn="Ref: Population and Housing Census 2022">Ref: Population and Housing Census 2022</lang></h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2B: Population Pyramid - ENGLISH VERSION -->
+    <section class="role-section lang-en" style="margin-top:0; display:none;" aria-label="Population pyramid by age group - English">
+      <div class="role-section__header role-section__header--green">
+        <div class="role-section__icon" aria-hidden="true">📊</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title en">Population Pyramid</h2>
+          <p class="role-section__sub en">Age group distribution</p>
+        </div>
+      </div>
+      <div class="role-section__body" style="padding:24px; background:rgba(255,255,255,0.5); border-radius:8px;">
+        <div id="chartWrapperEN" style="width:100%; max-height:900px; position: relative;">
+          <canvas id="populationPyramidEN" aria-label="POPULATION &amp; HOUSING CENSUS 2022" role="img" style="display: block; box-sizing: border-box; height: 700px; width: 100%;" width="741" height="284" data-chart='{"labelsBN":["০-৪","৫-৯","১०-१४","१५-१९","२०-२४","२५-२९","३०-३४","३५-३९","४०-४४","४५-४९","५०-५४","५५-५९","६०-६४","६५-६९","७०-७४","७५-७९","८०-८४","८५-८९","९०-९४","९५-९९","१००+"],"labelsEN":["0-4","5-9","10-14","15-19","20-24","25-29","30-34","35-39","40-44","45-49","50-54","55-59","60-64","65-69","70-74","75-79","80-84","85-89","90-94","95-99","100+"]}'></canvas>
+          <h4 class="small text-muted mt-1 mb-0 text-end"><lang en="Ref: Population and Housing Census 2022" bn="Ref: Population and Housing Census 2022">Ref: Population and Housing Census 2022</lang></h4>
+        </div>
+      </div>
+    </section>
+  </div>`;
+}
+
 
 /* ── ADOLESCENT STAGES TIMELINE (Module 2, Lesson 2) ── */
 function buildAdolescentStagesSection() {
@@ -16321,6 +16388,20 @@ function setLang(lang) {
   document.getElementById('btnBn').setAttribute('aria-pressed', String(lang === 'bn'));
   document.getElementById('btnEn').setAttribute('aria-pressed', String(lang === 'en'));
   syncBottomLabel();
+  // update population pyramid labels when language changes
+  try {
+    const pyr = document.getElementById('populationPyramid');
+    if (window.populationPyramidChart && pyr && pyr.dataset && pyr.dataset.chart) {
+      const chartData = JSON.parse(pyr.dataset.chart);
+      const selectedLabels = lang === 'bn' ? chartData.labelsBN : chartData.labelsEN;
+      if (selectedLabels && Array.isArray(selectedLabels)) {
+        window.populationPyramidChart.data.labels = selectedLabels;
+        window.populationPyramidChart.update();
+      }
+    }
+  } catch (e) {
+    // no-op
+  }
 }
 
 /* ── THEME ───────────────────────────────────────── */
@@ -17089,6 +17170,246 @@ function buildModule22Lesson7Section() {
   }
   setLang('bn');        // default language
 })();
+
+ 
+// Update population pyramid chart labels
+if (this.populationPyramidChart) {
+  const pyramidCanvas = document.getElementById("populationPyramid");
+  if (pyramidCanvas && pyramidCanvas.dataset.chart) {
+    const chartData = JSON.parse(pyramidCanvas.dataset.chart);
+    const selectedLabels = lang === "bn" ? chartData.labelsBN : chartData.labelsEN;
+    this.populationPyramidChart.data.labels = selectedLabels;
+    this.populationPyramidChart.update();
+  }
+}
+
+// age bar
+      const pyramidCanvas = document.getElementById("populationPyramid");
+
+if (pyramidCanvas && window.Chart) {
+
+  
+
+  const labels = [
+    "০-৪","৫-৯","১০-১৪","১৫-১৯","২০-২৪","২৫-২৯","৩০-৩৪","৩৫-৩৯",
+"৪০-৪৪","৪৫-৪৯","৫০-৫৪","৫৫-৫৯","৬০-৬৪","৬৫-৬৯","৭০-৭৪","৭৫-৭৯",
+"৮০-৮৪","৮৫-৮৯","৯০-৯৪","৯৫-৯৯","১০০+"
+  ];
+
+  const highlightAges = new Set(["১০-১৪","১৫-১৯","২০-২৪"]);
+
+  const maleData = [-7.63,-7.41,-7.82,-8.5,-8.27,-7.92,-6.46,-6.68,-6.04,-4.92,-4.14,-3.78,-2.78,-2.59,-1.77,-1.26,-0.56,-0.18,-0.12,-0.06,-0.01];
+  const femaleData = [7.95,7.92,8.51,8.07,6.72,7.92,6.46,5.66,6.04,5.12,4.13,4.0,2.96,3.01,2.15,1.57,0.67,0.46,0.17,0.08,0.01];
+
+  const maleBase = "#2563EB";
+  const maleHighlight = "#1D4ED8";
+  const femaleBase = "#F97316";
+  const femaleHighlight = "#EA580C";
+
+  const maleColors = labels.map(l => highlightAges.has(l) ? maleHighlight : maleBase);
+  const femaleColors = labels.map(l => highlightAges.has(l) ? femaleHighlight : femaleBase);
+
+  // Background highlight plugin (uses numeric tick positions)
+  const ageBandHighlightBg = {
+    id: "ageBandHighlightBg",
+    beforeDatasetsDraw(chart) {
+      const { ctx, chartArea, scales } = chart;
+      const yScale = scales.y;
+      ctx.save();
+      labels.forEach((lab, i) => {
+        if (!highlightAges.has(lab)) return;
+
+        const yCurr = yScale.getPixelForValue(i);
+        const yNext = (i < labels.length - 1) ? yScale.getPixelForValue(i + 1) : yCurr + (yCurr - yScale.getPixelForValue(Math.max(0, i - 1)) || 20);
+        const height = Math.max(12, Math.abs(yNext - yCurr));
+        const top = yCurr - height / 2;
+
+        ctx.fillStyle = "rgba(253,92,48,0.12)";
+        ctx.fillRect(chartArea.left, top, chartArea.right - chartArea.left, height);
+
+        ctx.strokeStyle = "rgba(253,92,48,0.25)";
+        ctx.lineWidth = 1;
+        ctx.strokeRect(chartArea.left, top, chartArea.right - chartArea.left, height);
+      });
+      ctx.restore();
+    }
+  };
+
+  const ctx = pyramidCanvas.getContext("2d");
+
+  // create chart and store reference for later updates
+  window.populationPyramidChart = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "পুরুষ",
+          data: maleData,
+          backgroundColor: maleColors,
+          borderWidth: 1
+        },
+        {
+          label: "মহিলা",
+          data: femaleData,
+          backgroundColor: femaleColors,
+          borderWidth: 1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      indexAxis: "y",
+      scales: {
+        x: {
+          stacked: true,
+          ticks: {
+            callback: function(value) {
+              const toBanglaNumber = (num) => {
+                const bnDigits = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
+                return String(num).replace(/\d/g, d => bnDigits[d]);
+              };
+              return toBanglaNumber(Math.abs(value));
+            }
+          },
+          title: {
+            display: true,
+            text: "জনসংখ্যা (মিলিয়নে)"
+          }
+        },
+        y: {
+          stacked: true,
+          categoryPercentage: 0.99,
+          barPercentage: 1.0,
+          ticks: {
+            autoSkip: false,
+            font: { size: 10 }
+          },
+          title: { display: true, text: "বয়স গ্রুপ" }
+        }
+      },
+      plugins: {
+        legend: { position: "top" },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const toBanglaNumber = (num) => {
+                const bnDigits = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
+                return String(num).replace(/\d/g, d => bnDigits[d]);
+              };
+              const value = Math.abs(ctx.raw);
+              return `${ctx.dataset.label}: ${toBanglaNumber(value)}%`;
+            }
+          }
+        }
+      }
+    },
+    plugins: [ageBandHighlightBg]
+  });
+}
+
+// English version
+const pyramidCanvasEN = document.getElementById("populationPyramidEN");
+
+if (pyramidCanvasEN && window.Chart) {
+  const labelsEN = ["0-4","5-9","10-14","15-19","20-24","25-29","30-34","35-39","40-44","45-49","50-54","55-59","60-64","65-69","70-74","75-79","80-84","85-89","90-94","95-99","100+"];
+  const highlightAgesEN = new Set(["10-14","15-19","20-24"]);
+  const maleData = [-7.63,-7.41,-7.82,-8.5,-8.27,-7.92,-6.46,-6.68,-6.04,-4.92,-4.14,-3.78,-2.78,-2.59,-1.77,-1.26,-0.56,-0.18,-0.12,-0.06,-0.01];
+  const femaleData = [7.95,7.92,8.51,8.07,6.72,7.92,6.46,5.66,6.04,5.12,4.13,4.0,2.96,3.01,2.15,1.57,0.67,0.46,0.17,0.08,0.01];
+  const maleBase = "#2563EB";
+  const maleHighlight = "#1D4ED8";
+  const femaleBase = "#F97316";
+  const femaleHighlight = "#EA580C";
+  const maleColorsEN = labelsEN.map(l => highlightAgesEN.has(l) ? maleHighlight : maleBase);
+  const femaleColorsEN = labelsEN.map(l => highlightAgesEN.has(l) ? femaleHighlight : femaleBase);
+
+  const ageBandHighlightBgEN = {
+    id: "ageBandHighlightBgEN",
+    beforeDatasetsDraw(chart) {
+      const { ctx, chartArea, scales } = chart;
+      const yScale = scales.y;
+      ctx.save();
+      labelsEN.forEach((lab, i) => {
+        if (!highlightAgesEN.has(lab)) return;
+        const yCurr = yScale.getPixelForValue(i);
+        const yNext = (i < labelsEN.length - 1) ? yScale.getPixelForValue(i + 1) : yCurr + (yCurr - yScale.getPixelForValue(Math.max(0, i - 1)) || 20);
+        const height = Math.max(12, Math.abs(yNext - yCurr));
+        const top = yCurr - height / 2;
+        ctx.fillStyle = "rgba(253,92,48,0.12)";
+        ctx.fillRect(chartArea.left, top, chartArea.right - chartArea.left, height);
+        ctx.strokeStyle = "rgba(253,92,48,0.25)";
+        ctx.lineWidth = 1;
+        ctx.strokeRect(chartArea.left, top, chartArea.right - chartArea.left, height);
+      });
+      ctx.restore();
+    }
+  };
+
+  const ctxEN = pyramidCanvasEN.getContext("2d");
+  window.populationPyramidChartEN = new Chart(ctxEN, {
+    type: "bar",
+    data: {
+      labels: labelsEN,
+      datasets: [
+        {
+          label: "Male",
+          data: maleData,
+          backgroundColor: maleColorsEN,
+          borderWidth: 1
+        },
+        {
+          label: "Female",
+          data: femaleData,
+          backgroundColor: femaleColorsEN,
+          borderWidth: 1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      indexAxis: "y",
+      scales: {
+        x: {
+          stacked: true,
+          ticks: {
+            callback: function(value) {
+              return Math.abs(value);
+            }
+          },
+          title: {
+            display: true,
+            text: "Population (Millions)"
+          }
+        },
+        y: {
+          stacked: true,
+          categoryPercentage: 0.99,
+          barPercentage: 1.0,
+          ticks: {
+            autoSkip: false,
+            font: { size: 10 }
+          },
+          title: { display: true, text: "Age Group" }
+        }
+      },
+      plugins: {
+        legend: { position: "top" },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const value = Math.abs(ctx.raw);
+              return `${ctx.dataset.label}: ${value}%`;
+            }
+          }
+        }
+      }
+    },
+    plugins: [ageBandHighlightBgEN]
+  });
+}
+
 </script>
 </body>
 </html>
