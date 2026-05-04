@@ -568,9 +568,9 @@ button { cursor: pointer; border: none; background: none; }
   position: absolute; bottom: 0; left: 0; height: 3px;
   background: rgba(255,255,255,0.15); width: 100%; z-index: 10;
 }
-.hero-progress-bar {
+/* .hero-progress-bar {
   height: 100%; background: var(--unicef-yellow); width: 0%;
-}
+} */
 
 /* ═══════════════════════════════════════════════
    BASE SECTION STYLES
@@ -1737,7 +1737,7 @@ footer {
           <div class="hero-orbit">
             <div class="orbit-dot" style="background:#80BD41"></div>
           </div>
-          <div class="hero-circle">🧑‍⚕️</div>
+          <div class="hero-circle"><img src="yhap.jpeg" alt="Young Health Ambassador" style="width: 250px; height: 250px; border-radius: 50%;" /></div>
           <div class="hero-card hero-card-1">
             <div class="hero-card-icon">❤️</div>
             <h4 class="bn">শারীরিক স্বাস্থ্য</h4><h4 class="en">Physical Health</h4>
@@ -1759,7 +1759,7 @@ footer {
   </div>
 
   <!-- Slide 2 -->
-  <div class="hero-slide slide-2" id="slide-1">
+  <!-- <div class="hero-slide slide-2" id="slide-1">
     <div class="hero-bg"></div>
     <div class="hero-inner">
       <div class="hero-content">
@@ -1818,10 +1818,10 @@ footer {
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Slide 3 -->
-  <div class="hero-slide slide-3" id="slide-2">
+  <!-- <div class="hero-slide slide-3" id="slide-2">
     <div class="hero-bg"></div>
     <div class="hero-inner">
       <div class="hero-content">
@@ -1880,16 +1880,16 @@ footer {
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Slider Controls -->
-  <button class="hero-nav hero-prev" onclick="changeSlide(-1)">‹</button>
+  <!-- <button class="hero-nav hero-prev" onclick="changeSlide(-1)">‹</button>
   <button class="hero-nav hero-next" onclick="changeSlide(1)">›</button>
   <div class="hero-dots" id="heroDots">
     <div class="hero-dot active" onclick="goToSlide(0)"></div>
     <div class="hero-dot" onclick="goToSlide(1)"></div>
     <div class="hero-dot" onclick="goToSlide(2)"></div>
-  </div>
+  </div> -->
   <div class="hero-progress"><div class="hero-progress-bar" id="progressBar"></div></div>
 
 </section>
@@ -2895,7 +2895,7 @@ function startAutoPlay() {
   slideTimer = setInterval(() => goToSlide(currentSlide + 1), SLIDE_DURATION);
 }
 
-startAutoPlay();
+// startAutoPlay();
 
 // ═══════════════════════════════════════
 // SIDEBAR
