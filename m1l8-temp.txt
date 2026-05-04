@@ -1,0 +1,82 @@
+
+function buildModule1Lesson8Section() {
+  const phaseItems = [
+    {
+      icon: '📋',
+      num: '1',
+      titleBn: 'কিশোর কিশোরী ও তরুণদের বিভিন্ন ধরনের চাহিদা রয়েছে',
+      titleEn: 'Adolescents and Youth Have Different Types of Needs',
+      descBn: 'কিশোর কিশোরী ও তরুণদের যৌন ও প্রজনন স্বাস্থ্য (SRHR), মানসিক স্বাস্থ্য, পুষ্টি, অসংক্রামক রোগ (NCDs), সহিংসতা থেকে সুরক্ষা এবং ঝুঁকিপূর্ণ আচরণ বিষয়ে তথ্য ও সেবার প্রয়োজন রয়েছে।',
+      descEn: 'Adolescents and youth need information and services on sexual and reproductive health (SRHR), mental health, nutrition, non-communicable diseases (NCDs), protection from violence, and risk behaviors.'
+    },
+    {
+      icon: '⚖️',
+      num: '2',
+      titleBn: 'আইন, নীতি এবং অধিকার সম্পর্কে অজ্ঞতা',
+      titleEn: 'Ignorance About Laws, Policies and Rights',
+      descBn: 'কিশোর-কিশোরী ও তরুণদের মধ্যে যৌন ও প্রজনন স্বাস্থ্য অধিকার (SRHR) এবং শিশু অধিকার সম্পর্কে পর্যাপ্ত জ্ঞানের অভাব রয়েছে।',
+      descEn: 'Adolescents and youth lack sufficient knowledge about sexual and reproductive health rights (SRHR) and child rights.'
+    },
+    {
+      icon: '💪',
+      num: '3',
+      titleBn: 'অধিকার প্রয়োগে সীমিত ক্ষমতা',
+      titleEn: 'Limited Capacity in Implementing Rights',
+      descBn: 'আত্মবিশ্বাসের অভাব, পরিবারের প্রভাব এবং সমবয়সীদের চাপ অনেক সময় কিশোর-কিশোরী ও তরুণদের নিজেদের অধিকার রক্ষা ও প্রয়োগে বাধা সৃষ্টি করে।',
+      descEn: 'Lack of confidence, family influence, and peer pressure often prevent adolescents and youth from protecting and implementing their own rights.'
+    },
+    {
+      icon: '🧠',
+      num: '4',
+      titleBn: 'তথ্য, জ্ঞান এবং দক্ষতা অর্জনে বাধা',
+      titleEn: 'Barriers to Acquiring Information, Knowledge and Skills',
+      descBn: 'সামাজিক কুসংস্কার ও খোলামেলা আলোচনার অভাবে অনেক কিশোর-কিশোরী ও তরুণ প্রয়োজনীয় তথ্য ও দক্ষতা থেকে বঞ্চিত হয়।',
+      descEn: 'Due to social prejudices and lack of open discussion, many adolescents and youth are deprived of necessary information and skills.'
+    },
+    {
+      icon: '🏥',
+      num: '5',
+      titleBn: 'স্বাস্থ্যসেবা প্রাপ্তির ক্ষেত্রে বাধা',
+      titleEn: 'Barriers in Accessing Healthcare',
+      descBn: 'সেবা গ্রহণের সীমিত অভ্যাস; কোনো নির্দিষ্ট স্থান নেই, গোপনীয়তা নেই, নির্দিষ্ট কর্মী নেই; সেবাদানকারীদের অবহেলা ও অসচেতনতা রয়েছে।',
+      descEn: 'Limited service utilization; no specific place, no confidentiality, no dedicated staff; healthcare providers show negligence and lack awareness.'
+    }
+  ];
+
+  const renderPhases = (items) => items.map((item) => `
+    <div class="phase-item">
+      <div class="phase-num phase-num--${['rose','amber','teal','indigo','green'][items.indexOf(item)]}">
+        ${item.icon}
+      </div>
+      <div class="phase-content">
+        <div class="phase-content__title"><span class="bn">${item.titleBn}</span><span class="en">${item.titleEn}</span></div>
+        <div class="phase-content__desc bn">${item.descBn}</div>
+        <div class="phase-content__desc en">${item.descEn}</div>
+      </div>
+    </div>
+  `).join('');
+
+  return `
+  <div class="phases-anatomy-row">
+    <div class="repro-card">
+      <div class="repro-card__header repro-card__header--navy">
+        <div class="repro-card__icon" aria-hidden="true">❓</div>
+        <div>
+          <div class="repro-card__title">
+            <span class="bn">কেন তরুণদের বিশেষ যত্নের প্রয়োজন?</span>
+            <span class="en">Why Do Young People Need Special Care?</span>
+          </div>
+          <div class="repro-card__subtitle">
+            <span class="bn">তরুণদের স্বাস্থ্য ও সুস্থতায় বিনিয়োগ তাদের ভবিষ্যৎ গড়ে তোলে</span>
+            <span class="en">Investing in youth health and wellbeing builds their future</span>
+          </div>
+        </div>
+      </div>
+      <div class="repro-card__body">
+        <div class="phase-timeline" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 100%, 350px), 1fr)); gap: clamp(16px, 2vw, 24px);">
+          ${renderPhases(phaseItems)}
+        </div>
+      </div>
+    </div>
+  </div>`;
+}

@@ -1,0 +1,21 @@
+EDITS_TO_MAKE.txt
+
+EDIT 1: Add isModule1Lesson8 flag
+Location: Line 7029 (after isModule1Lesson7)
+Insert:
+  // Why Adolescents Need Special Care — Module 1 Lesson 8
+  const isModule1Lesson8 = (modIdx === 0 && lesIdx === 7);
+
+EDIT 2: Update isRichLesson to include isModule1Lesson8
+Location: Line 7261
+Change: isModule1Lesson7 || isChangesLesson
+To: isModule1Lesson7 || isModule1Lesson8 || isChangesLesson
+
+EDIT 3: Update richContent ternary
+Location: Lines 7268-7270
+After: : isModule1Lesson7 ? buildModule1Lesson7Section()
+Add: : isModule1Lesson8 ? buildModule1Lesson8Section()
+
+EDIT 4: Insert buildModule1Lesson8Section function
+Insert complete function BEFORE "/* ── ADOLESCENT STAGES TIMELINE (Module 2, Lesson 2) ── */"
+at line ~8791
