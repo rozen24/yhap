@@ -7021,6 +7021,8 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule1Lesson3 = (modIdx === 0 && lesIdx === 2);
   // Global and Bangladesh Adolescent Mortality — Module 1 Lesson 4
   const isModule1Lesson4 = (modIdx === 0 && lesIdx === 3);
+  // Child Marriage in South Asia — Module 1 Lesson 5
+  const isModule1Lesson5 = (modIdx === 0 && lesIdx === 4);
   // Adolescent changes cards for Module 2 Lesson 1
   const isChangesLesson = (modIdx === 1 && lesIdx === 0);
   // Adolescent stages timeline for Module 2 Lesson 2
@@ -7254,11 +7256,12 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule24Lesson3 = (modIdx === 23 && lesIdx === 2);
   const isModule24Lesson4 = (modIdx === 23 && lesIdx === 3);
   const isModule24Lesson5 = (modIdx === 23 && lesIdx === 4);
-  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
+  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isModule1Lesson5 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isModule1Lesson2 ? buildModule1Lesson2Section()
     : isModule1Lesson3 ? buildModule1Lesson3Section()
     : isModule1Lesson4 ? buildModule1Lesson4Section()
+    : isModule1Lesson5 ? buildModule1Lesson5Section()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
     : isReproLesson   ? buildFemaleReproSection()
@@ -7410,6 +7413,11 @@ function renderLessonPage(modIdx, lesIdx) {
   </article>`;
   if (isRichLesson) _renderCache.set(cacheKey, html); // only cache rich content
   document.getElementById('contentArea').innerHTML = html;
+  
+  // Initialize charts for specific lessons
+  if (isModule1Lesson5) {
+    setTimeout(initializeChildMarriageChart, 100);
+  }
   if (isModule24Lesson2) {
     updateCommConnections();
     updateTypeConnectors();
@@ -8439,6 +8447,90 @@ function buildModule1Lesson4Section() {
         <div class="role-card__content" style="">
           <img src="deseases.png" alt="Age-based mortality rates of young population in Bangladesh" style="width:100%; max-width:820px; height:auto; border-radius:10px; display:block; object-fit:cover;" />
           <h4 class="small text-muted mt-2 mb-0"><lang en="Ref: Adolescent and young adult mortality in Bangladesh: findings from household surveys. J Glob Health. 2025;15:04193" bn="Ref: Adolescent and young adult mortality in Bangladesh: findings from household surveys. J Glob Health. 2025;15:04193">Ref: Adolescent and young adult mortality in Bangladesh: findings from household surveys. J Glob Health. 2025;15:04193</lang></h4>
+        </div>
+      </div>
+    </section>
+  </div>`;
+}
+
+function buildModule1Lesson5Section() {
+  return `
+  <style>
+    .lesson5-intro-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0 auto;
+      width: min(90%, 380px);
+      aspect-ratio: 1;
+      padding: clamp(24px, 5vw, 40px);
+      border-radius: 50%;
+      background: linear-gradient(135deg, #FF6B9D 0%, #C06C84 100%);
+      box-shadow: 0 8px 24px rgba(192, 108, 132, 0.3);
+    }
+    
+    .lesson5-intro-icon {
+      font-size: clamp(48px, 12vw, 72px);
+      margin-bottom: clamp(12px, 2vw, 20px);
+    }
+    
+    .lesson5-intro-text {
+      font-size: clamp(14px, 3vw, 18px);
+      line-height: 1.4;
+      margin: 0;
+      color: #ffffff;
+    }
+    
+    .lesson5-chart-container {
+      min-height: clamp(300px, 60vw, 500px);
+      max-height: 500px;
+    }
+    
+    @media (max-width: 768px) {
+      .lesson5-chart-container {
+        min-height: clamp(280px, 70vw, 400px);
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .lesson5-intro-box {
+        width: min(95%, 300px);
+        padding: clamp(20px, 4vw, 32px);
+      }
+      
+      .lesson5-chart-container {
+        min-height: clamp(250px, 75vw, 350px);
+      }
+    }
+  </style>
+  
+  <div style="display:grid; gap:clamp(16px, 3vw, 32px); padding: 0 clamp(12px, 2vw, 24px);">
+    <!-- SECTION 1: Child Marriage Intro Box (Centered) -->
+    <div class="lesson5-intro-box">
+      <div class="lesson5-intro-icon" aria-hidden="true">👧👰</div>
+      <div style="width: 100%;">
+        <h2 class="lesson5-intro-text bn">বিশ্বে বাল্যবিবাহের সর্বোচ্চ হারের তালিকায় শীর্ষ ১০টি দেশের মধ্যে বাংলাদেশের অবস্থান অন্যতম।</h2>
+        <h2 class="lesson5-intro-text en">Bangladesh ranks among the top 10 countries with the highest rates of child marriage in the world.</h2>
+      </div>
+    </div>
+
+    <!-- SECTION 2: Chart Section -->
+    <section class="role-section" style="margin-top:0;" aria-label="Child marriage rates in South Asia">
+      <div class="role-section__header role-section__header--sky">
+        <div class="role-section__icon" aria-hidden="true">📊</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">দক্ষিণ এশিয়ায় বাল্যবিবাহের হার</h2>
+          <h2 class="role-section__title en">Child Marriage Rates in South Asia</h2>
+        </div>
+      </div>
+      <div class="role-section__body" style="padding:clamp(16px, 2vw, 24px); border-radius:8px;">
+        <div class="role-card__content">
+          <!-- Chart container -->
+          <article class="modern-card lesson5-chart-container">
+            <canvas id="cmFigure4Chart" aria-label="Child marriage before 18: Bangladesh vs South Asia vs World" role="img"></canvas>
+          </article>
         </div>
       </div>
     </section>
@@ -16582,6 +16674,7 @@ function setLang(lang) {
   document.getElementById('btnBn').setAttribute('aria-pressed', String(lang === 'bn'));
   document.getElementById('btnEn').setAttribute('aria-pressed', String(lang === 'en'));
   syncBottomLabel();
+  
   // update population pyramid labels when language changes
   try {
     const pyr = document.getElementById('populationPyramid');
@@ -16591,6 +16684,19 @@ function setLang(lang) {
       if (selectedLabels && Array.isArray(selectedLabels)) {
         window.populationPyramidChart.data.labels = selectedLabels;
         window.populationPyramidChart.update();
+      }
+    }
+  } catch (e) {
+    // no-op
+  }
+  
+  // update child marriage chart labels when language changes
+  try {
+    if (window.childMarriageChart && window.childMarriageLabels) {
+      const selectedLabels = lang === 'bn' ? window.childMarriageLabels.bn : window.childMarriageLabels.en;
+      if (selectedLabels && Array.isArray(selectedLabels)) {
+        window.childMarriageChart.data.labels = selectedLabels;
+        window.childMarriageChart.update();
       }
     }
   } catch (e) {
@@ -17603,6 +17709,130 @@ if (pyramidCanvasEN && window.Chart) {
     plugins: [ageBandHighlightBgEN]
   });
 }
+
+
+// FIG.4 Child marriage prevalence chart (Lesson 5)
+function initializeChildMarriageChart() {
+  const cmCanvas = document.getElementById("cmFigure4Chart");
+  if (cmCanvas && !cmCanvas.dataset.chartInitialized && window.Chart) {
+    try {
+      const ctx = cmCanvas.getContext("2d");
+          // Adaptive horizontal bar chart (Chart.js v2 & v3+ compatible)
+          const labelsHMData = {
+            en: ["Bangladesh","Nepal","Afghanistan","India","Bhutan","Pakistan","Sri Lanka","Maldives", "South Asia", "World"],
+            bn: ["বাংলাদেশ","নেপাল","আফগানিস্তান","ভারত","ভুটান","পাকিস্তান","শ্রীলঙ্কা","মালদ্বীপ", "দক্ষিণ এশিয়া", "বিশ্ব"]
+          };
+
+          const valuesHM = [51, 40, 28, 27, 26, 18, 10, 2, 29, 20];
+
+          // Helper function to convert numbers to Bengali numerals if needed
+          const convertToLanguageNumbers = (num) => {
+            const bengaliDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            const numStr = String(num);
+            if (currentLang === "bn") {
+              return numStr.split('').map(digit => bengaliDigits[parseInt(digit)] || digit).join('');
+            }
+            return numStr;
+          };
+
+          // Wrap long labels into multiple lines for readability
+          const wrapLabel = (str, max = 10) => {
+            try {
+              if (!str || typeof str !== 'string') return str;
+              if (str.length <= max) return str;
+              const words = str.split(' ');
+              if (words.length === 1) return str; // can't wrap
+              const lines = [];
+              let line = '';
+              words.forEach(w => {
+                const test = line ? (line + ' ' + w) : w;
+                if (test.length > max) { if (line) lines.push(line); line = w; } else { line = test; }
+              });
+              if (line) lines.push(line);
+              return lines;
+            } catch(_) { return str; }
+          };
+          const getCurrentLabels = () => {
+            const lang = currentLang === "bn" ? "bn" : "en";
+            return labelsHMData[lang].map(l => wrapLabel(l, 10));
+          };
+          const labelsHMWrap = getCurrentLabels();
+
+          // Compute top-3 indices for highlight
+          const top3Idx = valuesHM
+            .map((v, i) => [v, i])
+            .sort((a, b) => b[0] - a[0])
+            .slice(0, 1)
+            .map(([, i]) => i);
+         
+          const paletteHM = [
+            "#ff0000ff", // Bangladesh
+            "#A78BFA", // Nepal
+            "#34D399", // Afghanistan
+            "#60A5FA", // India
+            "#F59E0B", // Bhutan
+            "#FB7185", // Pakistan
+            "#F97316", // Sri Lanka
+            "#22D3EE", // Maldives
+            "#2563EB", // South Asia
+            "#9CA3AF"  // World
+          ];
+          // Render as vertical bars (categories on x-axis)
+          const chartConfig = {
+            type: 'bar',
+            data: {
+              labels: labelsHMWrap,
+              datasets: [{
+                label: '% of women 20–24 first married/union before 18',
+                data: valuesHM,
+                backgroundColor: paletteHM,
+                borderColor: (ctx) => top3Idx.includes(ctx.dataIndex) ? '#000000ff' : 'rgba(0,0,0,0.15)',
+                borderWidth: (ctx) => top3Idx.includes(ctx.dataIndex) ? 3 : 1,
+                borderRadius: 6,
+                barPercentage: 0.65,
+                categoryPercentage: 0.7
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                y: {
+                  suggestedMin: 0,
+                  suggestedMax: 100,
+                  ticks: { callback: (v) => convertToLanguageNumbers(v) + '%' },
+                },
+                x: {
+                  ticks: { autoSkip: false, maxRotation: 0, minRotation: 0, padding: 6 }
+                }
+              },
+              plugins: {
+                legend: { display: false },
+                tooltip: {
+                  callbacks: {
+                    label: (ctx) => `${convertToLanguageNumbers(ctx.raw)}%`
+                  }
+                }
+              },
+              animation: { duration: 900, easing: 'easeOutCubic' }
+            }
+          };
+          // Render chart
+          const childMarriageChart = new window.Chart(ctx, chartConfig);
+          cmCanvas.dataset.chartInitialized = "true";
+          
+          // Store labels globally for language switching
+          window.childMarriageLabels = {
+            bn: labelsHMData.bn.map(l => wrapLabel(l, 10)),
+            en: labelsHMData.en.map(l => wrapLabel(l, 10))
+          };
+          
+          window.childMarriageChart = childMarriageChart;
+        } catch (e) {
+          console.error('Chart init error:', e);
+        }
+      }
+    }
 
 </script>
 </body>
