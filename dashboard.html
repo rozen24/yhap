@@ -7023,7 +7023,8 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule1Lesson4 = (modIdx === 0 && lesIdx === 3);
   // Child Marriage in South Asia — Module 1 Lesson 5
   const isModule1Lesson5 = (modIdx === 0 && lesIdx === 4);
-  // Adolescent changes cards for Module 2 Lesson 1
+  // Adolescent Health and Nutrition Statistics — Module 1 Lesson 6
+  const isModule1Lesson6 = (modIdx === 0 && lesIdx === 5);
   const isChangesLesson = (modIdx === 1 && lesIdx === 0);
   // Adolescent stages timeline for Module 2 Lesson 2
   const isStagesLesson = (modIdx === 1 && lesIdx === 1);
@@ -7256,12 +7257,13 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule24Lesson3 = (modIdx === 23 && lesIdx === 2);
   const isModule24Lesson4 = (modIdx === 23 && lesIdx === 3);
   const isModule24Lesson5 = (modIdx === 23 && lesIdx === 4);
-  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isModule1Lesson5 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
+  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isModule1Lesson5 || isModule1Lesson6 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isModule1Lesson2 ? buildModule1Lesson2Section()
     : isModule1Lesson3 ? buildModule1Lesson3Section()
     : isModule1Lesson4 ? buildModule1Lesson4Section()
     : isModule1Lesson5 ? buildModule1Lesson5Section()
+    : isModule1Lesson6 ? buildModule1Lesson6Section()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
     : isReproLesson   ? buildFemaleReproSection()
@@ -8537,6 +8539,121 @@ function buildModule1Lesson5Section() {
   </div>`;
 }
 
+function buildModule1Lesson6Section() {
+  // Adolescent health and nutrition statistics
+  const statistics = [
+    { 
+      icon: '🤰', 
+      accent: 'rose', 
+      bn: '১৫-১৯ বছর বয়সী চারজনের মধ্যে একজন বিবাহিত কিশোরী (২৪%) গর্ভধারন করে, এবং প্রায় পাঁচজনের মধ্যে একজন কিশোরী (১৮%) জীবিত সন্তান জন্মদান করে।',
+      en: '1 out of 4 married adolescent girls aged 15-19 (24%) become pregnant, and approximately 1 out of 5 girls (18%) give birth to a live child.'
+    },
+    { 
+      icon: '👨‍👩‍👧‍👦', 
+      accent: 'indigo', 
+      bn: '১৫-১৯ বছর বয়সী বিবাহিত নারীদের মধ্যে যাদের পরিবার পরিকল্পনার চাহিদা পূরণ হয়নি, তাদের হার ১২.৭%।',
+      en: 'The unmet family planning need among married women aged 15-19 is 12.7%.'
+    },
+    { 
+      icon: '📊', 
+      accent: 'teal', 
+      bn: '১৫-১৯ বছর বয়সী বিবাহিত কিশোরীদের মধ্যে প্রজনন হার প্রতি হাজারে ৯২।',
+      en: 'The fertility rate among married adolescent girls aged 15-19 is 92 per thousand.'
+    },
+    { 
+      icon: '📏', 
+      accent: 'amber', 
+      bn: 'বিবাহিত কিশোরীদের ৩৬% এবং অবিবাহিত কিশোরীদের ৩২% বৃদ্ধি খর্বকায় এবং বিবাহিত কিশোরীদের ৪% এবং অবিবাহিত কিশোরীদের ৮% ওজন কম।',
+      en: '36% of married and 32% of unmarried adolescents are stunted, while 4% of married and 8% of unmarried adolescents are underweight.'
+    },
+    { 
+      icon: '🩸', 
+      accent: 'rose', 
+      bn: 'প্রায় এক-তৃতীয়াংশ (৩০%) কিশোর-কিশোরী রক্তাল্পতায় ভুগছে।',
+      en: 'Approximately one-third (30%) of adolescents suffer from anemia.'
+    },
+    { 
+      icon: '⚖️', 
+      accent: 'indigo', 
+      bn: 'বিবাহিত কিশোরীদের ১৬% এবং অবিবাহিত কিশোরীদের ১০% অতিরিক্ত ওজন বা স্থূলকায়।',
+      en: '16% of married and 10% of unmarried adolescents are overweight or obese.'
+    },
+    { 
+      icon: '⚠️', 
+      accent: 'teal', 
+      bn: 'কিশোরী ও নারীদের এক-পঞ্চমাংশ, তাদের বৈবাহিক অবস্থা নির্বিশেষে শারীরিক বা যৌন সহিংসতার শিকার।',
+      en: 'One-fifth of adolescent girls and women experience physical or sexual violence, regardless of marital status.'
+    },
+    { 
+      icon: '🏭', 
+      accent: 'amber', 
+      bn: 'বাংলাদেশে প্রায় ১.৭৮ মিলিয়ন কিশোর-কিশোরী শিশুশ্রমে জড়িত।',
+      en: 'Approximately 1.78 million adolescents in Bangladesh are engaged in child labor.'
+    },
+    { 
+      icon: '🎓', 
+      accent: 'rose', 
+      bn: 'কিশোরীদের মধ্যে মাধ্যমিক শিক্ষা থেকে ঝরে পড়ার হার (৩৪.৮৭%) কিশোরদের (৩০.৪৬%) তুলনায় বেশি।',
+      en: 'The rate of secondary school dropout among girls (34.87%) is higher than among boys (30.46%).'
+    },
+    { 
+      icon: '🧠', 
+      accent: 'indigo', 
+      bn: '১৩.৪% কিশোর-কিশোরী মানসিক স্বাস্থ্যগত সমস্যায় ভুগছে।',
+      en: '13.4% of adolescents suffer from mental health problems.'
+    }
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <style>
+    .lesson6-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 100%, 350px), 1fr));
+      gap: clamp(16px, 2vw, 24px);
+      padding: 0 clamp(12px, 2vw, 24px);
+    }
+    
+    @media (max-width: 768px) {
+      .lesson6-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .lesson6-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  
+  <div style="display:grid; gap:clamp(16px, 3vw, 32px); padding: 0 clamp(12px, 2vw, 24px);">
+    <!-- Statistics Section -->
+    <section class="role-section" style="margin-top:0;" aria-label="Adolescent health and statistics">
+      <div class="role-section__header role-section__header--green">
+        <div class="role-section__icon" aria-hidden="true">📊</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">তথ্য উপাত্ত</h2>
+          <h2 class="role-section__title en">Key Statistics</h2>
+        </div>
+      </div>
+      <div class="role-section__body" style="padding:clamp(16px, 2vw, 24px); border-radius:8px; overflow-x: hidden;">
+        <div class="lesson6-grid">
+          ${renderCards(statistics)}
+        </div>
+      </div>
+    </section>
+  </div>`;
+}
 
 /* ── ADOLESCENT STAGES TIMELINE (Module 2, Lesson 2) ── */
 function buildAdolescentStagesSection() {
