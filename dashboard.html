@@ -3771,6 +3771,12 @@
     .cm-hub-card:nth-child(9) { --angle: 288deg; }
     .cm-hub-card:nth-child(10) { --angle: 324deg; }
 
+    /* 3-point variant: equally spaced (360/3 = 120 degrees) */
+    .cm-hub-grid--triple .cm-hub-card:nth-child(1) { --angle: 0deg; }
+    .cm-hub-grid--triple .cm-hub-card:nth-child(2) { --angle: 120deg; }
+    .cm-hub-grid--triple .cm-hub-card:nth-child(3) { --angle: 240deg; }
+    .cm-hub-grid--triple .cm-hub-card { --radius: 205px; }
+
     
     .cm-hub-card {
       --radius: 175px;
@@ -7011,6 +7017,8 @@ function renderLessonPage(modIdx, lesIdx) {
   const isGlobeLesson = (modIdx === 0 && lesIdx === 0);
   // Youth Population Statistics & Pyramid — Module 1 Lesson 2
   const isModule1Lesson2 = (modIdx === 0 && lesIdx === 1);
+  // Youth Health & Wellbeing — Module 1 Lesson 3
+  const isModule1Lesson3 = (modIdx === 0 && lesIdx === 2);
   // Adolescent changes cards for Module 2 Lesson 1
   const isChangesLesson = (modIdx === 1 && lesIdx === 0);
   // Adolescent stages timeline for Module 2 Lesson 2
@@ -7244,9 +7252,10 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule24Lesson3 = (modIdx === 23 && lesIdx === 2);
   const isModule24Lesson4 = (modIdx === 23 && lesIdx === 3);
   const isModule24Lesson5 = (modIdx === 23 && lesIdx === 4);
-  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
+  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isModule1Lesson2 ? buildModule1Lesson2Section()
+    : isModule1Lesson3 ? buildModule1Lesson3Section()
     : isChangesLesson ? buildAdolescentChangesSection()
     : isStagesLesson  ? buildAdolescentStagesSection()
     : isReproLesson   ? buildFemaleReproSection()
@@ -8245,6 +8254,63 @@ function buildModule1Lesson2Section() {
         <div id="chartWrapperEN" style="width:100%; max-height:900px; position: relative;">
           <canvas id="populationPyramidEN" aria-label="POPULATION &amp; HOUSING CENSUS 2022" role="img" style="display: block; box-sizing: border-box; height: 700px; width: 100%;" width="741" height="284" data-chart='{"labelsBN":["০-৪","৫-৯","১०-१४","१५-१९","२०-२४","२५-२९","३०-३४","३५-३९","४०-४४","४५-४९","५०-५४","५५-५९","६०-६४","६५-६९","७०-७४","७५-७९","८०-८४","८५-८९","९०-९४","९५-९९","१००+"],"labelsEN":["0-4","5-9","10-14","15-19","20-24","25-29","30-34","35-39","40-44","45-49","50-54","55-59","60-64","65-69","70-74","75-79","80-84","85-89","90-94","95-99","100+"]}'></canvas>
           <h4 class="small text-muted mt-1 mb-0 text-end"><lang en="Ref: Population and Housing Census 2022" bn="Ref: Population and Housing Census 2022">Ref: Population and Housing Census 2022</lang></h4>
+        </div>
+      </div>
+    </section>
+  </div>`;
+}
+
+function buildModule1Lesson3Section() {
+  const dividendItems = [
+    { icon: '🟢', bn: 'সুস্থ তরুণ জনগোষ্ঠী (বর্তমান)', en: 'Healthy young population (present)' },
+    { icon: '🔵', bn: 'সুস্থ পরবর্তী প্রজন্ম', en: 'Healthy next generation' },
+    { icon: '🟠', bn: 'ভবিষ্যৎ সুস্থ ও দক্ষ জনশক্তি', en: 'Future healthy and skilled workforce' }
+  ];
+
+  const dividendCards = dividendItems.map((item) => `
+    <div class="cm-hub-card">
+      <span class="cm-hub-card__icon">${item.icon}</span>
+      <p class="cm-hub-card__text bn">${item.bn}</p>
+      <p class="cm-hub-card__text en">${item.en}</p>
+    </div>`).join('');
+
+  return `
+  <div style="display:grid; gap:24px;">
+    <section class="role-section" style="margin-top:0;" aria-label="Youth health and wellbeing">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">💚</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">তরুণদের স্বাস্থ্য ও সুস্থতা</h2>
+          <h2 class="role-section__title en">Youth Health and Wellbeing</h2>
+        </div>
+      </div>
+      <div class="role-section__body" style="padding:20px; border-radius:8px;">
+        <div class="role-card__content" style="">
+          <img src="adolcent.png" alt="Adolescent health and wellbeing" style="width:100%; max-width:820px; height:auto; border-radius:10px; display:block; object-fit:cover;" />
+        </div>
+      </div>
+    </section>
+
+    <section class="role-section" style="margin-top:0;" aria-label="Triple dividend from investing in youth aged 10 to 24">
+      <div class="role-section__header role-section__header--green">
+        <div class="role-section__icon" aria-hidden="true">📈</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">১০-২৪ বছর বয়সী প্রজন্মের ওপর বিনিয়োগ একটি ত্রি-মাত্রিক লভ্যাংশ (ট্রিপল ডিভিডেন্ড) এনে দেয়। কিশোর-কিশোরীদের স্বাস্থ্য ও সুস্থতায় প্রতি মার্কিন ডলার বিনিয়োগে ৫-১০ ডলার পর্যন্ত রিটার্ন পাওয়া যায়</h2>
+          <h2 class="role-section__title en">Investment in people aged 10-24 yields a triple dividend. Every US dollar invested in adolescent health and wellbeing can return up to 5-10 dollars.</h2>
+        </div>
+      </div>
+      <div class="role-section__body" style="padding:20px; border-radius:8px;">
+        <div class="cm-hub-section" style="margin-bottom:0;">
+          <div class="cm-hub-container">
+            <div class="cm-hub-center cm-hub-center_projono">
+              <div class="cm-hub-center__icon">👥</div>
+              <p class="cm-hub-center__text bn">তরুন প্রজন্ম</p>
+              <p class="cm-hub-center__text en">Young Generation</p>
+            </div>
+            <div class="cm-hub-grid cm-hub-grid--triple">
+              ${dividendCards}
+            </div>
+          </div>
         </div>
       </div>
     </section>
