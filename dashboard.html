@@ -7026,6 +7026,7 @@ function renderLessonPage(modIdx, lesIdx) {
   // Adolescent Health and Nutrition Statistics — Module 1 Lesson 6
   const isModule1Lesson6 = (modIdx === 0 && lesIdx === 5);
   const isChangesLesson = (modIdx === 1 && lesIdx === 0);
+    const isModule1Lesson7 = (modIdx === 0 && lesIdx === 6);
   // Adolescent stages timeline for Module 2 Lesson 2
   const isStagesLesson = (modIdx === 1 && lesIdx === 1);
   // Female Reproductive System — Module 3 Lesson 1
@@ -7257,14 +7258,14 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule24Lesson3 = (modIdx === 23 && lesIdx === 2);
   const isModule24Lesson4 = (modIdx === 23 && lesIdx === 3);
   const isModule24Lesson5 = (modIdx === 23 && lesIdx === 4);
-  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isModule1Lesson5 || isModule1Lesson6 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
+  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isModule1Lesson5 || isModule1Lesson6 || isModule1Lesson7 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isModule1Lesson2 ? buildModule1Lesson2Section()
     : isModule1Lesson3 ? buildModule1Lesson3Section()
     : isModule1Lesson4 ? buildModule1Lesson4Section()
     : isModule1Lesson5 ? buildModule1Lesson5Section()
     : isModule1Lesson6 ? buildModule1Lesson6Section()
-    : isChangesLesson ? buildAdolescentChangesSection()
+    : isModule1Lesson7 ? buildModule1Lesson7Section()
     : isStagesLesson  ? buildAdolescentStagesSection()
     : isReproLesson   ? buildFemaleReproSection()
     : isMenstrualLesson ? buildMenstrualCycleSection()
@@ -8649,6 +8650,139 @@ function buildModule1Lesson6Section() {
       <div class="role-section__body" style="padding:clamp(16px, 2vw, 24px); border-radius:8px; overflow-x: hidden;">
         <div class="lesson6-grid">
           ${renderCards(statistics)}
+        </div>
+      </div>
+    </section>
+  </div>`;
+}
+
+
+function buildModule1Lesson7Section() {
+  // Determinants of adolescent health
+  const determinants = [
+    { 
+      icon: '🚗', 
+      accent: 'rose', 
+      bn: 'অনিচ্ছাকৃত আঘাত',
+      en: 'Unintentional Injuries'
+    },
+    { 
+      icon: '✊', 
+      accent: 'indigo', 
+      bn: 'সহিংসতা',
+      en: 'Violence'
+    },
+    { 
+      icon: '❤️', 
+      accent: 'teal', 
+      bn: 'যৌন ও প্রজনন স্বাস্থ্য, এইচআইভি এবং যৌনবাহিত ও প্রজননতন্ত্রের সংক্রমণসমূহ',
+      en: 'Sexual and Reproductive Health, HIV and STIs'
+    },
+    { 
+      icon: '🦠', 
+      accent: 'amber', 
+      bn: 'সংক্রামক রোগ',
+      en: 'Communicable Diseases'
+    },
+    { 
+      icon: '❤️‍🩹', 
+      accent: 'rose', 
+      bn: 'অসংক্রামক রোগ',
+      en: 'Non-Communicable Diseases'
+    },
+    { 
+      icon: '🧠', 
+      accent: 'indigo', 
+      bn: 'মানসিক স্বাস্থ্য',
+      en: 'Mental Health'
+    },
+    { 
+      icon: '🚭', 
+      accent: 'teal', 
+      bn: 'মাদকদ্রব্যের ব্যবহার',
+      en: 'Substance Use'
+    },
+    { 
+      icon: '🚬', 
+      accent: 'amber', 
+      bn: 'তামাকজাত দ্রব্যের ব্যবহার',
+      en: 'Tobacco Use'
+    },
+    { 
+      icon: '🏃', 
+      accent: 'rose', 
+      bn: 'শারীরিক সক্রিয়তা এবং অলস জীবনযাপন',
+      en: 'Physical Activity and Sedentary Lifestyle'
+    },
+    { 
+      icon: '🥗', 
+      accent: 'indigo', 
+      bn: 'পুষ্টি',
+      en: 'Nutrition'
+    }
+  ];
+
+  const renderCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <style>
+    .lesson7-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 100%, 350px), 1fr));
+      gap: clamp(16px, 2vw, 24px);
+      padding: 0 clamp(12px, 2vw, 24px);
+    }
+    
+    @media (max-width: 768px) {
+      .lesson7-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .lesson7-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  
+  <div style="display:grid; gap:clamp(16px, 3vw, 32px); padding: 0 clamp(12px, 2vw, 24px);">
+    <!-- SECTION 1: Determinants of Adolescent Health -->
+    <section class="role-section" style="margin-top:0;" aria-label="Determinants of adolescent health and wellbeing">
+      <div class="role-section__header role-section__header--warn">
+        <div class="role-section__icon" aria-hidden="true">🎯</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">কৈশোরকালীন স্বাস্থ্য এবং সুস্থতার জন্য নির্ধারক সমূহ</h2>
+          <h2 class="role-section__title en">Determinants of Adolescent Health and Wellbeing</h2>
+        </div>
+      </div>
+      <div class="role-section__body" style="padding:clamp(16px, 2vw, 24px); border-radius:8px; overflow-x: hidden;">
+        <div class="lesson7-grid">
+          ${renderCards(determinants)}
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Global Accelerated Action -->
+    <section class="role-section" style="margin-top:0;" aria-label="Global accelerated action for adolescent health">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">🚀</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">গ্লোবাল এক্সেলেরাটেড একশন</h2>
+          <h2 class="role-section__title en">Global Accelerated Action</h2>
+        </div>
+      </div>
+      <div class="role-section__body" style="padding:clamp(16px, 2vw, 24px); border-radius:8px;">
+        <div class="role-card__content">
+          <img src="determinants_b.png" alt="Global Accelerated Action for Adolescent Health" style="width:100%; height: 100%; border-radius:10px; display:block; object-fit: cover;" />
         </div>
       </div>
     </section>
