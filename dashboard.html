@@ -14371,27 +14371,27 @@ function buildFamilyPlanningSection() {
 
 function buildStiLessonSection() {
   const causes = [
-    { bn: 'ব্যক্তিগত অপরিচ্ছন্নতা', en: 'Personal unhygiene' },
-    { bn: 'প্রজননতন্ত্রের জীবাণুগুলোর অতিবৃদ্ধি', en: 'Overgrowth of germs in the reproductive tract' },
-    { bn: 'অনিরাপদ যৌনমিলন', en: 'Unsafe sexual intercourse' },
-    { bn: 'জীবাণুযুক্ত পরিবেশ', en: 'Germ-contaminated environment' },
-    { bn: 'সংক্রমিত রক্ত গ্রহণ', en: 'Receiving infected blood' },
-    { bn: 'সংক্রমিত মায়ের গর্ভধারণ', en: 'Pregnancy from an infected mother' },
+    { icon: '🧼', bn: 'ব্যক্তিগত অপরিচ্ছন্নতা', en: 'Personal unhygiene' },
+    { icon: '🦠', bn: 'প্রজননতন্ত্রের জীবাণুগুলোর অতিবৃদ্ধি', en: 'Overgrowth of germs in the reproductive tract' },
+    { icon: '🚫❤️', bn: 'অনিরাপদ যৌনমিলন', en: 'Unsafe sexual intercourse' },
+    { icon: '🌍', bn: 'জীবাণুযুক্ত পরিবেশ', en: 'Germ-contaminated environment' },
+    { icon: '🩸', bn: 'সংক্রমিত রক্ত গ্রহণ', en: 'Receiving infected blood' },
+    { icon: '🤰', bn: 'সংক্রমিত মায়ের গর্ভধারণ', en: 'Pregnancy from an infected mother' },
   ];
 
   const symptoms = [
-    { bn: 'যৌনাঙ্গে চুলকানি হওয়া', en: 'Itching in the genital area' },
-    { bn: 'যৌনাঙ্গ থেকে দুর্গন্ধযুক্ত বা দুর্গন্ধবিহীন স্রাব যাওয়া', en: 'Foul-smelling or odorless discharge from the genital area' },
-    { bn: 'যৌনাঙ্গ থেকে পুঁজ বা পুঁজের মতো যাওয়া ও বারবার প্রস্রাব হওয়া', en: 'Pus-like discharge from the genital area and frequent urination' },
-    { bn: 'যৌনাঙ্গে ক্ষত হওয়া', en: 'Sores or ulcers in the genital area' },
-    { bn: 'যৌনমিলনে ব্যথা হওয়া', en: 'Pain during sexual intercourse' },
-    { bn: 'শরীরে চুলকানি বা ঘামাচির মতো দানা হওয়া', en: 'Itching or heat-rash-like bumps on the body' },
-    { bn: 'শরীরে লসিকা গ্রন্থি ফুলে যাওয়া ও ব্যাথা (কুঁচকি বা অন্যান্য স্থানে ফুলে হওয়া)', en: 'Swollen and painful lymph nodes in the body, especially in the groin or other areas' },
+    { icon: '🩹', bn: 'যৌনাঙ্গে চুলকানি হওয়া', en: 'Itching in the genital area' },
+    { icon: '💧', bn: 'যৌনাঙ্গ থেকে দুর্গন্ধযুক্ত বা দুর্গন্ধবিহীন স্রাব যাওয়া', en: 'Foul-smelling or odorless discharge from the genital area' },
+    { icon: '🧪', bn: 'যৌনাঙ্গ থেকে পুঁজ বা পুঁজের মতো যাওয়া ও বারবার প্রস্রাব হওয়া', en: 'Pus-like discharge from the genital area and frequent urination' },
+    { icon: '⚠️', bn: 'যৌনাঙ্গে ক্ষত হওয়া', en: 'Sores or ulcers in the genital area' },
+    { icon: '😣', bn: 'যৌনমিলনে ব্যথা হওয়া', en: 'Pain during sexual intercourse' },
+    { icon: '🌡️', bn: 'শরীরে চুলকানি বা ঘামাচির মতো দানা হওয়া', en: 'Itching or heat-rash-like bumps on the body' },
+    { icon: '📍', bn: 'শরীরে লসিকা গ্রন্থি ফুলে যাওয়া ও ব্যাথা (কুঁচকি বা অন্যান্য স্থানে ফুলে হওয়া)', en: 'Swollen and painful lymph nodes in the body, especially in the groin or other areas' },
   ];
 
   const renderCards = (items) => items.map((item, index) => `
     <article class="role-card role-card--${['teal','rose','amber','indigo','green','violet','sky'][index % 7]}">
-      <div class="role-card__icon" aria-hidden="true">${index + 1}</div>
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
       <p class="role-card__text bn">${item.bn}</p>
       <p class="role-card__text en">${item.en}</p>
     </article>
@@ -14446,29 +14446,29 @@ function buildStiLessonSection() {
 
 function buildStiComplicationsSection() {
   const complications = [
-    { bn: 'এইচআইভি সংক্রমণের সম্ভাবনা বেড়ে যায়', en: 'The risk of HIV infection increases' },
-    { bn: 'হিউম্যান প্যাপিলোমা ভাইরাসে (এইচপিভি) আক্রান্ত নারীদের জরায়ুর মুখে ক্যান্সার হবার সম্ভাবনা থাকে', en: 'Women infected with human papillomavirus (HPV) may develop cervical cancer' },
-    { bn: 'সংক্রমিত নারী বা পুরুষের পরবর্তীতে স্থায়ী বন্ধ্যাত্ব হতে পারে', en: 'An infected woman or man may later develop permanent infertility' },
-    { bn: 'মস্তিষ্ক, যকৃত বা হৃৎপিণ্ডে জটিলতা দেখা দিতে পারে', en: 'Complications may occur in the brain, liver, or heart' },
-    { bn: 'সংক্রমিত পুরুষের মূত্রনালী সরু হয়ে যেতে পারে', en: 'The urethra of an infected man may become narrowed' },
-    { bn: 'আক্রান্ত মায়ের গর্ভপাত হতে পারে বা মৃত সন্তান প্রসব করতে পারে', en: 'An infected mother may have a miscarriage or give birth to a stillborn baby' },
-    { bn: 'আক্রান্ত মায়ের জরায়ুর পরিবর্তে ডিম্বনালীতে ভ্রূণ বড় হতে পারে', en: 'The fetus may grow in the fallopian tube instead of the uterus' },
-    { bn: 'আক্রান্ত মায়ের শিশু জন্মগত ত্রুটি নিয়ে বা চোখে ইনফেকশন নিয়ে জন্ম নিতে পারে, যা থেকে পরবর্তীতে অন্ধত্বও হতে পারে', en: 'The baby of an infected mother may be born with congenital defects or eye infection, which may later lead to blindness' },
+    { icon: '🦠', bn: 'এইচআইভি সংক্রমণের সম্ভাবনা বেড়ে যায়', en: 'The risk of HIV infection increases' },
+    { icon: '🎗️', bn: 'হিউম্যান প্যাপিলোমা ভাইরাসে (এইচপিভি) আক্রান্ত নারীদের জরায়ুর মুখে ক্যান্সার হবার সম্ভাবনা থাকে', en: 'Women infected with human papillomavirus (HPV) may develop cervical cancer' },
+    { icon: '🚫', bn: 'সংক্রমিত নারী বা পুরুষের পরবর্তীতে স্থায়ী বন্ধ্যাত্ব হতে পারে', en: 'An infected woman or man may later develop permanent infertility' },
+    { icon: '🧠⚠️🦠', bn: 'মস্তিষ্ক, যকৃত বা হৃৎপিণ্ডে জটিলতা দেখা দিতে পারে', en: 'Complications may occur in the brain, liver, or heart' },
+    { icon: '🧪', bn: 'সংক্রমিত পুরুষের মূত্রনালী সরু হয়ে যেতে পারে', en: 'The urethra of an infected man may become narrowed' },
+    { icon: '🤰', bn: 'আক্রান্ত মায়ের গর্ভপাত হতে পারে বা মৃত সন্তান প্রসব করতে পারে', en: 'An infected mother may have a miscarriage or give birth to a stillborn baby' },
+    { icon: '🧬', bn: 'আক্রান্ত মায়ের জরায়ুর পরিবর্তে ডিম্বনালীতে ভ্রূণ বড় হতে পারে', en: 'The fetus may grow in the fallopian tube instead of the uterus' },
+    { icon: '👶', bn: 'আক্রান্ত মায়ের শিশু জন্মগত ত্রুটি নিয়ে বা চোখে ইনফেকশন নিয়ে জন্ম নিতে পারে, যা থেকে পরবর্তীতে অন্ধত্বও হতে পারে', en: 'The baby of an infected mother may be born with congenital defects or eye infection, which may later lead to blindness' },
   ];
 
   const symptoms = [
-    { bn: 'যৌনাঙ্গে চুলকানি হওয়া', en: 'Itching in the genital area' },
-    { bn: 'যৌনাঙ্গ থেকে দুর্গন্ধযুক্ত বা দুর্গন্ধবিহীন স্রাব যাওয়া', en: 'Foul-smelling or odorless discharge from the genital area' },
-    { bn: 'যৌনাঙ্গ থেকে পুঁজ বা পুঁজের মতো যাওয়া ও বারবার প্রস্রাব হওয়া', en: 'Pus-like discharge from the genital area and frequent urination' },
-    { bn: 'যৌনাঙ্গে ক্ষত হওয়া', en: 'Sores or ulcers in the genital area' },
-    { bn: 'যৌনমিলনে ব্যথা হওয়া', en: 'Pain during sexual intercourse' },
-    { bn: 'শরীরে চুলকানি বা ঘামাচির মতো দানা হওয়া', en: 'Itching or heat-rash-like bumps on the body' },
-    { bn: 'শরীরে লসিকা গ্রন্থি ফুলে যাওয়া ও ব্যাথা (কুঁচকি বা অন্যান্য স্থানে ফুলে হওয়া)', en: 'Swollen and painful lymph nodes in the body, especially in the groin or other areas' },
+    { icon: '🔍', bn: 'যৌনাঙ্গে চুলকানি হওয়া', en: 'Itching in the genital area' },
+    { icon: '💧', bn: 'যৌনাঙ্গ থেকে দুর্গন্ধযুক্ত বা দুর্গন্ধবিহীন স্রাব যাওয়া', en: 'Foul-smelling or odorless discharge from the genital area' },
+    { icon: '🚽', bn: 'যৌনাঙ্গ থেকে পুঁজ বা পুঁজের মতো যাওয়া ও বারবার প্রস্রাব হওয়া', en: 'Pus-like discharge from the genital area and frequent urination' },
+    { icon: '🩹', bn: 'যৌনাঙ্গে ক্ষত হওয়া', en: 'Sores or ulcers in the genital area' },
+    { icon: '😣', bn: 'যৌনমিলনে ব্যথা হওয়া', en: 'Pain during sexual intercourse' },
+    { icon: '🌡️', bn: 'শরীরে চুলকানি বা ঘামাচির মতো দানা হওয়া', en: 'Itching or heat-rash-like bumps on the body' },
+    { icon: '📍🤕', bn: 'শরীরে লসিকা গ্রন্থি ফুলে যাওয়া ও ব্যাথা (কুঁচকি বা অন্যান্য স্থানে ফুলে হওয়া)', en: 'Swollen and painful lymph nodes in the body, especially in the groin or other areas' },
   ];
 
   const renderCards = (items) => items.map((item, index) => `
     <article class="role-card role-card--${['rose','amber','indigo','green','violet','sky','teal','slate'][index % 8]}">
-      <div class="role-card__icon" aria-hidden="true">${index + 1}</div>
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
       <p class="role-card__text bn">${item.bn}</p>
       <p class="role-card__text en">${item.en}</p>
     </article>
