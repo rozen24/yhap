@@ -4292,6 +4292,7 @@
       z-index: 10;
       box-shadow: 0 4px 16px rgba(46,204,113,0.15);
     }
+    .koishor
 
     .app-hub-center__icon {
       font-size: 44px;
@@ -4316,8 +4317,8 @@
 
     .app-hub-card {
       position: absolute;
-      width: 105px;
-      height: 105px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       display: flex;
       flex-direction: column;
@@ -9395,10 +9396,13 @@ function buildChildMarriageSection() {
   <section class="child-marriage-section" aria-label="Child marriage awareness">
     
     <!-- Intro paragraph -->
-    <div class="cm-intro-paragraph">
-      <p class="bn">বাংলাদেশের আইনে মেয়েদের বিয়ের বয়স কমপক্ষে ১৮ ও ছেলেদের বিয়ের বয়স কমপক্ষে ২১ বছর।  এর থেকে কম বয়সে বিয়ে হলে তা বাল্যবিবাহ বলে গণ্য করা হয়।  বর্তমানে বিশেষ কয়েকটি কারণে ১৬ বছরে বিয়ে দেয়ার বিষয়টি বাল্যবিবাহ নিরোধ আইনে অন্তর্ভুক্ত হলেও বিয়ের বয়স ১৮ বছরই বলতে হবে।  বিডিএইচএস, ২০২২ অনুসারে বিবাহিত ৫০ শতাংশ নারীর বিয়ে হয়েছে ১৮ বছরের মধ্যে এবং গর্ভবতী কিশোরীদের মধ্যে জন্মহার প্রতি হাজারে ৯২।  এবং ১৫-১৯ বছর বয়সী চারজনের মধ্যে একজন কিশোরী (২৪%) গর্ভধারন করে, এবং প্রায় পাঁচজনের মধ্যে একজন কিশোরী (১৮%) জীবিত সন্তান জন্মদান করে।</p>
-      <p class="en">Child marriage is not just a social problem; it is a violation of human rights and a threat to children's futures. Every member of our community has a responsibility to stop this practice and help children pursue their dreams.</p>
+    <div class="am-intro-box bg_2">
+    <div class="am-intro-icon" aria-hidden="true">⚖️</div>
+    <div class="am-intro-titles">
+      <h2 class="am-intro-title bn">বাংলাদেশের আইনে মেয়েদের বিয়ের বয়স কমপক্ষে ১৮ ও ছেলেদের বিয়ের বয়স কমপক্ষে ২১ বছর।  এর থেকে কম বয়সে বিয়ে হলে তা বাল্যবিবাহ বলে গণ্য করা হয়।  বর্তমানে বিশেষ কয়েকটি কারণে ১৬ বছরে বিয়ে দেয়ার বিষয়টি বাল্যবিবাহ নিরোধ আইনে অন্তর্ভুক্ত হলেও বিয়ের বয়স ১৮ বছরই বলতে হবে।  বিডিএইচএস, ২০২২ অনুসারে বিবাহিত ৫০ শতাংশ নারীর বিয়ে হয়েছে ১৮ বছরের মধ্যে এবং গর্ভবতী কিশোরীদের মধ্যে জন্মহার প্রতি হাজারে ৯২।  এবং ১৫-১৯ বছর বয়সী চারজনের মধ্যে একজন কিশোরী (২৪%) গর্ভধারন করে, এবং প্রায় পাঁচজনের মধ্যে একজন কিশোরী (১৮%) জীবিত সন্তান জন্মদান করে।</h2>
+      <h2 class="am-intro-title en">Child marriage is not just a social problem; it is a violation of human rights and a threat to children's futures. Every member of our community has a responsibility to stop this practice and help children pursue their dreams.</h2>
     </div>
+  </div>
 
     <!-- Main container: circles (left) + hub section (right) -->
     <div class="cm-main-container">
@@ -9904,7 +9908,7 @@ function buildAdolescentPregnancyPreventionSection() {
   <!-- ═════════════════════════════════════════════════════════ -->
   <!-- PREVENTION ACTIONS HUB SECTION -->
   <!-- ═════════════════════════════════════════════════════════ -->
-  <section class="app-hub-section" aria-label="Actions to prevent adolescent pregnancy">
+  <section class="app-hub-section koishor_hub" aria-label="Actions to prevent adolescent pregnancy">
     <!-- Hub Container -->
     <div class="app-hub-container">
       <!-- Central circle -->
@@ -10051,7 +10055,8 @@ function buildPregnancyManagementCareSection() {
     </article>`).join('');
 
   return `
-  <div class="am-info-box" style="margin-bottom: 32px;">
+  <div class="am-info-box" style="margin-bottom: 32px; display: flex; flex-direction: row; align-items: center;">
+    <div class="am-intro-icon" aria-hidden="true">🤰</div>
     <p class="bn">
       গর্ভবতী কিশোরী সবসময়ই ঝুঁকিপূর্ণ— গর্ভকালীন, প্রসবকালীন বা প্রসব পরবর্তী সময়েও। একারনে গর্ভ নিশ্চিত হবার সাথে সাথেই নুন্যতম ৪ টি গর্ভকালীন চেকাপ নিশ্চিত করার জন্য নিকটস্থ সাস্থ্যকেন্দ্রে সেবা নিতে হবে এবং কিশোরী মা এর প্রসব ব্যথা শুরু হলে তাকে জরুরি ভিত্তিতে হাসপাতালে নিয়ে ডেলিভারী করাতে হবে। যদি কিশোরী মায়ের ঝুঁকিসমূহ সময়মত শনাক্ত করা যায় ও ঠিক সময়ে জরুরি প্রসূতি সেবাকেন্দ্রে রেফার করা যায়, তাহলে তা কিশোরী মায়ের ও শিশুর জীবন বাঁচাতে গুরুত্বপূর্ণ ভূমিকা রাখবে। কিশোরী মায়ের প্রসব বেশি ঝুঁকিপূর্ণ বিধায় হাসপাতাল ছাড়া কোনোভাবেই প্রসব করানো উচিত নয়।
     </p>
@@ -10190,19 +10195,19 @@ function buildFamilyPlanningSection() {
                 </h2>
             </div>
 
-            <div
-                style="background: rgba(20,184,166,0.08); border-left: 4px solid #14B8A6; padding: 20px; border-radius: 8px; margin-bottom: 28px;">
-                <p style="font-size: 14px; line-height: 1.6; color: var(--text-primary); margin: 0;">
-                    <span class="bn">একটি দম্পতি তার আয়ের সাথে ও পারিপার্শ্বিক আর্থ-সামাজিক অবস্থার সাথে সঙ্গতি রেখে
+            <div class="am-intro-box bg_4">
+              <div class="am-intro-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
+              <div class="am-intro-titles">
+                <h2 class="am-intro-title bn">একটি দম্পতি তার আয়ের সাথে ও পারিপার্শ্বিক আর্থ-সামাজিক অবস্থার সাথে সঙ্গতি রেখে
                         কখন ও কয়টি সন্তান গ্রহণ করবে, দু'টি সন্তানের মাঝে বিরতি কতদিনের হবে বা তার পরিবার কত ছোট বা বড়
                         হবে তা ঠিক করা এবং সে লক্ষ্য অর্জনের জন্য যথাযথ ব্যবস্থা অবলম্বন করাই হলো পরিবার পরিকল্পনা।
                         যেকোনো কিশোরীই শারীরিক ও মানসিকভাবে সন্তান ধারণের জন্য উপযুক্ত থাকে না। প্রজনন স্বাস্থ্য বিষয়ক
                         অনেক প্রয়োজনীয় তথ্য জানা না থাকার কারনে, এ সময় গর্ভধারণ মা ও সন্তান উভয়ের জন্যই অনেক
-                        ঝুঁকিপূর্ণ হয়ে থাকে।</span>
-                    <span class="en">According to Bangladesh's family planning program, any capable couple can adopt
+                        ঝুঁকিপূর্ণ হয়ে থাকে।</h2>
+                <h2 class="am-intro-title en">According to Bangladesh's family planning program, any capable couple can adopt
                         modern family planning methods. In Bangladesh, family planning methods are provided considering
-                        marital status and number of children.</span>
-                </p>
+                        marital status and number of children.</h2>
+              </div>
             </div>
  <section class="role-section" aria-label="Essential facilities in educational institutions">
     <div class="role-section__header role-section__header--faciliy">
