@@ -7090,6 +7090,8 @@ function renderLessonPage(modIdx, lesIdx) {
   const isPregnancyDangerSignsLesson = (modIdx === 6 && lesIdx === 2);
   // Pregnancy Management Care — Module 7 Lesson 4
   const isPregnancyManagementCareLesson = (modIdx === 6 && lesIdx === 3);
+  // Postnatal / Postpartum Care — Module 7 Lesson 5
+  const isPostnatalCareLesson = (modIdx === 6 && lesIdx === 4);
   // Module 8 Lesson 1 — Sexually transmitted and reproductive tract infections
   const isStiLesson = (modIdx === 7 && lesIdx === 0);
   // Module 8 Lesson 3 — Complications of reproductive tract and sexually transmitted infections
@@ -7290,7 +7292,7 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule24Lesson3 = (modIdx === 23 && lesIdx === 2);
   const isModule24Lesson4 = (modIdx === 23 && lesIdx === 3);
   const isModule24Lesson5 = (modIdx === 23 && lesIdx === 4);
-  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isModule1Lesson5 || isModule1Lesson6 || isModule1Lesson7 || isModule1Lesson8 || isModule1Lesson9 || isModule1Lesson10 || isModule1Lesson11 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
+  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isModule1Lesson5 || isModule1Lesson6 || isModule1Lesson7 || isModule1Lesson8 || isModule1Lesson9 || isModule1Lesson10 || isModule1Lesson11 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isPostnatalCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isModule1Lesson2 ? buildModule1Lesson2Section()
     : isModule1Lesson3 ? buildModule1Lesson3Section()
@@ -7319,6 +7321,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isAdolescentPregnancyPreventionLesson ? buildAdolescentPregnancyPreventionSection()
     : isPregnancyDangerSignsLesson ? buildPregnancyDangerSignsSection()
     : isPregnancyManagementCareLesson ? buildPregnancyManagementCareSection()
+    : isPostnatalCareLesson ? buildModule7Lesson5Section()
     : isStiLesson ? buildStiLessonSection()
     : isStiComplicationsLesson ? buildStiComplicationsSection()
     : isWindowPeriodLesson ? buildWindowPeriodSection()
@@ -10096,6 +10099,81 @@ function buildPregnancyManagementCareSection() {
   </section>
 
  `;
+}
+
+/* ── POSTNATAL / POSTPARTUM CARE (Module 7, Lesson 5) ── */
+function buildModule7Lesson5Section() {
+  const carePoints = [
+    { icon: '🩺', accent: 'teal', bn: 'মা ও নবজাতকের চেকআপ (কমপক্ষে ৪টি -১ম বার : প্রসবের ২৪ ঘণ্টার মধ্য, ২য় বার: ২-৩ দিনের মেধ্য, ৩য় বার: ৪-৭ দিনের মধ্যে এ বং ৪র্থ বার: প্রসবের ৪২-৪৫ দিনের মধ্য)।', en: 'Mother and newborn checkups (at least 4: 1st within 24 hours of delivery, 2nd within 2-3 days, 3rd within 4-7 days, and 4th within 42-45 days postpartum).' },
+    { icon: '🚨', accent: 'rose', bn: 'প্রাথমিক অবস্থায় প্রসব পরবর্তী জটিলতা শনাক্তকরণ, প্রতিরোধ এবং চিকিৎসা।', en: 'Identify, prevent, and treat postpartum complications at an early stage.' },
+    { icon: '🥛', accent: 'amber', bn: 'মাকে ভিটামিন এ খাওয়ানো, শিশুকে শালদুধ ও শুধুমাত্র বুকের দুধ খাওয়ানো, মা ও শিশুর পুষ্টি, পরিবার পরিকল্পনা পদ্ধতি এবং শিশুর টিকা ও পরিচর্যা বিষয়ক তথ্য প্রদানসহ কাউন্সেলিং এই সময়ে করা হয়।', en: 'During this period, counseling includes giving vitamin A to the mother, colostrum and exclusive breastfeeding for the baby, nutrition for mother and baby, family planning methods, and information on child vaccination and care.' },
+    { icon: '🧠', accent: 'violet', bn: 'কিশোরী মায়েদের প্রসব পরবর্তী সময়ে বিষণ্নতায় আক্রান্ত হওয়ার হার অনেক বেশি থাকে, যা সময়মতো শনাক্তকরণ ও চিকিৎসার আওতায় নিয়ে আসা প্রয়োজন অনথায় তা মা ও শিশু উভয়ের জন্যই মৃত্যু ঝুঁকি বাড়াতে পারে।', en: 'Adolescent mothers have a much higher risk of postpartum depression. Timely identification and treatment are necessary; otherwise it may increase mortality risk for both mother and child.' }
+  ];
+
+  const renderCareCards = (items) => items.map((item) => `
+    <article class="role-card role-card--${item.accent}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.bn}</h4>
+        <h4 class="role-card__title en">${item.en}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  const organItems = [
+    { icon: '💨', img: 'prosob/1.jpg', titleBn: 'দ্রুত শ্বাস নেয়া বা বুকের খাঁচা ভেঙে যাওয়া', titleEn: 'Rapid breathing or chest indrawing' },
+    { icon: '🍼', img: 'prosob/2.jpg', titleBn: 'বুকের দুধ টানতে না পারা বা না চোষা', titleEn: 'Unable to latch or suckle' },
+    { icon: '🌡️', img: 'prosob/3.jpg', titleBn: 'জ্বর বা শরীর ঠাণ্ডা হওয়া', titleEn: 'Fever or low body temperature' },
+    { icon: '😴', img: 'prosob/4.jpg', titleBn: 'নেতিয়ে পড়া', titleEn: 'Lethargy or reduced activity' },
+    { icon: '⚡', img: 'prosob/5.jpg', titleBn: 'খিঁচুনি', titleEn: 'Convulsions / fits' },
+    { icon: '🩹', img: 'prosob/6.jpg', titleBn: 'নাভি পাকা', titleEn: 'Umbilical infection (red/swollen/infected cord)' }
+  ];
+
+  const organHtml = organItems.map(it => `
+    <article class="hygiene-card hygiene-card--rose">
+      <div class="hygiene-card__media">
+        <img class="hygiene-card__img" src="${it.img}" alt="${it.titleEn}" loading="lazy" decoding="async" />
+      </div>
+      <div class="hygiene-card__icon" aria-hidden="true">${it.icon}</div>
+      <h3 class="hygiene-card__title">
+        <span class="bn">${it.titleBn}</span>
+        <span class="en">${it.titleEn}</span>
+      </h3>
+    </article>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <section class="role-section" aria-label="Postnatal care">
+      <div class="role-section__header role-section__header--teal">
+        <div class="role-section__icon" aria-hidden="true">🩺</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">প্রসব পরবর্তী যত্ন</h2>
+          <h2 class="role-section__title en">Postnatal Care</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid">
+          ${renderCareCards(carePoints)}
+        </div>
+
+        <div class="app-intro-box" style="margin-top: 20px;">
+          <div class="app-intro-icon" aria-hidden="true">⚠️</div>
+          <div class="app-intro-titles">
+            <h2 class="app-intro-title bn">নবজাতকের যে কোন বিপদচিহ্ন দেখা দিলে দ্রুত স্বাস্থ্যকেন্দ্রে নিয়ে যান</h2>
+            <h2 class="app-intro-title en">If any danger sign appears in a newborn, take the baby to a health center immediately</h2>
+          </div>
+        </div>
+
+        <section class="organ-section" aria-label="Newborn danger signs">
+          <div class="organ-grid">
+            ${organHtml}
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+  `;
 }
 
 function buildFamilyPlanningSection() {
