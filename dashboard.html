@@ -5546,7 +5546,7 @@ function openModule(idx) {
 }
 
 function buildModule22Lesson8Section() {
-  const riskFactors = [
+  const stiRiskItems = [
     { icon: '🐓', accent: 'rose', bn: 'পোল্ট্রি খামারে কর্মরত থাকলে', en: 'Working in poultry farms' },
     { icon: '🚶', accent: 'amber', bn: 'আক্রান্ত এলাকায় গমন করলে', en: 'Traveling to affected areas' },
     { icon: '🐦', accent: 'teal', bn: 'সংক্রামিত পাখির সংস্পর্শে আসলে', en: 'Coming into contact with infected birds' },
@@ -5606,7 +5606,7 @@ function buildModule22Lesson8Section() {
       </div>
       <div class="role-section__body">
         <div class="role-grid" style="">
-          ${renderCards(riskFactors)}
+          ${renderCards(stiRiskItems)}
         </div>
       </div>
     </section>
@@ -7094,6 +7094,8 @@ function renderLessonPage(modIdx, lesIdx) {
   const isPostnatalCareLesson = (modIdx === 6 && lesIdx === 4);
   // Module 8 Lesson 1 — Sexually transmitted and reproductive tract infections
   const isStiLesson = (modIdx === 7 && lesIdx === 0);
+  // Module 8 Lesson 2 — Risks of sexually transmitted diseases
+  const isStiRiskLesson = (modIdx === 7 && lesIdx === 1);
   // Module 8 Lesson 3 — Complications of reproductive tract and sexually transmitted infections
   const isStiComplicationsLesson = (modIdx === 7 && lesIdx === 2);
   // Module 9 Lesson 2 — Window period
@@ -7292,7 +7294,7 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule24Lesson3 = (modIdx === 23 && lesIdx === 2);
   const isModule24Lesson4 = (modIdx === 23 && lesIdx === 3);
   const isModule24Lesson5 = (modIdx === 23 && lesIdx === 4);
-  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isModule1Lesson5 || isModule1Lesson6 || isModule1Lesson7 || isModule1Lesson8 || isModule1Lesson9 || isModule1Lesson10 || isModule1Lesson11 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isPostnatalCareLesson || isStiLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
+  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isModule1Lesson5 || isModule1Lesson6 || isModule1Lesson7 || isModule1Lesson8 || isModule1Lesson9 || isModule1Lesson10 || isModule1Lesson11 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isPostnatalCareLesson || isStiLesson || isStiRiskLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isModule1Lesson2 ? buildModule1Lesson2Section()
     : isModule1Lesson3 ? buildModule1Lesson3Section()
@@ -7323,6 +7325,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isPregnancyManagementCareLesson ? buildPregnancyManagementCareSection()
     : isPostnatalCareLesson ? buildModule7Lesson5Section()
     : isStiLesson ? buildStiLessonSection()
+    : isStiRiskLesson ? buildStiRiskSection()
     : isStiComplicationsLesson ? buildStiComplicationsSection()
     : isWindowPeriodLesson ? buildWindowPeriodSection()
     : isCervicalCancerLesson ? buildCervicalCancerSection()
@@ -14442,6 +14445,46 @@ function buildStiLessonSection() {
     </div>
   </div>
   `;
+}
+
+function buildStiRiskSection() {
+  const stiRiskItems = [
+    { icon: '🚫❤️', bn: 'অনিরাপদ যৌন সম্পর্ক', en: 'Unsafe sexual intercourse' },
+    { icon: '👥', bn: 'একাধিক যৌনসঙ্গী', en: 'Multiple sexual partners' },
+    { icon: '🩸', bn: 'সংক্রমিত রক্ত গ্রহণ', en: 'Receiving infected blood' },
+    { icon: '💉', bn: 'সংক্রমিত সূঁচ বা সিরিঞ্জ ভাগাভাগি', en: 'Sharing infected needles or syringes' },
+    { icon: '🤰', bn: 'সংক্রমিত মায়ের গর্ভধারণ', en: 'Pregnancy from an infected mother' },
+    { icon: '🧼', bn: 'ব্যক্তিগত অপরিচ্ছন্নতা', en: 'Poor personal hygiene' },
+  ];
+
+  const renderCards = (items) => items.map((item, index) => `
+    <article class="role-card role-card--${['rose','amber','indigo','green','violet','sky'][index % 6]}">
+      <div class="role-card__icon" aria-hidden="true">${item.icon}</div>
+      <div class="role-card__content">
+        <p class="role-card__text bn">${item.bn}</p>
+        <p class="role-card__text en">${item.en}</p>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <section class="role-section" aria-label="Risks of sexually transmitted diseases">
+    <div class="role-section__header role-section__header--warn">
+      <div class="role-section__icon" aria-hidden="true">⚠️</div>
+      <div class="role-section__titles">
+        <h2 class="role-section__title bn">যৌনবাহিত রোগের ঝুঁকিসমূহ</h2>
+        <h2 class="role-section__title en">Risks of Sexually Transmitted Diseases</h2>
+      </div>
+    </div>
+    <div class="role-section__body">
+      <article class="role-card role-card--teal" style="grid-column: 1 / -1; padding: 0; overflow: hidden;">
+        <div class="role-card__content" style="padding: 0; gap: 0;">
+          <img src="jouno.png" alt="যৌনবাহিত রোগের ঝুঁকিসমূহ" loading="lazy" decoding="async" style="display:block; width:100%; height:auto; aspect-ratio: 16 / 9; object-fit: cover;" />
+        </div>
+      </article>
+      
+    </div>
+  </section>`;
 }
 
 function buildStiComplicationsSection() {
