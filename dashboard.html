@@ -7098,6 +7098,8 @@ function renderLessonPage(modIdx, lesIdx) {
   const isStiRiskLesson = (modIdx === 7 && lesIdx === 1);
   // Module 8 Lesson 3 — Complications of reproductive tract and sexually transmitted infections
   const isStiComplicationsLesson = (modIdx === 7 && lesIdx === 2);
+  // Module 9 Lesson 1 — HIV and AIDS
+  const isHivAidsLesson = (modIdx === 8 && lesIdx === 0);
   // Module 9 Lesson 2 — Window period
   const isWindowPeriodLesson = (modIdx === 8 && lesIdx === 1);
   // Module 10 Lesson 1 — Cervical cancer
@@ -7294,7 +7296,7 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule24Lesson3 = (modIdx === 23 && lesIdx === 2);
   const isModule24Lesson4 = (modIdx === 23 && lesIdx === 3);
   const isModule24Lesson5 = (modIdx === 23 && lesIdx === 4);
-  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isModule1Lesson5 || isModule1Lesson6 || isModule1Lesson7 || isModule1Lesson8 || isModule1Lesson9 || isModule1Lesson10 || isModule1Lesson11 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isPostnatalCareLesson || isStiLesson || isStiRiskLesson || isStiComplicationsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
+  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isModule1Lesson5 || isModule1Lesson6 || isModule1Lesson7 || isModule1Lesson8 || isModule1Lesson9 || isModule1Lesson10 || isModule1Lesson11 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isPostnatalCareLesson || isStiLesson || isStiRiskLesson || isStiComplicationsLesson || isHivAidsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isModule1Lesson2 ? buildModule1Lesson2Section()
     : isModule1Lesson3 ? buildModule1Lesson3Section()
@@ -7327,6 +7329,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isStiLesson ? buildStiLessonSection()
     : isStiRiskLesson ? buildStiRiskSection()
     : isStiComplicationsLesson ? buildStiComplicationsSection()
+    : isHivAidsLesson ? buildHivAidsSection()
     : isWindowPeriodLesson ? buildWindowPeriodSection()
     : isCervicalCancerLesson ? buildCervicalCancerSection()
     : isHpvVaccineLesson ? buildHpvVaccineSection()
@@ -14554,6 +14557,70 @@ function buildStiComplicationsSection() {
     </div>
   </section>
   `;
+}
+
+function buildHivAidsSection() {
+  const transmissionItems = [
+    { image: 'hiv1/1.jpg', icon: '💉', titleBn: 'এইডস জীবাণুতে আক্রান্ত ব্যক্তির সাথে একই সূঁচ/সিরিঞ্জ ব্যবহারের মাধ্যমে', titleEn: 'By using the same needle or syringe as a person infected with HIV' },
+    { image: 'hiv1/2.jpg', icon: '🩺', titleBn: 'সংক্রমিত সূচ ও সার্জিকেল যন্ত্রপাতি দ্বারা', titleEn: 'Through infected needles and surgical instruments' },
+    { image: 'hiv1/3.jpg', icon: '🤱', titleBn: 'আক্রান্ত মায়ের গর্ভাবস্থায় প্রসবকালে বা বুকের দুধ খাওয়ালে শিশু আক্রান্ত হতে পারে', titleEn: 'A child may be infected during pregnancy, childbirth, or breastfeeding from an infected mother' },
+    { image: 'hiv1/4.jpg', icon: '🩸', titleBn: 'এইডস জীবাণুতে আক্রান্ত ব্যক্তির রক্ত গ্রহণ করলে', titleEn: 'By receiving blood from a person infected with HIV' },
+    { image: 'hiv1/5.jpg', icon: '❤️', titleBn: 'এইডস জীবাণুতে আক্রান্ত ব্যক্তির সাথে যৌন মিলনের মাধ্যমে', titleEn: 'Through sexual intercourse with a person infected with HIV' },
+  ];
+
+  const notSpreadItems = [
+    { image: 'hiv2/1.jpg', icon: '🤝', titleBn: 'শারীরিক স্পর্শ করলে', titleEn: 'By physical touch' },
+    { image: 'hiv2/2.jpg', icon: '🧑‍⚕️', titleBn: 'এইডস রোগীর সেবা যত্ন করলে', titleEn: 'By caring for a person with HIV/AIDS' },
+    { image: 'hiv2/3.jpg', icon: '🚽', titleBn: 'একই টয়লেট/বাথরুম ব্যবহার করলে', titleEn: 'By using the same toilet or bathroom' },
+    { image: 'hiv2/4.jpg', icon: '🦟', titleBn: 'মশা ও মাছি কামড়ালে', titleEn: 'By mosquito or fly bites' },
+    { image: 'hiv2/5.jpg', icon: '🤧', titleBn: 'হাঁচির মাধ্যমে', titleEn: 'Through sneezing' },
+    { image: 'hiv2/6.jpg', icon: '🤲', titleBn: 'এইডস জীবাণুতে আক্রান্ত ব্যক্তির সাথে করমর্দনের মাধ্যমে', titleEn: 'Through shaking hands with a person infected with HIV' },
+    { image: 'hiv2/7.jpg', icon: '💬', titleBn: 'কথা বলার মাধ্যমে', titleEn: 'Through talking' },
+  ];
+
+  const renderCards = (items) => items.map((item, index) => `
+    <article class="hygiene-card hygiene-card--${['rose','teal','amber','violet','sky','green','indigo'][index % 7]}">
+      <div class="hygiene-card__media">
+        <img class="hygiene-card__img" src="${item.image}" alt="${item.titleEn}" loading="lazy" decoding="async" />
+      </div>
+      <div class="hygiene-card__icon" aria-hidden="true">${item.icon}</div>
+      <h3 class="hygiene-card__title">
+        <span class="bn">${item.titleBn}</span>
+        <span class="en">${item.titleEn}</span>
+      </h3>
+    </article>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:clamp(16px, 3vw, 24px);">
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">🧬</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">এইচআইভি (HIV) হলো মানুষের রোগ প্রতিরোধ ক্ষমতা বিনাশকারী ভাইরাস। এ ভাইরাস মানবদেহের রক্তে প্রবেশের পর ধীরে ধীরে শরীরের রোগ প্রতিরোধ ক্ষমতা নষ্ট করে দেয়। এক সময় শরীরের রোগ প্রতিরোধ ক্ষমতা একেবারেই থাকেনা। এসময় বিভিন্ন রোগ যেমন- ডায়রিয়া, যক্ষ্মা, কলেরা ইত্যাদি মানব দেহকে আক্রমণ করলে মানব দেহে তার বিরুদ্ধে কোনো প্রতিরোধ ব্যবস্থা গড়ে তুলতে পারে না। ফলে যেকোনো রোগ হলে আর ভালো হয় না। শরীরের এই অবস্থার নাম এইডস। ২-১০ বছর পর্যন্ত এইচআইভি (HIV) মানবদেহে সুপ্ত অবস্থায় থাকতে পারে।</h2>
+        <h2 class="app-intro-title en">HIV (Human Immunodeficiency Virus) is a virus that destroys the human immune system. After entering the blood, it gradually weakens the body's ability to fight disease. Eventually, the body's immune defense may become almost completely absent. At that stage, when diseases such as diarrhea, tuberculosis, cholera, and others attack the body, the body cannot mount any defense against them. As a result, illnesses do not get better. This condition is called AIDS. HIV can remain dormant in the human body for 2–10 years.</h2>
+      </div>
+    </div>
+
+    <section class="organ-section" aria-label="How AIDS spreads">
+      <h2 class="organ-section__heading">
+        <span class="bn">এইডস কিভাবে ছড়ায়</span>
+        <span class="en">How AIDS spreads</span>
+      </h2>
+      <div class="organ-grid">
+        ${renderCards(transmissionItems)}
+      </div>
+    </section>
+
+    <section class="organ-section" aria-label="How AIDS does not spread">
+      <h2 class="organ-section__heading">
+        <span class="bn">এইডস কিভাবে ছড়ায় না</span>
+        <span class="en">How AIDS does not spread</span>
+      </h2>
+      <div class="organ-grid">
+        ${renderCards(notSpreadItems)}
+      </div>
+    </section>
+  </div>`;
 }
 
 function buildWindowPeriodSection() {
