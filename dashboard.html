@@ -2268,6 +2268,12 @@
     .management_custom .hygiene-card__img {
       object-fit: fill !important;
     }
+    .shishu_custom .hygiene-card__media {
+      aspect-ratio: auto !important;
+    }
+    .shishu_custom .hygiene-card__img {
+      border-radius: 30px !important;
+    }
     .hygiene-card:hover .hygiene-card__img {
       transform: scale(1.04);
     }
@@ -7121,6 +7127,8 @@ function renderLessonPage(modIdx, lesIdx) {
   const isPcosManagementLesson = (modIdx === 10 && lesIdx === 3);
   // Module 12 Lesson 1 — Child rights and human rights
   const isChildRightsLesson = (modIdx === 11 && lesIdx === 0);
+  // Module 12 Lesson 2 — Child abuse
+  const isChildAbuseLesson = (modIdx === 11 && lesIdx === 1);
   // Module 12 Lesson 3 — Sexual and reproductive health rights
   const isSexualReproductiveRightsLesson = (modIdx === 11 && lesIdx === 2);
   // Module 13 Lesson 1 — Gender-based discrimination (Sex vs Gender)
@@ -7301,7 +7309,7 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule24Lesson3 = (modIdx === 23 && lesIdx === 2);
   const isModule24Lesson4 = (modIdx === 23 && lesIdx === 3);
   const isModule24Lesson5 = (modIdx === 23 && lesIdx === 4);
-  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isModule1Lesson5 || isModule1Lesson6 || isModule1Lesson7 || isModule1Lesson8 || isModule1Lesson9 || isModule1Lesson10 || isModule1Lesson11 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isPostnatalCareLesson || isStiLesson || isStiRiskLesson || isStiComplicationsLesson || isHivAidsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isPcosManagementLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
+  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isModule1Lesson5 || isModule1Lesson6 || isModule1Lesson7 || isModule1Lesson8 || isModule1Lesson9 || isModule1Lesson10 || isModule1Lesson11 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isPostnatalCareLesson || isStiLesson || isStiRiskLesson || isStiComplicationsLesson || isHivAidsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isPcosManagementLesson || isChildRightsLesson || isChildAbuseLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isModule1Lesson2 ? buildModule1Lesson2Section()
     : isModule1Lesson3 ? buildModule1Lesson3Section()
@@ -7344,6 +7352,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isPcosSolutionsLesson ? buildPcosSolutionsSection()
     : isPcosManagementLesson ? buildPcosManagementSection()
     : isChildRightsLesson ? buildChildRightsSection()
+    : isChildAbuseLesson ? buildChildAbuseSection()
     : isSexualReproductiveRightsLesson ? buildSexualReproductiveRightsSection()
     : isGenderBasedDiscriminationLesson ? buildGenderBasedDiscriminationSection()
     : isGenderDiscriminationLesson ? buildGenderDiscriminationSection()
@@ -15171,6 +15180,46 @@ function buildChildRightsSection() {
       <div class="role-grid">${cards}</div>
     </div>
   </section>
+  `;
+}
+
+function buildChildAbuseSection() {
+  const abuseCards = [
+    { img: 'child/1.jpg', altBn: 'শিশু নির্যাতন', altEn: 'Child abuse image 1' },
+    { img: 'child/2.jpg', altBn: 'শিশু নির্যাতন', altEn: 'Child abuse image 2' },
+    { img: 'child/3.jpg', altBn: 'শিশু নির্যাতন', altEn: 'Child abuse image 3' }
+  ];
+
+  const cardsHtml = abuseCards.map((item) => `
+    <article class="hygiene-card hygiene-card--rose">
+      <div class="hygiene-card__media">
+        <img class="hygiene-card__img" src="${item.img}" alt="${item.altEn}" loading="lazy" decoding="async" />
+      </div>
+      <div class="hygiene-card__icon" aria-hidden="true">🧒</div>
+      <div class="role-card__content">
+        <h4 class="role-card__title bn">${item.altBn}</h4>
+        <h4 class="role-card__title en">${item.altEn}</h4>
+      </div>
+    </article>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <section class="role-section" aria-label="Child abuse">
+      <div class="role-section__header role-section__header--warn">
+        <div class="role-section__icon" aria-hidden="true">🛑</div>
+        <div class="role-section__titles">
+          <h2 class="role-section__title bn">শিশু নির্যাতন</h2>
+          <h2 class="role-section__title en">Child Abuse</h2>
+        </div>
+      </div>
+      <div class="role-section__body">
+        <div class="role-grid shishu_custom">
+          ${cardsHtml}
+        </div>
+      </div>
+    </section>
+  </div>
   `;
 }
 
