@@ -2265,6 +2265,9 @@
       display: block;
       transition: transform 0.45s var(--ease);
     }
+    .management_custom .hygiene-card__img {
+      object-fit: fill !important;
+    }
     .hygiene-card:hover .hygiene-card__img {
       transform: scale(1.04);
     }
@@ -7114,6 +7117,8 @@ function renderLessonPage(modIdx, lesIdx) {
   const isPcosProblemsLesson = (modIdx === 10 && lesIdx === 1);
   // Module 11 Lesson 3 — PCOS solutions
   const isPcosSolutionsLesson = (modIdx === 10 && lesIdx === 2);
+  // Module 11 Lesson 4 — PCOS management
+  const isPcosManagementLesson = (modIdx === 10 && lesIdx === 3);
   // Module 12 Lesson 1 — Child rights and human rights
   const isChildRightsLesson = (modIdx === 11 && lesIdx === 0);
   // Module 12 Lesson 3 — Sexual and reproductive health rights
@@ -7296,7 +7301,7 @@ function renderLessonPage(modIdx, lesIdx) {
   const isModule24Lesson3 = (modIdx === 23 && lesIdx === 2);
   const isModule24Lesson4 = (modIdx === 23 && lesIdx === 3);
   const isModule24Lesson5 = (modIdx === 23 && lesIdx === 4);
-  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isModule1Lesson5 || isModule1Lesson6 || isModule1Lesson7 || isModule1Lesson8 || isModule1Lesson9 || isModule1Lesson10 || isModule1Lesson11 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isPostnatalCareLesson || isStiLesson || isStiRiskLesson || isStiComplicationsLesson || isHivAidsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
+  const isRichLesson = isGlobeLesson || isModule1Lesson2 || isModule1Lesson3 || isModule1Lesson4 || isModule1Lesson5 || isModule1Lesson6 || isModule1Lesson7 || isModule1Lesson8 || isModule1Lesson9 || isModule1Lesson10 || isModule1Lesson11 || isChangesLesson || isStagesLesson || isReproLesson || isMenstrualLesson || isParentsLesson || isAbnormalitiesLesson || isMaleSystemLesson || isNocturnalEmissionLesson || isChildMarriageLesson || isChildMarriageConsequencesLesson || isChildMarriagePreventionLesson || isFamilyPlanningLesson || isFamilyPlanningComparisonLesson || isAdolescentMotherhoodLesson || isAdolescentPregnancyPreventionLesson || isPregnancyDangerSignsLesson || isPregnancyManagementCareLesson || isPostnatalCareLesson || isStiLesson || isStiRiskLesson || isStiComplicationsLesson || isHivAidsLesson || isWindowPeriodLesson || isCervicalCancerLesson || isHpvVaccineLesson || isTdVaccineLesson || isPcosLesson || isPcosProblemsLesson || isPcosSolutionsLesson || isPcosManagementLesson || isChildRightsLesson || isSexualReproductiveRightsLesson || isGenderBasedDiscriminationLesson || isGenderDiscriminationLesson || isPrevailingGenderDiscriminationLesson || isGenderViolenceLesson || isSexualHarassmentLesson || isFinancialLossLesson || isGenderDiscriminationActionsLesson || isViolenceOrAbuseLesson || isYouthViolenceFormsLesson || isPsychosocialChangesLesson || isEmotionLesson || isEmotionManagementStrategiesLesson || isAnxietyLesson || isStressLesson || isStressCausesLesson || isAngerLesson || isAngerTriggersLesson || isExamFearLesson || isExamFearSolutionsLesson || isDigitalAddictionLesson || isPsychosocialEducationLesson || isEmpathyLesson || isActiveListeningLesson || isValuesLesson || isBehaviorLesson || isEthicsLesson || isDrugAddictionLesson || isDrugAddictionSignsLesson || isDrugAddictionConsequencesLesson || isFirstAidLesson || isFirstAidBleedingLesson || isBurnsLesson || isBurnsFirstAidLesson || isBoneFractureLesson || isSnakeBiteLesson || isDogBiteLesson || isPoisoningLesson || isDrowningLesson || isChokingLesson || isAdultChokingLesson || isNutritionLesson || isNutritionBmiTableLesson || isNutritionBmiVisualLesson || isNutritionElementsLesson || isNutritionMealPlanLesson || isNutritionDiversityLesson || isNutritionMenstrualFoodsLesson || isNutritionCycleLesson || isNutritionPreventionLesson || isNutritionOverweightLesson || isNutritionOverweightPreventionLesson || isNutritionAnemiaLesson || isNcdPreventionIntroLesson || isNcdLifestyleActionsLesson || isNcdTobaccoAlcoholLesson || isNcdAsthmaLesson || isNcdDiabetesLesson || isNcdThalassemiaLesson || isNcdHypertensionLesson || isNcdEpilepsyLesson || isNcdNephroticSyndromeLesson || isYouthPossibilitiesRisksLesson || isYouthVulnerableGroupsLesson || isYouthRiskReductionLesson || isClimateWeatherLesson || isClimateAirPollutionSourcesLesson || isClimateWaterPollutionLesson || isClimateWaterHealthRisksLesson || isClimateWaterSanitationLesson || isPesticidesLesson || isPesticidesPrecautionsLesson || isNoisePollutionLesson || isEmergingLesson || isDengueLesson || isDenguePreventionLesson || isNipahLesson || isCovidLesson || isModule22Lesson6 || isModule22Lesson7 || isModule22Lesson8 || isModule22Lesson9 || isModule23Lesson1 || isModule23Lesson2 || isModule23Lesson3 || isModule24Lesson1 || isModule24Lesson2 || isModule24Lesson3 || isModule24Lesson4 || isModule24Lesson5;
   const richContent = isGlobeLesson ? buildGlobeSection()
     : isModule1Lesson2 ? buildModule1Lesson2Section()
     : isModule1Lesson3 ? buildModule1Lesson3Section()
@@ -7337,6 +7342,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isPcosLesson ? buildPcosSection()
     : isPcosProblemsLesson ? buildPcosProblemsSection()
     : isPcosSolutionsLesson ? buildPcosSolutionsSection()
+    : isPcosManagementLesson ? buildPcosManagementSection()
     : isChildRightsLesson ? buildChildRightsSection()
     : isSexualReproductiveRightsLesson ? buildSexualReproductiveRightsSection()
     : isGenderBasedDiscriminationLesson ? buildGenderBasedDiscriminationSection()
@@ -15037,6 +15043,84 @@ function buildPcosSolutionsSection() {
       <p class="app-intro-sub bn">পিসিওএস হলে মনে রাখতে হবে যে, এটি কখনও নির্মূল হবে না। কিন্তু, চিকিৎসা নিয়ে সুস্থ থাকা সম্ভব।</p>
       <p class="app-intro-sub en">If you have PCOS, remember that it may not be fully eliminated, but it is possible to stay healthy with proper treatment.</p>
     </div>
+  </div>
+  `;
+}
+
+function buildPcosManagementSection() {
+  const managementItems = [
+    {
+      img: 'management/1.jpg',
+      color: 'teal',
+      icon: '🚶',
+      titleBn: 'হাঁটা, সাঁতার, যোগব্যায়াম এবং ব্যায়াম করতে হবে',
+      titleEn: 'Walking, swimming, yoga, and regular exercise are necessary'
+    },
+    {
+      img: 'management/2.jpg',
+      color: 'green',
+      icon: '🥗',
+      titleBn: 'পুষ্টিকর খাবার খেতে হবে',
+      titleEn: 'Nutritious food should be eaten'
+    },
+    {
+      img: 'management/3.jpg',
+      color: 'rose',
+      icon: '🚫',
+      titleBn: 'চিনি, পনির, তৈলাক্ত এবং ভাজা খাবার এড়িয়ে চলতে হবে',
+      titleEn: 'Sugar, cheese, oily and fried foods should be avoided'
+    },
+    {
+      img: 'management/4.jpg',
+      color: 'amber',
+      icon: '🥬',
+      titleBn: 'প্রচুর পরিমাণে সবুজ শাকসবজি এবং সিদ্ধ খাবার খেতে হবে',
+      titleEn: 'Eat plenty of green vegetables and boiled foods'
+    },
+    {
+      img: 'management/5.jpg',
+      color: 'indigo',
+      icon: '😴',
+      titleBn: 'পরিমিত ঘুম',
+      titleEn: 'Adequate sleep'
+    },
+    {
+      img: 'management/6.jpg',
+      color: 'violet',
+      icon: '💊',
+      titleBn: 'স্বাস্থ্যসেবা প্রদানকারীদের পরামর্শ অনুযায়ী প্রয়োজনীয় ওষুধ গ্রহণ করতে হবে',
+      titleEn: 'Necessary medicines should be taken as advised by healthcare providers'
+    }
+  ];
+
+  const cardsHtml = managementItems.map((item) => `
+    <article class="hygiene-card hygiene-card--${item.color}">
+      <div class="hygiene-card__media">
+        <img class="hygiene-card__img" src="${item.img}" alt="${item.titleEn}" loading="lazy" decoding="async" />
+      </div>
+      <div class="hygiene-card__icon" aria-hidden="true">${item.icon}</div>
+      <h3 class="hygiene-card__title">
+        <span class="bn">${item.titleBn}</span>
+        <span class="en">${item.titleEn}</span>
+      </h3>
+    </article>
+  `).join('');
+
+  return `
+  <div style="display:grid; gap:20px;">
+    <div class="app-intro-box">
+      <div class="app-intro-icon" aria-hidden="true">⚕️</div>
+      <div class="app-intro-titles">
+        <h2 class="app-intro-title bn">ব্যবস্থাপনা</h2>
+        <h2 class="app-intro-title en">Management</h2>
+      </div>
+    </div>
+
+    <section class="organ-section" aria-label="PCOS management practices">
+      <div class="organ-grid management_custom">
+        ${cardsHtml}
+      </div>
+    </section>
   </div>
   `;
 }
