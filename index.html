@@ -1056,6 +1056,14 @@ button { cursor: pointer; border: none; background: none; }
 }
 .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(0,0,0,0.2); }
 
+.btn-dark {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 36px; border-radius: 30px; font-size: 16px; font-weight: 700;
+  background: rgb(0, 0, 0); color: var(--unicef-light);
+  transition: all 0.25s; box-shadow: 0 4px 24px rgba(255, 255, 255, 0.15);
+}
+.btn-dark:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(255, 255, 255, 0.2); }
+
 /* ═══════════════════════════════════════════════
    NEWS / ANNOUNCEMENTS
 ═══════════════════════════════════════════════ */
@@ -2510,6 +2518,9 @@ footer {
 
     <a href="#" class="btn-white" onclick="openAuth('register');return false;">
       🚀 <span class="bn">এখনই নিবন্ধন করুন</span><span class="en">Register Now</span>
+    </a>
+    <a href="#" class="btn-dark" onclick="openAuth('login');return false;">
+      🚀 <span class="bn">লগইন করুন</span><span class="en">Login Now</span>
     </a>
   </div>
 </section>
