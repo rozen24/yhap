@@ -527,7 +527,7 @@
     html { height: 100%; }
     body {
       height: 100%;
-      font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Noto Serif Bengali', serif;
       background: var(--bg);
       color: var(--text-primary);
       overflow-x: hidden;
@@ -548,6 +548,9 @@
     [data-lang="en"] .lang-en, [data-lang="bn"] .lang-bn { display: revert !important; }
 
     /* Bengali font for semantic elements */
+    [data-lang="bn"] {
+      font-family: 'Noto Serif Bengali', serif;
+    }
     [data-lang="bn"] p.bn,
     [data-lang="bn"] h2.bn,
     [data-lang="bn"] h3.bn,
@@ -13949,7 +13952,7 @@ function buildFamilyPlanningSection() {
         `).join('');
 
         return `
-        <div class="repro-layout" style="margin-top:20px; align-items:start;">
+        <div class="">
           <div style="display:grid; gap:20px;">
             <section class="role-section" aria-label="ব্যক্তিগত অনুশীলন" style="margin-top:0;">
               <div class="role-section__header repro-card__header--teal">
@@ -13978,8 +13981,8 @@ function buildFamilyPlanningSection() {
             </section>
           </div>
 
-          <div>
-            <img src="sinitization_new.jpg" alt="Water sanitation and hygiene" style="width:100%; max-width:400px; border-radius:8px; object-fit:cover;">
+          <div style="margin-top:20px; align-items:start">
+            <img src="sinitization_new.jpg" alt="Water sanitation and hygiene" style="width:100%; border-radius:8px; object-fit:cover;">
           </div>
         </div>
         `;
