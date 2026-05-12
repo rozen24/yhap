@@ -373,7 +373,7 @@ button { cursor: pointer; border: none; background: none; }
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: calc(70vh);        /* Desktop: half screen */
+  height: calc(75vh);        /* Desktop: half screen */
 }
 
 .hero-slides {
@@ -443,7 +443,7 @@ button { cursor: pointer; border: none; background: none; }
 
 .hero-title {
   font-family: 'Noto Serif Bengali', serif;
-  font-size: clamp(32px, 5vw, 62px);
+  font-size: clamp(32px, 5vw, 44px);
   font-weight: 700; line-height: 1.2;
   margin-bottom: 20px; color: white;
   text-shadow: 0 2px 20px rgba(0,0,0,0.2);
@@ -1141,7 +1141,7 @@ footer {
 
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-  .hero-visual { display: none; }
+  /* .hero-visual { display: none; } */
   .hero-stats { justify-content: center; }
   .hero-actions { justify-content: center; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -1153,7 +1153,7 @@ footer {
   .sidebar-overlay { display: block; }
   .section { padding: 60px 20px; }
   /* Mobile: 80% viewport height — dvh accounts for browser chrome on Android/iOS */
-  .hero { height: 80vh; height: 80dvh; }
+  .hero { height: 130vh; height: 130dvh; }
   .hero-inner { padding: 0 20px; grid-template-columns: 1fr; gap: 0; }
   .pillars-grid { grid-template-columns: 1fr; }
   .news-grid { grid-template-columns: 1fr; }
