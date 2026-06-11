@@ -1106,7 +1106,19 @@
     padding-bottom: 10px;
     border-bottom: 1px solid #a9aeb52e;
     margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
   }
+  .lesson-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 20%;
+    height: 5px;
+    background: linear-gradient(90deg, #6bd6ff, #024d70, #48dbfb);
+    border-radius: 10px;
+}
     .lesson-meta {
       display: none; align-items: center; gap: 8px;
       font-size: 13px; color: var(--text-muted); margin-bottom: 28px;
