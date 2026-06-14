@@ -7441,7 +7441,7 @@ function renderLessonPage(modIdx, lesIdx) {
     : isNoisePollutionLesson ? buildNoisePollutionLessonSection()
     : isEmergingLesson ? buildEmergingReEmergingLessonSection()
     : isDengueLesson ? buildDengueLessonSection()
-    : isDenguePreventionLesson ? buildDenguePreventionLessonSection()
+    : isDenguePreventionLesson ? buildDengueLessonSection()
     : isNipahLesson ? buildNipahLessonSection()
     : isCovidLesson ? buildCovidLessonSection()
     : isModule22Lesson6 ? buildModule22Lesson6Section()
@@ -17859,11 +17859,13 @@ function buildDengueLessonSection() {
         <h2 class="app-intro-title en">These symptoms appear within 4-10 days after infection. Symptoms usually last for 2-7 days. If a person is infected with dengue a second time, the severity of the disease increases. Therefore, people who have had dengue before are advised to take extra precautions.</h2>
       </div>
     </div>
+
+    ${buildDengueTreatmentSection()}
   </div>
   `;
 }
 
-function buildDenguePreventionLessonSection() {
+function buildDengueTreatmentSection() {
   const preventionItems = [
     { icon: '💧', accent: 'rose', bn: 'বাড়ির চারপাশে পানি জমতে দেওয়া যাবেনা।  জমা পানিতে মশারা বংশবিস্তার করে।  গাছের টব, ফুলদানি, পরে থাকা গাড়ির টায়ারের জমে থাকা পানি ফেলে দিতে হবে।', en: 'Do not allow water to accumulate around the house. Mosquitoes breed in stagnant water. Water collected in flower pots, vases, and discarded vehicle tires must be emptied.' },
     { icon: '👕', accent: 'amber', bn: 'শরীর ঢাকা জামা কাপড় যেমন লম্বা-হাতা শার্ট, লম্বা প্যান্ট, মোজা এবং জুতা পরতে হবে।', en: 'Wear clothing that covers the body, such as long-sleeved shirts, long pants, socks, and shoes.' },
@@ -17883,15 +17885,6 @@ function buildDenguePreventionLessonSection() {
   `).join('');
 
   return `
-  <div style="display:grid; gap:20px;">
-    <div class="app-intro-box">
-      <div class="app-intro-icon" aria-hidden="true">💉</div>
-      <div class="app-intro-titles">
-        <h2 class="app-intro-title bn">ডেংগুর চিকিৎসার বিশেষ কোন ওষুধ বা প্রতিষেধক এখনো পর্যন্ত আবিষ্কৃত হয়নি।  চিকিৎসকরা প্যারাসিটামল জাতীয় ওষুধ দিয়ে ব্যথা এবং জ্বরের মাত্রা নিয়ন্ত্রণ করেন।  রোগের মাত্রা অতিরিক্ত ভাবে বৃদ্ধি পেলে রোগী কে হাসপাতালে ভর্তি রাখা একান্ত জরুরী।</h2>
-        <h2 class="app-intro-title en">No specific medicine or vaccine for dengue has been discovered yet. Doctors control pain and fever with paracetamol-type medicines. If the severity of the disease increases excessively, hospitalization is absolutely necessary.</h2>
-      </div>
-    </div>
-
     <section class="role-section" aria-label="Dengue prevention actions" style="margin-top:0;">
       <div class="role-section__header role-section__header--teal">
         <div class="role-section__icon" aria-hidden="true">🛡️</div>
@@ -17913,9 +17906,11 @@ function buildDenguePreventionLessonSection() {
         <h2 class="app-intro-title bn">ডেংগু জ্বর একটি সাধারণ রোগ। কিন্তু অবহেলা করলে এই রোগ মারাত্মক হতে পারে।  শহরাঞ্চলে এর প্রকোপ বেশি। তাই নগরবাসীকে আরেকটু সজাগ ও সচেতন হতে হবে। বিশেষ করে যাদের ডেংগু হয়েছে তাদের অতিরিক্ত সতর্ক থাকতে হবে। দ্বিতীয় ডেংগু সংক্রমণ মারাত্মক হতে পারে।</h2>
         <h2 class="app-intro-title en">Dengue fever is a common disease. But if neglected, it can become severe. Its prevalence is higher in urban areas. Therefore, city dwellers need to be more alert and aware. In particular, those who have had dengue should be extra cautious. A second dengue infection can be severe.</h2>
       </div>
-    </div>
-  </div>
-  `;
+    </div>`;
+}
+
+function buildDenguePreventionLessonSection() {
+  return buildDengueTreatmentSection();
 }
 
 function buildNipahLessonSection() {
