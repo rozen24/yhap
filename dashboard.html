@@ -5324,7 +5324,7 @@
           <svg class="module-chevron" aria-hidden="true"><use href="#icon-chevron"/></svg>
         </button>
         <div class="lesson-list" id="modPanel-23" role="list">
-          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(23,0)"><span class="lesson-dot" aria-hidden="true">1</span><span class="lesson-text"><span class="lesson-label bn">যোগাযোগ</span><span class="lesson-label en">Communication</span></span></button>
+          <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(23,0)"><span class="lesson-dot" aria-hidden="true">1</span><span class="lesson-text"><span class="lesson-label bn">তরুণদের সাথে ফলপ্রসূ যোগাযোগ</span><span class="lesson-label en">Productive communication with young people</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(23,1)"><span class="lesson-dot" aria-hidden="true">2</span><span class="lesson-text"><span class="lesson-label bn">যোগাযোগ প্রক্রিয়া</span><span class="lesson-label en">Communication process</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(23,2)"><span class="lesson-dot" aria-hidden="true">3</span><span class="lesson-text"><span class="lesson-label bn">যোগাযোগের পদ্ধতি</span><span class="lesson-label en">Methods of communication</span></span></button>
           <button class="lesson-btn" type="button" role="listitem" onclick="loadLesson(23,3)"><span class="lesson-dot" aria-hidden="true">4</span><span class="lesson-text"><span class="lesson-label bn">আন্তঃব্যক্তিক সম্পর্ক স্থাপনের অন্তর্নিহিত শর্ত ও কৌশল</span><span class="lesson-label en">Underlying conditions and techniques for establishing interpersonal relationships</span></span></button>
@@ -5493,7 +5493,7 @@ const LESSONS_BN = [
   ['আবহাওয়া ও জলবায়ু','বায়ু দূষণ','খাবারপানির দূষণের প্রধান কারণ সমূহ','পানি, স্যানিটেশন এবং স্বাস্থ্যবিধি উন্নত করার জন্য প্রয়োজনীয় পদক্ষেপ','পানি, স্যানিটেশন ও স্বাস্থ্যবিধি উন্নয়নে প্রয়োজনীয় পদক্ষেপ','সীসা এবং অন্যান্য বিপজ্জনক রাসায়নিক','কীটনাশক এবং শিশু ও কিশোর-কিশোরীদের স্বাস্থ্য ঝুঁকি','সতর্কতা','শব্দ দূষণ'],
   ['উদীয়মান ও পুনরুদীয়মান রোগ','ডেঙ্গু','নিপাহ ভাইরাস সংক্রমণ','কোভিড-১৯','ইনফ্লুয়েঞ্জা','এভিয়ান ইনফ্লুয়েঞ্জা','মাঙ্কিপক্স'],
   ['জীবন দক্ষতা','মূল্যবোধ কী?','মূল্যবোধ বিকাশের উপায়'],
-  ['যোগাযোগ','যোগাযোগ প্রক্রিয়া','যোগাযোগের পদ্ধতি','আন্তঃব্যক্তিক সম্পর্ক স্থাপনের অন্তর্নিহিত শর্ত ও কৌশল','কাউন্সেলিং  ও কাউন্সেলিংয়ের ধাপসমূহ'],
+  ['তরুণদের সাথে ফলপ্রসূ যোগাযোগ','যোগাযোগ প্রক্রিয়া','যোগাযোগের পদ্ধতি','আন্তঃব্যক্তিক সম্পর্ক স্থাপনের অন্তর্নিহিত শর্ত ও কৌশল','কাউন্সেলিং  ও কাউন্সেলিংয়ের ধাপসমূহ'],
 ];
 
 const LESSONS_EN = [
@@ -5520,7 +5520,7 @@ const LESSONS_EN = [
   ['Weather and climate','Air pollution','Major causes of food and water contamination','Health risks from food and water contamination','Necessary steps to improve water, sanitation, and hygiene','Lead and other hazardous chemicals','Pesticides and health risks for children and adolescents','Precautions','Noise pollution'],
   ['Emerging and re-emerging diseases','Dengue','Nipah virus infection','COVID-19','Influenza','Avian influenza','Mpox'],
   ['Life skills','What are values?','Ways to develop values'],
-  ['Communication','Communication process','Methods of communication','Underlying conditions and techniques for establishing interpersonal relationships','Counseling and the steps of counseling'],
+  ['Productive communication with young people','Communication process','Methods of communication','Underlying conditions and techniques for establishing interpersonal relationships','Counseling and the steps of counseling'],
 ];
 
 /* ── LESSON-SPECIFIC CONTENT ─────────────────────── */
@@ -7530,27 +7530,29 @@ function buildWorldMapSection() {
      Positions are in % of the container (1000×500 viewBox).
      Carefully placed over each geographic region. */
   const regions = [
-    ['উত্তর আমেরিকা',              'North America',                      '4%',  '#E67E22', '15%', '28%'],
-    ['ইউরোপ',                      'Europe',                              '6%',  '#8E44AD', '50%', '18%'],
-    ['মধ্যপ্রাচ্য ও উত্তর আফ্রিকা', 'Middle East &amp; North Africa',    '10%', '#E74C3C', '58%', '32%'],
-    ['লাতিন আমেরিকা',              'Latin America',                       '8%',  '#27AE60', '23%', '62%'],
-    ['এশিয়া-প্যাসিফিক',           'Asia-Pacific',                        '29%', '#1CABE2', '76%', '36%'],
-    ['সাব-সাহারান আফ্রিকা',        'Sub-Saharan Africa',                  '26%', '#F39C12', '52%', '62%'],
+    ['উত্তর আমেরিকা',              'North America',                      '4%', '৪%', '#E67E22', '15%', '28%'],
+    ['ইউরোপ',                      'Europe',                              '6%', '৬%',  '#8E44AD', '50%', '18%'],
+    ['মধ্যপ্রাচ্য ও উত্তর আফ্রিকা', 'Middle East &amp; North Africa',    '10%', '১০%', '#E74C3C', '58%', '32%'],
+    ['লাতিন আমেরিকা',              'Latin America',                       '8%', '৮%', '#27AE60', '23%', '62%'],
+    ['এশিয়া-প্যাসিফিক',           'Asia-Pacific',                        '29%', '২৯%', '#1CABE2', '76%', '36%'],
+    ['সাব-সাহারান আফ্রিকা',        'Sub-Saharan Africa',                  '26%', '২৬%', '#F39C12', '52%', '62%'],
   ];
 
-  const labels = regions.map(([bn, en, pct, color, left, top]) => `
-    <div class="map-label" style="left:${left};top:${top};--lc:${color}" aria-label="${en} ${pct}">
+  const labels = regions.map(([bn, en, pct, pctbn, color, left, top]) => `
+    <div class="map-label" style="left:${left};top:${top};--lc:${color}" aria-label="${en} ${pct} ${pctbn}">
       <div class="map-chip">
-        <span class="map-chip-pct">${pct}</span>
+        <span class="map-chip-pct bn">${pctbn}</span>
+        <span class="map-chip-pct en">${pct}</span>
+        <br>
         <span class="map-chip-name bn">${bn}</span>
         <span class="map-chip-name en">${en}</span>
       </div>
     </div>`).join('');
 
-  const legendItems = regions.map(([bn, en, pct, color]) => `
+  const legendItems = regions.map(([bn, en, pct, pctbn, color]) => `
     <div class="map-legend-item">
       <span class="map-legend-dot" style="background:${color}"></span>
-      <span class="bn">${bn} <strong>${pct}</strong></span>
+      <span class="bn">${bn} <strong>${pctbn}</strong></span>
       <span class="en">${en} <strong>${pct}</strong></span>
     </div>`).join('');
 
@@ -7565,7 +7567,7 @@ function buildWorldMapSection() {
 
     <div class="map-container">
       <!-- Replaced inline SVG with a raster world map image -->
-      <img src="global.jpg" alt="World map" class="map-svg" aria-hidden="true"/>
+      <img src="global.png" alt="World map" class="map-svg" aria-hidden="true"/>
 
       <!-- Region labels positioned absolutely in % -->
       ${labels}
