@@ -7033,6 +7033,13 @@ if (contentArea) contentArea.addEventListener('scroll', updateTypeConnectors);
 
 /* ── RENDER: LESSON PAGE ─────────────────────────── */
 function renderLessonPage(modIdx, lesIdx) {
+  
+  // Initialize charts for specific lessons
+if (modIdx === 0 && lesIdx === 1) {
+    setTimeout(initializePopulationPyramid, 100);
+}
+
+
   const cacheKey = 'les:' + modIdx + ':' + lesIdx;
   if (_renderCache.has(cacheKey)) {
     document.getElementById('contentArea').innerHTML = _renderCache.get(cacheKey);
@@ -18310,244 +18317,295 @@ Initial influenza infection shows symptoms similar to common cold: fever, sore t
   setLang('bn');        // default language
 })();
 
- 
-// Update population pyramid chart labels
-if (this.populationPyramidChart) {
+ function initializePopulationPyramid() {
+
   const pyramidCanvas = document.getElementById("populationPyramid");
-  if (pyramidCanvas && pyramidCanvas.dataset.chart) {
-    const chartData = JSON.parse(pyramidCanvas.dataset.chart);
-    const selectedLabels = lang === "bn" ? chartData.labelsBN : chartData.labelsEN;
-    this.populationPyramidChart.data.labels = selectedLabels;
-    this.populationPyramidChart.update();
+  const pyramidCanvasEN = document.getElementById("populationPyramidEN");
+
+  if (!window.Chart || (!pyramidCanvas && !pyramidCanvasEN)) return;
+
+  // Destroy old charts
+  if (window.populationPyramidChart) {
+    window.populationPyramidChart.destroy();
+    window.populationPyramidChart = null;
+  }
+
+  if (window.populationPyramidChartEN) {
+    window.populationPyramidChartEN.destroy();
+    window.populationPyramidChartEN = null;
+  }
+
+  const maleData = [
+    -7.63,-7.41,-7.82,-8.5,-8.27,-7.92,-6.46,-6.68,-6.04,-4.92,
+    -4.14,-3.78,-2.78,-2.59,-1.77,-1.26,-0.56,-0.18,-0.12,-0.06,-0.01
+  ];
+
+  const femaleData = [
+    7.95,7.92,8.51,8.07,6.72,7.92,6.46,5.66,6.04,5.12,
+    4.13,4.0,2.96,3.01,2.15,1.57,0.67,0.46,0.17,0.08,0.01
+  ];
+
+  const maleBase = "#2563EB";
+  const maleHighlight = "#1D4ED8";
+  const femaleBase = "#F97316";
+  const femaleHighlight = "#EA580C";
+
+  // ==========================
+  // BANGLA VERSION
+  // ==========================
+
+  if (pyramidCanvas) {
+
+    const labels = [
+      "০-৪","৫-৯","১০-১৪","১৫-১৯","২০-২৪","২৫-২৯","৩০-৩৪","৩৫-৩৯",
+      "৪০-৪৪","৪৫-৪৯","৫০-৫৪","৫৫-৫৯","৬০-৬৪","৬৫-৬৯","৭০-৭৪",
+      "৭৫-৭৯","৮০-৮৪","৮৫-৮৯","৯০-৯৪","৯৫-৯৯","১০০+"
+    ];
+
+    const highlightAges = new Set(["১০-১৪","১৫-১৯","২০-২৪"]);
+
+    const maleColors = labels.map(l =>
+      highlightAges.has(l) ? maleHighlight : maleBase
+    );
+
+    const femaleColors = labels.map(l =>
+      highlightAges.has(l) ? femaleHighlight : femaleBase
+    );
+
+    const ageBandHighlightBg = {
+      id: "ageBandHighlightBg",
+      beforeDatasetsDraw(chart) {
+
+        const { ctx, chartArea, scales } = chart;
+        const yScale = scales.y;
+
+        ctx.save();
+
+        labels.forEach((lab, i) => {
+
+          if (!highlightAges.has(lab)) return;
+
+          const yCurr = yScale.getPixelForValue(i);
+
+          const yNext =
+            i < labels.length - 1
+              ? yScale.getPixelForValue(i + 1)
+              : yCurr + (
+                  yCurr -
+                  yScale.getPixelForValue(Math.max(0, i - 1))
+                );
+
+          const height = Math.max(12, Math.abs(yNext - yCurr));
+          const top = yCurr - height / 2;
+
+          ctx.fillStyle = "rgba(253,92,48,0.12)";
+          ctx.fillRect(chartArea.left, top, chartArea.right - chartArea.left, height);
+
+          ctx.strokeStyle = "rgba(253,92,48,0.25)";
+          ctx.lineWidth = 1;
+          ctx.strokeRect(chartArea.left, top, chartArea.right - chartArea.left, height);
+        });
+
+        ctx.restore();
+      }
+    };
+
+    const bnDigits = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
+
+    const toBanglaNumber = num =>
+      String(num).replace(/\d/g, d => bnDigits[d]);
+
+    window.populationPyramidChart = new Chart(
+      pyramidCanvas.getContext("2d"),
+      {
+        type: "bar",
+        data: {
+          labels,
+          datasets: [
+            {
+              label: "পুরুষ",
+              data: maleData,
+              backgroundColor: maleColors
+            },
+            {
+              label: "মহিলা",
+              data: femaleData,
+              backgroundColor: femaleColors
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          indexAxis: "y",
+          scales: {
+            x: {
+              stacked: true,
+              ticks: {
+                callback: value => toBanglaNumber(Math.abs(value))
+              },
+              title: {
+                display: true,
+                text: "জনসংখ্যা (মিলিয়নে)"
+              }
+            },
+            y: {
+              stacked: true,
+              categoryPercentage: 0.99,
+              barPercentage: 1,
+              ticks: {
+                autoSkip: false,
+                font: { size: 10 }
+              },
+              title: {
+                display: true,
+                text: "বয়স গ্রুপ"
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: "top"
+            },
+            tooltip: {
+              callbacks: {
+                label: ctx =>
+                  `${ctx.dataset.label}: ${toBanglaNumber(Math.abs(ctx.raw))}%`
+              }
+            }
+          }
+        },
+        plugins: [ageBandHighlightBg]
+      }
+    );
+  }
+
+  // ==========================
+  // ENGLISH VERSION
+  // ==========================
+
+  if (pyramidCanvasEN) {
+
+    const labelsEN = [
+      "0-4","5-9","10-14","15-19","20-24","25-29","30-34","35-39",
+      "40-44","45-49","50-54","55-59","60-64","65-69","70-74",
+      "75-79","80-84","85-89","90-94","95-99","100+"
+    ];
+
+    const highlightAgesEN = new Set(["10-14","15-19","20-24"]);
+
+    const maleColorsEN = labelsEN.map(l =>
+      highlightAgesEN.has(l) ? maleHighlight : maleBase
+    );
+
+    const femaleColorsEN = labelsEN.map(l =>
+      highlightAgesEN.has(l) ? femaleHighlight : femaleBase
+    );
+
+    const ageBandHighlightBgEN = {
+      id: "ageBandHighlightBgEN",
+      beforeDatasetsDraw(chart) {
+
+        const { ctx, chartArea, scales } = chart;
+        const yScale = scales.y;
+
+        ctx.save();
+
+        labelsEN.forEach((lab, i) => {
+
+          if (!highlightAgesEN.has(lab)) return;
+
+          const yCurr = yScale.getPixelForValue(i);
+
+          const yNext =
+            i < labelsEN.length - 1
+              ? yScale.getPixelForValue(i + 1)
+              : yCurr + (
+                  yCurr -
+                  yScale.getPixelForValue(Math.max(0, i - 1))
+                );
+
+          const height = Math.max(12, Math.abs(yNext - yCurr));
+          const top = yCurr - height / 2;
+
+          ctx.fillStyle = "rgba(253,92,48,0.12)";
+          ctx.fillRect(chartArea.left, top, chartArea.right - chartArea.left, height);
+
+          ctx.strokeStyle = "rgba(253,92,48,0.25)";
+          ctx.lineWidth = 1;
+          ctx.strokeRect(chartArea.left, top, chartArea.right - chartArea.left, height);
+        });
+
+        ctx.restore();
+      }
+    };
+
+    window.populationPyramidChartEN = new Chart(
+      pyramidCanvasEN.getContext("2d"),
+      {
+        type: "bar",
+        data: {
+          labels: labelsEN,
+          datasets: [
+            {
+              label: "Male",
+              data: maleData,
+              backgroundColor: maleColorsEN
+            },
+            {
+              label: "Female",
+              data: femaleData,
+              backgroundColor: femaleColorsEN
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          indexAxis: "y",
+          scales: {
+            x: {
+              stacked: true,
+              ticks: {
+                callback: value => Math.abs(value)
+              },
+              title: {
+                display: true,
+                text: "Population (Millions)"
+              }
+            },
+            y: {
+              stacked: true,
+              categoryPercentage: 0.99,
+              barPercentage: 1,
+              ticks: {
+                autoSkip: false,
+                font: { size: 10 }
+              },
+              title: {
+                display: true,
+                text: "Age Group"
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: "top"
+            },
+            tooltip: {
+              callbacks: {
+                label: ctx =>
+                  `${ctx.dataset.label}: ${Math.abs(ctx.raw)}%`
+              }
+            }
+          }
+        },
+        plugins: [ageBandHighlightBgEN]
+      }
+    );
   }
 }
 
-// age bar
-      const pyramidCanvas = document.getElementById("populationPyramid");
-
-if (pyramidCanvas && window.Chart) {
-
-  
-
-  const labels = [
-    "০-৪","৫-৯","১০-১৪","১৫-১৯","২০-২৪","২৫-২৯","৩০-৩৪","৩৫-৩৯",
-"৪০-৪৪","৪৫-৪৯","৫০-৫৪","৫৫-৫৯","৬০-৬৪","৬৫-৬৯","৭০-৭৪","৭৫-৭৯",
-"৮০-৮৪","৮৫-৮৯","৯০-৯৪","৯৫-৯৯","১০০+"
-  ];
-
-  const highlightAges = new Set(["১০-১৪","১৫-১৯","২০-২৪"]);
-
-  const maleData = [-7.63,-7.41,-7.82,-8.5,-8.27,-7.92,-6.46,-6.68,-6.04,-4.92,-4.14,-3.78,-2.78,-2.59,-1.77,-1.26,-0.56,-0.18,-0.12,-0.06,-0.01];
-  const femaleData = [7.95,7.92,8.51,8.07,6.72,7.92,6.46,5.66,6.04,5.12,4.13,4.0,2.96,3.01,2.15,1.57,0.67,0.46,0.17,0.08,0.01];
-
-  const maleBase = "#2563EB";
-  const maleHighlight = "#1D4ED8";
-  const femaleBase = "#F97316";
-  const femaleHighlight = "#EA580C";
-
-  const maleColors = labels.map(l => highlightAges.has(l) ? maleHighlight : maleBase);
-  const femaleColors = labels.map(l => highlightAges.has(l) ? femaleHighlight : femaleBase);
-
-  // Background highlight plugin (uses numeric tick positions)
-  const ageBandHighlightBg = {
-    id: "ageBandHighlightBg",
-    beforeDatasetsDraw(chart) {
-      const { ctx, chartArea, scales } = chart;
-      const yScale = scales.y;
-      ctx.save();
-      labels.forEach((lab, i) => {
-        if (!highlightAges.has(lab)) return;
-
-        const yCurr = yScale.getPixelForValue(i);
-        const yNext = (i < labels.length - 1) ? yScale.getPixelForValue(i + 1) : yCurr + (yCurr - yScale.getPixelForValue(Math.max(0, i - 1)) || 20);
-        const height = Math.max(12, Math.abs(yNext - yCurr));
-        const top = yCurr - height / 2;
-
-        ctx.fillStyle = "rgba(253,92,48,0.12)";
-        ctx.fillRect(chartArea.left, top, chartArea.right - chartArea.left, height);
-
-        ctx.strokeStyle = "rgba(253,92,48,0.25)";
-        ctx.lineWidth = 1;
-        ctx.strokeRect(chartArea.left, top, chartArea.right - chartArea.left, height);
-      });
-      ctx.restore();
-    }
-  };
-
-  const ctx = pyramidCanvas.getContext("2d");
-
-  // create chart and store reference for later updates
-  window.populationPyramidChart = new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels,
-      datasets: [
-        {
-          label: "পুরুষ",
-          data: maleData,
-          backgroundColor: maleColors,
-          borderWidth: 1
-        },
-        {
-          label: "মহিলা",
-          data: femaleData,
-          backgroundColor: femaleColors,
-          borderWidth: 1
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: true,
-      indexAxis: "y",
-      scales: {
-        x: {
-          stacked: true,
-          ticks: {
-            callback: function(value) {
-              const toBanglaNumber = (num) => {
-                const bnDigits = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
-                return String(num).replace(/\d/g, d => bnDigits[d]);
-              };
-              return toBanglaNumber(Math.abs(value));
-            }
-          },
-          title: {
-            display: true,
-            text: "জনসংখ্যা (মিলিয়নে)"
-          }
-        },
-        y: {
-          stacked: true,
-          categoryPercentage: 0.99,
-          barPercentage: 1.0,
-          ticks: {
-            autoSkip: false,
-            font: { size: 10 }
-          },
-          title: { display: true, text: "বয়স গ্রুপ" }
-        }
-      },
-      plugins: {
-        legend: { position: "top" },
-        tooltip: {
-          callbacks: {
-            label: ctx => {
-              const toBanglaNumber = (num) => {
-                const bnDigits = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
-                return String(num).replace(/\d/g, d => bnDigits[d]);
-              };
-              const value = Math.abs(ctx.raw);
-              return `${ctx.dataset.label}: ${toBanglaNumber(value)}%`;
-            }
-          }
-        }
-      }
-    },
-    plugins: [ageBandHighlightBg]
-  });
-}
-
-// English version
-const pyramidCanvasEN = document.getElementById("populationPyramidEN");
-
-if (pyramidCanvasEN && window.Chart) {
-  const labelsEN = ["0-4","5-9","10-14","15-19","20-24","25-29","30-34","35-39","40-44","45-49","50-54","55-59","60-64","65-69","70-74","75-79","80-84","85-89","90-94","95-99","100+"];
-  const highlightAgesEN = new Set(["10-14","15-19","20-24"]);
-  const maleData = [-7.63,-7.41,-7.82,-8.5,-8.27,-7.92,-6.46,-6.68,-6.04,-4.92,-4.14,-3.78,-2.78,-2.59,-1.77,-1.26,-0.56,-0.18,-0.12,-0.06,-0.01];
-  const femaleData = [7.95,7.92,8.51,8.07,6.72,7.92,6.46,5.66,6.04,5.12,4.13,4.0,2.96,3.01,2.15,1.57,0.67,0.46,0.17,0.08,0.01];
-  const maleBase = "#2563EB";
-  const maleHighlight = "#1D4ED8";
-  const femaleBase = "#F97316";
-  const femaleHighlight = "#EA580C";
-  const maleColorsEN = labelsEN.map(l => highlightAgesEN.has(l) ? maleHighlight : maleBase);
-  const femaleColorsEN = labelsEN.map(l => highlightAgesEN.has(l) ? femaleHighlight : femaleBase);
-
-  const ageBandHighlightBgEN = {
-    id: "ageBandHighlightBgEN",
-    beforeDatasetsDraw(chart) {
-      const { ctx, chartArea, scales } = chart;
-      const yScale = scales.y;
-      ctx.save();
-      labelsEN.forEach((lab, i) => {
-        if (!highlightAgesEN.has(lab)) return;
-        const yCurr = yScale.getPixelForValue(i);
-        const yNext = (i < labelsEN.length - 1) ? yScale.getPixelForValue(i + 1) : yCurr + (yCurr - yScale.getPixelForValue(Math.max(0, i - 1)) || 20);
-        const height = Math.max(12, Math.abs(yNext - yCurr));
-        const top = yCurr - height / 2;
-        ctx.fillStyle = "rgba(253,92,48,0.12)";
-        ctx.fillRect(chartArea.left, top, chartArea.right - chartArea.left, height);
-        ctx.strokeStyle = "rgba(253,92,48,0.25)";
-        ctx.lineWidth = 1;
-        ctx.strokeRect(chartArea.left, top, chartArea.right - chartArea.left, height);
-      });
-      ctx.restore();
-    }
-  };
-
-  const ctxEN = pyramidCanvasEN.getContext("2d");
-  window.populationPyramidChartEN = new Chart(ctxEN, {
-    type: "bar",
-    data: {
-      labels: labelsEN,
-      datasets: [
-        {
-          label: "Male",
-          data: maleData,
-          backgroundColor: maleColorsEN,
-          borderWidth: 1
-        },
-        {
-          label: "Female",
-          data: femaleData,
-          backgroundColor: femaleColorsEN,
-          borderWidth: 1
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: true,
-      indexAxis: "y",
-      scales: {
-        x: {
-          stacked: true,
-          ticks: {
-            callback: function(value) {
-              return Math.abs(value);
-            }
-          },
-          title: {
-            display: true,
-            text: "Population (Millions)"
-          }
-        },
-        y: {
-          stacked: true,
-          categoryPercentage: 0.99,
-          barPercentage: 1.0,
-          ticks: {
-            autoSkip: false,
-            font: { size: 10 }
-          },
-          title: { display: true, text: "Age Group" }
-        }
-      },
-      plugins: {
-        legend: { position: "top" },
-        tooltip: {
-          callbacks: {
-            label: ctx => {
-              const value = Math.abs(ctx.raw);
-              return `${ctx.dataset.label}: ${value}%`;
-            }
-          }
-        }
-      }
-    },
-    plugins: [ageBandHighlightBgEN]
-  });
-}
 
 
 // FIG.4 Child marriage prevalence chart (Lesson 5)
