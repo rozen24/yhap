@@ -3200,19 +3200,16 @@
       justify-content: center;
     }
     .nocturnal-card {
-      width: 33.333%;
-      min-width: 0;
-      background: linear-gradient(160deg, #1E3A8A 0%, #1E40AF 55%, #1D4ED8 100%);
-      color: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 14px rgba(30,58,138,0.18), 0 20px 40px rgba(30,58,138,0.22);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
+    background: linear-gradient(160deg, #1E3A8A 0%, #1E40AF 55%, #1D4ED8 100%);
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(30,58,138,0.18), 0 20px 40px rgba(30,58,138,0.22);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 40% 60%;
     }
     .nocturnal-card__media {
       width: 100%;
-      aspect-ratio: 16 / 10;
       background: rgba(255,255,255,0.06);
       overflow: hidden;
     }
@@ -3227,7 +3224,7 @@
     }
     .nocturnal-card__body .organ-card__text {
       color: rgba(255,255,255,0.92);
-      font-size: 13px;
+      font-size: 18px;
       line-height: 1.75;
       margin: 0;
     }
@@ -8191,10 +8188,7 @@ function buildMaleReproSection() {
   return `
   <!-- ── MALE REPRODUCTIVE SYSTEM OVERVIEW ── -->
   <section class="organ-section organ-section--male" aria-label="Male reproductive system overview">
-    <h2 class="organ-section__heading">
-      <span class="bn">পুরুষ প্রজনন ব্যবস্থা</span>
-      <span class="en">Male Reproductive System</span>
-    </h2>
+    
     <div class="organ-grid">
 
       <article class="organ-card organ-card--penis">
