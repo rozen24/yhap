@@ -70,7 +70,7 @@ body {
 }
 
 [data-lang="en"] .bn, [data-lang="bn"] .en { display: none !important; }
-[data-lang="en"] .en, [data-lang="bn"] .bn { display: inline !important; }
+/* [data-lang="en"] .en, [data-lang="bn"] .bn { display: inline !important; } */
 .en-block, .bn-block { display: none; }
 [data-lang="en"] .en-block { display: block; }
 [data-lang="bn"] .bn-block { display: block; }
@@ -749,6 +749,7 @@ button { cursor: pointer; border: none; background: none; }
 .def-card-title {
   font-size: 20px; font-weight: 800; color: var(--text-primary);
   margin-bottom: 12px; line-height: 1.2;
+  display: block !important;
 }
 
 .def-card-body {
@@ -951,7 +952,7 @@ button { cursor: pointer; border: none; background: none; }
 }
 .js-connector {
   display: flex; flex-direction: column; align-items: center;
-  padding-top: 28px;
+  padding-top: 15px;
 }
 .js-line {
   width: 2px; flex: 1; min-height: 32px;
@@ -1660,7 +1661,7 @@ footer::after{
 <body>
 
 <!-- TOP BAR -->
-<div class="topbar">
+<!-- <div class="topbar">
   <div>
     <span class="bn">স্বাস্থ্য ও পরিবার কল্যাণ মন্ত্রণালয় এবং ইউনিসেফের যৌথ উদ্যোগ</span>
     <span class="en">A joint initiative of Ministry of Health & Family Welfare and UNICEF</span>
@@ -1669,7 +1670,7 @@ footer::after{
     <a href="#">📞 <span class="bn">হেল্পলাইন: ১৬২৬৩, ১৬৭৬৭, ১০৯৮, ১০৯</span><span class="en">Helpline: 16263, 16767, 1098, 109</span></a>
     <a href="#">✉ yhap@mohfw.gov.bd</a>
   </div>
-</div>
+</div> -->
 
 <!-- NAVBAR -->
 <nav class="navbar">
@@ -1975,7 +1976,7 @@ footer::after{
         </p>
         <div class="hero-actions">
           <a href="#" class="btn-primary" onclick="openAuth('register');return false;">
-            🌟 <span class="bn">দূত হোন</span><span class="en">Become an Ambassador</span>
+            🌟 <span class="bn">নিবন্ধন</span><span class="en">Registration</span>
           </a>
           <a href="#about" class="btn-outline">
             📖 <span class="bn">আরও জানুন</span><span class="en">Learn More</span>
@@ -2173,8 +2174,6 @@ footer::after{
     <!-- Two-column layout: text left, visual right -->
     <div class="about-grid">
       <div class="about-text">
-        <div class="section-label bn">কর্মসূচি পরিচিতি</div>
-        <div class="section-label en">About the Program</div>
         <h2 class="section-title">
           <span class="bn">যুব স্বাস্থ্য দূত কর্মসূচি</span>
           <span class="en">Young Health Ambassador Program</span>
@@ -2183,13 +2182,13 @@ footer::after{
         <div class="about-bullets">
           <div class="about-bullet fade-up">
             <div class="about-bullet-dot"></div>
-            <p class="bn">ইয়াং হেলথ অ্যাম্বাসেডর প্রোগ্রাম হলো স্বাস্থ্য ও পরিবার কল্যাণ মন্ত্রণালয় এবং ইউনিসেফের একটি সম্মিলিত উদ্যোগ। এই কর্মসূচিটি তরুণসমাজের স্বাস্থ্যসচেতনতা বৃদ্ধি এবং প্রাথমিক পর্যায়ে রোগ প্রতিরোধ ও স্বাস্থ্যতথ্য প্রচারে তাদের সক্ষমতা বিকাশের লক্ষ্যে প্রণয়ন করা হয়েছে। এর ফলে তরুণসমাজ স্বাস্থ্যদূত হিসেবে কাজ করার জন্য প্রস্তুত হবে।</p>
-            <p class="en">The Young Health Ambassador Program is a joint initiative of the Ministry of Health and Family Welfare and UNICEF. This program has been designed to raise health awareness among young people and develop their capacity to promote disease prevention and health information at the primary level. As a result, young people will be prepared to work as health ambassadors.</p>
+            <p class="bn">তরুণ স্বাস্থ্যদূত কার্যক্রম, স্বাস্থ্য ও পরিবার কল্যাণ মন্ত্রণালয় এবং ইউনিসেফের একটি সম্মিলিত উদ্যোগ। এই কর্মসূচিটি তরুণ সমাজের স্বাস্থ্যসচেতনতা বৃদ্ধি এবং প্রাথমিক পর্যায়ে রোগ প্রতিরোধ ও স্বাস্থ্যতথ্য প্রচারে তাদের সক্ষমতা বিকাশের লক্ষ্যে এই কর্মসূচিটি প্রণয়ন করা হয়েছে। এর ফলে তরুণসমাজ, স্বাস্থ্যদূত হিসেবে কাজ করার জন্য প্রস্তুত হবে। </p>
+            <p class="en">The Young Health Ambassadors Program is a joint initiative of the Ministry of Health and Family Welfare and UNICEF. This program aims to increase health awareness among young people and develop their capacity to prevent diseases at the primary stage and disseminate health information. As a result, young people will be prepared to work as health ambassadors.</p>
           </div>
           <div class="about-bullet fade-up">
             <div class="about-bullet-dot"></div>
-            <p class="bn">এই প্রশিক্ষণ তরুণদের শারীরিক ও মানসিক স্বাস্থ্যের জ্ঞান ও দক্ষতায় সমৃদ্ধ করবে। নিজেদের কমিউনিটি ও নেটওয়ার্কে সক্রিয়ভাবে অংশগ্রহণের মাধ্যমে তারা স্বাস্থ্যকর অভ্যাস গড়ে তুলতে এবং অন্যদেরও প্রভাবিত করতে সক্ষম হবে।</p>
-            <p class="en">This training will enrich young people with knowledge and skills related to physical and mental health. Through active participation in their own communities and networks, they will be able to develop healthy habits and influence others as well.</p>
+            <p class="bn">এই প্রশিক্ষণ তরুণদের শারীরিক ও মানসিক স্বাস্থ্যের জ্ঞান ও দক্ষতায় সমৃদ্ধ করবে। এর ফলে তারা নিজেদের কমিউনিটি ও নেটওয়ার্কে সক্রিয়ভাবে অংশগ্রহণের মাধ্যমে স্বাস্থ্যকর অভ্যাস গড়ে তুলতে এবং অন্যদেরও প্রভাবিত করতে সক্ষম হবে।</p>
+            <p class="en">This training will equip young people with knowledge and skills in physical and mental health, enabling them to develop healthy habits and influence others by actively participating in their communities and networks.</p>
           </div>
         </div>
 
@@ -2366,8 +2365,6 @@ footer::after{
     <!-- Definition Cards -->
     <div class="def-cards-wrap">
       <div class="def-cards-header fade-up">
-        <div class="section-label bn">মূল সংজ্ঞা</div>
-        <div class="section-label en">Key Definitions</div>
         <h3 class="def-cards-title">
           <span class="bn">স্বাস্থ্য, কৈশোর, যুবক ও তরুণ — বৈশ্বিক সংজ্ঞা</span>
           <span class="en">Health, Adolescence, Youth & Young People — Global Definitions</span>
@@ -2382,8 +2379,8 @@ footer::after{
           </div> -->
           <h4 class="def-card-title bn">স্বাস্থ্য</h4>
           <h4 class="def-card-title en">Health</h4>
-          <p class="def-card-body bn">বিশ্ব স্বাস্থ্য সংস্থার মতে, স্বাস্থ্য হলো সম্পূর্ণ শারীরিক, মানসিক এবং সামাজিক সুস্থতার একটি অবস্থা — যা কেবল রোগ বা দুর্বলতার অনুপস্থিতি নয়।</p>
-          <p class="def-card-body en">According to the World Health Organization, health is defined as a state of complete physical, mental, and social well-being, and not merely the absence of disease or infirmity.</p>
+          <p class="def-card-body bn">বিশ্ব স্বাস্থ্য সংস্থার মতে, স্বাস্থ্যকে সম্পূর্ণ শারীরিক, মানসিক এবং সামাজিক সুস্থতার একটি অবস্থা হিসেবে সংজ্ঞায়িত করা হয়; যা কেবল রোগ বা দুর্বলতার অনুপস্থিতি নয়।</p>
+          <p class="def-card-body en">According to the World Health Organization, health is defined as a state of complete physical, mental and social well-being; and not merely the absence of disease or infirmity.</p>
           <!-- <div class="def-card-tag bn">শারীরিক · মানসিক · সামাজিক</div>
           <div class="def-card-tag en">Physical · Mental · Social</div> -->
         </div>
@@ -2395,8 +2392,8 @@ footer::after{
           </div> -->
           <h4 class="def-card-title bn">কৈশোরকাল</h4>
           <h4 class="def-card-title en">Adolescence</h4>
-          <p class="def-card-body bn">বিশ্ব স্বাস্থ্য সংস্থার সংজ্ঞা অনুযায়ী, কৈশোরকাল হলো ১০ থেকে ১৯ বছর বয়সের সময়কাল। শৈশব ও যৌবনের সন্ধিক্ষণে দ্রুত ও গুরুত্বপূর্ণ পরিবর্তনের এই সময়ে একজন মানুষ শৈশব থেকে প্রাপ্তবয়স্কতার দিকে অগ্রসর হয়।</p>
-          <p class="def-card-body en">According to the World Health Organization, adolescence is the period from 10 to 19 years of age — a time of rapid and significant change at the crossroads of childhood and adulthood, when a person transitions from childhood to adulthood.</p>
+          <p class="def-card-body bn">বিশ্ব স্বাস্থ্য সংস্থার  সংজ্ঞা অনুযায়ী, ১০-১৯ বছর হচ্ছে কৈশোরকাল। শৈশব ও যৌবনের সন্ধিক্ষণে দ্রুত ও গুরুত্বপূর্ণ পরিবর্তনের সময়কালই কৈশোরকাল হিসেবে ধরা হয়। এটি জীবনের এমন একটি সময় যখন একজন মানুষ শৈশব কাল হতে প্রাপ্ত-বয়স্ক হয়।</p>
+          <p class="def-card-body en">According to the World Health Organization, adolescence is the period between the ages of 10 and 19. Adolescence is a period of rapid and important change at the crossroads of childhood and adulthood. It is a time in life when a person transitions from childhood to adulthood.</p>
           <!-- <div class="def-card-age-badge">10 – 19 <span class="bn">বছর</span><span class="en">yrs</span></div> -->
         </div>
 
@@ -2407,8 +2404,8 @@ footer::after{
           </div> -->
           <h4 class="def-card-title bn">যুবক</h4>
           <h4 class="def-card-title en">Youth</h4>
-          <p class="def-card-body bn">জাতিসংঘের সংজ্ঞা অনুযায়ী, যুবক বলতে ১৫ থেকে ২৪ বছর বয়সী ব্যক্তিদের বোঝানো হয় — যখন একজন ব্যক্তি শৈশবের নির্ভরশীলতা পেরিয়ে প্রাপ্তবয়স্কতার স্বাধীনতার দিকে অগ্রসর হয়।</p>
-          <p class="def-card-body en">According to the United Nations, youth refers to individuals between the ages of 15 and 24 — the period when a person moves beyond childhood dependence toward the independence of adulthood.</p>
+          <p class="def-card-body bn">জাতিসংঘের সংজ্ঞা অনুযায়ী, যুবক বলতে ১৫ থেকে ২৪ বছর বয়সী ব্যক্তিদের বোঝানো হয়। এটি সেই সময় যখন একজন ব্যক্তি শৈশবের নির্ভরশীলতা পেরিয়ে প্রাপ্তবয়স্কতার স্বাধীনতার দিকে অগ্রসর হয়।</p>
+          <p class="def-card-body en">According to the United Nations definition, youth refers to people between the ages of 15 and 24. This is the time when a person moves beyond the dependence of childhood and towards the independence of adulthood.</p>
           <!-- <div class="def-card-age-badge">15 – 24 <span class="bn">বছর</span><span class="en">yrs</span></div> -->
         </div>
 
@@ -2419,8 +2416,8 @@ footer::after{
           </div> -->
           <h4 class="def-card-title bn">তরুণ জনগোষ্ঠী</h4>
           <h4 class="def-card-title en">Young People</h4>
-          <p class="def-card-body bn">বিশ্ব স্বাস্থ্য সংস্থার সংজ্ঞা অনুযায়ী, "তরুণ" বলতে ১০ থেকে ২৪ বছর বয়সী ব্যক্তিদের বোঝায়।</p>
-          <p class="def-card-body en">According to the World Health Organization, "young people" refers to individuals between the ages of 10 and 24.</p>
+          <p class="def-card-body bn">বিশ্ব স্বাস্থ্য সংস্থার সংজ্ঞা অনুযায়ী, "তরুণ" বলতে ১০ থেকে ২৪ বছর বয়সী ব্যক্তিদের বোঝায়।</p>
+          <p class="def-card-body en">According to the World Health Organization's definition, "youth" refers to people between the ages of 10 and 24.</p>
           <!-- <div class="def-card-age-badge">10 – 24 <span class="bn">বছর</span><span class="en">yrs</span></div> -->
         </div>
 
@@ -2435,16 +2432,10 @@ footer::after{
 ════════════════════════════════════════════ -->
 <section class="section pillars-section" id="pillars">
   <div class="section-inner">
-    <div class="section-label bn">মূল উপাদান</div>
-    <div class="section-label en">Core Pillars</div>
     <h2 class="section-title">
-      <span class="bn">তরুণ স্বাস্থ্য অ্যাম্বাসেডর কর্মসূচির মৌলিক উপাদান সমূহ</span>
-      <span class="en">Fundamental Components of the Young Health Ambassador Program</span>
+      <span class="bn">তরুণ স্বাস্থ্যদূত কার্যক্রমের মৌলিক উপাদান সমূহ</span>
+      <span class="en">Basic elements of the Young Health Ambassador program</span>
     </h2>
-    <p class="section-desc">
-      <span class="bn">এই কর্মসূচি তরুণদের ৬টি মূল উপাদানের মাধ্যমে স্বাস্থ্যসচেতন ও দায়িত্বশীল নাগরিক হিসেবে গড়ে তোলে।</span>
-      <span class="en">This program builds health-conscious and responsible citizens through 6 core components that empower youth to drive meaningful change.</span>
-    </p>
 
     <div class="pillars-grid">
 
@@ -2453,15 +2444,15 @@ footer::after{
         <h3 class="pillar-title bn">স্বাস্থ্য সাক্ষরতা</h3>
         <h3 class="pillar-title en">Health Literacy</h3>
         <p class="pillar-desc bn">ইয়াং হেলথ অ্যাম্বাসেডর প্রোগ্রাম স্বাস্থ্য ও সুস্থতা বিষয়ক ব্যাপক প্রশিক্ষণের মাধ্যমে তরুণ স্বাস্থ্যদূতদের মৌলিক স্বাস্থ্য সাক্ষরতায় দক্ষ করে তুলবে। এই কর্মসূচি তাদের নির্ভরযোগ্য তথ্যের উৎস প্রদান করবে এবং রোগ প্রতিরোধ ও স্বাস্থ্যকর জীবনযাপন প্রসারে কার্যকর ভূমিকা পালনে সক্ষম করবে।</p>
-        <p class="pillar-desc en">The Young Health Ambassador Program will equip young health ambassadors with basic health literacy through comprehensive training on health and wellness. This program will provide them with reliable sources of information and enable them to play an effective role in disease prevention and promoting healthy lifestyles.</p>
+        <p class="pillar-desc en">The Young Health Ambassador Program will equip young health ambassadors with basic health literacy through comprehensive training on health and wellness. The program will provide them with a reliable source of information and enable them to play an effective role in disease prevention and promotion of healthy lifestyles.</p>
       </div>
 
       <div class="pillar-card fade-up">
         <div class="pillar-icon">💬</div>
         <h3 class="pillar-title bn">স্বাস্থ্য শিক্ষা ও সচেতনতা</h3>
         <h3 class="pillar-title en">Health Education and Awareness</h3>
-        <p class="pillar-desc bn">তরুণ স্বাস্থ্যদূতরা প্রধান স্বাস্থ্য বিষয়ে প্রচারণা, প্রশিক্ষণ ও মেন্টরশিপের মাধ্যমে স্বাস্থ্য শিক্ষা ও সচেতনতা বৃদ্ধি করবে। এই বহুমুখী প্রচেষ্টার মাধ্যমে, তারা গুরুত্বপূর্ণ স্বাস্থ্য তথ্যের সঠিক প্রচার নিশ্চিত করবে, যার ফলে সঠিক স্বাস্থ্য তথ্যের মাধ্যমে তরুণ জনগোষ্ঠী স্বাস্থ্য-সচেতন সম্প্রদায়ে পরিণত হবে।</p>
-        <p class="pillar-desc en">Young health ambassadors will promote health education and awareness through campaigns, training, and mentorship on key health issues. Through this multifaceted effort, they will ensure the accurate dissemination of important health information, thereby helping the young population grow into a health-conscious community through proper health information.</p>
+        <p class="pillar-desc bn">তরুণ স্বাস্থ্যদূতরা গুরুত্বপূর্ণ স্বাস্থ্য বিষয়গুলির উপর প্রচারণা, প্রশিক্ষন ও মেন্টরশিপের মাধ্যমে স্বাস্থ্য শিক্ষা এবং সচেতনতা তৈরি করবে।  এই বহুমুখী প্রচেষ্টার মাধ্যমে, তারা গুরুত্বপূর্ণ স্বাস্থ্যবিষয়ক তথ্যের সঠিক প্রচার নিশ্চিত করবে, যার ফলে সঠিক স্বাস্থ্যতথ্যের মাধ্যমে তরুন জনগোষ্ঠী  স্বাস্থ্যুসচেতন জনগোষ্ঠী হিসাবে গড়ে উঠবে।</p>
+        <p class="pillar-desc en">The Young Health Ambassadors will create health education and awareness through advocacy, training, and mentorship on important health topics. Through this multifaceted effort, they will ensure the accurate dissemination of important health information, thereby developing the youth population into a health-conscious population through accurate health information.</p>
       </div>
 
       <div class="pillar-card fade-up">
@@ -2469,15 +2460,15 @@ footer::after{
         <h3 class="pillar-title bn">পিয়ার-টু-পিয়ার প্রভাব</h3>
         <h3 class="pillar-title en">Peer-to-Peer Influence</h3>
         <p class="pillar-desc bn">তরুণদের মধ্যে পারস্পরিক সম্পৃক্ততাই ইয়াং হেলথ অ্যাম্বাসেডর প্রোগ্রামের মূল চালিকাশক্তি। এই সম্পৃক্ততা ইতিবাচক পরিবর্তনের জন্য একটি শক্তিশালী অনুঘটক হিসেবে কাজ করে। সমসাময়িক তরুণদের মধ্যে সহায়ক মেন্টরিং ও রোল মডেলিংকে উৎসাহিত করে, এই কর্মসূচি তাদের তরুণদের মধ্যে স্বাস্থ্যকর আচরণ প্রসারে প্রভাবক হিসেবে কাজ করতে সক্ষম করবে।</p>
-        <p class="pillar-desc en">Mutual engagement among young people is the core driving force of the Young Health Ambassador Program. This engagement acts as a powerful catalyst for positive change. By encouraging supportive mentoring and role modeling among contemporary youth, this program will enable them to serve as influencers in promoting healthy behaviors among young people.</p>
+        <p class="pillar-desc en">The Young Health Ambassador Program is driven by the interconnectedness of young people. This engagement acts as a powerful catalyst for positive change. By encouraging supportive mentoring and role modeling among contemporary youth, the program will empower them to act as influencers in promoting healthy behaviors among young people.</p>
       </div>
 
       <div class="pillar-card fade-up">
         <div class="pillar-icon">💪</div>
         <h3 class="pillar-title bn">ক্ষমতায়ন</h3>
         <h3 class="pillar-title en">Empowerment</h3>
-        <p class="pillar-desc bn">ইয়াং হেলথ অ্যাম্বাসেডর প্রোগ্রাম তরুণদের প্রয়োজনীয় দক্ষতা, আত্মবিশ্বাস ও উপকরণ দিয়ে সহায়তা করে, যাতে তারা একটি সৃজনশীল ও সুস্থ ভবিষ্যৎ কর্মশক্তি গড়ে তোলার মাধ্যমে অর্থনৈতিক উন্নয়নে কার্যকর ভূমিকা পালন করতে পারে।</p>
-        <p class="pillar-desc en">The Young Health Ambassador Program supports young people with the necessary skills, confidence, and tools to play an effective role in economic development by building a creative and healthy future workforce.</p>
+        <p class="pillar-desc bn">তরুণদের মধ্যে পারস্পারিক সম্প্রিক্ততাই  তরুন স্বাস্থ্যদূত কার্যক্রমটির মুল চালিকাশক্তি।  এই সম্পৃক্ততা, ইতিবাচক পরিবর্তনের জন্য একটি শক্তিশালী অনুঘটক হিসাবে কাজ করে।  সমসাময়িক তরুনদের মধ্যে সহায়ক পরামর্শদান এবং রোল-মডেলকে উৎসাহিত করে, এই কার্যক্রমটি তরুণদের মধ্যে স্বাস্থ্যকর আচরণ প্রচারের জন্য প্রভাবক হিসাবে ভূমিকা পালন করবে। </p>
+        <p class="pillar-desc en">The Youth Health Ambassador program is driven by mutual connection among young people. This connection acts as a powerful catalyst for positive change. By encouraging supportive mentoring and role-modeling among contemporary youth, the program will act as an influencer to promote healthy behaviors among young people.</p>
       </div>
 
       <div class="pillar-card fade-up">
@@ -2485,15 +2476,15 @@ footer::after{
         <h3 class="pillar-title bn">নেতৃত্ব</h3>
         <h3 class="pillar-title en">Leadership</h3>
         <p class="pillar-desc bn">এই কর্মসূচি তরুণদের মধ্যে নেতৃত্বের গুণাবলি বিকাশ করে, যাতে তারা তাদের যুব সম্প্রদায়ের মধ্যে ইতিবাচক পরিবর্তনের নৈতিক, দয়ালু ও অনুপ্রেরণাদায়ী প্রতিনিধি হয়ে উঠতে পারে।</p>
-        <p class="pillar-desc en">This program develops leadership qualities in young people, enabling them to become ethical, compassionate, and inspiring agents of positive change within their youth communities.</p>
+        <p class="pillar-desc en">This program develops leadership qualities in young people, so that they can become ethical, compassionate, and inspiring agents of positive change within their youth communities.</p>
       </div>
 
       <div class="pillar-card fade-up">
         <div class="pillar-icon">📢</div>
         <h3 class="pillar-title bn">এডভোকেসি</h3>
         <h3 class="pillar-title en">Advocacy</h3>
-        <p class="pillar-desc bn">ইয়াং হেলথ অ্যাম্বাসেডর প্রোগ্রাম তরুণদের এমনভাবে গড়ে তোলে যাতে তারা জরুরি জনস্বাস্থ্য অগ্রাধিকার উপস্থাপন করে নীতি পর্যায়ে পরিবর্তন আনতে পারে। বিভিন্ন স্টেকহোল্ডারদের সাথে কৌশলগত সম্পৃক্ততা, প্রমাণভিত্তিক নীতি প্রচারণা ও আইন প্রণয়ন প্রক্রিয়ায় অংশগ্রহণের মাধ্যমে এই কর্মসূচি স্বাস্থ্য ব্যবস্থা শক্তিশালী করতে গুরুত্বপূর্ণ ভূমিকা পালন করবে।</p>
-        <p class="pillar-desc en">The Young Health Ambassador Program cultivates young people in such a way that they can bring about policy-level changes by presenting urgent public health priorities. Through strategic engagement with various stakeholders, evidence-based policy advocacy, and participation in law-making processes, this program will play a vital role in strengthening the health system.</p>
+        <p class="pillar-desc bn">তরুণ স্বাস্থ্যদূত কার্যক্রম, তরুণদের এমনভাবে গড়ে তোলে যাতে তারা জনস্বাস্থ্যের জরুরি অগ্রাধিকারসমূহ উপস্থাপন করে নীতি পর্যায়ে পরিবর্তন আনতে পারে। এই কার্যক্রমটি,  বিভিন্ন অংশীদারদের সঙ্গে কৌশলগত সম্পৃক্ততা, প্রমাণভিত্তিক নীতিপ্রচারণা এবং আইন প্রণয়নে অংশগ্রহণের মাধ্যমে স্বাস্থ্যব্যবস্থাকে শক্তিশালী করতে গুরুত্বপূর্ণ  ভূমিকা পালন করবে।</p>
+        <p class="pillar-desc en">The Young Health Ambassadors program develops young people to advocate for urgent public health priorities and drive policy change. The program will play a critical role in strengthening health systems through strategic engagement with stakeholders, evidence-based policy advocacy, and participation in legislative development.</p>
       </div>
 
     </div>
@@ -2505,16 +2496,10 @@ footer::after{
 ════════════════════════════════════════════ -->
 <section class="section role-section" id="role-details">
   <div class="section-inner">
-    <div class="section-label bn">ভূমিকা ও দায়িত্ব</div>
-    <div class="section-label en">Role &amp; Responsibilities</div>
     <h2 class="section-title">
       <span class="bn">স্বাস্থ্যদূতের ভূমিকা এবং দায়িত্ব</span>
       <span class="en">Role and Responsibilities of a Health Ambassador</span>
     </h2>
-    <p class="section-desc">
-      <span class="bn">তরুণ স্বাস্থ্যদূত কর্মসূচি সমাজে কার্যকর অবদান রাখতে এবং স্বাস্থ্যগত, সামাজিক ও অর্থনৈতিক — এই ত্রি-মুখী সুফল অর্জনে সহায়তা করে।</span>
-      <span class="en">The Young Health Ambassador program enables ambassadors to contribute effectively to society and achieve the triple benefit — health-related, social, and economic.</span>
-    </p>
 
     <div class="role-cards">
 
@@ -2526,8 +2511,8 @@ footer::after{
         <div class="role-card-body">
           <h3 class="role-card-title bn">সমাজে কার্যকর অবদান</h3>
           <h3 class="role-card-title en">Contributing Effectively to Society</h3>
-          <p class="role-card-desc bn">তরুণ স্বাস্থ্যদূত কর্মসূচিটি তরুণদের স্বাস্থ্য ও সুস্থতা সুরক্ষায় অর্জিত জ্ঞান ও দক্ষতা প্রয়োগ করতে সক্ষম করবে, যা তাদের সমাজে কার্যকর অবদান রাখতে এবং স্বাস্থ্যগত, সামাজিক ও অর্থনৈতিক — এই ত্রি-মুখী সুফল অর্জনে সহায়তা করবে।</p>
-          <p class="role-card-desc en">The Young Health Ambassador program will enable me to apply the knowledge and skills I have acquired in protecting the health and well-being of young people, allowing me to contribute effectively to society and help achieve the triple benefit — health-related, social, and economic.</p>
+          <p class="role-card-desc bn">তরুণ স্বাস্থ্যদূত কার্যক্রমটি, তরুণদের স্বাস্থ্য ও সুস্থতা সুরক্ষায় আমার অর্জিত জ্ঞান ও দক্ষতা আমাকে সমাজে কার্যকর অবদান রাখতে এবং স্বাস্থ্যগত, সামাজিক ও অর্থনৈতিক-এই ত্রি-মুখী সুফল অর্জনে সহায়তা করবে।</p>
+          <p class="role-card-desc en">The Young Health Ambassador program will help me to make an effective contribution to society and achieve three-fold benefits - health, social, and economic - through the knowledge and skills I have acquired in protecting the health and well-being of young people.</p>
         </div>
         <!-- <div class="role-card-tag bn">স্বাস্থ্য · সামাজিক · অর্থনৈতিক</div>
         <div class="role-card-tag en">Health · Social · Economic</div> -->
@@ -2542,7 +2527,7 @@ footer::after{
           <h3 class="role-card-title bn">সহকর্মীদের ক্ষমতায়ন</h3>
           <h3 class="role-card-title en">Empowering Peers</h3>
           <p class="role-card-desc bn">একজন তরুণ স্বাস্থ্যদূত হিসেবে আমি স্বাস্থ্য উন্নয়ন, রোগ প্রতিরোধ ও সামগ্রিক সুস্থতা সম্পর্কে জ্ঞান বিনিময় করে আমার সহপাঠীদের সার্বিকভাবে সক্ষম করে তুলব, যা তাদের সুস্থ, সুচিন্তিত ও যুক্তিভিত্তিক সিদ্ধান্ত গ্রহণে সহায়তা করবে।</p>
-          <p class="role-card-desc en">As a young health ambassador, I will exchange knowledge on health promotion, disease prevention, and overall well-being, thereby empowering my peers to make healthy, informed, and rational decisions.</p>
+          <p class="role-card-desc en">As a young health ambassador, I will empower my classmates by sharing knowledge about health promotion, disease prevention, and overall wellness, which will help them make healthy, well-thought-out, and rational decisions.</p>
         </div>
         <!-- <div class="role-card-tag bn">জ্ঞান · সুস্থতা · সিদ্ধান্ত</div>
         <div class="role-card-tag en">Knowledge · Wellness · Decisions</div> -->
@@ -2556,8 +2541,8 @@ footer::after{
         <div class="role-card-body">
           <h3 class="role-card-title bn">নীতিনির্ধারকদের সম্পৃক্ত করা</h3>
           <h3 class="role-card-title en">Engaging Policymakers</h3>
-          <p class="role-card-desc bn">অ্যাডভোকেসির মাধ্যমে নীতিনির্ধারক, গুরুত্বপূর্ণ স্টেকহোল্ডার এবং সমাজের প্রভাবশালীদের সম্পৃক্ত করে তরুণদের স্বাস্থ্য অগ্রাধিকার ও সহায়ক নীতি এবং সমন্বিত পদক্ষেপ বাস্তবায়ন নিশ্চিত করব।</p>
-          <p class="role-card-desc en">Through advocacy, I will engage policymakers, key stakeholders, and influential members of society to ensure that young people's health is prioritized and that supportive policies and integrated actions are implemented.</p>
+          <p class="role-card-desc bn">অ্যাডভোকেসির মাধ্যমে নীতিনির্ধারক, গুরুত্বপূর্ণ স্টেকহোল্ডার  এবং সমাজের  প্রভাবশালীদের সম্পৃক্ত করে,  তরুণদের স্বাস্থ্য অগ্রাধিকার ও সহায়ক নীতি ও সমন্বিত পদক্ষেপ বাস্তবায়ন নিশ্চিত করব।</p>
+          <p class="role-card-desc en">Through advocacy, we will engage policymakers, key stakeholders, and influential people in society to prioritize and implement supportive policies and integrated actions for the health of young people.</p>
         </div>
         <!-- <div class="role-card-tag bn">অ্যাডভোকেসি · নীতি · বাস্তবায়ন</div>
         <div class="role-card-tag en">Advocacy · Policy · Action</div> -->
@@ -2571,8 +2556,8 @@ footer::after{
         <div class="role-card-body">
           <h3 class="role-card-title bn">সমষ্টিগত দায়িত্ববোধ উৎসাহিত করা</h3>
           <h3 class="role-card-title en">Encouraging Collective Responsibility</h3>
-          <p class="role-card-desc bn">একজন স্বাস্থ্যদূত হিসেবে আমি যুব সম্প্রদায়ের মধ্যে স্বাস্থ্য সচেতনতা বৃদ্ধিতে সমাজের সব স্তরের সম্মিলিত দায়িত্ববোধ পালনে সক্রিয় ভূমিকা ও কার্যকর পদক্ষেপ গ্রহণে উৎসাহিত করব।</p>
-          <p class="role-card-desc en">As a health ambassador, I will encourage a collective sense of responsibility across all levels of society to raise health awareness within the youth community and promote proactive and effective action.</p>
+          <p class="role-card-desc bn">অ্যাডভোকেসির মাধ্যমে নীতিনির্ধারক, গুরুত্বপূর্ণ স্টেকহোল্ডার  এবং সমাজের  প্রভাবশালীদের সম্পৃক্ত করে,  তরুণদের স্বাস্থ্য অগ্রাধিকার ও সহায়ক নীতি ও সমন্বিত পদক্ষেপ বাস্তবায়ন নিশ্চিত করব।</p>
+          <p class="role-card-desc en">Through advocacy, we will engage policymakers, key stakeholders, and influential people in society to prioritize and implement supportive policies and integrated actions for the health of young people.</p>
         </div>
         <!-- <div class="role-card-tag bn">সচেতনতা · সম্প্রদায় · পদক্ষেপ</div>
         <div class="role-card-tag en">Awareness · Community · Action</div> -->
@@ -2614,15 +2599,14 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#1CABE2;--step-bg:#E8F6FC;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">1</span>
           <span class="js-icon">📝</span>
         </div>
         <div class="js-card">
           <div class="js-card-inner">
-            <h4 class="js-title bn">অনলাইন নিবন্ধন</h4>
-            <h4 class="js-title en">Online Registration</h4>
-            <p class="js-desc bn">হেলথ অ্যাম্বাসেডর প্রোগ্রামের জন্য অনলাইনে নিবন্ধন করুন।</p>
-            <p class="js-desc en">Online registration for the Health Ambassador Program.</p>
+            <h4 class="js-title bn">স্বাস্থ্য দূত প্রোগ্রামে অনলাইন নিবন্ধন</h4>
+            <h4 class="js-title en">Online registration for the Health Ambassador Program</h4>
+            <!-- <p class="js-desc bn">হেলথ অ্যাম্বাসেডর প্রোগ্রামের জন্য অনলাইনে নিবন্ধন করুন।</p>
+            <p class="js-desc en">Online registration for the Health Ambassador Program.</p> -->
           </div>
         </div>
       </div>
@@ -2630,15 +2614,14 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#00689D;--step-bg:#E3F2FD;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">2</span>
-          <span class="js-icon">🪪</span>
+          <span class="js-icon">🎓</span>
         </div>
         <div class="js-card">
           <div class="js-card-inner">
-            <h4 class="js-title bn">পরিচয় যাচাইকরণ</h4>
-            <h4 class="js-title en">ID Verification</h4>
-            <p class="js-desc bn">আপনার পরিচয় যাচাই করুন এবং অ্যাকাউন্ট নিশ্চিত করুন।</p>
-            <p class="js-desc en">Verify your identity and confirm your account details.</p>
+            <h4 class="js-title bn">চূড়ান্ত মূল্যায়নে কাঙ্ক্ষিত  নম্বর অর্জন</h4>
+            <h4 class="js-title en">Achieving the desired score in the final assessment</h4>
+            <!-- <p class="js-desc bn">আপনার পরিচয় যাচাই করুন এবং অ্যাকাউন্ট নিশ্চিত করুন।</p>
+            <p class="js-desc en">Verify your identity and confirm your account details.</p> -->
           </div>
         </div>
       </div>
@@ -2646,15 +2629,14 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#0D47A1;--step-bg:#E8EAF6;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">3</span>
           <span class="js-icon">🔑</span>
         </div>
         <div class="js-card">
           <div class="js-card-inner">
-            <h4 class="js-title bn">ওয়েবসাইট / অ্যাপে লগইন</h4>
-            <h4 class="js-title en">Login to Website / App</h4>
-            <p class="js-desc bn">আপনার নিবন্ধিত অ্যাকাউন্ট দিয়ে প্ল্যাটফর্মে লগইন করুন।</p>
-            <p class="js-desc en">Log in to the platform using your registered account credentials.</p>
+            <h4 class="js-title bn">সিস্টেম-জেনারেটেড সার্টিফিকেশন</h4>
+            <h4 class="js-title en">System-generated certification</h4>
+            <!-- <p class="js-desc bn">আপনার নিবন্ধিত অ্যাকাউন্ট দিয়ে প্ল্যাটফর্মে লগইন করুন।</p>
+            <p class="js-desc en">Log in to the platform using your registered account credentials.</p> -->
           </div>
         </div>
       </div>
@@ -2662,15 +2644,14 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#00838F;--step-bg:#E0F7FA;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">4</span>
           <span class="js-icon">📚</span>
         </div>
         <div class="js-card">
           <div class="js-card-inner">
-            <h4 class="js-title bn">কোর্স অ্যাক্সেস করুন</h4>
-            <h4 class="js-title en">Access the Course</h4>
-            <p class="js-desc bn">'হেলথ অ্যাম্বাসেডর কোর্স' খুলুন এবং মডিউল শুরু করুন।</p>
-            <p class="js-desc en">Access the 'Health Ambassador Course' and begin the learning modules.</p>
+            <h4 class="js-title bn">আইডি যাচাইকরণ</h4>
+            <h4 class="js-title en">ID verification</h4>
+            <!-- <p class="js-desc bn">'হেলথ অ্যাম্বাসেডর কোর্স' খুলুন এবং মডিউল শুরু করুন।</p>
+            <p class="js-desc en">Access the 'Health Ambassador Course' and begin the learning modules.</p> -->
           </div>
         </div>
       </div>
@@ -2678,15 +2659,14 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#2E7D32;--step-bg:#E8F5E9;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">5</span>
           <span class="js-icon">🎓</span>
         </div>
         <div class="js-card">
           <div class="js-card-inner">
-            <h4 class="js-title bn">কোর্স সম্পন্ন করুন</h4>
-            <h4 class="js-title en">Complete the Course</h4>
-            <p class="js-desc bn">'হেলথ অ্যাম্বাসেডর কোর্স'-এর সকল মডিউল সম্পূর্ণ করুন।</p>
-            <p class="js-desc en">Complete all modules of the 'Health Ambassador Course' at your own pace.</p>
+            <h4 class="js-title bn">'হেলথ অ্যাম্বাসেডর কোর্স' সম্পূর্ণ করন</h4>
+            <h4 class="js-title en">Complete the 'Health Ambassador Course'</h4>
+            <!-- <p class="js-desc bn">'হেলথ অ্যাম্বাসেডর কোর্স'-এর সকল মডিউল সম্পূর্ণ করুন।</p>
+            <p class="js-desc en">Complete all modules of the 'Health Ambassador Course' at your own pace.</p> -->
           </div>
         </div>
       </div>
@@ -2694,15 +2674,14 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#F57F17;--step-bg:#FFFDE7;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">6</span>
           <span class="js-icon">✅</span>
         </div>
         <div class="js-card">
           <div class="js-card-inner">
-            <h4 class="js-title bn">চূড়ান্ত মূল্যায়নে উত্তীর্ণ হন</h4>
-            <h4 class="js-title en">Pass the Final Assessment</h4>
-            <p class="js-desc bn">চূড়ান্ত মূল্যায়নে প্রয়োজনীয় নম্বর অর্জন করুন।</p>
-            <p class="js-desc en">Achieve the required score in the final assessment to qualify.</p>
+            <h4 class="js-title bn">শপথ গ্রহণ</h4>
+            <h4 class="js-title en">Taking the oath</h4>
+            <!-- <p class="js-desc bn">চূড়ান্ত মূল্যায়নে প্রয়োজনীয় নম্বর অর্জন করুন।</p>
+            <p class="js-desc en">Achieve the required score in the final assessment to qualify.</p> -->
           </div>
         </div>
       </div>
@@ -2710,15 +2689,14 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#6A1B9A;--step-bg:#F3E5F5;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">7</span>
           <span class="js-icon">🏅</span>
         </div>
         <div class="js-card">
           <div class="js-card-inner">
-            <h4 class="js-title bn">সিস্টেম সার্টিফিকেট পান</h4>
-            <h4 class="js-title en">Receive System Certification</h4>
-            <p class="js-desc bn">সিস্টেম-জেনারেটেড সার্টিফিকেশন স্বয়ংক্রিয়ভাবে প্রদান করা হবে।</p>
-            <p class="js-desc en">Receive your automatically generated system certification upon passing.</p>
+            <h4 class="js-title bn">ওয়েবসাইট/অ্যাপে লগ ইন</h4>
+            <h4 class="js-title en">Log in to the website/app</h4>
+            <!-- <p class="js-desc bn">সিস্টেম-জেনারেটেড সার্টিফিকেশন স্বয়ংক্রিয়ভাবে প্রদান করা হবে।</p>
+            <p class="js-desc en">Receive your automatically generated system certification upon passing.</p> -->
           </div>
         </div>
       </div>
@@ -2726,15 +2704,14 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#C62828;--step-bg:#FFEBEE;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">8</span>
           <span class="js-icon">🤲</span>
         </div>
         <div class="js-card">
           <div class="js-card-inner">
-            <h4 class="js-title bn">শপথ গ্রহণ</h4>
-            <h4 class="js-title en">Take an Oath</h4>
-            <p class="js-desc bn">তরুণ স্বাস্থ্যদূত হিসেবে আনুষ্ঠানিকভাবে শপথ গ্রহণ করুন।</p>
-            <p class="js-desc en">Formally take the oath as an officially recognized Young Health Ambassador.</p>
+            <h4 class="js-title bn">'স্বাস্থ্য দূত কোর্স'-এ প্রবেশ</h4>
+            <h4 class="js-title en">Admission to the 'Health Ambassador Course'</h4>
+            <!-- <p class="js-desc bn">তরুণ স্বাস্থ্যদূত হিসেবে আনুষ্ঠানিকভাবে শপথ গ্রহণ করুন।</p>
+            <p class="js-desc en">Formally take the oath as an officially recognized Young Health Ambassador.</p> -->
           </div>
         </div>
       </div>
@@ -2742,15 +2719,14 @@ footer::after{
       <div class="journey-step journey-step--final fade-up" style="--step-color:#1CABE2;--step-bg:#E8F6FC;">
         <div class="js-connector js-connector--none"></div>
         <div class="js-bubble js-bubble--final">
-          <span class="js-num">9</span>
           <span class="js-icon">🎖️</span>
         </div>
         <div class="js-card js-card--final">
           <div class="js-card-inner">
-            <h4 class="js-title bn">চূড়ান্ত সার্টিফিকেট গ্রহণ</h4>
-            <h4 class="js-title en">Receive Final Certificate</h4>
-            <p class="js-desc bn">চূড়ান্ত সার্টিফিকেট গ্রহণ করুন। <span class="js-validity bn">কোর্সের মেয়াদ: ২ বছর</span></p>
-            <p class="js-desc en">Receive your final certificate as a certified ambassador. <span class="js-validity en">Course validity: 2 years</span></p>
+            <h4 class="js-title bn">চূড়ান্ত সার্টিফিকেট (কোর্সের মেয়াদ—২ বছর)</h4>
+            <h4 class="js-title en">Final Certificate (Course Duration—2 Years)</h4>
+            <!-- <p class="js-desc bn">চূড়ান্ত সার্টিফিকেট গ্রহণ করুন। <span class="js-validity bn">কোর্সের মেয়াদ: ২ বছর</span></p>
+            <p class="js-desc en">Receive your final certificate as a certified ambassador. <span class="js-validity en">Course validity: 2 years</span></p> -->
           </div>
         </div>
       </div>
@@ -2764,22 +2740,22 @@ footer::after{
 ════════════════════════════════════════════ -->
 <section class="section cta-section" id="join">
   <div class="section-inner cta-inner">
-    <div class="section-label bn">যোগ দিন</div>
-    <div class="section-label en">Join Us</div>
-    <h2 class="section-title bn">আপনিও হন একজন তরুণ স্বাস্থ্যদূত</h2>
-    <h2 class="section-title en">Become a Young Health Ambassador Today</h2>
-    <p class="section-desc bn">১০ থেকে ২৪ বছর বয়সী যেকোনো তরুণ এই কর্মসূচিতে যোগ দিতে পারবেন। নিবন্ধন সম্পূর্ণ বিনামূল্যে।</p>
-    <p class="section-desc en">Any young person aged 10–24 can join this program. Registration is completely free and open to all.</p>
+    <!-- <div class="section-label bn">যোগ দিন</div>
+    <div class="section-label en">Join Us</div> -->
+    <h2 class="section-title bn">একজন তরুণ স্বাস্থ্যদূত হোন</h2>
+    <h2 class="section-title en">Become a Young Health Ambassador</h2>
+    <!-- <p class="section-desc bn">১০ থেকে ২৪ বছর বয়সী যেকোনো তরুণ এই কর্মসূচিতে যোগ দিতে পারবেন। নিবন্ধন সম্পূর্ণ বিনামূল্যে।</p>
+    <p class="section-desc en">Any young person aged 10–24 can join this program. Registration is completely free and open to all.</p> -->
 
-    <div class="cta-badges">
+    <!-- <div class="cta-badges">
       <div class="cta-badge">✅ <span class="bn">বিনামূল্যে নিবন্ধন</span><span class="en">Free Registration</span></div>
       <div class="cta-badge">📜 <span class="bn">সার্টিফিকেট প্রদান</span><span class="en">Certificate Awarded</span></div>
       <div class="cta-badge">🏅 <span class="bn">ব্যাজ ও স্বীকৃতি</span><span class="en">Badges & Recognition</span></div>
       <div class="cta-badge">🌐 <span class="bn">অনলাইন প্রশিক্ষণ</span><span class="en">Online Training</span></div>
-    </div>
+    </div> -->
 
     <a href="#" class="btn-white" onclick="openAuth('register');return false;">
-      🚀 <span class="bn">এখনই নিবন্ধন করুন</span><span class="en">Register Now</span>
+      🚀 <span class="bn">নিবন্ধন</span><span class="en">Register</span>
     </a>
     <a href="#" class="btn-dark" onclick="openAuth('login');return false;">
       🚀 <span class="bn">লগইন করুন</span><span class="en">Login Now</span>
