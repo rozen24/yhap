@@ -1229,6 +1229,44 @@ button { cursor: pointer; border: none; background: none; }
   .kpi-grid { grid-template-columns: 1fr; }
 }
 
+/* ═══════════════════════════════════════════════
+   HELPLINES
+═══════════════════════════════════════════════ */
+.helpline-section { background: var(--bg); }
+.helpline-section .section-inner { text-align: center; }
+.helpline-section .section-label { justify-content: center; }
+.helpline-section .section-desc { margin: 0 auto; }
+.helpline-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 20px; margin-top: 44px; text-align: center;
+}
+.helpline-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 26px 20px; display: flex; flex-direction: column; align-items: center;
+  transition: transform .25s, box-shadow .25s, border-color .25s; color: inherit;
+}
+.helpline-card:hover {
+  transform: translateY(-5px); box-shadow: var(--shadow-lg);
+  border-color: var(--unicef-blue);
+}
+.helpline-logo {
+  height: 132px; width: 100%; display: flex; align-items: center;
+  justify-content: center; margin-bottom: 18px;
+}
+.helpline-logo img { max-height: 132px; max-width: 88%; object-fit: contain; }
+.helpline-name { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.helpline-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.4; margin-bottom: 16px; min-height: 34px; }
+.helpline-call {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--unicef-blue); color: #fff;
+  padding: 10px 24px; border-radius: 999px; font-weight: 800; font-size: 15px;
+  letter-spacing: 0.3px; transition: background .2s, transform .2s; margin-top: auto;
+}
+.helpline-card:hover .helpline-call { background: var(--unicef-dark); }
+@media (max-width: 980px) { .helpline-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .helpline-grid { grid-template-columns: 1fr; max-width: 360px; margin-left: auto; margin-right: auto; } }
+
 
 /* ═══════════════════════════════════════════════
    FOOTER
@@ -1698,161 +1736,19 @@ footer::after{
       <li class="nav-item">
         <a class="nav-link" href="#">
           <span class="bn">যুব স্বাস্থ্য দূত কর্মসূচি</span><span class="en">Youth Health Ambassador Program</span>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
         </a>
-        <div class="mega-menu" style="min-width:580px">
-          <div class="mega-header bn">কর্মসূচি সম্পর্কে জানুন</div>
-          <div class="mega-header en">About the Program</div>
-          <div class="mega-grid">
-            <div class="mega-item">
-              <div class="mega-icon">🎯</div>
-              <div class="mega-text">
-                <h4 class="bn">লক্ষ্য ও উদ্দেশ্য</h4><h4 class="en">Goals & Objectives</h4>
-                <p class="bn">কর্মসূচির মূল লক্ষ্য</p><p class="en">Core aims of YHAP</p>
-              </div>
-            </div>
-            <div class="mega-item">
-              <div class="mega-icon">🏛️</div>
-              <div class="mega-text">
-                <h4 class="bn">অংশীদার সংস্থা</h4><h4 class="en">Partner Organizations</h4>
-                <p class="bn">MoHFW ও ইউনিসেফ</p><p class="en">MoHFW and UNICEF</p>
-              </div>
-            </div>
-            <div class="mega-item">
-              <div class="mega-icon">📋</div>
-              <div class="mega-text">
-                <h4 class="bn">কর্মসূচির ইতিহাস</h4><h4 class="en">Program History</h4>
-                <p class="bn">শুরু থেকে আজ পর্যন্ত</p><p class="en">From inception to today</p>
-              </div>
-            </div>
-            <div class="mega-item">
-              <div class="mega-icon">🌏</div>
-              <div class="mega-text">
-                <h4 class="bn">বৈশ্বিক প্রসঙ্গ</h4><h4 class="en">Global Context</h4>
-                <p class="bn">WHO ও UN সংজ্ঞা</p><p class="en">WHO and UN definitions</p>
-              </div>
-            </div>
-            <div class="mega-item">
-              <div class="mega-icon">📊</div>
-              <div class="mega-text">
-                <h4 class="bn">প্রভাব ও ফলাফল</h4><h4 class="en">Impact & Results</h4>
-                <p class="bn">কর্মসূচির সাফল্য</p><p class="en">Program achievements</p>
-              </div>
-            </div>
-            <div class="mega-item">
-              <div class="mega-icon">🤝</div>
-              <div class="mega-text">
-                <h4 class="bn">যোগাযোগ করুন</h4><h4 class="en">Contact Us</h4>
-                <p class="bn">আমাদের সাথে থাকুন</p><p class="en">Get in touch with us</p>
-              </div>
-            </div>
-          </div>
-          <div class="mega-featured" style="margin-top:16px; padding:14px; border-radius:10px">
-            <div style="font-size:48px">🌟</div>
-            <div>
-              <h4 class="bn">৫০,০০০+ তরুণ স্বাস্থ্যদূত লক্ষ্যমাত্রা</h4>
-              <h4 class="en">Target: 50,000+ Young Health Ambassadors</h4>
-              <p class="bn">২০২৬ সালের মধ্যে সারা বাংলাদেশে</p>
-              <p class="en">Across all 64 districts of Bangladesh by 2026</p>
-            </div>
-          </div>
-        </div>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="#">
           <span class="bn">মৌলিক উপাদানসমূহ</span><span class="en">Core Pillars</span>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
         </a>
-        <div class="mega-menu">
-          <div class="mega-header bn">মূল উপাদান সমূহ</div>
-          <div class="mega-header en">Core Elements</div>
-          <div class="mega-grid">
-            <div class="mega-item">
-              <div class="mega-icon">📚</div>
-              <div class="mega-text">
-                <h4 class="bn">স্বাস্থ্য সাক্ষরতা</h4><h4 class="en">Health Literacy</h4>
-                <p class="bn">তথ্যভিত্তিক স্বাস্থ্যজ্ঞান</p><p class="en">Evidence-based health knowledge</p>
-              </div>
-            </div>
-            <div class="mega-item">
-              <div class="mega-icon">💬</div>
-              <div class="mega-text">
-                <h4 class="bn">পিয়ার শিক্ষা</h4><h4 class="en">Peer Education</h4>
-                <p class="bn">সমসাময়িক প্রভাব</p><p class="en">Peer-to-peer influence</p>
-              </div>
-            </div>
-            <div class="mega-item">
-              <div class="mega-icon">💪</div>
-              <div class="mega-text">
-                <h4 class="bn">ক্ষমতায়ন</h4><h4 class="en">Empowerment</h4>
-                <p class="bn">দক্ষতা ও আত্মবিশ্বাস</p><p class="en">Skills and confidence</p>
-              </div>
-            </div>
-            <div class="mega-item">
-              <div class="mega-icon">🏆</div>
-              <div class="mega-text">
-                <h4 class="bn">নেতৃত্ব</h4><h4 class="en">Leadership</h4>
-                <p class="bn">নেতৃত্বের গুণাবলি</p><p class="en">Leadership qualities</p>
-              </div>
-            </div>
-            <div class="mega-item">
-              <div class="mega-icon">📢</div>
-              <div class="mega-text">
-                <h4 class="bn">এডভোকেসি</h4><h4 class="en">Advocacy</h4>
-                <p class="bn">নীতি পরিবর্তনে ভূমিকা</p><p class="en">Policy change role</p>
-              </div>
-            </div>
-            <div class="mega-item">
-              <div class="mega-icon">🎓</div>
-              <div class="mega-text">
-                <h4 class="bn">প্রশিক্ষণ</h4><h4 class="en">Training</h4>
-                <p class="bn">কাঠামোবদ্ধ পাঠক্রম</p><p class="en">Structured curriculum</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="#">
           <span class="bn">ভূমিকা</span><span class="en">Role</span>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5H7z"/></svg>
         </a>
-        <div class="mega-menu" style="min-width:500px">
-          <div class="mega-header bn">স্বাস্থ্যদূতের দায়িত্ব</div>
-          <div class="mega-header en">Ambassador Responsibilities</div>
-          <div class="mega-grid" style="grid-template-columns:1fr 1fr">
-            <div class="mega-item">
-              <div class="mega-icon">🩺</div>
-              <div class="mega-text">
-                <h4 class="bn">স্বাস্থ্য প্রচার</h4><h4 class="en">Health Promotion</h4>
-                <p class="bn">সমাজে সচেতনতা তৈরি</p><p class="en">Awareness in community</p>
-              </div>
-            </div>
-            <div class="mega-item">
-              <div class="mega-icon">🧑‍🏫</div>
-              <div class="mega-text">
-                <h4 class="bn">মেন্টরশিপ</h4><h4 class="en">Mentorship</h4>
-                <p class="bn">জুনিয়রদের গাইড করা</p><p class="en">Guiding junior peers</p>
-              </div>
-            </div>
-            <div class="mega-item">
-              <div class="mega-icon">📝</div>
-              <div class="mega-text">
-                <h4 class="bn">রিপোর্টিং</h4><h4 class="en">Reporting</h4>
-                <p class="bn">কার্যক্রম নথিভুক্ত করা</p><p class="en">Documenting activities</p>
-              </div>
-            </div>
-            <div class="mega-item">
-              <div class="mega-icon">🌱</div>
-              <div class="mega-text">
-                <h4 class="bn">সম্প্রদায় উন্নয়ন</h4><h4 class="en">Community Development</h4>
-                <p class="bn">সুস্থ সমাজ গঠন</p><p class="en">Building healthy communities</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </li>
 
       <li class="nav-item">
@@ -2908,6 +2804,54 @@ footer::after{
       <span><b>Note:</b> <span class="bn">বয়সভিত্তিক তথ্য মোট উপকারভোগীর প্রতিনিধিত্ব করে।</span><span class="en">Age group data represents total beneficiaries by age.</span></span>
     </div>
 
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     HELPLINES
+════════════════════════════════════════════ -->
+<section class="section helpline-section" id="helplines">
+  <div class="section-inner">
+    <div class="section-label bn">জরুরি হেল্পলাইন</div>
+    <div class="section-label en">Helplines</div>
+    <h2 class="section-title">
+      <span class="bn">জরুরি স্বাস্থ্য ও সহায়তা হেল্পলাইন</span>
+      <span class="en">Emergency Health &amp; Support Helplines</span>
+    </h2>
+    <p class="section-desc">
+      <span class="bn">যেকোনো প্রয়োজনে সরকারের এই জাতীয় হেল্পলাইনগুলোতে ২৪ ঘণ্টা যোগাযোগ করুন।</span>
+      <span class="en">Reach these national government helplines anytime — available 24 hours a day.</span>
+    </p>
+
+    <div class="helpline-grid">
+      <a href="tel:16263" class="helpline-card">
+        <div class="helpline-logo"><img src="images/hl-16263.png" alt="স্বাস্থ্য বাতায়ন 16263" loading="lazy"></div>
+        <div class="helpline-name"><span class="bn">স্বাস্থ্য বাতায়ন</span><span class="en">Shasthyo Batayon</span></div>
+        <div class="helpline-desc"><span class="bn">ডাক্তারের সেবা, ২৪ ঘণ্টা</span><span class="en">Doctor's service, 24 hours</span></div>
+        <span class="helpline-call">📞 16263</span>
+      </a>
+
+      <a href="tel:16767" class="helpline-card">
+        <div class="helpline-logo"><img src="images/hl-16767.png" alt="সুখী পরিবার 16767" loading="lazy"></div>
+        <div class="helpline-name"><span class="bn">সুখী পরিবার</span><span class="en">Shukhi Poribar</span></div>
+        <div class="helpline-desc"><span class="bn">পরিবার পরিকল্পনা অধিদপ্তর</span><span class="en">Directorate of Family Planning</span></div>
+        <span class="helpline-call">📞 16767</span>
+      </a>
+
+      <a href="tel:1098" class="helpline-card">
+        <div class="helpline-logo"><img src="images/hl-1098.png" alt="শিশু হেল্পলাইন 1098" loading="lazy"></div>
+        <div class="helpline-name"><span class="bn">শিশু হেল্পলাইন</span><span class="en">Child Helpline</span></div>
+        <div class="helpline-desc"><span class="bn">শিশুর সহায়তায় ফোন</span><span class="en">Phone support for children</span></div>
+        <span class="helpline-call">📞 1098</span>
+      </a>
+
+      <a href="tel:109" class="helpline-card">
+        <div class="helpline-logo"><img src="images/hl-109.png" alt="নারী ও শিশু সহায়তা 109" loading="lazy"></div>
+        <div class="helpline-name"><span class="bn">নারী ও শিশু সহায়তা</span><span class="en">Women &amp; Children Support</span></div>
+        <div class="helpline-desc"><span class="bn">নির্যাতন প্রতিরোধে · টোল ফ্রি</span><span class="en">Against violence · Toll free</span></div>
+        <span class="helpline-call">📞 109</span>
+      </a>
+    </div>
   </div>
 </section>
 
