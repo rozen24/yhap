@@ -604,7 +604,7 @@ button { cursor: pointer; border: none; background: none; }
 .about-section .age-diagram { background: var(--bg-card); }
 
 .about-grid {
-  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px;
+  display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px;
   align-items: start; margin-bottom: 64px;
 }
 
@@ -639,8 +639,8 @@ button { cursor: pointer; border: none; background: none; }
 /* Age diagram */
 .about-visual { position: sticky; top: 96px; }
 .age-diagram {
-  background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: 20px; padding: 24px 20px 16px;
+  background: var(--bg-card);
+  border-radius: 20px; 
   box-shadow: var(--shadow);
 }
 .age-diagram-title {
@@ -773,7 +773,7 @@ button { cursor: pointer; border: none; background: none; }
 /* RESPONSIVE */
 @media (max-width: 1100px) {
   .def-cards { grid-template-columns: repeat(2, 1fr); }
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-grid { grid-template-columns: 1fr; gap: 10px; }
   .about-visual { position: static; }
 }
 @media (max-width: 600px) {
@@ -2107,153 +2107,24 @@ footer::after{
           <div class="age-diagram-title bn">কৈশোরের বিভিন্ন ধাপ</div>
           <div class="age-diagram-title en">Stages of Adolescence</div>
 
-          <div class="stages-svg-wrap">
-            <svg viewBox="0 0 560 340" xmlns="http://www.w3.org/2000/svg" class="stages-svg" role="img" aria-label="Stages of Adolescence diagram">
-              <defs>
-                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                  <polygon points="0 0, 10 3.5, 0 7" fill="#B0BEC5"/>
-                </marker>
-              </defs>
+          <!-- Right: stages of adolescence (infographic image) -->
+      <div class="about-visual fade-up">
+        <div class="age-diagram">
 
-              <!-- Outer orange ellipse (Adolescence 10–24) -->
-              <ellipse cx="268" cy="188" rx="252" ry="138" fill="none" stroke="#F57C00" stroke-width="2.5" stroke-dasharray="0"/>
-
-              <!-- Inner green ellipse (Early Adolescence zone) -->
-              <ellipse cx="210" cy="196" rx="168" ry="108" fill="none" stroke="#43A047" stroke-width="2" stroke-dasharray="0"/>
-
-              <!-- Arrow path -->
-              <path d="M 40 220 Q 180 160 340 190 Q 440 205 520 175"
-                    fill="none" stroke="#CFD8DC" stroke-width="22" stroke-linecap="round" marker-end="url(#arrowhead)"/>
-              <!-- Arrow shading overlay -->
-              <path d="M 40 220 Q 180 160 340 190 Q 440 205 520 175"
-                    fill="none" stroke="rgba(176,190,197,0.35)" stroke-width="30" stroke-linecap="round"/>
-
-              <!-- ── STAGE DOTS ── -->
-              <!-- Early Adolescence dot -->
-              <circle cx="118" cy="222" r="7" fill="#1565C0"/>
-              <!-- Middle Adolescence dot -->
-              <circle cx="248" cy="230" r="7" fill="#1565C0"/>
-              <!-- Late Adolescence dot -->
-              <circle cx="368" cy="210" r="7" fill="#1565C0"/>
-              <!-- Young Adulthood dot -->
-              <circle cx="472" cy="185" r="7" fill="#1565C0"/>
-
-              <!-- ── STAGE LABELS ── -->
-              <!-- Early Adolescence label (bottom) -->
-              <text x="118" y="252" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="700" fill="#1565C0">Early Adolescence</text>
-              <text x="118" y="266" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="#455A64">(10–14 years)</text>
-
-              <!-- Middle Adolescence label (bottom) -->
-              <text x="248" y="252" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="700" fill="#1565C0">Middle Adolescence</text>
-              <text x="248" y="266" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="#455A64">(15–17 years)</text>
-
-              <!-- Late Adolescence label (bottom) -->
-              <text x="372" y="232" text-anchor="start" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="700" fill="#1565C0">Late Adolescence</text>
-              <text x="372" y="246" text-anchor="start" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="#455A64">(18–19 years)</text>
-
-              <!-- Young Adulthood label (right) -->
-              <text x="488" y="190" text-anchor="start" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" font-weight="700" fill="#1565C0">Young Adulthood</text>
-              <text x="488" y="204" text-anchor="start" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="#455A64">(20–24 years)</text>
-
-              <!-- Early Adolescence inner label (top-left inside green) -->
-              <text x="148" y="102" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="800" fill="#1565C0">Early</text>
-              <text x="148" y="117" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="800" fill="#1565C0">Adolescence</text>
-              <text x="148" y="131" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="#455A64">(10–14 years)</text>
-
-              <!-- Adolescence outer label (top-center inside orange) -->
-              <text x="300" y="66" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="14" font-weight="800" fill="#1565C0">Adolescence</text>
-              <text x="300" y="82" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="11" fill="#455A64">(10–24 years)</text>
-
-              <!-- ── WALKING FIGURES ── -->
-
-              <!-- Group 1: small children (age ~10-14) at x≈65 -->
-              <g transform="translate(54,155)">
-                <!-- Child 1 (girl with red top) -->
-                <circle cx="8" cy="18" r="7" fill="#FFCCBC"/>
-                <rect x="3" y="25" width="10" height="16" rx="2" fill="#E53935"/>
-                <line x1="0" y1="30" x2="-6" y2="40" stroke="#795548" stroke-width="2" stroke-linecap="round"/>
-                <line x1="13" y1="30" x2="18" y2="40" stroke="#795548" stroke-width="2" stroke-linecap="round"/>
-                <line x1="5" y1="41" x2="2" y2="55" stroke="#5D4037" stroke-width="2.5" stroke-linecap="round"/>
-                <line x1="11" y1="41" x2="15" y2="55" stroke="#5D4037" stroke-width="2.5" stroke-linecap="round"/>
-                <!-- backpack -->
-                <rect x="-5" y="26" width="7" height="10" rx="2" fill="#5C6BC0"/>
-                <!-- Child 2 (boy) -->
-                <circle cx="26" cy="16" r="7" fill="#FFCCBC"/>
-                <rect x="21" y="23" width="10" height="17" rx="2" fill="#F5F5F5"/>
-                <line x1="18" y1="28" x2="12" y2="38" stroke="#795548" stroke-width="2" stroke-linecap="round"/>
-                <line x1="31" y1="28" x2="36" y2="38" stroke="#795548" stroke-width="2" stroke-linecap="round"/>
-                <line x1="23" y1="40" x2="20" y2="54" stroke="#5D4037" stroke-width="2.5" stroke-linecap="round"/>
-                <line x1="29" y1="40" x2="33" y2="54" stroke="#5D4037" stroke-width="2.5" stroke-linecap="round"/>
-                <rect x="31" y="24" width="7" height="10" rx="2" fill="#78909C"/>
-              </g>
-
-              <!-- Group 2: teens (age ~15-17) at x≈175 -->
-              <g transform="translate(168,138)">
-                <!-- Teen girl -->
-                <circle cx="8" cy="16" r="8" fill="#FFCCBC"/>
-                <rect x="2" y="24" width="12" height="20" rx="2" fill="#1E88E5"/>
-                <line x1="-1" y1="30" x2="-8" y2="44" stroke="#795548" stroke-width="2" stroke-linecap="round"/>
-                <line x1="14" y1="30" x2="20" y2="44" stroke="#795548" stroke-width="2" stroke-linecap="round"/>
-                <line x1="4" y1="44" x2="1" y2="60" stroke="#5D4037" stroke-width="2.5" stroke-linecap="round"/>
-                <line x1="10" y1="44" x2="14" y2="60" stroke="#5D4037" stroke-width="2.5" stroke-linecap="round"/>
-                <rect x="-7" y="24" width="8" height="13" rx="2" fill="#7CB342"/>
-                <!-- Teen boy -->
-                <circle cx="28" cy="14" r="8" fill="#FFCCBC"/>
-                <rect x="22" y="22" width="12" height="21" rx="2" fill="#E65100"/>
-                <line x1="19" y1="28" x2="12" y2="42" stroke="#795548" stroke-width="2" stroke-linecap="round"/>
-                <line x1="34" y1="28" x2="40" y2="42" stroke="#795548" stroke-width="2" stroke-linecap="round"/>
-                <line x1="24" y1="43" x2="21" y2="60" stroke="#5D4037" stroke-width="2.5" stroke-linecap="round"/>
-                <line x1="30" y1="43" x2="34" y2="60" stroke="#5D4037" stroke-width="2.5" stroke-linecap="round"/>
-                <rect x="34" y="22" width="8" height="13" rx="2" fill="#78909C"/>
-              </g>
-
-              <!-- Group 3: young adults (age ~20-24) at x≈395 -->
-              <g transform="translate(392,118)">
-                <!-- Young woman -->
-                <circle cx="8" cy="14" r="9" fill="#FFCCBC"/>
-                <rect x="2" y="23" width="13" height="23" rx="2" fill="#7CB342"/>
-                <line x1="-1" y1="30" x2="-8" y2="46" stroke="#795548" stroke-width="2" stroke-linecap="round"/>
-                <line x1="15" y1="30" x2="22" y2="46" stroke="#795548" stroke-width="2" stroke-linecap="round"/>
-                <line x1="4" y1="46" x2="1" y2="64" stroke="#5D4037" stroke-width="3" stroke-linecap="round"/>
-                <line x1="11" y1="46" x2="15" y2="64" stroke="#5D4037" stroke-width="3" stroke-linecap="round"/>
-                <rect x="-8" y="22" width="9" height="15" rx="2" fill="#7CB342" fill-opacity="0.6"/>
-                <!-- Young man -->
-                <circle cx="30" cy="12" r="9" fill="#FFCCBC"/>
-                <rect x="24" y="21" width="13" height="24" rx="2" fill="#B0BEC5"/>
-                <line x1="21" y1="28" x2="14" y2="44" stroke="#795548" stroke-width="2" stroke-linecap="round"/>
-                <line x1="37" y1="28" x2="44" y2="44" stroke="#795548" stroke-width="2" stroke-linecap="round"/>
-                <line x1="26" y1="45" x2="23" y2="64" stroke="#5D4037" stroke-width="3" stroke-linecap="round"/>
-                <line x1="32" y1="45" x2="36" y2="64" stroke="#5D4037" stroke-width="3" stroke-linecap="round"/>
-                <rect x="37" y="21" width="9" height="15" rx="2" fill="#546E7A"/>
-              </g>
-
-              <!-- ── BANGLA OVERLAY (shown when lang=bn) ── -->
-              <g class="svg-bn-labels">
-                <rect x="70" y="246" width="100" height="14" rx="3" fill="white" fill-opacity="0.85"/>
-                <text x="120" y="257" text-anchor="middle" font-family="'Hind Siliguri',sans-serif" font-size="10" fill="#1565C0">প্রাথমিক কৈশোর (১০–১৪)</text>
-
-                <rect x="190" y="246" width="120" height="14" rx="3" fill="white" fill-opacity="0.85"/>
-                <text x="250" y="257" text-anchor="middle" font-family="'Hind Siliguri',sans-serif" font-size="10" fill="#1565C0">মধ্য কৈশোর (১৫–১৭)</text>
-
-                <rect x="300" y="228" width="110" height="14" rx="3" fill="white" fill-opacity="0.85"/>
-                <text x="355" y="239" text-anchor="middle" font-family="'Hind Siliguri',sans-serif" font-size="10" fill="#1565C0">শেষ কৈশোর (১৮–১৯)</text>
-
-                <rect x="430" y="180" width="110" height="14" rx="3" fill="white" fill-opacity="0.85"/>
-                <text x="485" y="191" text-anchor="middle" font-family="'Hind Siliguri',sans-serif" font-size="10" fill="#1565C0">যৌবনকাল (২০–২৪)</text>
-
-                <rect x="88" y="93" width="125" height="40" rx="4" fill="white" fill-opacity="0.85"/>
-                <text x="150" y="107" text-anchor="middle" font-family="'Hind Siliguri',sans-serif" font-size="11" font-weight="700" fill="#1565C0">প্রাথমিক কৈশোর</text>
-                <text x="150" y="121" text-anchor="middle" font-family="'Hind Siliguri',sans-serif" font-size="10" fill="#455A64">(১০–১৪ বছর)</text>
-
-                <rect x="188" y="53" width="126" height="30" rx="4" fill="white" fill-opacity="0.85"/>
-                <text x="252" y="68" text-anchor="middle" font-family="'Hind Siliguri',sans-serif" font-size="12" font-weight="800" fill="#1565C0">কৈশোরকাল</text>
-                <text x="252" y="81" text-anchor="middle" font-family="'Hind Siliguri',sans-serif" font-size="10" fill="#455A64">(১০–২৪ বছর)</text>
-              </g>
-            </svg>
+          <div class="stages-img-wrap">
+            <img src="images/stages-bn.png" class="stages-img bn-block"
+                 alt="তরুণ (১০–২৪ বছর) — কৈশোর থেকে যৌবনের বিভিন্ন ধাপ" loading="lazy" decoding="async">
+            <img src="images/stages-en.png" class="stages-img en-block"
+                 alt="Young (10–24 years) — Stages of Adolescence" loading="lazy" decoding="async">
           </div>
 
           <div class="age-diagram-note bn">কৈশোর থেকে যৌবনের পথে — বয়সের বিভিন্ন ধাপ</div>
           <div class="age-diagram-note en">Journey from adolescence to young adulthood — age stages</div>
+        </div>
+      </div>
+
+          <!-- <div class="age-diagram-note bn">কৈশোর থেকে যৌবনের পথে — বয়সের বিভিন্ন ধাপ</div>
+          <div class="age-diagram-note en">Journey from adolescence to young adulthood — age stages</div> -->
         </div>
       </div>
     </div>
