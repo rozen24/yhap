@@ -1067,7 +1067,7 @@ button { cursor: pointer; border: none; background: none; }
 /* ═══════════════════════════════════════════════
    NEWS / ANNOUNCEMENTS
 ═══════════════════════════════════════════════ */
-.news-grid {
+/* .news-grid {
   display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; margin-top: 48px;
 }
 
@@ -1095,7 +1095,139 @@ button { cursor: pointer; border: none; background: none; }
 .news-title { font-size: 16px; font-weight: 700; color: var(--text-primary); line-height: 1.4; margin-bottom: 8px; }
 .news-card:not(:first-child) .news-title { font-size: 14px; }
 .news-meta { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
-.news-meta span::before { content: '·'; margin-right: 8px; }
+.news-meta span::before { content: '·'; margin-right: 8px; } */
+
+* ═══════════════════════════════════════════════
+   DASHBOARD
+═══════════════════════════════════════════════ */
+.dashboard-section { background: var(--bg-alt); }
+.dash-inner { max-width: 1400px; }
+
+.dash-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap; margin-bottom: 32px;
+}
+.dash-title {
+  font-size: clamp(22px, 3vw, 32px); font-weight: 800;
+  color: var(--unicef-dark); line-height: 1.15; margin: 6px 0 4px;
+}
+[data-theme="dark"] .dash-title { color: var(--unicef-blue); }
+.dash-sub { font-size: 14px; color: var(--text-secondary); }
+.dash-asof {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--unicef-dark); color: #fff;
+  padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 600;
+  white-space: nowrap;
+}
+
+/* KPI cards */
+.kpi-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 16px; margin-bottom: 24px;
+}
+.kpi-card {
+  border-radius: var(--radius); padding: 18px;
+  display: flex; align-items: center; gap: 14px;
+  border: 1px solid var(--border); background: var(--bg-card);
+  box-shadow: var(--shadow);
+}
+.kpi-icon {
+  width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; font-size: 22px;
+}
+.kpi-label {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.4px; color: var(--text-muted); line-height: 1.25;
+}
+.kpi-value { font-size: 22px; font-weight: 800; line-height: 1.1; margin-top: 3px; }
+.kpi-sub { font-size: 12px; font-weight: 600; color: var(--text-muted); }
+/* KPI accents */
+.kpi-blue   { background: rgba(28,171,226,0.08); }
+.kpi-blue   .kpi-icon { background: rgba(28,171,226,0.15); }
+.kpi-blue   .kpi-value { color: var(--unicef-dark); }
+.kpi-green  { background: rgba(128,189,65,0.10); }
+.kpi-green  .kpi-icon { background: rgba(128,189,65,0.18); }
+.kpi-green  .kpi-value { color: #5a9215; }
+.kpi-pink   { background: rgba(233,64,122,0.08); }
+.kpi-pink   .kpi-icon { background: rgba(233,64,122,0.15); }
+.kpi-pink   .kpi-value { color: #d6336c; }
+.kpi-purple { background: rgba(124,77,255,0.08); }
+.kpi-purple .kpi-icon { background: rgba(124,77,255,0.15); }
+.kpi-purple .kpi-value { color: #6741d9; }
+.kpi-amber  { background: rgba(255,194,14,0.12); }
+.kpi-amber  .kpi-icon { background: rgba(255,194,14,0.22); }
+.kpi-amber  .kpi-value { color: #b8860b; font-size: 18px; }
+[data-theme="dark"] .kpi-blue .kpi-value   { color: var(--unicef-cyan); }
+[data-theme="dark"] .kpi-green .kpi-value  { color: #a7d96a; }
+[data-theme="dark"] .kpi-pink .kpi-value   { color: #ff7aa8; }
+[data-theme="dark"] .kpi-purple .kpi-value { color: #b29dff; }
+[data-theme="dark"] .kpi-amber .kpi-value  { color: var(--unicef-yellow); }
+
+/* Chart cards */
+.dash-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
+.dash-grid-2 { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 16px; align-items: start; }
+.dash-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px;
+}
+.dash-card-title {
+  font-size: 14px; font-weight: 700; color: var(--unicef-dark);
+  margin-bottom: 16px; letter-spacing: 0.2px;
+}
+[data-theme="dark"] .dash-card-title { color: var(--unicef-blue); }
+.chart-box { position: relative; width: 100%; height: 300px; }
+.chart-box-tall { height: 340px; }
+.donut-center {
+  position: absolute; top: 44%; left: 50%; transform: translate(-50%,-50%);
+  text-align: center; pointer-events: none;
+}
+.donut-center small { display: block; font-size: 11px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; }
+.donut-center b { font-size: 20px; color: var(--text-primary); font-weight: 800; }
+.dash-ratio {
+  margin-top: 14px; text-align: center; font-weight: 700; font-size: 14px;
+  color: #d6336c; background: rgba(233,64,122,0.08);
+  border: 1px solid rgba(233,64,122,0.25); border-radius: 10px; padding: 10px;
+}
+
+/* Performance highlights */
+.hl-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.hl-card { border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+.hl-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.hl-badge { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.hl-up   { background: rgba(128,189,65,0.15); color: #5a9215; }
+.hl-down { background: rgba(226,35,26,0.12); color: var(--unicef-red); }
+.hl-cal  { background: rgba(28,171,226,0.15); color: var(--unicef-dark); }
+.hl-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; color: var(--text-secondary); }
+.hl-row { display: flex; justify-content: space-between; font-size: 13px; padding: 4px 0; color: var(--text-secondary); }
+.hl-row b { color: var(--text-primary); font-weight: 700; }
+.hl-peak { text-align: center; }
+.hl-peak .pk-month { font-size: 22px; font-weight: 800; color: var(--unicef-dark); }
+[data-theme="dark"] .hl-peak .pk-month { color: var(--unicef-blue); }
+.hl-peak .pk-num { font-size: 26px; font-weight: 800; color: var(--unicef-blue); }
+.hl-peak .pk-cap { font-size: 12px; color: var(--text-muted); }
+
+.dash-foot {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  margin-top: 8px; padding: 14px 18px; border: 1px solid var(--border);
+  border-radius: 12px; background: var(--bg-card); font-size: 12.5px; color: var(--text-muted);
+}
+.dash-foot .di { width: 22px; height: 22px; border-radius: 50%; background: var(--unicef-blue); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+.dash-foot .sep { width: 1px; height: 18px; background: var(--border); }
+
+@media (max-width: 1100px) {
+  .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+  .dash-grid-3 { grid-template-columns: 1fr; }
+  .dash-grid-2 { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .dash-asof { font-size: 12px; }
+  .chart-box { height: 260px; }
+}
+@media (max-width: 420px) {
+  .kpi-grid { grid-template-columns: 1fr; }
+}
+
 
 /* ═══════════════════════════════════════════════
    FOOTER
@@ -2656,48 +2788,150 @@ footer::after{
 </section>
 
 <!-- ════════════════════════════════════════════
-     NEWS & ANNOUNCEMENTS
+     DASHBOARD
 ════════════════════════════════════════════ -->
-<section class="section news-section" id="news">
-  <div class="section-inner">
-    <!-- <div class="section-label bn">সংবাদ ও ঘোষণা</div>
-    <div class="section-label en">News & Announcements</div> -->
-    <h2 class="section-title">
-      <span class="bn">ড্যাশবোর্ড</span>
-      <span class="en">dashboard</span>
-    </h2>
-    <div class="news-grid">
-      <div class="news-card fade-up">
-        <div class="news-thumb" style="height:220px;font-size:72px">🏥</div>
-        <div class="news-body">
-          <span class="news-tag bn">ঘোষণা</span><span class="news-tag en">Announcement</span>
-          <h3 class="news-title bn">YHAP কর্মসূচির আনুষ্ঠানিক উদ্বোধন — ২০২৬ সালের এপ্রিলে শুরু</h3>
-          <h3 class="news-title en">YHAP Program Officially Launched — Starting April 2026</h3>
-          <div class="news-meta">
-            <span>UNICEF Bangladesh</span>
-            <span>এপ্রিল ২০২৬ / April 2026</span>
-          </div>
+<section class="section dashboard-section" id="dashboard">
+  <div class="section-inner dash-inner">
+
+    <!-- Header -->
+    <div class="dash-header">
+      <div>
+        <div class="section-label bn">ড্যাশবোর্ড</div>
+        <div class="section-label en">Dashboard</div>
+        <h2 class="dash-title">
+          <span class="bn">YHAP ড্যাশবোর্ড – বাংলাদেশ</span>
+          <span class="en">YHAP Dashboard – Bangladesh</span>
+        </h2>
+        <p class="dash-sub">
+          <span class="bn">তরুণ স্বাস্থ্যদূত কর্মসূচির সারসংক্ষেপ</span>
+          <span class="en">Young Health Ambassador Program Overview</span>
+        </p>
+      </div>
+      <div class="dash-asof">📅
+        <span class="bn">তথ্য হালনাগাদ: ডিসেম্বর ২০২৪</span>
+        <span class="en">Data as of: December 2024</span>
+      </div>
+    </div>
+
+    <!-- KPI cards -->
+    <div class="kpi-grid">
+      <div class="kpi-card kpi-blue">
+        <div class="kpi-icon">👥</div>
+        <div>
+          <div class="kpi-label bn">মোট তরুণ স্বাস্থ্যদূত</div><div class="kpi-label en">Total Young Health Ambassadors</div>
+          <div class="kpi-value">195,083</div>
         </div>
       </div>
-      <div class="news-card fade-up">
-        <div class="news-thumb" style="height:140px;font-size:48px">🎓</div>
-        <div class="news-body">
-          <span class="news-tag bn">প্রশিক্ষণ</span><span class="news-tag en">Training</span>
-          <h3 class="news-title bn">প্রথম ব্যাচের প্রশিক্ষণ মডিউল উন্মুক্ত</h3>
-          <h3 class="news-title en">First Batch Training Modules Now Available</h3>
-          <div class="news-meta"><span>MoHFW</span><span>মার্চ ২০২৬</span></div>
+      <div class="kpi-card kpi-green">
+        <div class="kpi-icon">👨</div>
+        <div>
+          <div class="kpi-label bn">পুরুষ</div><div class="kpi-label en">Male</div>
+          <div class="kpi-value">1,538,865</div>
+          <div class="kpi-sub">(37.4%)</div>
         </div>
       </div>
-      <div class="news-card fade-up">
-        <div class="news-thumb" style="height:140px;font-size:48px">📊</div>
-        <div class="news-body">
-          <span class="news-tag bn">প্রতিবেদন</span><span class="news-tag en">Report</span>
-          <h3 class="news-title bn">বাংলাদেশের কিশোর স্বাস্থ্য সূচক প্রতিবেদন ২০২৫</h3>
-          <h3 class="news-title en">Bangladesh Adolescent Health Index Report 2025</h3>
-          <div class="news-meta"><span>WHO</span><span>ফেব্রুয়ারি ২০২৬</span></div>
+      <div class="kpi-card kpi-pink">
+        <div class="kpi-icon">👩</div>
+        <div>
+          <div class="kpi-label bn">নারী</div><div class="kpi-label en">Female</div>
+          <div class="kpi-value">2,579,173</div>
+          <div class="kpi-sub">(62.6%)</div>
+        </div>
+      </div>
+      <div class="kpi-card kpi-purple">
+        <div class="kpi-icon">🧑‍🤝‍🧑</div>
+        <div>
+          <div class="kpi-label bn">মোট তরুণ সম্পৃক্ত</div><div class="kpi-label en">Total Youth Reached</div>
+          <div class="kpi-value">4,118,038</div>
+        </div>
+      </div>
+      <div class="kpi-card kpi-amber">
+        <div class="kpi-icon">🏆</div>
+        <div>
+          <div class="kpi-label bn">শীর্ষ বিভাগ</div><div class="kpi-label en">Highest Performing Division</div>
+          <div class="kpi-value">Dhaka</div>
+          <div class="kpi-sub">54,800</div>
         </div>
       </div>
     </div>
+
+    <!-- Charts row 1 -->
+    <div class="dash-grid-3">
+      <div class="dash-card">
+        <div class="dash-card-title bn">১. বিভাগ অনুযায়ী তরুণ স্বাস্থ্যদূত</div>
+        <div class="dash-card-title en">1. Young Health Ambassadors by Division</div>
+        <div class="chart-box chart-box-tall"><canvas id="chDivision"></canvas></div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-title bn">২. লিঙ্গভিত্তিক উপকারভোগী</div>
+        <div class="dash-card-title en">2. Beneficiaries by Gender</div>
+        <div class="chart-box chart-box-tall">
+          <canvas id="chGender"></canvas>
+          <div class="donut-center">
+            <small>TOTAL</small><b>4,118,038</b>
+          </div>
+        </div>
+        <div class="dash-ratio">
+          <span class="bn">নারী-পুরুষ অনুপাত: ১.৬৮ : ১</span>
+          <span class="en">Female to Male Ratio: 1.68 : 1</span>
+        </div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-title bn">৩. বয়সভিত্তিক উপকারভোগী</div>
+        <div class="dash-card-title en">3. Beneficiaries by Age Group</div>
+        <div class="chart-box chart-box-tall">
+          <canvas id="chAge"></canvas>
+          <div class="donut-center">
+            <small>TOTAL</small><b>49,304</b>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts row 2 -->
+    <div class="dash-grid-2">
+      <div class="dash-card">
+        <div class="dash-card-title bn">৪. মাসিক YHAP নিবন্ধন / সম্পৃক্ততার ধারা</div>
+        <div class="dash-card-title en">4. Monthly YHAP Enrollment / Engagement Trend</div>
+        <div class="chart-box chart-box-tall"><canvas id="chTrend"></canvas></div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-title bn">৫. পারফরম্যান্স হাইলাইটস</div>
+        <div class="dash-card-title en">5. Performance Highlights</div>
+        <div class="hl-grid">
+          <div class="hl-card">
+            <div class="hl-head"><span class="hl-badge hl-up">📈</span>
+              <span class="hl-title bn">শীর্ষ ৩ বিভাগ</span><span class="hl-title en">Top 3 Divisions</span></div>
+            <div class="hl-row"><span>1. Dhaka</span><b>54,800</b></div>
+            <div class="hl-row"><span>2. Khulna</span><b>42,706</b></div>
+            <div class="hl-row"><span>3. Barisal</span><b>25,938</b></div>
+          </div>
+          <div class="hl-card">
+            <div class="hl-head"><span class="hl-badge hl-down">📉</span>
+              <span class="hl-title bn">সর্বনিম্ন কভারেজ</span><span class="hl-title en">Lowest Coverage</span></div>
+            <div class="hl-row"><span>1. Mymensingh</span><b>8,673</b></div>
+            <div class="hl-row"><span>2. Sylhet</span><b>11,425</b></div>
+            <div class="hl-row"><span>3. Chittagong</span><b>12,678</b></div>
+          </div>
+          <div class="hl-card hl-peak">
+            <div class="hl-head" style="justify-content:center"><span class="hl-badge hl-cal">📅</span>
+              <span class="hl-title bn">সর্বোচ্চ মাস</span><span class="hl-title en">Peak Month</span></div>
+            <div class="pk-month">April</div>
+            <div class="pk-num">17,289</div>
+            <div class="pk-cap bn">নিবন্ধন</div><div class="pk-cap en">Enrollments</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer note -->
+    <div class="dash-foot">
+      <span class="di">i</span>
+      <span><b>Source:</b> YHAP Program Data</span>
+      <span class="sep"></span>
+      <span><b>Note:</b> <span class="bn">বয়সভিত্তিক তথ্য মোট উপকারভোগীর প্রতিনিধিত্ব করে।</span><span class="en">Age group data represents total beneficiaries by age.</span></span>
+    </div>
+
   </div>
 </section>
 
@@ -3121,6 +3355,102 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAuth();
 
 
 setLang('bn'); // Default Bangla
+</script>
+
+<!-- Dashboard charts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
+<script>
+(function () {
+  if (typeof Chart === 'undefined') return;
+  if (window.ChartDataLabels) Chart.register(window.ChartDataLabels);
+  Chart.defaults.font.family = "'Plus Jakarta Sans','Hind Siliguri',sans-serif";
+  Chart.defaults.plugins.datalabels.display = false; // opt-in per chart
+
+  const fmt = n => Number(n).toLocaleString('en-US');
+  const C = { blue:'#1CABE2', dark:'#00689D', green:'#80BD41', pink:'#EC407A', amber:'#F5A623' };
+  const isDark = () => document.documentElement.getAttribute('data-theme') === 'dark';
+  const tcol = () => isDark() ? '#93C5DA' : '#3D5A6C';
+  const gcol = () => isDark() ? 'rgba(255,255,255,0.08)' : 'rgba(13,27,42,0.08)';
+  const cardBg = () => getComputedStyle(document.documentElement).getPropertyValue('--bg-card').trim() || '#fff';
+  const charts = [];
+
+  // 1) Division — horizontal bar
+  charts.push(new Chart(document.getElementById('chDivision'), {
+    type: 'bar',
+    data: { labels: ['Dhaka','Khulna','Barisal','Rangpur','Rajshahi','Chittagong','Sylhet','Mymensingh'],
+      datasets: [{ data:[54800,42706,25938,22573,16290,12678,11425,8673],
+        backgroundColor: C.blue, borderRadius: 4, barThickness: 15 }] },
+    options: { indexAxis:'y', responsive:true, maintainAspectRatio:false,
+      layout:{ padding:{ right:30 } },
+      plugins:{ legend:{display:false},
+        tooltip:{ callbacks:{ label:c=>fmt(c.parsed.x) } },
+        datalabels:{ display:true, anchor:'end', align:'end', clamp:true,
+          color:tcol(), font:{weight:700,size:11}, formatter:fmt } },
+      scales:{ x:{ suggestedMax:62000, grid:{color:gcol()},
+          ticks:{ color:tcol(), callback:v=> v>=1000?(v/1000)+'K':v },
+          title:{ display:true, text:'Number of Young Health Ambassadors', color:tcol(), font:{size:11} } },
+        y:{ grid:{display:false}, ticks:{ color:tcol(), font:{weight:600} } } } }
+  }));
+
+  // 2) Gender — doughnut
+  charts.push(new Chart(document.getElementById('chGender'), {
+    type:'doughnut',
+    data:{ labels:['Male: 1,538,865 (37.4%)','Female: 2,579,173 (62.6%)'],
+      datasets:[{ data:[1538865,2579173], backgroundColor:[C.blue,C.pink], borderColor:cardBg(), borderWidth:3 }] },
+    options:{ responsive:true, maintainAspectRatio:false, cutout:'66%',
+      plugins:{ legend:{ position:'bottom', labels:{ color:tcol(), boxWidth:12, padding:12, font:{size:11} } },
+        tooltip:{ callbacks:{ label:c=>fmt(c.parsed) } },
+        datalabels:{ display:true, color:'#fff', font:{weight:700,size:12},
+          formatter:v=> (v/4118038*100).toFixed(1)+'%' } } }
+  }));
+
+  // 3) Age — doughnut
+  charts.push(new Chart(document.getElementById('chAge'), {
+    type:'doughnut',
+    data:{ labels:['10–14 Years: 20,477 (41.5%)','15–19 Years: 16,389 (33.2%)','20–24 Years: 12,438 (25.2%)'],
+      datasets:[{ data:[20477,16389,12438], backgroundColor:[C.blue,C.green,C.amber], borderColor:cardBg(), borderWidth:3 }] },
+    options:{ responsive:true, maintainAspectRatio:false, cutout:'66%',
+      plugins:{ legend:{ position:'bottom', labels:{ color:tcol(), boxWidth:12, padding:10, font:{size:11} } },
+        tooltip:{ callbacks:{ label:c=>fmt(c.parsed) } },
+        datalabels:{ display:true, color:'#fff', font:{weight:700,size:12},
+          formatter:v=> (v/49304*100).toFixed(1)+'%' } } }
+  }));
+
+  // 4) Monthly trend — line
+  charts.push(new Chart(document.getElementById('chTrend'), {
+    type:'line',
+    data:{ labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+      datasets:[{ data:[2738,6729,1028,17289,12736,1058,889,9092,13765,12000,12233,1820],
+        borderColor:C.blue, backgroundColor:'rgba(28,171,226,0.12)', fill:true,
+        tension:0.35, borderWidth:2.5, pointBackgroundColor:C.blue, pointRadius:4, pointHoverRadius:6 }] },
+    options:{ responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false},
+        tooltip:{ callbacks:{ label:c=>fmt(c.parsed.y) } },
+        datalabels:{ display:'auto', anchor:'end', align:'top', offset:2,
+          color:tcol(), font:{weight:700,size:10}, formatter:fmt } },
+      scales:{ x:{ grid:{display:false}, ticks:{color:tcol()}, title:{display:true,text:'Month',color:tcol(),font:{size:11}} },
+        y:{ beginAtZero:true, suggestedMax:20000, grid:{color:gcol()},
+          ticks:{ color:tcol(), callback:v=> v>=1000?(v/1000)+'K':v },
+          title:{display:true,text:'Number Enrolled / Engaged',color:tcol(),font:{size:11}} } } }
+  }));
+
+  window.themeDashboardCharts = function () {
+    const tc = tcol(), gc = gcol(), cb = cardBg();
+    charts.forEach(ch => {
+      if (ch.options.scales) Object.values(ch.options.scales).forEach(s => {
+        if (s.ticks) s.ticks.color = tc;
+        if (s.title) s.title.color = tc;
+        if (s.grid && s.grid.display !== false) s.grid.color = gc;
+      });
+      const lg = ch.options.plugins.legend;
+      if (lg && lg.labels) lg.labels.color = tc;
+      if (ch.config.type === 'bar' || ch.config.type === 'line') ch.options.plugins.datalabels.color = tc;
+      if (ch.config.type === 'doughnut') ch.data.datasets[0].borderColor = cb;
+      ch.update();
+    });
+  };
+})();
 </script>
 </body>
 </html>
