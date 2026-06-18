@@ -7026,6 +7026,10 @@ function renderLessonPage(modIdx, lesIdx) {
 if (modIdx === 0 && lesIdx === 1) {
     setTimeout(initializePopulationPyramid, 100);
 }
+if (modIdx === 0 && lesIdx === 4) {
+    setTimeout(initializeChildMarriageChart, 100);
+}
+
 
 
   const cacheKey = 'les:' + modIdx + ':' + lesIdx;
@@ -7478,13 +7482,13 @@ if (modIdx === 0 && lesIdx === 1) {
   
   // Initialize charts for specific lessons
   if (isModule1Lesson5) {
-    setTimeout(initializeChildMarriageChart, 100);
+  setTimeout(initializeChildMarriageChart, 100);
   }
-  if (isModule24Lesson2) {
-    updateCommConnections();
-    updateTypeConnectors();
+    if (isModule24Lesson2) {
+      updateCommConnections();
+      updateTypeConnectors();
+    }
   }
-}
 
 function buildGlobeSection() {
   return `
@@ -7499,7 +7503,7 @@ function buildGlobeSection() {
       <img src="globe.png" alt="" class="globe-svg" aria-hidden="true"/>
 
       <!-- 90% stat bubble -->
-      <div class="globe-stat">90%<span class="bn">উন্নয়নশীল দেশে</span><span class="en">in dev. countries</span></div>
+      <!--  <div class="globe-stat">90%<span class="bn">উন্নয়নশীল দেশে</span><span class="en">in dev. countries</span></div> -->
     </div>
 
     <!-- Text overlay -->
@@ -8522,6 +8526,15 @@ function buildModule1Lesson5Section() {
       background: linear-gradient(135deg, #FF6B9D 0%, #C06C84 100%);
       box-shadow: 0 8px 24px rgba(192, 108, 132, 0.3);
     }
+
+    .grid_child {
+      grid-template-columns: 1fr 2fr;  /* Default mobile */
+    }
+    @media  (max-width: 400px) {
+      .grid_child  {
+        grid-template-columns: 1fr; /* Large container layout */
+      }
+    }
     
     .lesson5-intro-icon {
       font-size: clamp(48px, 12vw, 72px);
@@ -8558,7 +8571,7 @@ function buildModule1Lesson5Section() {
     }
   </style>
   
-  <div style="display:grid; grid-template-columns: 1fr 2fr; align-items: center;">
+  <div style="display:grid; align-items: center;" class="grid_child">
     <!-- SECTION 1: Child Marriage Intro Box (Centered) -->
     <div class="lesson5-intro-box">
       <div class="lesson5-intro-icon" aria-hidden="true">👧👰</div>
@@ -18578,6 +18591,7 @@ Initial influenza infection shows symptoms similar to common cold: fever, sore t
 
 
 
+// FIG.4 Child marriage prevalence chart (Lesson 5)
 // FIG.4 Child marriage prevalence chart (Lesson 5)
 function initializeChildMarriageChart() {
   const cmCanvas = document.getElementById("cmFigure4Chart");
