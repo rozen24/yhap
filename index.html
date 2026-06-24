@@ -503,6 +503,7 @@ button { cursor: pointer; border: none; background: none; }
   animation: float 4s ease-in-out infinite;
   will-change: transform;
 }
+
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
 
 
@@ -512,7 +513,7 @@ button { cursor: pointer; border: none; background: none; }
 
 .hero-card-icon { font-size: 24px; margin-bottom: 8px; }
 .hero-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
-.hero-card p { font-size: 11px; opacity: 0.8; }
+.hero-card p { font-size: 11px; opacity: 0.8;  }
 
 .hero-photo img {
     position: relative;
@@ -1039,6 +1040,9 @@ button { cursor: pointer; border: none; background: none; }
 /* ═══════════════════════════════════════════════
    ELIGIBILITY CTA
 ═══════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════
+   ELIGIBILITY CTA
+═══════════════════════════════════════════════ */
 .cta-section {
   background: linear-gradient(135deg, var(--unicef-dark) 0%, var(--unicef-blue) 50%, #00C9B1 100%);
   position: relative; overflow: hidden;
@@ -1065,6 +1069,51 @@ button { cursor: pointer; border: none; background: none; }
   padding: 8px 16px; color: white; font-size: 13px; font-weight: 500;
 }
 
+/* ── Modern CTA (Become a Young Health Ambassador) ── */
+.cta-heading {
+  font-size: clamp(30px, 5.5vw, 56px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 28px rgba(0,0,0,0.18);
+}
+.cta-actions {
+  display: flex; gap: 16px; justify-content: center;
+  align-items: center; flex-wrap: wrap;
+}
+.cta-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 46px; border-radius: 999px;
+  font-size: 16px; font-weight: 700; letter-spacing: 0.2px;
+  transition: transform .25s cubic-bezier(.4,0,.2,1), box-shadow .25s ease, background .25s ease;
+  will-change: transform;
+}
+.cta-btn-primary {
+  background: #fff; color: var(--unicef-dark);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.22);
+}
+.cta-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 44px rgba(0,0,0,0.30);
+}
+.cta-btn-ghost {
+  background: rgba(255,255,255,0.10);
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.55);
+  backdrop-filter: blur(10px);
+}
+.cta-btn-ghost:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.22);
+  box-shadow: 0 16px 44px rgba(0,0,0,0.20);
+}
+@media (max-width: 480px) {
+  .cta-actions { flex-direction: column; }
+  .cta-btn { width: 100%; max-width: 320px; }
+}
+
 .btn-white {
   display: inline-flex; align-items: center; gap: 10px;
   padding: 15px 36px; border-radius: 30px; font-size: 16px; font-weight: 700;
@@ -1073,13 +1122,6 @@ button { cursor: pointer; border: none; background: none; }
 }
 .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(0,0,0,0.2); }
 
-.btn-dark {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 15px 36px; border-radius: 30px; font-size: 16px; font-weight: 700;
-  background: rgb(0, 0, 0); color: var(--unicef-light);
-  transition: all 0.25s; box-shadow: 0 4px 24px rgba(255, 255, 255, 0.15);
-}
-.btn-dark:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(255, 255, 255, 0.2); }
 
 /* ═══════════════════════════════════════════════
    NEWS / ANNOUNCEMENTS
@@ -1750,35 +1792,40 @@ footer::after{
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <span class="bn">যুব স্বাস্থ্য দূত কর্মসূচি</span><span class="en">Youth Health Ambassador Program</span>
+        <a class="nav-link" href="#about">
+          <span class="bn">পরিচিতি</span><span class="en">About</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <span class="bn">মৌলিক উপাদানসমূহ</span><span class="en">Core Pillars</span>
+        <a class="nav-link" href="#pillars">
+          <span class="bn">প্রধান উপাদান</span><span class="en">Core Pillars</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="#role-details">
           <span class="bn">ভূমিকা</span><span class="en">Role</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="#steps">
-          <span class="bn">যোগ্যতা ও পদক্ষেপ</span><span class="en">Qualifications and steps</span>
+          <span class="bn">যোগ্যতার মানদণ্ড</span><span class="en">Eligibility Criteria</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="#join">
-          <span class="bn">নিবন্ধন</span><span class="en">Registration</span>
+          <span class="bn">যোগ দিন</span><span class="en">Join Us</span>
         </a>
       </li>
-      
+
+      <li class="nav-item">
+        <a class="nav-link" href="#dashboard">
+          <span class="bn">ড্যাশবোর্ড</span><span class="en">Dashboard</span>
+        </a>
+      </li>
     </ul>
 
     <!-- Controls -->
@@ -2339,6 +2386,23 @@ footer::after{
       </div>
 
     </div><!-- /journey -->
+  </div>
+</section>
+
+<section class="section cta-section" id="join">
+  <div class="section-inner cta-inner">
+    <h2 class="cta-heading">
+      <span class="bn">একজন তরুণ স্বাস্থ্যদূত হোন</span>
+      <span class="en">Be a Young Health Ambassador</span>
+    </h2>
+    <div class="cta-actions">
+      <a href="#" class="cta-btn cta-btn-primary" onclick="openAuth('register');return false;">
+        🚀 <span class="bn">নিবন্ধন</span><span class="en">Register</span>
+      </a>
+      <a href="#" class="cta-btn cta-btn-ghost" onclick="openAuth('login');return false;">
+        🔑 <span class="bn">লগইন</span><span class="en">Login</span>
+      </a>
+    </div>
   </div>
 </section>
 
