@@ -70,7 +70,7 @@ body {
 }
 
 [data-lang="en"] .bn, [data-lang="bn"] .en { display: none !important; }
-[data-lang="en"] .en, [data-lang="bn"] .bn { display: inline !important; }
+/* [data-lang="en"] .en, [data-lang="bn"] .bn { display: inline !important; }  */
 .en-block, .bn-block { display: none; }
 [data-lang="en"] .en-block { display: block; }
 [data-lang="bn"] .bn-block { display: block; }
@@ -1704,6 +1704,11 @@ footer::after{
     border: 1px solid rgba(255,255,255,.1);
 }
 
+div.footer2 .partner-logo {
+  background: transparent;
+  box-shadow: none;
+}
+
 .partner-logo:hover{
     transform:translateY(-10px);
     box-shadow:
@@ -1921,12 +1926,12 @@ footer::after{
     <div class="hero-inner">
       <div class="hero-content">
         <h1 class="hero-title">
-          <span class="bn"><a href="https://tarun.en.softonic.com/android" target="_blank" rel="noopener">সুস্থ</a> <span class="highlight">ভবিষ্যৎ গড়তে</span> তরুণদের ক্ষমতায়ন</span>
-          <span class="en">Empowering<span class="highlight">Young People </span> to Build a Healthier Future</span>
+          <span class="bn"><a href="https://tarun.en.softonic.com/android" target="_blank" rel="noopener">তরুণ</a> <span class="highlight">স্বাস্থ্য দূত</span> কর্মসূচি</span>
+          <span class="en">Young <span class="highlight">Health Ambassador</span> Program</span>
         </h1>
         <p class="hero-desc">
-          <span class="bn">ইয়াং হেলথ অ্যাম্বাসেডর প্রোগ্রাম (YHAP) হলো স্বাস্থ্য ও পরিবার কল্যাণ মন্ত্রণালয় এবং ইউনিসেফের যৌথ উদ্যোগ। এই কর্মসূচি তরুণদের স্বাস্থ্যদূত হিসেবে গড়ে তোলে।</span>
-          <span class="en">The Young Health Ambassador Program (YHAP) is a joint initiative of MoHFW and UNICEF, building a nationwide network of trained youth health ambassadors aged 10–24.</span>
+          <span class="bn">সুস্থ ভবিষ্যৎ গড়তে তরুণদের ক্ষমতায়ন</span>
+          <span class="en">Empowering Young People to Build a Healthier Future.</span>
         </p>
       </div>
       <div class="hero-visual">
@@ -2150,7 +2155,7 @@ footer::after{
 
       <div class="role-card fade-up" style="--rc-accent:#1CABE2;--rc-accent2:#00C9B1;">
         <div class="role-card-header">
-          <div class="role-num">01</div>
+          <div class="role-num"><span class="bn">০১</span><span class="en">01</span></div>
           <div class="role-header-icon">🌟</div>
         </div>
         <div class="role-card-body">
@@ -2165,7 +2170,7 @@ footer::after{
 
       <div class="role-card fade-up" style="--rc-accent:#00689D;--rc-accent2:#1CABE2;">
         <div class="role-card-header">
-          <div class="role-num">02</div>
+          <div class="role-num"><span class="bn">০২</span><span class="en">02</span></div>
           <div class="role-header-icon">🤝</div>
         </div>
         <div class="role-card-body">
@@ -2180,7 +2185,7 @@ footer::after{
 
       <div class="role-card fade-up" style="--rc-accent:#0D47A1;--rc-accent2:#1565C0;">
         <div class="role-card-header">
-          <div class="role-num">03</div>
+          <div class="role-num"><span class="bn">০৩</span><span class="en">03</span></div>
           <div class="role-header-icon">📢</div>
         </div>
         <div class="role-card-body">
@@ -2195,7 +2200,7 @@ footer::after{
 
       <div class="role-card fade-up" style="--rc-accent:#00897B;--rc-accent2:#26A69A;">
         <div class="role-card-header">
-          <div class="role-num">04</div>
+          <div class="role-num"><span class="bn">০৪</span><span class="en">04</span></div>
           <div class="role-header-icon">🌱</div>
         </div>
         <div class="role-card-body">
@@ -2244,7 +2249,7 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#1CABE2;--step-bg:#E8F6FC;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">1</span>
+          <span class="js-num"><span class="bn">০১</span><span class="en">01</span></span>
           <span class="js-icon">📝</span>
         </div>
         <div class="js-card">
@@ -2260,8 +2265,8 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#00689D;--step-bg:#E3F2FD;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">2</span>
-          <span class="js-icon">🪪</span>
+          <span class="js-num"><span class="bn">০২</span><span class="en">02</span></span>
+          <span class="js-icon">✔️</span>
         </div>
         <div class="js-card">
           <div class="js-card-inner">
@@ -2276,7 +2281,7 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#0D47A1;--step-bg:#E8EAF6;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">3</span>
+          <span class="js-num"><span class="bn">০৩</span><span class="en">03</span></span>
           <span class="js-icon">🔑</span>
         </div>
         <div class="js-card">
@@ -2292,7 +2297,7 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#00838F;--step-bg:#E0F7FA;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">4</span>
+          <span class="js-num"><span class="bn">০৪</span><span class="en">04</span></span>
           <span class="js-icon">📚</span>
         </div>
         <div class="js-card">
@@ -2308,7 +2313,7 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#2E7D32;--step-bg:#E8F5E9;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">5</span>
+          <span class="js-num"><span class="bn">০৫</span><span class="en">05</span></span>
           <span class="js-icon">🎓</span>
         </div>
         <div class="js-card">
@@ -2324,7 +2329,7 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#F57F17;--step-bg:#FFFDE7;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">6</span>
+          <span class="js-num"><span class="bn">০৬</span><span class="en">06</span></span>
           <span class="js-icon">✅</span>
         </div>
         <div class="js-card">
@@ -2340,7 +2345,7 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#6A1B9A;--step-bg:#F3E5F5;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">7</span>
+          <span class="js-num"><span class="bn">০৭</span><span class="en">07</span></span>
           <span class="js-icon">🏅</span>
         </div>
         <div class="js-card">
@@ -2356,7 +2361,7 @@ footer::after{
       <div class="journey-step fade-up" style="--step-color:#C62828;--step-bg:#FFEBEE;">
         <div class="js-connector"><div class="js-line"></div></div>
         <div class="js-bubble">
-          <span class="js-num">8</span>
+          <span class="js-num"><span class="bn">০৮</span><span class="en">08</span></span>
           <span class="js-icon">🤲</span>
         </div>
         <div class="js-card">
@@ -2372,7 +2377,7 @@ footer::after{
       <div class="journey-step journey-step--final fade-up" style="--step-color:#1CABE2;--step-bg:#E8F6FC;">
         <div class="js-connector js-connector--none"></div>
         <div class="js-bubble js-bubble--final">
-          <span class="js-num">9</span>
+          <span class="js-num"><span class="bn">০৯</span><span class="en">09</span></span>
           <span class="js-icon">🎖️</span>
         </div>
         <div class="js-card js-card--final">
@@ -2392,7 +2397,7 @@ footer::after{
 <section class="section cta-section" id="join">
   <div class="section-inner cta-inner">
     <h2 class="cta-heading">
-      <span class="bn">একজন তরুণ স্বাস্থ্যদূত হোন</span>
+      <span class="bn">একজন তরুণ স্বাস্থ্য দূত হোন</span>
       <span class="en">Be a Young Health Ambassador</span>
     </h2>
     <div class="cta-actions">
@@ -2418,18 +2423,18 @@ footer::after{
         <div class="section-label bn">ড্যাশবোর্ড</div>
         <div class="section-label en">Dashboard</div>
         <h2 class="dash-title">
-          <span class="bn">YHAP ড্যাশবোর্ড – বাংলাদেশ</span>
-          <span class="en">YHAP Dashboard – Bangladesh</span>
+          <span class="bn">তরুণ স্বাস্থ্য দূত কর্মসূচি ড্যাশবোর্ড – বাংলাদেশ</span>
+          <span class="en">Young Health Ambassador Program Dashboard – Bangladesh</span>
         </h2>
-        <p class="dash-sub">
+        <!-- <p class="dash-sub">
           <span class="bn">তরুণ স্বাস্থ্যদূত কর্মসূচির সারসংক্ষেপ</span>
           <span class="en">Young Health Ambassador Program Overview</span>
-        </p>
+        </p> -->
       </div>
-      <div class="dash-asof">📅
+      <!-- <div class="dash-asof">📅
         <span class="bn">তথ্য হালনাগাদ: ডিসেম্বর ২০২৪</span>
         <span class="en">Data as of: December 2024</span>
-      </div>
+      </div> -->
     </div>
 
     <!-- KPI cards -->
@@ -2482,8 +2487,8 @@ footer::after{
         <div class="chart-box chart-box-tall"><canvas id="chDivision"></canvas></div>
       </div>
       <div class="dash-card">
-        <div class="dash-card-title bn">২. লিঙ্গভিত্তিক উপকারভোগী</div>
-        <div class="dash-card-title en">2. Beneficiaries by Gender</div>
+        <div class="dash-card-title bn">২.তরুণ স্বাস্থ্যদূত লিঙ্গভিত্তিক উপকারভোগী</div>
+        <div class="dash-card-title en">2.Young Health Ambassadors Beneficiaries by Gender</div>
         <div class="chart-box chart-box-tall">
           <canvas id="chGender"></canvas>
           <div class="donut-center">
@@ -2496,8 +2501,8 @@ footer::after{
         </div>
       </div>
       <div class="dash-card">
-        <div class="dash-card-title bn">৩. বয়সভিত্তিক উপকারভোগী</div>
-        <div class="dash-card-title en">3. Beneficiaries by Age Group</div>
+        <div class="dash-card-title bn">৩.তরুণ স্বাস্থ্যদূত বয়সভিত্তিক উপকারভোগী</div>
+        <div class="dash-card-title en">3.Young Health Ambassadors Beneficiaries by Age Group</div>
         <div class="chart-box chart-box-tall">
           <canvas id="chAge"></canvas>
           <div class="donut-center">
@@ -2544,12 +2549,12 @@ footer::after{
     </div>
 
     <!-- Footer note -->
-    <div class="dash-foot">
+    <!-- <div class="dash-foot">
       <span class="di">i</span>
       <span><b>Source:</b> YHAP Program Data</span>
       <span class="sep"></span>
       <span><b>Note:</b> <span class="bn">বয়সভিত্তিক তথ্য মোট উপকারভোগীর প্রতিনিধিত্ব করে।</span><span class="en">Age group data represents total beneficiaries by age.</span></span>
-    </div>
+    </div> -->
 
   </div>
 </section>
@@ -2611,44 +2616,54 @@ footer::after{
      
       <h2 class="footer-partner-title"><span class="bn">সহযোগিতায় </span> <span class="en">Supported by</span></h2>  
 
-    <div class="footer-partners">
-        <div class="partner-logo">
-            <img src="logos/logo1.jpg" alt="">
-        </div>
+      <div class="footer-partners">
+          <div class="partner-logo">
+              <img src="logos/logo1.jpg" alt="">
+          </div>
 
-        <div class="partner-logo">
-            <img src="logos/logo2.jpg" alt="">
-        </div>
+          <div class="partner-logo">
+              <img src="logos/logo2.jpg" alt="">
+          </div>
 
-        <div class="partner-logo">
-            <img src="logos/logo3.jpg" alt="">
-        </div>
+          <div class="partner-logo">
+              <img src="logos/logo3.jpg" alt="">
+          </div>
 
-        <div class="partner-logo">
-            <img src="logos/logo4.jpg" alt="">
-        </div>
+          <div class="partner-logo">
+              <img src="logos/logo4.jpg" alt="">
+          </div>
 
-        <div class="partner-logo">
-            <img src="logos/logo5.jpg" alt="">
-        </div>
-        <div class="partner-logo">
-            <img src="logos/logo6.jpg" alt="">
-        </div>
-        <div class="partner-logo">
-            <img src="logos/partner1.png" alt="">
-        </div>
-        <div class="partner-logo">
-            <img src="logos/partner2.png" alt="">
-        </div>
-        <div class="partner-logo">
-            <img src="logos/partner3.png" alt="">
-        </div>
-        <div class="partner-logo">
-            <img src="logos/partner4.png" alt="">
-        </div>
+          <div class="partner-logo">
+              <img src="logos/logo5.jpg" alt="">
+          </div>
+          <div class="partner-logo">
+              <img src="logos/logo6.jpg" alt="">
+          </div>
+      </div>
     </div>
+  </div> 
+</footer>
 
-</div>
+<footer style="background: #fff; padding: 20px 25px;">
+  <div class="footer-inner">
+    <div class="footer-inner">
+    <div class="footer-inner">
+      <div class="footer-partners footer2">
+          <div class="partner-logo">
+              <img src="logos/partner1.png" alt="">
+          </div>
+          <div class="partner-logo">
+              <img src="logos/partner2.png" alt="">
+          </div>
+          <div class="partner-logo">
+              <img src="logos/partner3.png" alt="">
+          </div>
+          <div class="partner-logo">
+              <img src="logos/partner4.png" alt="">
+          </div>
+      </div>
+
+    </div>
   </div> 
 </footer>
 
