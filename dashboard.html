@@ -8946,7 +8946,7 @@ function buildModule1Lesson9Section() {
       </div>
       <div class="role-section__body" style="padding:clamp(16px, 2vw, 24px); border-radius:8px;">
         <div class="role-card__content" style="display:flex; justify-content:center; align-items:center;">
-          <img src="sdc.png" alt="Sustainable Development Goals related to adolescent health" style="width:100%; max-width:920px; height:auto; border-radius:10px; display:block; object-fit:cover;" />
+          <img src="devpolment.jpeg" alt="Sustainable Development Goals related to adolescent health" style="width:100%; max-width:920px; height:auto; border-radius:10px; display:block; object-fit:cover;" />
         </div>
       </div>
     </section>
@@ -9013,39 +9013,7 @@ function buildModule1Lesson11Section() {
   ];
   
   return `
-  <div style="display:grid; gap:clamp(16px, 3vw, 32px); padding: 0 clamp(12px, 2vw, 24px);">
-    <!-- Hub Section: National Strategy -->
-    <section class="role-section mo1le11" style="margin-top:0;" aria-label="National Adolescent Health Strategy 2017-2030">
-      <div class="role-section__header role-section__header--teal">
-        <div class="role-section__icon" aria-hidden="true">📋</div>
-        <div class="role-section__titles">
-          <h2 class="role-section__title bn">বাংলাদেশ সরকারের অঙ্গীকার</h2>
-          <h2 class="role-section__title en">Bangladesh Government's Commitment</h2>
-        </div>
-      </div>
-      <div class="role-section__body" style="padding:clamp(16px, 2vw, 24px); border-radius:8px;">
-        <!-- Hub Container using am-hub pattern -->
-        <div class="am-hub-section" aria-label="National Adolescent Health Strategy 2017-2030">
-          
-          <div class="am-hub-container">
-            <div class="am-hub-center">
-              <div class="am-hub-center__icon">📋</div>
-              <p class="am-hub-center__text bn"><span class="am-hub-center__text__icon" aria-hidden="true"></span>জাতীয় কৈশোর স্বাস্থ্য কৌশল ২০১৭-২০৩০</p>
-              <p class="am-hub-center__text en"><span class="am-hub-center__text__icon" aria-hidden="true"></span>National Adolescent Health Strategy 2017-2030</p>
-            </div>
-            <div class="am-hub-grid">
-              ${strategyItems.map((item, idx) => `
-                <div class="am-hub-card" style="--angle: ${idx * (360/strategyItems.length)}deg;">
-                  <div class="am-hub-card__icon" aria-hidden="true">${item.icon}</div>
-                  <p class="am-hub-card__text bn">${item.bn}</p>
-                  <p class="am-hub-card__text en">${item.en}</p>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  
     
     <!-- Image Section: Government Commitment -->
     <section class="role-section" aria-label="Bangladesh Government Commitment Images">
@@ -9057,9 +9025,8 @@ function buildModule1Lesson11Section() {
         </div>
       </div>
       <div class="role-section__body" style="padding:clamp(16px, 2vw, 24px); border-radius:8px;">
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(clamp(280px, 45vw, 410px), 1fr)); gap:clamp(16px, 2.5vw, 24px); justify-items:center;">
-          <img src="ongikar2.jpg" alt="Bangladesh Government Commitment - Image 1" style="width:100%; max-width:450px; height:auto; border-radius:10px; display:block; object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,0.1);" />
-          <img src="ongikar1.jpg" alt="Bangladesh Government Commitment - Image 2" style="width:100%; max-width:450px; height:auto; border-radius:10px; display:block; object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,0.1);" />
+        <div style="">
+          <img src="ongikar.jpeg" alt="Bangladesh Government Commitment - Image 2" style="width:100%; height:auto; border-radius:10px; display:block; object-fit:cover; box-shadow:0 4px 12px rgba(0,0,0,0.1);" />
         </div>
       </div>
     </section>
